@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "这是标题",
-  "usingComponents": {}
+  "navigationBarTitleText": "欢迎来到",
+  "usingComponents": {
+    "code-number" : "../../components/codeNumber/codeNumber"
+  }
 }

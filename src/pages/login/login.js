@@ -6,15 +6,11 @@ import Base from '../../utils/base';
 const getPhoneNumber = getNodeVale('phone');
 const getCode = getNodeVale('code');
 
-const CodeBtnText = '发送验证码';
-let timerCount = 60;
-let timer = null;
+
 Page({
   data: {
     focus: false,
     loginBtnDisabled: false,
-    sendCodeBtnDisabled: false,
-    sendCodeBtnText: CodeBtnText,
     phone: '',
     code: null,
     checked: true
@@ -90,33 +86,10 @@ Page({
       });
     }
   },
-  getCode() {
-    if (!timer) {
-      console.log(60);
-      // 调用获取短信验证码接口
-
-      // 60s 倒计时
-      let sendCodeBtnText = `${--timerCount}s后重新获取`;
-      this.setData({
-        sendCodeBtnText,
-        sendCodeBtnDisabled: true
-      });
-      timer = setInterval(() => {
-        // 同时切换文字
-        sendCodeBtnText = `${--timerCount}s后重新获取`;
-        this.setData({
-          sendCodeBtnText,
-        });
-        if (timerCount < 0) {
-          this.setData({
-            sendCodeBtnText: CodeBtnText,
-            sendCodeBtnDisabled: false
-          });
-          clearInterval(timer);
-        }
-      }, 1000);
-    }
+  onGetCode() {
+    console.log('send request');
   },
+
   toServiceAgreementPage() {
     Router.push('/pages/serviceAgreement/serviceAgreement');
   },

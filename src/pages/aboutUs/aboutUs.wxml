@@ -1,0 +1,21 @@
+<view class="aboutus-page">
+  <!-- content -->
+  <view class="flex-c ">
+    <image class="app-logo" src="" />
+  </view>
+  <view class="flex-c version">
+    <text>版本号：{{versionCode}}</text>
+  </view>
+
+  <view class="info">
+
+  </view>
+
+  <view class="privacyPolicy flex-c">
+
+  </view>
+
+  <view class="copy-right flex-c">
+    公司版权所有 © 2020
+  </view>
+</view>

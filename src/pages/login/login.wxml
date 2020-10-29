@@ -11,19 +11,18 @@
      auto-focus
      placeholder="手机号码"/>
   </view>
-  <view class="code-container flex-b">
-    <view class="code-numer">
-      <input
-     maxlength="4"
-     data-code="code"
-     bindinput="onCodeChange"
-     placeholder="验证码"/>
-    </view>
 
-     <button
-     class="send-code"
-     bindtouchend="getCode"
-     disabled="{{sendCodeBtnDisabled}}">{{sendCodeBtnText}}</button>
+
+  <view class="code-container">
+    <code-number bind:onGetCode="onGetCode">
+      <view class="code-numer">
+       <input
+        maxlength="4"
+        data-code="code"
+        bindinput="onCodeChange"
+        placeholder="验证码" />
+      </view>
+    </code-number>
   </view>
 
   <view class="remind flex-cm">
