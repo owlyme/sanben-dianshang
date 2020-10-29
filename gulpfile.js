@@ -94,7 +94,7 @@ gulp.task(wxss);
 const img = () => {
   return gulp
     .src(imgFiles, { since: gulp.lastRun(img)})
-    .pipe(imagemin())
+    // .pipe(imagemin())
     .pipe(gulp.dest(distPath));
 };
 gulp.task(img);

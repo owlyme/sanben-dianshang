@@ -6,12 +6,15 @@ import Base from '../../utils/base';
 const getPhoneNumber = getNodeVale('phone');
 const getCode = getNodeVale('code');
 
-
-
+const CodeBtnText = '发送验证码';
+let timerCount = 60;
+let timer = null;
 Page({
   data: {
     focus: false,
-    disabled: false,
+    loginBtnDisabled: false,
+    sendCodeBtnDisabled: false,
+    sendCodeBtnText: CodeBtnText,
     phone: '',
     code: null,
     checked: true
@@ -66,10 +69,10 @@ Page({
           title: '输入验证码'
         });
       } else if (!checked) {
-        bool = false;
-        Toast.show({
-          title: '请同意服务协议与隐私政策'
-        });
+        // bool = false;
+        // Toast.show({
+        //   title: '请同意服务协议与隐私政策'
+        // });
       }
       return bool;
     };
@@ -77,13 +80,41 @@ Page({
       let formData = {phone, code};
       console.log(formData);
       this.setData({
-        disabled: true
+        loginBtnDisabled: true
       });
+
       Router.refresh('/pages/index/index');
 
       this.setData({
-        disabled: false
+        loginBtnDisabled: false
       });
+    }
+  },
+  getCode() {
+    if (!timer) {
+      console.log(60);
+      // 调用获取短信验证码接口
+
+      // 60s 倒计时
+      let sendCodeBtnText = `${--timerCount}s后重新获取`;
+      this.setData({
+        sendCodeBtnText,
+        sendCodeBtnDisabled: true
+      });
+      timer = setInterval(() => {
+        // 同时切换文字
+        sendCodeBtnText = `${--timerCount}s后重新获取`;
+        this.setData({
+          sendCodeBtnText,
+        });
+        if (timerCount < 0) {
+          this.setData({
+            sendCodeBtnText: CodeBtnText,
+            sendCodeBtnDisabled: false
+          });
+          clearInterval(timer);
+        }
+      }, 1000);
     }
   },
   toServiceAgreementPage() {

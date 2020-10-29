@@ -1,29 +1,33 @@
-<view class="xxx-page">
+<view class="login-page">
   <!-- content -->
-  <view class="">
+  <view class="we-title">
     欢迎来到
   </view>
-  <view class="weui-cell weui-cell_input">
-    <input class="weui-input"
+  <view class="phone-number">
+    <input class=""
      maxlength="11"
      data-phone="phone"
      bindinput="onPhoneChange"
-     auto-focus placeholder="将会获取焦点"/>
+     auto-focus
+     placeholder="手机号码"/>
   </view>
-  <view class="weui-cell weui-cell_input">
-    <input class="weui-input"
+  <view class="code-container flex-b">
+    <view class="code-numer">
+      <input
      maxlength="4"
      data-code="code"
      bindinput="onCodeChange"
-     auto-focus placeholder="将会获取焦点"/>
+     placeholder="验证码"/>
+    </view>
+
+     <button
+     class="send-code"
+     bindtouchend="getCode"
+     disabled="{{sendCodeBtnDisabled}}">{{sendCodeBtnText}}</button>
   </view>
 
-  <view >
-      <checkbox
-      checked="{{checked}}"
-      bindtouchend="toAgree"
-      />
-
+  <view class="remind flex-cm">
+      <image bindtouchend="toAgree" class="check-image" src="./images/checked.png" />
       <view class="view-text">已阅读并同意<view
       class="view-text color-red"
       bindtap="toServiceAgreementPage">服务协议</view>与<view
@@ -34,9 +38,9 @@
 
   <view >
      <button
-     type="primary"
+      class="login-btn"
      bindtouchend="login"
-     disabled="{{disabled}}">登录</button>
+     disabled="{{loginBtnDisabled}}">登录</button>
   </view>
 
 </view>
