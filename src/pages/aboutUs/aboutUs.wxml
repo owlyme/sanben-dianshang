@@ -8,11 +8,40 @@
   </view>
 
   <view class="info">
+    <list>
+      <list-item bind:onClick="checkVersion">
+        <view slot="content" >
+        检查更新
+        </view>
+        <view slot="icon">
+          <image class="item-icon" src="./images/check.png" />
+        </view>
+      </list-item>
 
+      <list-item bind:onClick="concatUs">
+          <view slot="content" >
+          联系我们
+          </view>
+          <view slot="icon">
+            <image class="item-icon" src="./images/concat.png" />
+          </view>
+      </list-item>
+
+      <list-item bind:onClick="shareApp">
+         <view slot="content" >
+          分享APP
+          </view>
+          <view slot="icon">
+            <image class="item-icon" src="./images/share.png" />
+          </view>
+      </list-item>
+    </list>
   </view>
 
   <view class="privacyPolicy flex-c">
-
+    <text-link
+        url="/pages/privacyPolicy/privacyPolicy"
+        text="隐私政策" />
   </view>
 
   <view class="copy-right flex-c">

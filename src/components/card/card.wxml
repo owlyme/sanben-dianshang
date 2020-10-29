@@ -1,0 +1,4 @@
+<view class="card-components">
+  <!-- content -->
+  <slot> </slot>
+</view>

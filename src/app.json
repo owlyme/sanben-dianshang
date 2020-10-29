@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/login/login",
     "pages/aboutUs/aboutUs",
     "pages/index/index",
@@ -22,5 +21,11 @@
     "onReachBottomDistance": 50
   },
   "networkTimeout": {},
+  "usingComponents": {
+    "text-link" : "/components/textLink/textLink",
+    "card" : "/components/card/card",
+    "list" : "/components/list/list",
+    "list-item" : "/components/listItem/listItem"
+  },
   "debug": false
 }

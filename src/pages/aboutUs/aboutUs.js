@@ -32,5 +32,14 @@ Page({
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
+  checkVersion() {
+    console.log('2vw');
+  },
+  concatUs() {
+    console.log('2vw');
+  },
+  shareApp() {
+    console.log('2vw');
+  },
   customData: {}
 });

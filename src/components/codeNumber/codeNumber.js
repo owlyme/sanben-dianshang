@@ -10,7 +10,12 @@ Component({
   },
   behaviors: [],
 
-  properties: {},
+  properties: {
+    disabled: {
+      type: Boolean,
+      value: false
+    }
+  },
   data: {
     sendCodeBtnDisabled: false,
     sendCodeBtnText: CodeBtnText,

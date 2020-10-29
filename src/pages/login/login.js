@@ -2,18 +2,19 @@
 import { getNodeVale } from '../../utils/commom';
 import { Toast, Router } from '../../utils/sysApis';
 import Base from '../../utils/base';
-
+import {userLogin, getValidateCode} from '../../api/login';
 const getPhoneNumber = getNodeVale('phone');
 const getCode = getNodeVale('code');
 
 
 Page({
   data: {
-    focus: false,
+    sendCodeBtnDisabled: true,
     loginBtnDisabled: false,
     phone: '',
     code: null,
     checked: true
+
   },
   onLoad() {
     // Do some initialize when page load.
@@ -35,12 +36,19 @@ Page({
   },
   onPhoneChange: function (e) {
     console.log(this.data, getPhoneNumber(e));
+    let {phone} = getPhoneNumber(e);
+    let sendCodeBtnDisabled = true;
+    if (Base.isPhone(phone)) {
+      sendCodeBtnDisabled = false;
+    }
+
     this.setData({
-      ...getPhoneNumber(e)
+      phone,
+      sendCodeBtnDisabled
     });
   },
   onCodeChange: function (e) {
-    console.log(this.data, getCode(e));
+    // console.log(this.data, getCode(e));
     this.setData({
       ...getCode(e)
     });
@@ -50,7 +58,7 @@ Page({
       checked: !this.data.checked
     });
   },
-  login() {
+  async login() {
     let {phone, code, checked} = this.data;
     const validatoForm = () => {
       let bool = true;
@@ -78,7 +86,7 @@ Page({
       this.setData({
         loginBtnDisabled: true
       });
-
+      userLogin(formData);
       Router.refresh('/pages/index/index');
 
       this.setData({
@@ -88,13 +96,12 @@ Page({
   },
   onGetCode() {
     console.log('send request');
+
+    let {phone} = this.data;
+    getValidateCode({
+      phone
+    });
   },
 
-  toServiceAgreementPage() {
-    Router.push('/pages/serviceAgreement/serviceAgreement');
-  },
-  toPrivacyPolicyPage() {
-    Router.push('/pages/privacyPolicy/privacyPolicy');
-  },
   customData: {}
 });

@@ -1,0 +1,4 @@
+<view class="list-components">
+  <!-- content -->
+  <slot></slot>
+</view>

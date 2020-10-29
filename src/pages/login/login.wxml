@@ -3,6 +3,7 @@
   <view class="we-title">
     欢迎来到
   </view>
+
   <view class="phone-number">
     <input class=""
      maxlength="11"
@@ -14,7 +15,7 @@
 
 
   <view class="code-container">
-    <code-number bind:onGetCode="onGetCode">
+    <code-number bind:onGetCode="onGetCode" disabled="{{sendCodeBtnDisabled}}">
       <view class="code-numer">
        <input
         maxlength="4"
@@ -27,12 +28,12 @@
 
   <view class="remind flex-cm">
       <image bindtouchend="toAgree" class="check-image" src="./images/checked.png" />
-      <view class="view-text">已阅读并同意<view
-      class="view-text color-red"
-      bindtap="toServiceAgreementPage">服务协议</view>与<view
-      class="view-text color-red"
-      bindtap="toPrivacyPolicyPage"
-      >隐私政策</view></view>
+      <view class="view-text">已阅读并同意<text-link
+        url="/pages/serviceAgreement/serviceAgreement"
+        text="服务协议" />与<text-link
+        url="/pages/privacyPolicy/privacyPolicy"
+        text="隐私政策" />
+      </view>
   </view>
 
   <view >

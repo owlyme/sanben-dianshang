@@ -1,0 +1,10 @@
+<view class="list-item-components flex">
+  <view class="item-label" bind:tap="onLableClick" wx:if="{{label}}">{{label}}</view>
+  <view class="flex-b item-container" bind:tap="onClick">
+    <view class="item-content" >
+      <slot name="content"></slot>
+    </view>
+
+    <slot name="icon"></slot>
+  </view>
+</view>
