@@ -24,10 +24,11 @@ Component({
   // 生命周期函数
   methods: {
     getCode() {
+      if (this.data.disabled) {
+        this.triggerEvent('onDisableClick');
+        return;
+      }
       if (!timer) {
-        console.log(60);
-        // 调用获取短信验证码接口
-
         // 60s 倒计时
         let sendCodeBtnText = `${--timerCount}s后重新获取`;
         this.setData({
@@ -47,14 +48,16 @@ Component({
             });
             clearInterval(timer);
           }
-
         }, 1000);
 
         // 出发事件
-
+        // 调用获取短信验证码接口
         this.triggerEvent('onGetCode');
       }
     },
+    onGetCodeDisable() {
+
+    }
   }
 
 });

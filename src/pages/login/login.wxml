@@ -15,7 +15,9 @@
 
 
   <view class="code-container">
-    <code-number bind:onGetCode="onGetCode" disabled="{{sendCodeBtnDisabled}}">
+    <code-number
+    bind:onDisableClick="onGetCodeDisable"
+    bind:onGetCode="onGetCode" disabled="{{sendCodeBtnDisabled}}">
       <view class="code-numer">
        <input
         maxlength="4"

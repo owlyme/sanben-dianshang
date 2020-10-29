@@ -7,5 +7,5 @@
      <button
      class="send-code"
      bindtouchend="getCode"
-     disabled="{{sendCodeBtnDisabled || disabled}}">{{sendCodeBtnText}}</button>
+     disabled="{{sendCodeBtnDisabled}}">{{sendCodeBtnText}}</button>
   </view>

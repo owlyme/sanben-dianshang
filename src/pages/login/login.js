@@ -1,10 +1,10 @@
 // 全局app实例
-import { getNodeVale } from '../../utils/commom';
+import { getNodeValue } from '../../utils/commom';
 import { Toast, Router } from '../../utils/sysApis';
 import Base from '../../utils/base';
 import {userLogin, getValidateCode} from '../../api/login';
-const getPhoneNumber = getNodeVale('phone');
-const getCode = getNodeVale('code');
+const getPhoneNumber = getNodeValue('phone');
+const getCode = getNodeValue('code');
 
 
 Page({
@@ -36,14 +36,14 @@ Page({
   },
   onPhoneChange: function (e) {
     console.log(this.data, getPhoneNumber(e));
-    let {phone} = getPhoneNumber(e);
+
+    let phone = getPhoneNumber(e);
     let sendCodeBtnDisabled = true;
-    if (Base.isPhone(phone)) {
+    if (Base.isPhone(phone.phone)) {
       sendCodeBtnDisabled = false;
     }
-
     this.setData({
-      phone,
+      ...phone,
       sendCodeBtnDisabled
     });
   },
@@ -96,10 +96,16 @@ Page({
   },
   onGetCode() {
     console.log('send request');
-
     let {phone} = this.data;
+
     getValidateCode({
       phone
+    });
+
+  },
+  onGetCodeDisable() {
+    Toast.show({
+      title: '输入正确的手机号'
     });
   },
 
