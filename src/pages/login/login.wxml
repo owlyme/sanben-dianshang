@@ -1,0 +1,42 @@
+<view class="xxx-page">
+  <!-- content -->
+  <view class="">
+    欢迎来到
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <input class="weui-input"
+     maxlength="11"
+     data-phone="phone"
+     bindinput="onPhoneChange"
+     auto-focus placeholder="将会获取焦点"/>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <input class="weui-input"
+     maxlength="4"
+     data-code="code"
+     bindinput="onCodeChange"
+     auto-focus placeholder="将会获取焦点"/>
+  </view>
+
+  <view >
+      <checkbox
+      checked="{{checked}}"
+      bindtouchend="toAgree"
+      />
+
+      <view class="view-text">已阅读并同意<view
+      class="view-text color-red"
+      bindtap="toServiceAgreementPage">服务协议</view>与<view
+      class="view-text color-red"
+      bindtap="toPrivacyPolicyPage"
+      >隐私政策</view></view>
+  </view>
+
+  <view >
+     <button
+     type="primary"
+     bindtouchend="login"
+     disabled="{{disabled}}">登录</button>
+  </view>
+
+</view>
