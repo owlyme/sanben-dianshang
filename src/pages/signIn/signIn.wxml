@@ -16,13 +16,14 @@
       <card>
         <view class="flex-b flex-wrap">
           <view
-          class="sign-item flex-col flex-middle {{item.status || item.day <= currentDay ? 'sign-bg' : 'unsign-bg'}}"
+            class="{{ item.day <= 4 ? 'prev-4-item' : ''}} sign-item flex-col flex-middle {{item.status || (!item.status && item.day < currentDay) ? 'sign-bg' : 'unsign-bg'}}"
             wx:for="{{weekDayList}}"
             wx:for-index="{{idx}}"
             data-sign="{{item}}"
             bind:tap="toSign">
             <view class="week-day">{{item.dayText}}</view>
-            <view class="day-sign-status">
+            <view
+              class="{{item.status || (!item.status&& item.day < currentDay) ? 'day-sign-status' : 'day-unsign-status'}}">
               <!-- 过去 未签到 -->
               <image wx:if="{{!item.status && item.day < currentDay }}" src="./images/unsigned.png" />
               <!-- 过去/今天 已签到 -->
@@ -33,19 +34,20 @@
               <image wx:elif="{{item.day > currentDay}}" src="./images/unsign.png" />
             </view>
             <view class="signed-score"
-              wx:if="{{item.status || (!item.status&& item.day <= currentDay) }}">{{
+              wx:if="{{item.status || (!item.status&& item.day < currentDay) }}">{{
               !!item.status ? item.score+'积分' : '未签到'
               }}</view>
           </view>
-
         </view>
       </card>
+
       <view class="part-title">
         <part-title title="热门商品推荐" />
       </view>
 
+      <view>
+        <good-card-sale />
+      </view>
     </view>
-
-
   </page-container>
 </view>

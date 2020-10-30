@@ -1,0 +1,22 @@
+<view class="good-card-sale-components">
+  <!-- content -->
+  <view class="good-pic">
+    <image src="{{goodInfo.pic}}" />
+  </view>
+  <view class="good-detail">
+    <view class="good-active-container"
+      wx:if="{{goodInfo.active}}">
+      <view class="good-active">{{goodInfo.active}}</view>
+    </view>
+    <view class="good-name ellipsisTwo">{{goodInfo.name}}</view>
+    <view class="good-price">{{goodInfo.price}}</view>
+    <view class="good-sale-num">月销{{goodInfo.saledNumber}}件</view>
+    <view class="good-feature-container flex">
+      <view class="good-feature"
+      wx:for="{{goodInfo.tags}}"
+      wx:index="{{index}}">
+        {{item}}
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,91 +1,119 @@
 import { getNodeData } from '../../utils/commom';
+import { Toast } from '../../utils/sysApis';
+import { sign, getSign } from '../../api/sign';
 // 全局app实例
 // const app = getApp();
 // console.log(app);
 const getSignData = getNodeData('sign');
 
+const weekDayListTemp = [
+  {
+    dayText: '周一',
+    day: 1,
+    status: 0, // 0: 未签到， 1: 已签到
+    score: 10
+  },
+  {
+    dayText: '周二',
+    day: 2,
+    status: 1, // 0: 未签到， 1: 已签到
+    score: 10
+  },
+  {
+    dayText: '周三',
+    day: 3,
+    status: 0, // 0: 未签到， 1: 已签到
+    score: 10
+  },
+  {
+    dayText: '周四',
+    day: 4,
+    status: 1, // 0: 未签到， 1: 已签到
+    score: 10
+  },
+  {
+    dayText: '周五',
+    day: 5,
+    status: 0, // 0: 未签到， 1: 已签到
+    score: 10
+  },
+  {
+    dayText: '周六',
+    day: 6,
+    status: 0, // 0: 未签到， 1: 已签到
+    score: 10
+  },
+  {
+    dayText: '周日',
+    day: 7, // 0
+    status: 0, // 0: 未签到， 1: 已签到
+    score: 10,
+  }
+];
 Page({
   data: {
     signedDays: 22,
-    currentDay: (new Date).getDay(),
-    weekDayList: [
-      {
-        dayText: '周一',
-        day: 1,
-        status: 0, // 0: 未签到， 1: 已签到
-        score: 10
-      },
-      {
-        dayText: '周二',
-        day: 2,
-        status: 1, // 0: 未签到， 1: 已签到
-        score: 10
-      },
-      {
-        dayText: '周三',
-        day: 3,
-        status: 1, // 0: 未签到， 1: 已签到
-        score: 10
-      },
-      {
-        dayText: '周四',
-        day: 4,
-        status: 1, // 0: 未签到， 1: 已签到
-        score: 10
-      },
-      {
-        dayText: '周五',
-        day: 5,
-        status: 1, // 0: 未签到， 1: 已签到
-        score: 10
-      },
-      {
-        dayText: '周六',
-        day: 6,
-        status: 0, // 0: 未签到， 1: 已签到
-        score: 10
-      },
-      {
-        dayText: '周日',
-        day: 7, // 0
-        status: 0, // 0: 未签到， 1: 已签到
-        score: 10,
-      }
-    ]
+    currentDay: 0,
+    weekDayList: []
   },
   onLoad() {
-    // Do some initialize when page load.
+    this.setWeekDaysListText();
+    this.getSignInfo();
   },
-  onReady() {
-    // Do something when page ready.
+  // 设置显示文字
+  setWeekDaysListText() {
+    let currentDay = (new Date).getDay() || 7;
+    let weekDayList = weekDayListTemp.map(i => ({
+      ...i,
+      dayText: currentDay === i.day ? '今天' : i.dayText
+    }));
+    this.setData({
+      weekDayList,
+      currentDay
+    });
   },
-  onShow() {
-    // Do something when page show.
-  },
-  onHide() {
-    // Do something when page hide.
-  },
-  onUnload() {
-    // Do something when page close.
-  },
-  onPullDownRefresh() {
-    // Do something when pull down.
-  },
-  onReachBottom() {
-    // Do something when page reach bottom.
-  },
-  onShareAppMessage() {
-    // return custom share data when user share.
+  // 获取签到详情
+  getSignInfo() {
+    getSign().then(() => {
+
+    });
   },
   onPageScroll() {
     // Do something when page scroll
+  },
+  onReachBottom() {
+    console.log('bottom');
   },
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
   toSign(e) {
     let signData = getSignData(e);
-    console.log(signData);
+    // dayText: "周三", day: 3, status: 1, score: 10
+    let { currentDay } = this.data;
+    // currentDay = currentDay || 7;
+    if (currentDay > signData.day) {
+      Toast.show('不可以补签！');
+    } else if (currentDay < signData.day) {
+      Toast.show('未到签到时间！');
+    } else if (currentDay === signData.day) {
+      if (signData.status) {
+        Toast.show('您已签到！');
+      } else {
+        this.postSign(signData);
+      }
+    }
+  },
+  postSign(data) {
+    sign().then(res => {
+      Toast.sucess('签到成功！');
+      // 修改状态
+      let {weekDayList} = this.data;
+      weekDayList[data.day - 1].status = 1;
+      this.setData({
+        weekDayList
+      });
+    });
   },
   customData: {}
 });
