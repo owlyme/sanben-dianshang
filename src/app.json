@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/signIn/signIn",
     "pages/login/login",
     "pages/aboutUs/aboutUs",
     "pages/index/index",
@@ -12,7 +13,7 @@
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "微信小程序",
-    "navigationStyle": "default",
+    "navigationStyle": "custom",
     "backgroundColor": "#ffffff",
     "backgroundTextStyle": "dark",
     "backgroundColorTop": "#ffffff",
@@ -22,6 +23,9 @@
   },
   "networkTimeout": {},
   "usingComponents": {
+    "navbar": "/components/navbar/navbar",
+    "page-container": "/components/page-container/page-container",
+    "part-title" : "/components/partTitle/partTitle",
     "text-link" : "/components/textLink/textLink",
     "card" : "/components/card/card",
     "list" : "/components/list/list",

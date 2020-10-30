@@ -38,3 +38,28 @@ export const Router = {
   // 返回上一页面或多级页面。可通过 getCurrentPages 获取当前的页面栈，决定需要返回几层。
   back: (delta = 1) =>  wx.navigateBack({delta})
 };
+
+
+// Do something initial when launch.
+export const setNavBarSize = (cb = f => f) => {
+  let menuButtonObject = wx.getMenuButtonBoundingClientRect();
+  wx.getSystemInfo({
+    success: res => {
+      //导航高度
+      let statusBarHeight = res.statusBarHeight,
+        navTop = menuButtonObject.top,
+        navHeight = statusBarHeight + menuButtonObject.height + (menuButtonObject.top - statusBarHeight)*2;
+      // this.globalData.navHeight = navHeight;
+      // this.globalData.navTop = navTop;
+      // this.globalData.windowHeight = res.windowHeight;
+      cb({
+        navHeight,
+        navTop,
+        windowHeight: res.windowHeight,
+      });
+    },
+    fail(err) {
+      console.log(err);
+    }
+  });
+};

@@ -1,0 +1,6 @@
+<view class="part-components flex-middle flex-b">
+  <!-- content -->
+  <view class="left"></view>
+  <view class="center-title">{{title}}</view>
+  <view class="right"></view>
+</view>

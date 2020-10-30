@@ -1,0 +1,12 @@
+<view class="page-bg-image page-container-component flex-col">
+  <view style="position: fixed;width: 100%;z-index: 1;">
+    <navbar page-name="{{pageName}}"></navbar>
+  </view>
+  <view class="page-contanier"
+  style="margin-top: {{navHeight}}px">
+     <slot></slot>
+  </view>
+
+  <!-- content -->
+
+</view>

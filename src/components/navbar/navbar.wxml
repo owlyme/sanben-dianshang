@@ -1,0 +1,28 @@
+<!--components/navbar/index.wxml-->
+<view class="navbar custom-class"
+ style='height:{{navHeight}}px;background-color:{{bgColor}}'>
+  <!-- <view wx:if="{{showNav}}"
+  class="navbar-action-wrap navbar-action-group row item-center"
+  style='top:{{navTop}}px;background-color:rgba(255,255,255,.6)'>
+      <view name="back"
+        color="{{iconColor}}"
+        size="15px" block="{{true}}"
+        class="navbar-action_item"
+        bind:click="_navBack">1</view>
+      <view
+        name="index"
+        color="{{iconColor}}"
+        size="15px" block="{{true}}"
+        class="navbar-action_item last"
+        bind:click="_toIndex">2
+        </view>
+  </view> -->
+  <view class="navbar-action-wrap nav-bar-back"
+  style='top:{{navTop}}px;'
+  bind:click="_navBack">
+    <image class="nav-bar-back-img" src="/images/left.png" />
+  </view>
+  <view class='navbar-title' style='top:{{navTop}}px; color:{{titleColor}}'>
+    {{pageName}}
+  </view>
+</view>
