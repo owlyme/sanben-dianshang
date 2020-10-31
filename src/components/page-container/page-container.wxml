@@ -1,6 +1,14 @@
-<view class="page-bg-image page-container-component flex-col">
+<view class="page-container-component flex-col {{useThemeBg ? ' page-bg-image ' : ''}}">
   <view style="position: fixed;width: 100%;z-index: 1;">
-    <navbar page-name="{{pageName}}"></navbar>
+    <navbar
+    page-name="{{pageName}}"
+    showNav="{{showNav}}"
+    bgColor="{{bgColor}}"
+    iconColor="{{iconColor}}"
+    titleColor="{{titleColor}}"
+    theme="{{theme}}"
+    backIcon="{{backIcon}}"
+    ></navbar>
   </view>
   <view class="page-contanier"
   style="margin-top: {{navHeight}}px">

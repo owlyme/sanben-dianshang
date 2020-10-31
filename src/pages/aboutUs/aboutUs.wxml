@@ -1,5 +1,11 @@
 <view class="aboutus-page">
-  <!-- content -->
+  <page-container
+  theme="dark"
+  useThemeBg="{{true}}"
+  pageName="关于我们"
+  useThemeBg="{{false}}"
+  bgColor="none">
+<!-- content -->
   <view class="flex-c ">
     <image class="app-logo" src="" />
   </view>
@@ -9,28 +15,26 @@
 
   <view class="info">
     <list>
-      <list-item bind:onClick="checkVersion">
-        <view slot="content" >
-        检查更新
-        </view>
+      <list-item bind:onClick="checkVersion"
+      showlabelBorder
+        label="检查更新">
         <view slot="icon">
           <image class="item-icon" src="./images/check.png" />
         </view>
       </list-item>
 
-      <list-item bind:onClick="concatUs">
-          <view slot="content" >
-          联系我们
-          </view>
+      <list-item
+      showlabelBorder
+        label="联系我们"
+      bind:onClick="concatUs">
           <view slot="icon">
             <image class="item-icon" src="./images/concat.png" />
           </view>
       </list-item>
 
-      <list-item bind:onClick="shareApp">
-         <view slot="content" >
-          分享APP
-          </view>
+      <list-item bind:onClick="shareApp"
+      showlabelBorder
+        label="分享APP">]
           <view slot="icon">
             <image class="item-icon" src="./images/share.png" />
           </view>
@@ -47,4 +51,5 @@
   <view class="copy-right flex-c">
     公司版权所有 © 2020
   </view>
+  </page-container>
 </view>

@@ -1,6 +1,9 @@
 <view class="xxx-page">
-  <!-- content -->
-  <view class="xy-test">
-    xy - test
-  </view>
+  <page-container
+  theme="dark"
+  useThemeBg="{{true}}"
+  pageName="商品首页"
+  useThemeBg="{{false}}"
+  bgColor="none">
+  </page-container>
 </view>

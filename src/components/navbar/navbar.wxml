@@ -20,12 +20,13 @@
   <view class="navbar-action-wrap nav-bar-back"
   style='top:{{navTop}}px;'
   >
-    <image bind:tap="_navBack" class="nav-bar-back-img" src="/images/left.png" />
+    <image bind:tap="_navBack" class="nav-bar-back-img" src="{{computedTheme.backIcon}}" />
     <block wx:if="{{showComponentList}}">
-      <view bind:tap="toComponentList">com</view>
+      <view bind:tap="toComponentList">coms</view>
+      <view bind:tap="toPageList">pages</view>
     </block>
   </view>
-  <view class='navbar-title' style='top:{{navTop}}px; color:{{titleColor}}'>
+  <view class='navbar-title' style='top:{{navTop}}px; color:{{computedTheme.titleColor}}'>
     {{pageName}}
   </view>
 </view>

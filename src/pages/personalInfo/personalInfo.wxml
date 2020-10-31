@@ -1,0 +1,78 @@
+<view class="presonal-info-page">
+  <!-- content -->
+  <page-container
+  theme="dark"
+  useThemeBg="{{true}}"
+  pageName="个人资料"
+  useThemeBg="{{false}}"
+  bgColor="none">
+  <view >
+    <view class="card-b">
+      <list>
+        <list-item
+        bind:onClick="onSelectedAvatar"
+        showlabelBorder
+        label="头像">
+          <view slot="content" class="flex-end" >
+            <image class="avatar" src="{{avatar}}" />
+          </view>
+          <view slot="icon">
+            <image class="item-icon" src="/images/right.png" />
+          </view>
+        </list-item>
+        <list-item
+        showlabelBorder
+        label="昵称">>
+          <view slot="content" >
+            <input
+            data-nick-name="nickName"
+            value="{{nickName}}"
+            placeholder="请输入昵称"
+            bindinput="onNickNameChange"/>
+          </view>
+          <view slot="icon">
+            <image class="item-icon" src="/images/right.png" />
+          </view>
+        </list-item>
+      </list>
+    </view>
+    <view class="card-b">
+      <list>
+        <list-item
+        showlabelBorder
+        label="性别"
+        bind:onClick="onSelectedSex">
+          <view slot="content" >
+          {{sex}}
+          </view>
+          <view slot="icon">
+            <image class="item-icon" src="/images/right.png" />
+          </view>
+        </list-item>
+        <list-item
+        showlabelBorder
+
+
+        label="手机号码">
+          <view slot="content" >
+          <input
+          value="{{phone}}"
+          data-phone="phone"
+          bindinput="onPhoneChange"
+          placeholder="请输入手机号码"/>
+          </view>
+          <view slot="icon">
+            <image class="item-icon" src="/images/right.png" />
+          </view>
+        </list-item>
+      </list>
+    </view>
+
+    <view >
+      <view class="login-btn"
+        bind:tap="logout">退出当前账号</view>
+    </view>
+  </view>
+
+  </page-container>
+</view>

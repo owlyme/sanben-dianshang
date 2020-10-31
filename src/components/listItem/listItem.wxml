@@ -1,10 +1,16 @@
-<view class="list-item-components flex">
-  <view class="item-label" bind:tap="onLableClick" wx:if="{{label}}">{{label}}</view>
-  <view class="flex-b item-container" bind:tap="onClick">
-    <view class="item-content" >
+<view class="list-item-components flex-middle {{showlabelBorder ? 'border-bottom' : ''}}">
+  <view class="item-label flex-middle" bind:tap="onLableClick" wx:if="{{label}}">{{label}}</view>
+
+  <view class="flex-b item-container {{!showlabelBorder ? 'border-bottom' : ''}}"
+
+    bind:tap="onClick">
+    <view
+    class="item-content flex-middle {{contentAlign === 'left'? 'flex-end text-right' : 'flex-start'}}"
+    style="">
       <slot name="content"></slot>
     </view>
-
+    <view class="flex-middle" >
     <slot name="icon"></slot>
+    </view>
   </view>
 </view>

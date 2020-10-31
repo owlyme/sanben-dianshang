@@ -1,3 +1,9 @@
 <view class="xxx-page">
-  <!-- content -->
+   <page-container
+  theme="dark"
+  useThemeBg="{{true}}"
+  pageName="帮助中心"
+  useThemeBg="{{false}}"
+  bgColor="none">
+  </page-container>
 </view>

@@ -11,7 +11,14 @@ Component({
       type: String,
       value: ''
     },
-
+    showlabelBorder: {
+      type: Boolean,
+      value: false
+    },
+    contentAlign: {
+      type: String,
+      value: 'left' // left right
+    }
   },
   data: {},
 

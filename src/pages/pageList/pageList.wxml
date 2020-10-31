@@ -1,0 +1,12 @@
+<view class="xxx-page">
+  <!-- content -->
+  <page-container pageName="pageList">
+    <view class="flex-wrap" >
+      <view
+        wx:for="{{pageList}}"
+        data-url="{{item}}"
+        bind:tap="toPage"
+      >{{item}}</view>
+    </view>
+  </page-container>
+</view>

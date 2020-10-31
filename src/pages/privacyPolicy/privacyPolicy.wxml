@@ -1,4 +1,11 @@
 <view class="xxx-page">
   <!-- content -->
- 隐私政策
+  <page-container
+  theme="dark"
+  useThemeBg="{{true}}"
+  pageName="隐私政策"
+  useThemeBg="{{false}}"
+  bgColor="none">
+  </page-container>
+
 </view>

@@ -9,7 +9,35 @@ Component({
   behaviors: [],
 
   properties: {
+    useThemeBg: {
+      type: Boolean,
+      value: true
+    },
     pageName:String,
+    showNav: {
+      type: Boolean,
+      value: true
+    },
+    bgColor: {
+      type: String,
+      value: 'linear-gradient(270deg, #FF9846 0%, #FF3232 100%)'
+    },
+    iconColor: {
+      type: String,
+      value: ''
+    },
+    titleColor: {
+      type: String,
+      value: ''
+    },
+    theme: {
+      type: String,
+      value: 'light' // dark, light
+    },
+    backIcon: {
+      type: String,
+      value: ''
+    }
   },
   data: {
     navHeight: App.globalData.navHeight, //

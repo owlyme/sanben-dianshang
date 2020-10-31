@@ -108,3 +108,49 @@ export const boundingClientRect = async nodeId => {
   });
 
 };
+
+export const showActionSheet = ({
+  itemList = [],
+  itemColor = '#000000',
+  formart = f => f
+}) => {
+  return new Promise((resolve) => {
+    let list = itemList.map(i => formart(i));
+    wx.showActionSheet({
+      itemList: list,
+      itemColor,
+      success: (res) => {
+        console.log(res.tapIndex);
+        let selectedItem = itemList[res.tapIndex];
+        resolve(selectedItem, res.tapIndex);
+      },
+      fail (res) {
+        Toast.show(res.errMsg);
+      }
+    });
+  });
+};
+
+
+export const chooseImage = (props) => {
+  let defaultPorps = {
+    count: 1,
+    sizeType: ['original', 'compressed'],
+    sourceType: ['album', 'camera'],
+  };
+  let {count, sizeType, sourceType} = props ? {...defaultPorps, ...props} : defaultPorps;
+
+  return new Promise((resolve) => {
+    wx.chooseImage({
+      count,
+      sizeType,
+      sourceType,
+      success (res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths;
+        let pathes = count === 1 ? tempFilePaths[0] : tempFilePaths;
+        resolve(pathes);
+      }
+    });
+  });
+};

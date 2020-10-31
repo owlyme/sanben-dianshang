@@ -1,4 +1,11 @@
 <view class="xxx-page">
   <!-- content -->
-  服务协议
+    <page-container
+  theme="dark"
+  useThemeBg="{{true}}"
+  pageName="服务协议"
+  useThemeBg="{{false}}"
+  bgColor="none">
+  </page-container>
+
 </view>

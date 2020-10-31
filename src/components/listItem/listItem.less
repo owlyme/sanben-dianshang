@@ -1,21 +1,31 @@
 .list-item-components{
-  height: 44px;
-  line-height: 44px;
+  padding: 11px 0;
+  min-height: 22px;
+  line-height: 1px;
   .item-label {
     width: 68px;
+    font-size: 14px;
   }
   .item-container{
     flex: 1;
-    border-bottom: 1px solid #F4F5F6;
-    box-shadow: 0px 1px 0px 0px #F4F5F6;
+
     padding-right: 8px;
     .item-content {
-      font-size: 14px;
+      flex: 1;
+      font-size: 12px;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
-      color: #333333;
+      color: #999999;
+      line-height: 18px;
+
+      &.text-right {
+        text-align: right;
+      }
     }
   }
 
-
+  &.border-bottom , .border-bottom {
+    border-bottom: 1px solid #F4F5F6;
+    box-shadow: 0px 1px 0px 0px #F4F5F6;
+  }
 }
