@@ -1,5 +1,6 @@
 // components/navbar/index.js
 import { Router } from '../../utils/sysApis';
+import ENV from '../../env';
 
 const App = getApp();
 
@@ -35,7 +36,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    showComponentList: ENV.env === 'development'
   },
   lifetimes: {
     attached: function () {
@@ -58,10 +59,13 @@ Component({
     },
     //回主页
     _toIndex: function () {
-      Router.switchTab('pages/index/index');
+      Router.switchTab('/pages/index/index');
       // wx.switchTab({
       //   url: '/pages/tabBar/index/index'
       // });
     },
+    toComponentList() {
+      Router.push('/pages/componentList/componentList');
+    }
   }
 });

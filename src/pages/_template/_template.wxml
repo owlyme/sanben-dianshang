@@ -1,3 +1,6 @@
 <view class="xxx-page">
   <!-- content -->
+  <page-container pageName="页面名">
+    content
+  </page-container>
 </view>

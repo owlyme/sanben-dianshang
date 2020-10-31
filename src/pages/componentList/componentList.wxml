@@ -1,6 +1,6 @@
 <view class="component-list-page">
   <!-- content -->
-  <page-container pageName="navbar">
+  <page-container pageName="component-list-page">
 
   <card>
     <view class="card-name">组件名： navbar</view>

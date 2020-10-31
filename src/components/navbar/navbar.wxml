@@ -19,8 +19,11 @@
   </view> -->
   <view class="navbar-action-wrap nav-bar-back"
   style='top:{{navTop}}px;'
-  bind:click="_navBack">
-    <image class="nav-bar-back-img" src="/images/left.png" />
+  >
+    <image bind:tap="_navBack" class="nav-bar-back-img" src="/images/left.png" />
+    <block wx:if="{{showComponentList}}">
+      <view bind:tap="toComponentList">com</view>
+    </block>
   </view>
   <view class='navbar-title' style='top:{{navTop}}px; color:{{titleColor}}'>
     {{pageName}}
