@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "组件展示页",
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar",
+    "page-container": "../../components/page-container/page-container",
+    "good-card-sale": "../../components/good-card-sale/good-card-sale",
+    "good-list": "../../components/good-list/good-list",
+    "part-title" : "../../components/partTitle/partTitle",
+    "text-link" : "../../components/textLink/textLink",
+    "money-text" : "../../components/money-text/money-text",
+    "card" : "../../components/card/card",
+    "list" : "../../components/list/list",
+    "list-item" : "../../components/listItem/listItem",
+    "code-number" : "../../components/codeNumber/codeNumber"
+  }
+}

@@ -6,3 +6,30 @@ export const getInputValue = event => event.detail.value;
 export const getNodeValue = (dataName) => event => ({
   [event.currentTarget.dataset[dataName]]: getInputValue(event)
 });
+// 防抖
+export const debounce = (fn, wait) => {
+  let timer = null;
+  return (...arg) => {
+    clearTimeout(timer);
+    setTimeout(() => {
+      fn(...arg);
+    }, wait);
+  };
+};
+// 截流
+export const throttle = (fn, delay) => {
+  let timer = null;
+  let prevTime = Date.now();
+  return (...arg) => {
+    let currentTime = Date.now();
+    let leftTime = delay - (currentTime - prevTime);
+    clearTimeout(timer);
+    if (leftTime <= 0) {
+      fn(...arg);
+      prevTime = currentTime;
+    }
+    timer = setTimeout(() => {
+      fn(...arg);
+    }, leftTime);
+  };
+};

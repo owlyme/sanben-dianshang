@@ -63,9 +63,48 @@ export const setNavBarSize = (cb = f => f) => {
         navTop,
         windowHeight: res.windowHeight,
       });
+
+
     },
     fail(err) {
       console.log(err);
     }
   });
+};
+
+export const boundingClientRect = async nodeId => {
+  return new Promise((resolve) => {
+    let query = wx.createSelectorQuery();
+    query.select(nodeId).boundingClientRect();
+    query.selectViewport().scrollOffset();
+    query.exec(function (res) {
+      const {
+        bottom,
+        height,
+        left,
+        right,
+        top,
+        width,
+      } = res[0];
+      const {
+        scrollHeight,
+        scrollLeft,
+        scrollTop,
+        scrollWidth
+      } = res[1];// 显示区域的竖直滚动位置
+      resolve({
+        target_bottom: bottom,
+        target_height: height,
+        target_left: left,
+        target_right: right,
+        target_top: top,
+        target_width: width,
+        viewport_scrollHeight: scrollHeight,
+        viewport_scrollLeft: scrollLeft,
+        viewport_scrollTop: scrollTop,
+        viewport_scrollWidth: scrollWidth,
+      });
+    });
+  });
+
 };

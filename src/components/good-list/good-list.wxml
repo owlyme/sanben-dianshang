@@ -1,0 +1,24 @@
+
+  <view class="flex-b">
+    <view >
+       <block wx:for="{{oddIndexOfgoodList}}">
+          <good-card-sale
+            goodInfo="{{item}}"
+            wx:index="{{index}}"
+            goodNameellipsisOne="{{!!index}}"
+            data-good="{{item}}"
+            bind:tap="onClick"
+            />
+           </block>
+    </view>
+     <view >
+        <block wx:for="{{evenIndexOfgoodList}}">
+          <good-card-sale
+            goodInfo="{{item}}"
+            wx:index="{{index}}"
+            data-good="{{item}}"
+            bind:tap="onClick"
+            />
+           </block>
+    </view>
+  </view>

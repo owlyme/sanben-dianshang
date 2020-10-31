@@ -45,9 +45,25 @@
         <part-title title="热门商品推荐" />
       </view>
 
-      <view>
-        <good-card-sale />
-      </view>
+      <!-- bindscrolltoupper="upper"
+      bindscrolltolower="lower"
+      bindscroll="scroll"
+      scroll-into-view="{{toView}}"
+      scroll-top="{{scrollTop}}"-->
+      <scroll-view
+      id="scroll-view"
+      scroll-y="true"
+      style="height: {{scrollViewHeight}}px;"
+      bindscrolltolower="scrollToLower"
+      bindscrolltoupper="scrollToUpper"
+      >
+        <view class="sign-good-list">
+          <good-list
+          goodList="{{goodList}}"
+          bind:onGoodClick="viewGood"
+           />
+        </view>
+      </scroll-view>
     </view>
   </page-container>
 </view>

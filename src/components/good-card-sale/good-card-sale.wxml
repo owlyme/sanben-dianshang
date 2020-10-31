@@ -8,10 +8,13 @@
       wx:if="{{goodInfo.active}}">
       <view class="good-active">{{goodInfo.active}}</view>
     </view>
-    <view class="good-name ellipsisTwo">{{goodInfo.name}}</view>
-    <view class="good-price">{{goodInfo.price}}</view>
+    <view class="good-name {{ goodNameellipsisOne ? 'ellipsisOne' : 'ellipsisTwo' }}">{{goodInfo.name}}</view>
+    <view class="good-price">
+      <money-text number="{{goodInfo.price}}"/>
+    </view>
     <view class="good-sale-num">月销{{goodInfo.saledNumber}}件</view>
-    <view class="good-feature-container flex">
+    <view class="good-feature-container flex"
+    wx:if="{{goodInfo.tags.length}}">
       <view class="good-feature"
       wx:for="{{goodInfo.tags}}"
       wx:index="{{index}}">

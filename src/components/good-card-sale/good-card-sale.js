@@ -18,6 +18,10 @@ Component({
         active: '双十一',
         tags: ['hao', 'bucuo']
       }
+    },
+    goodNameellipsisOne: {
+      type: Boolean,
+      value: true
     }
   },
   data: {},

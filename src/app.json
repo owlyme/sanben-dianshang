@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/componentList/componentList",
     "pages/signIn/signIn",
     "pages/login/login",
     "pages/aboutUs/aboutUs",
@@ -26,6 +27,7 @@
     "navbar": "/components/navbar/navbar",
     "page-container": "/components/page-container/page-container",
     "good-card-sale": "/components/good-card-sale/good-card-sale",
+    "good-list": "/components/good-list/good-list",
     "part-title" : "/components/partTitle/partTitle",
     "text-link" : "/components/textLink/textLink",
     "money-text" : "/components/money-text/money-text",
