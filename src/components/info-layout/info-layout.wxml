@@ -2,7 +2,7 @@
   <view class="info-image">
     <slot name="image"></slot>
   </view>
-  <view style="flex: 1">
+  <view style="flex: 1" class="flex-col flex-center">
     <view >
       <slot name="title"></slot>
     </view>

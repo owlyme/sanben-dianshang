@@ -1,21 +1,21 @@
-<view class="shop-card-components">
-  <info-layout>
-    <image
+<view class="shop-card-components flex">
+    <view class="info-image">
+     <image
       class="shop-logo"
       slot="image"
       src="{{src}}" />
-      <!-- https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg -->
+  </view>
+  <view style="flex: 1" class="flex-col flex-center">
     <view class="shop-name ellipsisOne flex-middle"
       slot="title">
       {{title}}
       <image src="/images/right.png" />
     </view>
-
     <view
       class="shop-address flex-middle"
       slot="mark">
       <image src="/images/address.png" />
       {{text}}
     </view>
-  </info-layout>
+  </view>
 </view>

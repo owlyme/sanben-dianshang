@@ -46,7 +46,8 @@
     "order-status-text": "/components/order-status-text/order-status-text",
     "info-layout": "/components/info-layout/info-layout",
     "shop-card": "/components/shop-card/shop-card",
-    "good-card-info": "/components/good-card-info/good-card-info"
+    "good-card-info": "/components/good-card-info/good-card-info",
+    "button-text": "/components/button-text/button-text"
   },
   "debug": false
 }

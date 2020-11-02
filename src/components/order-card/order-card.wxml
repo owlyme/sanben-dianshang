@@ -1,7 +1,7 @@
 <view class="order-good-components">
   <card>
     <view class="order-status">
-      <order-status-text  />
+      <order-status-text>{{statusText}}</order-status-text>
     </view>
 
     <view >
@@ -12,40 +12,123 @@
     </view>
 
     <view class="good-info">
+      <!-- 多商品 -->
       <block wx:if="{{goodInfo.goodList.length > 1}}">
          <scroll-view
           scroll-x="true"
-          style="width: 100%">
-          <view
-          class="good-image"
-          wx:for="{{goodInfo.goodList}}"
-          wx:index="{{index}}"
+          style="width: 100%"
           >
-            <image src="{{item.pic}}" />
+          <view class="flex">
+            <view
+            class="good-image"
+            wx:for="{{goodInfo.goodList}}"
+            wx:index="{{index}}"
+            >
+              <image src="{{item.pic}}" />
+            </view>
           </view>
         </scroll-view>
       </block>
-
+      <!-- 单商品 -->
       <block wx:elif="{{goodInfo.goodList.length === 1}}">
         <good-card-info
-         src="{{goodInfo.goodList[0].pic}}"
-        title="{{goodInfo.ngoodList[0].ame}}"
-        text="{{goodInfo.goodList[0].remark}}"/>
+          src="{{goodInfo.goodList[0].pic}}"
+          title="{{goodInfo.goodList[0].name}}"
+          text="{{goodInfo.goodList[0].remark}}"
+          />
       </block>
     </view>
 
-    <view class="good-price flex-b">
-      <view class="buy-number">{{goodInfo.totalNumber}}</view>
-      <money-text number="{{goodInfo.price}}" />
+    <view class="good-price flex-b flex-middle">
+      <view class="buy-number">共{{goodInfo.totalNumber}}件商品</view>
+      <view class="flex">
+        <text class="price-text">实付款：</text><money-text number="{{goodInfo.price}}" />
+      </view>
     </view>
 
     <view class="good-order-actions flex-b flex-middle">
       <block >
-        <image class="more-order" src="/image/more-order.png" />
+        <view >
+          <image class="more-order"
+           src="/images/more-order.png"
+            bind:tap="viewMore"
+            />
+        </view>
       </block>
-      <view >
-        <block>
+      <view class="flex btn-actions">
+        <!-- 待付款 -->
+        <block wx:if="{{goodInfo.status === 1}}">
+          <view class="btn-tem">
+            <button-text bind:tap="putInCart">加入购物车</button-text>
+          </view>
+          <view class="btn-tem">
+            <button-text bind:tap="modifyAddress">修改地址</button-text>
+          </view>
+          <view class="btn-tem">
+            <button-text type="warn" bind:tap="toPay">付款</button-text>
+          </view>
         </block>
+
+        <!-- 待发货 -->
+        <block  wx:elif="{{goodInfo.status === 2}}">
+          <view class="btn-tem">
+            <button-text type="warn">待发货</button-text>
+          </view>
+        </block>
+
+        <!-- 待收货 -->
+        <block wx:elif="{{goodInfo.status === 3}}">
+          <view class="btn-tem">
+            <button-text bind:tap="putInCart">加入购物车</button-text>
+          </view>
+          <view class="btn-tem">
+            <button-text>查看物流</button-text>
+          </view>
+          <view class="btn-tem">
+            <button-text type="warn">待发货</button-text>
+          </view>
+        </block>
+        
+        <!-- 待评价 -->
+        <block wx:elif="{{goodInfo.status === 4}}">
+          <view class="btn-tem">
+            <button-text bind:tap="putInCart">加入购物车</button-text>
+          </view>
+          <view class="btn-tem">
+            <button-text>查看物流</button-text>
+          </view>
+          <view class="btn-tem">
+            <button-text type="warn" bind:tap="makeSure">确认收货</button-text>
+          </view>
+        </block>
+
+        <!-- 交易成功 -->
+        <block wx:elif="{{goodInfo.status === 5}}">
+          <view class="btn-tem">
+            <button-text bind:tap="putInCart">加入购物车</button-text>
+          </view>
+        </block>
+
+        <!-- 已取消 -->
+        <block wx:elif="{{goodInfo.status === 6}}">
+          <view class="btn-tem">
+            <button-text bind:tap="deleteOrder">删除订单</button-text>
+          </view>
+          <view class="btn-tem">
+            <button-text bind:tap="putInCart">加入购物车</button-text>
+          </view>
+        </block>
+
+        <!-- 交易关闭 -->
+        <block wx:elif="{{goodInfo.status === 0}}">
+          <view class="btn-tem">
+            <button-text bind:tap="deleteOrder">删除订单</button-text>
+          </view>
+          <view class="btn-tem">
+            <button-text bind:tap="putInCart">加入购物车</button-text>
+          </view>
+        </block>
+        
       </view>
 
     </view>

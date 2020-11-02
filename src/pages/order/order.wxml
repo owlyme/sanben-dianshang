@@ -7,11 +7,41 @@
     useThemeBg="{{true}}"
     >
     <view class="order-page">
-      <search-input />
-      <tab-bar> </tab-bar>
-
-      <view>
-        <order-card />
+      <view class="search-b">
+        <search-input
+          placeholder="搜索我的订单"
+          bind:onChange="onKeyWordChange" />
+      </view>
+      <view class="tabs-b">
+        <tab-bar 
+        tabs="{{orderType}}"
+        bind:onChange="onSeleteType" />
+      </view>
+    
+      <view class="order-card-b">
+        <scroll-view
+        id="scroll-view"
+        scroll-y="true"
+        style="height: {{scrollViewHeight}}px;"
+        bindscrolltolower="scrollToLower"
+        bindscrolltoupper="scrollToUpper"
+        >
+          <view 
+            class="order-card-item"
+            wx:for="{{orderList}}"
+            wx:key="{{index}}"
+            >
+            <order-card 
+            data-good="{{item}}"
+            bind:viewMore="viewMore"
+            bind:putInCart="putInCart"
+            bind:modifyAddress="modifyAddress"
+            bind:toPay="toPay"
+            bind:makeSure="makeSure"
+            bind:deleteOrder="deleteOrder"
+            goodInfo="{{item}}"/>
+          </view>
+        </scroll-view>
       </view>
     </view>
 

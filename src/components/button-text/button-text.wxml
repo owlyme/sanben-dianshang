@@ -1,0 +1,3 @@
+<view class="button-text-components {{type}}">
+  <slot></slot>
+</view>

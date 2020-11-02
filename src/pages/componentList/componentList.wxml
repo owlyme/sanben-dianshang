@@ -61,6 +61,13 @@
     <search-input />
 </card>
 
+<card>
+    <view class="card-name">组件名：button-text</view>
+    <button-text> default </button-text> 
+    <button-text type="warn"> warn </button-text>
+</card>
+
+
 
 
 </page-container>
