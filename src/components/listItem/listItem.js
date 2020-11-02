@@ -15,9 +15,9 @@ Component({
       type: Boolean,
       value: false
     },
-    contentAlign: {
+    textAlign: {
       type: String,
-      value: 'left' // left right
+      value: 'right' // left right
     }
   },
   data: {},

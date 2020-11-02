@@ -1,9 +1,83 @@
-<view class="xxx-page">
+<view class="help-page">
    <page-container
   theme="dark"
   useThemeBg="{{true}}"
   pageName="帮助中心"
   useThemeBg="{{false}}"
   bgColor="none">
+  <view class="search-b">
+    <search-input
+      bind:onChange='onKeywordChange' />
+    <!-- 下拉选择 -->
+    <view class="drop-down"
+        wx:if="{{keywords.length}}"
+    >
+      <list>
+        <list-item
+          textAlign="left"
+          wx:for="{{helpItemList}}"
+          wx:index="{{item}}"
+          data-helpitem="{{item}}"
+          bind:onClick="onHelpItemClick"
+          >
+          <view slot="content">
+          {{item}}
+          </view>
+        </list-item>
+      </list>
+     </view>
+  </view>
+
+  <view class="view-b">
+    <card>
+      <view class="flex-b help-banner">
+        <view class="help-banner-l a">
+          <view class="title">常见问题</view>
+          <view class="text">常见问题汇总</view>
+        </view>
+        <view class="help-banner-r">
+          <view class="help-banner-r-top b">
+            <view class="title">常见问题</view>
+            <view class="text">活动方案解读</view>
+          </view>
+          <view class="help-banner-r-b flex-b">
+            <view class="help-banner-r-b-left c">
+              <view class="title small">会员制度</view>
+            </view>
+            <view class="help-banner-r-b-right d">
+              <view class="title small">服务政策</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </card>
+  </view>
+
+  <view class="view-b">
+    <list>
+      <view class="help-title flex-middle">
+        <view style="padding-left: 1px">
+          <view class="left-border"></view>
+        </view>
+
+        <text>帮助中心</text>
+      </view>
+      <list-item
+        wx:for="{{helpList}}"
+        showlabelBorder
+        label="{{item}}"
+        data-index="{{index}}"
+        bind:onClick="onHelp">
+          <view slot="icon">
+            <image class="item-icon" src="/images/right.png" />
+          </view>
+      </list-item>
+    </list>
+  </view>
+
+  <view class="server-btn">
+    <service-button />
+  </view>
+
   </page-container>
 </view>

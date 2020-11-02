@@ -56,6 +56,13 @@
     </code-number>
 </card>
 
+<card>
+    <view class="card-name">组件名：search-input</view>
+    <search-input />
+</card>
+
+
+
 </page-container>
 
 

@@ -1,0 +1,15 @@
+<view class="xxx-page">
+  <!-- content -->
+  <page-container
+    pageName="客服中心"
+    showNav="{{true}}"
+    theme="dark"
+    bgColor="none"
+    iconColor="none"
+    useThemeBg="{{false}}"
+    >
+
+
+    <view >content</view>
+  </page-container>
+</view>

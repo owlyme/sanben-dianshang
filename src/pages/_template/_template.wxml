@@ -1,15 +1,12 @@
-<view class="xxx-page">
-  <!-- content -->
-  <page-container
-    pageName="页面名"
+<page-container
+    pageName="{{pageName}}"
     showNav="{{true}}"
     bgColor="none"
     iconColor="none"
-    titleColor="#44444"
-    useThemeBg="{{true}}"
+    theme="dark"
+    useThemeBg="{{false}}"
     >
-
-
-    <view >content</view>
+    <view class="xxx-page">
+      new page
+    </view>
   </page-container>
-</view>

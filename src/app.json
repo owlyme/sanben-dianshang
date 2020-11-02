@@ -1,12 +1,15 @@
 {
   "pages": [
+    "pages/help/help",
+    "pages/helpTypeList/helpTypeList",
+    "pages/helpTypeDetail/helpTypeDetail",
     "pages/personalInfo/personalInfo",
     "pages/signIn/signIn",
     "pages/componentList/componentList",
     "pages/login/login",
     "pages/aboutUs/aboutUs",
     "pages/index/index",
-    "pages/help/help",
+    "pages/service/service",
     "pages/my/my",
     "pages/privacyPolicy/privacyPolicy",
     "pages/serviceAgreement/serviceAgreement"
@@ -34,7 +37,9 @@
     "money-text" : "/components/money-text/money-text",
     "card" : "/components/card/card",
     "list" : "/components/list/list",
-    "list-item" : "/components/listItem/listItem"
+    "list-item" : "/components/listItem/listItem",
+    "search-input" : "/components/search-input/search-input",
+    "service-button": "/components/service-button/service-button"
   },
   "debug": false
 }

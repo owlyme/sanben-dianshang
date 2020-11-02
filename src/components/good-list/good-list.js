@@ -1,6 +1,6 @@
-import { getNodeData } from '../../utils/commom';
+import { getDatasetValue } from '../../utils/commom';
 
-const getGoodData = getNodeData('good');
+const getGoodData = getDatasetValue('good');
 
 const splitArray = (arr= []) => {
   let evenArr = [];

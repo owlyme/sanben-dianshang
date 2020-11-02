@@ -1,0 +1,19 @@
+<view class="search-input-components">
+
+  <!-- content -->
+  <view class="user-action-part flex-middle flex-b" >
+  <input
+    value="{{keywords}}"
+    data-keywords="keywords"
+    placeholder="{{placeholder}}"
+    bindinput="onInputValueChange"
+    />
+
+    <view class="clear-keyword"
+      wx:if="{{keywords.length}}"
+      bind:tap="clear">
+      <image src="/images/close.png" alt="" />
+    </view>
+  </view>
+
+</view>

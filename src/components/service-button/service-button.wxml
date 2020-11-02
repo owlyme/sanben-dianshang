@@ -1,0 +1,6 @@
+<view class="service-components {{horizontal ? 'flex flex-c' : 'flex-col flex-middle'}}"
+  bind:tap="toServicePage">
+  <!-- content -->
+  <image src="./images/service.png" />
+  <text>联系客服</text>
+</view>

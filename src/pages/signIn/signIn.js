@@ -1,10 +1,10 @@
-import { getNodeData, debounce } from '../../utils/commom';
+import { getDatasetValue, debounce } from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 import { sign, getSign } from '../../api/sign';
 // 全局app实例
 const App = getApp();
 // console.log(app);
-const getSignData = getNodeData('sign');
+const getSignData = getDatasetValue('sign');
 
 const weekDayListTemp = [
   {

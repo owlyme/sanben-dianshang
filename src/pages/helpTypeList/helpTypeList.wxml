@@ -1,0 +1,28 @@
+<view class="helpTypeList-page">
+  <!-- content -->
+  <page-container
+    pageName="{{pageName}}"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+      <list>
+          <list-item
+            wx:for="{{helpTypeList}}"
+            showlabelBorder
+            label="{{item}}"
+            data-index="{{index}}"
+            bind:onClick="onHelp">
+              <view slot="icon">
+                <image class="item-icon" src="/images/right.png" />
+              </view>
+          </list-item>
+        </list>
+
+        <view class="server-btn">
+    <service-button />
+  </view>
+  </page-container>
+</view>

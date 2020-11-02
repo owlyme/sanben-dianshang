@@ -1,0 +1,25 @@
+<page-container
+    pageName="{{pageName}}"
+    showNav="{{true}}"
+    bgColor="#fff"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+    <view class="helpTypeDetail-page">
+      <view class="detail-title">
+        {{detailTitle}}
+      </view>
+
+      <view
+        class="detail-list"
+        wx:for="{{detailList}}"
+        >
+            {{detailList}}
+      </view>
+
+      <view class="server-btn">
+        <service-button />
+      </view>
+    </view>
+  </page-container>

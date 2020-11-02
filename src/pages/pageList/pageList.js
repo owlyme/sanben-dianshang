@@ -1,9 +1,9 @@
 // 全局app实例
 import { Router } from '../../utils/sysApis';
-import { getNodeData } from '../../utils/commom';
+import { getDatasetValue } from '../../utils/commom';
 
 
-const getPageurl = getNodeData('url');
+const getPageurl = getDatasetValue('url');
 
 Page({
   data: {
