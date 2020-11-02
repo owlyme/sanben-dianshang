@@ -1,0 +1,20 @@
+<page-container
+    pageName="我的订单"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{true}}"
+    >
+    <view class="order-page">
+      <search-input />
+      <tab-bar> </tab-bar>
+
+      <view>
+        <order-card />
+      </view>
+    </view>
+
+
+
+  </page-container>

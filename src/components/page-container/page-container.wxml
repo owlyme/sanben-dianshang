@@ -1,4 +1,5 @@
-<view class="page-container-component flex-col {{useThemeBg ? ' page-bg-image ' : ''}}">
+<view class="page-container-component flex-col {{useThemeBg ? ' page-bg-image ' : ''}}"
+  style="">
   <view style="position: fixed;width: 100%;z-index: 1;">
     <navbar
     page-name="{{pageName}}"
@@ -16,5 +17,4 @@
   </view>
 
   <!-- content -->
-
 </view>

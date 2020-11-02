@@ -1,5 +1,7 @@
-import { getInputValue } from '../../utils/commom';
+import { getDatasetValue } from '../../utils/commom';
 
+const getTabName = getDatasetValue('name');
+const getTabIndex = getDatasetValue('index');
 
 Component({
   options: {
@@ -10,20 +12,29 @@ Component({
   behaviors: [],
 
   properties: {
-    placeholder: {
-      type: String,
-      value: '搜索关键词'
+    tabs: {
+      type: Array,
+      value: [
+        'tab 1',
+        'tab 2',
+        'tab 3',
+        'tab 4',
+      ]
+    },
+    active: {
+      type: [String, Number],
+      value: ''
     }
   },
-  data: {
-    keywords: '',
-
-  },
+  data: {},
 
   // 生命周期函数
   lifetimes: {
     attached: function() {
       // 在组件实例进入页面节点树时执行
+      this.setData({
+        active: this.data.tabs[0]
+      });
     },
     detached: function() {
       // 在组件实例被从页面节点树移除时执行
@@ -35,24 +46,16 @@ Component({
   detached() {},
 
   methods: {
-    onInputValueChange(e) {
-      let value = getInputValue(e);
-
+    onClick(e) {
+      let name = getTabName(e);
+      let index = getTabIndex(e);
       this.setData({
-        keywords: value
+        active: name
       });
-      this.valueChange(value);
-    },
-    clear() {
-      this.setData({
-        keywords: ''
-      });
-      this.valueChange('');
-    },
-    valueChange(data) {
-      console.log('keyword', data);
-      this.triggerEvent('onChange', data);
+      console.log(name, index);
+      this.triggerEvent('onChange', {name, index});
     }
+    // bind:change="onChange"
   }
 
 });

@@ -1,6 +1,3 @@
-import { getInputValue } from '../../utils/commom';
-
-
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -10,15 +7,11 @@ Component({
   behaviors: [],
 
   properties: {
-    placeholder: {
-      type: String,
-      value: '搜索关键词'
-    }
+    src: String,
+    title: String,
+    text: String
   },
-  data: {
-    keywords: '',
-
-  },
+  data: {},
 
   // 生命周期函数
   lifetimes: {
@@ -34,25 +27,6 @@ Component({
   moved() {},
   detached() {},
 
-  methods: {
-    onInputValueChange(e) {
-      let value = getInputValue(e);
-
-      this.setData({
-        keywords: value
-      });
-      this.valueChange(value);
-    },
-    clear() {
-      this.setData({
-        keywords: ''
-      });
-      this.valueChange('');
-    },
-    valueChange(data) {
-      console.log('keyword', data);
-      this.triggerEvent('onChange', data);
-    }
-  }
+  methods: {}
 
 });

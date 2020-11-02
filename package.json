@@ -25,6 +25,7 @@
     "yargs": "^11.0.0"
   },
   "dependencies": {
+    "@vant/weapp": "^1.5.2",
     "gulp-postcss": "^9.0.0",
     "postcss-px-to-viewport": "^1.1.1",
     "postcss-px2rpx": "^0.0.4"

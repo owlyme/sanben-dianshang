@@ -1,0 +1,13 @@
+<view class="info-layout-components flex">
+  <view class="info-image">
+    <slot name="image"></slot>
+  </view>
+  <view style="flex: 1">
+    <view >
+      <slot name="title"></slot>
+    </view>
+    <view >
+      <slot name="mark"></slot>
+    </view>
+  </view>
+</view>

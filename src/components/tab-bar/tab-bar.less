@@ -1,0 +1,38 @@
+.tab-components{
+  .tab-item {
+    .tab-name {
+      height: 22px;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 22px;
+    }
+    .sub-border{
+      visibility: hidden;
+      margin-top: 4px;
+      width: 24px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 1px;
+      &-inner {
+        position: relative;
+        width: 12px;
+        height: 2px;
+        background: #FFFFFF;
+        border-radius: 1px;
+      }
+    }
+    &.active{
+      .tab-name {
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+      }
+      .sub-border{
+        visibility: visible;
+      }
+    }
+  }
+
+}

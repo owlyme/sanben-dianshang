@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/order/order",
     "pages/help/help",
     "pages/helpTypeList/helpTypeList",
     "pages/helpTypeDetail/helpTypeDetail",
@@ -39,7 +40,13 @@
     "list" : "/components/list/list",
     "list-item" : "/components/listItem/listItem",
     "search-input" : "/components/search-input/search-input",
-    "service-button": "/components/service-button/service-button"
+    "service-button": "/components/service-button/service-button",
+    "tab-bar": "/components/tab-bar/tab-bar",
+    "order-card": "/components/order-card/order-card",
+    "order-status-text": "/components/order-status-text/order-status-text",
+    "info-layout": "/components/info-layout/info-layout",
+    "shop-card": "/components/shop-card/shop-card",
+    "good-card-info": "/components/good-card-info/good-card-info"
   },
   "debug": false
 }
