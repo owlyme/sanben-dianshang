@@ -15,6 +15,10 @@ Component({
     showDecimal: {
       type: Boolean,
       value: true
+    },
+    plane: {
+      type: Boolean,
+      value: false
     }
   },
   data: {

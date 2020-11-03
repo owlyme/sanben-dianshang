@@ -6,6 +6,13 @@ export const getInputValue = event => event.detail.value;
 export const getNodeValue = (dataName) => event => ({
   [event.currentTarget.dataset[dataName]]: getInputValue(event)
 });
+// 判断滚动方向
+export const isScrollUp = event => {
+  let {type, detail} = event
+  if (type==='scroll') {
+    return detail.deltaY > 0
+  }
+}
 // 防抖
 export const debounce = (fn, wait) => {
   let timer = null;

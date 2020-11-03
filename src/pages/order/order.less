@@ -2,18 +2,98 @@ page{
   background: #F4F5F6;
   overflow: hidden;
 }
+.page-container-component {
+  min-height: 0px !important;;
+  height: 178px !important;
+}
 .order-page{
-  padding: 16px 17px 16px 15px;
   .search-b {
-    
+    margin-top: 16px;
+    padding: 0 15px 0 17px;
   }
   .tabs-b {
     margin-top: 18px;
+    padding: 0 15px 0 17px;
   }
   .order-card-b {
+    position: relative;
     margin-top: 24px;
-    .order-card-item {
-      margin-bottom: 16px;
+    
+    .image-bg-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      image {
+        width: 100%;
+        height: 116px;
+      }
     }
+    .order-wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+      height: 8px;
+      image {
+        width: 100%;
+        height: 8px;
+        display: block;
+        margin-top: -1px;
+      }
+    }
+
+    .no-order {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      image {
+        display: block;
+        margin: 152px auto 0;
+        width: 187px;
+        height: 160px;
+      }
+      &-title {
+        margin-top: 16px;
+        text-align: center;
+        height: 22px;
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #333333;
+        line-height: 22px;
+        
+      }
+      &-remark {
+        margin-top: 8px;
+        text-align: center;
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #999999;
+        line-height: 20px;
+      }
+    }
+
+    .order-list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      .order-card-item {
+        padding: 0 15px 0 17px;
+        margin-bottom: 16px;
+      }
+    }
+
+
+    
+
   }
 }

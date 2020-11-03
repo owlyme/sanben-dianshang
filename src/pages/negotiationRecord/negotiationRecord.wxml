@@ -1,0 +1,53 @@
+<page-container
+    pageName="协商记录"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+    <view class="negotiationRecord-page">
+      <view class="card-b">
+      <card>
+        <shop-card 
+          src="{{shopLogo}}"
+          title="{{shopName}}"
+          text="{{updateTime}}"
+        />
+      </card>
+      </view>
+
+      <view class="card-b">
+       <card>
+          <view >
+            <shop-card 
+              src="{{customerAvatar}}"
+              title="{{customerNickName}}"
+              text="{{time}}"
+            />
+          </view>
+          <view class="organizer">
+            {{organizer}}
+          </view>
+          <view class="msg-record" >
+            <view class="flex">
+                <view class="label">退款原因</view>
+                <view class="msg">{{reason}}</view>
+            </view>
+            <view class="flex">
+                <view class="label">收货状态</view>
+                <view class="msg">{{orderStatus}}</view>
+            </view>
+            <view class="flex">
+                <view class="label">退款金额</view>
+                <view class="msg"><money-text plane number="{{money}}"/></view>
+            </view>
+            <view class="flex">
+                <view class="label">申请时间</view>
+                <view class="msg">{{applicationTime}}</view>
+            </view>
+          </view>
+       </card>
+      </view>
+    </view>
+  </page-container>

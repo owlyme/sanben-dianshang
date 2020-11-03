@@ -5,6 +5,7 @@
     iconColor="none"
     theme="dark"
     useThemeBg="{{true}}"
+    customerClass="xyu"
     >
     <view class="order-page">
       <view class="search-b">
@@ -18,30 +19,54 @@
         bind:onChange="onSeleteType" />
       </view>
     
-      <view class="order-card-b">
-        <scroll-view
-        id="scroll-view"
-        scroll-y="true"
-        style="height: {{scrollViewHeight}}px;"
-        bindscrolltolower="scrollToLower"
-        bindscrolltoupper="scrollToUpper"
-        >
-          <view 
-            class="order-card-item"
-            wx:for="{{orderList}}"
-            wx:key="{{index}}"
-            >
-            <order-card 
-            data-good="{{item}}"
-            bind:viewMore="viewMore"
-            bind:putInCart="putInCart"
-            bind:modifyAddress="modifyAddress"
-            bind:toPay="toPay"
-            bind:makeSure="makeSure"
-            bind:deleteOrder="deleteOrder"
-            goodInfo="{{item}}"/>
-          </view>
-        </scroll-view>
+      <view class="order-card-b" style="height: {{scrollViewHeight}}px;">
+        <view class="image-bg-2"
+          wx:if="{{pageBg2Visible}}"
+          >
+          <image src="/images/page-bg-2.png" />
+        </view>
+
+        <view class="order-wave"
+          wx:if="{{waveBarVisible}}">
+          <image src="/images/wave.png" />
+        </view>
+
+        <!-- 没有订单 -->
+        <view class="no-order" 
+         style="opacity: {{orderList.length ? 0 : 1}}">
+          <image src="/images/no-order.png" />
+          <view class="no-order-title">您还没有相关订单</view>
+          <view class="no-order-remark">可以去看看有哪些想买的</view>
+        </view>
+        <!--  -->
+        <view class="order-list" 
+         style="opacity: {{orderList.length ? 1 : 0}}"
+          >
+          <scroll-view
+          id="scroll-view"
+          scroll-y="true"
+          style="height: {{scrollViewHeight}}px;"
+          bindscrolltolower="scrollToLower"
+          bindscrolltoupper="scrollToUpper"
+          bindscroll="onScroll"
+          >
+            <view 
+              class="order-card-item"
+              wx:for="{{orderList}}"
+              wx:key="{{index}}"
+              >
+              <order-card 
+              data-good="{{item}}"
+              bind:viewMore="viewMore"
+              bind:putInCart="putInCart"
+              bind:modifyAddress="modifyAddress"
+              bind:toPay="toPay"
+              bind:makeSure="makeSure"
+              bind:deleteOrder="deleteOrder"
+              goodInfo="{{item}}"/>
+            </view>
+          </scroll-view>
+        </view>
       </view>
     </view>
 

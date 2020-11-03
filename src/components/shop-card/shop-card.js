@@ -9,7 +9,15 @@ Component({
   properties: {
     src: String,
     title: String,
-    text: String
+    text: String,
+    showNameIcon: {
+      type: Boolean,
+      value: false
+    },
+    showAddressIcon: {
+      type: Boolean,
+      value: false
+    }
   },
   data: {},
 

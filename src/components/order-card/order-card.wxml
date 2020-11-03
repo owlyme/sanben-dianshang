@@ -6,6 +6,8 @@
 
     <view >
       <shop-card
+      showNameIcon
+      showAddressIcon
       src="{{goodInfo.shopLogo}}"
       title="{{goodInfo.shopName}}"
       text="{{goodInfo.shopAddress}}"/>
@@ -18,7 +20,8 @@
           scroll-x="true"
           style="width: 100%"
           >
-          <view class="flex">
+          <view class="flex"
+            style="width: {{(80 + 12) * goodInfo.goodList.length - 12}}px">
             <view
             class="good-image"
             wx:for="{{goodInfo.goodList}}"

@@ -16,7 +16,8 @@ Page({
       'pages/help/help',
       'pages/my/my',
       'pages/privacyPolicy/privacyPolicy',
-      'pages/serviceAgreement/serviceAgreement'
+      'pages/serviceAgreement/serviceAgreement',
+      "pages/order/order",
     ]
   },
 

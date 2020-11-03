@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/negotiationRecord/negotiationRecord",
     "pages/order/order",
     "pages/help/help",
     "pages/helpTypeList/helpTypeList",

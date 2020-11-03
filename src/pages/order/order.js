@@ -1,10 +1,12 @@
 // 全局app实例
-import { debounce } from '../../utils/commom';
+import { debounce, isScrollUp } from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
 
 Page({
   data: {
+    waveBarVisible: false,
+    pageBg2Visible: true,
     scrollViewHeight: 400,
     orderType: [
       '全部',
@@ -19,6 +21,26 @@ Page({
         shopName: 'name',
         shopAddress: 'address',
         goodList: [
+          {
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'name me name',
+            remark: 'remark'
+          },
+          {
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'name',
+            remark: 'remark'
+          },
+          {
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'name me name',
+            remark: 'remark'
+          },
+          {
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'name',
+            remark: 'remark'
+          },
           {
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
             name: 'name me name',
@@ -55,8 +77,25 @@ Page({
         price: 600,
         status: 1,
         id: 1
+      },
+      {
+        shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        shopName: 'name',
+        shopAddress: 'address',
+        goodList: [
+          {
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'name me name',
+            remark: 'remark'
+          }
+        ],
+        totalNumber: 6,
+        price: 600,
+        status: 1,
+        id: 2
       }
-    ]
+    ],
+    
   },
   onLoad() {
     // Do some initialize when page load.
@@ -85,12 +124,32 @@ Page({
   // 滚动操作
   scrollToUpper() {
     // debounce
-    console.log('sign good scrollToUpper');
+    console.log('order list scrollToUpper');
   },
   scrollToLower() {
     // debounce
-    console.log('sign good scrollToLower');
+    console.log('order list scrollToLower');
   },
+  onScroll(e) {
+    let scrollTop = e.detail.scrollTop
+    if (isScrollUp(e)){
+      console.log('up')
+    } else {
+      console.log('down')
+    }
+
+    if (scrollTop > 10) {
+      this.setData({
+        waveBarVisible: true,
+        pageBg2Visible: false,
+      })
+    } else {
+      this.setData({
+        waveBarVisible: false,
+        pageBg2Visible: true,
+      })
+    }
+  }, 
   // 订单操作
   viewMore(e) {
     console.log(e)
