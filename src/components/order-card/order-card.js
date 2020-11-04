@@ -1,12 +1,4 @@
-const statusTextMap = {
-  1: "待付款",
-  2: "待发货",
-  3: "待收货",
-  4: "待评价",
-  5: "交易成功",
-  6: "已取消",
-  0: "交易关闭",
-}
+import {statusTextMap} from '../../app.const'
 
 Component({
   options: {

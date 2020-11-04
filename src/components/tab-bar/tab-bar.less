@@ -1,38 +1,85 @@
 .tab-components{
-  .tab-item {
-    .tab-name {
-      height: 22px;
-      font-size: 14px;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
-      color: #FFFFFF;
-      line-height: 22px;
-    }
-    .sub-border{
-      visibility: hidden;
-      margin-top: 4px;
-      width: 24px;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 1px;
-      &-inner {
-        position: relative;
-        width: 12px;
-        height: 2px;
-        background: #FFFFFF;
-        border-radius: 1px;
-      }
-    }
-    &.active{
+  .tab-type-1 {
+    .tab-item {
       .tab-name {
-        font-size: 16px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
+        height: 22px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 22px;
       }
       .sub-border{
-        visibility: visible;
+        visibility: hidden;
+        margin-top: 4px;
+        width: 24px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 1px;
+        &-inner {
+          position: relative;
+          width: 12px;
+          height: 2px;
+          background: #FFFFFF;
+          border-radius: 1px;
+        }
+      }
+      &.active{
+        .tab-name {
+          font-size: 16px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+        }
+        .sub-border{
+          visibility: visible;
+        }
       }
     }
   }
+
+  .tab-type-2 {
+    height: 41px;
+    padding-top: 8px;
+    .tab-item {
+      flex: 1;
+      text-align: center;
+      height: 24px;
+      border-left:1px solid #CCCCCC;
+      &:last-child{
+        border-right:1px solid #CCCCCC;
+      }
+      .tab-name {
+        margin-top: -8px;
+        height: 22px;
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 600;
+        color: #333333;
+        line-height: 22px;
+      }
+      .sub-name{
+        height: 17px;
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #999999;
+        line-height: 16px;
+      }
+      &.active{
+        .tab-name {
+          color: #FF3232;
+        }
+        .sub-name{
+          width: 74px;
+          height: 16px;
+          line-height: 16px;
+          color: #ffffff;
+          background: #FF3232;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
 
 }

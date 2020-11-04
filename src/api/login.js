@@ -1,13 +1,19 @@
 import {post, get} from '../utils/request';
 
 export const Path = {
-  login: '/api/login',
-  getcode: '/api/getcode',
-  logout: '/api/logout'
+  login: '/login',
+  getcode: '/getcode',
+  logout: '/logout'
 };
 
+function format(res) {
+  return res
+}
+
 export const userLogin = async (data) => {
-  return post(Path.login, data);
+  return post(Path.login, data).then(res => {
+    return format(res)
+  })
 };
 
 export const getValidateCode = async (data) => {

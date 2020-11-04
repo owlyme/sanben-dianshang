@@ -43,7 +43,13 @@ Page({
         tags: ['hao', 'bucuo']
       }
     ],
-
+    tabsList: [
+      '全部',
+      '待付款',
+      '待发货',
+      '待收货',
+      '待评价'
+    ]
   },
   onLoad() {
     // Do some initialize when page load.

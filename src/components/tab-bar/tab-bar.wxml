@@ -1,8 +1,8 @@
 <view class="tab-components">
-  <view class="flex-a">
+  <view class="flex-a  tab-type-1" wx:if="{{type == 1}}">
     <view
       wx:for="{{tabs}}"
-      wx:key="{{index}}"
+      wx:key="index"
       data-name="{{item}}"
       data-index="{{index}}"
       bind:tap="onClick"
@@ -20,6 +20,22 @@
     </view>
   </view>
 
-
+  <view class="flex-a tab-type-2" wx:else>
+    <view
+      wx:for="{{tabs}}"
+      wx:key="index"
+      data-name="{{item.name}}"
+      data-index="{{index}}"
+      bind:tap="onClick"
+      class="flex-col flex-middle tab-item {{ active == item.name ? 'active' : ''}}"
+      >
+      <view class="tab-name" style="width: {{100 / tabs.length}}%)">
+        {{item.name}}
+      </view>
+      <view class="sub-name" >
+        {{item.sub}}
+      </view>
+    </view>
+  </view>
 
 </view>

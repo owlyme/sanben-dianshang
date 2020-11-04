@@ -5,7 +5,6 @@
     iconColor="none"
     theme="dark"
     useThemeBg="{{true}}"
-    customerClass="xyu"
     >
     <view class="order-page">
       <view class="search-b">
@@ -53,7 +52,7 @@
             <view 
               class="order-card-item"
               wx:for="{{orderList}}"
-              wx:key="{{index}}"
+              wx:key="index"
               >
               <order-card 
               data-good="{{item}}"
@@ -69,7 +68,4 @@
         </view>
       </view>
     </view>
-
-
-
   </page-container>

@@ -1,0 +1,77 @@
+.recommended-products-components{
+    .recommended-products-title {
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 600;
+        color: #333333;
+        line-height: 20px;
+    }
+    .recommended-products-text {
+        height: 17px;
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        line-height: 17px;
+    }
+    .recommended-products-pics {
+        width: 50%;
+        margin-top: 8px;
+        image {
+            height: 72px;
+            width: 72px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            
+        }
+    }
+    .good-products{
+        width: 50%;
+        overflow: hidden;
+        .recommended-products-text{
+            color: #FF5E20;
+        }
+        image + image{
+            margin-left: 12px;
+        }
+    }
+    .price-reduction{
+        width: 50%;
+        overflow: hidden;
+        .recommended-products-text{
+            color: #FFA320;
+        }
+        image + image{
+            margin-left: 12px;
+        }
+    }
+    .new-products{
+        margin-top: 16px;
+        width: 100%;
+        overflow: hidden;
+        .recommended-products-text{
+            color: #2089FF;
+        }
+        image + image{
+            margin-left: 5px;
+        }
+    }   
+    .products-news{
+        width: 100%;
+        margin-top: 12px;
+        image {
+            height: 34px;
+            width: 32px;
+            margin-right: 12px;
+        }
+        .ellipsisTwo{
+            width: 275px;
+            height: 34px;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #333333;
+            line-height: 17px;
+        }
+    }
+}

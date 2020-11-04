@@ -1,0 +1,48 @@
+<view class="recommended-products-components flex flex-wrap">
+  <view class="good-products">
+    <view class="recommended-products-title">发现好货</view>
+    <view class="recommended-products-text">善于发现</view>
+    <view class="recommended-products-pics flex">
+      <image 
+      wx:for="{{goodProducts}}"
+      data-id="{{item.id}}" 
+      data-item="{{item}}"
+      src="{{item.pic}}"
+      wx:key="index"
+      bind:tap="onProductClick" />
+    </view>
+  </view>
+
+  <view class="price-reduction">
+    <view class="recommended-products-title">品牌折扣</view>
+    <view class="recommended-products-text">品牌折扣</view>
+    <view class="recommended-products-pics flex">
+      <image 
+      wx:for="{{priceReduction}}"
+      data-id="{{item.id}}" 
+      data-item="{{item}}"
+      src="{{item.pic}}"
+      wx:key="index"
+      bind:tap="onProductClick" />
+    </view>
+  </view>
+
+  <view class="new-products">
+    <view class="recommended-products-title">新品首发</view>
+    <view class="recommended-products-text">新品好货  即刻首发</view>
+    <view class="recommended-products-pics flex">
+      <image 
+      wx:for="{{newProducts}}"
+      data-id="{{item.id}}" 
+      data-item="{{item}}"
+      src="{{item.pic}}"
+      wx:key="id"
+      bind:tap="onProductClick" />
+    </view>
+  </view>
+
+  <view class="products-news flex">
+    <image src="{{productsNews.pic}}" />
+    <view class="ellipsisTwo">{{productsNews.title}}</view>
+  </view>
+</view>

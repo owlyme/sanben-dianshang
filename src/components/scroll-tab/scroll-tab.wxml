@@ -1,0 +1,22 @@
+<view class="scroll-tab-components">
+    <scroll-view
+      scroll-x="true"
+      style="width: 100%"
+      >
+      <view class="flex" >
+        <view
+          wx:for="{{tabs}}"
+          wx:key="index"
+          data-name="{{item.name}}"
+          data-category="{{item.type}}"
+          bind:tap="onClick"
+          class="flex-col flex-middle tab-item {{ active == item.name ? 'active' : ''}}"
+          >
+            {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+
+    
+
+</view>

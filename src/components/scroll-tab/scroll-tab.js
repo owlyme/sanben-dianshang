@@ -1,7 +1,7 @@
 import { getDatasetValue } from '../../utils/commom';
 
 const getTabName = getDatasetValue('name');
-const getTabIndex = getDatasetValue('index');
+const getTabCategory = getDatasetValue('category');
 
 Component({
   options: {
@@ -15,19 +15,22 @@ Component({
     tabs: {
       type: Array,
       value: [
-        'tab 1',
-        'tab 2',
-        'tab 3',
-        'tab 4',
-      ] // [{ name: '',sub: ''}]
+        { type: '1', name: '2222'},
+        { type: '1', name: '23'},
+        { type: '1', name: '24442'},
+        { type: '1', name: '2266622'},
+        { type: '1', name: '2444222'},
+        { type: '1', name: '2777222'},
+        { type: '1', name: '2288822'},
+        { type: '1', name: '227722'},
+        { type: '1', name: '28888222'},
+        { type: '1', name: '2299989822'},
+        { type: '1', name: '228989822'},
+      ] // [{ type: '', name: ''}]
     },
     active: {
       type: [String, Number],
       value: ''
-    },
-    type: {
-      type: [String, Number],
-      value: 1 // 1 , 2
     },
   },
   data: {},
@@ -38,7 +41,7 @@ Component({
       // 在组件实例进入页面节点树时执行
       let first = this.data.tabs[0]
       this.setData({
-        active: typeof first === 'object' ? first.name : first
+        active:  first.name
       });
     },
     detached: function() {
@@ -53,12 +56,12 @@ Component({
   methods: {
     onClick(e) {
       let name = getTabName(e);
-      let index = getTabIndex(e);
+      let category = getTabCategory(e);
       this.setData({
         active: name
       });
-      console.log(name, index);
-      this.triggerEvent('onChange', {name, index});
+      console.log(name, category);
+      this.triggerEvent('onChange', {name, category});
     }
     // bind:change="onChange"
   }

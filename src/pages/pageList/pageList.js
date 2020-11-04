@@ -18,6 +18,7 @@ Page({
       'pages/privacyPolicy/privacyPolicy',
       'pages/serviceAgreement/serviceAgreement',
       "pages/order/order",
+      "pages/negotiationRecord/negotiationRecord",
     ]
   },
 

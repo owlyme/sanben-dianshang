@@ -1,12 +1,14 @@
 import ENV from '../env';
 
 const {host}=  ENV;
+let baseUrl = '/api-mock/dianshang'
+const composeUrl = (url) => host + baseUrl + url
 
 export const get = (url,data) => {
   return new Promise((resolve,reject) => {
     wx.request({
       method: 'get',
-      url: host + url,
+      url: composeUrl(url),
       data: data,
       header: {'content-type': 'application/json'},
       success: (res) =>{
@@ -25,7 +27,7 @@ export const post = (url,data) => {
   return new Promise((resolve,reject) => {
     wx.request({
       method: 'post',
-      url: host + url,
+      url: composeUrl(url),
       data: data,
       header: {
         'content-type': 'application/json'

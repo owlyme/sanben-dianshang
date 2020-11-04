@@ -1,9 +1,76 @@
-<view class="xxx-page">
-  <page-container
-  theme="dark"
+<page-container
+  theme="light"
   useThemeBg="{{true}}"
-  pageName="商品首页"
-  useThemeBg="{{false}}"
-  bgColor="none">
+  pageName="首页"
+  backgroundFixed='{{false}}'
+>
+    <view class="index-page">
+      <view class="search-b">
+        <search-input
+          placeholder="搜索我的订单"
+          bind:onChange="onKeyWordChange" />
+      </view>
+
+      <!-- 广告板 -->
+      <view class="swiper-b">
+        <swiper 
+          indicator-dots="{{true}}"
+          autoplay="{{true}}"
+          interval="{{interval}}"
+          duration="{{duration}}">
+          <block wx:for="{{bannerList}}" 
+          wx:key="index">
+            <swiper-item>
+              <image class="banner-image" src="{{item}}" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      
+      <!-- 特色项目 -->
+      <view class="feature-b flex-a">
+        <view>正品保障</view>
+        <view>急速发货</view>
+        <view>送货到家</view>
+        <view>厂家直销</view>
+      </view>
+
+      <!-- 活动种类 -->
+      <view class="active-b ">
+        <active-list />
+      </view>
+
+      <!-- 推荐商品 -->
+      <view class="tuijian-good-b">
+        <card>
+        <recommended-products />
+        </card>
+      </view>
+      <!-- 推荐活动 -->
+      <view class="tuijian-active-b">
+        <card>
+        <recommended-active />
+        </card>
+      </view>
+
+      <view class="sticky sticky-b " style="top: {{stickyTop}}px; background:{{stickyInitBackground}}">
+        <tab-bar type="2" tabs="{{goodListTypeListTab}}" bind:onChange="onGoodListTypeChange" />
+        <view class="category-list" wx:if="{{goodListType === 'category'}}">
+          <scroll-tab tabs="{{categoryList}}" bind:onChange="onCategoryChange" />
+        </view>
+      </view>
+    
+      <view class="good-card-b">
+        <view class="good-list" >
+            <view 
+              class="good-card-item"
+              >
+              <good-list
+                goodList="{{goodList}}"
+                bind:onGoodClick="viewGood"
+                />
+            </view>
+        </view>
+      </view>
+    </view>
   </page-container>
-</view>

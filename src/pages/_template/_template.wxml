@@ -1,4 +1,4 @@
-<page-container
+    <view class="xxx-page"><page-container
     pageName="{{pageName}}"
     showNav="{{true}}"
     bgColor="none"
@@ -6,7 +6,9 @@
     theme="dark"
     useThemeBg="{{false}}"
     >
-    <view class="xxx-page">
+
       new page
-    </view>
+
   </page-container>
+
+</view>

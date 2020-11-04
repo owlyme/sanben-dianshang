@@ -1,6 +1,6 @@
 const hostConfig = {
   env: 'development',
-  host: 'http://localhost:3000', // 开发环境地址配置
+  host: 'http://121.196.124.190:8091', // 开发环境地址配置
 };
 
 module.exports = hostConfig;

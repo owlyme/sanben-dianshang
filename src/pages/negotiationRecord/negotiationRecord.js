@@ -1,7 +1,3 @@
-// 全局app实例
-const app = getApp();
-console.log(app);
-
 Page({
   data: {
     shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',

@@ -37,6 +37,10 @@ Component({
     backIcon: {
       type: String,
       value: ''
+    },
+    backgroundFixed: {
+      type: Boolean,
+      value: true
     }
   },
   data: {

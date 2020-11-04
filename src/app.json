@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/negotiationRecord/negotiationRecord",
     "pages/order/order",
     "pages/help/help",
@@ -10,7 +11,6 @@
     "pages/componentList/componentList",
     "pages/login/login",
     "pages/aboutUs/aboutUs",
-    "pages/index/index",
     "pages/service/service",
     "pages/my/my",
     "pages/privacyPolicy/privacyPolicy",
@@ -48,7 +48,11 @@
     "info-layout": "/components/info-layout/info-layout",
     "shop-card": "/components/shop-card/shop-card",
     "good-card-info": "/components/good-card-info/good-card-info",
-    "button-text": "/components/button-text/button-text"
+    "button-text": "/components/button-text/button-text",
+    "active-list": "/components/active-list/active-list",
+    "recommended-products": "/components/recommended-products/recommended-products",
+    "recommended-active": "/components/recommended-active/recommended-active",
+    "scroll-tab": "/components/scroll-tab/scroll-tab"
   },
   "debug": false
 }
