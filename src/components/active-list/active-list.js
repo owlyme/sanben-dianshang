@@ -54,7 +54,7 @@ Component({
       {
         type: '',
         text: '超值拼团',
-        icon: './images/chongzhi.png'
+        icon: './images/pingtuan.png'
       },
       {
         type: '',

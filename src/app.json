@@ -52,7 +52,8 @@
     "active-list": "/components/active-list/active-list",
     "recommended-products": "/components/recommended-products/recommended-products",
     "recommended-active": "/components/recommended-active/recommended-active",
-    "scroll-tab": "/components/scroll-tab/scroll-tab"
+    "scroll-tab": "/components/scroll-tab/scroll-tab",
+    "dead-line": "/components/dead-line/dead-line"
   },
   "debug": false
 }

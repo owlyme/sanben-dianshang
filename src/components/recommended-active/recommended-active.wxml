@@ -1,6 +1,9 @@
 <view class="recommended-active-components">
-  <view class="flex">
+  <view class="flex flex-middle">
     <view class="recommended-active-title">活动推荐</view>
+    <view class="recommended-active-deadline">
+      <dead-line />
+    </view>
   </view>
 
   <view class="recommended-active-pics flex">

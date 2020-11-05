@@ -49,7 +49,7 @@
       <!-- 推荐活动 -->
       <view class="tuijian-active-b">
         <card>
-        <recommended-active />
+          <recommended-active />
         </card>
       </view>
 
