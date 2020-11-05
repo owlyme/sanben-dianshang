@@ -24,4 +24,48 @@
             background: #FF3232;
         }
     }
+
+    .tab-item-type-2 {
+        width: 56px;
+        height: 69px;
+        border-radius: 4px;
+        image{
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin-bottom: 7px;
+        }
+        .name{
+        height: 17px;
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 17px;
+        }
+        &.active{
+            background: rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    .tab-item-type-3 {
+        padding: 0 12px;
+        min-width: 72px;
+        height: 24px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 1px 0px rgba(153, 153, 153, 0.1);
+        border-radius: 12px;
+        line-height: 24px;
+        color: #999999;
+        font-size: 12px;
+        & + .tab-item-type-3 {
+            margin-left: 8px;
+        }
+        
+        &.active{
+            color: #FFFFFF;
+            background: linear-gradient(270deg, #FF9846 0%, #FF3232 100%);
+        }
+    }
+
 }

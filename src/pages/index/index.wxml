@@ -5,9 +5,11 @@
   backgroundFixed='{{false}}'
 >
     <view class="index-page">
-      <view class="search-b">
+      <view class="search-b sticky"
+      style="top: {{stickySearchInputOffsetTop}}px;">
         <search-input
           placeholder="搜索我的订单"
+          type="indexPage"
           bind:onChange="onKeyWordChange" />
       </view>
 
@@ -52,8 +54,12 @@
           <recommended-active />
         </card>
       </view>
-
-      <view class="sticky sticky-b " style="top: {{stickyTop}}px; background:{{stickyInitBackground}}">
+      <!-- 宣传板块 -->
+      <view class="promotional-section-b">
+        <promotional-section />
+      </view>
+      <!-- 吸顶 分类 -->
+      <view class="sticky sticky-b " style="top: {{stickyTabbarOffsetTop}}px; background:{{stickyTabbarBackground}}">
         <tab-bar type="2" tabs="{{goodListTypeListTab}}" bind:onChange="onGoodListTypeChange" />
         <view class="category-list" wx:if="{{goodListType === 'category'}}">
           <scroll-tab tabs="{{categoryList}}" bind:onChange="onCategoryChange" />
@@ -62,15 +68,30 @@
     
       <view class="good-card-b">
         <view class="good-list" >
-            <view 
-              class="good-card-item"
-              >
-              <good-list
-                goodList="{{goodList}}"
-                bind:onGoodClick="viewGood"
-                />
-            </view>
+          <view hidden="{{goodListType === 'rank'}}">
+            <good-list
+              goodList="{{goodList}}"
+              bind:onGoodClick="viewGood"
+            />
+          </view>
+          <view hidden="{{ goodListType === 'category' || goodListType === 'special'}}">
+            <good-rank-list
+              goodList="{{goodList}}"
+              bind:onGoodClick="viewGood"
+              />
+          </view>
         </view>
       </view>
+
+       <image 
+        class="backTop" 
+        bindtap='backTop' 
+        wx:if="{{backTopValue ==true}}"
+        src="/images/backtop.png" />
     </view>
-  </page-container>
+
+    <!-- <mp-tabbar 
+    style="position:fixed;bottom:0;width:100%;left:0;right:0;" 
+    list="{{list}}"
+     bindchange="tabChange"></mp-tabbar> -->
+</page-container>

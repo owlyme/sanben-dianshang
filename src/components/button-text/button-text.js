@@ -9,7 +9,7 @@ Component({
   properties: {
     type: {
       type: String,
-      value: "default" // default , warn
+      value: "default" // default , warn ,ghost
     }
   },
   data: {},

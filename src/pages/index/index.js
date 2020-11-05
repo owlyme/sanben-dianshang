@@ -11,9 +11,12 @@ const goodListTypes = {
 
 Page({
   data: {
-    stickyTop: 60, // sticky的吸顶距离
-    stickyInitTop: 800, // 页面渲染时sticky的距离页顶的距离
-    stickyInitBackground: 'none',
+    stickyBaseOffsetTop: 60, //吸顶距离基础偏移量
+    stickySearchInputOffsetTop: 60, // 搜索栏吸顶距离高度
+    stickyTabbarOffsetTop: 60, // tab-bar吸顶距离高度
+    stickyTabbarInitTop: 800, // 页面渲染时tab-bar的距离页顶的距离
+    stickyTabbarBackground: 'none',
+    backTopValue: false,
     interval: 3000,
     duration: 500,
     scrollViewHeight: 400,
@@ -134,12 +137,31 @@ Page({
       { type: '1', name: '24442'},
       { type: '1', name: '2266622'},
       { type: '1', name: '2444222'},
-    ]
+    ],
+    specalAcitve: {
+      id: 12,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+    },
+    list: [{
+      "text": "对话",
+      "iconPath": "../../images/tabbar_icon_chat_default.png",
+      "selectedIconPath": "../../images/tabbar_icon_chat_active.png",
+      dot: true
+    },
+    {
+      "text": "设置",
+      "iconPath": "../../images/tabbar_icon_setting_default.png",
+      "selectedIconPath": "../../images/tabbar_icon_setting_active.png",
+      badge: 'New'
+    }]
   },
   onLoad() {
     // Do some initialize when page load.
     this.getDom()
-    this.throttleSwitchStickyStyle = throttle(this.switchStickyStyle, 200)
+    this.onPageScrollthrottle = throttle((scrollTop) => {
+      this.switchStickyStyle(scrollTop);
+      this.switchBackTop(scrollTop)
+    }, 200)
   },
   onReady() {
     // Do something when page ready.
@@ -147,18 +169,25 @@ Page({
   },
   async getDom() {
     let navHeight = App.globalData.navHeight
-    let res = await boundingClientRect('.sticky-b');
+    let sticky = await boundingClientRect('.sticky-b');
+    let search = await boundingClientRect('.search-b');
+    
+    let stickyBaseOffsetTop = navHeight
+    let stickySearchInputOffsetTop = stickyBaseOffsetTop
+    let stickyTabbarOffsetTop = stickySearchInputOffsetTop + search.target_height
+    let stickyTabbarInitTop = sticky.target_top
 
-    console.log(res)
     this.setData({
-      stickyTop: navHeight,
-      stickyInitTop: res.target_top
+      stickyBaseOffsetTop,
+      stickySearchInputOffsetTop,
+      stickyTabbarOffsetTop,
+      stickyTabbarInitTop
     });
   },
   switchStickyStyle(pageScrollTop) {
-    let { stickyTop, stickyInitTop} = this.data
+    let { stickyBaseOffsetTop, stickyTabbarInitTop, stickySearchInputOffsetTop} = this.data
     this.setData({
-      stickyInitBackground: pageScrollTop > stickyInitTop - stickyTop ? '#ffffff' : 'none'
+      stickyTabbarBackground: pageScrollTop > stickyTabbarInitTop - stickySearchInputOffsetTop - stickyBaseOffsetTop? '#ffffff' : 'none'
     });
   },
   onShow() {
@@ -181,8 +210,7 @@ Page({
     // return custom share data when user share.
   },
   onPageScroll (e) { 
-    this.switchStickyStyle(e.scrollTop)
-    this.throttleSwitchStickyStyle(e.scrollTop)
+    this.onPageScrollthrottle(e.scrollTop)
   },
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
@@ -200,6 +228,20 @@ Page({
 
   viewGood(e){
     console.log('sign good', e);
+  },
+
+  switchBackTop(pageScrollTop) {
+    let backTopValue = pageScrollTop > 400 ? true : false
+    this.setData({
+      backTopValue: backTopValue
+    })
+  },
+  // 滚动到顶部
+  backTop() {
+    // 控制滚动
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
   },
 
   customData: {}

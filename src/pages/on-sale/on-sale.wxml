@@ -1,0 +1,32 @@
+<view class="on-sale-page">
+  <page-container
+    pageName="品牌特卖"
+    showNav="{{true}}"
+    bgColor="linear-gradient(270deg, #FF9D62 0%, #FF6433 100%)"
+    iconColor="none"
+    theme="light"
+    useThemeBg="{{false}}"
+    >
+      <view class="sticky"
+        style="top: {{stickyOffsetTop}}px;">
+        <view class="scroll-b">
+          <scroll-tab
+           tabs="{{tabsList}}" 
+           type="2"
+           bind:onChange="onTypeChange"
+           />
+        </view>
+  
+        <image class="wave-img" src="/images/wave.png" />
+      </view>
+
+      <view class="good-card-b">
+        <view class="good-list" >
+            <good-list
+              goodList="{{goodList}}"
+              bind:onGoodClick="viewGood"
+            />
+        </view>
+      </view>
+  </page-container>
+</view>

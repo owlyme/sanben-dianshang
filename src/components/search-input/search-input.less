@@ -1,24 +1,89 @@
 .search-input-components{
-  position: relative;
-  height: 32px;
-  line-height: 1;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 1px 0px rgba(153, 153, 153, 0.1);
-  border-radius: 18px;
-
-  .user-action-part{
-    padding: 0 12px;
-    height: 100%;
-    width: 100%;
-    input{
-      flex: 1;
-    }
-    .clear-keyword {
-      image {
-        height: 16px;
-        width: 16px;
+  .search-input-default{
+    position: relative;
+    height: 32px;
+    line-height: 1;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px 0px rgba(153, 153, 153, 0.1);
+    border-radius: 18px;
+  
+    .user-action-part{
+      padding: 0 12px;
+      height: 100%;
+      width: 100%;
+      input{
+        flex: 1;
+      }
+      .clear-keyword {
+        image {
+          height: 16px;
+          width: 16px;
+        }
       }
     }
   }
 
+  .search-bar {
+   
+    .current-position {
+      height: 32px;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 32px;
+    }
+
+    .search-input-index{
+      flex: 1;
+      position: relative;
+      height: 32px;
+      line-height: 1;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 1px 0px rgba(153, 153, 153, 0.1);
+      border-radius: 18px;
+      margin: 0 12px;
+      .user-action-part{
+        padding: 0 12px;
+        height: 100%;
+        width: 100%;
+        .scan-btn{
+          color: #FF3232;
+          margin-right: 20px;
+        }
+        .search-keywords{
+          flex: 1;
+          font-size: 14px;
+          color: #999999;
+        }
+        .search-btn {
+          color: #FF3232;
+        
+        }
+      }
+    }
+
+    .system-message {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0px 0px 1px 0px rgba(153, 153, 153, 0.1);
+      border-radius: 16px;
+      color: #fff;
+      .new-msg-remind{
+        position: absolute;
+        z-index: 1;
+        top: 7px;
+        right: 7px;
+        width: 6px;
+        height: 6px;
+        background: #FF3232;
+        border-radius: 50%;
+      }
+    }
+  }
+  
 }

@@ -1,13 +1,17 @@
 <block>
-  <view class="plane-money-text" wx:if="{{plane}}">
+  <view class="plane-money-text" wx:if="{{plane}}"
+    >
     <!-- content -->
     ¥{{intPart}}.{{decimalParg}}
   </view>
   <view class="moeney-text-components flex" wx:else>
     <!-- content -->
-    <text class="money-icon">¥</text>
-    <text class="money-num-int">{{intPart}}</text>
-    <block wx:if="{{showDecimal}}">
+    <text class="money-icon"
+      style="font-size: {{moneySize * 2}}rpx; color: {{color}}">¥</text>
+    <text class="money-num-int"
+    style="font-size: {{numberSize * 2}}rpx; color: {{color}}">{{intPart}}</text>
+    <block wx:if="{{showDecimal}}" 
+    style="font-size: {{moneySize * 2}}rpx; color: {{color}}">
       <text class="money-icon">.</text>
       <text class="money-num-point">{{decimalParg}}</text>
     </block>

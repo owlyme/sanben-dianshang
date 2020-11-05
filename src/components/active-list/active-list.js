@@ -1,4 +1,6 @@
-import { getDatasetValue } from '../../utils/commom';
+import { getDatasetValue,  } from '../../utils/commom';
+import { Router  } from '../../utils/sysApis';
+
 const getType = getDatasetValue('type')
 Component({
   options: {
@@ -12,12 +14,12 @@ Component({
   data: {
     active: [
       {
-        type: '1',
+        type: 'signIn',
         text: '签到有奖',
         icon: './images/qiandao.png'
       },
       {
-        type: '2',
+        type: 'coupon',
         text: '优惠领券',
         icon: './images/youhuiquan.png'
       },
@@ -83,6 +85,12 @@ Component({
       let type = getType(e)
       console.log(e, type)
       switch(type){
+        case "signIn": 
+          Router.push('/pages/signIn/signIn')
+          break;
+        case "coupon": 
+          Router.push('/pages/coupon/coupon')
+          break;
         default: 
           return   
       }

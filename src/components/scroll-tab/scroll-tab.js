@@ -32,6 +32,10 @@ Component({
       type: [String, Number],
       value: ''
     },
+    type: {
+      type: [String, Number],
+      value: 1
+    },
   },
   data: {},
 

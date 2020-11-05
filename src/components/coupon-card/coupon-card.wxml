@@ -1,0 +1,67 @@
+<view class="coupon-card-components">
+  <view class="coupon-bg">
+    <image src="./images/bg-1.png" />
+  </view>
+
+  <view class="coupon-info">
+    <view class="coupon-detail flex-b">
+      <view class="coupon-detail-left">
+        <view class="flex">
+          <image src="{{info.goodPic}}" />
+
+          <view >
+            <view class="flex-b">
+              <view class="type-text">{{info.typeText}}</view>
+              <view wx:if="{{info.type === 0}}" class="type paltform">平台</view>
+              <view wx:if="{{info.type === 1}}" class="type shop">店铺</view>
+            </view>
+            <view class="remind-text">
+              <view >
+                 仅可用于
+              </view>
+              <view >
+                  {{info.remindText}}
+                </view>
+            </view>
+          </view>
+        </view>
+        <view class="time flex-b">
+          <view>有效期至：{{info.expired}} </view>
+          <view class="showRemark"
+            bind:tap="showRemark"> ^ </view>
+        </view>
+      </view>
+      <view class="coupon-money flex-col flex-middle" >
+        <view>
+           <money-text 
+            moneySize="{{16}}"
+            numberSize="{{25}}"
+            color="#ffffff"
+           number="{{info.couponMoney}}" />
+        </view>
+         <view class="available-money">
+           满{{info.availableMoney}}可用
+        </view>
+        <view 
+        class="btn-status" 
+        >立即领取</view>
+      </view>
+    </view>
+
+    <view class="coupon-remark" hidden="{{hiddenRemark}}">
+      {{info.remark}}
+    </view>
+<!-- 
+  id: 2,
+        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        type: 0, // 0平台， 1店铺
+        typeText: '平台礼品券',
+        remindText: '仅可用于  部分个人护理商品',
+        expired: '2020-12-30 23:59:59',
+        status: 1, // 1 待领取 2 待使用
+        couponMoney: 50,
+        availableMoney: 200,
+        remark: 
+ -->
+  </view>
+</view>

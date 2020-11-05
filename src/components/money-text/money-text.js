@@ -19,6 +19,18 @@ Component({
     plane: {
       type: Boolean,
       value: false
+    },
+    color: {
+      type: String,
+      value: '#FF3232'
+    },
+    moneySize: {
+      type: Number,
+      value: 12
+    },
+    numberSize: {
+      type: Number,
+      value: 16
     }
   },
   data: {

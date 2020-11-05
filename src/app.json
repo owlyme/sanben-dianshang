@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/redeem/redeem",
+    "pages/on-sale/on-sale",
+    "pages/coupon/coupon",
     "pages/negotiationRecord/negotiationRecord",
     "pages/order/order",
     "pages/help/help",
@@ -12,7 +15,7 @@
     "pages/login/login",
     "pages/aboutUs/aboutUs",
     "pages/service/service",
-    "pages/my/my",
+    "pages/mine/mine",
     "pages/privacyPolicy/privacyPolicy",
     "pages/serviceAgreement/serviceAgreement"
   ],
@@ -53,7 +56,58 @@
     "recommended-products": "/components/recommended-products/recommended-products",
     "recommended-active": "/components/recommended-active/recommended-active",
     "scroll-tab": "/components/scroll-tab/scroll-tab",
-    "dead-line": "/components/dead-line/dead-line"
+    "dead-line": "/components/dead-line/dead-line",
+    "promotional-section": "/components/promotional-section/promotional-section",
+    "good-rank-list": "/components/good-rank-list/good-rank-list",
+    "good-card-rank": "/components/good-card-rank/good-card-rank",
+    "coupon-card": "/components/coupon-card/coupon-card",
+    "good-card-points": "/components/good-card-points/good-card-points",
+    "good-list-points": "/components/good-list-points/good-list-points",
+    
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },
-  "debug": false
+  "tabBar": {  
+    "color": "#999999",  
+    "selectedColor": "#FF3232",  
+    "borderStyle": "black",
+    "list": [
+        {  
+        "selectedIconPath": "images/tabbar/index-1.png",  
+        "iconPath": "images/tabbar/index-1.png",  
+        "pagePath": "pages/index/index",  
+        "text": "首页"  
+        }, 
+        {  
+          "selectedIconPath": "images/tabbar/catgery-0.png",  
+          "iconPath": "images/tabbar/catgery-0.png",  
+          "pagePath": "pages/index/index",  
+          "text": "分类"  
+        }, 
+        {  
+          "selectedIconPath": "images/tabbar/buy-0.png",  
+          "iconPath": "images/tabbar/buy-0.png",  
+          "pagePath": "pages/index/index",  
+          "text": "值得买"  
+        }, 
+        {  
+          "selectedIconPath": "images/tabbar/cart-0.png",  
+          "iconPath": "images/tabbar/cart-0.png",
+          "pagePath": "pages/index/index",  
+          "text": "购物车"  
+        },
+        {  
+          "selectedIconPath": "images/tabbar/mine-0.png",  
+          "iconPath": "images/tabbar/mine-0.png",
+          "pagePath": "pages/mine/mine",  
+          "text": "我的"  
+        }
+    ]  
+  },
+  "debug": false,
+  "useExtendedLib": {
+      "weui": true
+  },
+  "lazyCodeLoading": "requiredComponents"
+
 }

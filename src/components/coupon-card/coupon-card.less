@@ -1,0 +1,124 @@
+.coupon-card-components{
+    position: relative;
+    width: 343px;
+    border-radius: 8px;
+    overflow: hidden;
+    .coupon-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 343px;
+        height: 110px;
+        z-index: -1;
+        image{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .coupon-info {
+        position: relative;
+       
+        .coupon-detail {
+            height: 110px;
+            padding: 12px;
+            .coupon-detail-left {
+                width: 210px;
+                image {
+                    width: 60px;
+                    height: 60px;
+                    background: #D8D8D8;
+                    border-radius: 4px;
+                    margin-right: 8px;
+                }
+                .type-text {
+                    width: 66px;
+                    height: 16px;
+                    background: #FF3232;
+                    border-radius: 4px;
+                    line-height: 16px;
+                    font-size: 10px;
+                    text-align: center;
+                    color: #ffffff;
+                }
+                .type {
+                    width: 28px;
+                    height: 16px;
+                    font-size: 10px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    border-radius: 4px;
+                    line-height: 16px;
+                    text-align: center;
+                    &,.platform {
+                        background: rgba(255, 50, 50, 0.16);
+                        color: #FF3232;
+                    }
+                    &,.shop {
+                        background: rgba(32, 137, 255, 0.16);
+                        color: #2089FF;
+                    }
+                }
+                .remind-text {
+                    height: 40px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 600;
+                    color: #333333;
+                    line-height: 20px;
+                }
+
+                .time {
+                    margin-top: 12px;
+                    height: 14px;
+                    font-size: 10px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #999999;
+                    line-height: 14px;
+                }
+            }
+            .coupon-money {
+                color: #ffffff;
+                width: 84px;
+                margin-top: 10px;
+                .available-money{
+                    height: 20px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #FFFFFF;
+                    line-height: 20px;
+                }
+                .btn-status {
+                    margin-top: 8px;
+                    width: 72px;
+                    height: 24px;
+                    font-size: 12px;
+                    border-radius: 12px;
+                    border: 1px solid #FFFFFF;
+                    text-align: center;
+                    line-height: 22px;
+                    &.canuse {
+                        color: #FF3232;
+                        background: #FFFFFF;
+                    }
+                    &.canuse {
+                        color: #FF3232;
+                        background: #FFFFFF;
+                    }
+                }
+            }
+        }
+        .coupon-remark {
+            padding: 12px;
+            background-color: #ffffff;
+     
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #999999;
+            line-height: 17px;
+        }   
+    }
+    
+}

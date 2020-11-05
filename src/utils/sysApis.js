@@ -36,9 +36,33 @@ export const Router = {
   // 调用 navigateTo 跳转时，调用该方法的页面会被加入堆栈，而 redirectTo 方法则不会。见下方示例代码
   refresh: (param) => wx.reLaunch({...fomartUrlStringParamToJson(param)}),
   // 关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面
-  replace: (param) => wx.redirectTo({...fomartUrlStringParamToJson(param)}),
+  replace: (param) => {
+    let config = fomartUrlStringParamToJson(param)
+    wx.redirectTo({
+      ...config,
+      fail: (e) => {
+        if (e.errMsg === 'navigateTo:fail can not navigateTo a tabbar page') {
+          wx.switchTab({
+            ...config
+          })
+        }
+      }
+    })
+  },
   // 不能跳到 tabbar 页面。使用 wx.navigateBack 可以返回到原页面。小程序中页面栈最多十层
-  push: (param) => wx.navigateTo({...fomartUrlStringParamToJson(param)}),
+  push: (param) => {
+    let config = fomartUrlStringParamToJson(param)
+    wx.navigateTo({
+      ...config,
+      fail: (e) => {
+        if (e.errMsg === 'navigateTo:fail can not navigateTo a tabbar page') {
+          wx.switchTab({
+            ...config
+          })
+        }
+      }
+    })
+  },
   //
   switchTab: (param) => wx.switchTab({...fomartUrlStringParamToJson(param)}),
   // 返回上一页面或多级页面。可通过 getCurrentPages 获取当前的页面栈，决定需要返回几层。

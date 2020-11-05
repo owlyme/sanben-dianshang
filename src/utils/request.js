@@ -44,7 +44,7 @@ export const post = (url,data) => {
   });
 };
 
-export const postFormdate = (url,data) => {
+export const postFormdata = (url,data) => {
   return new Promise((resolve,reject) => {
     wx.request({
       method: 'post',

@@ -1,3 +1,6 @@
+import { getDatasetValue } from '../../utils/commom';
+const getId = getDatasetValue('id')
+const getItem = getDatasetValue('item')
 Component({
   options: {
     styleIsolation: 'apply-shared',

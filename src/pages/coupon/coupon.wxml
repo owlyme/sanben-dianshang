@@ -1,0 +1,27 @@
+    <view class="coupon-page"><page-container
+    pageName="优惠领券"
+    showNav="{{true}}"
+    bgColor="linear-gradient(270deg, #43BEFF 0%, #2089FF 100%);"
+    iconColor="none"
+    theme="light"
+    useThemeBg="{{false}}"
+    >
+      <view class="sticky scroll-b"
+        style="top: {{stickyOffsetTop}}px;">
+        <scroll-tab />
+      </view>
+
+      <view class="list-b">
+        <view 
+        class="list-b-item"
+        wx:for="{{couponList}}"
+        wx:key="index" 
+        data-item="{{item}}"
+        data-id="{{item.id}}"
+        bind:tap="onCouponClick"
+        >
+          <coupon-card info="{{item}}"/>
+        </view>
+      </view>
+  </page-container>
+</view>

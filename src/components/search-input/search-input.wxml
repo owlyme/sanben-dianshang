@@ -1,19 +1,50 @@
 <view class="search-input-components">
+  <view class="search-input-default" wx:if="{{type === 'deault'}}">
+    <view class="user-action-part flex-middle flex-b" >
+    <input
+      value="{{keywords}}"
+      data-keywords="keywords"
+      placeholder="{{placeholder}}"
+      bindinput="onInputValueChange"
+      />
 
-  <!-- content -->
-  <view class="user-action-part flex-middle flex-b" >
-  <input
-    value="{{keywords}}"
-    data-keywords="keywords"
-    placeholder="{{placeholder}}"
-    bindinput="onInputValueChange"
-    />
-
-    <view class="clear-keyword"
-      wx:if="{{keywords.length}}"
-      bind:tap="clear">
-      <image src="/images/close.png" alt="" />
+      <view class="clear-keyword"
+        wx:if="{{keywords.length}}"
+        bind:tap="clear">
+        <image src="/images/close.png" alt="" />
+      </view>
     </view>
   </view>
 
+  <view class="search-bar flex" wx:if="{{type === 'indexPage'}}">
+    <view class="current-position"
+     bind:tap="onAddressClick">
+      {{address}}
+    </view>
+
+    <view class="search-input-index" >
+      <view class="user-action-part flex-middle flex-b" >
+        <view class="scan-btn" bind:tap="onScanClick">
+          O
+        </view>
+        <view
+          class="search-keywords ellipsisOne"
+          data-keywords="keywords"
+           bind:tap="onSearchClick"
+          >{{placeholder}}</view>
+
+        <view class="search-btn"
+          bind:tap="onSearchClick">
+          S
+        </view>
+      </view>
+    </view>
+
+    <view class="system-message"
+    bind:tap="onMessageClick">
+      M
+      <view wx:if="{{message}}" class="new-msg-remind"></view>
+    </view>
+  </view>
+  
 </view>
