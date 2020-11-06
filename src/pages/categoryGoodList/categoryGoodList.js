@@ -5,7 +5,7 @@ const App = getApp();
 Page({
   data: {
     stickyOffsetTop: App.globalData.navHeight,
-    showDrawer: false, // 右侧抽屉
+    showDrawer: true, // 右侧抽屉
     showNav: true,
     goodList: [
       {

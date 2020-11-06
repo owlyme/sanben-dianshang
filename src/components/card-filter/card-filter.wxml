@@ -1,4 +1,56 @@
-<view class="xxx-components">
-  <!-- content -->
-  <slot></slot>
+<view class="filter-components">
+   <scroll-view class="pop_scroll" 
+   scroll-y="true"
+   style="height: {{scrollViewHeight - stickyOffsetTop - btnHeight}}px;">
+
+      <view class="store-type"
+        wx:for="{{conditionList}}"
+        wx:key="index"
+        >
+        <view class="title">{{item.title}}</view>
+        <view class="condition-box ">
+            <view 
+            class="btn text-style flex-cm flex-wrap {{ selectedMap[subItem.id] ? 'selected' : '' }}"
+            bind:tap="onConditionClick"
+            wx:for="{{item.list}}"
+            wx:for-item="subItem"
+            wx:index="subIndex"
+            wx:key="{{subItem.id}}"
+            data-condition="{{subItem}}"
+            data-id="{{subItem.id}}"
+            :key="item">{{subItem.name}}</view>
+        </view>
+      </view>
+
+      <view class="price-area">
+        <view class="title">价格区域(元)</view>
+        <view class="condition-box">
+          <input class="text-style" 
+            type="number"
+           placeholder="最低价"
+           value="{{miniPrice}}"
+           data-mini-price="miniPrice"
+           bindinput="onMiniPriceChange"
+           />
+          <view class="width"></view>
+          <input 
+          class="text-style" 
+          type="number" 
+          value="{{maxPrice}}"
+          placeholder="最高价"
+          data-max-price="maxPrice"
+          bindinput="onMaxPriceChange"/>
+        </view>
+      </view>
+
+    </scroll-view>
+    <view class="bottom_btn" style="height: {{btnHeight}}px">
+      <view class="reset" 
+        bindtap="onReset">重置</view>
+      <view class="center-part">
+        <view class="inner"></view>
+      </view>
+      <view class="enter"
+      bindtap="onSure">确定</view>
+    </view>
 </view>

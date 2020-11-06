@@ -1,3 +1,114 @@
-.xxx-components{
+.filter-components{
+    .pop_scroll{
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+        .store-type,.discount,.price-area{
+            width: 100%;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #F4F5F6;
+            box-shadow: 0rpx 0.5px 0rpx 0rpx #F4F5F6;
+            .title{
+                height: 20px;
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 600;
+                color: #333333;
+                line-height: 20px;
+                margin-top: 12px;
+            }
+            .condition-box{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-top: 12px;
+                .text-style{
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #333333;
+                    line-height: 18px;
+                    text-align: center;
+                }
+                .btn{
+                    width: 84px;
+                    height: 44px;
+                    background: #F4F5F6;
+                    border-radius: 4px;
+                    margin-right: 8px;
+                    margin-bottom: 8px;
+                }
+                .btn:nth-child(3n){
+                    margin-right: 0px;
+                }
+                input{
+                    width: 110px;
+                    height: 26px;
+                    background: #F4F5F6;
+                    border-radius: 13px;
+                    text-align: center;
+                }
+                .width{
+                    width: 24px;
+                    height: 1px;
+                    background: #FF3232;
+                    border-radius: 1px;
+                }
 
+                .selected {
+                    &.text-style{
+                        color: #FF3232;
+                    }
+                    &.btn {
+                        background: rgba(255, 50, 50, 0.16);
+                    }
+                }
+            }
+        }
+    }
+    .bottom_btn{
+        padding-top: 10px;
+        width: 268px;
+        height: 36px;
+        display: flex;
+        border-radius: 18px;
+        font-size: 24px;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin: 0 auto;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #FFFFFF;
+        line-height: 36px;
+
+        .reset{
+            width: 129px;
+            height: 36px;
+            background: #FF5E20;
+            border-radius: 22px 0px 0px 22px;
+            text-align: center;
+        }
+        .center-part {
+            width: 10px;
+            height: 36px;
+            background: #FF5E20;
+            overflow: hidden;
+            .inner{
+                width: 10px;
+                height: 40px;
+                background: #FF3232;
+                transform: rotate(13deg);
+                transform-origin: 0 100%;
+            }
+        }
+        .enter{
+            width: 129px;
+            height: 36px;
+            background: #FF3232;
+            border-radius:  0px 22px 22px  0px;
+            text-align: center;
+        }
+    }
 }
