@@ -1,7 +1,4 @@
 // 全局app实例
-const app = getApp();
-console.log(app);
-
 Page({
   data: {
 

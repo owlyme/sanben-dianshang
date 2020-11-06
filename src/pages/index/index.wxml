@@ -18,8 +18,8 @@
         <swiper 
           indicator-dots="{{true}}"
           autoplay="{{true}}"
-          interval="{{interval}}"
-          duration="{{duration}}">
+          interval="{{3000}}"
+          duration="{{500}}">
           <block wx:for="{{bannerList}}" 
           wx:key="index">
             <swiper-item>

@@ -1,5 +1,5 @@
 <view class="search-input-components">
-  <view class="search-input-default" wx:if="{{type === 'deault'}}">
+  <view class="search-input-default" wx:if="{{type === 'default'}}">
     <view class="user-action-part flex-middle flex-b" >
     <input
       value="{{keywords}}"

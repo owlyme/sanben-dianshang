@@ -1,3 +1,4 @@
+import PagePathes from '../../router/index'
 import { getDatasetValue,  } from '../../utils/commom';
 import { Router  } from '../../utils/sysApis';
 
@@ -86,10 +87,10 @@ Component({
       console.log(e, type)
       switch(type){
         case "signIn": 
-          Router.push('/pages/signIn/signIn')
+          Router.push(PagePathes.signIn)
           break;
         case "coupon": 
-          Router.push('/pages/coupon/coupon')
+          Router.push(PagePathes.coupon)
           break;
         default: 
           return   

@@ -1,4 +1,5 @@
 // 全局app实例
+import PagePathes from '../../router/index'
 const app = getApp();
 console.log(app);
 

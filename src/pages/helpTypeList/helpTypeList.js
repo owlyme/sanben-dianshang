@@ -1,4 +1,5 @@
 import { Router } from '../../utils/sysApis';
+import PagePathes from '../../router/index'
 import { getDatasetValue } from '../../utils/commom';
 const getHelpType = getDatasetValue('index');
 const AllTypeList = {
@@ -38,7 +39,7 @@ Page({
   onHelp(e) {
     console.log(e);
     let detailIndex = getHelpType(e);
-    let url = `/pages/helpTypeDetail/helpTypeDetail?type=${this.data.typeIndex}_${detailIndex}`;
+    let url = `${PagePathes.helpTypeDetail}?type=${this.data.typeIndex}_${detailIndex}`;
     Router.push(url);
   },
 

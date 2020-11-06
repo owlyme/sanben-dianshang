@@ -41,6 +41,10 @@ Component({
     backgroundFixed: {
       type: Boolean,
       value: true
+    },
+    navZindex: {
+      type: [Number, String],
+      value: 20
     }
   },
   data: {

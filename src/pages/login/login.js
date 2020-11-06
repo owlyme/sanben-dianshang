@@ -1,5 +1,6 @@
 // 全局app实例
 import { getNodeValue } from '../../utils/commom';
+import PagePathes from '../../router/index'
 import { Toast, Router } from '../../utils/sysApis';
 import Base from '../../utils/base';
 import {userLogin, getValidateCode} from '../../api/login';
@@ -87,7 +88,7 @@ Page({
         loginBtnDisabled: true
       });
       userLogin(formData);
-      Router.refresh('/pages/index/index');
+      Router.refresh(PagePathes.index);
 
       this.setData({
         loginBtnDisabled: false

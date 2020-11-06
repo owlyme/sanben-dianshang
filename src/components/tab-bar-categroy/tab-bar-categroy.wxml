@@ -1,0 +1,29 @@
+<view class="category-components">
+
+    <!-- <view class="transfer flex-b flex-middle tab-item active"
+      style="transform: translateY({{tarnslateY * }}px) ">
+      <view class="border-left"></view>
+      <view class="border-up"><view class="inner"></view></view>
+ 
+      <view class="border-right"></view>
+      <view class="border-bottom"><view class="inner"></view></view>
+    </view> -->
+
+    <view
+      wx:for="{{tabs}}"
+      wx:key="index"
+      data-name="{{item.name}}"
+      data-type="{{item.type}}"
+      data-index="{{index}}"
+      bind:tap="onClick"
+      class="flex-b flex-middle tab-item {{ active === item.name ? 'active' : ''}}"
+      >
+      <view class="border-left"></view>
+      <view class="border-up"><view class="inner"></view></view>
+      <view class="tab-name" >
+        {{item.name}}
+      </view>
+      <view class="border-right"></view>
+      <view class="border-bottom"><view class="inner"></view></view>
+    </view>
+</view>

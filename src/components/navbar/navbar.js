@@ -1,4 +1,5 @@
 // components/navbar/index.js
+import PagePathes from '../../router/index'
 import { Router } from '../../utils/sysApis';
 import ENV from '../../env';
 
@@ -97,16 +98,17 @@ Component({
     },
     //回主页
     _toIndex: function () {
-      Router.switchTab('/pages/index/index');
+      Router.switchTab(PagePathes.index);
       // wx.switchTab({
       //   url: '/pages/tabBar/index/index'
       // });
     },
     toComponentList() {
-      Router.push('/pages/componentList/componentList');
+      Router.push(PagePathes.componentList);
     },
     toPageList() {
-      Router.push('/pages/pageList/pageList');
+      console.log(PagePathes)
+      Router.push(PagePathes.pageList);
     }
   }
 });

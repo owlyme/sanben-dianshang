@@ -1,0 +1,4 @@
+<view class="good-card-category-components">
+  <image src="{{goodInfo.pic}}" />
+  <text>{{goodInfo.name}}</text>
+</view>

@@ -29,6 +29,15 @@ Component({
       value: []
     }
   },
+  observers: {
+    goodList: function() {
+      let [oddIndexOfgoodList, evenIndexOfgoodList] = splitArray(this.data.goodList);
+
+      this.setData({
+        oddIndexOfgoodList, evenIndexOfgoodList
+      });
+    }
+  },
   data: {
     oddIndexOfgoodList:[],
     evenIndexOfgoodList: []

@@ -5,7 +5,44 @@ import { sign, getSign } from '../../api/sign';
 const App = getApp();
 // console.log(app);
 const getSignData = getDatasetValue('sign');
+const List = [
+  {
+    id: 0,
+    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+    name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+    price: '200.00',
+    saledNumber: 200,
 
+    tags: ['hao', 'bucuo']
+  },
+  {
+    id: 0,
+    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+    name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+    price: '200.00',
+    saledNumber: 200,
+    active: '双十一',
+    tags: ['hao', 'bucuo']
+  },
+  {
+    id: 0,
+    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+    name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+    price: '200.00',
+    saledNumber: 200,
+
+    tags: ['hao', 'bucuo']
+  },
+  {
+    id: 0,
+    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+    name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+    price: '200.00',
+    saledNumber: 200,
+
+    tags: ['hao', 'bucuo']
+  }
+];
 const weekDayListTemp = [
   {
     dayText: '周一',
@@ -55,50 +92,19 @@ Page({
     signedDays: 22,
     currentDay: 0,
     weekDayList: [],
-    goodList: [
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-        active: '双十一',
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      }
-    ],
+    goodList: [],
     scrollViewHeight: 400
   },
   onLoad() {
     this.setWeekDaysListText();
     this.getSignInfo();
     this.getDom();
+
+    setTimeout(() => {
+      this.setData({
+        goodList: List
+      })
+    }, 2000) 
   },
   // 设置显示文字
   setWeekDaysListText() {

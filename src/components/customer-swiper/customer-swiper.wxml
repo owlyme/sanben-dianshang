@@ -1,0 +1,33 @@
+<view class="xxx-components">
+  <fixed-ratio-card>
+    <swiper 
+        autoplay="{{true}}"
+          interval="{{3000}}"
+        duration="{{500}}"
+        circular="{{true}}"
+        indicator-dots="{{false}}" 
+        current="{{swiperCurrent}}" 
+        vertical="{{false}}" 
+        bindchange="swiperChange">
+          <swiper-item 
+            wx:for="{{bannerList}}" 
+            wx:key="index"
+            data-item='{{item}}'
+            data-index="{{index}}"
+            bind:tap="onItemClick" >
+            <fixed-ratio-card>
+              <image class="banner-image" src="{{item.pic}}" />
+            </fixed-ratio-card>
+        </swiper-item>
+      </swiper>
+
+       <view wx:if="{{bannerList.length > 1}}" class="dots-container">
+          <block wx:for="{{bannerList}}">
+            <view 
+            class="dot{{index == swiperCurrent ? ' active' : ''}}" 
+            bind:tap="onDotTap" 
+            wx:index="{{index}}"></view>
+          </block>
+        </view>
+  </fixed-ratio-card>
+</view>

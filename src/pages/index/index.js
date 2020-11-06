@@ -160,14 +160,14 @@ Page({
     this.getDom()
     this.onPageScrollthrottle = throttle((scrollTop) => {
       this.switchStickyStyle(scrollTop);
-      this.switchBackTop(scrollTop)
+      this.switchBackTop(scrollTop);
     }, 200)
   },
   onReady() {
     // Do something when page ready.
    
   },
-  async getDom() {
+  async getDom(a) {
     let navHeight = App.globalData.navHeight
     let sticky = await boundingClientRect('.sticky-b');
     let search = await boundingClientRect('.search-b');

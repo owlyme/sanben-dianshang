@@ -1,0 +1,8 @@
+<view class="fixed-ratio-card-components"
+  style="padding-bottom: {{ ratio}}">
+  <!-- content -->
+  <view class="inner">
+     <slot></slot>
+  </view>
+ 
+</view>

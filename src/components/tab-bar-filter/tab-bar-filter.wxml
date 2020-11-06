@@ -1,0 +1,30 @@
+<view class="tab-bar-filter-components">
+  <view class="flex-a" >
+    <view
+      wx:for="{{tabs}}"
+      wx:key="index"
+      data-type="{{item.type}}"
+      data-index="{{index}}"
+      bind:tap="onClick"
+      class=" flex-cm tab-item {{ active === item.type ? 'active' : ''}}"
+      >
+      <view class="tab-name flex flex-middle">
+        <view wx:if="{{item.type === 'shop'}}" class="shop">
+         P
+        </view>
+
+        <view>{{item.name}}</view>
+
+        <view wx:if="{{item.type === 'price'}}" class="price flex-col flex-b">
+          <view class="lower" hidden="{{filterPriceStatus === 'lower'}}"> a </view>
+          <view class="upper" hidden="{{filterPriceStatus === 'upper'}}">b</view>
+        </view>
+
+         <view wx:if="{{item.type === 'filter'}}" class="shop">
+         F
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

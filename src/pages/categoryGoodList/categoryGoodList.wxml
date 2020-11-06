@@ -1,0 +1,30 @@
+    <view class="categoryGoodList-page"><page-container
+    pageName="商品"
+    showNav="{{showNav}}"
+    bgColor="#F4F5F6;"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+      <view class="sticky scroll-b"
+        style="top: {{stickyOffsetTop}}px;">
+        <search-input />
+        <tab-bar-filter 
+          bind:onChange="onTypeChange"/>
+      </view>
+
+      <view class="list-b">
+        <good-list goodList="{{goodList}}" />
+      </view>
+  </page-container>
+
+  <drawer 
+  show="{{showDrawer}}"
+  bind:onClose="onDrawerClose">
+    <view style="padding-top: {{stickyOffsetTop}}px">
+      <card-filter 
+        
+      />
+    </view>
+  </drawer>
+</view>

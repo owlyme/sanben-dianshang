@@ -1,0 +1,9 @@
+<view class="drawer-components">
+  <view class="leftBox {{show ? 'right-0' : ''}}"
+  bind:tap="onMaskClick"
+   ></view>
+  <view class="left {{show ? 'right-0' : ''}}">
+      <slot></slot>
+  </view>
+  <!-- content -->
+</view>

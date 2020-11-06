@@ -1,0 +1,23 @@
+export default {
+    categoryGoodList:"pages/categoryGoodList/categoryGoodList",
+    category: "pages/category/category",
+    index: "pages/index/index",
+    redeem: "pages/redeem/redeem",
+    onSale: "pages/on-sale/on-sale",
+    coupon: "pages/coupon/coupon",
+    negotiationRecord: "pages/negotiationRecord/negotiationRecord",
+    order: "pages/order/order",
+    help: "pages/help/help",
+    helpTypeList: "pages/helpTypeList/helpTypeList",
+    helpTypeDetail: "pages/helpTypeDetail/helpTypeDetail",
+    personalInfo: "pages/personalInfo/personalInfo",
+    signIn: "pages/signIn/signIn",
+    login: "pages/login/login",
+    aboutUs: "pages/aboutUs/aboutUs",
+    service: "pages/service/service",
+    mine: "pages/mine/mine",
+    privacyPolicy: "pages/privacyPolicy/privacyPolicy",
+    serviceAgreement: "pages/serviceAgreement/serviceAgreement",
+    componentList: "pages/componentList/componentList",
+    pageList: "pages/pageList/pageList"
+};

@@ -19,6 +19,7 @@
   </view> -->
   <view class="navbar-action-wrap nav-bar-back"
   style='top:{{navTop}}px;'
+  wx:if="{{showNav}}"
   >
     <image bind:tap="_navBack" class="nav-bar-back-img" src="{{computedTheme.backIcon}}" />
     <block wx:if="{{showComponentList}}">

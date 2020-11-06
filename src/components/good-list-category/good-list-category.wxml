@@ -1,0 +1,13 @@
+<view class="good-list-category-components flex flex-wrap">
+  <!-- content -->
+  <block wx:for="{{goodList}}">
+    <view class="good-list-category-item">
+      <good-card-category
+        goodInfo="{{item}}"
+        wx:index="{{index}}"
+        data-good="{{item}}"
+        bind:tap="onClick"
+        />
+    </view>
+  </block>
+</view>

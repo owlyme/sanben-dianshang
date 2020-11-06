@@ -29,6 +29,12 @@ Component({
       value: []
     }
   },
+
+  observers: {
+    goodList: function() {
+      this.init()
+    }
+  },
   data: {
     oddIndexOfgoodList:[],
     evenIndexOfgoodList: []
@@ -48,16 +54,19 @@ Component({
     },
   },
   ready() {
-    let [oddIndexOfgoodList, evenIndexOfgoodList] = splitArray(this.data.goodList);
-
-    this.setData({
-      oddIndexOfgoodList, evenIndexOfgoodList
-    });
+   this.init()
   },
   moved() {},
   detached() {},
 
   methods: {
+    init() {
+      let [oddIndexOfgoodList, evenIndexOfgoodList] = splitArray(this.data.goodList);
+
+      this.setData({
+        oddIndexOfgoodList, evenIndexOfgoodList
+      });
+    },
     onClick(e) {
       let good = getGoodData(e);
       console.log('good list', good);

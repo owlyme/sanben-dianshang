@@ -1,4 +1,5 @@
 import {Router} from '../../utils/sysApis';
+import PagePathes from '../../router/index'
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -31,7 +32,7 @@ Component({
 
   methods: {
     toServicePage() {
-      Router.push('/pages/service/service');
+      Router.push(PagePathes.service);
     }
   }
 

@@ -1,0 +1,7 @@
+<view class="title-container-components flex flex-middle">
+  <!-- content -->
+  <view class="title-border"></view>
+  <view >
+    <slot ></slot>
+  </view>
+</view>

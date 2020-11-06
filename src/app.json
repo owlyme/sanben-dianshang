@@ -1,5 +1,8 @@
 {
   "pages": [
+    
+    "pages/categoryGoodList/categoryGoodList",
+    "pages/category/category",
     "pages/index/index",
     "pages/redeem/redeem",
     "pages/on-sale/on-sale",
@@ -11,13 +14,15 @@
     "pages/helpTypeDetail/helpTypeDetail",
     "pages/personalInfo/personalInfo",
     "pages/signIn/signIn",
-    "pages/componentList/componentList",
     "pages/login/login",
     "pages/aboutUs/aboutUs",
     "pages/service/service",
     "pages/mine/mine",
     "pages/privacyPolicy/privacyPolicy",
-    "pages/serviceAgreement/serviceAgreement"
+    "pages/serviceAgreement/serviceAgreement",
+    
+    "pages/componentList/componentList",
+    "pages/pageList/pageList"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -63,7 +68,16 @@
     "coupon-card": "/components/coupon-card/coupon-card",
     "good-card-points": "/components/good-card-points/good-card-points",
     "good-list-points": "/components/good-list-points/good-list-points",
-    
+    "tab-bar-categroy": "/components/tab-bar-categroy/tab-bar-categroy",
+    "fixed-ratio-card": "/components/fixed-ratio-card/fixed-ratio-card",
+    "good-card-category": "/components/good-card-category/good-card-category",
+    "customer-swiper": "/components/customer-swiper/customer-swiper",
+    "good-list-category": "/components/good-list-category/good-list-category",
+    "title-contianer": "/components/title-contianer/title-contianer",
+    "tab-bar-filter": "/components/tab-bar-filter/tab-bar-filter",
+    "drawer": "/components/drawer/drawer",
+    "card-filter": "/components/card-filter/card-filter",
+
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },
@@ -74,14 +88,14 @@
     "list": [
         {  
         "selectedIconPath": "images/tabbar/index-1.png",  
-        "iconPath": "images/tabbar/index-1.png",  
+        "iconPath": "images/tabbar/index-0.png",  
         "pagePath": "pages/index/index",  
         "text": "首页"  
         }, 
         {  
-          "selectedIconPath": "images/tabbar/catgery-0.png",  
+          "selectedIconPath": "images/tabbar/catgery-1.png",  
           "iconPath": "images/tabbar/catgery-0.png",  
-          "pagePath": "pages/index/index",  
+          "pagePath": "pages/category/category",
           "text": "分类"  
         }, 
         {  

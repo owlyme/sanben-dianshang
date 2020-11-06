@@ -1,0 +1,78 @@
+<view class="category-page">
+  <page-container
+    pageName="分类"
+    showNav="{{false}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+    <view class="search-b">
+      <search-input />
+    </view>
+
+    <view id="category-box" class="category-box flex">
+      <view class="left" >
+        <scroll-view 
+        scroll-y 
+        scroll-with-animation 
+        scroll-y="true"
+        style="height: {{scrollViewHeight}}px;"
+        bindscrolltolower="categoryScrollToLower"
+        bindscrolltoupper="categoryScrollToUpper"
+        bindscroll="onCategoryScroll"
+        >
+          <tab-bar-categroy
+            tabs="{{categoryList}}" 
+            bind:onChange="onCategoryChange" 
+          />
+          
+        </scroll-view>
+      </view>
+
+      <view class="right" >
+        <scroll-view
+          scroll-y 
+          scroll-with-animation 
+          scroll-y="true"
+          style="height: {{scrollViewHeight}}px;"
+          bindscrolltolower="goodScrollToLower"
+          bindscrolltoupper="goodScrollToUpper"
+          bindscroll="onGoodScroll"
+        >
+          <block wx:if="{{goodList.length !== 0}}">
+            <view class="customer-swiper-b">
+            <customer-swiper
+             bannerList="{{bannerList}}"
+             bind:onItemClick="onSwiperClick"
+             />
+             </view>
+                
+            <view class="good-list-b">
+              <view 
+                wx:for="{{goodList}}"
+                wx:index="index">
+                <view class="title-contianer-b">
+                  <title-contianer>
+                    <view class="">{{item.title}}</view>
+                  </title-contianer>
+                </view>
+                <good-list-category
+                  goodList="{{item.list}}"
+                  bind:onGoodClick="onGoodClick"
+                />
+                </view>
+            </view>
+          </block>
+          <view class="no-data" wx:else="{{goodList.length == 0}}">
+          
+            <text style="">暂无数据</text>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+
+  </page-container>
+
+</view>
