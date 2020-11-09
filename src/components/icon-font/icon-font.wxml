@@ -1,2 +1,1 @@
-<text class="iconfont {{name}}" style="font-size: {{size}}px; color: {{color}}">
-</text>
+<text class="iconfont {{name}}" style="font-size: {{size}}px; color: {{color}}"></text>

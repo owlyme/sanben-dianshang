@@ -1,0 +1,64 @@
+<view class="shop-detail-page">
+  <page-container
+    pageName="{{shopName}}"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="light"
+    useThemeBg="{{false}}"
+    >
+
+    <view class="sticky banner-image" style="margin-top: -{{offestTop}}px; top: 0">
+      <image src="{{shopPic}}" />
+      <view class="bottom"></view>
+    </view>
+
+     <view class="detail-info">
+       <view class="name">
+         {{shopName}}
+      </view>
+
+      <view class="title time flex">
+        <icon-font size="14" name="iconyingyeshijian2" color="#999999" />
+        <view style="margin-left: 6rpx">营业时间  {{openTime}}</view>
+      </view>
+
+      <view class="address flex">
+        <icon-font size="15" name="icondizhi2" color="#999999" /> 
+        <view class="flex flex-middle" style="margin-left: 6rpx">
+          <view class="address-info">
+             <view class="title">
+              门店地址
+            </view>
+             <view class="title title-add">
+                {{address}}
+            </view>
+          </view>
+          
+          <view class="right">
+            <icon-font size="14" name="icondingdan-dianpu-gengduo2" color="#999999" />
+          </view>
+
+          <view class="phone" bind:tap="makePhoneCall">
+            <icon-font size="24" name="icondianpudianhua" color="#FF3232" />
+          </view>
+
+
+        </view>
+        
+      </view>
+      
+      <view class="title title-pic">门店图片</view>
+      <view class="images flex-wrap flex-b">
+        <image 
+        wx:for="{{picList}}" 
+        src="{{item}}"
+        wx:key="index"
+        
+         />
+      </view>
+    </view>
+
+
+  </page-container>
+</view>

@@ -7,15 +7,19 @@
   </view>
   <view style="flex: 1" class="flex-col flex-center">
     <view class="shop-name ellipsisOne flex-middle"
-      slot="title">
+      >
       {{title}}
       <image wx:if="{{showNameIcon}}" src="/images/right.png" />
     </view>
+
     <view
       class="shop-address flex-middle"
-      slot="mark">
-      <image wx:if="{{showAddressIcon}}" src="/images/address.png" />
-      {{text}}
+      >
+      <image class="image" wx:if="{{showAddressIcon}}" src="/images/address.png" />
+      <block wx:if="{{!text}}">
+        <slot name="text"></slot>
+      </block>
+      <block wx:else>{{text}}</block>
     </view>
   </view>
 </view>

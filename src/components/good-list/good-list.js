@@ -56,8 +56,6 @@ Component({
   ready() {
    this.init()
   },
-  moved() {},
-  detached() {},
 
   methods: {
     init() {

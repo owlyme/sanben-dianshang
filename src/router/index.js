@@ -1,4 +1,6 @@
 export default {
+    shopAllGood: "pages/shop-all-good/shop-all-good",
+    shopDetail: "pages/shop-detail/shop-detail",
     search: "pages/search/search",
     categoryGoodList:"pages/categoryGoodList/categoryGoodList",
     category: "pages/category/category",

@@ -6,22 +6,28 @@
       data-type="{{item.type}}"
       data-index="{{index}}"
       bind:tap="onClick"
-      class=" flex-cm tab-item {{ active === item.type ? 'active' : ''}}"
+      class=" flex-cm tab-item {{ active === item.type ? 'active' : ''}} {{item.type}}"
       >
       <view class="tab-name flex flex-middle">
         <view wx:if="{{item.type === 'shop'}}" class="shop">
-         P
+         <icon-font name="icondianpu-weixuanze1" size="14" />
         </view>
 
         <view>{{item.name}}</view>
 
         <view wx:if="{{item.type === 'price'}}" class="price flex-col flex-b">
-          <view class="lower" hidden="{{filterPriceStatus === 'lower'}}"> a </view>
-          <view class="upper" hidden="{{filterPriceStatus === 'upper'}}">b</view>
+          <!--  -->
+          <!-- iconjiagepaixu-gao-xuanze1 -->
+          <view class="lower" hidden="{{filterPriceStatus === 'lower'}}">
+            <icon-font name="iconjiagepaixu-di-xuanze1" size="4" />
+          </view>
+          <view class="upper" hidden="{{filterPriceStatus === 'upper'}}">
+            <icon-font name="iconjiagepaixu-gao-xuanze1" size="4" />
+          </view>
         </view>
 
          <view wx:if="{{item.type === 'filter'}}" class="shop">
-         F
+           <icon-font name="iconshaixuan1" size="14" />
         </view>
       </view>
     </view>

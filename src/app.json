@@ -1,5 +1,8 @@
 {
   "pages": [
+    
+    "pages/shop-all-good/shop-all-good",
+    "pages/shop-detail/shop-detail",
     "pages/search/search",
     "pages/categoryGoodList/categoryGoodList",
     "pages/category/category",
@@ -33,7 +36,7 @@
     "backgroundTextStyle": "dark",
     "backgroundColorTop": "#ffffff",
     "backgroundColorBottom": "#ffffff",
-    "enablePullDownRefresh": false,
+    "enablePullDownRefresh": true,
     "onReachBottomDistance": 50
   },
   "networkTimeout": {},
@@ -79,6 +82,8 @@
     "card-filter": "/components/card-filter/card-filter",
     "keyword-list": "/components/keyword-list/keyword-list",
     "icon-font": "/components/icon-font/icon-font",
+    "rate-star": "/components/rate-star/rate-star",
+    "sub-navbar": "/components/sub-navbar/sub-navbar",
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },

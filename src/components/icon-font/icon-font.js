@@ -14,7 +14,7 @@ Component({
     },
     color: {
       type: [String],
-      value: '#ffffff'
+      value: 'inhert'
     },
     name: {
       type: [String],
