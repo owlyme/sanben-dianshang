@@ -5,7 +5,7 @@ const App = getApp();
 Page({
   data: {
     stickyOffsetTop: App.globalData.navHeight,
-    showDrawer: true, // 右侧抽屉
+    showDrawer: false, // 右侧抽屉
     showNav: true,
     goodList: [
       {
@@ -98,8 +98,13 @@ Page({
         tags: ['hao', 'bucuo']
       }
     ],
+    pageStyleType: 'standard' // 竖 vertical，  水平 standard
   },
-  onLoad() {
+  onLoad(e) {
+    console.log(e)
+    // this.setData({
+    //   pageStyleType: e.options.styleType || 'vertical'
+    // })
     // Do some initialize when page load.
   },
   onReady() {
@@ -111,9 +116,7 @@ Page({
   onHide() {
     // Do something when page hide.
   },
-  onUnload() {
-    // Do something when page close.
-  },
+ 
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
   },
@@ -131,11 +134,7 @@ Page({
   },
 
   onTypeChange(e) {
-    
     console.log(e)
-//     filterPriceStatus: "upper"
-// index: 4
-// type: "filter"
     let {filterPriceStatus, index, type} = e.detail
     
     if (type=== 'filter') {
@@ -145,12 +144,21 @@ Page({
       })
     }
   },
+  onGoodClick(e) {
+    console.log('onGoodClick', e)
+  },
 
   onDrawerClose() {
     this.setData({
       showDrawer: false,
       showNav: true
     })
+  },
+  onConditionFilterReset(e) {
+    console.log('onConditionFilterReset', e)
+  },
+  onConditionFilterMakeSure(e) {
+    console.log('onConditionFilterMakeSure', e)
   },
 
   customData: {}

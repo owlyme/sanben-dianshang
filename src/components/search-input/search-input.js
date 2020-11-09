@@ -1,5 +1,5 @@
 import { getInputValue } from '../../utils/commom';
-
+import { addKeywordsHistory } from '../../utils/localStorage';
 
 Component({
   options: {
@@ -12,7 +12,7 @@ Component({
   properties: {
     type: {
       type: String,
-      value: 'default' // 根据页面名区分 例： indexPage, orderPage···
+      value: 'default' // 根据页面名区分 例： indexPage, orderPage, searchPage···
     }, 
     placeholder: {
       type: String,
@@ -28,8 +28,7 @@ Component({
     }
   },
   data: {
-    keywords: '',
-
+    keyword: '',
   },
 
   // 生命周期函数
@@ -51,20 +50,20 @@ Component({
       let value = getInputValue(e);
 
       this.setData({
-        keywords: value
+        keyword: value
       });
       this.valueChange(value);
     },
     clear() {
       this.setData({
-        keywords: ''
+        keyword: ''
       });
       this.valueChange('');
     },
     valueChange(data) {
       console.log('keyword', data);
-      this.triggerEvent('onChange', data);
-    },
+      this.triggerEvent('onChange',{keyword: data});
+    }, 
     // index page actions
     // 点击地址
     onAddressClick(e) {
@@ -75,12 +74,20 @@ Component({
       console.log('调用扫一扫', e)
     },
     // 点击搜索
-    onSearchClick(e) {
+    onSearchBtnClick(e) {
       console.log('点击搜索', e)
+      this.triggerEvent('onSearchBtn', {})
     },
     // 点击查看信息
     onMessageClick(e) {
       console.log('点击查看信息', e)
     },
+    // 获取
+    toGetResult() {
+      let {keyword} =  this.data
+      this.triggerEvent('onSearch', {keyword})
+
+      addKeywordsHistory(keyword)
+    }
   }
 });

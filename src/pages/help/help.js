@@ -28,7 +28,7 @@ Page({
   onKeywordChange(e) {
     console.log(e);
     this.setData({
-      keywords: e.detail
+      keywords: e.detail.keyword
     });
   },
   onHelpItemClick(e) {

@@ -95,6 +95,21 @@
       <view style="background: red"><tab-bar st tabs='{{tabsList}}' /></view>
   </card>
 
+   <card>
+      <view class="card-name">组件名：icon-font</view>
+      <view style="background: #ffffff">
+        <icon-font size="14" color="#999999" name="iconshanchu1" />
+        <icon-font size="14" color="#999999" name="iconshenheshibai1" />
+        <icon-font size="14" color="#999999" name="iconxiaochengxuBarsTabBars4on2" />
+        <icon-font size="14" color="#999999" name="iconshoucang-weishoucang1" />
+        <icon-font size="14" color="#999999" name="iconshoucang-yishoucang1" />
+        ······
+        </view>
+  </card>
+
+
+
+  
 </page-container>
 
 

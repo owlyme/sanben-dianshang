@@ -3,7 +3,7 @@
   <view class="item-label flex-middle"
     bind:tap="onClick"
     wx:if="{{label}}"
-    >{{label}}</view>
+    ><view >{{label}}</view></view>
 
   <view
     class="flex-b item-container {{!showlabelBorder ? 'border-bottom' : ''}}"

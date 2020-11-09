@@ -1,0 +1,17 @@
+<view class="keyword-list-components flex flex-wrap">
+   <!-- content -->
+  <block wx:for="{{list}}"
+    wx:index="index">
+    <view class="keyword-item ellipsisOne"
+    data-keyword="{{item}}"
+    bind:tap="onItemClick"
+    hidden="{{showMore && index > 8}}">
+      {{item}}
+    </view>
+  </block>
+
+  <view class="keyword-more" hidden="{{!showMore}}" wx:if="{{list.length > 8 }}"
+    bind:tap="onMoreClick">
+      <icon-font name="icongengduo-zhankai" color="#999999"></icon-font>
+  </view>
+</view>

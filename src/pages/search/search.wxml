@@ -1,0 +1,56 @@
+<page-container
+    pageName="搜索"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+  <view class="sticky search-b" style="top: {{offsetTop}}px">
+    <search-input type="searchPage"
+    bind:onChange="onSearchInputChange"
+    bind:onSearch="onSearch" />
+  </view>
+
+  <view class="list" hidden="{{!keyword.length}}">
+    <list >
+      <list-item 
+        showlabelBorder 
+        wx:for="{{remindList}}"
+        label="{{item}}"
+        wx:key="index"
+        data-item="{{item}}"
+        bind:onClick="remind" />
+    </list>
+  </view>
+
+  <view class="search-page">
+    <view hidden="{{keyword.length}}">
+      <view class="history-b">
+        <view class="title flex-b">
+          <view >搜索历史</view>
+          <view class="delete " 
+          bind:tap="deleteHistory">
+            <icon-font size="14" color="#999999" name="iconshanchu1" />
+          </view>
+        </view>
+
+        <keyword-list 
+        list="{{historyList}}"
+        data-type="history"
+        bind:onChange="onKeywordChange" />
+      </view>
+
+      <view class="finded-b">
+        <view class="title">搜索发现</view>
+        <keyword-list
+        showMore="{{false}}"
+        list="{{findedList}}"
+        data-type="finded"
+        bind:onChange="onKeywordChange" />
+      </view>
+     </view>
+  </view>  
+</page-container>
+

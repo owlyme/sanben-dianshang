@@ -2,8 +2,8 @@
   <view class="search-input-default" wx:if="{{type === 'default'}}">
     <view class="user-action-part flex-middle flex-b" >
     <input
-      value="{{keywords}}"
-      data-keywords="keywords"
+      value="{{keyword}}"
+      data-keyword="keyword"
       placeholder="{{placeholder}}"
       bindinput="onInputValueChange"
       />
@@ -29,12 +29,12 @@
         </view>
         <view
           class="search-keywords ellipsisOne"
-          data-keywords="keywords"
-           bind:tap="onSearchClick"
+          data-keyword="keyword"
+           bind:tap="onSearchBtnClick"
           >{{placeholder}}</view>
 
         <view class="search-btn"
-          bind:tap="onSearchClick">
+          bind:tap="onSearchBtnClick">
           S
         </view>
       </view>
@@ -47,4 +47,24 @@
     </view>
   </view>
   
+  <view class="search-bar-search-page flex-b" wx:if="{{type === 'searchPage'}}">
+   
+    <view class="search-input-search" >
+      <view class="user-action-part flex-middle flex-b" >
+
+        <input
+          value="{{keyword}}"
+          data-keyword="keyword"
+          placeholder="{{placeholder}}"
+          bindinput="onInputValueChange"
+          />
+
+      </view>
+    </view>
+
+    <view class="search-btn"
+    bind:tap="toGetResult">
+      <icon-font size="14" color="#fff" name="iconsousuo" />
+    </view>
+  </view>
 </view>

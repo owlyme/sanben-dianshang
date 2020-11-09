@@ -1,4 +1,5 @@
 export default {
+    search: "pages/search/search",
     categoryGoodList:"pages/categoryGoodList/categoryGoodList",
     category: "pages/category/category",
     index: "pages/index/index",

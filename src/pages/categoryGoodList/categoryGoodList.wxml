@@ -9,12 +9,25 @@
       <view class="sticky scroll-b"
         style="top: {{stickyOffsetTop}}px;">
         <search-input />
-        <tab-bar-filter 
-          bind:onChange="onTypeChange"/>
+        <view class="tab-bar-filter-b">
+           <tab-bar-filter 
+            bind:onChange="onTypeChange"/>
+        </view>
       </view>
 
       <view class="list-b">
-        <good-list goodList="{{goodList}}" />
+        <block wx:if="{{pageStyleType === 'vertical'}}">
+          <good-list 
+            goodList="{{goodList}}"
+            bind:onGoodClick="onGoodClick"
+          />
+        </block>
+        <block wx:elif="{{pageStyleType === 'standard'}}">
+         <good-rank-list
+              goodList="{{goodList}}"
+              bind:onGoodClick="onGoodClick"
+              />
+        </block>
       </view>
   </page-container>
 
@@ -23,8 +36,8 @@
   bind:onClose="onDrawerClose">
     <view style="padding-top: {{stickyOffsetTop}}px">
       <card-filter 
-        
-      />
+        bind:onReset="onConditionFilterReset"
+        bind:onSure="onConditionFilterMakeSure"/>
     </view>
   </drawer>
 </view>

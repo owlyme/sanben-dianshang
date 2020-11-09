@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+    "pages/search/search",
     "pages/categoryGoodList/categoryGoodList",
     "pages/category/category",
     "pages/index/index",
@@ -77,7 +77,8 @@
     "tab-bar-filter": "/components/tab-bar-filter/tab-bar-filter",
     "drawer": "/components/drawer/drawer",
     "card-filter": "/components/card-filter/card-filter",
-
+    "keyword-list": "/components/keyword-list/keyword-list",
+    "icon-font": "/components/icon-font/icon-font",
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },
@@ -123,5 +124,4 @@
       "weui": true
   },
   "lazyCodeLoading": "requiredComponents"
-
 }
