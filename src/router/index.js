@@ -1,4 +1,8 @@
 export default {
+    
+    shopGoodCatetory: "pages/shop-good-catetory/shop-good-catetory",
+    shopAll: "pages/shop-all/shop-all",
+    shopIndex: "pages/shop-index/shop-index",
     shopAllGood: "pages/shop-all-good/shop-all-good",
     shopDetail: "pages/shop-detail/shop-detail",
     search: "pages/search/search",

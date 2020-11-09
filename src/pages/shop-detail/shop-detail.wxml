@@ -42,10 +42,7 @@
           <view class="phone" bind:tap="makePhoneCall">
             <icon-font size="24" name="icondianpudianhua" color="#FF3232" />
           </view>
-
-
         </view>
-        
       </view>
       
       <view class="title title-pic">门店图片</view>

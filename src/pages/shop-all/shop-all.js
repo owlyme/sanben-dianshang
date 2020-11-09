@@ -11,7 +11,9 @@ Page({
       pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       name: "阿迪达斯三叶草旗舰店",
       focusNumber: 148,
-      rate: 7
+      rate: 7,
+      phoneNumber: '13156521718',
+      address: 111111
     },
     goodList: [
       {
@@ -105,12 +107,30 @@ Page({
       }
     ],
     tabs: [
-      { name: '综合', type: 'first'},
-      { name: '销量', type: 'sales'},
-      { name: '新品', type: 'new'},
-      { name: '价格', type: 'price'},
+        { name: '综合', type: 'first'},
+        { name: '销量', type: 'sales'},
+        { name: '新品', type: 'new'},
+        { name: '价格', type: 'price'},
     ],
-   
+    shopList: [
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: "阿迪达斯三叶草旗舰店",
+        address: 111111
+      },
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: "阿迪达斯三叶草旗舰店",
+        address: 111111
+      },
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: "阿迪达斯三叶草旗舰店",
+        address: 111111
+      },
+    ],
+    
+    navActiveIndex: 0
   },
   onLoad(e) {
    
@@ -144,11 +164,24 @@ Page({
   onTypeChange(e) {
     console.log(e)
     let {filterPriceStatus, index, type} = e.detail
+    
   },
   onGoodClick(e) {
     console.log('onGoodClick', e)
   },
 
+  navChange(e) {
+    console.log('navChange', e)
+  },
+
+  makePhoneCall() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.shopInfo.phoneNumber //仅为示例，并非真实的电话号码
+    })
+  },
+  viewMoreShop(e) {
+    console.log('viewMoreShop', e)
+  },
 
   customData: {}
 });
