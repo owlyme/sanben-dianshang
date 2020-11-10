@@ -1,0 +1,43 @@
+<page-container
+    pageName="值得买"
+    showNav="{{false}}"
+    bgColor="#FF3D2E"
+    iconColor="none"
+    theme="light"
+    useThemeBg="{{false}}"
+    >
+  <view class="worthBuying-page">
+      <view class="gutter-container">
+        <card>
+          <view class="customer-swiper-b">
+            <customer-swiper
+             bannerList="{{bannerList}}"
+             bind:onItemClick="onSwiperClick"
+             />
+          </view>
+
+          <view class="active-list flex-b">
+            <view class="item" 
+            wx:for="{{activeList}}"
+            wx:key="index"
+            data-item="{{item}}"
+            bind:tap="onActiveClick"
+            >
+              <image class="image" src="{{item.pic}}" />
+              <view class="title">
+                {{item.title}}
+              </view>
+              <view class="text">{{item.text}}</view>
+            </view>
+          </view>
+        </card>
+      </view>
+
+      <view class="gutter-container">
+        <good-list
+            goodList="{{goodList}}"
+            bind:onGoodClick="viewGood"
+          />
+      </view>
+  </view>
+</page-container>

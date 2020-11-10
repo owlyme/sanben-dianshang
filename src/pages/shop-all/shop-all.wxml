@@ -1,5 +1,5 @@
     <view class="shop-all-good-page"><page-container
-    pageName="店铺首页"
+    pageName="门店"
     showNav="{{showNav}}"
     bgColor="#F4F5F6;"
     iconColor="none"
@@ -19,7 +19,9 @@
                 <text class="focusNumber">{{shopInfo.focusNumber}}人关注</text>
               </view>
             </shop-card>
-            <view class="tag">关注</view>
+            <view class="tag">
+              <icon-font name="iconguanzhudianpu-weiguanzhu" size="12" />
+              关注</view>
           </view>
 
           <view class="address flex">

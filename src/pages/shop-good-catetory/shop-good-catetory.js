@@ -59,6 +59,48 @@ Page({
           name: 'adidas'
          }
         ] 
+      },
+      {
+        title: '分类标题',
+        list: [
+          {
+          id: 12,
+          name: 'adidas'
+         },
+         {
+          id: 1,
+          name: 'adidas'
+         },
+         {
+          id: 2,
+          name: 'adidas'
+         },
+         {
+          id: 13,
+          name: 'adidas'
+         },
+         {
+          id: 14,
+          name: 'adidas'
+         }
+        ] 
+      },
+      {
+        title: '分类标题2',
+        list: [
+          {
+          id: 12,
+          name: 'adi da da da das'
+         },
+         {
+          id: 13,
+          name: 'adidas'
+         },
+         {
+          id: 14,
+          name: 'adidas'
+         }
+        ] 
       }
     ]
     
@@ -110,8 +152,8 @@ Page({
       phoneNumber: this.data.shopInfo.phoneNumber //仅为示例，并非真实的电话号码
     })
   },
-  viewMoreShop(e) {
-    console.log('viewMoreShop', e)
+  onMoreClick(e) {
+    console.log('onMoreClick', e)
   },
 
   onCategoryClick(e) {

@@ -1,4 +1,4 @@
-    <view class="coupon-page"><page-container
+<page-container
     pageName="优惠领券"
     showNav="{{true}}"
     bgColor="linear-gradient(270deg, #43BEFF 0%, #2089FF 100%);"
@@ -6,6 +6,7 @@
     theme="light"
     useThemeBg="{{false}}"
     >
+  <view class="coupon-page">
       <view class="sticky scroll-b"
         style="top: {{stickyOffsetTop}}px;">
         <scroll-tab />
@@ -23,5 +24,5 @@
           <coupon-card info="{{item}}"/>
         </view>
       </view>
-  </page-container>
-</view>
+  </view>
+</page-container>

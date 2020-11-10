@@ -18,6 +18,10 @@ Component({
     textAlign: {
       type: String,
       value: 'right' // left right
+    },
+    iconfont: {
+      type: String,
+      value: 'icondingdan-dianpu-gengduo' // left right
     }
   },
   data: {},

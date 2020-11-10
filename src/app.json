@@ -1,9 +1,9 @@
 {
   "pages": [
-    
-    "pages/shop-good-catetory/shop-good-catetory",
-    "pages/shop-all/shop-all",
     "pages/shop-index/shop-index",
+    "pages/shop-good-catetory/shop-good-catetory",
+    "pages/worthBuying/worthBuying",
+    "pages/shop-all/shop-all",
     "pages/shop-all-good/shop-all-good",
     "pages/shop-detail/shop-detail",
     "pages/search/search",
@@ -109,9 +109,9 @@
           "text": "分类"  
         }, 
         {  
-          "selectedIconPath": "images/tabbar/buy-0.png",  
+          "selectedIconPath": "images/tabbar/buy-1.png",  
           "iconPath": "images/tabbar/buy-0.png",  
-          "pagePath": "pages/index/index",  
+          "pagePath": "pages/worthBuying/worthBuying",  
           "text": "值得买"  
         }, 
         {  

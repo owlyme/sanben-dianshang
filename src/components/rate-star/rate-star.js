@@ -29,7 +29,11 @@ Component({
       type:String,
       value:'star'
     }
-
+  },
+  observers: {
+    rate() {
+      this.init()
+    }
   },
   data: {},
   ready() {
@@ -40,7 +44,7 @@ Component({
     init() {
       var that = this;
       //接收父组件传入的值
-      let rate = that.properties.rate; //父组件传过来的评分共10分,根据评分判断星星数
+      let rate = that.properties.rate || 0; //父组件传过来的评分共10分,根据评分判断星星数
       let intRate = parseInt(rate) //取整数,得到多少评分
       console.log(intRate) //如6分
       // 除出来有可能是浮点,所以需要求整数,1分等于0.5个星星,需要除以2,得到星星个数

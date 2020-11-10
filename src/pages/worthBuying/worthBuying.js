@@ -1,20 +1,12 @@
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis'
+import { getDatasetValue } from '../../utils/commom';
+const getCouponItem = getDatasetValue('item');
+const getCouponId = getDatasetValue('id');
 // 全局app实例
 const App = getApp();
 
 Page({
   data: {
     stickyOffsetTop: App.globalData.navHeight,
-    showNav: true,
-    shopInfo: {
-      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-      name: "阿迪达斯三叶草旗舰店",
-      focusNumber: 148,
-      rate: 7,
-      phoneNumber: '13156521718',
-      address: 111111
-    },
     goodList: [
       {
         id: 0,
@@ -106,33 +98,43 @@ Page({
         tags: ['hao', 'bucuo']
       }
     ],
-    tabs: [
-        { name: '综合', type: 'first'},
-        { name: '销量', type: 'sales'},
-        { name: '新品', type: 'new'},
-        { name: '价格', type: 'price'},
+    bannerList: [
+      {
+        id: 12,
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'adidas'
+       },
+       {
+        id: 13,
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'adidas'
+       }
     ],
-    shopList: [
+    activeList: [
       {
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: "阿迪达斯三叶草旗舰店",
-        address: 111111
+        pic: '/images/worthBuying/evaluation.png',
+        title: '超值评测',
+        text: '大V实物评测'
       },
       {
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: "阿迪达斯三叶草旗舰店",
-        address: 111111
+        pic: '/images/worthBuying/activitives.png',
+        title: '专享活动',
+        text: '超值活动来啦'
       },
       {
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: "阿迪达斯三叶草旗舰店",
-        address: 111111
+        pic: '/images/worthBuying/articles.png',
+        title: '优享文章',
+        text: '看看这篇文章'
       },
-    ],
-    
+      {
+        pic: '/images/worthBuying/videos.png',
+        title: '好物视频',
+        text: '全方位鉴赏'
+      }
+    ]
   },
-  onLoad(e) {
-   
+  onLoad() {
+    // Do some initialize when page load.
   },
   onReady() {
     // Do something when page ready.
@@ -143,7 +145,9 @@ Page({
   onHide() {
     // Do something when page hide.
   },
- 
+  onUnload() {
+    // Do something when page close.
+  },
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
   },
@@ -159,38 +163,14 @@ Page({
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
-  // 点击搜索框
-  onSearchGoodInCurrentShop(e) {
-    Router.push(PagePathes.search)
+  onSwiperClick(e) {
+    console.log('onSwiperClick',e)
   },
-  onTypeChange(e) {
-    console.log(e)
-    let {filterPriceStatus, index, type} = e.detail
-    
+  onActiveClick(e) {
+    console.log('onActiveClick',e)
   },
-  onGoodClick(e) {
-    console.log('onGoodClick', e)
+  viewGood(e){
+    console.log('viewGood', e);
   },
-
-  navChange(e) {
-    console.log('navChange', e)
-  },
-
-  makePhoneCall() {
-    wx.makePhoneCall({
-      phoneNumber: this.data.shopInfo.phoneNumber //仅为示例，并非真实的电话号码
-    })
-  },
-  shopItemClick(e) {
-    console.log('shopItemClick', e)
-    Router.push(PagePathes.shopDetail) 
-  },
-
-  viewMoreShop(e) {
-    console.log('viewMoreShop', e)
-    Router.replace(PagePathes.shopAll) 
-  },
-
-
   customData: {}
 });

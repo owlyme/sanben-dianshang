@@ -1,5 +1,27 @@
 import PagePathes from '../../router/index'
 import { Router } from '../../utils/sysApis'
+const NavList = [
+  {
+    "name": "首页",
+    path: PagePathes.shopIndex, 
+    "icon": 'iconxiangqing-dianpu1',
+  },
+  {
+    "name": "商品",
+    path: PagePathes.shopAllGood, 
+    "icon": 'icondianpuBarsTabBars2off',
+  },
+  {
+    "name": "分类",
+    path: PagePathes.shopGoodCatetory, 
+    "icon": 'icondianpuBarsTabBars3off'
+  },
+  {
+    "name": "门店",
+    path: PagePathes.shopAll, 
+    "icon": 'icondianpuBarsTabBars4off',
+  }
+]
 
 Component({
   options: {
@@ -10,6 +32,10 @@ Component({
   behaviors: [],
 
   properties: {
+    indexImage: {
+      type: String,
+      value: ''
+    },
     list: {
       type: Array,
       value: []
@@ -20,59 +46,34 @@ Component({
     }
   },
   observers: {
-    // goodList: function() {
-    //   this.init()
-    // }
+    indexImage: function() {
+      this.init()
+    }
   },
   data: {
-    navList: [
-      {
-        "name": "首页",
-        path: PagePathes.shopIndex, 
-        "icon": 'iconxiangqing-dianpu1',
-        'selectedPic': 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-      },
-      {
-        "name": "商品",
-        path: PagePathes.shopAllGood, 
-        "icon": 'icondianpuBarsTabBars2off',
-      },
-      {
-        "name": "分类",
-        path: PagePathes.shopGoodCatetory, 
-        "icon": 'icondianpuBarsTabBars3off'
-      },
-      {
-        "name": "设置",
-        path: PagePathes.shopAll, 
-        "icon": 'icondianpuBarsTabBars4off',
-      }
-    ]
+    navList: []
   },
 
   // 生命周期函数
   lifetimes: {
     attached: function() {
       // 在组件实例进入页面节点树时执行
-    },
-    detached: function() {
-      // 在组件实例被从页面节点树移除时执行
+      this.init()
     },
   },
-  created() {},
-  ready() {},
-  moved() {},
-  detached() {},
 
   methods: {
     init() {
-      
+      let navList = NavList.slice()
+      navList[0].selectedPic= this.data.indexImage
+      this.setData({
+        navList
+      })
     },
     navChange(e) {
       console.log('navChange', e)
       let {name, index} = e.detail
-      Router.push(this.data.navList[index].path)
+      Router.replace(this.data.navList[index].path)
     }
   }
-
 });

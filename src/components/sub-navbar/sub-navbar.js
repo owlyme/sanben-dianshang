@@ -1,6 +1,5 @@
 import { getDatasetValue } from '../../utils/commom';
 
-
 const getTabName = getDatasetValue('name');
 const getTabIndex = getDatasetValue('index');
 
@@ -48,10 +47,12 @@ Component({
     onClick(e) {
       let name = getTabName(e);
       let index = getTabIndex(e);
-
-      this.setData({
-        active: name
-      });
+      setTimeout(() => {
+        this.setData({
+          active: name
+        });
+      }, 500) 
+      
       console.log(name, index);
       this.triggerEvent('onChange', {name, index});
     }

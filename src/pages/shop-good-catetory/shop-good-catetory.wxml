@@ -8,8 +8,7 @@
     >
       <view class="sticky scroll-b"
         style="top: {{stickyOffsetTop}}px;">
-        
-          <search-input />
+          <search-input placeholder="搜索店铺内商品" />
           <view class="shop-info flex-b flex-middle">
             <shop-card src="{{shopInfo.pic}}"
             title="{{shopInfo.name}}"
@@ -19,13 +18,14 @@
                 <text class="focusNumber">{{shopInfo.focusNumber}}人关注</text>
               </view>
             </shop-card>
-            <view class="tag">关注</view>
+            <view class="tag">
+              <icon-font name="iconguanzhudianpu-weiguanzhu" size="12" />
+           
+              关注</view>
           </view>
       </view>
 
-  
-
-      <view class="list-b">
+      <view class="list-b gutter-container">
         <block class=""
           wx:for="{{list}}"
           wx:key="index"
@@ -36,7 +36,7 @@
               <title-contianer>
                 <view class="">{{item.title}}</view>
               </title-contianer>
-              <icon-font size="12" name="icondingdan-dianpu-gengduo" />
+              <icon-font size="12" data-index="{{index}}" bind:tap="onMoreClick" name="icondingdan-dianpu-gengduo" />
             </view>
             <view class="item-list flex flex-wrap">
                 <view 

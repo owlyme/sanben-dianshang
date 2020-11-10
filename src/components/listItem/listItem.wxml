@@ -15,7 +15,8 @@
       <slot name="content"></slot>
     </view>
     <view class="flex-middle" >
-    <slot name="icon"></slot>
+    <icon-font name="{{iconfont}}" size="12" />
+    <!-- <slot name="icon"></slot> -->
     </view>
   </view>
 </view>

@@ -9,7 +9,10 @@
       <view class="sticky scroll-b"
         style="top: {{stickyOffsetTop}}px;">
         <card >
-          <search-input />
+          <view bind:tap="onSearchGoodInCurrentShop">
+            <search-input  />
+          </view>
+          
           <view class="shop-info flex-b flex-middle">
             <shop-card src="{{shopInfo.pic}}"
             title="{{shopInfo.name}}"
@@ -19,7 +22,7 @@
                 <text class="focusNumber">{{shopInfo.focusNumber}}人关注</text>
               </view>
             </shop-card>
-            <view class="tag">关注</view>
+            <view class="tag"><icon-font name="iconguanzhudianpu-weiguanzhu" size="12" /> 关注</view>
           </view>
 
           <view class="address flex">
@@ -29,7 +32,7 @@
                 <view class="title">
                   门店地址
                 </view>
-                <view class="title title-add">
+                <view class="title-add">
                     {{shopInfo.address}}
                 </view>
               </view>
@@ -57,23 +60,25 @@
              textAlign="left"
             wx:for="{{shopList}}"
             wx:key="index"
+             wx:if="{{index < 2}}"
+             data-item='{{item}}'
+             bind:onClick="shopItemClick"
             >
                <shop-card slot="content" src="{{item.pic}}"
-               
                 showAddressIcon="{{true}}"
                 title="{{item.name}}"
                 text="{{item.address}}"
                 />
             </list-item>
 
-          <view class="wiew-more" bind:tap="viewMoreShop">
+          <view class="view-more" bind:tap="viewMoreShop">
              查看更多 <icon-font name="icongengduo-hong" size="12" />
           </view>
             
         </list>
       </view>
 
-      <view class="part-title">
+      <view class="gutter-container">
         <part-title title="热门商品推荐" />
       </view>
 
@@ -86,5 +91,7 @@
 
   </page-container>
 
-  <sub-navbar-shop index="{{0}}"/>
+  <sub-navbar-shop 
+    indexImage="{{shopInfo.pic}}"
+   index="{{0}}"/>
 </view>
