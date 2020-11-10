@@ -5,18 +5,18 @@
       value="{{keyword}}"
       data-keyword="keyword"
       placeholder="{{placeholder}}"
-      bindinput="onInputValueChange"
+      bindinput="debounceOnInputValueChange"
       />
 
       <view class="clear-keyword"
-        wx:if="{{keywords.length}}"
+        wx:if="{{keyword.length}}"
         bind:tap="clear">
-        <image src="/images/close.png" alt="" />
+        <icon-font name="iconwenan-tianru-qingkong1" size="12" color="#CCCCCC" />
       </view>
     </view>
   </view>
 
-  <view class="search-bar flex" wx:if="{{type === 'indexPage'}}">
+  <view class="search-bar flex" wx:elif="{{type === 'indexPage'}}">
     <view class="current-position"
      bind:tap="onAddressClick">
       {{address}}
@@ -47,24 +47,46 @@
     </view>
   </view>
   
-  <view class="search-bar-search-page flex-b" wx:if="{{type === 'searchPage'}}">
-   
+  <view class="search-bar-search-page flex-b" wx:elif="{{type === 'searchPage'}}">
     <view class="search-input-search" >
       <view class="user-action-part flex-middle flex-b" >
-
         <input
           value="{{keyword}}"
           data-keyword="keyword"
           placeholder="{{placeholder}}"
           bindinput="onInputValueChange"
           />
-
+        
+        <view class="clear-keyword"
+          wx:if="{{keyword.length}}"
+          bind:tap="clear">
+          <icon-font name="iconwenan-tianru-qingkong1" size="12" color="#CCCCCC" />
+        </view>
       </view>
     </view>
 
     <view class="search-btn"
-    bind:tap="toGetResult">
+      bind:tap="toGetResult">
       <icon-font size="14" color="#fff" name="iconsousuo" />
+    </view>
+  </view>
+
+  <view class="search-placeholder" wx:elif="{{type === 'shopPage'}}">
+    <view class="user-action-part flex-middle flex-b" >
+    <!-- <input
+      value="{{keyword}}"
+      data-keyword="keyword"
+      placeholder="{{placeholder}}"
+      bindinput="onInputValueChange"
+      /> -->
+      <view class="placeholder" wx:if="{{!value.length}}">{{placeholder}}</view>
+      <view class="searched-value" wx:elif="{{value.length}}">{{value}}</view>
+
+      <view class="clear-keyword"
+        wx:if="{{value.length}}"
+        catch:tap="clear">
+        <icon-font name="iconwenan-tianru-qingkong1" size="12" color="#CCCCCC" />
+      </view>
     </view>
   </view>
 </view>

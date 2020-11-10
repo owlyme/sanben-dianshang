@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/shop-all/shop-all",
     "pages/shop-index/shop-index",
     "pages/shop-good-catetory/shop-good-catetory",
     "pages/worthBuying/worthBuying",
-    "pages/shop-all/shop-all",
     "pages/shop-all-good/shop-all-good",
     "pages/shop-detail/shop-detail",
     "pages/search/search",

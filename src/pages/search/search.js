@@ -16,8 +16,7 @@ Page({
     offsetTop: App.globalData.navHeight,
     historyList: getHistoryKeywordsList(),
     findedList: [
-      1,
-      2,3,4,5,6,7,
+      1,2,3,4,5,6,7,
       '华为手机',
       '苹果手机',
       '吃不完的零食大礼包',
@@ -26,14 +25,19 @@ Page({
       '苹果手机',
       '吃不完的零食超大超大超大超大超大超大超大超大超大超',
     ],
-    remindList: [  1,2,3,4,5,6,7,8,9,10,11,12,13,1,4,1,1,1,1,1,11,],
-    keyword: ''
+    remindList: [ 1,2,3,4,5,6,7,8,9,10,11,12,13,1,4,1,1,1,1,1,11,],
+    keyword: '',
+    fromPage: 'shop'
   },
-  onLoad() {
+  onLoad(e) {
+    console.log("search onLoad", e, Router)
     // Do some initialize when page load.
   },
   onReady() {
     // Do something when page ready.
+    this.setData({
+      historyList: getHistoryKeywordsList(),
+    })
   },
   onShow() {
     // Do something when page show.
@@ -78,8 +82,7 @@ Page({
         historyList: getHistoryKeywordsList()
       })
     }, 100)
-
-    Router.push(PagePathes.categoryGoodList)
+    this.switchPage(e.detail.keyword)
   },
   deleteHistory() {
     setLocalStorage(storageKeyMap.keywords, [])
@@ -95,7 +98,7 @@ Page({
         historyList: getHistoryKeywordsList()
       })
     }, 100)
-    Router.push(PagePathes.categoryGoodList)
+    this.switchPage(e.detail.keyword)
   },
   onKeywordChange(e) {
     console.log(e)
@@ -111,6 +114,24 @@ Page({
       })
     }, 100)
 
-    Router.push(PagePathes.categoryGoodList)
+    this.switchPage(e.detail.keyword)
+  },
+  switchPage(goodName) {
+    let url = ''
+    let query= {
+          goodName
+        }
+    if (Router.query.fromPage === 'shop') {
+      // 店铺-商品列表
+      url = PagePathes.shopAllGood
+    } else {
+      // 商城-商品列表
+      url = PagePathes.categoryGoodList
+    }
+
+    Router.replace({
+      url,
+      query
+    })
   }
 });

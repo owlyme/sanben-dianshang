@@ -1,4 +1,4 @@
-import { getInputValue } from '../../utils/commom';
+import { getInputValue, debounce } from '../../utils/commom';
 import { addKeywordsHistory } from '../../utils/localStorage';
 
 Component({
@@ -10,6 +10,10 @@ Component({
   behaviors: [],
 
   properties: {
+    value: {
+      type: String,
+      value: ''
+    },
     type: {
       type: String,
       value: 'default' // 根据页面名区分 例： indexPage, orderPage, searchPage···
@@ -41,14 +45,17 @@ Component({
     },
   },
   created() {},
-  ready() {},
+  ready() {
+    this.debounceOnInputValueChange = debounce((e) => {
+      this.onInputValueChange(e)
+    }, 100)
+  },
   moved() {},
   detached() {},
 
   methods: {
     onInputValueChange(e) {
       let value = getInputValue(e);
-
       this.setData({
         keyword: value
       });
@@ -56,7 +63,8 @@ Component({
     },
     clear() {
       this.setData({
-        keyword: ''
+        keyword: '',
+        value: ''
       });
       this.valueChange('');
     },
@@ -85,9 +93,10 @@ Component({
     // 获取
     toGetResult() {
       let {keyword} =  this.data
-      this.triggerEvent('onSearch', {keyword})
-
-      addKeywordsHistory(keyword)
+      if (keyword.trim()) {
+        this.triggerEvent('onSearch', {keyword})
+        addKeywordsHistory(keyword)
+      }
     }
   }
 });

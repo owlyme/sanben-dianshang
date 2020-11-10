@@ -159,9 +159,14 @@ Page({
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
-  // 点击搜索框
+  // 点击搜索框 
   onSearchGoodInCurrentShop(e) {
-    Router.push(PagePathes.search)
+    Router.push({
+      url: PagePathes.search,
+      query: {
+        fromPage: 'shop'
+      }
+    })
   },
   onTypeChange(e) {
     console.log(e)

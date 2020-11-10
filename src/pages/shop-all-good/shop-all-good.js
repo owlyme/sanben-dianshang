@@ -110,13 +110,17 @@ Page({
       { name: '新品', type: 'new'},
       { name: '价格', type: 'price'},
     ],
-   
+    keyword: ''
   },
   onLoad(e) {
-   
+     // Do something when page ready
+     console.log(Router.query)
+     this.setData({
+       keyword: Router.query.goodName
+     })
   },
   onReady() {
-    // Do something when page ready.
+   
   },
   onShow() {
     // Do something when page show.
@@ -140,7 +144,14 @@ Page({
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
-
+  onSearchGoodInCurrentShop(e) {
+    Router.push({
+      url: PagePathes.search,
+      query: {
+        fromPage: 'shop'
+      }
+    })
+  },
   onTypeChange(e) {
     console.log(e)
     let {filterPriceStatus, index, type} = e.detail

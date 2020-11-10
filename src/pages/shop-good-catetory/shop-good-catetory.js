@@ -139,6 +139,14 @@ Page({
     let {filterPriceStatus, index, type} = e.detail
     
   },
+  onSearchGoodInCurrentShop(e) {
+    Router.push({
+      url: PagePathes.search,
+      query: {
+        fromPage: 'shop'
+      }
+    })
+  },
   onGoodClick(e) {
     console.log('onGoodClick', e)
   },

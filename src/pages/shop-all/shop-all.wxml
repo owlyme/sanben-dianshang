@@ -9,7 +9,10 @@
       <view class="sticky scroll-b"
         style="top: {{stickyOffsetTop}}px;">
         <card >
-          <search-input />
+          <search-input 
+          placeholder="搜索门店名称"
+          bind:onChange="onShopNameChange"
+          />
           <view class="shop-info flex-b flex-middle">
             <shop-card src="{{shopInfo.pic}}"
             title="{{shopInfo.name}}"
@@ -52,26 +55,21 @@
         <list >
           <view class="title">
             <title-contianer>
-              <view class="">同城门店·<text >{{shopList.length}}</text>家</view>
+              <view class="">同城门店·<text >{{shopInSameCityList.length}}</text>家</view>
             </title-contianer>
           </view>
           <list-item 
              textAlign="left"
-            wx:for="{{shopList}}"
+            wx:for="{{shopInSameCityList}}"
             wx:key="index"
+            bind:onClick="shopItemClick"
             >
                <shop-card slot="content" src="{{item.pic}}"
-               
                 showAddressIcon="{{true}}"
                 title="{{item.name}}"
                 text="{{item.address}}"
                 />
             </list-item>
-
-          <view class="wiew-more" bind:tap="viewMoreShop">
-             查看更多 <icon-font name="icongengduo-hong" size="12" />
-          </view>
-            
         </list>
       </view>
 
@@ -79,26 +77,21 @@
         <list >
           <view class="title">
             <title-contianer>
-              <view class="">同城门店·<text >{{shopList.length}}</text>家</view>
+              <view class="">全部门店·<text >{{shopInAllPlaceList.length}}</text>家</view>
             </title-contianer>
           </view>
           <list-item 
              textAlign="left"
-            wx:for="{{shopList}}"
+            wx:for="{{shopInAllPlaceList}}"
             wx:key="index"
+            bind:onClick="shopItemClick"
             >
                <shop-card slot="content" src="{{item.pic}}"
-               
                 showAddressIcon="{{true}}"
                 title="{{item.name}}"
                 text="{{item.address}}"
                 />
             </list-item>
-
-          <view class="wiew-more" bind:tap="viewMoreShop">
-             查看更多 <icon-font name="icongengduo-hong" size="12" />
-          </view>
-            
         </list>
       </view>
   </page-container>

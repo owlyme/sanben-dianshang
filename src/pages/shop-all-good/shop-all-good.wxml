@@ -8,7 +8,12 @@
     >
       <view class="sticky scroll-b"
         style="top: {{stickyOffsetTop}}px;">
-        <search-input placeholder="搜索店铺内商品" />
+        <view bind:tap="onSearchGoodInCurrentShop">
+            <search-input 
+            placeholder="搜索店铺内商品" 
+            value="{{keyword}}"
+            type='shopPage'/>
+          </view>
         <view class="shop-info flex-b flex-middle">
           <shop-card src="{{shopInfo.pic}}"
           title="{{shopInfo.name}}"
