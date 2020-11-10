@@ -9,7 +9,7 @@
     >
 
     <view class="search-b">
-      <search-input />
+      <search-input type="placeholder" bind:tap="topSearchPage" />
     </view>
 
     <view id="category-box" class="category-box flex">

@@ -12,7 +12,8 @@
             <search-input 
             placeholder="搜索店铺内商品" 
             value="{{keyword}}"
-            type='shopPage'/>
+            type='placeholder'
+            bind:onChange="onClear" />
           </view>
         <view class="shop-info flex-b flex-middle">
           <shop-card src="{{shopInfo.pic}}"

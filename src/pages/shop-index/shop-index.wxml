@@ -12,7 +12,7 @@
           <view bind:tap="onSearchGoodInCurrentShop">
             <search-input 
             placeholder="搜索店铺内商品" 
-            type='shopPage' />
+            type='placeholder' />
           </view>
           
           <view class="shop-info flex-b flex-middle">

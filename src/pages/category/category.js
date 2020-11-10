@@ -1,4 +1,4 @@
-import { PagePathes } from '../../router/index'
+import  PagePathes  from '../../router/index'
 import { Toast, boundingClientRect, Router } from '../../utils/sysApis';
 const App = getApp();
 Page({
@@ -184,6 +184,14 @@ Page({
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
+  topSearchPage(e) {
+    Router.push({
+      url: PagePathes.search,
+      query: {
+       
+      }
+    })
+  },
   // 分类滚动操作
   categoryScrollToLower() {
 
@@ -214,6 +222,7 @@ Page({
   onGoodClick(e) {
     console.log('onGoodClick',e)
     let detail = e.detail
+    console.log(PagePathes, PagePathes.categoryGoodList)
     Router.push(PagePathes.categoryGoodList)
   }
 

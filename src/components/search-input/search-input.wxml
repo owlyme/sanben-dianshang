@@ -71,7 +71,7 @@
     </view>
   </view>
 
-  <view class="search-placeholder" wx:elif="{{type === 'shopPage'}}">
+  <view class="search-placeholder" wx:elif="{{type === 'placeholder'}}">
     <view class="user-action-part flex-middle flex-b" >
     <!-- <input
       value="{{keyword}}"

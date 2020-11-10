@@ -46,8 +46,7 @@
               <block  wx:if="{{item.sameCityShopNumber}}">有<text class="text">{{item.sameCityShopNumber}}</text>家</block><block wx:else>暂无门店</block>位于当前城市
           </view>
           <!-- 
-          icongouwuche12
-          icongouwuche3 -->
+           -->
          
 
           <icon-font 

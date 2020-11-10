@@ -152,6 +152,11 @@ Page({
       }
     })
   },
+  onClear() {
+    this.setData({
+      keyword: ''
+    })
+  },
   onTypeChange(e) {
     console.log(e)
     let {filterPriceStatus, index, type} = e.detail

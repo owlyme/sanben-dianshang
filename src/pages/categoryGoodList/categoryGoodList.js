@@ -8,6 +8,7 @@ Page({
     stickyOffsetTop: App.globalData.navHeight,
     showDrawer: false, // 右侧抽屉
     showNav: true,
+    keyword: '',
     goodList: [
       {
         id: 0,
@@ -173,7 +174,7 @@ Page({
         ],
         totalShopNumber: 207,
         sameCityShopNumber: 20
-      }
+      },
     ]
   },
   onLoad(e) {
@@ -182,6 +183,10 @@ Page({
     //   pageStyleType: e.options.styleType || 'vertical'
     // })
     // Do some initialize when page load.
+    console.log(Router.query)
+    this.setData({
+      keyword: Router.query.goodName
+    })
   },
   onReady() {
     // Do something when page ready.
@@ -207,6 +212,20 @@ Page({
   },
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
+  },
+  topSearchPage(e) {
+    Router.push({
+      url: PagePathes.search,
+      query: {
+       
+      }
+    })
+  },
+  onClear() {
+    console.log('onClear')
+    this.setData({
+      keyword: ''
+    })
   },
 
   onTypeChange(e) {
@@ -244,6 +263,10 @@ Page({
   },
   onConditionFilterMakeSure(e) {
     console.log('onConditionFilterMakeSure', e)
+  },
+
+  toCartPage(e) {
+    console.log('toCartPage', e)
   },
 
   customData: {}

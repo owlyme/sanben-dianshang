@@ -8,7 +8,16 @@
     >
       <view class="sticky scroll-b"
         style="top: {{stickyOffsetTop}}px;">
-        <search-input />
+        <view class="flex">
+          <view style="flex: 1" bind:tap="topSearchPage">
+            <search-input type="placeholder"  value="{{keyword}}" bind:onChange="onClear"/>
+          </view>
+          <view class="cart-btn" hidden="{{tabType !== 'shop'}}">
+            <icon-font bind:tap="toCartPage" name="icongouwuche12" size="20" />
+          </view>
+        </view>
+        
+        
         <view class="tab-bar-filter-b">
            <tab-bar-filter 
             bind:onChange="onTypeChange"/>
