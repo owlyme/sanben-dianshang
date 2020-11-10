@@ -1,4 +1,5 @@
-
+import PagePathes from '../../router/index'
+import { Router } from '../../utils/sysApis'
 // 全局app实例
 const App = getApp();
 
@@ -98,7 +99,82 @@ Page({
         tags: ['hao', 'bucuo']
       }
     ],
-    pageStyleType: 'standard' // 竖 vertical，  水平 standard
+    pageStyleType: 'standard', // 竖 vertical，  水平 standard
+    tabType: 'shop',
+    shopList: [
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: "阿迪达斯三叶草旗舰店",
+        focusNumber: 148,
+        rate: 7,
+        phoneNumber: '13156521718',
+        address: 111111,
+        products: [
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+        ],
+        totalShopNumber: 207,
+        sameCityShopNumber: 20
+      },
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: "阿迪达斯三叶草旗舰店",
+        focusNumber: 148,
+        rate: 7,
+        phoneNumber: '13156521718',
+        address: 111111,
+        products: [
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+        ],
+        totalShopNumber: 207,
+        sameCityShopNumber: 0
+      },
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: "阿迪达斯三叶草旗舰店",
+        focusNumber: 148,
+        rate: 7,
+        phoneNumber: '13156521718',
+        address: 111111,
+        products: [
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+        ],
+        totalShopNumber: 207,
+        sameCityShopNumber: 20
+      }
+    ]
   },
   onLoad(e) {
     console.log(e)
@@ -136,13 +212,22 @@ Page({
   onTypeChange(e) {
     console.log(e)
     let {filterPriceStatus, index, type} = e.detail
-    
+    let {showDrawer, showNav, tabType} = this.data
+
+    tabType = type
     if (type=== 'filter') {
-      this.setData({
-        showDrawer: true,
-        showNav: false
-      })
-    }
+      showDrawer = true
+      showNav =  false
+    } else if (type=== 'shop') {
+      tabType = type
+      // Router.push(PagePathes.mallShop)
+    } 
+
+    this.setData({
+      showDrawer,
+      showNav,
+      tabType
+    })
   },
   onGoodClick(e) {
     console.log('onGoodClick', e)

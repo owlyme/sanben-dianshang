@@ -10,6 +10,18 @@ Component({
     type: {
       type: String,
       value: "default" // default , warn ,ghost
+    },
+    width: {
+      type: Number,
+      value: 72 // px 需要 * 2 =》 rpx
+    },
+    height: {
+      type: Number,
+      value: 32 // px 需要 * 2 =》 rpx
+    },
+    fontSize: {
+      type: Number,
+      value: 16 // px 需要 * 2 =》 rpx
     }
   },
   data: {},

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/categoryGoodList/categoryGoodList",
     "pages/shop-all/shop-all",
     "pages/shop-index/shop-index",
     "pages/shop-good-catetory/shop-good-catetory",
@@ -7,7 +8,6 @@
     "pages/shop-all-good/shop-all-good",
     "pages/shop-detail/shop-detail",
     "pages/search/search",
-    "pages/categoryGoodList/categoryGoodList",
     "pages/category/category",
     "pages/index/index",
     "pages/redeem/redeem",
@@ -88,6 +88,8 @@
     "rate-star": "/components/rate-star/rate-star",
     "sub-navbar": "/components/sub-navbar/sub-navbar",
     "sub-navbar-shop": "components/sub-navbar-shop/sub-navbar-shop",
+    "shop-list": "components/shop-list/shop-list",
+    
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },

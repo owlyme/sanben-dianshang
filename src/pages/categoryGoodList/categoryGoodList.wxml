@@ -15,7 +15,8 @@
         </view>
       </view>
 
-      <view class="list-b">
+      <!-- 商品列表 -->
+      <view class="list-b" hidden="{{tabType === 'shop'}}">
         <block wx:if="{{pageStyleType === 'vertical'}}">
           <good-list 
             goodList="{{goodList}}"
@@ -28,6 +29,11 @@
               bind:onGoodClick="onGoodClick"
               />
         </block>
+      </view>
+
+      <!-- 店铺列表 -->
+      <view class="list-b" hidden="{{tabType !== 'shop'}}">
+        <shop-list list="{{shopList}}" />
       </view>
   </page-container>
 

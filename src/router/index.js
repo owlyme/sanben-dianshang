@@ -1,4 +1,5 @@
 export default {
+    
     worthBuying: "pages/worthBuying/worthBuying",
     shopGoodCatetory: "pages/shop-good-catetory/shop-good-catetory",
     shopAll: "pages/shop-all/shop-all",
