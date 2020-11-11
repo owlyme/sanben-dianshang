@@ -3,7 +3,7 @@
     <view class="selected" 
      bind:tap="selectedAll">
       <icon-font 
-       wx:if="{{isAllSelected}}"
+       wx:if="{{data.checked}}"
       name="icongouwuche-duoxuanqi-xuanze3" 
       size="16" 
       color="#FF3232" />
@@ -25,7 +25,7 @@
   <view class="order-info">
     <block wx:for="{{data.shopList}}">
 
-      <view class="shop-name ellipsisOne">
+      <view class="shop-name ellipsisOne" wx:if="{{item.orderList.length}}">
         <icon-font name="iconmendian2" size="14" color="#CCCCCC" />
         {{item.shopName}}
         <icon-font name="icondingdan-dianpu-gengduo" size="14" color="#CCCCCC" 
@@ -34,7 +34,7 @@
         />
       </view>
      
-      <view >
+      <view wx:if="{{item.orderList.length}}">
         <view
         class="order-container"
         wx:for="{{item.orderList}}"

@@ -3,9 +3,36 @@ import {boundingClientRect} from '../../utils/sysApis'
 import PagePathes from '../../router/index'
 const App = getApp();
 
-function calcShoppingListTotalPrice(shoppingList) {
-  return shoppingList.reduce((acc, {price, number}) => acc + price * number, 0)
+function calcShoppingListTotal(shoppingList) {
+  return shoppingList.reduce((acc, {price, number}) => ({
+    price: acc.price + price * number,
+    number: acc.number + number,
+    goodCategoryNumber: acc.goodCategoryNumber + 1
+  }), {
+    price: 0,
+    number: 0,
+    goodCategoryNumber: 0
+  })
 }
+
+function selectAll(orderList, checked) {
+  orderList.forEach((item) => {
+    item.checked = checked
+    item.shopList.forEach(({orderList})=> {
+      orderList.forEach(item=> {
+        item.checked = checked || false
+      })
+    })
+  })
+  return orderList
+}
+
+function getAllGood(orderList) {
+  return orderList
+  .reduce((acc, {shopList}) => [...acc, ...shopList], [])
+  .reduce((acc, {orderList}) => [...acc, ...orderList], [])
+}
+
 Page({
   data: {
     scrollViewHeight: 400,
@@ -13,7 +40,11 @@ Page({
     isEdit: false,
     address:'213213',
     shoppingList: [],
-    shoppingListTotalPrice: 0,
+    shoppingListTotal: {
+      price: 0,
+      number: 0
+    },
+    goodTypeInCart: 0, // 购物车里所有的商品种类
     orderList: [
       {
         brandName: '阿迪达斯',
@@ -24,10 +55,10 @@ Page({
             orderList: [
               {
                 id: 1,
-                number: 12,
+                number: 10,
                 pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
                 model: '红白字母',
-                price: 10,
+                price: 20,
                 totalPrice: 120,
                 name: '阿迪达斯官网 adidas 5T Nec…'
               },
@@ -122,7 +153,7 @@ Page({
     ]
   },
   onLoad() {
-    // Do some initialize when page load.
+    this.customData.allGoodInCartTypes = getAllGood(this.data.orderList).length
   },
   onReady() {
     // Do something when page ready.
@@ -135,7 +166,8 @@ Page({
     console.log(res);
     let scrollViewHeight = App.globalData.windowHeight - res.target_top - submit.target_height
     this.setData({
-      scrollViewHeight
+      scrollViewHeight,
+
     });
   },
   onShow() {
@@ -177,11 +209,13 @@ Page({
   toEdit() {
     this.setData({
       isEdit: !this.data.isEdit
-    }) 
+    })
   },
+  // 组件操作
   onOrderChange(e) {
     console.log('onOrderChange', e)
-    let {checked, orderList} = e.detail
+    
+    let {checked, orderList, actionType} = e.detail
     let shoppingList = this.data.shoppingList
     
     if (checked) {
@@ -202,20 +236,77 @@ Page({
         !orderList.find((item) => item.id === order.id)
       )
     }
-    let shoppingListTotalPrice = calcShoppingListTotalPrice(shoppingList)
+
+    let shoppingListTotal = calcShoppingListTotal(shoppingList)
+    // 当删除一项时，总商品类型数量要减 1
+    if (actionType === 'delete') {
+      this.customData.allGoodInCartTypes--
+    }
+    let isAllSelected = this.customData.allGoodInCartTypes <= shoppingListTotal.goodCategoryNumber
     this.setData({
+      isAllSelected,
       shoppingList,
-      shoppingListTotalPrice,
+      shoppingListTotal,
     })
   },
 
   selectedAll() {
+    let {isAllSelected, orderList} = this.data
+    let shoppingList = this.data.shoppingList
+    
+    if (!isAllSelected) { 
+      shoppingList = getAllGood(orderList)
+    } else {
+      // 取消选中或删除
+      shoppingList= []
+    }
+    let shoppingListTotal = calcShoppingListTotal(shoppingList)
     this.setData({
-      isAllSelected: !this.data.isAllSelected
-    }) 
+      orderList: selectAll(orderList, !isAllSelected),
+      shoppingList,
+      shoppingListTotal,
+      isAllSelected: !isAllSelected
+    })
+  
   },
   submit(e) {
     console.log(this.data.shoppingList)
+  },
+  // 移入收藏
+  saveGood(e) {
+   
+  },
+  // 删除
+  removeGood(e) {
+    let {shoppingList, orderList} = this.data
+
+    // 删除
+    // 遍历 orderList
+    orderList = orderList.filter(order => {
+        // 遍历 orderList 每一项的 shopList
+        order.shopList = order.shopList.filter(shop => {
+          // 遍历 shopList 每一项的 orderList 属性
+          shop.orderList = shop.orderList.filter(good =>
+            // 判断 当前项是否删除
+            !shoppingList.find((item) => item.id === good.id)
+          )
+          return shop.orderList.length
+        })
+        return order.shopList.length
+      }
+    )
+    let shoppingListTotal = calcShoppingListTotal([])
+
+    this.setData({
+      orderList,
+      shoppingList: [],
+      shoppingListTotal,
+      
+    })
+  },
+  // 
+  customData: {
+    allGoodInCartTypes: 0
   }
 });
 

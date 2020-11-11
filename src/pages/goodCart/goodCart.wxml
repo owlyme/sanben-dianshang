@@ -1,7 +1,7 @@
 <view class="xxx-page">
   <page-container
     pageName="购物车"
-    showNav="{{true}}"
+    showNav="{{false}}"
     bgColor="none"
     iconColor="none"
     theme="dark"
@@ -19,20 +19,13 @@
          
         </view>
         <view class="edit" bind:tap="toEdit">
-           编辑
+          {{isEdit ? '完成' : "编辑"}}
         </view>
       </view>
 
-      <!-- 没有需要购买的商品 -->
-      <view class="no-good" 
-        hidden="{{orderList.length > 0}}"
-       >
-        <image src="/images/empty-cart.png" />
-        <view class="no-good-title">您还没有相关订单</view>
-        <view class="no-good-remark">可以去看看有哪些想买的</view>
-      </view>
+    
 
-       <!-- 有需要购买的商品 -->
+      
       <view class="scroll-b">
         <scroll-view 
           id="scroll-view"
@@ -42,6 +35,15 @@
           bindscrolltoupper="scrollToUpper"
           bindscroll="onScroll"
           >
+          <!-- 没有需要购买的商品 -->
+          <view class="no-good" 
+            hidden="{{orderList.length > 0}}"
+          >
+            <image src="/images/empty-cart.png" />
+            <view class="no-good-title">您还没有相关订单</view>
+            <view class="no-good-remark">可以去看看有哪些想买的</view>
+          </view>
+           <!-- 有需要购买的商品 -->
           <block wx:for="{{orderList}}">
          
               <view class="cart-item">
@@ -68,14 +70,17 @@
             />
           全选
         </view>
-        <view class="flex total flex-middle">
-          合计: <money-text number="{{shoppingListTotalPrice}}" />
+        <view class="flex total flex-middle" hidden="{{isEdit}}">
+          合计: <money-text number="{{shoppingListTotal.price}}" />
         </view>
         </view>
 
-        <view>
-          <view class="submit-btn" bind:tap="submit">结算下单</view>
+        <view class="flex">
+          <view  hidden="{{isEdit}}" class="btn submit" bind:tap="submit">结算下单({{shoppingListTotal.number}})</view>
+          <view  hidden="{{!isEdit}}" class="btn save" bind:tap="saveGood">移入收藏</view>
+          <view  hidden="{{!isEdit}}" class="btn delete" bind:tap="removeGood">删除</view>
         </view>
+        
       </view>
 
   </page-container>

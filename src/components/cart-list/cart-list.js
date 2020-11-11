@@ -2,12 +2,18 @@ import PagePathes from '../../router/index'
 import { getDataset } from '../../utils/commom';
 
 function checkedAll(data, checked) {
-  data.shopList.forEach(shop => 
+  data.checked = checked;
+  data.shopList.forEach(shop => {
     shop.orderList.forEach(order => {
       order.checked = checked
     })
+  }
   );
   return data
+}
+
+function getAllGood(arr) {
+  return arr.reduce((acc, shop) => [...acc, ...shop.orderList], [])
 }
 
 Component({
@@ -107,17 +113,16 @@ Component({
     selectedAll(e) {
       let dataset = getDataset(e)
       console.log('selectedAll', dataset)
-      let isAllSelected = !this.data.isAllSelected
       let data = this.data.data
-
+      let checked = data.checked
       this.setData({
-        isAllSelected,
-        data: checkedAll(data, isAllSelected)
+        data: checkedAll(data, !checked)
       })
-
-      let allOrder = data.shopList.reduce((acc, shop) => [...acc, ...shop.orderList], [])
      
-      this.onChange(allOrder, isAllSelected)
+
+      let allOrder = getAllGood(data.shopList)
+     
+      this.onChange(allOrder, !checked, !checked ? 'selectedAll' : 'cancelAll')
     },
     // 单选
     selectedSingle(e) {
@@ -128,14 +133,13 @@ Component({
       let checked = data.shopList[shopIndex].orderList[orderIndex].checked || false
       data.shopList[shopIndex].orderList[orderIndex].checked = !checked
 
-      let isAllSelected = data.shopList[shopIndex].orderList.every((i) => i.checked)
+      data.checked = getAllGood(data.shopList).every((i) => i.checked)
       
       this.setData({
-        data,
-        isAllSelected
+        data
       })
 
-      this.onChange(order, !checked)
+      this.onChange(order, !checked, !checked ? 'selected' : 'cancel')
     },
     hiddenCover() {
       this.setData({
@@ -172,7 +176,7 @@ Component({
         showCoverIndex: ''
       })
 
-      this.onChange(order, false)
+      this.onChange(order, false, 'delete')
     },
     // 修改订单规格
     swicthOrderModel(e) {
@@ -185,9 +189,9 @@ Component({
       console.log('viewShop', dataset)
     },
     // 商品的任一属性变化时
-    onChange(order, checked) {
+    onChange(order, checked, actionType) {
       let orderList = Array.isArray(order) ? order : [order]
-      this.triggerEvent('onChange', {orderList, checked})
+      this.triggerEvent('onChange', {orderList, checked, actionType })
     }
   }
 

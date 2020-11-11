@@ -30,7 +30,7 @@ page{
     z-index: 2;
     image {
       display: block;
-      margin: 152px auto 0;
+      margin: 120px auto 0;
       width: 187px;
       height: 160px;
     }
@@ -43,7 +43,6 @@ page{
       font-weight: 500;
       color: #333333;
       line-height: 22px;
-      
     }
     &-remark {
       margin-top: 8px;
@@ -63,7 +62,7 @@ page{
   }
   
   .scroll-b {
-   
+    position: relative;
   }
   #submit{
     padding: 0 16px;
@@ -89,17 +88,43 @@ page{
       line-height: 20px;
       margin-left: 12px;
     }
-    .submit-btn {
-      width: 120px;
-      height: 36px;
-      background: #FF3232;
+    .btn {
       border-radius: 20px;
       text-align: center;
-      font-size: 16px;
+      
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
-      color: #FFFFFF;
-      line-height: 36px;
+      &.submit {
+        width: 120px;
+        height: 36px;
+        line-height: 36px;
+        background: #FF3232;
+        color: #FFFFFF;
+        font-size: 16px;
+      }
+      &.save {
+        width: 72px;
+        height: 32px;
+        line-height: 30px;
+        background: #FFFFFF;
+        border-radius: 16px;
+        border: 1px solid #FF5E20;
+        color: #FF5E20;
+        
+        font-size: 12px;
+      }
+      &.delete {
+        
+        font-size: 12px;
+        margin-left: 12px;
+        width: 48px;
+        height: 32px;
+        line-height: 30px;
+        background: #FFFFFF;
+        border-radius: 16px;
+        border: 1px solid #FF3232;
+        color: #FF3232;
+      }
     }
   
   }
