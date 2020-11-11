@@ -1,0 +1,115 @@
+<view class="xxx-components">
+  <view class="barnd-info flex flex-middle">
+    <view class="selected" 
+     bind:tap="selectedAll">
+      <icon-font 
+       wx:if="{{isAllSelected}}"
+      name="icongouwuche-duoxuanqi-xuanze3" 
+      size="16" 
+      color="#FF3232" />
+
+      <icon-font
+      wx:else 
+      name="iconcircle" 
+      size="16" 
+      color="#CCCCCC" 
+      />
+      
+    </view>
+    
+    <image class="logo" src="{{data.logo}}" />
+    <text class="title ellipsisOne">{{data.brandName}}</text>
+    
+  </view>
+
+  <view class="order-info">
+    <block wx:for="{{data.shopList}}">
+
+      <view class="shop-name ellipsisOne">
+        <icon-font name="iconmendian2" size="14" color="#CCCCCC" />
+        {{item.shopName}}
+        <icon-font name="icondingdan-dianpu-gengduo" size="14" color="#CCCCCC" 
+          data-shop="{{item}}"
+          bind:tap="viewShop"
+        />
+      </view>
+     
+      <view >
+        <view
+        class="order-container"
+        wx:for="{{item.orderList}}"
+        wx:for-item="order"
+        wx:for-index="orderIndex"
+        wx:key="orderIndex"
+        data-shop="{{item}}"
+        data-order="{{order}}"
+        >
+        <!-- 显示遮罩层 -->
+          <view class="order-item-cover flex"
+            wx:if="{{showCoverIndex === index + '-' + orderIndex}}" 
+            bind:tap="hiddenCover"
+            >
+            <view 
+            data-shop="{{item}}"
+            data-order="{{order}}"
+            data-shop-index='{{index}}'
+            data-order-index='{{orderIndex}}'
+            catch:tap="saveGood" 
+            class="btn save">移入收藏</view>
+            <view 
+            data-shop="{{item}}"
+            data-order="{{order}}"
+            data-shop-index='{{index}}'
+            data-order-index='{{orderIndex}}'
+            catch:tap="removeGood" class="btn delete">删除</view>
+          </view>
+          <view class="flex flex-middle order-item" >
+            
+            <!-- 单选 -->
+            <view class="selected" 
+              data-shop="{{item}}"
+              data-order="{{order}}"
+              data-shop-index='{{index}}'
+              data-order-index='{{orderIndex}}'
+              bind:tap="selectedSingle" >
+              
+              <icon-font wx:if="{{order.checked}}" name="icongouwuche-duoxuanqi-xuanze3" size="16" color="#FF3232" />
+              <icon-font wx:else name="iconcircle" size="16" color="#CCCCCC" />
+            </view>
+            <!-- 图片 -->
+            <image class='good-img' src="{{order.pic}}"
+            data-shop="{{item}}"
+            data-order="{{order}}"
+            data-shop-index='{{index}}'
+            data-order-index='{{orderIndex}}'
+            bind:longtap="showCover" />
+            <!-- 详情 -->
+            <view class="detail">
+              <view class="name ellipsisOne" >
+                {{order.name}}
+              </view>
+              <view class="flex">
+              <!-- 修改订单规格 -->
+                  <view class="model ellipsisOne" 
+                    data-shop="{{item}}"
+                    data-order="{{order}}"
+                    data-shop-index='{{index}}'
+                    data-order-index='{{orderIndex}}'
+                    bind:tap="swicthOrderModel"
+                  >
+                  {{order.model}}
+                </view>
+              </view>
+              
+              <view class="flex-b" >
+                <money-text number="{{order.price * order.number}}" />
+                {{order.number}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+    </block>
+  </view>
+</view>

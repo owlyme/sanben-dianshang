@@ -1,3 +1,4 @@
+export const getDataset = event => event.currentTarget.dataset
 // 获取data值
 export const getDatasetValue = dataName => event => event.currentTarget.dataset[dataName];
 // 获取input Value值

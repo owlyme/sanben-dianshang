@@ -5,7 +5,7 @@
   backgroundFixed='{{false}}'
 >
     <view class="index-page">
-      <view class="search-b sticky"
+      <view id="search-b" class="search-b sticky"
       style="top: {{stickySearchInputOffsetTop}}px;">
         <search-input
           placeholder="搜索我的订单"
@@ -59,7 +59,7 @@
         <promotional-section />
       </view>
       <!-- 吸顶 分类 -->
-      <view class="sticky sticky-b " style="top: {{stickyTabbarOffsetTop}}px; background:{{stickyTabbarBackground}}">
+      <view id="sticky-b" class="sticky sticky-b " style="top: {{stickyTabbarOffsetTop}}px; background:{{stickyTabbarBackground}}">
         <tab-bar type="2" tabs="{{goodListTypeListTab}}" bind:onChange="onGoodListTypeChange" />
         <view class="category-list" wx:if="{{goodListType === 'category'}}">
           <scroll-tab tabs="{{categoryList}}" bind:onChange="onCategoryChange" />

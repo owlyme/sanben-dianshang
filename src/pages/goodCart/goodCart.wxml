@@ -1,0 +1,82 @@
+<view class="xxx-page">
+  <page-container
+    pageName="购物车"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+      <view class="flex-b top ">
+        <view class="address ellipsisOne" bind:tap="setAddress">
+          <icon-font name="iconshouhuodizhi1" size="14" color="#FF3232"  /> 
+          <block wx:if="{{address}}">
+            收货地址：{{address}}
+            </block>
+          <block wx:else>
+            添加收货地址
+          </block>
+         
+        </view>
+        <view class="edit" bind:tap="toEdit">
+           编辑
+        </view>
+      </view>
+
+      <!-- 没有需要购买的商品 -->
+      <view class="no-good" 
+        hidden="{{orderList.length > 0}}"
+       >
+        <image src="/images/empty-cart.png" />
+        <view class="no-good-title">您还没有相关订单</view>
+        <view class="no-good-remark">可以去看看有哪些想买的</view>
+      </view>
+
+       <!-- 有需要购买的商品 -->
+      <view class="scroll-b">
+        <scroll-view 
+          id="scroll-view"
+          scroll-y="true"
+          style="height: {{scrollViewHeight}}px;"
+          bindscrolltolower="scrollToLower"
+          bindscrolltoupper="scrollToUpper"
+          bindscroll="onScroll"
+          >
+          <block wx:for="{{orderList}}">
+         
+              <view class="cart-item">
+                <cart-list data="{{item}}" bind:onChange="onOrderChange"/>
+              </view>
+          </block>
+        </scroll-view>
+      </view>
+
+      <view id="submit" class="total-sum flex-b flex-middle">
+        <view class="flex" bind:tap="selectedAll">
+        <view class="selected-all">
+          <icon-font 
+            wx:if="{{isAllSelected}}"
+            name="icongouwuche-duoxuanqi-xuanze3" 
+            size="16" 
+            color="#FF3232" />
+
+            <icon-font
+            wx:else 
+            name="iconcircle" 
+            size="16" 
+            color="#CCCCCC" 
+            />
+          全选
+        </view>
+        <view class="flex total flex-middle">
+          合计: <money-text number="{{shoppingListTotalPrice}}" />
+        </view>
+        </view>
+
+        <view>
+          <view class="submit-btn" bind:tap="submit">结算下单</view>
+        </view>
+      </view>
+
+  </page-container>
+</view>

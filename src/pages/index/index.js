@@ -157,20 +157,24 @@ Page({
   },
   onLoad() {
     // Do some initialize when page load.
-    this.getDom()
+    
     this.onPageScrollthrottle = throttle((scrollTop) => {
       this.switchStickyStyle(scrollTop);
       this.switchBackTop(scrollTop);
     }, 200)
+    setTimeout(() => {
+      this.getDom()
+    }, 10)
   },
   onReady() {
     // Do something when page ready.
-   
+
+    
   },
   async getDom(a) {
     let navHeight = App.globalData.navHeight
-    let sticky = await boundingClientRect('.sticky-b');
-    let search = await boundingClientRect('.search-b');
+    let sticky = await boundingClientRect('#sticky-b');
+    let search = await boundingClientRect('#search-b');
     
     let stickyBaseOffsetTop = navHeight
     let stickySearchInputOffsetTop = stickyBaseOffsetTop

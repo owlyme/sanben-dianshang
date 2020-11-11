@@ -33,6 +33,12 @@ Component({
       value: 16
     }
   },
+  
+  observers: {
+    number: function() {
+      this.init()
+    }
+  },
   data: {
     intPart: 0,
     decimalParg: '00'
@@ -41,18 +47,16 @@ Component({
   // 生命周期函数
   created() {},
   attached() {
-    let [intPart, decimalParg] = String(this.data.number || 0).split('.');
-
-    this.setData({
-      intPart,
-      decimalParg
-    });
+    this.init()
   },
-  ready() {},
-  moved() {},
-  detached() {
+  methods: {
+    init() {
+      let [intPart, decimalParg] = String(this.data.number || 0).split('.');
 
-  },
-
-  methods: {}
+      this.setData({
+        intPart,
+        decimalParg
+      });
+    }
+  }
 });

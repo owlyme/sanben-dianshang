@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/goodCart/goodCart",  
     "pages/categoryGoodList/categoryGoodList",
     "pages/shop-all/shop-all",
     "pages/shop-index/shop-index",
@@ -89,6 +90,8 @@
     "sub-navbar": "/components/sub-navbar/sub-navbar",
     "sub-navbar-shop": "components/sub-navbar-shop/sub-navbar-shop",
     "shop-list": "components/shop-list/shop-list",
+    "cart-item": "components/cart-item/cart-item",
+    "cart-list": "components/cart-list/cart-list",
     
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
@@ -117,9 +120,9 @@
           "text": "值得买"  
         }, 
         {  
-          "selectedIconPath": "images/tabbar/cart-0.png",  
+          "selectedIconPath": "images/tabbar/cart-1.png",  
           "iconPath": "images/tabbar/cart-0.png",
-          "pagePath": "pages/index/index",  
+          "pagePath": "pages/goodCart/goodCart",  
           "text": "购物车"  
         },
         {  

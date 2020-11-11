@@ -123,7 +123,6 @@ export const setNavBarSize = (cb = f => f) => {
         windowHeight: res.windowHeight,
       });
 
-
     },
     fail(err) {
       console.log(err);
@@ -136,6 +135,7 @@ export const boundingClientRect = async nodeId => {
     let query = wx.createSelectorQuery();
     query.select(nodeId).boundingClientRect();
     query.selectViewport().scrollOffset();
+
     query.exec(function (res) {
       const {
         bottom,
