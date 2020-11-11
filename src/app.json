@@ -92,7 +92,11 @@
     "shop-list": "components/shop-list/shop-list",
     "cart-item": "components/cart-item/cart-item",
     "cart-list": "components/cart-list/cart-list",
-    
+    "number-stepper": "components/number-stepper/number-stepper",
+    "half-screen-dialog": "components/half-screen-dialog/half-screen-dialog",
+    "coupon-card-cart": "components/coupon-card-cart/coupon-card-cart",
+    "discount-prices": "components/discount-prices/discount-prices",
+
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },

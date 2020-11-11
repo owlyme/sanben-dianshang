@@ -1,0 +1,37 @@
+<view class="coupon-card-components">
+  <view class="coupon-bg">
+    <image src="./images/bg-1.png" />
+  </view>
+
+  <view class="coupon-info">
+    <view class="coupon-detail flex-b">
+      <view class="coupon-detail-left">
+          <view class="flex flex-middle">
+            <money-text 
+              moneySize="{{12}}"
+              numberSize="{{26}}"
+              showDecimal="{{true}}"
+              number="{{info.couponMoney}}" />
+              <view class="flex-b">
+                <view wx:if="{{info.type === 0}}" class="type paltform">平台礼品券</view>
+                <view wx:if="{{info.type === 1}}" class="type shop">店铺礼品券</view>
+              </view>
+          </view>
+          <view class="available-money">
+            订单满{{info.availableMoney}}可用（不含邮费)
+          </view>
+
+          <view class="time flex-b">
+            <view>有效期至：{{info.expired}} </view>
+          </view>
+      </view>
+
+      <view class="coupon-btn flex-cm" >
+        <view 
+        class="btn-status" 
+        bind:tap="getCoupon"
+        >立即领取</view>
+      </view>
+    </view>
+  </view>
+</view>

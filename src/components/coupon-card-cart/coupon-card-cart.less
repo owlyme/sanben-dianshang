@@ -1,0 +1,82 @@
+.coupon-card-components{
+    position: relative;
+    width: 343px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    .coupon-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 343px;
+        height: 80px;
+        z-index: 0;
+        image{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .coupon-info {
+        position: relative;
+        z-index: 1;
+        .coupon-detail {
+            height: 80px;
+            padding: 6px 8px;
+            padding-right: 13px;
+            .coupon-detail-left {
+            
+                .type {
+                    height: 20px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 600;
+                    color: #FF3232;
+                    line-height: 23px;
+                    margin-left: 4px;
+                }
+                .available-money{
+                    margin-top: 4px;
+                    height: 14px;
+                    font-size: 10px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #FF3631;
+                    line-height: 14px;
+                }
+              
+                .time {
+                    margin-top: 4px;
+                    height: 14px;
+                    font-size: 10px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #FF392F;
+                    line-height: 14px;
+                }
+            }
+            .coupon-btn {
+                .btn-status {
+                    width: 72px;
+                    height: 24px;
+                    background: #FF3232;
+                    border-radius: 12px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #FFFFFF;
+                    line-height: 24px;
+                    text-align: center;
+                    &.canuse {
+                        color: #FF3232;
+                        background: #FFFFFF;
+                    }
+                    &.canuse {
+                        color: #FF3232;
+                        background: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+    
+}

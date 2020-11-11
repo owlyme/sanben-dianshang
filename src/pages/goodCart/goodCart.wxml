@@ -22,10 +22,7 @@
           {{isEdit ? '完成' : "编辑"}}
         </view>
       </view>
-
     
-
-      
       <view class="scroll-b">
         <scroll-view 
           id="scroll-view"
@@ -53,26 +50,33 @@
         </scroll-view>
       </view>
 
-      <view id="submit" class="total-sum flex-b flex-middle">
-        <view class="flex" bind:tap="selectedAll">
-        <view class="selected-all">
-          <icon-font 
-            wx:if="{{isAllSelected}}"
-            name="icongouwuche-duoxuanqi-xuanze3" 
-            size="16" 
-            color="#FF3232" />
+      <view id="submit" class="total-sum flex-b flex-middle"
+      style="z-index: {{showDiscountedPrices ? 20 : 0}}">
+        <view class="flex flex-middle">
+          <view class="selected-all"  bind:tap="selectedAll">
+            <icon-font 
+              wx:if="{{isAllSelected}}"
+              name="icongouwuche-duoxuanqi-xuanze3" 
+              size="16" 
+              color="#FF3232" />
 
-            <icon-font
-            wx:else 
-            name="iconcircle" 
-            size="16" 
-            color="#CCCCCC" 
-            />
-          全选
-        </view>
-        <view class="flex total flex-middle" hidden="{{isEdit}}">
-          合计: <money-text number="{{shoppingListTotal.price}}" />
-        </view>
+              <icon-font
+              wx:else 
+              name="iconcircle" 
+              size="16" 
+              color="#CCCCCC" 
+              />
+            全选
+          </view>
+
+          <view class="flex-col total" hidden="{{isEdit}}">
+            <view class="flex-middle">合计: <money-text number="{{shoppingListTotal.price}}" /></view>
+            <view class="youhui flex" hidden="{{!shoppingListTotal.discountedPrices}}">
+              优惠减: 
+              <money-text plane="{{true}}" number="{{shoppingListTotal.discountedPrices}}" />
+              <view class="youhui-detail" bind:tap="viewDiscountedPrices">优惠明细</view>
+            </view>
+          </view>
         </view>
 
         <view class="flex">
@@ -84,4 +88,13 @@
       </view>
 
   </page-container>
+
+  <half-screen-dialog header="优惠券" show="{{showDiscountedPrices}}" bind:onClose="onCloseDialog" hiddenBtn="{{true}}">
+      <view scroll-y="true" style="height: {{380 * 2}}rpx">
+        <discount-prices
+          shoppList="{{shoppingList}}"
+          total="{{shoppingListTotal}}"
+          ></discount-prices>
+      </view>
+  </half-screen-dialog>
 </view>

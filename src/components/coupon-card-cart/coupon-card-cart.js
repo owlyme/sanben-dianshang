@@ -1,4 +1,6 @@
-
+import { getDatasetValue } from '../../utils/commom';
+const getId = getDatasetValue('id')
+const getItem = getDatasetValue('item')
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -8,25 +10,14 @@ Component({
   behaviors: [],
 
   properties: {
-    show: {
-      type: Boolean,
-      value: false
-    },
-    position: {
-      type: String,
-      value: 'right', // left
-    },
-    style: {
-      type: String,
-      value: '', // left
+    info: {
+      type: Object,
+      value: {}
     }
   },
-  observers: {
-    // show: function() {
-    //   this.show()
-    // }
+  data: {
+    hiddenRemark: true
   },
-  data: {},
 
   // 生命周期函数
   lifetimes: {
@@ -43,14 +34,14 @@ Component({
   detached() {},
 
   methods: {
-    show() {
-      
-    },
-    onMaskClick() {
+    showRemark() {
       this.setData({
-        show: false
+        hiddenRemark: !this.data.hiddenRemark
       })
-      this.triggerEvent('onClose')
+    },
+    getCoupon() {
+      this.triggerEvent('onGetCoupon', info)
     }
   }
+
 });

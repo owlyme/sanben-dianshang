@@ -1,36 +1,44 @@
 <view class="xxx-components">
-  <view class="barnd-info flex flex-middle">
-    <view class="selected" 
-     bind:tap="selectedAll">
-      <icon-font 
-       wx:if="{{data.checked}}"
-      name="icongouwuche-duoxuanqi-xuanze3" 
-      size="16" 
-      color="#FF3232" />
+  <view class="barnd-info  flex-b flex-middle">
+    <view class="flex flex-middle">
+      <view class="selected" 
+      bind:tap="selectedAll">
+        <icon-font 
+        wx:if="{{data.checked}}"
+        name="icongouwuche-duoxuanqi-xuanze3" 
+        size="16" 
+        color="#FF3232" />
 
-      <icon-font
-      wx:else 
-      name="iconcircle" 
-      size="16" 
-      color="#CCCCCC" 
-      />
-      
+        <icon-font
+        wx:else 
+        name="iconcircle" 
+        size="16" 
+        color="#CCCCCC" 
+        />
+        
+      </view>
+  
+      <image class="logo" src="{{data.logo}}" bind:tap="viewShop"  />
+      <text class="title ellipsisOne" bind:tap="viewShop">{{data.brandName}}</text>
+
     </view>
-    
-    <image class="logo" src="{{data.logo}}" />
-    <text class="title ellipsisOne">{{data.brandName}}</text>
-    
+    <!-- 优惠券 -->
+    <view class="coupon" bind:tap="selectCoupon">
+      优惠券
+    </view>
+
+
   </view>
 
   <view class="order-info">
     <block wx:for="{{data.shopList}}">
 
-      <view class="shop-name ellipsisOne" wx:if="{{item.orderList.length}}">
+      <view class="shop-name ellipsisOne" wx:if="{{item.orderList.length}}" data-shop="{{item}}"
+          bind:tap="viewShopAll">
         <icon-font name="iconmendian2" size="14" color="#CCCCCC" />
         {{item.shopName}}
         <icon-font name="icondingdan-dianpu-gengduo" size="14" color="#CCCCCC" 
-          data-shop="{{item}}"
-          bind:tap="viewShop"
+          
         />
       </view>
      
@@ -101,9 +109,27 @@
                 </view>
               </view>
               
-              <view class="flex-b" >
-                <money-text number="{{order.price * order.number}}" />
-                {{order.number}}
+              <view class="flex-b " >
+                <block wx:if="{{order.status}}">
+                  <money-text number="{{order.price * order.number}}" />
+                  <number-stepper 
+                  num="{{order.number}}" 
+                  data-shop="{{item}}"
+                  data-order="{{order}}"
+                  data-shop-index='{{index}}'
+                  data-order-index='{{orderIndex}}'
+                  bind:onChange="onGoodNumberChange" />
+                </block>
+                <!-- 重选 -->
+                <block wx:else>
+                  <text class="footer-text">请重新选择商品规格</text>
+                  <view class="reselect"
+                  data-shop="{{item}}"
+                  data-order="{{order}}"
+                  data-shop-index='{{index}}'
+                  data-order-index='{{orderIndex}}'
+                  bind:tap="reselect">重选</view>
+                </block>
               </view>
             </view>
           </view>
@@ -112,4 +138,20 @@
       
     </block>
   </view>
+
+  <half-screen-dialog header="优惠券" show="{{show}}" bind:onClose="onCloseDialog">
+      <scroll-view scroll-y="true" style="height: {{380 * 2}}rpx">
+        <view 
+        class="list-b-item"
+        wx:for="{{couponList}}"
+        wx:key="index" 
+        data-item="{{item}}"
+        data-id="{{item.id}}"
+    
+        >
+          <coupon-card-cart info="{{item}}"
+          bind:onGetCoupon="onGetCoupon"/>
+        </view>
+      </scroll-view>
+  </half-screen-dialog>
 </view>

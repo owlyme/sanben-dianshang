@@ -1,4 +1,5 @@
 import PagePathes from '../../router/index'
+import {Router} from '../../utils/sysApis'
 import { getDataset } from '../../utils/commom';
 
 function checkedAll(data, checked) {
@@ -85,10 +86,86 @@ Component({
     // goodList: function() {
     //   this.init()
     // }
+    
   },
   data: {
+    show: false,
     isAllSelected: false,
-    showCoverIndex: ''
+    showCoverIndex: '',
+    couponList: [
+      {
+        id: 1,
+        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        type: 0, // 0平台， 1店铺
+        typeText: '平台礼品券',
+        remindText: ' 部分个人护理商品',
+        expired: '2020-12-30 23:59:59',
+        status: 1, // 1 待领取 2 待使用
+        couponMoney: 50,
+        availableMoney: 200,
+        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+      },
+      {
+        id: 2,
+        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        type: 0, // 0平台， 1店铺
+        typeText: '平台礼品券',
+        remindText: '部分个人护理商品',
+        expired: '2020-12-30 23:59:59',
+        status: 1, // 1 待领取 2 待使用
+        couponMoney: 50,
+        availableMoney: 200,
+        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+      },
+      {
+        id: 1,
+        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        type: 0, // 0平台， 1店铺
+        typeText: '平台礼品券',
+        remindText: ' 部分个人护理商品',
+        expired: '2020-12-30 23:59:59',
+        status: 1, // 1 待领取 2 待使用
+        couponMoney: 50,
+        availableMoney: 200,
+        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+      },
+      {
+        id: 2,
+        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        type: 0, // 0平台， 1店铺
+        typeText: '平台礼品券',
+        remindText: '部分个人护理商品',
+        expired: '2020-12-30 23:59:59',
+        status: 1, // 1 待领取 2 待使用
+        couponMoney: 50,
+        availableMoney: 200,
+        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+      },
+      {
+        id: 1,
+        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        type: 0, // 0平台， 1店铺
+        typeText: '平台礼品券',
+        remindText: ' 部分个人护理商品',
+        expired: '2020-12-30 23:59:59',
+        status: 1, // 1 待领取 2 待使用
+        couponMoney: 50,
+        availableMoney: 200,
+        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+      },
+      {
+        id: 2,
+        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        type: 0, // 0平台， 1店铺
+        typeText: '平台礼品券',
+        remindText: '部分个人护理商品',
+        expired: '2020-12-30 23:59:59',
+        status: 1, // 1 待领取 2 待使用
+        couponMoney: 50,
+        availableMoney: 200,
+        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+      },
+    ]
   },
 
   // 生命周期函数
@@ -109,6 +186,35 @@ Component({
     init() {
       
     },
+     // 预览商店首页
+    viewShop() {
+      Router.push({
+        url: PagePathes.shopIndex
+      })
+    },
+     // 预览商店列表
+     viewShopAll(e) {
+      let dataset = getDataset(e)
+      console.log('viewShop', dataset)
+      Router.push({
+        url: PagePathes.shopAll
+      })
+    },
+    // 选择优惠券
+    selectCoupon() {
+      console.log('selectCoupon', )
+      this.setData({
+        show: true
+      })
+    },
+    onCloseDialog() {
+      this.setData({
+        show: false
+      })
+    },
+    onGetCoupon(e) {
+      console.log('onGetCoupon', e)
+    },
     // 全选
     selectedAll(e) {
       let dataset = getDataset(e)
@@ -119,10 +225,10 @@ Component({
         data: checkedAll(data, !checked)
       })
      
-
       let allOrder = getAllGood(data.shopList)
      
       this.onChange(allOrder, !checked, !checked ? 'selectedAll' : 'cancelAll')
+
     },
     // 单选
     selectedSingle(e) {
@@ -183,16 +289,38 @@ Component({
       let dataset = getDataset(e)
       console.log('swicthOrderModel', dataset)
     },
-    // 预览商店
-    viewShop(e) {
+   
+    onGoodNumberChange(e) {
       let dataset = getDataset(e)
-      console.log('viewShop', dataset)
+      console.log('onGoodNumberChange', dataset)
+      let data = this.data.data
+      let {shop, order, shopIndex, orderIndex } = getDataset(e)
+      order.number = e.detail
+      shop.orderList[orderIndex] = order
+      data.shopList[shopIndex] = shop
+      this.setData({
+        data
+      })
+      if (order.checked) {
+        this.onChange(order, true)
+      }
+    },
+    reselect(e) {
+      let dataset = getDataset(e)
+      console.log('reselect', dataset)
+      let data = this.data.data
+     
+     
     },
     // 商品的任一属性变化时
     onChange(order, checked, actionType) {
       let orderList = Array.isArray(order) ? order : [order]
       this.triggerEvent('onChange', {orderList, checked, actionType })
-    }
+    },
+
+
+    
+
   }
 
 });

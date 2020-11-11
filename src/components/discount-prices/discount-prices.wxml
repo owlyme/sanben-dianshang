@@ -1,0 +1,38 @@
+<view class="xxx-components">
+  <view class="text">实际优惠明细请以下单页为准</view>
+  <view class="flex-b m18">
+    <view class="label">商品总价</view>
+    <money-text color="#333333" number="{{2000}}" />
+  </view>
+
+  <view class="flex-b m20">
+    <view class="label">平台活动</view>
+
+    <view class="red">-<money-text color="#FF4625" number="{{2000}}" /></view>
+  </view>
+
+  <view class="flex-b m20">
+    <view class="label">优惠券</view>
+    <view class="red">-<money-text color="#FF4625" number="{{2000}}" /></view>
+  </view>
+
+  <view class="flex-b m20">
+    <view class="label">店铺立减</view>
+    <view class="red">-<money-text color="#FF4625" number="{{2000}}" /></view>
+  </view>
+
+  <view class="flex-b m64">
+    <view class="label">总优惠</view>
+    <view class="red">-<money-text color="#FF4625" number="{{2000}}" /></view>
+  </view>
+
+  <view class="flex-b m16">
+    <view class="label">总优惠
+      <text class="total-remind">（不包含运费、红包）</text>
+    </view>
+    <money-text color="#333333" number="{{2000}}" />
+  </view>
+  
+  <view class="red-text">实际金额请以下单页为准</view>
+  
+</view>

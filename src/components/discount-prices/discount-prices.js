@@ -1,4 +1,7 @@
-
+import PagePathes from '../../router/index'
+import { getDatasetValue } from '../../utils/commom';
+const getId = getDatasetValue('id')
+const getItem = getDatasetValue('item')
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -8,22 +11,14 @@ Component({
   behaviors: [],
 
   properties: {
-    show: {
-      type: Boolean,
-      value: false
-    },
-    position: {
-      type: String,
-      value: 'right', // left
-    },
-    style: {
-      type: String,
-      value: '', // left
-    }
+    // goodList: {
+    //   type: Array,
+    //   value: []
+    // }
   },
   observers: {
-    // show: function() {
-    //   this.show()
+    // goodList: function() {
+    //   this.init()
     // }
   },
   data: {},
@@ -43,14 +38,9 @@ Component({
   detached() {},
 
   methods: {
-    show() {
+    init() {
       
     },
-    onMaskClick() {
-      this.setData({
-        show: false
-      })
-      this.triggerEvent('onClose')
-    }
   }
+
 });

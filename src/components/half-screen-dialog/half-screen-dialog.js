@@ -1,9 +1,12 @@
-
+import PagePathes from '../../router/index'
+import { getDatasetValue } from '../../utils/commom';
+const getId = getDatasetValue('id')
+const getItem = getDatasetValue('item')
 Component({
   options: {
     styleIsolation: 'apply-shared',
     //  https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html
-    multipleSlots: false // 在组件定义时的选项中启用多slot支持
+    multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
   behaviors: [],
 
@@ -12,18 +15,22 @@ Component({
       type: Boolean,
       value: false
     },
-    position: {
+    header: {
       type: String,
-      value: 'right', // left
+      value: '标题'
     },
-    style: {
+    btnText: {
       type: String,
-      value: '', // left
+      value: '确认'
+    },
+    hiddenBtn: {
+      type: Boolean,
+      value: false
     }
   },
   observers: {
-    // show: function() {
-    //   this.show()
+    // goodList: function() {
+    //   this.init()
     // }
   },
   data: {},
@@ -43,14 +50,15 @@ Component({
   detached() {},
 
   methods: {
-    show() {
+    init() {
       
     },
-    onMaskClick() {
+    onDrawerClose(e) {
       this.setData({
         show: false
       })
       this.triggerEvent('onClose')
-    }
+    },
   }
+
 });
