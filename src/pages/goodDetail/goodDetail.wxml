@@ -1,0 +1,14 @@
+    <view class="xxx-page"><page-container
+    pageName="{{pageName}}"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+      new page
+
+  </page-container>
+
+</view>

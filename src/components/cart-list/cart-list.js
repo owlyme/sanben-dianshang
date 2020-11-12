@@ -16,6 +16,8 @@ function checkedAll(data, checked) {
 function getAllGood(arr) {
   return arr.reduce((acc, shop) => [...acc, ...shop.orderList], [])
 }
+const  createCurrentCoverIndex = (shopIndex, orderIndex) => shopIndex + '-' + orderIndex
+
 
 Component({
   options: {
@@ -91,7 +93,7 @@ Component({
   data: {
     show: false,
     isAllSelected: false,
-    showCoverIndex: '',
+    activeCoverIndex: '',
     couponList: [
       {
         id: 1,
@@ -247,18 +249,35 @@ Component({
 
       this.onChange(order, !checked, !checked ? 'selected' : 'cancel')
     },
-    hiddenCover() {
-      this.setData({
-        showCoverIndex: ''
-      })
-    }, 
+  
     // 显示遮罩层
     showCover(e) {
       let dataset = getDataset(e)
       console.log('showCover', dataset)
       let {shop, order, shopIndex, orderIndex} = getDataset(e)
       this.setData({
-        showCoverIndex: shopIndex + '-' + orderIndex
+        activeCoverIndex: createCurrentCoverIndex(shopIndex,orderIndex)
+      })
+
+    },
+    // 隐藏遮罩层
+    hiddenCover() {
+      this.setData({
+        activeCoverIndex: ''
+      })
+    }, 
+    // 跳转商品详情页面
+    viewGoodDetail(e) {
+      let {shopIndex, orderIndex} = getDataset(e)
+
+      if(createCurrentCoverIndex(shopIndex,orderIndex) === this.data.activeCoverIndex) return;
+      console.log('reselect', e)
+      Router.push({
+        url: PagePathes.goodDetail
+      })
+
+      this.setData({
+        activeCoverIndex: ''
       })
     },
     // 移入收藏
@@ -266,7 +285,7 @@ Component({
       let dataset = getDataset(e)
       console.log('saveGood', dataset)
       this.setData({
-        showCoverIndex: ''
+        activeCoverIndex: ''
       })
     },
     // 删除
@@ -279,7 +298,7 @@ Component({
       data.shopList[shopIndex] = shop
       this.setData({
         data,
-        showCoverIndex: ''
+        activeCoverIndex: ''
       })
 
       this.onChange(order, false, 'delete')
@@ -318,7 +337,7 @@ Component({
       this.triggerEvent('onChange', {orderList, checked, actionType })
     },
 
-
+    
     
 
   }

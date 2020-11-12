@@ -1,4 +1,5 @@
 export default {
+    goodDetail: "pages/goodDetail/goodDetail",  
     goodCart: "pages/goodCart/goodCart",  
     worthBuying: "pages/worthBuying/worthBuying",
     shopGoodCatetory: "pages/shop-good-catetory/shop-good-catetory",

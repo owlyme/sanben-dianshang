@@ -1,5 +1,5 @@
 <view class='stepper flex'>
-  <text class='{{minusStatus}}' type='number'  bindtap='bindMinus'>-</text>
+  <text class='{{minusStatus}}' type='number'  catch:tap='bindMinus'>-</text>
   <input bindinput='bindManual' value='{{num}}'></input>
-  <text bindtap='bindPlus'>+</text>
+  <text catch:tap='bindPlus'>+</text>
 </view>

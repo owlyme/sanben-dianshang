@@ -54,7 +54,7 @@
         >
         <!-- 显示遮罩层 -->
           <view class="order-item-cover flex"
-            wx:if="{{showCoverIndex === index + '-' + orderIndex}}" 
+            wx:if="{{activeCoverIndex === index + '-' + orderIndex}}" 
             bind:tap="hiddenCover"
             >
             <view 
@@ -90,9 +90,16 @@
             data-order="{{order}}"
             data-shop-index='{{index}}'
             data-order-index='{{orderIndex}}'
-            bind:longtap="showCover" />
+            bind:longtap="showCover"
+            bind:tap="viewGoodDetail"
+            />
             <!-- 详情 -->
-            <view class="detail">
+            <view class="detail" 
+            data-shop="{{item}}"
+            data-order="{{order}}"
+            data-shop-index='{{index}}'
+            data-order-index='{{orderIndex}}'
+            bind:tap="viewGoodDetail">
               <view class="name ellipsisOne" >
                 {{order.name}}
               </view>
@@ -103,7 +110,7 @@
                     data-order="{{order}}"
                     data-shop-index='{{index}}'
                     data-order-index='{{orderIndex}}'
-                    bind:tap="swicthOrderModel"
+                    catch:tap="swicthOrderModel"
                   >
                   {{order.model}}
                 </view>
@@ -128,14 +135,13 @@
                   data-order="{{order}}"
                   data-shop-index='{{index}}'
                   data-order-index='{{orderIndex}}'
-                  bind:tap="reselect">重选</view>
+                  catch:tap="reselect">重选</view>
                 </block>
               </view>
             </view>
           </view>
         </view>
       </view>
-      
     </block>
   </view>
 
@@ -147,7 +153,6 @@
         wx:key="index" 
         data-item="{{item}}"
         data-id="{{item.id}}"
-    
         >
           <coupon-card-cart info="{{item}}"
           bind:onGetCoupon="onGetCoupon"/>
