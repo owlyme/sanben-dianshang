@@ -1,6 +1,6 @@
-import { getDatasetValue } from '../../utils/commom';
-const getId = getDatasetValue('id')
-const getItem = getDatasetValue('item')
+import PagePathes from '../../router/index'
+import {Router} from '../../utils/sysApis'
+
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -39,6 +39,14 @@ Component({
   moved() {},
   detached() {},
 
-  methods: {}
+  methods: {
+    viewGoodDetail(e) {
+
+      Router.push({
+        url: PagePathes.goodDetail
+      })
+
+    },
+  }
 
 });

@@ -1,3 +1,5 @@
+import PagePathes from '../../router/index'
+import {Router} from '../../utils/sysApis'
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -33,6 +35,15 @@ Component({
   moved() {},
   detached() {},
 
-  methods: {}
+  methods: {
+    // 跳转商品详情页面
+    viewGoodDetail(e) {
+
+      Router.push({
+        url: PagePathes.goodDetail
+      })
+
+    },
+  }
 
 });

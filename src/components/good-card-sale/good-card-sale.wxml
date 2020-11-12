@@ -1,4 +1,6 @@
-<view class="good-card-sale-components">
+<view class="good-card-sale-components"
+bind:tap="viewGoodDetail"
+>
   <!-- content -->
   <view class="good-pic">
     <image src="{{goodInfo.pic}}" />

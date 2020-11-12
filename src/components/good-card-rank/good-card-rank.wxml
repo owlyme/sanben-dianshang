@@ -1,4 +1,5 @@
-<view class="good-card-rank-components flex">
+<view class="good-card-rank-components flex" 
+  bind:tap="viewGoodDetail">
  <!-- content -->
   <view class="good-pic">
     <image src="{{goodInfo.pic}}" />

@@ -101,7 +101,7 @@ Page({
       }
     ],
     pageStyleType: 'standard', // 竖 vertical，  水平 standard
-    tabType: 'shop',
+    tabType: 'first',
     shopList: [
       {
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',

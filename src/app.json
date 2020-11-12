@@ -1,6 +1,6 @@
 {
   "pages": [
-
+    "pages/goodDetail/goodDetail",  
     "pages/goodCart/goodCart",  
     "pages/categoryGoodList/categoryGoodList",
     "pages/shop-all/shop-all",
