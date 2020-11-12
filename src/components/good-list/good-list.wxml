@@ -9,6 +9,7 @@
             goodNameellipsisOne="{{false}}"
             data-good="{{item}}"
             bind:tap="onClick"
+            type="{{cardType}}"
             />
           </view>
         </block>
@@ -23,6 +24,7 @@
             wx:index="{{index}}"
             data-good="{{item}}"
             bind:tap="onClick"
+            type="{{cardType}}"
             />
         </view>
       </block>

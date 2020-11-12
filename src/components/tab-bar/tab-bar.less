@@ -80,6 +80,32 @@
       }
     }
   }
-
+  
+  .tab-type-pill {
+    .tab-item {
+      .tab-name {
+        min-width: 60px;
+        height: 24px;
+        background: #F4F5F6;
+        border-radius: 13px;
+        padding: 0 16px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #333333;
+        margin-right: 12px;
+        margin-bottom: 12px;
+      }
+      
+      &.active{
+        .tab-name {
+          background: rgba(255, 50, 50, 0.08);
+          border-radius: 13px;
+          border: 1px solid #FF3232;
+          color: #FF3232;
+        }
+      }
+    }
+  }
 
 }

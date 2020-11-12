@@ -27,6 +27,10 @@ Component({
     goodList: {
       type: Array,
       value: []
+    },
+    cardType: {
+      type: String,
+      value: "all" // all , easy
     }
   },
 

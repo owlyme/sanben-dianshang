@@ -1,0 +1,7 @@
+<view class="flex">
+  <view class="good-feature"
+    wx:for="{{list}}"
+    wx:index="{{index}}">
+      {{item}}
+    </view>
+</view>

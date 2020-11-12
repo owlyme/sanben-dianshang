@@ -1,0 +1,15 @@
+<view class="recommend-item flex-wrap flex">
+  <block wx:for="{{goodList}}">
+    <view class="item" bind:tap="viewGoodDetail">
+      <view class="item-image">
+        <image src="{{item.pic}}"></image>
+      </view>
+      <view class="title">
+        {{item.name}}
+      </view>
+      <view class="price">
+        <money-text number="{{item.price}}"/><text></text>
+      </view>
+    </view>
+  </block>
+</view>

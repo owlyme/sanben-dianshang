@@ -7,21 +7,24 @@ bind:tap="viewGoodDetail"
   </view>
   <view class="good-detail">
     <view class="good-active-container"
-      wx:if="{{goodInfo.active}}">
+      wx:if="{{goodInfo.active && type === 'all'}}">
       <view class="good-active">{{goodInfo.active}}</view>
     </view>
+
     <view class="good-name {{ goodNameellipsisOne ? 'ellipsisOne' : 'ellipsisTwo' }}">{{goodInfo.name}}</view>
-    <view class="good-price">
+
+    <view class="good-price flex-b flex-middle">
       <money-text number="{{goodInfo.price}}"/>
+      <view 
+      wx:if="{{type === 'easy'}}"
+      class="good-sale-num {{type}}">月销{{goodInfo.saledNumber}}件</view>
     </view>
-    <view class="good-sale-num">月销{{goodInfo.saledNumber}}件</view>
-    <view class="good-feature-container flex"
-    wx:if="{{goodInfo.tags.length}}">
-      <view class="good-feature"
-      wx:for="{{goodInfo.tags}}"
-      wx:index="{{index}}">
-        {{item}}
-      </view>
+
+    <view class="good-sale-num" wx:if="{{type === 'all'}}">月销{{goodInfo.saledNumber}}件</view>
+
+    <view class="good-feature-container"
+      wx:if="{{goodInfo.tags.length && type === 'all'}}">
+      <good-feature list="{{goodInfo.tags}}"/>
     </view>
   </view>
 </view>

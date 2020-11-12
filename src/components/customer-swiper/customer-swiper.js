@@ -11,10 +11,39 @@ Component({
   behaviors: [],
 
   properties: {
+    autoplay: {
+      type: Boolean,
+      value: false
+    },
+    circular: {
+      type: Boolean,
+      value: false
+    },
+    interval: {
+      type: Number,
+      value: 3000
+    },
+    duration: {
+      type: Number,
+      value: 1000
+    },
     bannerList: {
       type: Array,
-      value: []
-    }
+      value: [
+        {
+          pic: '',
+        }
+      ]
+    },
+    ratio: {
+      type: [Number,String],
+      value: '33.33%'
+    },
+    dotsType: {
+      type: [String],
+      value: "default" // right bottom
+    },
+   
   },
   data: {
     // bannerList: [

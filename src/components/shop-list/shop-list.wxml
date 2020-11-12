@@ -9,7 +9,7 @@
             >
             <view slot="text" class="flex">
               <rate-star rate="{{item.rate}}"></rate-star>
-              <text class="focusNumber">{{item.focusNumber}}人关注</text>
+              <text class="followNumber">{{item.followNumber}}人关注</text>
             </view>
           </shop-card>
 

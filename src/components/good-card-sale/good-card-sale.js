@@ -24,6 +24,10 @@ Component({
     goodNameellipsisOne: {
       type: Boolean,
       value: true
+    },
+    type: {
+      type: String,
+      value: "all" // all , easy
     }
   },
   data: {},

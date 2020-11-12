@@ -9,13 +9,30 @@
 
       class="flex-col flex-middle tab-item {{ active === item ? 'active' : ''}}"
       >
-      <view class="tab-name" style="width: {{100 / tabs.length}}%)">
+      <view class="tab-name" style="width: {{100 / tabs.length}}%); color: {{active === item ? activeColor : color}}">
         {{item}}
       </view>
       <view class="sub-border" >
         <view class="sub-border-inner"
         style="transform: translateX({{(index / (tabs.length-1)) * 100}}%)"
           ></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- item 是胶囊形状 -->
+  <view class="flex flex-wrap tab-type-pill" wx:elif="{{type == 'pill'}}">
+    <view
+      wx:for="{{tabs}}"
+      wx:key="index"
+      data-name="{{item}}"
+      data-index="{{index}}"
+      bind:tap="onClick"
+
+      class="flex-col flex-middle tab-item {{ active === item ? 'active' : ''}}"
+      >
+      <view class="tab-name flex-cm ellipsisOne">
+        {{item}}
       </view>
     </view>
   </view>
@@ -29,7 +46,7 @@
       bind:tap="onClick"
       class="flex-col flex-middle tab-item {{ active == item.name ? 'active' : ''}}"
       >
-      <view class="tab-name" style="width: {{100 / tabs.length}}%)">
+      <view class="tab-name " style="width: {{100 / tabs.length}}%)">
         {{item.name}}
       </view>
       <view class="sub-name" >
@@ -37,5 +54,6 @@
       </view>
     </view>
   </view>
+
 
 </view>

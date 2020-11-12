@@ -27,8 +27,16 @@ Component({
     },
     type: {
       type: [String, Number],
-      value: 1 // 1 , 2
+      value: 1 // 1 , 2, pill
     },
+    color: {
+      type: String,
+      value: '#ffffff'
+    },
+    activeColor: {
+      type: String,
+      value: '#ffffff'
+    }
   },
   data: {},
 

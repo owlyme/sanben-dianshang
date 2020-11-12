@@ -18,13 +18,10 @@
             >
               <view slot="text" class="flex">
                 <rate-star rate="{{shopInfo.rate}}"></rate-star>
-                <text class="focusNumber">{{shopInfo.focusNumber}}人关注</text>
+                <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
               </view>
             </shop-card>
-            <view class="tag">
-              <icon-font name="iconguanzhudianpu-weiguanzhu" size="12" />
-           
-              关注</view>
+            <follow-shop-btn shopInfo="{{goodDetail}}" />
           </view>
       </view>
 

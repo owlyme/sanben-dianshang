@@ -1,0 +1,6 @@
+<view wx:if="{{!followed}}" class="xxx-components flex-cm" bind:tap="followShop">
+  <icon-font name="iconguanzhudianpu-weiguanzhu" size="12" />
+  <text class="text"> 关注</text>
+</view>
+
+<view wx:else class="followed" bind:tap="cancleFollowShop" >已关注</view>
