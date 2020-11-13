@@ -1,4 +1,4 @@
-<view class="xxx-page">
+<view class="xxx-page" style="overflow:{{pageOverHidden ? 'hidden' : 'auto'}}; height: {{pageOverHidden ? '100vh' : 'unset'}};">
 <page-container
     pageName="商品详情"
     showNav="{{true}}"
@@ -6,20 +6,23 @@
     iconColor="none"
     theme="dark"
     useThemeBg="{{false}}"
+    backType="{{backType}}"
+    bind:back="evaluatesBack"
     >
 
-    <view class="goods-detail">
+    <view class="goods-detail" >
       <!-- 1.占位符 -->
       <view class="goods-head" style="top: {{tarbarOffsetTop}}px;">
         <view class="search flex">
           <view style="flex: 1">
-            <search-input placeholder="搜索商品" />
+            <search-input bind:tap="toSearchPage" type="placeholder" placeholder="搜索商品" />
           </view>
           
           <icon-font name="iconfenxiang1" size="{{20}}" color="#333333" />
           <icon-font name="icongouwuche" bind:tap="toGoodCartPage" size="{{20}}" color="#333333"/>
         </view>
-        <view class="tabbar" style="background:{{topPartStyle.bg}};opacity: {{topPartStyle.tabbarOpactiy}}; display: {{topPartStyle.tabbarBlock}}" >
+        <view id="tabbar" class="tabbar" 
+        style="background:{{topPartStyle.bg}};opacity: {{topPartStyle.tabbarOpactiy}}; display: {{topPartStyle.tabbarBlock}}" >
           <tab-bar 
             color="#333333"
             activeColor="#FF3631"
@@ -27,10 +30,8 @@
             bind:onChange="handleScrolTo" />
         </view>
       </view>
+ 
       <!-- 2.轮播图 -->
-      <view class="gutter-container">
-        <evaluate-list list="{{evaluates.list}}" type="more"/>
-      </view>
       <view class="customer-swiper-b">
         <customer-swiper bannerList="{{goodDetail.displayPicList}}" ratio="100%" dotsType="text"/>
       </view>
@@ -134,8 +135,22 @@
             />
         </view>
       </view>
+      <!-- 全部评论 -->
+      <view class="evaluate-list transition" 
+      style="left: {{evaluateListLeft}}px">
+        <scroll-view scroll-y="true" 
+         bindscrolltolower="scrollToLower"
+          bindscrolltoupper="scrollToUpper"
+          style="height: {{evaluateListHeight}}px">
+          <view class="scroll-view-inner">
+            <evaluate-list list="{{evaluates.list}}" type="more"/>
+          </view>
+        </scroll-view>
+      </view>
+
+      
       <!-- 底部操作栏 -->
-      <view class="operation">
+      <view class="operation"  id="operation">
         <view class="store"
         bind:tap="viewShopIndex">
           <text class="iconfont icondianpu-weixuanze2"></text>
@@ -180,7 +195,11 @@
   hiddenBtn="{{true}}"
   >
       <view style="margin-top: -96rpx">
-        <model-select-card types="{{modelCardType}}"/>
+        <model-select-card 
+        types="{{modelCardType}}"
+        bind:onAdd="onAddGoodToCart"
+        bind:onPay="onPay"
+        />
       </view>
   </half-screen-dialog>
 

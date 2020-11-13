@@ -38,6 +38,10 @@ Component({
       type: String,
       value: ''
     },
+    backType: {
+      type: String,
+      value: 'pageBack' // pageBack, actionBack
+    },
     backgroundFixed: {
       type: Boolean,
       value: true
@@ -65,6 +69,10 @@ Component({
   moved() {},
   detached() {},
 
-  methods: {}
+  methods: {
+    back() {
+      this.triggerEvent('back')
+    }
+  }
 
 });

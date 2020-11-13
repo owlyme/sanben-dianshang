@@ -38,6 +38,10 @@ Component({
     backIcon: {
       type: String,
       value: ''
+    },
+    backType: {
+      type: String,
+      value: 'pageBack' // pageBack, actionBack
     }
   },
 
@@ -90,11 +94,13 @@ Component({
       });
     },
     //回退
-    _navBack: function () {
-      // wx.navigateBack({
-      //   delta: 1
-      // });
-      Router.back(1);
+    _navBack: function () {;
+      let backType = this.data.backType;
+      if (backType === 'pageBack') {
+        Router.back(1);
+      } else {
+        this.triggerEvent('back')
+      }
     },
     //回主页
     _toIndex: function () {

@@ -9,6 +9,8 @@
       titleColor="{{titleColor}}"
       theme="{{theme}}"
       backIcon="{{backIcon}}"
+      backType="{{backType}}"
+      bind:back="back"
     ></navbar>
   </view>
   <view class="page-contanier"

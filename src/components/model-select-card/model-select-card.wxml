@@ -78,7 +78,7 @@
   </scroll-view>
   <!-- 添加 -->
   <view class="add-cart">
-    <view class="btn-add" wx:if="{{ types === 'add'}}">加入购物车</view>
+    <view class="btn-add" wx:if="{{ types === 'add'}}"  bind:tap="addGoodToCart">加入购物车</view>
     <view class="btn-pay" wx:elif="{{ types === 'pay'}}" bind:tap="pay">立即购买</view>
   </view>
 </view>

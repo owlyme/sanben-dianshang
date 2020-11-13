@@ -1,5 +1,6 @@
 import PagePathes from '../../router/index'
 import { getDatasetValue } from '../../utils/commom';
+import { Toast } from '../../utils/sysApis';
 
 Component({
   options: {
@@ -44,18 +45,28 @@ Component({
     init() {
       
     },
+    // 加入购物车
+    addGoodToCart() {
+      console.log('addGoodToCart')
+      Toast.sucess("加入购物车")
+      this.triggerEvent('onAdd')
+    },
     // 立即付款
     pay(){
-      console.log(111)
+      console.log('pay')
+      this.triggerEvent('onPay')
+      // console.log(111)
       // uni.navigateTo({ //提交订单
       //   url: '/pages/view/order/confirmOrder'
       // })
     },
     onColorChange(e) {
-      console.log('onColorChange', e)
+      let {index, name} = e.detail
+      console.log('onColorChange', index, name)
     },
     onSizeChange(e) {
-      console.log('onSizeChange', e)
+      let {index, name} = e.detail
+      console.log('onSizeChange', index, name)
     },
     onNumberChange(e) {
       console.log('onNumberChange', e)

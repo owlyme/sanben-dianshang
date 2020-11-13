@@ -1,21 +1,27 @@
 // 全局app实例
 import PagePathes from '../../router/index'
-import {Router} from '../../utils/sysApis'
+import {Router, showActionSheet} from '../../utils/sysApis'
 // 全局app实例
 import { debounce, isScrollUp, throttle, getDatasetValue} from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
-const getModelCardType = getDatasetValue('type')
-let onPageScrollthrottle = null
+const getModelCardType = getDatasetValue('type');
+let onPageScrollthrottle = null;
+const PageBack= "pageBack"; 
+const ActionBack = "actionBack"
 Page({
   data: {
+    backType: PageBack,
+    pageOverHidden: false, // 当弹层打开或 评论列表展示时设为 true
     tarbarOffsetTop: App.globalData.navHeight,
     modelCardType: 'add', // add 加入购物车, pay 立 即 购 买
+    evaluateListLeft: 600,
     topPartStyle: {
       bg:`rgba(244, 245, 246, 0)`,
       tabbarOpactiy: 0,
       tabbarBlock: 'none'
     },
+    
     showModelSelectDialog: false,
     orderType: [
       '商品',
@@ -203,28 +209,30 @@ Page({
   },
   onLoad() {
     // Do some initialize when page load.
+    onPageScrollthrottle = null;
   },
   onReady() {
     // Do something when page ready.
    onPageScrollthrottle = throttle((scrollTop) => {
       this.switchTabbarStyle(scrollTop);
     }, 200)
+
   },
-  async getDom() {
-    if (this.customData.scorllTopGeted) return 
-    this.customData.scorllTopGeted = true
-    let evaluate = await boundingClientRect('#evaluate');
-    let productDetails = await boundingClientRect('#product-details');
-    let recommend = await boundingClientRect('#recommend');
-    console.log(evaluate,
-      productDetails,
-      recommend)
+
+  async getEvaluateListHeight() {
+    let tabbar = await boundingClientRect('#tabbar');
+    let operation = await boundingClientRect('#operation');
     this.customData = {
-      scorllTopGeted: true,
-      evaluateScrollTop: evaluate.target_top,
-      productDetailsScrollTop: productDetails.target_top,
-      recommendScrollTop: recommend.target_top
+      ...this.customData,
+      tabbarHeight: tabbar.target_height
     }
+    
+    this.setData(
+      {
+        evaluateListHeight: operation.target_top - tabbar.target_top ,
+        evaluateListLeft: 0
+      }
+    )
   },
   onShow() {
     // Do something when page show.
@@ -247,8 +255,12 @@ Page({
   onPageScroll(e) {
     // Do something when page scroll
     // console.log(e)
+    this.customData = {
+      ...this.customData,
+      currentScrollTop: e.scrollTop
+    }
     onPageScrollthrottle(e.scrollTop);
-    this.getDom()
+
   },
   switchTabbarStyle(pageScrollTop) {
     // pageScrollTop === 0 opacity:0
@@ -260,41 +272,49 @@ Page({
       tabbarOpactiy: precent,
       tabbarBlock: top > 10 ? 'block' : 'none'
     }
-    if (top > 150) {
-      this.setData({
-        topPartStyle
-      })
-    }
+    this.setData({
+      topPartStyle
+    })
+    
   },
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
-  back(){
-    wx.navigateBack()
+  toSearchPage() {
+    Router.push({
+      url: PagePathes.search
+    })
   },
   toGoodCartPage() {
     Router.push({
       url: PagePathes.goodCart
     })
   },
-  handleScrolTo(e){
+  async handleScrolTo(e){
     console.log('handleScrolTo', e)
 
     let index = e.detail.index
     let offsetTop = App.globalData.navHeight
     let scrollTop = 0
+    let tabbarHeight= 36 // 通过css 样式得到
     const {
-      evaluateScrollTop,
-      productDetailsScrollTop,
-      recommendScrollTop
+      currentScrollTop, 
+      // evaluateScrollTop,
+      // productDetailsScrollTop,
+      // recommendScrollTop
     } = this.customData
+
     if (index === 1) {
-      scrollTop = evaluateScrollTop - offsetTop
+      let evaluate = await boundingClientRect('#evaluate');
+      scrollTop = currentScrollTop + evaluate.target_top;
     } else if (index === 2) {
-      scrollTop = productDetailsScrollTop - offsetTop
+      let productDetails = await boundingClientRect('#product-details');
+      scrollTop = currentScrollTop + productDetails.target_top;
     } else if (index === 3) {
-      scrollTop = recommendScrollTop - offsetTop
+      let recommend = await boundingClientRect('#recommend');
+      scrollTop = currentScrollTop + recommend.target_top;
     }
+    scrollTop = scrollTop - offsetTop - tabbarHeight
     wx.pageScrollTo({
       scrollTop,
       duration: 300
@@ -323,11 +343,22 @@ Page({
   getCoupon(e) {
     console.log('getCoupon', e);
   },
-  // 查看全部 商品评价
+  // 商品评价 查看全部 
   viewMoreEvaluate(e) {
     console.log('viewMoreEvaluate', e);
+    this.getEvaluateListHeight()
+    this.setData({
+      backType: ActionBack,
+      pageOverHidden: true
+    })
   },
- 
+  evaluatesBack() {
+    this.setData({
+      backType: PageBack,
+      evaluateListLeft: 700,
+      pageOverHidden: false
+    })
+  },
   // 查看详情 店铺推荐 / 店铺
   viewShopIndex(e) {
     console.log('viewShopIndex', e);
@@ -364,7 +395,24 @@ Page({
       modelCardType: getModelCardType(e)
     })
   },
+
+  onAddGoodToCart(e) {
+    console.log('onAddGoodToCart',e)
+  }, 
+  onPay(e) {
+    console.log('onPay',e)
+  },
   // shou
+
+  // 滚动操作
+  scrollToUpper() {
+    // debounce
+    console.log('order list scrollToUpper');
+  },
+  scrollToLower() {
+    // debounce
+    console.log('order list scrollToLower');
+  },
   customData: {
 
   }

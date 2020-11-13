@@ -134,8 +134,10 @@ export const boundingClientRect = async nodeId => {
   return new Promise((resolve) => {
     let query = wx.createSelectorQuery();
     query.select(nodeId).boundingClientRect();
-    query.selectViewport().scrollOffset();
-
+    if (!boundingClientRect.selectViewport) {
+      query.selectViewport().scrollOffset();
+    }
+    
     query.exec(function (res) {
       const {
         bottom,
@@ -150,7 +152,7 @@ export const boundingClientRect = async nodeId => {
         scrollLeft,
         scrollTop,
         scrollWidth
-      } = res[1];// 显示区域的竖直滚动位置
+      } = boundingClientRect.selectViewport || res[1];// 显示区域的竖直滚动位置
       resolve({
         target_bottom: bottom,
         target_height: height,
