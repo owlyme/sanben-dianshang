@@ -15,6 +15,10 @@ Component({
       type: Boolean,
       value: false
     },
+    border: {
+      type: Boolean,
+      value: true
+    },
     textAlign: {
       type: String,
       value: 'right' // left right

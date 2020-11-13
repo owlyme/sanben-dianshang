@@ -1,0 +1,28 @@
+<view class="xxx-components">
+  <view scroll-y="true" style="height: {{130 * 2}}rpx">
+    <block wx:for="{{typeList}}">
+      <view class="flex-b flex-middle item" 
+      data-type="{{item}}" data-index="{{index}}" wx:key="index" 
+      bind:tap="onClick"
+        >
+        <view class="label flex-middle">
+          <icon-font 
+            size="{{32}}"
+            color="{{item.color}}"
+            name="{{item.icon}}"
+          />
+          <view class="text"> {{item.text}}</view>
+        </view>
+        <icon-font
+        size="{{16}}" 
+        name="{{ value === item.value  ? 'icongouwuche-duoxuanqi-xuanze3' : 'iconcircle'}}" 
+        color="{{value === item.value ? '#FF3232' :  ''}} " />
+      </view>
+      <view class="line"></view>
+    </block>
+   </view>
+
+  <view class="btn flex-cm" bind:tap="confirm">
+    确定
+  </view>
+</view>

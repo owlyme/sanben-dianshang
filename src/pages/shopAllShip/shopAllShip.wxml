@@ -1,0 +1,72 @@
+    <view class="shop-all-good-page"><page-container
+    pageName="发货门店"
+    showNav="{{true}}"
+    bgColor="#F4F5F6;"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+      <view class="shop-list-b gutter-container">
+        <list >
+          <view class="title flex-b">
+            <title-contianer>
+              <view class="">同城门店·<text class="shop-number">{{shopInSameCityList.length}}</text>家</view>
+            </title-contianer>
+
+            <view class="address flex-cm">
+              <icon-font name="icondingwei-hongse2" color="RGBA(255, 50, 50, 1)" />
+              {{address}}
+            </view>
+          </view>
+          <list-item 
+             textAlign="left"
+            wx:for="{{shopInSameCityList}}"
+            wx:key="index"
+            bind:onClick="shopItemClick"
+            iconfont=""
+            >   
+              <view class="content" slot="content">
+                <shop-card  src="{{item.pic}}"
+                showAddressIcon="{{true}}"
+                title="{{item.name}}"
+                text="{{item.address}}"
+                />
+              </view>
+               
+                <view class="shipping" slot="icon">{{item.shipping ? '邮费￥'+ item.shipping : '包邮' }}</view>
+            </list-item>
+        </list>
+      </view>
+
+      <view class="shop-list-b gutter-container">
+        <list >
+          <view class="title">
+            <title-contianer>
+              <view class="">全部门店·<text class="shop-number">{{shopInAllPlaceList.length}}</text>家</view>
+            </title-contianer>
+          </view>
+          <list-item 
+             textAlign="left"
+            wx:for="{{shopInAllPlaceList}}"
+            wx:key="index"
+            bind:onClick="shopItemClick"
+            iconfont=""
+            >
+               <view class="content" slot="content">
+                <shop-card src="{{item.pic}}"
+                showAddressIcon="{{true}}"
+                title=""
+                text="{{item.address}}"
+                >
+                  <view slot="title" class="flex-middle {{ item.status ?  ''  : 'shop-close' }}">
+                    {{item.name}}
+                    <view class="shop-close-tag flex-cm" wx:if="{{!item.status}}">停业</view>
+                  </view>
+                </shop-card>
+              </view>
+              <view class="shipping" slot="icon">{{item.shipping ? '邮费￥'+ item.shipping : '包邮' }}</view>
+            </list-item>
+        </list>
+      </view>
+  </page-container>
+</view>

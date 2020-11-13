@@ -1,4 +1,7 @@
 export default {
+    confirmOrder: "pages/confirmOrder/confirmOrder",
+    paymentSuccessful: "pages/paymentSuccessful/paymentSuccessful",
+    shopAllShip: "pages/shopAllShip/shopAllShip",
     goodDetail: "pages/goodDetail/goodDetail",  
     goodCart: "pages/goodCart/goodCart",  
     worthBuying: "pages/worthBuying/worthBuying",

@@ -8,7 +8,11 @@
   <view style="flex: 1" class="flex-col flex-center">
     <view class="shop-name ellipsisOne flex-middle"
       >
-      {{title}}
+      <block wx:if="{{!title}}">
+        <slot name="title"></slot>
+      </block>
+      <block wx:else>{{title}}</block>
+     
       <image wx:if="{{showNameIcon}}" src="/images/right.png" />
     </view>
 

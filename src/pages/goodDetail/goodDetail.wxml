@@ -35,6 +35,11 @@
       <view class="customer-swiper-b">
         <customer-swiper bannerList="{{goodDetail.displayPicList}}" ratio="100%" dotsType="text"/>
       </view>
+
+      <!-- 积分  兑换 -->
+      <view class="gutter-container">
+        <redeem-card />
+      </view>
       <!-- 3.商品信息 -->
       <view class="goods-info gutter-container">
         <view class="goods_price flex-b flex-middle">

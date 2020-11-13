@@ -9,8 +9,8 @@
     style="font-size: {{numberSize * 2}}rpx; color: {{color}}">{{intPart}}</text>
     <block wx:if="{{showDecimal}}" 
     style="font-size: {{moneySize * 2}}rpx; color: {{color}}">
-      <text class="money-icon " style="color: {{color}}">.</text>
-      <text class="money-num-point" style="color: {{color}}">{{decimalParg}}</text>
+      <text class="money-icon " style="font-size: {{decimalPargSize * 2}}rpx;color: {{color}}">.</text>
+      <text class="money-num-point" style="font-size: {{decimalPargSize * 2}}rpx; color: {{color}}">{{decimalParg}}</text>
     </block>
   </view>
 </block>

@@ -1,0 +1,87 @@
+<view>
+  <page-container
+    pageName="确认订单"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+    <view class="xxx-page">
+   <!-- 收货地址 -->
+    <view class="order_address gutter-container" >
+      <card>
+        <view class="address_box flex-middle" bind:tap="setAddress">
+          <view class="weizhi_icon flex-cm">
+            <icon-font name="iconshouhuodizhi1"  color="#FF3232" />
+          </view>
+          <view style="flex: 1">
+            <block wx:if="{{address.name}}">
+              <view class="center">
+                <view class="name flex">
+                  <text class="text1">{{address.name}}</text>
+                  <text class="phones">{{address.phone}}</text>
+                </view>
+                <view class="address_name">{{address.address_name}}</view>
+              </view>
+            </block>
+            <view class="noaddress"wx:else>
+              请添加收货地址
+            </view>
+          </view>
+          <view>
+            <icon-font name="icondingdan-dianpu-gengduo" />
+          </view>
+        </view>
+      </card>
+    </view>
+
+      <!-- 有需要购买的商品 -->
+    <view class="gutter-container">
+      <block wx:for="{{orderList}}">
+          <view class="cart-item" wx:key="index">
+            <order-list-comfirm 
+            data="{{item}}" 
+            data-index="{{index}}"
+            bind:onRemarkChange="remarkChange"
+            bind:onExpressChange="selectedExpress"
+            bind:onCouponChange="selectCoupon"
+            />
+          </view>
+      </block>
+    </view>
+
+    <view id="submit" class="comfirm-btn flex-b flex-middle">
+        <view class="flex flex-middle">
+          <view class="flex-col total">
+            <view class="flex-middle">合计: <money-text number="{{shoppingListTotal.price}}" /></view>
+          </view>
+          <view class="total-number"> 共4件商品</view>
+        </view>
+
+        <view class="flex">
+          <view   class="btn submit" bind:tap="submit">提交订单</view>
+        </view>
+    </view>
+    </view>
+  </page-container>
+
+  <half-screen-dialog 
+    header="{{dialog.header}}" 
+    show="{{dialog.show}}" 
+    bind:onClose="onCloseDialog" 
+    hiddenBtn="{{true}}">
+      <!-- 配送方式 -->
+      <view wx:if="{{dialog.type === 'express'}}" scroll-y="true" style="height: {{200 * 2}}rpx">
+        <express-type />
+      </view>
+      <!-- 店铺优惠 -->
+      <view wx:elif="{{dialog.type === 'coupon'}}" >
+        <coupon-list-order couponList="{{couponList}}" bind:onChange="onCouponSelected" />
+      </view>
+      <!-- 选择支付方式 -->
+      <view wx:elif="{{dialog.type === 'pay'}}" >
+        <payment-type bind:onChange="onPaymentTypeSelected" />
+      </view>
+  </half-screen-dialog>
+</view>

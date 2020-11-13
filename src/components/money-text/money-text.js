@@ -31,6 +31,10 @@ Component({
     numberSize: {
       type: Number,
       value: 16
+    },
+    decimalPargSize: {
+      type: Number,
+      value: 12
     }
   },
   
