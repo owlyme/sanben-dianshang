@@ -15,7 +15,6 @@
         size="16" 
         color="#CCCCCC" 
         />
-        
       </view>
   
       <image class="logo" src="{{data.logo}}" bind:tap="viewShop"  />

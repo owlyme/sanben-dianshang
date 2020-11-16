@@ -1,4 +1,10 @@
 export default {
+    distributionQrcode: "pages/distributionQrcode/distributionQrcode",
+    distributionTeam: "pages/distributionTeam/distributionTeam",
+    distributionIncome: "pages/distributionIncome/distributionIncome",
+    editorAddress: "pages/editorAddress/editorAddress",
+    myAddress: "pages/myAddress/myAddress",
+    feedBack: "pages/feedBack/feedBack",
     confirmOrder: "pages/confirmOrder/confirmOrder",
     paymentSuccessful: "pages/paymentSuccessful/paymentSuccessful",
     shopAllShip: "pages/shopAllShip/shopAllShip",

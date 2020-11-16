@@ -99,10 +99,11 @@ Page({
   },
   onLoad() {
     // Do some initialize when page load.
-    this.getDom();
+    
   },
   onReady() {
     // Do something when page ready.
+    this.getDom();
   },
   onShow() {
     // Do something when page show.

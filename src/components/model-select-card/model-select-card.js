@@ -48,7 +48,7 @@ Component({
     // 加入购物车
     addGoodToCart() {
       console.log('addGoodToCart')
-      Toast.sucess("加入购物车")
+      Toast.success("加入购物车")
       this.triggerEvent('onAdd')
     },
     // 立即付款

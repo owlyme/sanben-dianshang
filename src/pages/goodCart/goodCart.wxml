@@ -7,6 +7,7 @@
     theme="dark"
     useThemeBg="{{false}}"
     >
+    <!-- 地址 -->
       <view class="flex-b top ">
         <view class="address ellipsisOne" bind:tap="setAddress">
           <icon-font name="iconshouhuodizhi1" size="14" color="#FF3232"  /> 
@@ -22,7 +23,7 @@
           {{isEdit ? '完成' : "编辑"}}
         </view>
       </view>
-    
+    <!-- 列表 -->
       <view class="scroll-b">
         <scroll-view 
           id="scroll-view"
@@ -42,7 +43,6 @@
           </view>
            <!-- 有需要购买的商品 -->
           <block wx:for="{{orderList}}">
-         
               <view class="cart-item">
                 <cart-list data="{{item}}" bind:onChange="onOrderChange"/>
               </view>

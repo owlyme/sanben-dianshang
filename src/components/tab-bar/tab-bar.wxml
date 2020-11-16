@@ -6,7 +6,6 @@
       data-name="{{item}}"
       data-index="{{index}}"
       bind:tap="onClick"
-
       class="flex-col flex-middle tab-item {{ active === item ? 'active' : ''}}"
       >
       <view class="tab-name" style="width: {{100 / tabs.length}}%); color: {{active === item ? activeColor : color}}">

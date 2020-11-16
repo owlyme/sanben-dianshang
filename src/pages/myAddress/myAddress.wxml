@@ -1,0 +1,43 @@
+<view class="xxx-page">
+      <page-container
+    pageName="收货地址"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+    <view>
+		<view class="myaddress">
+			<view wx:for="{{addressList}}" wx:key="index" class="order_address">
+				<view class="address_box" bind:tap="onsetAddress">
+					<view >
+						<view class="center">
+							<view class="name">
+								<view class="moren" wx:if="{{item.isDefault == 1}}">
+									默认
+								</view>
+								<text class="text1">{{item.consignee}}</text>
+								<text class="phones">{{item.phone}}</text>
+							</view>
+							<view class="address_name">{{item.area}} {{item.address}}</view>
+						</view>
+					</view>
+					<view class="caozuo" data-info="{{item}}" catch:tap="editAddress">
+            		<icon-font name="iconbianjidizhi1" color="#FF3232"/>
+					</view>
+				
+			</view>
+		</view>
+	</view>
+	<view class="save">
+		<view class="btn flex-cm" bind:tap="addAddress">
+			<icon-font name="iconjia2" size="{{12}}"/>
+			添加收货地址</view>
+	</view>
+	</view>
+
+  </page-container>
+
+</view>

@@ -6,7 +6,7 @@
       data-name="{{item.name}}"
       data-index="{{index}}"
       bind:tap="onClick"
-      class="flex-col flex-middle tab-item {{ active == item.name ? 'active' : ''}}"
+      class="flex-col flex-cm tab-item {{ active == item.name ? 'active' : ''}}"
       >
 
       <image wx:if="{{active == item.name && item.selectedPic}}" src="{{item.selectedPic}}" />

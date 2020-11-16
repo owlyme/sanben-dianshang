@@ -1,0 +1,107 @@
+page{
+  background: #ffffff;
+}
+.tab-components .tab-type-1 .tab-item {
+  .tab-name {
+    color: #333333 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .sub-border{
+    background: rgba(255, 50, 50, 0.3) !important;
+
+    &-inner {
+      background:rgba(255, 50, 50, 1) !important;
+    }
+  }
+  &.active .tab-name{
+    color: #FF3232!important;
+    font-size: 14px!important;
+    font-weight: 600 !important;
+  }
+
+}
+
+.team{
+  box-sizing: border-box;
+  .user-info {
+    height: 136rpx;
+    background: #F4F5F6;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left{
+      display: flex;
+      image {
+        width: 88rpx;
+        height: 88rpx;
+        margin-right: 24rpx;
+        border-radius: 50%;
+      }
+          
+      .name {
+        view {
+          font-size: 32rpx;
+          font-weight: 600;
+          color: #333333;
+        }
+          
+        text {
+          font-size: 24rpx;
+          color: #FF3232;
+          line-height: 36rpx;
+        }
+      }
+    }
+  }
+  
+  .tab{
+    padding: 32rpx 90rpx 16rpx 100rpx;
+    box-sizing: border-box;
+   
+  }
+  .contents{
+    .member{
+      height: 148rpx;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 2rpx solid #F4F5F6;
+      border-right: none;
+      border-left: none;
+      .left{
+        display: flex;
+        image {
+          margin-right: 24rpx;
+          width: 44px;
+          height: 44px;
+          box-shadow: 0px 0px 1px 0px rgba(153, 153, 153, 0.1);
+          border-radius: 50%;
+        }
+            
+        .name {
+          view {
+            font-size: 32rpx;
+            font-weight: 600;
+            color: #333333;
+          }
+            
+          text {
+            font-size: 28rpx;
+            color: #999999;
+            line-height: 36rpx;
+          }
+        }
+      }
+      .time{
+        height: 88rpx;
+        font-size: 28rpx;
+        color: #999999;
+      }
+    }
+  }
+}

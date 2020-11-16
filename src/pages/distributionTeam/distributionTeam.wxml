@@ -1,0 +1,52 @@
+    <view class="xxx-page"><page-container
+    pageName="我的团队"
+    showNav="{{true}}"
+    bgColor="#ffffff"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+    <view class="team ">
+		<view class="user-info gutter-container">
+			<view class="left">
+				<image src="https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg"></image>
+				<view class="name">
+					<view>用户1999999999</view>
+					<text>一级分销</text>
+				</view>
+			</view>
+      <icon-font name="iconerweima" size="{{24}}" color="#FF3232" />
+		</view>
+		<view class="tab">
+      <tab-bar tabs="{{tabBarList}}" />
+		</view>
+		<!-- 内容 -->
+		<view class="contents">
+      <scroll-view
+          id="scroll-view"
+          scroll-y="true"
+          style="height: {{scrollViewHeight}}px;"
+          bindscrolltolower="scrollToLower"
+          bindscrolltoupper="scrollToUpper"
+          bindscroll="onScroll"
+          >
+        <view class=" gutter-container" >
+          <view class="member" wx:for="{{20}}">
+            <view class="left">
+              <image src="https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg"></image>
+              <view class="name">
+                <view>用户1999999999</view>
+                <text>一级分销</text>
+              </view>
+            </view>
+            <view class="time">上午09:00</view>
+          </view>
+        </view>
+      </scroll-view>
+		</view>
+	</view>
+
+  </page-container>
+
+</view>

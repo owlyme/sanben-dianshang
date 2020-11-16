@@ -1,0 +1,36 @@
+    <view class="xxx-page"><page-container
+    pageName="我的二维码"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="light"
+    useThemeBg="{{true}}"
+    >
+
+      <view class="wallet">
+
+		<view class="wallet-head">
+
+			<!-- 二维码 -->
+			<view class="qr-code-box">
+				<view class="qr-code">
+					<view class="user-info">
+						<image src='{{avatar}}'></image>
+						<view class="name">
+							<view>{{name}}</view>
+							<text>{{level}}</text>
+						</view>
+					</view>
+					<image src='{{qrcode}}' mode="" class="image"></image>
+				</view>
+				<view class="my-team" bind:tap="handleTeam">
+					<image src='/images/mine/my-team.png'></image>
+					<view>我的团队</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+  </page-container>
+
+</view>

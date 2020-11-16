@@ -1,0 +1,10 @@
+<view class="xxx-components">
+  <image class="imagebg" src="/images/vip/bg.png" />
+  <view class="help">
+    <icon-font name="iconbangzhu-wodeqianbao-hongbao1" color="#897C67" size="{{18}}"/>
+  </view>
+  <view class="flex-cm">
+    <image src="/images/vip/level-{{level}}.png" />
+    <text>{{viptext}}</text>
+  </view>
+</view>

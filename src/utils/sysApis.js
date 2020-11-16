@@ -17,12 +17,12 @@ const fomartUrlStringParamToJsonAndStartWithSlash = (arg) => {
 // 提示框 统一配置
 const duration = 2000;
 
-
 export const Toast = {
   // title 文本最多显示 7 个汉字长度
-  sucess: (param = {}) => wx.showToast({
+  success: (param = {}) => wx.showToast({
     title: '成功',
     icon: 'success',
+    // image: '/images/toast/success.png',
     duration,
     ...fomartTitleStringParamToJson(param)
   }),
@@ -39,6 +39,22 @@ export const Toast = {
     ...fomartTitleStringParamToJson(param)
   }),
   close: wx.hideToast
+};
+
+export const Modal = (props ={}) => {
+  wx.showModal({
+    title: '提示',
+    confirmText:'确定',
+    confirmColor: "#FF3232",
+    success (res) {
+      if (res.confirm) {
+        console.log('用户点击确定')
+      } else if (res.cancel) {
+        console.log('用户点击取消')
+      }
+    },
+    ...props
+  })
 };
 
 // 导航

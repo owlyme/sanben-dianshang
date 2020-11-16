@@ -1,0 +1,91 @@
+    <view class="xxx-page"><page-container
+    pageName="编辑收货地址"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    backType='actionBack'
+    bind:back="back"
+    >
+
+   <view class="edior-address">
+     <view class="delete">
+       <text bind:tap="removeAddress">删除</text>
+     </view>
+		<view class="contents">
+			<view class="content-item">
+				<view class="left">
+					收货人
+				</view>
+				<view class="right">
+          <input type="text" 
+            model:value="{{consignee}}" 
+            placeholder="收货人"
+            placeholder-class="placeholder-style"/>
+        
+          <icon-font 
+          wx:if="{{consignee.length}}"
+          bind:tap="clearConsignee" 
+          name="iconshenheshibai" color="#CCCCCC"/>
+				</view>
+			</view>
+			<view class="content-item">
+				<view class="left">
+					手机号码
+				</view>
+				<view class="right">
+          <input type="number" 
+            model:value="{{phone}}" 
+           placeholder="手机号码"
+           placeholder-class="placeholder-style"/>
+          <icon-font 
+           wx:if="{{phone.length}}"
+          bind:tap="clearPhone" 
+          name="iconshenheshibai" 
+          color="#CCCCCC"/>
+				</view>
+			</view>
+			<view class="content-item">
+				<view class="left">
+					所在地区
+				</view>
+				<view class="right">
+          <input type="text" 
+          model:value="{{area}}" 
+          placeholder="所在地区" 
+          placeholder-class="placeholder-style"/>
+					<icon-font name="icondingdan-dianpu-gengduo1" />
+				</view>
+			</view>
+			<view class="content-item flex-end">
+				<view class="left">
+					详细地址
+				</view>
+				<view class="right">
+					<view class="textarea">
+            <textarea type="text" maxlength="-1"
+             model:value="{{address}}" 
+            placeholder="请详细地址：如道路、门牌号、小区等例：第一小区1层101室" 
+            placeholder-class="placeholder-style"/>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="isDefault">
+			<view class="left">
+				默认地址
+			</view>
+			<view class="right">
+        <switch checked="{{isDefault == 1}}" color="#ff3232" bind:change="handleChange" />
+
+			</view>
+		</view>
+		<view class="save" bind:tap="save">
+			保存
+		</view>
+	</view>
+
+  </page-container>
+
+</view>

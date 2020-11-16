@@ -16,9 +16,6 @@
           <view slot="content" class="flex-end" >
             <image class="avatar" src="{{avatar}}" />
           </view>
-          <view slot="icon">
-            <image class="item-icon" src="/images/right.png" />
-          </view>
         </list-item>
         <list-item
         showlabelBorder
@@ -29,9 +26,6 @@
             value="{{nickName}}"
             placeholder="请输入昵称"
             bindinput="onNickNameChange"/>
-          </view>
-          <view slot="icon">
-            <image class="item-icon" src="/images/right.png" />
           </view>
         </list-item>
       </list>
@@ -44,9 +38,6 @@
         bind:onClick="onSelectedSex">
           <view slot="content" >
           {{sex}}
-          </view>
-          <view slot="icon">
-            <image class="item-icon" src="/images/right.png" />
           </view>
         </list-item>
         <list-item
@@ -61,10 +52,21 @@
           bindinput="onPhoneChange"
           placeholder="请输入手机号码"/>
           </view>
-          <view slot="icon">
-            <image class="item-icon" src="/images/right.png" />
+        </list-item>
+      </list>
+    </view>
+
+    <view class="card-b">
+      <list>
+        <list-item
+        showlabelBorder
+        label="兴趣分类"
+        bind:onClick="selectHobby">
+          <view slot="content" >
+          {{hobbies}}
           </view>
         </list-item>
+        
       </list>
     </view>
 

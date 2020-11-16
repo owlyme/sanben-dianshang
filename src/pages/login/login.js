@@ -4,8 +4,8 @@ import PagePathes from '../../router/index'
 import { Toast, Router } from '../../utils/sysApis';
 import Base from '../../utils/base';
 import {userLogin, getValidateCode} from '../../api/login';
-const getPhoneNumber = getNodeValue('phone');
-const getCode = getNodeValue('code');
+let getPhoneNumber = getNodeValue('phone');
+let getCode = getNodeValue('code');
 
 
 Page({
@@ -31,6 +31,8 @@ Page({
   },
   onUnload() {
     // Do something when page close.
+    getPhoneNumber = null
+    getCode = null
   },
   onShareAppMessage() {
     // return custom share data when user share.
@@ -61,27 +63,8 @@ Page({
   },
   async login() {
     let {phone, code, checked} = this.data;
-    const validatoForm = () => {
-      let bool = true;
-      if(!Base.isPhone(phone)){
-        bool = false;
-        Toast.show({
-          title: '输入正确的手机号'
-        });
-      } else if (!code) {
-        bool = false;
-        Toast.show({
-          title: '输入验证码'
-        });
-      } else if (!checked) {
-        // bool = false;
-        // Toast.show({
-        //   title: '请同意服务协议与隐私政策'
-        // });
-      }
-      return bool;
-    };
-    if (validatoForm()) {
+    
+    if (this.validatoForm(phone, code, checked)) {
       let formData = {phone, code};
       console.log(formData);
       this.setData({
@@ -94,6 +77,26 @@ Page({
         loginBtnDisabled: false
       });
     }
+  },
+  validatoForm (phone, code, checked)  {
+    let bool = true;
+    if(!Base.isPhone(phone)){
+      bool = false;
+      Toast.show({
+        title: '输入正确的手机号'
+      });
+    } else if (!code) {
+      bool = false;
+      Toast.show({
+        title: '输入验证码'
+      });
+    } else if (!checked) {
+      // bool = false;
+      // Toast.show({
+      //   title: '请同意服务协议与隐私政策'
+      // });
+    }
+    return bool;
   },
   onGetCode() {
     console.log('send request');

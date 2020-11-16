@@ -13,14 +13,17 @@
     <view class="goods-detail" >
       <!-- 1.占位符 -->
       <view class="goods-head" style="top: {{tarbarOffsetTop}}px;">
-        <view class="search flex">
+        <view class="search flex flex-middle">
           <view style="flex: 1">
             <search-input bind:tap="toSearchPage" type="placeholder" placeholder="搜索商品" />
           </view>
-          
+          <view >
           <icon-font name="iconfenxiang1" size="{{20}}" color="#333333" />
-          <icon-font name="icongouwuche" bind:tap="toGoodCartPage" size="{{20}}" color="#333333"/>
-        </view>
+          </view>
+          <view  bind:tap="toGoodCartPage">
+          <icon-font name="icongouwuche" size="{{20}}" color="#333333"/>
+          </view>
+       </view>
         <view id="tabbar" class="tabbar" 
         style="background:{{topPartStyle.bg}};opacity: {{topPartStyle.tabbarOpactiy}}; display: {{topPartStyle.tabbarBlock}}" >
           <tab-bar 

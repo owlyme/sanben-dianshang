@@ -160,7 +160,7 @@ Page({
   },
   postSign(data) {
     sign().then(res => {
-      Toast.sucess('签到成功！');
+      Toast.success('签到成功！');
       // 修改状态
       let {weekDayList} = this.data;
       weekDayList[data.day - 1].status = 1;

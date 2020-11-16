@@ -1,0 +1,78 @@
+<view class="xxx-page"><page-container
+    pageName="意见反馈"
+    showNav="{{showNav}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+  <view class="feedback">
+		<view class="feeedback-type" bind:tap="confirmSelect">
+			<text>请选择反馈类型</text>
+			<icon-font
+              bind:tap="selectReason" 
+              name="icondingdan-dianpu-gengduo1" color="#CCCCCC"/>
+		</view>
+		<view class="feedback-question">
+			<view class="area">
+				<textarea model:value="{{detail}}" maxlength="-1" placeholder-class="place-class" placeholder="请填写您的问题、建议与反馈，我们将为您提供更好的帮助" />
+			</view>
+			<view class="text-count">
+				0/200字
+			</view>
+		</view>
+		<!-- //手机号 -->
+		<view class="phone">
+			<input type="number" value="" maxlength="11" placeholder-class="place-class" placeholder="请填写手机号码，方便我们联系到您" />
+		</view>
+		<!-- 上传图片 -->
+		<view class="upload-img">
+			<view class="upload-head">
+				<view class="left">上传图片</view>
+				<view class="right">{{imageSrc.length}}/4张</view>
+			</view>
+			<view class="upload-box flex">
+				<block wx:for="{{imageSrc}}" wx:key="index">
+					<view class="upload-image">
+            <view class="remove"   data-index="{{index}}"
+              bind:tap="removePic" >
+             <icon-font
+              name="iconshenheshibai" color="#FF3232"/>
+            </view>
+            <image class="uni-uploader__img"
+             src="{{item}}" 
+             data-src="{{item}}" 
+             bind:tap="handlePreviewImage" 
+             mode="scaleToFill"></image>
+					</view>
+				</block>
+				<view class="upload-btn" bind:tap="handleUpload" wx:if="{{imageSrc.length < 4}}">
+					<image src="/images/mine/add-pic.png"></image>
+				</view>
+			</view>
+		</view>
+		<!-- 提交 -->
+		<view class="submit" bind:tap="submit">
+			提交
+		</view>
+		<!-- 弹出层 -->
+     <drawer 
+      show="{{showDrawer}}"
+      style="width: 100%;">
+        <view >
+          <view class="darwer-icon flex-cm">
+          <icon-font
+            name="iconfankuichenggong" color="#52C419" size="{{60}}" />
+          </view>
+
+          <view class="darwer-title flex-cm">反馈成功</view>
+
+          <view class="darwer-btn flex-cm" bind:tap="onDrawerClose">完成</view>
+        </view>
+      </drawer>
+	</view>
+
+  </page-container>
+
+</view>

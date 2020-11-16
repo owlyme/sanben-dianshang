@@ -1,6 +1,12 @@
 {
   "pages": [
-    
+    "pages/distributionTeam/distributionTeam",
+    "pages/distributionIncome/distributionIncome",
+    "pages/distributionQrcode/distributionQrcode",
+    "pages/feedBack/feedBack",
+    "pages/editorAddress/editorAddress",
+    "pages/myAddress/myAddress",
+    "pages/mine/mine",
     "pages/goodDetail/goodDetail",
     "pages/paymentSuccessful/paymentSuccessful",
     "pages/confirmOrder/confirmOrder",
@@ -24,15 +30,14 @@
     "pages/help/help",
     "pages/helpTypeList/helpTypeList",
     "pages/helpTypeDetail/helpTypeDetail",
+   
     "pages/personalInfo/personalInfo",
     "pages/signIn/signIn",
     "pages/login/login",
     "pages/aboutUs/aboutUs",
     "pages/service/service",
-    "pages/mine/mine",
     "pages/privacyPolicy/privacyPolicy",
     "pages/serviceAgreement/serviceAgreement",
-    
     "pages/componentList/componentList",
     "pages/pageList/pageList"
   ],
@@ -113,6 +118,7 @@
     "payment-type": "components/payment-type/payment-type",
     "express-type": "components/express-type/express-type",
     "redeem-card": "components/redeem-card/redeem-card",
+    "vips": "components/vips/vips",
 
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"

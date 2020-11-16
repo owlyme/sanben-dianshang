@@ -20,8 +20,11 @@
   <view class="navbar-action-wrap nav-bar-back"
   style='top:{{navTop}}px;'
   wx:if="{{showNav}}"
-  >
-    <image bind:tap="_navBack" class="nav-bar-back-img" src="{{computedTheme.backIcon}}" />
+  > 
+    <view class="back-box" bind:tap="_navBack" >
+      <image  class="nav-bar-back-img" src="{{computedTheme.backIcon}}" />
+    </view>
+    
     <block wx:if="{{showComponentList}}">
       <view bind:tap="toComponentList">coms</view>
       <view bind:tap="toPageList">pages</view>
