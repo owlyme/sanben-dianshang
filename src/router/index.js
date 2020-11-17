@@ -1,4 +1,5 @@
 export default {
+    verifyBankPhoneNumber: "pages/verifyBankPhoneNumber/verifyBankPhoneNumber",
     distributionQrcode: "pages/distributionQrcode/distributionQrcode",
     distributionTeam: "pages/distributionTeam/distributionTeam",
     distributionIncome: "pages/distributionIncome/distributionIncome",

@@ -1,0 +1,64 @@
+<view class="xxx-page">
+  <page-container
+    pageName="{{pageName}}"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    > 
+      <view class="login-page">
+        <!-- content -->
+        <view class="we-title">
+          验证银行预留手机号
+        </view>
+        <!-- <list class=""> -->
+          <view  class="phone-number">
+          <list-item
+            label="手机号"
+            iconfont=""
+            textAlign="left"
+            >
+            <view slot="content" >
+              <input class=""
+                maxlength="11"
+                data-phone="phone"
+                bindinput="onPhoneChange"
+                auto-focus
+                placeholder="手机号码"/>
+            </view>
+          </list-item>
+          </view>
+          <view  class="code-container">
+          <list-item
+            label="验证码" iconfont="" textAlign="left">
+            <view slot="content">
+                <code-number
+                  bind:onDisableClick="onGetCodeDisable"
+                  bind:onGetCode="onGetCode" 
+                  disabled="{{sendCodeBtnDisabled}}">
+                  <view class="code-numer">
+                    <input
+                      maxlength="4"
+                      data-code="code"
+                      bindinput="onCodeChange"
+                      placeholder="输入验证码" />
+                  </view>
+                </code-number>
+            </view>
+          </list-item>
+          </view>
+        <!-- </list> -->
+
+
+        <view >
+          <button
+            class="login-btn"
+          bindtouchend="verifyPhone"
+          disabled="{{loginBtnDisabled}}">确定</button>
+        </view>
+
+      </view>
+  </page-container>
+</view>
+

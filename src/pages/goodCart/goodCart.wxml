@@ -23,7 +23,7 @@
           {{isEdit ? '完成' : "编辑"}}
         </view>
       </view>
-    <!-- 列表 -->
+      <!-- 列表 -->
       <view class="scroll-b">
         <scroll-view 
           id="scroll-view"

@@ -1,4 +1,5 @@
-    <view class="xxx-page"><page-container
+<view class="xxx-page">
+  <page-container
     pageName="{{pageName}}"
     showNav="{{true}}"
     bgColor="none"

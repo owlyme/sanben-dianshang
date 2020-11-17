@@ -162,11 +162,11 @@ Page({
     orderList: []
   },
   onLoad() {
-    this.customData.allGoodInCartTypes = getAllGood(this.data.orderList).length;
     setTimeout(() => {
       this.setData({
         orderList: OrderList
       })
+      this.customData.allGoodInCartTypes = getAllGood(this.data.orderList).length;
     }, 1);
   },
   onReady() {
@@ -224,7 +224,7 @@ Page({
       isEdit: !this.data.isEdit
     })
   },
-  // 组件操作
+  // 组件操作 单选删除
   onOrderChange(e) {
     console.log('onOrderChange', e);
     
@@ -262,7 +262,7 @@ Page({
       shoppingListTotal,
     })
   },
-
+  // 全选
   selectedAll() {
     let {isAllSelected, orderList} = this.data;
     let shoppingList = this.data.shoppingList;

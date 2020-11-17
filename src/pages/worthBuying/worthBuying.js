@@ -1,6 +1,3 @@
-import { getDatasetValue } from '../../utils/commom';
-const getCouponItem = getDatasetValue('item');
-const getCouponId = getDatasetValue('id');
 // 全局app实例
 const App = getApp();
 

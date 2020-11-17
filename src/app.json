@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/verifyBankPhoneNumber/verifyBankPhoneNumber",
+    "pages/goodCart/goodCart",
     "pages/distributionTeam/distributionTeam",
     "pages/distributionIncome/distributionIncome",
     "pages/distributionQrcode/distributionQrcode",
@@ -11,7 +13,6 @@
     "pages/paymentSuccessful/paymentSuccessful",
     "pages/confirmOrder/confirmOrder",
     "pages/shopAllShip/shopAllShip",
-    "pages/goodCart/goodCart",
     "pages/categoryGoodList/categoryGoodList",
     "pages/shop-all/shop-all",
     "pages/shop-index/shop-index",
