@@ -1,0 +1,87 @@
+page{
+  background: #F4F5F6;
+  overflow: hidden;
+}
+
+.tab-components .tab-type-1 .tab-item {
+  .tab-name {
+    color: #333333 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .sub-border{
+    background: rgba(255, 50, 50, 0.3) !important;
+
+    &-inner {
+      background:rgba(255, 50, 50, 1) !important;
+    }
+  }
+  &.active .tab-name{
+    color: #FF3232!important;
+    font-size: 14px!important;
+    font-weight: 600 !important;
+  }
+}
+
+.coupon-page{
+  .tabs-b {
+    margin-top: 8px;
+    padding: 0 15px 0 17px;
+  }
+  .coupon-card-b {
+    position: relative;
+    margin-top: 16px;
+    
+    .no-coupon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      image {
+        display: block;
+        margin: 80px auto 0;
+        width: 187px;
+        height: 160px;
+      }
+      &-title {
+        margin-top: 16px;
+        text-align: center;
+        height: 22px;
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #333333;
+        line-height: 22px;
+        
+      }
+      &-remark {
+        margin-top: 8px;
+        text-align: center;
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #999999;
+        line-height: 20px;
+      }
+    }
+
+    .coupon-list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      .list-b-item {
+        padding: 0 15px 0 17px;
+        margin-bottom: 16px;
+      }
+    }
+
+
+    
+
+  }
+}

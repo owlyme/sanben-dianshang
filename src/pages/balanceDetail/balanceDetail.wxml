@@ -1,0 +1,19 @@
+<page-container
+  pageName="{{pageName}}"
+  showNav="{{true}}"
+  bgColor="#FFFFFF"
+  iconColor="none"
+  theme="dark"
+  useThemeBg="{{false}}"
+  >
+
+  <view class="balance">
+      <view class="balance-box" wx:for="{{detailList}}" wx:key="{{index}}">
+        <view class="left">
+          <view class="reason">{{item.reason}}</view>
+          <view class="date">{{item.time}}</view>
+        </view>
+        <view class="right" style="color:red">+{{item.money}}</view>
+      </view>
+  </view>
+</page-container>

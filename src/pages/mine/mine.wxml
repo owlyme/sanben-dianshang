@@ -1,6 +1,6 @@
 <page-container
     pageName="个人中心"
-    showNav="{{true}}"
+    showNav="{{false}}"
     bgColor="#F4F5F6"
     iconColor="none"
     theme="dark"
@@ -26,19 +26,19 @@
       </view>
       <!-- 列表 -->
       <view class="list gutter-container flex-a">
-        <view>
+        <view bind:tap="toMyFollowePage">
           <view class="num">12</view>
           <view class="text">我的关注</view>
         </view>
-        <view>
+        <view bind:tap="toMyStorepage">
           <view class="num">12</view>
           <view class="text">我的收藏</view>
         </view>
-        <view>
+        <view bind:tap="toMyCouponPage">
           <view class="num">12</view>
           <view class="text">优惠券</view>
         </view>
-        <view>
+        <view bind:tap="toRedPackagePage">
           <view class="num">12</view>
           <view class="text">红包</view>
         </view>
@@ -144,7 +144,7 @@
       <!-- 分销 -->
       <view class="distribution gutter-container">
         <card>
-          <view class="flex-b">
+          <view class="flex-b flex-middle">
             <view class="title">分销中心 </view>
             <view class="more" bind:tap="toDistributionPage">申请成为分销合伙人 <icon-font name="icondingdan-dianpu-gengduo1" /></view>
           </view>
@@ -157,7 +157,7 @@
                 decimalPargSize="{{14}}"
                 numberSize="{{20}}" />
               </view>
-              <view class="text" bind:tap="toIncomeDetailPage">查看明细<icon-font name="icondingdan-dianpu-gengduo1" /></view>
+              <view class="text flex-cm" bind:tap="toIncomeDetailPage">查看明细<icon-font name="icondingdan-dianpu-gengduo1" size="{{10}}" /></view>
             </view>
 
             <view class="flex-b margin16">

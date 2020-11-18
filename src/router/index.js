@@ -1,4 +1,10 @@
 export default {
+    myRedPackage: "pages/myRedPackage/myRedPackage",
+    myCollection: "pages/myCollection/myCollection",
+    myCoupon: "pages/myCoupon/myCoupon",
+    balanceDetail: "pages/balanceDetail/balanceDetail",
+    withdraw: "pages/withdraw/withdraw",
+    myWallet: "pages/myWallet/myWallet",
     verifyBankPhoneNumber: "pages/verifyBankPhoneNumber/verifyBankPhoneNumber",
     distributionQrcode: "pages/distributionQrcode/distributionQrcode",
     distributionTeam: "pages/distributionTeam/distributionTeam",

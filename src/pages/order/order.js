@@ -1,6 +1,6 @@
 // 全局app实例
 import { debounce, isScrollUp } from '../../utils/commom';
-import { Toast, boundingClientRect } from '../../utils/sysApis';
+import { Toast, boundingClientRect, showActionSheet } from '../../utils/sysApis';
 const App = getApp();
 
 Page({
@@ -111,7 +111,7 @@ Page({
   async getDom() {
     let res = await boundingClientRect('#scroll-view');
     console.log(res);
-    let scrollViewHeight = App.globalData.windowHeight - res.target_top;
+    let scrollViewHeight = App.globalData.screenHeight - res.target_top;
     this.setData({
       scrollViewHeight
     });
@@ -152,8 +152,11 @@ Page({
     }
   }, 
   // 订单操作
-  viewMore(e) {
+  async viewMore(e) {
     console.log(e)
+    let res = await showActionSheet({
+      itemList: ['1','3','4','5']
+    })
   }, 
   putInCart(e) {
     console.log(e)

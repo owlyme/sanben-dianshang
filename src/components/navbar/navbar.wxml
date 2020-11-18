@@ -22,7 +22,8 @@
   wx:if="{{showNav}}"
   > 
     <view class="back-box" bind:tap="_navBack" >
-      <image  class="nav-bar-back-img" src="{{computedTheme.backIcon}}" />
+      <!-- <image  class="nav-bar-back-img" src="{{computedTheme.backIcon}}" /> -->
+      <icon-font name="{{computedTheme.backIcon}}" color="{{computedTheme.backIconColor}}" size="{{20}}" />
     </view>
     
     <block wx:if="{{showComponentList}}">

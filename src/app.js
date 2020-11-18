@@ -2,11 +2,13 @@ import {setNavBarSize} from './utils/sysApis';
 App({
   onLaunch() {
     // 设置导航栏尺寸
-    setNavBarSize(({navHeight, navTop, windowHeight}) => {
+    setNavBarSize(({navHeight, navTop, windowHeight, screenHeight, navBarHeight}) => {
       this.globalData.navHeight = navHeight;
       this.globalData.navTop = navTop;
       this.globalData.windowHeight = windowHeight;
-      this.globalData.pageContainerHeight = windowHeight - navHeight;
+      this.globalData.pageContainerHeight = screenHeight - navHeight;
+      this.globalData.navBarHeight = navBarHeight
+      this.globalData.screenHeight = screenHeight
     });
   },
   onShow() {
@@ -28,6 +30,8 @@ App({
     navHeight: 64, //
     navTop: 26,
     windowHeight: 667,
-    pageContainerHeight: 643 // page-contaier组件使用 windowHeight - navHeight
+    pageContainerHeight: 643, // page-contaier组件使用 windowHeight - navHeight
+    screenHeight: 667,
+    navBarHeight: 48,
   })
 });

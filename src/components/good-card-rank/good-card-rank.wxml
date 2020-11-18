@@ -27,7 +27,7 @@
       </view>
 
       <view class="shop-address">
-        {{goodInfo.shopAddress || 0}} >A
+        {{goodInfo.shopAddress || ''}} <icon-font name="icondingdan-dianpu-gengduo" size="{{10}}" />
       </view>
     </view>
   </view>

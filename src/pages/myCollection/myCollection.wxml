@@ -1,0 +1,59 @@
+<view class="xxx-page">
+  <page-container
+    pageName="我的收藏"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+      <view class="edit sticky" style="top: {{navHeight}}px" bind:tap="toManage">
+        <text>{{isEdit ? '完成':'管理'}}</text>
+      </view>
+
+      <view 
+        class="list-b-item gutter-container {{activeIndex === index ? 'active' : ''}}"
+        wx:for="{{goodList}}"
+        wx:key="{{index}}" 
+        data-item="{{item}}"
+        data-index="{{index}}" 
+        bind:longtap="showCover"
+        bind:touchstart="touchstart"
+        >
+        <view class="flex-middle">
+          <!-- 遮罩层 -->
+          <view class="dask_del" >
+            <text class="cencal" 
+            data-item="{{item}}" 
+           data-index="{{index}}" 
+           bind:tap="handleCencal">取消收藏</text>
+          </view>
+
+         <view hidden="{{!isEdit}}" >
+           <radio color="#FF3232" 
+           data-item="{{item}}" 
+           data-index="{{index}}" 
+           value="" 
+           bind:tap="selectSingle" 
+           checked="{{item.checked}}" />
+         </view>
+         <good-card-rank
+          prevent 
+          goodInfo="{{item}}"
+          bind:onClick="viewGoodDetail"
+           />          
+        </view>
+      </view>
+
+    <!-- 底部 -->
+		<view class="footer-btn" hidden="{{!isEdit}}">
+			<view class="btn">
+				<label class="radio" bind:tap="selectAll">
+					<radio color="#FF3232" value="" checked="{{isAll}}" /><text>全选</text>
+				</label>
+			</view>
+			<view class="cancle-btn" bind:tap="cancelAll">取消收藏</view>
+		</view>
+  </page-container>
+
+</view>

@@ -12,8 +12,6 @@ function initStorage() {
 }
 initStorage();
 
-
-
 export function setLocalStorage(key, value) {
     try {
         if (validateKey(key)) {

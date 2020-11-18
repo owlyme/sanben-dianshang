@@ -1,0 +1,51 @@
+<page-container
+    pageName="红包"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+    <view class="coupon-page">
+      <view class="tabs-b">
+        <tab-bar 
+        tabs="{{orderType}}"
+        bind:onChange="onSeleteType" />
+      </view>
+    
+      <view class="coupon-card-b">
+        <!-- 没有订单 -->
+        <view class="no-coupon" 
+         style="opacity: {{redBag.length ? 0 : 1}}">
+          <image src="/images/no-coupon.png" />
+          <view class="no-coupon-title">您还没有红包</view>
+          <view class="no-coupon-remark">请先去商城逛逛吧</view>
+        </view>
+        <!--  -->
+        <view class="coupon-list" 
+         style="opacity: {{redBag.length ? 1 : 0}}"
+          >
+          <scroll-view
+          id="scroll-view"
+          scroll-y="true"
+          scrollTop="{{scrollTop}}"
+          style="height: {{scrollViewHeight}}px;"
+          bindscrolltolower="scrollToLower"
+          bindscrolltoupper="scrollToUpper"
+          bindscroll="onScroll"
+          >
+             <view 
+              class="list-b-item"
+              wx:for="{{redBag}}"
+              wx:key="{{index}}" 
+              data-item="{{item}}"
+              data-id="{{item.id}}"
+              bind:tap="onCouponClick"
+              >
+                <red-package-card info="{{item}}" />
+              </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </page-container>

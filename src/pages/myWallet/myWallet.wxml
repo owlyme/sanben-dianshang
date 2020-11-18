@@ -1,0 +1,88 @@
+<view class="xxx-page">
+  <page-container
+    pageName="我的钱包"
+    showNav="{{true}}"
+    bgColor="linear-gradient(270deg, #FF9846 0%, #FF3232 100%)"
+    iconColor="none"
+    theme="light"
+    useThemeBg="{{false}}"
+    >
+      <view class="wallet">
+				<view class="wallet-head flex-col flex-middle">
+          <view class="title flex-cm">我的余额</view>
+          <view class="money">
+              <money-text 
+              number="{{3620}}" 
+              color="#fff" 
+              moneySize="{{24}}" 
+              numberSize="{{32}}" 
+              decimalPargSize="{{24}}"/>
+					</view>
+        </view>
+        
+        <view class="function gutter-container flex">
+          <view class="left flex-cm" bind:tap="handleWithdraw">
+            <icon-font name="icontixian" size="{{16}}" color="#FF3232" />
+            <text class="text flex-cm">提现</text>
+          </view>
+          <view class="right flex-cm"  bind:tap="handleBalance">
+            <icon-font name="iconyuemingxi22x" size="{{16}}" color="#FF3232" />
+            <text class="text">余额明细</text>
+          </view>
+        </view>
+				<!-- 积分 -->
+				<view class="integral gutter-container">
+					<view class="top">
+						<view class="title">
+							<view class="left">
+								我的积分
+							</view>
+							<view class="right" data-type="jifen" bind:tap="handlejifen">
+                查看明细
+                <icon-font name="icondingdan-dianpu-gengduo1"/>
+							</view>
+						</view>
+						<view class="count">68800</view>
+					</view>
+					<view class="btn" bind:tap="productsExchange">兑换商品</view>
+        </view>
+        
+				<view class="more gutter-container">
+          <list >
+            <list-item 
+              label="红包"
+              data-type="redPacket" 
+              bind:onClick="handleNavigator"
+              >
+                <view slot="content" class="">
+                  <text class="number">300</text>
+                  <text class="unit"> 元</text>
+                </view>
+              </list-item>
+            <list-item 
+              label="优惠券"
+              data-type="ticket" 
+              bind:onClick="handleNavigator"
+              >
+                <view slot="content" class="">
+                  <text class="number">300</text>
+                  <text class="unit"> 张</text>
+                </view>
+              </list-item>
+            <list-item 
+              label="银行卡"
+              data-type="bankCard" 
+              bind:onClick="handleNavigator"
+              >
+                <view slot="content" class="">
+                  <text class="number">3</text>
+                  <text class="unit"> 张</text>
+                </view>
+              </list-item>
+          </list>
+				</view>
+		</view>
+
+  </page-container>
+
+</view>

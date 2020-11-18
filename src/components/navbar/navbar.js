@@ -72,12 +72,14 @@ Component({
       if (theme === 'dark') {
         style = {
           titleColor: '#333333',
-          backIcon: '/images/leftdark.png'
+          backIcon: 'iconfanhui2',
+          backIconColor: '#333333'
         };
       } else {
         style = {
           titleColor: '#ffffff',
-          backIcon: '/images/left.png'
+          backIcon: 'iconfanhui2',
+          backIconColor: '#ffffff'
         };
       }
 
@@ -88,7 +90,6 @@ Component({
         style.backIcon = backIcon;
       }
 
-      console.log('theme', style);
       this.setData({
         computedTheme: style
       });

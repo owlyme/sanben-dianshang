@@ -22,6 +22,10 @@ Component({
         tags: ['hao', 'bucuo']
       }
     },
+    prevent: {
+      type: Boolean,
+      value: false
+    }
   },
   data: {},
 
@@ -41,11 +45,13 @@ Component({
 
   methods: {
     viewGoodDetail(e) {
-
-      Router.push({
-        url: PagePathes.goodDetail
-      })
-
+      if (!this.data.prevent) {
+        Router.push({
+          url: PagePathes.goodDetail
+        })
+      } else {
+        this.triggerEvent('onClick', {...this.data.goodInfo})
+      }
     },
   }
 

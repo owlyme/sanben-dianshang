@@ -23,13 +23,20 @@
             padding: 12px;
             .coupon-detail-left {
                 width: 210px;
-                image {
+                .image {
                     width: 60px;
                     height: 60px;
                     background: #D8D8D8;
                     border-radius: 4px;
                     margin-right: 8px;
+                    image {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 4px;
+                        
+                    }
                 }
+                
                 .type-text {
                     width: 66px;
                     height: 16px;
@@ -49,11 +56,11 @@
                     border-radius: 4px;
                     line-height: 16px;
                     text-align: center;
-                    &,.platform {
+                    &.platform {
                         background: rgba(255, 50, 50, 0.16);
                         color: #FF3232;
                     }
-                    &,.shop {
+                    &.shop {
                         background: rgba(32, 137, 255, 0.16);
                         color: #2089FF;
                     }
@@ -122,3 +129,22 @@
     }
     
 }
+
+.coupon-card-components.unuseable{
+    .coupon-info {
+        filter: grayscale(100%);
+    }
+    .coupon-money {
+        margin-top: 20px !important;
+    }
+    .btn-status {
+        display: none;
+    }
+
+    .coupon-detail-left {
+        image {
+            display: none;
+        }
+    }
+}
+

@@ -56,26 +56,21 @@ Page({
 
     this.throttleSwitchTopStyle = throttle(this.switchTopStyle)
   },
-  onReady() {
-    // Do something when page ready.
-  },
+ 
   onShow() {
     // Do something when page show.
   },
-  onHide() {
-    // Do something when page hide.
+  toMyFollowePage() {
+    console.log('viewMyQrcode')
   },
-  onUnload() {
-    // Do something when page close.
+  toMyStorepage() {
+    Router.push(PagePathes.myCollection)
   },
-  onPullDownRefresh() {
-    // Do something when pull down.
+  toMyCouponPage() {
+    Router.push(PagePathes.myCoupon)
   },
-  onReachBottom() {
-    // Do something when page reach bottom.
-  },
-  onShareAppMessage() {
-    // return custom share data when user share.
+  toRedPackagePage() {
+    Router.push(PagePathes.myRedPackage)
   },
   onPageScroll(e) {
     // Do something when page scroll
@@ -107,12 +102,21 @@ Page({
   toMyWalletPage() {
     // Router.push
     console.log('toMyWalletPage')
+    Router.push({
+      url: PagePathes.myWallet
+    })
   },
   toDistributionPage() {
     console.log('toDistributionPage')
+    Router.push({
+      url: PagePathes.distributionTeam
+    })
   },
   toIncomeDetailPage() {
     console.log('toIncomeDetailPage')
+    Router.push({
+      url: PagePathes.distributionIncome
+    })
   },
   viewMyQrcode() {
     console.log('viewMyQrcode')

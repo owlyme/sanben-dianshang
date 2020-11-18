@@ -1,5 +1,13 @@
 {
   "pages": [
+    "pages/order/order",
+    "pages/myCollection/myCollection",
+    "pages/mine/mine",
+    "pages/myRedPackage/myRedPackage",    
+    "pages/myCoupon/myCoupon",
+    "pages/balanceDetail/balanceDetail",
+    "pages/withdraw/withdraw",
+    "pages/myWallet/myWallet",
     "pages/verifyBankPhoneNumber/verifyBankPhoneNumber",
     "pages/goodCart/goodCart",
     "pages/distributionTeam/distributionTeam",
@@ -8,7 +16,6 @@
     "pages/feedBack/feedBack",
     "pages/editorAddress/editorAddress",
     "pages/myAddress/myAddress",
-    "pages/mine/mine",
     "pages/goodDetail/goodDetail",
     "pages/paymentSuccessful/paymentSuccessful",
     "pages/confirmOrder/confirmOrder",
@@ -27,7 +34,7 @@
     "pages/on-sale/on-sale",
     "pages/coupon/coupon",
     "pages/negotiationRecord/negotiationRecord",
-    "pages/order/order",
+    
     "pages/help/help",
     "pages/helpTypeList/helpTypeList",
     "pages/helpTypeDetail/helpTypeDetail",
@@ -120,7 +127,8 @@
     "express-type": "components/express-type/express-type",
     "redeem-card": "components/redeem-card/redeem-card",
     "vips": "components/vips/vips",
-
+    "red-package-card": "components/red-package-card/red-package-card",
+    
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },

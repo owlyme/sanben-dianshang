@@ -60,13 +60,6 @@ export const Modal = (props ={}) => {
 // 导航
 
 export const Router = {
-  /**
- * param : {
- *  url: String
- *  query: Object
- *  params: Object
- * }
- */
   getQueryorParam(param) {
     let {query, params, ...other} = fomartUrlStringParamToJsonAndStartWithSlash(param)
     if (query && typeof query === 'object') {
@@ -130,13 +123,13 @@ export const setNavBarSize = (cb = f => f) => {
       let statusBarHeight = res.statusBarHeight,
         navTop = menuButtonObject.top,
         navHeight = statusBarHeight + menuButtonObject.height + (menuButtonObject.top - statusBarHeight)*2;
-      // this.globalData.navHeight = navHeight;
-      // this.globalData.navTop = navTop;
-      // this.globalData.windowHeight = res.windowHeight;
+
       cb({
         navHeight,
         navTop,
         windowHeight: res.windowHeight,
+        screenHeight: res.screenHeight,
+        navBarHeight: res.screenHeight - res.windowHeight
       });
 
     },
@@ -150,10 +143,9 @@ export const boundingClientRect = async nodeId => {
   return new Promise((resolve) => {
     let query = wx.createSelectorQuery();
     query.select(nodeId).boundingClientRect();
-    if (!boundingClientRect.selectViewport) {
-      query.selectViewport().scrollOffset();
-    }
-    
+    query.selectViewport().scrollOffset();
+
+
     query.exec(function (res) {
       const {
         bottom,
@@ -168,7 +160,7 @@ export const boundingClientRect = async nodeId => {
         scrollLeft,
         scrollTop,
         scrollWidth
-      } = boundingClientRect.selectViewport || res[1];// 显示区域的竖直滚动位置
+      } = res[1];// 显示区域的竖直滚动位置
       resolve({
         target_bottom: bottom,
         target_height: height,
@@ -191,7 +183,7 @@ export const showActionSheet = ({
   itemColor = '#000000',
   formart = f => f
 }) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     let list = itemList.map(i => formart(i));
     wx.showActionSheet({
       itemList: list,
@@ -202,7 +194,8 @@ export const showActionSheet = ({
         resolve(selectedItem, res.tapIndex);
       },
       fail (res) {
-        Toast.show(res.errMsg);
+        reject(res.errMsg);
+        // Toast.show();
       }
     });
   });
