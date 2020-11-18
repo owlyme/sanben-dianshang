@@ -12,6 +12,10 @@ Component({
     horizontal: {
       type: Boolean,
       value: false
+    },
+    fontSize: {
+      type: Number,
+      value: 10
     }
   },
   data: {},

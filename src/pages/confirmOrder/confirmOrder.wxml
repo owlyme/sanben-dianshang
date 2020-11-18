@@ -37,9 +37,9 @@
     </view>
 
       <!-- 有需要购买的商品 -->
-    <view class="gutter-container">
+    <view class="">
       <block wx:for="{{orderList}}">
-          <view class="cart-item" wx:key="index">
+          <view class="cart-item gutter-container" wx:key="index">
             <order-list-comfirm 
             data="{{item}}" 
             data-index="{{index}}"

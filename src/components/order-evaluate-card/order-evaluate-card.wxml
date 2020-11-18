@@ -1,0 +1,35 @@
+<view class="xxx-components">
+<card>
+  <view class="order-status">
+    <order-status-text>待评价</order-status-text>
+  </view>
+  <view >
+      <shop-card 
+          showNameIcon
+        showAddressIcon
+        src='{{info.shopLogo}}'
+        title='{{info.shopName}}'
+        text='{{info.address}}' />
+  </view>
+
+  <view class="order-good">
+      <good-card-info
+          src="{{info.goodPic}}"
+          title="{{info.goodName}}"
+          text="{{info.model}}"
+          />
+  </view>
+  <view class="flex-b order-price ">
+     <view class="sales">共{{info.sales}}件商品</view>
+     <view class="price">实付款：<money-text numberSize="{{14}}" number="{{info.money}}" /></view>
+  </view>
+
+  <view class="flex-end order-btn">
+     <button-text 
+     width="{{72}}"
+     height="{{32}}"
+     bind:tap="toOrderEvaluateCenter"
+     type="warn" fontSize="{{12}}">评价</button-text>
+  </view>
+</card>
+</view>

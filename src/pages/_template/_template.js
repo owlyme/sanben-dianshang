@@ -1,8 +1,7 @@
-// 全局app实例
 import PagePathes from '../../router/index'
-const app = getApp();
-console.log(app);
+import { Router } from '../../utils/sysApis';
 
+const App = getApp();
 Page({
   data: {},
   onLoad() {

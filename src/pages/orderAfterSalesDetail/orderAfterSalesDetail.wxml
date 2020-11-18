@@ -1,0 +1,127 @@
+<view class="xxx-page">
+  <page-container
+    pageName="售后详情"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+    <view class="detail-page">
+      <view class="header flex-b flex-middle gutter-container">
+        <view class="title">
+          退款中...
+        </view>
+        <view  class="cancel" bind:tap="cancel">
+          撤销
+        </view>
+      </view>
+      
+     <view class="money gutter-container">
+       <card>
+        <view class="flex-b flex-middle">
+          <view class="title">
+            退回{{bankName}}（尾号{{bankCardTailCode}}）
+          </view>
+          <money-text number="{{money}}"></money-text>
+        </view>
+
+        <view class="progress">
+          <view class="progress-line">
+            <view class="flex-b icons">
+              <view class="step {{step >= 1 ? 'active' : ''}}">
+                <icon-font color="#fff" name="iconwode-chengweishangjia" size="{{13.5}}" />
+              </view>
+              <view class="step {{step >= 2 ? 'active' : ''}}">
+                <icon-font color="#fff" name="iconshouhou-yinhangshouli2" size="{{13.5}}" />
+              </view>
+              <view class="step {{step >= 3 ? 'active' : ''}}">
+                <icon-font color="#fff" name="iconshouhou-tuikuanchenggong1" size="{{13.5}}" />
+                </view>
+            </view>
+            <view class="line">
+              <view class="line-inner" style="width: {{ (step > 1 ? step+1 : step) / 4 * 100 }}%"></view>
+            </view>
+          </view>
+          <view class="flex-b ">
+            <view class="step step-text">
+              <view class="label">商家退款</view>
+              <view class="time">2020-09-13 15:00:54</view>
+            </view>
+            <view class="step step-text">
+              <view class="label">银行受理</view>
+              <view class="time">2020-09-13 15:00:54</view>
+            </view>
+            <view class="step step-text">
+              <view  class="label">退款成功</view>
+              <view class="time"></view>
+            </view>
+          </view>
+        </view>
+      </card>
+     </view>
+
+     <view class="money gutter-container">
+       <card>
+         <view class="flex-b flex-middle">
+          <view class="title">
+            协商记录
+          </view>
+          <icon-font bind:tap="toNegotiationRecord" name="icondingdan-dianpu-gengduo1" size="{{14}}" />
+        </view>
+      </card>
+     </view>
+
+    <view class="gutter-container info">
+      <card>
+        <view class="flex-b flex-middle">
+          <shop-card type="simple"  src="{{shopLogo}}" title="{{shopName}}" />
+
+          <view class="concat flex-cm">联系卖家</view>
+        </view>
+
+
+        <view class="good">
+          <good-card-info
+          src="{{good.pic}}"
+          title="{{good.name}}"
+          text="{{good.model}}"
+          />
+        </view>
+
+        <view class="">
+          <view class="row flex">
+            <view class="label">退款原因</view>
+            <view class="text">{{reason}}</view>
+          </view>
+          <view class="row flex">
+            <view class="label">收货状态</view>
+            <view class="text">{{receiptStatus ? '已收货' : '未收货'}}</view>
+          </view>
+          <view class="row flex">
+            <view class="label">退款金额</view>
+            <view class="text"><money-text plane number="{{money}}"/></view>
+          </view>
+          <view class="row flex">
+            <view class="label">申请时间</view>
+            <view class="text">{{applicationTime}}</view>
+          </view>
+          <view class="row flex">
+            <view class="label">退款编号</view>
+            <view class="text">
+              <copy-text text="{{codeNumber}}"/>
+            </view>
+          </view>
+        </view>
+      </card>
+     </view>
+
+      <view class="server-btn">
+        <service-button />
+      </view>
+    </view>
+
+  </page-container>
+
+</view>

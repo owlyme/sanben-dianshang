@@ -10,6 +10,10 @@ Component({
     src: String,
     title: String,
     text: String,
+    circle: {
+      type: Boolean,
+      value: false
+    },
     showNameIcon: {
       type: Boolean,
       value: false
@@ -17,6 +21,10 @@ Component({
     showAddressIcon: {
       type: Boolean,
       value: false
+    },
+    type: {
+      type: String,
+      value: 'default' // simple
     }
   },
   data: {},

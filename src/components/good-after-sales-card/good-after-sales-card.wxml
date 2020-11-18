@@ -1,0 +1,30 @@
+<view class="xxx-components">
+  <view class="shop flex-b">
+    <view class="shop-address flex flex-middle">
+      <image src="{{info.shopLogo}}" />
+      <text>{{info.shopName}}</text>
+      <view class="btn flex-cm" catch:tap="viewShopDetail">
+        <icon-font name="icondingdan-dianpu-gengduo1" size="{{14}}" />
+      </view>
+    </view>
+    <view class="btn flex-cm {{info.status == 1 ? 'done': 'undo'}}" catch:tap="action">
+        <icon-font
+
+        name="{{info.status == 1 ? 'iconshanchu1': 'iconchexiao2x'}}" size="{{14}}" 
+        color="{{info.status == 1 ? '#999999': '#FF3232'}}" />
+      </view>
+  </view>
+  <view class="info">
+    <good-card-info
+          src="{{info.goodPic}}"
+          title="{{info.goodName}}"
+          text="{{info.model}}"
+          />
+  </view>
+  <view class="status flex-b">
+    <text class="status-text">{{info.status == 1 ? '退款成功': '商家确认中'}}</text>
+    <view class="money">
+      退款：<money-text number="{{info.money}}"></money-text>
+    </view>
+  </view>
+</view>

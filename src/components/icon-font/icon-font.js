@@ -20,6 +20,10 @@ Component({
       type: [String],
       value: 'iconshanchu1'
     },
+    gutter: {
+      type: [Number, String],
+      value: 4
+    }
   },
   observers: {
     // goodList: function() {

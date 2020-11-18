@@ -32,15 +32,15 @@
           bindscroll="onScroll"
           >
         <view class=" gutter-container" >
-          <view class="member" wx:for="{{20}}">
+          <view class="member" wx:for="{{list}}" wx:key="{{index}}">
             <view class="left">
-              <image src="https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg"></image>
+              <image src="{{item.avatar}}"></image>
               <view class="name">
-                <view>用户1999999999</view>
-                <text>一级分销</text>
+                <view>{{item.name}}</view>
+                <text>{{item.level}}</text>
               </view>
             </view>
-            <view class="time">上午09:00</view>
+            <view class="time">{{list.time}}</view>
           </view>
         </view>
       </scroll-view>

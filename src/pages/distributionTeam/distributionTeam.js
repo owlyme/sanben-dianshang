@@ -11,6 +11,50 @@ Page({
       '二级分销·2',
       '三级分销·36'
     ],
+    list: [
+      {
+        avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'zhangsan',
+        level: '一级分销',
+        time: '上午09:00'
+      },
+      {
+        avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'zhangsan',
+        level: '一级分销',
+        time: '上午09:00'
+      },{
+        avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'zhangsan',
+        level: '一级分销',
+        time: '上午09:00'
+      },{
+        avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'zhangsan',
+        level: '一级分销',
+        time: '上午09:00'
+      },{
+        avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'zhangsan',
+        level: '一级分销',
+        time: '上午09:00'
+      },{
+        avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'zhangsan',
+        level: '一级分销',
+        time: '上午09:00'
+      },{
+        avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'zhangsan',
+        level: '一级分销',
+        time: '上午09:00'
+      },{
+        avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'zhangsan',
+        level: '一级分销',
+        time: '上午09:00'
+      },
+    ]
   },
   onLoad() {
     // Do some initialize when page load.

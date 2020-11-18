@@ -29,7 +29,8 @@
   </view>
 
   <view class="remind flex-cm">
-      <image bindtouchend="toAgree" class="check-image" src="./images/checked.png" />
+      <!-- <image bindtouchend="toAgree" class="check-image" src="./images/checked.png" /> -->
+      <icon-font bindtouchend="toAgree" name="iconzhuce-xuanzhong3" size="{{15}}" color="{{checked? '#FF3232' : '#999999'}}" />
       <view class="view-text">已阅读并同意<text-link
         url="/pages/serviceAgreement/serviceAgreement"
         text="服务协议" />与<text-link

@@ -1,4 +1,11 @@
 export default {
+    orderDetail: "pages/orderDetail/orderDetail",
+    orderApplyAfterSales: "pages/orderApplyAfterSales/orderApplyAfterSales",
+    orderAfterSalesDetail: "pages/orderAfterSalesDetail/orderAfterSalesDetail",
+    orderAfterSales: "pages/orderAfterSales/orderAfterSales",
+    orderEvaluateSuccessful: "pages/orderEvaluateSuccessful/orderEvaluateSuccessful",
+    orderEvaluateCenter: "pages/orderEvaluateCenter/orderEvaluateCenter",
+    orderEvaluate: "pages/orderEvaluate/orderEvaluate",
     myRedPackage: "pages/myRedPackage/myRedPackage",
     myCollection: "pages/myCollection/myCollection",
     myCoupon: "pages/myCoupon/myCoupon",

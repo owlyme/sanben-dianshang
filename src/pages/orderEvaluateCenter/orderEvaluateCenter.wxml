@@ -1,0 +1,74 @@
+<view class="xxx-page">
+  <page-container
+    pageName="发表评价"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+    <view class="sticky" style="top: {{globalData}}px">
+      <view class="flex-end submit"  bind:tap="submit">
+      提交
+      </view>
+    </view>
+    <view wx:for="{{goodList}}" class="gutter-container">
+      <card>
+        <view >
+          <good-card-info
+          src="{{item.goodPic}}"
+          title="{{item.name}}"
+          text="{{item.model}}"
+          />
+        </view>
+
+        <view class="flex flex-middle rate">
+          <text>描述相符</text> 
+          <rate-star 
+          iconType="zan"
+          gutter="{{20}}"
+          starSize="{{40}}"
+          data-index="{{index}}" 
+          bind:onChange="onRateChange" 
+          rate="{{item.rate * 2}}"/>
+          <view class="rate-desc flex-cm {{item.rate === 5 ? 'very-good' : ''}}">{{description[item.rate]}}</view> 
+        </view>
+
+        <view class="desc">
+          <textarea 
+          placeholder-class="place-class" 
+          data-index="{{index}}" 
+          value="{{item.desc}}"
+          bindinput="onDescChange"
+          placeholder="输入您的评价或感受，可以帮助更多想买的人"></textarea>
+          
+        </view>
+        <view class="desc-sub flex-end">已写<text>{{item.desc.length}}</text>个字</view>
+
+        <view class="upload">
+          <upload-pics 
+          max="{{8}}"
+          images="{{item.pics}}"
+          data-index="{{index}}" 
+          bind:onChange="onUploadPicChange" />
+        </view>
+
+        <view class="flex-b flex-middle anonymous ">
+          <view 
+          class="flex-middle"
+          data-index="{{index}}"
+          bind:tap="setAnonymous">
+          <icon-font name="iconzhuce-xuanzhong3" size="{{15}}" color="{{item.anonymous? '#FF3232' : '#999999'}}" />
+            <text>匿名评价</text>
+          </view>
+
+          <!-- <view bind:tap="submit">
+            <button-text type="warn" height="{{24}}" fontSize="{{14}}">提交</button-text>
+          </view> -->
+        </view>
+
+      </card>
+    </view>
+  </page-container>
+
+</view>

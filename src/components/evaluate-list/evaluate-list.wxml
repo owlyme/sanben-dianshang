@@ -63,9 +63,7 @@
     <view class="model">
       {{item.model}}
     </view>
-
     </card>
-    
   </view>
 </block>
 

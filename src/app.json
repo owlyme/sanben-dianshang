@@ -1,5 +1,12 @@
 {
   "pages": [
+    "pages/orderDetail/orderDetail",
+    "pages/orderApplyAfterSales/orderApplyAfterSales",
+    "pages/orderAfterSalesDetail/orderAfterSalesDetail",
+    "pages/orderAfterSales/orderAfterSales",
+    "pages/orderEvaluateSuccessful/orderEvaluateSuccessful",
+    "pages/orderEvaluateCenter/orderEvaluateCenter",
+    "pages/orderEvaluate/orderEvaluate",
     "pages/order/order",
     "pages/myCollection/myCollection",
     "pages/mine/mine",
@@ -34,11 +41,9 @@
     "pages/on-sale/on-sale",
     "pages/coupon/coupon",
     "pages/negotiationRecord/negotiationRecord",
-    
     "pages/help/help",
     "pages/helpTypeList/helpTypeList",
     "pages/helpTypeDetail/helpTypeDetail",
-   
     "pages/personalInfo/personalInfo",
     "pages/signIn/signIn",
     "pages/login/login",
@@ -128,7 +133,12 @@
     "redeem-card": "components/redeem-card/redeem-card",
     "vips": "components/vips/vips",
     "red-package-card": "components/red-package-card/red-package-card",
-    
+    "order-evaluate-card": "components/order-evaluate-card/order-evaluate-card",
+    "order-evaluated-card": "components/order-evaluated-card/order-evaluated-card",
+    "upload-pics": "components/upload-pics/upload-pics",
+    "good-after-sales-card": "components/good-after-sales-card/good-after-sales-card",
+    "copy-text": "components/copy-text/copy-text",
+    "order-detail-card": "components/order-detail-card/order-detail-card",
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },

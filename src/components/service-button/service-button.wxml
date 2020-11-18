@@ -1,6 +1,7 @@
-<view class="service-components {{horizontal ? 'flex flex-c' : 'flex-col flex-middle'}}"
+<view class="service-components {{horizontal ? 'flex flex-cm' : 'flex-col flex-middle'}}"
   bind:tap="toServicePage">
   <!-- content -->
-  <image src="./images/service.png" />
-  <text>联系客服</text>
+  <!-- <image src="./images/service.png" /> -->
+  <icon-font name="iconkefu" size="{{18}}" color="#FF3232" />
+  <text style="font-size: {{ fontSize*2}}rpx;">联系客服</text>
 </view>

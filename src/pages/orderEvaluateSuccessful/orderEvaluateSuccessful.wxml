@@ -1,0 +1,51 @@
+<page-container
+    pageName="评价成功"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="light"
+    useThemeBg="{{true}}"
+    >
+    <view class="payment-page">
+    
+      <view class="top-b">
+        <view class="icon-b">
+          <icon-font name="iconpingjiachenggong1" size="48" color="#fff"/>
+        </view>
+        <view class="remind">
+          评价成功，恭喜您获得{{points}}积分！
+        </view>
+
+        <view class="btns flex-b">
+          <button-text type="ghost"
+          fontSize="{{12}}"
+          bind:tap="backToIndex" >返回首页</button-text>
+          <button-text type="ghost"
+          bind:tap="back" 
+          fontSize="{{12}}"
+          >查看评价</button-text>
+        </view>
+
+      </view>
+    
+      <view class="payment-card-b">
+        <part-title title="热买推荐"></part-title>
+        <view class="payment-list "  >
+          <scroll-view
+          id="scroll-view"
+          scroll-y="true"
+          style="height: {{scrollViewHeight}}px;"
+          bindscrolltolower="scrollToLower"
+          bindscrolltoupper="scrollToUpper"
+          bindscroll="onScroll"
+          >
+            <view class="gutter-container">
+            <good-list
+              goodList="{{goodList}}"
+            />
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </page-container>

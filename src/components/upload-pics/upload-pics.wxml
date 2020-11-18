@@ -1,0 +1,20 @@
+<view class="upload-box flex flex-wrap">
+  <block wx:for="{{images}}" wx:key="{{index}}">
+    <view class="upload-image">
+      <view class="remove flex-cm" 
+        data-index="{{index}}"
+        bind:tap="removePic" >
+      <icon-font
+        name="iconshenheshibai" color="#FF3232"/>
+      </view>
+      <image class="uni-uploader__img"
+      src="{{item}}" 
+      data-src="{{item}}" 
+      bind:tap="handlePreviewImage" 
+      mode="scaleToFill"></image>
+    </view>
+  </block>
+  <view wx:if="{{images.length <= max}}"class="upload-btn" bind:tap="handleUpload">
+    <image src="/images/mine/add-pic.png"></image>
+  </view>
+</view>

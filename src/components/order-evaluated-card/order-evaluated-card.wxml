@@ -1,0 +1,27 @@
+<view class="xxx-components">
+<card>
+  <view >
+      <shop-card circle
+        src='{{info.uerAvatar}}'
+        title='{{info.userName}}'
+        text='{{info.time}}' />
+  </view>
+  <view class="content">
+      {{info.content}}
+  </view>
+
+  <view class="image-box" wx:if="{{info.pics.length}}">
+    <view class="image"  wx:for="{{info.pics}}" wx:key="{{index}}">
+      <image src="{{item}}"></image>
+    </view>
+  </view>
+
+  <view class="good">
+      <good-card-info
+          src="{{info.goodPic}}"
+          title="{{info.goodName}}"
+          text="{{info.model}}"
+          />
+  </view>
+</card>
+</view>

@@ -1,4 +1,4 @@
 <view class="button-text-components flex-cm {{type}}"
-style="height: {{height * 2}}rpx; min-width: {{width}}rpx;border-radius： {{height}}rpx; font-size: {{fontSize *2}}rpx">
+style="height: {{height * 2}}rpx; min-width: {{width *2}}rpx;border-radius： {{height}}rpx; font-size: {{fontSize *2}}rpx">
   <slot></slot>
 </view>

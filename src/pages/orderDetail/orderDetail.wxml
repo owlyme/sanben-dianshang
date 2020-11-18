@@ -1,0 +1,123 @@
+<view>
+  <!-- bgColor="#F4F5F6" -->
+  <page-container
+    pageName="订单详情"
+    showNav="{{true}}"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{true}}"
+    >
+    <view class="xxx-page">
+    <view class="header gutter-container flex-middlee">
+      <icon-font name="icondaishouhuo2"  color="#ffffff" size="{{25}}" />
+      待收货
+    </view>
+   <!-- 收货地址 -->
+    <view class="order_address gutter-container" >
+      <view class="reciever">
+        <view class="address_box flex-middle" bind:tap="setAddress">
+          <view class="weizhi_icon flex-cm">
+            <icon-font name="icondingdan-dianpudizhi-hong1"  color="#ffffff" />
+          </view>
+          <view style="flex: 1">
+            <block wx:if="{{address.name}}">
+              <view class="center">
+                <view class="name flex">
+                  <text class="text1">{{address.name}}</text>
+                  <text class="phones">{{address.phone}}</text>
+                </view>
+                <view class="address_name">{{address.address_name}}</view>
+              </view>
+            </block>
+            <view class="noaddress"wx:else>
+              请添加收货地址
+            </view>
+          </view>
+          <view>
+            <icon-font name="icondingdan-dianpu-gengduo" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 物流 -->
+    <view class="transport gutter-container">
+      <card>
+        运输中
+      </card>
+    </view>
+
+    <!-- 有需要购买的商品 -->
+    <view class="cart-item gutter-container">
+      <!--  -->
+      <order-detail-card
+       data="{{order}}"
+        bind:onAddToGoodCart="addToGoodCart"
+        bind:onViewLogistics="viewLogistics"
+      />
+    </view>
+
+    <!-- 备注 -->
+    <view class="remark gutter-container">
+      <card>
+        <view class="row flex">
+          <view class="label">订单备注：</view>
+          <view class="text">{{others.remark}}</view>
+        </view>
+        <view class="line"></view>
+        <view class="row flex">
+          <view class="label">订单编号：</view>
+          <view class="text"><copy-text text="{{others.orderCoderNumber}}"/></view>
+        </view>
+        <view class="line"></view>
+        <view class="row flex">
+          <view class="label">下单时间：</view>
+          <view class="text">{{others.orderTime}}</view>
+        </view>
+        <view class="row flex">
+          <view class="label">支付时间：</view>
+          <view class="text">{{others.paymentTime}}</view>
+        </view>
+        <view class="line"></view>
+        <view class="row flex">
+          <view class="label">支付方式：</view>
+          <view class="text">{{others.paymentType}}</view>
+        </view>
+        <view class="row flex">
+          <view class="label">配送方式：</view>
+          <view class="text">{{others.deliveryMethod}}</view>
+        </view>
+      </card>
+    </view>
+
+    <view class="gutter-container">
+      <card>
+        <service-button horizontal fontSize="{{14}}"/>
+      </card>
+    </view>
+
+    <view id="submit" class="comfirm-btn flex-b flex-middle">
+        <view class="flex flex-middle">
+          <image class="more-order"
+           src="/images/more-order.png"
+            bind:tap="viewMore"
+            />
+        </view>
+
+        <view class="flex-middle">
+          <view class="btn" bind:tap="addToGoodCart">
+            <button-text fontSize="{{12}}">加入购物车</button-text>
+          </view>
+         
+          <view class="btn" bind:tap="viewLogistics">
+            <button-text fontSize="{{12}}">查看物流</button-text>
+          </view>
+
+          <view class="btn" bind:tap="confirmReceipt">
+            <button-text type="warn" fontSize="{{12}}">确认收货</button-text>
+          </view>
+        </view>
+    </view>
+    </view>
+  </page-container>
+
+</view>

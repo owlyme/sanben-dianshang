@@ -1,0 +1,38 @@
+    <view class="xxx-page"><page-container
+    pageName="评价中心"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+    <view class="team ">
+      <view class="tab">
+        <tab-bar tabs="{{tabBarList}}" bind:onChange="handleChange" />
+      </view>
+      <!-- 内容 -->
+      <view class="contents">
+        <scroll-view
+            id="scroll-view"
+            scroll-y="true"
+            style="height: {{scrollViewHeight}}px;"
+            bindscrolltolower="scrollToLower"
+            bindscrolltoupper="scrollToUpper"
+            bindscroll="onScroll"
+            
+            >
+            <view hidden="{{listTypeIndex === 1}}" class="gutter-container" wx:for="{{list}}" wx:key="{{index}}">
+              <order-evaluate-card info="{{item}}" />
+            </view>
+
+            <view hidden="{{listTypeIndex === 0}}" class="gutter-container" wx:for="{{evaluatedList}}" wx:key="{{index}}">
+              <order-evaluated-card info="{{item}}" />
+            </view>
+        </scroll-view>
+		</view>
+	</view>
+
+  </page-container>
+
+</view>

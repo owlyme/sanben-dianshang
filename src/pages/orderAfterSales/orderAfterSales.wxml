@@ -1,0 +1,18 @@
+<view class="xxx-page">
+  <page-container
+    pageName="售后"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+    
+    <view class="gutter-container" wx:for="{{list}}" wx:key="index" data-item="{{item}}" bind:tap="viewDetail">
+      <card>
+        <good-after-sales-card bind:onAction="onAction" info="{{item}}"/>
+      </card>
+    </view>
+    
+  </page-container>
+</view>

@@ -1,10 +1,8 @@
 // 全局app实例
-import PagePathes from '../../router/index'
+// import PagePathes from '../../router/index'
 import Base from '../../utils/base';
 import { Toast, Router } from '../../utils/sysApis';
-import {getDataset} from "../../utils/commom"
-const app = getApp();
-console.log(app);
+import {getDataset} from "../../utils/commom";
 
 const  bankList = [
   {
