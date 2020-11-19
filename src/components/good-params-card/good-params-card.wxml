@@ -7,7 +7,7 @@
               <view class="content-info">
                 <view class="img-box">
                   <block wx:for="{{3}}">
-                    <image src="https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg"></image>
+                    <image class="image" src="https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg"></image>
                   </block>
                 </view>
                 <view class="intro ellipsisOne">共4种颜色可选</view>

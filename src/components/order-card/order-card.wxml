@@ -25,9 +25,9 @@
             <view
             class="good-image"
             wx:for="{{goodInfo.goodList}}"
-            wx:index="{{index}}"
+            wx:key="index"
             >
-              <image src="{{item.pic}}" />
+              <image class="image" src="{{item.pic}}" />
             </view>
           </view>
         </scroll-view>
@@ -74,7 +74,7 @@
 
         <!-- 待发货 -->
         <block  wx:elif="{{goodInfo.status === 2}}">
-          <view class="btn-tem">
+          <view class="btn-tem" bind:tap="waitDeliver" >
             <button-text type="warn">待发货</button-text>
           </view>
         </block>
@@ -84,11 +84,11 @@
           <view class="btn-tem">
             <button-text bind:tap="putInCart">加入购物车</button-text>
           </view>
-          <view class="btn-tem">
+          <view class="btn-tem"  bind:tap="toLogisticsDetails">
             <button-text>查看物流</button-text>
           </view>
           <view class="btn-tem">
-            <button-text type="warn">待发货</button-text>
+            <button-text type="warn">确认收货</button-text>
           </view>
         </block>
         
@@ -97,7 +97,7 @@
           <view class="btn-tem">
             <button-text bind:tap="putInCart">加入购物车</button-text>
           </view>
-          <view class="btn-tem">
+          <view class="btn-tem"  bind:tap="toLogisticsDetails">
             <button-text>查看物流</button-text>
           </view>
           <view class="btn-tem">

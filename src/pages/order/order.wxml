@@ -55,14 +55,14 @@
               wx:key="index"
               >
               <order-card 
-              data-good="{{item}}"
-              bind:viewMore="viewMore"
-              bind:putInCart="putInCart"
-              bind:modifyAddress="modifyAddress"
-              bind:toPay="toPay"
-              bind:makeSure="makeSure"
-              bind:deleteOrder="deleteOrder"
-              goodInfo="{{item}}"/>
+                data-good="{{item}}"
+                bind:viewMore="viewMore"
+                bind:putInCart="putInCart"
+                bind:modifyAddress="modifyAddress"
+                bind:toPay="toPay"
+                bind:makeSure="makeSure"
+                bind:deleteOrder="deleteOrder"
+                goodInfo="{{item}}"/>
             </view>
           </scroll-view>
         </view>

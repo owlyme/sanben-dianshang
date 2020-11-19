@@ -86,7 +86,7 @@
               </view>
               <view class="item" 
                 data-type="evaluate" 
-                bind:tap="viewOrder">
+                bind:tap="viewOrderWaitingEvaluate">
                 <view class="icon">
                   <view class="num flex-cm">{{34}}</view>
                   <icon-font color="#FF3232" name="icondaipingjia1" size="{{24}}" />
@@ -124,7 +124,7 @@
               <view class="num">
                 <money-text number="{{2000}}" 
                 moneySize="{{14}}"
-                decimalPargSize="{{14}}"
+                decimalPartSize="{{14}}"
                 numberSize="{{20}}" />
               </view>
               
@@ -154,7 +154,7 @@
               <view class="num">
                 <money-text number="{{3620}}" 
                 moneySize="{{14}}"
-                decimalPargSize="{{14}}"
+                decimalPartSize="{{14}}"
                 numberSize="{{20}}" />
               </view>
               <view class="text flex-cm" bind:tap="toIncomeDetailPage">查看明细<icon-font name="icondingdan-dianpu-gengduo1" size="{{10}}" /></view>

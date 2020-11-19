@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/orderWaitingEvaluate/orderWaitingEvaluate",
+    "pages/order/order",
+    "pages/logisticsDetails/logisticsDetails",
     "pages/orderDetail/orderDetail",
     "pages/orderApplyAfterSales/orderApplyAfterSales",
     "pages/orderAfterSalesDetail/orderAfterSalesDetail",
@@ -7,7 +10,6 @@
     "pages/orderEvaluateSuccessful/orderEvaluateSuccessful",
     "pages/orderEvaluateCenter/orderEvaluateCenter",
     "pages/orderEvaluate/orderEvaluate",
-    "pages/order/order",
     "pages/myCollection/myCollection",
     "pages/mine/mine",
     "pages/myRedPackage/myRedPackage",    
@@ -139,8 +141,10 @@
     "good-after-sales-card": "components/good-after-sales-card/good-after-sales-card",
     "copy-text": "components/copy-text/copy-text",
     "order-detail-card": "components/order-detail-card/order-detail-card",
-    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
-    "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
+    "share-com": "components/share-com/share-com",
+    "poster": "components/miniprogram_dist/poster/index",
+    "logistics-step": "components/logistics-step/logistics-step"
+   
   },
   "tabBar": {  
     "color": "#999999",
@@ -148,10 +152,10 @@
     "borderStyle": "black",
     "list": [
         {  
-        "selectedIconPath": "images/tabbar/index-1.png",
-        "iconPath": "images/tabbar/index-0.png",
-        "pagePath": "pages/index/index",
-        "text": "首页"  
+          "selectedIconPath": "images/tabbar/index-1.png",
+          "iconPath": "images/tabbar/index-0.png",
+          "pagePath": "pages/index/index",
+          "text": "首页"
         }, 
         {  
           "selectedIconPath": "images/tabbar/catgery-1.png",
@@ -181,7 +185,7 @@
   },
   "debug": false,
   "useExtendedLib": {
-      "weui": true
+     
   },
   "lazyCodeLoading": "requiredComponents"
 }

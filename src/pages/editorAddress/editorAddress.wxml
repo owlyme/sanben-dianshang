@@ -55,7 +55,7 @@
           model:value="{{area}}" 
           placeholder="所在地区" 
           placeholder-class="placeholder-style"/>
-					<icon-font name="icondingdan-dianpu-gengduo1" />
+					<icon-font name="icondingdan-dianpu-gengduo" />
 				</view>
 			</view>
 			<view class="content-item flex-end">

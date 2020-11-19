@@ -10,7 +10,7 @@ const setTargetShopData = (orderList, currentOrderIndex, currentShopIndex, newDa
 }
 
 const app = getApp();
-console.log(app);
+ 
 const OrderList = [
   {
     brandName: '阿迪达斯',

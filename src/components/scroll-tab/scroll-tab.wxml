@@ -32,7 +32,7 @@
           bind:tap="onClick"
           class="flex-col flex-middle tab-item-type-2 {{ active == item.name ? 'active' : ''}}"
           >
-            <image src="{{item.pic}}" />
+            <image class="image" src="{{item.pic}}" />
             <view class="ellipsisOne name">{{item.name}}</view>
         </view>
       </view>

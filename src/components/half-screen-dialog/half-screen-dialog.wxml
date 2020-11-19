@@ -1,6 +1,6 @@
 
 <drawer show="{{show}}"
-        style="background: none"
+        style="background: none; "
         position="bottom"
         bind:onClose="onDrawerClose">
   <view class="dialog">

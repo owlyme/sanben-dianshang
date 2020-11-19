@@ -1,7 +1,7 @@
 <view class="coupon-card-components {{info.status === 3 || info.status === 4 ? 'unuseable' : ''}}">
   <view class="coupon-bg">
     <!-- <image src= /> -->
-    <image src="{{info.status === 3 || info.status === 4 ? './images/bg-2.png' : './images/bg-1.png'}}" />
+    <image class="image" src="{{info.status === 3 || info.status === 4 ? './images/bg-2.png' : './images/bg-1.png'}}" />
   </view>
 
   <view class="coupon-info">
@@ -11,7 +11,7 @@
           <view class="image flex-cm">
             <icon-font wx:if="{{info.status === 4}}" name="iconyishixiao" size="{{40}}" color="#999999" />
             <icon-font wx:elif="{{info.status === 3}}"  name="iconyishiyongicon-hongbao" size="{{40}}" color="#999999" />
-            <image wx:else src="{{info.goodPic}}" />
+            <image class="image" wx:else src="{{info.goodPic}}" />
           </view>
           
           <view >

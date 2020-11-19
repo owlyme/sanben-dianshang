@@ -1,10 +1,10 @@
 <view class="xxx-components">
   <view class="shop flex-b">
     <view class="shop-address flex flex-middle">
-      <image src="{{info.shopLogo}}" />
-      <text>{{info.shopName}}</text>
+      <image class="image" src="{{info.shopLogo}}" />
+      <text class="text">{{info.shopName}}</text>
       <view class="btn flex-cm" catch:tap="viewShopDetail">
-        <icon-font name="icondingdan-dianpu-gengduo1" size="{{14}}" />
+        <icon-font name="icondingdan-dianpu-gengduo" size="{{14}}" />
       </view>
     </view>
     <view class="btn flex-cm {{info.status == 1 ? 'done': 'undo'}}" catch:tap="action">

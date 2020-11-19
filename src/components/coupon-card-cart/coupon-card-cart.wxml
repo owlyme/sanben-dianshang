@@ -1,6 +1,6 @@
 <view class="coupon-card-components">
   <view class="coupon-bg">
-    <image src="./images/bg-1.png" />
+    <image class="image" src="./images/bg-1.png" />
   </view>
 
   <view class="coupon-info">

@@ -2,7 +2,7 @@
 import PagePathes from '../../router/index'
 import { Router } from '../../utils/sysApis';
 const app = getApp();
-console.log(app);
+ 
 
 Page({
   data: {

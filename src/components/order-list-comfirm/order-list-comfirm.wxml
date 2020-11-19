@@ -87,6 +87,7 @@
           >
           <view slot="content" class="flex-b">
            <textarea 
+           class="textarea"
            data-shop="{{item}}"
            data-index="{{index}}"
            value="{{item.remark}}"

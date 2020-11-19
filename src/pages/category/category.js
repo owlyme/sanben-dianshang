@@ -151,7 +151,6 @@ Page({
   },
   async getDom() {
     let res = await boundingClientRect('#category-box');
-    console.log(res);
     let scrollViewHeight = App.globalData.screenHeight - res.target_top;
     this.setData({
       scrollViewHeight

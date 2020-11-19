@@ -7,7 +7,7 @@
       <icon-font
         name="iconshenheshibai" color="#FF3232"/>
       </view>
-      <image class="uni-uploader__img"
+      <image class="uni-uploader__img image"
       src="{{item}}" 
       data-src="{{item}}" 
       bind:tap="handlePreviewImage" 
@@ -15,6 +15,6 @@
     </view>
   </block>
   <view wx:if="{{images.length <= max}}"class="upload-btn" bind:tap="handleUpload">
-    <image src="/images/mine/add-pic.png"></image>
+    <image class="image" src="/images/mine/add-pic.png"></image>
   </view>
 </view>

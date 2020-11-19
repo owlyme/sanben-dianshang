@@ -4,7 +4,7 @@
 <block wx:if="{{type === 'less'}}">
   <view class="pingjia_box" wx:for="{{list}}" :key="item" wx:if="{{index <2 }}">
     <view class="box_top">
-      <image src="{{item.avatar}}" mode="" class="head"></image>
+      <image src="{{item.avatar}}" mode="" class="head image" ></image>
       <view class="right">
         <view class="name">{{item.name}}</view>
         <view class="p2 ">
@@ -23,7 +23,7 @@
         wx:key="picIndex"
         >
           <view class="image">
-            <image src="{{pic}}"></image>
+            <image class="image" src="{{pic}}"></image>
           </view>
         </block>
       </view>
@@ -54,7 +54,7 @@
         wx:key="picIndex"
         >
           <view class="image">
-            <image src="{{pic}}"></image>
+            <image class="image" src="{{pic}}"></image>
           </view>
         </block>
       </view>

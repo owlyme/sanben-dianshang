@@ -1,5 +1,6 @@
 <view class='movie-grade'>
   <image 
+    class="image"
     data-index="{{index}}"
     bind:tap="getLightPoints"
     style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;" 
@@ -7,6 +8,7 @@
     wx:key="item"></image>
 
   <image 
+    class="image"
   data-index="{{index}}"
   bind:tap="getHalfPoints"
   style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;"  
@@ -14,6 +16,7 @@
   wx:key="item"></image>
 
   <image 
+    class="image"
   data-index="{{index}}"
   bind:tap="getGrayGray"
   style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;" 

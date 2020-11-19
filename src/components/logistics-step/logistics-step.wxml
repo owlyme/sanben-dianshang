@@ -1,0 +1,27 @@
+<view class="logistics-step-components">
+  <view wx:for="{{list}}"
+    wx:key="index"
+    class="item flex {{'status-'+ item.status}}"
+  >
+    <view class="tag flex-cm">
+      <!-- icongouwuche-duoxuanqi-xuanze3 -->
+      <!-- iconyiqujian-wancheng2 -->
+      <!-- iconpaisongzhong-wancheng1 -->
+      <!-- iconyunshuzhong-wancheng12 -->
+      <!-- iconyilanjian-wancheng2 -->
+      <!-- iconyifahuo-wancheng2 -->
+      <!-- iconyixiadan-wancheng2 -->
+      <view class="inner flex-c">
+        <image class="image" src="{{statusIcon[item.status]}}" />
+        <!-- <icon-font color="#ffffff" name="{{statusIcon[item.status]}}" size="{{15}}"/> -->
+      </view>
+    </view>
+    <view class="info">
+      <view class="title">{{item.title}}</view>
+      <view class="desc">
+        <rich-text nodes="{{item.formatDesc}}"></rich-text>
+      </view>
+      <view class="time">{{item.time}}</view>
+    </view>
+  </view>
+</view>

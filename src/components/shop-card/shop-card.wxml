@@ -1,7 +1,7 @@
 <view wx:if="{{type == 'default'}}" class="shop-card-components flex">
    <view class="info-image">
      <image
-      class="shop-logo"
+      class="shop-logo image"
       slot="image"
       style="border-radius: {{ circle ? '50%' : '8rpx' }}"
       src="{{src}}" />
@@ -13,7 +13,7 @@
         <slot name="title"></slot>
       </block>
       <block wx:else>{{title}}</block>
-      <icon-font gutter="{{4}}" wx:if="{{showNameIcon}}" name="icondingdan-dianpu-gengduo1" size="{{14}}" />
+      <icon-font gutter="{{4}}" wx:if="{{showNameIcon}}" name="icondingdan-dianpu-gengduo" size="{{14}}" />
       <!-- <image wx:if="{{showNameIcon}}" src="/images/right.png" /> -->
     </view>
 
@@ -31,9 +31,9 @@
 </view>
 
 <view wx:elif="{{type == 'simple'}}" class="shop-address flex flex-middle">
-  <image src="{{src}}" />
-  <text>{{title}}</text>
+  <image class="image" src="{{src}}" />
+  <text class="text">{{title}}</text>
   <view class="btn flex-cm" catch:tap="viewShopDetail">
-    <icon-font wx:if="{{showNameIcon}}" name="icondingdan-dianpu-gengduo1" size="{{14}}" />
+    <icon-font wx:if="{{showNameIcon}}" name="icondingdan-dianpu-gengduo" size="{{14}}" />
   </view>
 </view>

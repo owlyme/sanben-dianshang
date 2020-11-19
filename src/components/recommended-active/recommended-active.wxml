@@ -19,7 +19,7 @@
         data-item="{{item}}"
         wx:key="index"
         bind:tap="onProductClick">
-        <image src="{{item.pic}}"/>
+        <image class="image" src="{{item.pic}}"/>
         <view class="price" >
           ¥{{item.price || 0}}
         </view>

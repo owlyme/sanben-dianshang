@@ -1,7 +1,8 @@
 // 全局app实例
 import PagePathes from '../../router/index'
 import { getDataset } from '../../utils/commom';
-
+import { Router } from '../../utils/sysApis';
+import { statusTextMap, statusIconMap } from '../../app.const'
 const Order = {
   shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
   address: '杭州大悦城店',
@@ -12,6 +13,7 @@ const Order = {
   shipping: 10,
   totalMoney: 0,
   totalPayMoney: 0,
+  status: 6,
   orderList: [
     {
       id: 12,
@@ -33,6 +35,7 @@ const Order = {
     }
   ]
 };
+
 Page({
   data: {
     order: {},
@@ -48,7 +51,16 @@ Page({
       paymentTime: '2020-10-12 15:00:54',
       paymentType: '微信支付',
       deliveryMethod: '韵达快递'
-    }
+    },
+    options:[
+      {
+        title:'派送中',
+        desc:'杭州转运中心火车东站站点  韵达派件员：徐迪 电话：13705102211  正在为您派件',
+        time:'2018-11-11 15:00:04',
+        status:5
+      },
+      
+    ]
   },
   onLoad() {
     this.getOrder()
@@ -84,7 +96,8 @@ Page({
     let {
       couponMoney,
       shipping,
-      orderList
+      orderList,
+      status
     } = Order
     
     let totalMoney = orderList.reduce((acc, item) => acc + item.price * item.number,  0);
@@ -92,19 +105,26 @@ Page({
     Order.totalPayMoney = totalMoney + shipping - couponMoney;
 
     this.setData({
-      order: Order
+      order: Order,
+      statusText: statusTextMap[status] || '',
+      statusIcon: statusIconMap[status] || ''
     })
   },
   // 分享
-  share() {
-    console.log('share')
-  },
+  
   // 去往地址页面
   setAddress() {
     console.log("setAddress")
     //
   },
-
+  toLogisticsDetails() {
+    Router.push({
+      url: PagePathes.logisticsDetails,
+      query: {
+        id: 1
+      }
+    })
+  },
   // 设置备注
   remarkChange(e) {
     console.log('remarkChange', e, getDataset(e), e.detail)
@@ -124,6 +144,24 @@ Page({
   // 确认收货 
   confirmReceipt() {
     console.log('confirmReceipt')
+  },
+  waitDeliver() {
+    console.log('waitDeliver')
+  },
+  putInCart() {
+    console.log('putInCart')
+  },
+  modifyAddress() {
+    console.log('modifyAddress')
+  },
+  toPay() {
+    console.log('toPay')
+  },
+  makeSure() {
+    console.log('makeSure')
+  },
+  deleteOrder() {
+    console.log('deleteOrder')
   },
   customData: {
     orderIndex: null,

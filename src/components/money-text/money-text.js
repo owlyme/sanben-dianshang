@@ -32,8 +32,8 @@ Component({
       type: Number,
       value: 16
     },
-    decimalPargSize: {
-      type: Number,
+    decimalPartSize: {
+      type: [Number, String],
       value: 12
     }
   },
@@ -45,7 +45,7 @@ Component({
   },
   data: {
     intPart: 0,
-    decimalParg: '00'
+    decimalPart: '00'
   },
 
   // 生命周期函数
@@ -55,11 +55,11 @@ Component({
   },
   methods: {
     init() {
-      let [intPart, decimalParg] = String(this.data.number || 0).split('.');
+      let [intPart, decimalPart = '00'] = String(this.data.number || 0).split('.');
 
       this.setData({
         intPart,
-        decimalParg
+        decimalPart
       });
     }
   }

@@ -1,0 +1,43 @@
+<view class="xxx-page">
+  <page-container
+    pageName="物流详情"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+      <!-- 物流头 -->
+      <view class="logistics-info-box gutter-container">
+        <view class="logistics-info">
+          <image src="https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg" ></image>
+          <view class="logistics-number">
+            <view class="logistics-type">韵达快递</view>
+            <view class="flex">
+              <text class="title">快递单号</text>
+              <view class="number">
+                <copy-text text="43554789621462489"></copy-text>
+              </view>
+            
+            </view>
+          </view>
+        </view>
+        <view class="address-box">
+          <view class="iconfont iconshouhuodizhi"></view>
+          
+          <view class="address">
+            <text class="title">「收货地址」</text>
+            <text>浙江省 杭州市 西湖区 浙江省人民医院 附属家属区十一号楼28层 2808室</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 进度 -->
+      <view class="progress gutter-container">
+        <card>
+          <logistics-step options="{{options}}" />
+        </card>
+      </view>
+  </page-container>
+
+</view>

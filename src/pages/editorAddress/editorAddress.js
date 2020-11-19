@@ -4,7 +4,7 @@ import {Modal, Toast, Router }from '../../utils/sysApis'
 import Base from '../../utils/base';
 
 const app = getApp();
-console.log(app);
+ 
 
 Page({
   data: {

@@ -2,6 +2,7 @@
   <view class="search-input-default" wx:if="{{type === 'default'}}">
     <view class="user-action-part flex-middle flex-b" >
     <input
+      class="input"
       value="{{keyword}}"
       data-keyword="keyword"
       placeholder="{{placeholder}}"

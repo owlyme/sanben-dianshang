@@ -3,7 +3,7 @@ bind:tap="viewGoodDetail"
 >
   <!-- content -->
   <view class="good-pic">
-    <image src="{{goodInfo.pic}}" />
+    <image class="image" src="{{goodInfo.pic}}" />
   </view>
   <view class="good-detail">
     <view class="good-active-container"

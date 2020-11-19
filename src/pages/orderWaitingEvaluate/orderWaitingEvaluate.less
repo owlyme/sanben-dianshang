@@ -1,0 +1,92 @@
+page{
+  background: #F4F5F6;
+  overflow: hidden;
+}
+.page-container-component {
+  min-height: 0px !important;;
+  height: 178px !important;
+}
+.order-page{
+  .evaluate-count{
+    image{
+      width: 100rpx;
+      height: 100rpx;
+      box-shadow: 0px 0px 2rpx 0px rgba(153, 153, 153, 0.1);
+    }
+    .evaluate-item{
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: space-between;
+      .item{
+        width: 33.3%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        .num{
+          font-size: 40rpx;
+          font-weight: 600;
+          color: #333333;
+        }
+        .tex{
+          margin-top: 16rpx;
+          font-size: 24rpx;
+          color: #333333;
+        }
+      }
+    }
+  }
+
+  .order-card-b {
+    position: relative;
+    margin-top: 16px;
+    
+    .no-order {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      image {
+        display: block;
+        margin: 80px auto 0;
+        width: 187px;
+        height: 160px;
+      }
+      &-title {
+        margin-top: 16px;
+        text-align: center;
+        height: 22px;
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #333333;
+        line-height: 22px;
+        
+      }
+      &-remark {
+        margin-top: 8px;
+        text-align: center;
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #999999;
+        line-height: 20px;
+      }
+    }
+
+    .order-list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      .order-card-item {
+        padding: 0 15px 0 17px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

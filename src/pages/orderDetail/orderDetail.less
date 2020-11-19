@@ -12,7 +12,24 @@ page{
   color: #FFFFFF;
   line-height: 33px;
 }
-
+.transport{
+ 
+  .card-components {
+    padding-bottom: 0!important;
+    
+    .logistics-step-components {
+     
+      overflow: hidden;
+      .item:first-child .desc {
+        color: #FF3232!important;
+      }
+      .item:last-child {
+        border-left: 1.5px solid #FF3232!important;
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
 .reciever {
   padding: 12px;
   background: rgba(255, 255, 255, 0.16);
@@ -49,6 +66,8 @@ page{
     font-size: 26rpx;
   }
 }
+
+
 .remark {
   .row + .row{
     margin-top: 12px;
@@ -92,7 +111,7 @@ page{
     height: 32px;
   }
   .btn {
-    margin-left: 12px;
+    margin-left: 10px;
   }
 }
 

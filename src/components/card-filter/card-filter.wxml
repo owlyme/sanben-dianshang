@@ -25,7 +25,7 @@
       <view class="price-area">
         <view class="title">价格区域(元)</view>
         <view class="condition-box">
-          <input class="text-style" 
+          <input class="text-style input" 
             type="number"
            placeholder="最低价"
            value="{{miniPrice}}"
@@ -34,7 +34,7 @@
            />
           <view class="width"></view>
           <input 
-          class="text-style" 
+          class="text-style input" 
           type="number" 
           value="{{maxPrice}}"
           placeholder="最高价"

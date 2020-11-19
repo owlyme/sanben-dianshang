@@ -1,14 +1,6 @@
 <view class="time-components">
   <view class="time">
     <view wx:if="{{activeStatus !== 'end'}}">
-      <!-- <view class="time-title">
-        <view class="t">{{ statusText }}</view>
-      </view>
-      <view wx:if="{{activeStatus == 'unstart'}}"
-          class="unstart-time">
-        {{ startTime }}
-      </view> -->
-
       <view else class="flex-middle">
         <view class="cell"
             wx:for="{{times}}"
@@ -21,7 +13,7 @@
     </view>
     <view wx:else
         class="end-text">
-      {{ statusText }}
+      <!-- {{ statusText }} -->
     </view>
   </view>
 </view>

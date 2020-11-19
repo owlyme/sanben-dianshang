@@ -9,7 +9,7 @@
       class="flex-col flex-cm tab-item {{ active == item.name ? 'active' : ''}}"
       >
 
-      <image wx:if="{{active == item.name && item.selectedPic}}" src="{{item.selectedPic}}" />
+      <image class="image" wx:if="{{active == item.name && item.selectedPic}}" src="{{item.selectedPic}}" />
       <block wx:else>
         <view class="tab-icon">
           <icon-font name="{{item.icon}}" size="22"/>

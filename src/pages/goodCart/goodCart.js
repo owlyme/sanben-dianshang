@@ -176,8 +176,6 @@ Page({
   async getDom() {
     let res = await boundingClientRect('#scroll-view');
     let submit = await boundingClientRect('#submit');
-
-    console.log(res);
     let scrollViewHeight = App.globalData.windowHeight - res.target_top - submit.target_height;
     this.setData({
       scrollViewHeight

@@ -10,12 +10,16 @@
     >
     <view class="xxx-page">
     <view class="header gutter-container flex-middle flex-b">
-      <view>
-        <icon-font name="icondaishouhuo2"  color="#ffffff" size="{{25}}" />
-        待收货
+      <view class="flex-middle">
+        <icon-font name="{{statusIcon}}"  color="#ffffff" size="{{25}}" />
+        {{statusText}}
       </view>
       <view >
-        <icon-font name="iconfenxiangfanbai2" bind:tap="share" color="#ffffff" size="{{20}}" />
+      <share-com>
+        <icon-font name="iconfenxiangfanbai2"  color="#ffffff" size="{{20}}" />
+      </share-com>
+   
+        <!-- <icon-font name="iconfenxiangfanbai2" bind:tap="share" color="#ffffff" size="{{20}}" /> -->
       </view>
     </view>
    <!-- 收货地址 -->
@@ -48,7 +52,13 @@
     <!-- 物流 -->
     <view class="transport gutter-container">
       <card>
-        运输中
+        <view class="flex-b flex-middle">
+        <logistics-step  options="{{options}}"  /> 
+        <icon-font name="icondingdan-dianpu-gengduo" 
+        color="#999999"
+        bind:tap="toLogisticsDetails" 
+        size="{{12}}"/>
+        </view> 
       </card>
     </view>
 
@@ -110,7 +120,7 @@
         </view>
 
         <view class="flex-middle">
-          <view class="btn" bind:tap="addToGoodCart">
+          <!-- <view class="btn" bind:tap="addToGoodCart">
             <button-text fontSize="{{12}}">加入购物车</button-text>
           </view>
          
@@ -120,7 +130,81 @@
 
           <view class="btn" bind:tap="confirmReceipt">
             <button-text type="warn" fontSize="{{12}}">确认收货</button-text>
-          </view>
+          </view> -->
+
+            <!-- 待付款 -->
+            <block wx:if="{{order.status === 1}}">
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="putInCart">加入购物车</button-text>
+              </view>
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="modifyAddress">修改地址</button-text>
+              </view>
+              <view class="btn">
+                <button-text fontSize="{{12}}" type="warn" bind:tap="toPay">付款</button-text>
+              </view>
+            </block>
+
+            <!-- 待发货 -->
+            <block  wx:elif="{{order.status === 2}}">
+              <view class="btn"  bind:tap="waitDeliver" >
+                <button-text fontSize="{{12}}" type="warn">待发货</button-text>
+              </view>
+            </block>
+
+            <!-- 待收货 -->
+            <block wx:elif="{{order.status === 3}}">
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="putInCart">加入购物车</button-text>
+              </view>
+              <view class="btn" bind:tap="toLogisticsDetails" >
+                <button-text fontSize="{{12}}">查看物流</button-text>
+              </view>
+              <view class="btn" bind:tap="confirmReceipt">
+                <button-text fontSize="{{12}}"  type="warn">确认收货</button-text>
+              </view>
+            </block>
+            
+            <!-- 待评价 -->
+            <block wx:elif="{{order.status === 4}}">
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="putInCart">加入购物车</button-text>
+              </view>
+              <view class="btn" bind:tap="toLogisticsDetails" >
+                <button-text fontSize="{{12}}">查看物流</button-text>
+              </view>
+              <view class="btn">
+                <button-text fontSize="{{12}}" type="warn" bind:tap="makeSure">确认收货</button-text>
+              </view>
+            </block>
+
+            <!-- 交易成功 -->
+            <block wx:elif="{{order.status === 5}}">
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="putInCart">加入购物车</button-text>
+              </view>
+            </block>
+
+            <!-- 已取消 -->
+            <block wx:elif="{{order.status === 6}}">
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="deleteOrder">删除订单</button-text>
+              </view>
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="putInCart">加入购物车</button-text>
+              </view>
+            </block>
+
+            <!-- 交易关闭 -->
+            <block wx:elif="{{order.status === 0}}">
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="deleteOrder">删除订单</button-text>
+              </view>
+              <view class="btn">
+                <button-text fontSize="{{12}}" bind:tap="putInCart">加入购物车</button-text>
+              </view>
+            </block>
+        
         </view>
     </view>
     </view>

@@ -58,15 +58,15 @@ export const Modal = (props ={}) => {
 };
 
 // 导航
-
 export const Router = {
   getQueryorParam(param) {
-    let {query, params, ...other} = fomartUrlStringParamToJsonAndStartWithSlash(param)
+    let {query, params, ...other} = fomartUrlStringParamToJsonAndStartWithSlash(param);
     if (query && typeof query === 'object') {
       other.url = Object.keys(query).reduce((acc, key) => `${acc}${key}=${query[key]}&`, `${other.url}?`)
-    }
-    this.query = query || {}
-    this.params = params || {}
+    };
+    this.query = query || {};
+    this.params = params || {};
+    this.currentPath = other.url;
     return other
   },
   // 调用 navigateTo 跳转时，调用该方法的页面会被加入堆栈，而 redirectTo 方法则不会。见下方示例代码

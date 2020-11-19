@@ -1,0 +1,74 @@
+<page-container
+    pageName="待评价"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+    <view class="order-page">
+      <view class="evaluate-count gutter-container">
+        <card>
+          <view class="flex">
+            <image src="/static/logo.png"></image>
+
+            <view class="evaluate-item">
+              <view class="item">
+                <view class="num">1</view>
+                <view class="tex">待评价</view>
+              </view>
+              <view class="item">
+                <view class="num">1</view>
+                <view class="tex">已评价</view>
+              </view>
+              <view class="item">
+                <view class="num">1</view>
+                <view class="tex">带图评价</view>
+              </view>
+            </view>
+          </view>
+          
+        </card>
+      </view>
+
+      <view class="order-card-b">
+
+        <!-- 没有订单 -->
+        <view class="no-order" 
+              style="opacity: {{orderList.length ? 0 : 1}}">
+          <image src="/images/no-order.png" />
+          <view class="no-order-title">您还没有相关订单</view>
+          <view class="no-order-remark">可以去看看有哪些想买的</view>
+        </view>
+        <!--  -->
+        <view class="order-list" 
+         style="opacity: {{orderList.length ? 1 : 0}}"
+          >
+          <scroll-view
+            id="scroll-view"
+            scroll-y="true"
+            style="height: {{scrollViewHeight}}px;"
+            bindscrolltolower="scrollToLower"
+            bindscrolltoupper="scrollToUpper"
+            bindscroll="onScroll"
+          >
+            <view 
+              class="order-card-item"
+              wx:for="{{orderList}}"
+              wx:key="index"
+              >
+              <order-card 
+                data-good="{{item}}"
+                bind:viewMore="viewMore"
+                bind:putInCart="putInCart"
+                bind:modifyAddress="modifyAddress"
+                bind:toPay="toPay"
+                bind:makeSure="makeSure"
+                bind:deleteOrder="deleteOrder"
+                goodInfo="{{item}}"/>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </page-container>

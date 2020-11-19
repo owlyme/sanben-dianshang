@@ -3,7 +3,7 @@ import {chooseImage, Router} from '../../utils/sysApis';
 import { getDataset } from '../../utils/commom';
 
 const app = getApp();
-console.log(app);
+ 
 
 Page({
   data: {

@@ -3,7 +3,7 @@ import { Toast, boundingClientRect } from '../../utils/sysApis';
 import { sign, getSign } from '../../api/sign';
 // 全局app实例
 const App = getApp();
-// console.log(app);
+//  
 const getSignData = getDatasetValue('sign');
 const List = [
   {
@@ -120,7 +120,6 @@ Page({
   },
   async getDom() {
     let res = await boundingClientRect('#scroll-view');
-    console.log(res);
     let scrollViewHeight = App.globalData.screenHeight - res.target_top;
     this.setData({
       scrollViewHeight

@@ -18,7 +18,7 @@
       <money-text 
       moneySize="{{16}}" 
       numberSize="{{24}}"
-      decimalPargSize="{{24}}"
+      decimalPartSize="{{24}}"
        number="{{info.discountPrice}}" />
     </view>
     <view class="price-text ">

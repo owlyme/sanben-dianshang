@@ -4,6 +4,7 @@
     <view class="recommended-products-text">善于发现</view>
     <view class="recommended-products-pics flex">
       <image 
+      class="image"
       wx:for="{{goodProducts}}"
       data-id="{{item.id}}" 
       data-item="{{item}}"
@@ -18,6 +19,7 @@
     <view class="recommended-products-text">品牌折扣</view>
     <view class="recommended-products-pics flex">
       <image 
+      class="image"
       wx:for="{{priceReduction}}"
       data-id="{{item.id}}" 
       data-item="{{item}}"
@@ -32,6 +34,7 @@
     <view class="recommended-products-text">新品好货  即刻首发</view>
     <view class="recommended-products-pics flex">
       <image 
+      class="image"
       wx:for="{{newProducts}}"
       data-id="{{item.id}}" 
       data-item="{{item}}"
@@ -42,7 +45,7 @@
   </view>
 
   <view class="products-news flex">
-    <image src="{{productsNews.pic}}" />
+    <image class="image" src="{{productsNews.pic}}" />
     <view class="ellipsisTwo">{{productsNews.title}}</view>
   </view>
 </view>

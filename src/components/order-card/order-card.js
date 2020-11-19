@@ -1,5 +1,6 @@
 import {statusTextMap} from '../../app.const'
-
+import PagePathes from '../../router/index'
+import { Router } from '../../utils/sysApis';
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -50,7 +51,7 @@ Component({
   created() {
     let goodInfo = this.data
     this.setData({
-      statusText: statusTextMap[goodInfo.status]
+      statusText: statusTextMap[goodInfo.status] || ''
     })
   },
   ready() {},
@@ -58,11 +59,22 @@ Component({
   detached() {},
 
   methods: {
+    toLogisticsDetails() {
+      Router.push({
+        url: PagePathes.logisticsDetails,
+        query: {
+          id: 1
+        }
+      })
+    },
     viewMore() {
       this.triggerEvent('viewMore')
     }, 
     putInCart() {
       this.triggerEvent('putInCart')
+    },
+    waitDeliver() {
+      this.triggerEvent('waitDeliver')
     },
     modifyAddress() {
       this.triggerEvent('modifyAddress')

@@ -59,11 +59,11 @@
       <view class="select-content">
         <view class="left">
           <text class="iconfont iconmendian"></text>
-          <text>杭州西溪银泰店</text>
+          <text class="text">杭州西溪银泰店</text>
           <text class="recoment">(推荐)</text>
         </view>
         <view class="right">
-          <text>包邮</text>
+          <text class="text">包邮</text>
           <text class="iconfont icongengduo-hong"></text>
         </view>
       </view>

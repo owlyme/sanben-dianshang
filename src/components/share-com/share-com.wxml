@@ -1,0 +1,32 @@
+<view>
+  <view class="xxx-components" bind:tap="show">
+  <!-- content -->
+  <slot></slot>
+</view>
+
+<half-screen-dialog 
+  header="分享到" 
+  show="{{show}}" 
+  bind:onClose="onCloseDialog" 
+  hiddenBtn="{{true}}">
+  <view class="btns flex flex-wrap">
+    <view 
+      class="btns-item" 
+      wx:for="{{list}}"
+      wx:key="index"
+      data-type="{{item.type}}"
+      bind:tap="action">
+      <image class="image" src="{{item.pic}}" />
+      <view class="label">{{item.label}}</view>
+    </view>
+  </view>
+  <view class="cancel flex-cm">取消</view>
+</half-screen-dialog>
+
+<poster 
+  id="poster" 
+  config="{{posterConfig}}" 
+  bind:success="onPosterSuccess" 
+  bind:fail="onPosterFail"></poster>
+
+</view>

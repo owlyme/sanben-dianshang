@@ -134,6 +134,14 @@ Page({
       }
     })
   },
+  viewOrderWaitingEvaluate(e) {
+    Router.push({
+      url: PagePathes.orderWaitingEvaluate,
+      query: {
+        orderPageType: getDataset(e).type
+      }
+    })
+  },
   viewOrderDetail() {
     Router.push({
       url: PagePathes.orderD

@@ -16,7 +16,7 @@
               color="#fff" 
               moneySize="{{24}}" 
               numberSize="{{32}}" 
-              decimalPargSize="{{24}}"/>
+              decimalPartSize="{{24}}"/>
 					</view>
         </view>
         

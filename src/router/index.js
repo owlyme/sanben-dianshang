@@ -1,4 +1,6 @@
 export default {
+    orderWaitingEvaluate: "pages/orderWaitingEvaluate/orderWaitingEvaluate",
+    logisticsDetails: "pages/logisticsDetails/logisticsDetails",
     orderDetail: "pages/orderDetail/orderDetail",
     orderApplyAfterSales: "pages/orderApplyAfterSales/orderApplyAfterSales",
     orderAfterSalesDetail: "pages/orderAfterSalesDetail/orderAfterSalesDetail",

@@ -12,7 +12,7 @@
 
   <view class="image-box" wx:if="{{info.pics.length}}">
     <view class="image"  wx:for="{{info.pics}}" wx:key="{{index}}">
-      <image src="{{item}}"></image>
+      <image class="image" src="{{item}}"></image>
     </view>
   </view>
 
