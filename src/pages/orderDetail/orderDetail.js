@@ -95,6 +95,10 @@ Page({
       order: Order
     })
   },
+  // 分享
+  share() {
+    console.log('share')
+  },
   // 去往地址页面
   setAddress() {
     console.log("setAddress")

@@ -6,11 +6,17 @@
     iconColor="none"
     theme="dark"
     useThemeBg="{{true}}"
+    backgroundFixed="{{false}}"
     >
     <view class="xxx-page">
-    <view class="header gutter-container flex-middlee">
-      <icon-font name="icondaishouhuo2"  color="#ffffff" size="{{25}}" />
-      待收货
+    <view class="header gutter-container flex-middle flex-b">
+      <view>
+        <icon-font name="icondaishouhuo2"  color="#ffffff" size="{{25}}" />
+        待收货
+      </view>
+      <view >
+        <icon-font name="iconfenxiangfanbai2" bind:tap="share" color="#ffffff" size="{{20}}" />
+      </view>
     </view>
    <!-- 收货地址 -->
     <view class="order_address gutter-container" >
