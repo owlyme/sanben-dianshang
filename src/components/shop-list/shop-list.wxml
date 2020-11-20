@@ -1,7 +1,7 @@
 <view class="xxx-components">
    <!-- content -->
-  <block wx:for="{{list}}">
-    <view class="list-item">
+  <block wx:for="{{list}}" wx:key="index">
+    <view  class="list-item">
       <card>
         <view class="flex-b ">
           <shop-card src="{{item.pic}}"
@@ -14,12 +14,14 @@
           </shop-card>
 
           <button-text 
-          data-shop="{{item}}"
-          bind:tap="entryShop"
-          type="warn" 
-          width="{{48}}"
-          height="{{22}}"
-          fontSize="{{12}}">进店</button-text>
+            wx:if="{{item.isFocus == 0}}"
+            data-shop="{{item}}"
+            bind:tap="entryShop"
+            type="warn" 
+            width="{{48}}"
+            height="{{22}}"
+            fontSize="{{12}}">进店</button-text>
+          <follow-shop-btn  wx:esif="{{item.isFocus == 1}}" shopInfo="{{info}}"  followed="{{true}}" />
         </view>
         <view class="flex products" >
           <view 
@@ -45,10 +47,6 @@
               <text class="text">{{item.totalShopNumber}}</text>家门店
               <block  wx:if="{{item.sameCityShopNumber}}">有<text class="text">{{item.sameCityShopNumber}}</text>家</block><block wx:else>暂无门店</block>位于当前城市
           </view>
-          <!-- 
-           -->
-         
-
           <icon-font 
           data-shop="{{item}}"
           bind:tap="toShopList"

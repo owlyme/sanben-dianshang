@@ -6,9 +6,9 @@
       data-name="{{item}}"
       data-index="{{index}}"
       bind:tap="onClick"
-      class="flex-col flex-middle tab-item {{ active === item ? 'active' : ''}}"
+      class="flex-col flex-middle tab-item {{ activeIndex === index ? 'active' : ''}}"
       >
-      <view class="tab-name" style="width: {{100 / tabs.length}}%); color: {{active === item ? activeColor : color}}">
+      <view class="tab-name" style="width: {{100 / tabs.length}}%); color: {{activeIndex === index ? activeColor : color}}">
         {{item}}
       </view>
       <view class="sub-border" >
@@ -28,7 +28,7 @@
       data-index="{{index}}"
       bind:tap="onClick"
 
-      class="flex-col flex-middle tab-item {{ active === item ? 'active' : ''}}"
+      class="flex-col flex-middle tab-item {{ activeIndex === index ? 'active' : ''}}"
       >
       <view class="tab-name flex-cm ellipsisOne">
         {{item}}
@@ -43,7 +43,7 @@
       data-name="{{item.name}}"
       data-index="{{index}}"
       bind:tap="onClick"
-      class="flex-col flex-middle tab-item {{ active == item.name ? 'active' : ''}}"
+      class="flex-col flex-middle tab-item {{ activeIndex == index ? 'active' : ''}}"
       >
       <view class="tab-name " style="width: {{100 / tabs.length}}%)">
         {{item.name}}

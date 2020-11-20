@@ -2,9 +2,18 @@
 import { debounce, isScrollUp } from '../../utils/commom';
 import { Toast, boundingClientRect, showActionSheet } from '../../utils/sysApis';
 const App = getApp();
+const orderTypes = {
+  all: 0,
+  payment: 1,
+  deliver: 2,
+  receive: 3,
+  evaluate: 4,
+  
+}
 
 Page({
   data: {
+    activeIndex: 0,
     waveBarVisible: false,
     pageBg2Visible: true,
     scrollViewHeight: 400,
@@ -95,12 +104,16 @@ Page({
         id: 2
       }
     ],
-    
   },
-  onLoad() {
+  onLoad(query) {
     // Do some initialize when page load.
+//     all, payment, deliver, receive, evaluate
+    this.setData({
+      activeIndex: orderTypes[query.orderPageType] || 0
+    })
     
   },
+  
   onReady() {
     // Do something when page ready.
     this.getDom();

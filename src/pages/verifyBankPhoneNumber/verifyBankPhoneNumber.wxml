@@ -7,10 +7,10 @@
     theme="dark"
     useThemeBg="{{false}}"
     > 
-      <view class="login-page">
+      <view class="phone-page">
         <!-- content -->
         <view class="we-title">
-          验证银行预留手机号
+          {{titleText}}
         </view>
         <!-- <list class=""> -->
           <view  class="phone-number">
@@ -21,10 +21,10 @@
             >
             <view slot="content" >
               <input class=""
+                disabled="{{true}}"
                 maxlength="11"
-                data-phone="phone"
+                value="{{phoneNumText}}"
                 bindinput="onPhoneChange"
-                auto-focus
                 placeholder="手机号码"/>
             </view>
           </list-item>
@@ -40,8 +40,7 @@
                   <view class="code-numer">
                     <input
                       maxlength="4"
-                      data-code="code"
-                      bindinput="onCodeChange"
+                      model:value="{{code}}"
                       placeholder="输入验证码" />
                   </view>
                 </code-number>
@@ -50,14 +49,12 @@
           </view>
         <!-- </list> -->
 
-
         <view >
           <button
             class="login-btn"
-          bindtouchend="verifyPhone"
-          disabled="{{loginBtnDisabled}}">确定</button>
+          bind:tap="verifyPhone"
+          disabled="{{buttonDisabled}}">确定</button>
         </view>
-
       </view>
   </page-container>
 </view>

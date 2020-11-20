@@ -1,5 +1,14 @@
 {
   "pages": [
+    "pages/messageNotifications/messageNotifications",
+    "pages/messageActive/messageActive",
+    "pages/messageLogistics/messageLogistics",
+    "pages/message/message",
+    "pages/myFocus/myFocus",
+    "pages/merchant/apply/index",
+    "pages/merchant/index/index",
+    "pages/certification/certification",
+    "pages/verifyBankPhoneNumber/verifyBankPhoneNumber",
     "pages/orderWaitingEvaluate/orderWaitingEvaluate",
     "pages/order/order",
     "pages/logisticsDetails/logisticsDetails",
@@ -17,7 +26,6 @@
     "pages/balanceDetail/balanceDetail",
     "pages/withdraw/withdraw",
     "pages/myWallet/myWallet",
-    "pages/verifyBankPhoneNumber/verifyBankPhoneNumber",
     "pages/goodCart/goodCart",
     "pages/distributionTeam/distributionTeam",
     "pages/distributionIncome/distributionIncome",
@@ -143,8 +151,9 @@
     "order-detail-card": "components/order-detail-card/order-detail-card",
     "share-com": "components/share-com/share-com",
     "poster": "components/miniprogram_dist/poster/index",
-    "logistics-step": "components/logistics-step/logistics-step"
-   
+    "logistics-step": "components/logistics-step/logistics-step",
+    
+    "message-card": "components/message-card/message-card"
   },
   "tabBar": {  
     "color": "#999999",
@@ -176,7 +185,7 @@
           "text": "购物车"  
         },
         {  
-          "selectedIconPath": "images/tabbar/mine-0.png",
+          "selectedIconPath": "images/tabbar/mine-1.png",
           "iconPath": "images/tabbar/mine-0.png",
           "pagePath": "pages/mine/mine",
           "text": "我的"  

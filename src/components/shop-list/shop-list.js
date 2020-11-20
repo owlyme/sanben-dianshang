@@ -15,7 +15,37 @@ Component({
   properties: {
     list: {
       type: Array,
-      value: []
+      value: [
+        {
+          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          name: "阿迪达斯三叶草旗舰店",
+          followNumber: 148,
+          rate: 7,
+          phoneNumber: '13156521718',
+          address: 111111,
+          isFocus: 0, // 0 未关注，11 已关注 
+          products: [
+            {
+              id: 1,
+              pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            },
+            {
+              id: 1,
+              pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            },
+            {
+              id: 1,
+              pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            },
+          ],
+          totalShopNumber: 207,
+          sameCityShopNumber: 20
+        },
+      ]
+    },
+    type: {
+      type: String,
+      value: '' // 目前在分类列表页 和 我的关注页 面用到
     }
   },
 

@@ -1,0 +1,39 @@
+<view class="xxx-page">
+  <page-container
+    pageName="{{pageName}}"
+    showNav="{{true}}"
+    bgColor="none"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+      <view class="type">
+        <view class="ask">
+          <view>欢迎您的加入，</view>
+          <view>请问您是?</view>
+        </view>
+        <view class="select-type">
+          <view class="team" bind:tap="applyTeamStore">
+            
+            <image src="/images/merchant/teamstore.png" class="bg"></image>
+            <image src="/images/merchant/team-icon.png" class="left"></image>
+            <view class="right" >
+              <view class="view">我是企业商家</view>
+              <text class="text">（请准备身份证、营业执照等信息）</text>
+            </view>
+          </view>
+          <view class="persion" bind:tap="applyPersionStore">
+            <image src="/images/merchant/persion.png" class="bg"></image>
+            <image src="/images/merchant/persion-icon.png" class="left"></image>
+            <view  class="right">
+              <view  class="view">我是个人商家</view>
+              <text class="text">（请准备身份证等信息）</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+  </page-container>
+
+</view>

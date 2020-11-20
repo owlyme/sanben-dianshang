@@ -25,6 +25,9 @@ const base = {
   isFunction(item) {
     return typeof item === 'function';
   },
+  isEmail(email) {
+    return /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(email)
+  },
 
   /**
    * [功能方法]
@@ -34,7 +37,10 @@ const base = {
   isPhone(str) {
     return /^1\d{10}$/.test(str);
   },
-
+  // 判断身份证
+  isIdNumber(idNumber) {
+    return /\d{17}[\d|X]/.test(idNumber);
+  },
   /**
    * [公共方法]
    * @param  {[type]}  item [description]

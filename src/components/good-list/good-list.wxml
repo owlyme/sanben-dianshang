@@ -1,8 +1,8 @@
 
   <view class="good-list-components flex-b">
     <view >
-       <block wx:for="{{oddIndexOfgoodList}}">
-         <view class="good-list-card-item">
+       <block wx:for="{{oddIndexOfgoodList}}" wx:key="index">
+         <view  class="good-list-card-item">
           <good-card-sale
             goodInfo="{{item}}"
             wx:index="{{index}}"
@@ -16,8 +16,8 @@
     </view>
 
     <view >
-      <block wx:for="{{evenIndexOfgoodList}}">
-        <view class="good-list-card-item">
+      <block wx:for="{{evenIndexOfgoodList}}" wx:key="index">
+        <view class="good-list-card-item" >
           <good-card-sale
           goodNameellipsisOne="{{false}}"
             goodInfo="{{item}}"

@@ -1,4 +1,12 @@
 export default {
+    messageNotifications: "pages/messageNotifications/messageNotifications",
+    messageActive: "pages/messageActive/messageActive",
+    messageLogistics: "pages/messageLogistics/messageLogistics",
+    message: "pages/message/message",
+    myFocus: "pages/myFocus/myFocus",
+    merchantApply: "pages/merchant/apply/index",
+    merchantIndex: "pages/merchant/index/index",
+    certification: "pages/certification/certification",
     orderWaitingEvaluate: "pages/orderWaitingEvaluate/orderWaitingEvaluate",
     logisticsDetails: "pages/logisticsDetails/logisticsDetails",
     orderDetail: "pages/orderDetail/orderDetail",

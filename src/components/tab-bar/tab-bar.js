@@ -21,9 +21,9 @@ Component({
         'tab 4',
       ] // [{ name: '',sub: ''}]
     },
-    active: {
+    activeIndex: {
       type: [String, Number],
-      value: ''
+      value: 0 // tab index
     },
     type: {
       type: [String, Number],
@@ -44,10 +44,10 @@ Component({
   lifetimes: {
     attached: function() {
       // 在组件实例进入页面节点树时执行
-      let first = this.data.tabs[0]
-      this.setData({
-        active: typeof first === 'object' ? first.name : first
-      });
+      // let first = this.data.tabs[0]
+      // this.setData({
+      //   active: typeof first === 'object' ? first.name : first
+      // });
     },
     detached: function() {
       // 在组件实例被从页面节点树移除时执行
@@ -63,12 +63,12 @@ Component({
       let name = getTabName(e);
       let index = getTabIndex(e);
       this.setData({
-        active: name
+        activeIndex: index
       });
       console.log(name, index);
       this.triggerEvent('onChange', {name, index});
     }
-    // bind:change="onChange"
+
   }
 
 });

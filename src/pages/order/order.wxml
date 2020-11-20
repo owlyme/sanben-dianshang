@@ -14,6 +14,7 @@
       </view>
       <view class="tabs-b">
         <tab-bar 
+        activeIndex="{{activeIndex}}"
         tabs="{{orderType}}"
         bind:onChange="onSeleteType" />
       </view>

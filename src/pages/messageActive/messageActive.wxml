@@ -1,0 +1,34 @@
+<view class="xxx-page">
+  <page-container
+    pageName="优惠活动"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+      <view class="discount-active">
+        <block wx:for="{{7}}" wx:key="index">
+        <view class="discount" >
+          <view class="head">下午01:40</view>
+          <view class="discount-box" bind:tap="NavgatArticle">
+            <view class="discount-box-head">
+            <image src="/static/logo.png" ></image>
+            </view>
+            <view class="discount-content">
+              <view class="title">
+                您的商品已签收
+              </view>
+              <view class="sub-title">
+                设计工作上最重要的是针对人们习以为常，认为理所当然的事物来做一些思考。
+              </view>
+            </view>
+          </view>
+        </view>
+        </block>
+      </view>
+
+  </page-container>
+
+</view>

@@ -1,0 +1,31 @@
+<view class="xxx-page">
+  <page-container
+    pageName="交易物流"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+      <view class="trade-logistics" >
+        <view class="logistics gutter-container"
+          wx:for="{{5}}">
+          <view class="head">下午01:40</view>
+          <view class="logistics-box">
+            <view class="logistics-box-head">
+              <view class="head-left">
+                <image src="/static/logo.png"></image>
+              </view>
+              <view class="head-right">
+                <view class="title">阿迪达斯官网 adidas 5T Neck WM 男…</view>
+                <view class="price">共2件商品，合计￥2000</view>
+              </view>
+            </view>
+            <view class="logistics-type">您的商品已签收</view>
+          </view>
+        </view>
+      </view>
+  </page-container>
+
+</view>

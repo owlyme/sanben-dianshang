@@ -58,7 +58,7 @@
             </view>
             <view class="flex-b">
               <view class="item"  
-                data-type="payment" s
+                data-type="payment"
                 bind:tap="viewOrder">
                 <view class="icon">
                   <view class="num flex-cm">{{34}}</view>

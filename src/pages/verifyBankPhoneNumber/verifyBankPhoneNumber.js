@@ -1,88 +1,94 @@
 // 全局app实例
-import { getNodeValue } from '../../utils/commom';
-import PagePathes from '../../router/index'
 import { Toast, Router } from '../../utils/sysApis';
 import Base from '../../utils/base';
-import {userLogin, getValidateCode} from '../../api/login';
-let getPhoneNumber = getNodeValue('phone');
-let getCode = getNodeValue('code');
-
+import { getValidateCode} from '../../api/login';
 
 Page({
   data: {
-    sendCodeBtnDisabled: true,
-    loginBtnDisabled: false,
+    sendCodeBtnDisabled: false,
+    buttonDisabled: false,
     phone: '',
     code: null,
+    titleText: '',
+    phoneNumText: ''
   },
-  onLoad() {
+  onLoad(options) {
     // Do some initialize when page load.
+    let {type, phone} = options
+    this.pageType = type
+    let titles = {
+      verfyId: '验证手机号',
+      bank: '验证银行预留手机号',
+      merchant: '验证手机号'
+    }
+    this.setData({
+      phoneNumText: (phone || '').replace(/(\d{3})(\d{4})(\d+)/, '$1****$3'),
+      titleText: titles[type],
+      phone
+    })
   },
-  onReady() {
-    // Do something when page ready.
-  },
-  onShow() {
-    // Do something when page show.
-  },
-  onHide() {
-    // Do something when page hide.
-  },
-  onUnload() {
-    // Do something when page close.
-    getPhoneNumber = null
-    getCode = null
-  },
-  onShareAppMessage() {
-    // return custom share data when user share.
-  },
-  onPhoneChange: function (e) {
-    console.log(this.data, getPhoneNumber(e));
 
-    let phone = getPhoneNumber(e);
+  onPhoneChange: function (e) {
     let sendCodeBtnDisabled = true;
-    if (Base.isPhone(phone.phone)) {
+    let phone = this.data.phone
+    if (!phone || !Base.isPhone(phone)) {
       sendCodeBtnDisabled = false;
     }
     this.setData({
-      ...phone,
       sendCodeBtnDisabled
-    });
-  },
-  onCodeChange: function (e) {
-    // console.log(this.data, getCode(e));
-    this.setData({
-      ...getCode(e)
     });
   },
 
   async verifyPhone() {
     let {phone, code} = this.data;
-    
     if (this.validatoForm(phone, code)) {
       let formData = {phone, code};
       console.log(formData);
-      this.setData({
-        loginBtnDisabled: true
-      });
-      userLogin(formData);
-      Router.refresh(PagePathes.index);
-
-      this.setData({
-        loginBtnDisabled: false
-      });
+      this.afterVerifyPhoneSuccess()
     }
   },
+  afterVerifyPhoneSuccess() {
+    // 针对不同页面的处理可能不同
+    // 更具 this.pageType 做判断
+    let params = null;
+
+    switch(this.pageType) {
+      case 'verfyId':
+        params = {
+          ok: 'ok'
+        }
+        break;
+      case 'bank':
+        params = {
+          ok: 'ok'
+        }
+        break;
+      case 'merchant':
+        params = {
+          ok: 'ok'
+        }
+        break;
+    }
+
+    Router.back(1, params)
+  },
+
   validatoForm (phone, code)  {
     let bool = true;
-    if(!Base.isPhone(phone)){
+    if(!phone || !Base.isPhone(phone)){
       bool = false;
       Toast.show({
         title: '输入正确的手机号'
       });
-    } else if (!code) {
+    } else if (!code ) {
       bool = false;
       Toast.show({
         title: '输入验证码'
+      });
+    } else if (code !== this.messageCode) {
+      bool = false;
+      Toast.show({
+        title: '输入正确的验证码'
       });
     } 
     return bool;
@@ -90,17 +96,17 @@ Page({
   onGetCode() {
     console.log('send request');
     let {phone} = this.data;
-
     getValidateCode({
       phone
     });
-
+    this.messageCode = "aaaa"
   },
   onGetCodeDisable() {
     Toast.show({
       title: '输入正确的手机号'
     });
   },
+  
 
   customData: {}
 });

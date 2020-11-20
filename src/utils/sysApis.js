@@ -59,6 +59,9 @@ export const Modal = (props ={}) => {
 
 // 导航
 export const Router = {
+  query: {}, // url query 参数
+  params: {}, // params 参数不携带在url的参数 临时参数
+  currentPath: '', // 当前的路径
   getQueryorParam(param) {
     let {query, params, ...other} = fomartUrlStringParamToJsonAndStartWithSlash(param);
     if (query && typeof query === 'object') {
@@ -107,10 +110,18 @@ export const Router = {
     let config = this.getQueryorParam(param)
     wx.switchTab({...config})
   },
-  // 返回上一页面或多级页面。可通过 getCurrentPages 获取当前的页面栈，决定需要返回几层。
-  back(delta = 1) {
+  // 返回上一页面或多级页面。可通过 getCurrentPages 获取当前的页面栈，s决定需要返回几层。
+  back(delta = 1, params) {
+    this.params = params || {}
     wx.navigateBack({delta})
-  } 
+  },
+  // 获取Params
+  // Params 是临时参数 即用即消 防止因缓存影响判断逻辑
+  getParams() {
+    let params = this.params
+    this.params = {}
+    return params
+  }
 };
 
 

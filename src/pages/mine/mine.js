@@ -62,6 +62,7 @@ Page({
   },
   toMyFollowePage() {
     console.log('viewMyQrcode')
+    Router.push(PagePathes.myFocus)
   },
   toMyStorepage() {
     Router.push(PagePathes.myCollection)

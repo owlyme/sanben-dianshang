@@ -1,0 +1,15 @@
+<view class="xxx-page">
+  <page-container
+    pageName="我的关注"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+    <view class="gutter-container">
+      <shop-list list="{{shopList}}" />
+    </view>
+  </page-container>
+</view>
