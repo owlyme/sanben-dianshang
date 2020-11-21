@@ -23,8 +23,11 @@ Component({
 
   methods: {
     onClick() {
-      console.log(this.data.url);
-      Router.push(this.data.url);
+      if (this.data.url) {
+        console.log(this.data.url);
+        Router.push(this.data.url);
+      }
+      this.triggerEvent('onClick')
     },
   }
 

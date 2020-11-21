@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/login/login",
     "pages/orderWaitingEvaluate/orderWaitingEvaluate",
     "pages/order/order",
     "pages/logisticsDetails/logisticsDetails",
@@ -38,7 +40,6 @@
     "pages/shop-detail/shop-detail",
     "pages/search/search",
     "pages/category/category",
-    "pages/index/index",
     "pages/redeem/redeem",
     "pages/on-sale/on-sale",
     "pages/coupon/coupon",
@@ -48,13 +49,13 @@
     "pages/helpTypeDetail/helpTypeDetail",
     "pages/personalInfo/personalInfo",
     "pages/signIn/signIn",
-    "pages/login/login",
     "pages/aboutUs/aboutUs",
     "pages/service/service",
     "pages/privacyPolicy/privacyPolicy",
     "pages/serviceAgreement/serviceAgreement",
     "pages/componentList/componentList",
-    "pages/pageList/pageList"
+    "pages/pageList/pageList",
+    "pages/error/error"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

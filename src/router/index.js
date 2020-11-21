@@ -1,4 +1,5 @@
 export default {
+    error: "pages/error/error",
     orderWaitingEvaluate: "pages/orderWaitingEvaluate/orderWaitingEvaluate",
     logisticsDetails: "pages/logisticsDetails/logisticsDetails",
     orderDetail: "pages/orderDetail/orderDetail",

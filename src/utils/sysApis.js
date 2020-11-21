@@ -91,14 +91,13 @@ export const Router = {
   // 不能跳到 tabbar 页面。使用 wx.navigateBack 可以返回到原页面。小程序中页面栈最多十层
   push(param) {
     let config = this.getQueryorParam(param)
-    wx.navigateTo({
+
+    wx.switchTab({
       ...config,
-      fail: (e) => {
-        if (e.errMsg === 'navigateTo:fail can not navigateTo a tabbar page') {
-          wx.switchTab({
-            ...config
-          })
-        }
+      fail: () => {
+        wx.navigateTo({
+          ...config,
+        })
       }
     })
   },

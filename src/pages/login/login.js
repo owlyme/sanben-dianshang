@@ -14,8 +14,8 @@ Page({
     loginBtnDisabled: false,
     phone: '',
     code: null,
-    checked: true
-
+    checked: true,
+    showDrawer: false,
   },
   onLoad() {
     // Do some initialize when page load.
@@ -111,6 +111,16 @@ Page({
     Toast.show({
       title: '输入正确的手机号'
     });
+  },
+  privacyPolicy() {
+    this.setData({
+      showDrawer: true
+    })
+  },
+  closeDrawer() {
+    this.setData({
+      showDrawer: false
+    })
   },
 
   customData: {}
