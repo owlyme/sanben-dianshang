@@ -20,7 +20,7 @@ Component({
         shopList: [
           {
             shopName: '杭州大悦城店',
-            remark: "11",
+            remark: '11',
             couponName: '111',
             couponMoney: 300,
             shipping: 10,
@@ -177,14 +177,14 @@ Component({
     init() {
       
     },
-     // 预览商店首页
+    // 预览商店首页
     viewShop() {
       Router.push({
         url: PagePathes.shopIndex
       })
     },
-     // 预览商店列表
-     viewShopAll(e) {
+    // 预览商店列表
+    viewShopAll(e) {
       let dataset = getDataset(e)
       console.log('viewShop', dataset)
       Router.push({

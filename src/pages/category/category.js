@@ -42,7 +42,7 @@ Page({
         type: '',
         name: '宠物'
       },
-       {
+      {
         type: '',
         name: '女装'
       },
@@ -85,62 +85,62 @@ Page({
         id: 12,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: 'adidas'
-       },
-       {
+      },
+      {
         id: 13,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: 'adidas'
-       }
+      }
     ],
     goodList: [
       {
         title: '分类标题',
         list: [
           {
-          id: 12,
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'adidas'
-         },
-         {
-          id: 12,
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'adidas'
-         },
-         {
-          id: 12,
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'adidas'
-         },
-         {
-          id: 13,
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'adidas'
-         },
-         {
-          id: 14,
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'adidas'
-         }
+            id: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'adidas'
+          },
+          {
+            id: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'adidas'
+          },
+          {
+            id: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'adidas'
+          },
+          {
+            id: 13,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'adidas'
+          },
+          {
+            id: 14,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'adidas'
+          }
         ] 
       },
       {
         title: '分类标题2',
         list: [
           {
-          id: 12,
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'adidas'
-         },
-         {
-          id: 13,
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'adidas'
-         },
-         {
-          id: 14,
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'adidas'
-         }
+            id: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'adidas'
+          },
+          {
+            id: 13,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'adidas'
+          },
+          {
+            id: 14,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            name: 'adidas'
+          }
         ] 
       }
     ]

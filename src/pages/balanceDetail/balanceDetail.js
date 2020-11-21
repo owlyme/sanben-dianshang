@@ -23,7 +23,7 @@ const detailList = [
 Page({
   data: {
     pageType: null,
-    pageName: "余额明细", // 积分明细
+    pageName: '余额明细', // 积分明细
     detailList: []
   },
   onLoad(options) {
@@ -31,9 +31,9 @@ Page({
     let pageName = ''
 
     if (options.type === 'balance') {
-      pageName = "余额明细"
+      pageName = '余额明细'
     } else {
-      pageName = "积分明细"
+      pageName = '积分明细'
     }
 
     this.setData({

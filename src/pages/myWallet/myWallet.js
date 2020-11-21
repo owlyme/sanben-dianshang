@@ -1,7 +1,7 @@
 // 全局app实例
 import PagePathes from '../../router/index'
-import {getDataset} from "../../utils/commom"
-import { Router } from "../../utils/sysApis"
+import {getDataset} from '../../utils/commom'
+import { Router } from '../../utils/sysApis'
 const App = getApp();
 
 Page({
@@ -50,23 +50,23 @@ Page({
   handleNavigator(e){
     console.log(getDataset(e))
     switch (getDataset(e).type){
-      case 'redPacket':
-        // uni.navigateTo({
-        //   url:'/pages/view/my/redPacket'
-        // })
-        break;
-      case 'ticket':
-        // uni.navigateTo({
-        //   url:'/pages/view/my/discountCoupon'
-        // })
-        break;
-      case 'bankCard':
-          // uni.navigateTo({
-          //   url:''
-          // })
-        break;
-      default:
-        break;
+    case 'redPacket':
+      // uni.navigateTo({
+      //   url:'/pages/view/my/redPacket'
+      // })
+      break;
+    case 'ticket':
+      // uni.navigateTo({
+      //   url:'/pages/view/my/discountCoupon'
+      // })
+      break;
+    case 'bankCard':
+      // uni.navigateTo({
+      //   url:''
+      // })
+      break;
+    default:
+      break;
     }
   },
   handleBalance(){
@@ -82,7 +82,7 @@ Page({
     Router.push({
       url: PagePathes.balanceDetail,
       query: {
-        type: "points"
+        type: 'points'
       }
     }) 
   },

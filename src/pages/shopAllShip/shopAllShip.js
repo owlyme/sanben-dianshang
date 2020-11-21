@@ -6,7 +6,7 @@ let allShop = [
   {
     type: 1,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: "阿迪达斯三叶草旗舰店11",
+    name: '阿迪达斯三叶草旗舰店11',
     address: 111111,
     shipping: 0,
     status: 1
@@ -14,7 +14,7 @@ let allShop = [
   {
     type: 1,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: "阿迪达斯三叶草旗舰店122",
+    name: '阿迪达斯三叶草旗舰店122',
     address: 111111,
     shipping: 10,
     status: 0
@@ -22,42 +22,42 @@ let allShop = [
   {
     type: 2,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: "阿迪达斯三叶草旗舰店2233",
+    name: '阿迪达斯三叶草旗舰店2233',
     address: 111111,
     shipping: 10
   },
   {
     type: 2,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: "阿迪达斯三叶草旗舰店44",
+    name: '阿迪达斯三叶草旗舰店44',
     address: 111111,
     shipping: 10
   },
   {
     type: 2,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: "阿迪达斯三叶草旗舰店11",
+    name: '阿迪达斯三叶草旗舰店11',
     address: 111111,
     shipping: 10
   },
   {
     type: 2,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: "阿迪达斯三叶草旗舰店122",
+    name: '阿迪达斯三叶草旗舰店122',
     address: 111111,
     shipping: 10
   },
   {
     type: 2,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: "阿迪达斯三叶草旗舰店2233",
+    name: '阿迪达斯三叶草旗舰店2233',
     address: 111111,
     shipping: 10
   },
   {
     type: 2,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: "阿迪达斯三叶草旗舰店44",
+    name: '阿迪达斯三叶草旗舰店44',
     address: 111111,
     shipping: 10
   },

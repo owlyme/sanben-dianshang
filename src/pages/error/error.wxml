@@ -1,0 +1,17 @@
+<view class="xxx-page">
+  <page-container
+    pageName="{{pageName}}"
+    showNav="{{true}}"
+    bgColor="#F4F5F6"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+      <view class="container">
+        <image class="image" src="{{img}}" />
+        <view class="title">{{title}}</view>
+        <text class="text">{{text}}</text>
+      </view>
+
+  </page-container>
+</view>

@@ -1,6 +1,6 @@
 import PagePathes from '../../router/index'
 import { Router } from '../../utils/sysApis';
-import { getDataset } from "../../utils/commom"
+import { getDataset } from '../../utils/commom'
 Page({
   data: {
     list: [

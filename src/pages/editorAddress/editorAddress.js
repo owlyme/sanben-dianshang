@@ -41,10 +41,10 @@ Page({
   },
   validatoForm ()  {
     let {consignee,			//收货人
-    phone,					//手机号
-    area,					//地区
-    address			//详细地址
-     } = this.data
+      phone,					//手机号
+      area,					//地区
+      address			//详细地址
+    } = this.data
 
     let bool = true; 
 
@@ -82,7 +82,7 @@ Page({
       content:'确认要删除该地址吗?',
       success: (res) => {
         if(res.confirm){
-         console.log("res")
+          console.log('res')
         }
       }
     })

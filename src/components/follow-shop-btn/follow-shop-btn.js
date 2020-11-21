@@ -48,7 +48,7 @@ Component({
     init() {
       
     },
-     // 关注
+    // 关注
     followShop(e) {
       console.log(this.data.shopId, this.data.shopInfo)
       console.log('followerShop', e);

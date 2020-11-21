@@ -70,7 +70,7 @@ Component({
 
       if (type === 'price') {
         if (!filterPriceStatus || filterPriceStatus === 'upper') {
-          filterPriceStatus = "lower" // 从小到大排
+          filterPriceStatus = 'lower' // 从小到大排
         } else {
           filterPriceStatus = 'upper' // 从大到小排
         }

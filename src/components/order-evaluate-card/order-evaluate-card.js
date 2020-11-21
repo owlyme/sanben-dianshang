@@ -1,5 +1,5 @@
 import { Router } from '../../utils/sysApis'
-import PagePathes from "../../router/index"
+import PagePathes from '../../router/index'
 Component({
   options: {
     styleIsolation: 'apply-shared',

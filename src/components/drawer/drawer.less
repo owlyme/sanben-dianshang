@@ -50,5 +50,32 @@
     .bottom-0 {
       bottom: 0px;
     }
+
+    .centerBox {
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 18;
+      display: none;
+      transform: translateX(0) translateY(0) scale(1) !important;
+    }
+    .center {
+      transition: all 0.4s; /*动画  */
+      z-index: 19;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(0);
+      opacity: 0;
+      overflow: hidden;
+    }
+    .center-0 {
+      display: block;
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) scale(1);
+    }
 }   
     

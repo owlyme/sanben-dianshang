@@ -2,7 +2,7 @@
 import { isScrollUp } from '../../utils/commom';
 import { boundingClientRect } from '../../utils/sysApis';
 import { Router } from '../../utils/sysApis'
-import PagePathes from "../../router/index"
+import PagePathes from '../../router/index'
 const App = getApp();
 
 Page({

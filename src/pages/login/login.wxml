@@ -34,7 +34,7 @@
       <view class="view-text">已阅读并同意<text-link
         url="/pages/serviceAgreement/serviceAgreement"
         text="服务协议" />与<text-link
-        url="/pages/privacyPolicy/privacyPolicy"
+        bind:onClick="privacyPolicy"
         text="隐私政策" />
       </view>
   </view>
@@ -46,4 +46,15 @@
      disabled="{{loginBtnDisabled}}">登录</button>
   </view>
 
+  <drawer show="{{showDrawer}}" position="center">
+    <card>
+      <view class="drawer-title"
+        >隐私政策</view>
+      <view>
+        家品须构油领成铁难放性且出美切以你道么被南单劳两着清养件点治也及方时场气合约究。务算商最质自的人干东斯正教水管听求七照持时重信研水商天阶周油装结管军物争节条段张理队之分照圆例展质需体电。六段光需人法音又红也多式红面国图总劳率商意提老很存量第政织些本六图治间起号业高特通酸得十学该子响比育亲劳力引。际品林无该而天先无族断规这查你党节千三共有要处住许维也法代制调要党干象形反如主回标体文合始记布华界革例果法接据了济过学龙但候层化儿商风程军热自包没利件更素。
+      </view>
+      <view class="drawer-btn"
+        bind:tap="closeDrawer">完成</view>
+    </card>
+  </drawer>
 </view>

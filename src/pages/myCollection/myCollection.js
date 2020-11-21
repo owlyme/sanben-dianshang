@@ -1,6 +1,6 @@
 // 全局app实例
 import PagePathes from '../../router/index'
-import {getDataset} from "../../utils/commom"
+import {getDataset} from '../../utils/commom'
 const App = getApp();
 
 

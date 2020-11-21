@@ -9,7 +9,7 @@ Page({
     showNav: true,
     shopInfo: {
       pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-      name: "阿迪达斯三叶草旗舰店",
+      name: '阿迪达斯三叶草旗舰店',
       followNumber: 148,
       rate: 7,
       phoneNumber: '13156521718',
@@ -22,84 +22,84 @@ Page({
         title: '分类标题',
         list: [
           {
-          id: 12,
-          name: 'adidas'
-         },
-         {
-          id: 1,
-          name: 'adidas'
-         },
-         {
-          id: 2,
-          name: 'adidas'
-         },
-         {
-          id: 13,
-          name: 'adidas'
-         },
-         {
-          id: 14,
-          name: 'adidas'
-         }
+            id: 12,
+            name: 'adidas'
+          },
+          {
+            id: 1,
+            name: 'adidas'
+          },
+          {
+            id: 2,
+            name: 'adidas'
+          },
+          {
+            id: 13,
+            name: 'adidas'
+          },
+          {
+            id: 14,
+            name: 'adidas'
+          }
         ] 
       },
       {
         title: '分类标题2',
         list: [
           {
-          id: 12,
-          name: 'adi da da da das'
-         },
-         {
-          id: 13,
-          name: 'adidas'
-         },
-         {
-          id: 14,
-          name: 'adidas'
-         }
+            id: 12,
+            name: 'adi da da da das'
+          },
+          {
+            id: 13,
+            name: 'adidas'
+          },
+          {
+            id: 14,
+            name: 'adidas'
+          }
         ] 
       },
       {
         title: '分类标题',
         list: [
           {
-          id: 12,
-          name: 'adidas'
-         },
-         {
-          id: 1,
-          name: 'adidas'
-         },
-         {
-          id: 2,
-          name: 'adidas'
-         },
-         {
-          id: 13,
-          name: 'adidas'
-         },
-         {
-          id: 14,
-          name: 'adidas'
-         }
+            id: 12,
+            name: 'adidas'
+          },
+          {
+            id: 1,
+            name: 'adidas'
+          },
+          {
+            id: 2,
+            name: 'adidas'
+          },
+          {
+            id: 13,
+            name: 'adidas'
+          },
+          {
+            id: 14,
+            name: 'adidas'
+          }
         ] 
       },
       {
         title: '分类标题2',
         list: [
           {
-          id: 12,
-          name: 'adi da da da das'
-         },
-         {
-          id: 13,
-          name: 'adidas'
-         },
-         {
-          id: 14,
-          name: 'adidas'
-         }
+            id: 12,
+            name: 'adi da da da das'
+          },
+          {
+            id: 13,
+            name: 'adidas'
+          },
+          {
+            id: 14,
+            name: 'adidas'
+          }
         ] 
       }
     ]

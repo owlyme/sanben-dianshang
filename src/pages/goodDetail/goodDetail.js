@@ -7,8 +7,8 @@ import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
 const getModelCardType = getDatasetValue('type');
 let onPageScrollthrottle = null;
-const PageBack= "pageBack"; 
-const ActionBack = "actionBack"
+const PageBack= 'pageBack'; 
+const ActionBack = 'actionBack'
 Page({
   data: {
     backType: PageBack,
@@ -17,7 +17,7 @@ Page({
     modelCardType: 'add', // add 加入购物车, pay 立 即 购 买
     evaluateListLeft: 600,
     topPartStyle: {
-      bg:`rgba(244, 245, 246, 0)`,
+      bg:'rgba(244, 245, 246, 0)',
       tabbarOpactiy: 0,
       tabbarBlock: 'none'
     },
@@ -213,7 +213,7 @@ Page({
   },
   onReady() {
     // Do something when page ready.
-   onPageScrollthrottle = throttle((scrollTop) => {
+    onPageScrollthrottle = throttle((scrollTop) => {
       this.switchTabbarStyle(scrollTop);
     }, 200)
 

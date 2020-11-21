@@ -51,37 +51,37 @@ Component({
       let actions = this.actions = {
         wechat: {
           pic: './images/wechat.png',
-          type: "wechat",
+          type: 'wechat',
           label: '微信好友'
         },
         pyq: {
           pic: './images/pyq.png',
-          type: "pyq",
+          type: 'pyq',
           label: '朋友圈'
         },
         qq: {
           pic: './images/qq.png',
-          type: "qq",
+          type: 'qq',
           label: 'QQ好友'
         },
         xinlang: {
           pic: './images/xinlang.png',
-          type: "xinlang",
+          type: 'xinlang',
           label: '新浪微博'
         },
         copy: {
           pic: './images/copy-link.png',
-          type: "copy",
+          type: 'copy',
           label: '复制链接'
         },
         poster: {
           pic: './images/poster.png',
-          type: "poster",
+          type: 'poster',
           label: '生成海报'
         },
         save: {
           pic: './images/save.png',
-          type: "save",
+          type: 'save',
           label: '保存图片'
         }
       }
@@ -122,28 +122,28 @@ Component({
       let {type} = getDataset(e)
 
       switch (type) {
-        case "wechat":
-          console.log(type);
+      case 'wechat':
+        console.log(type);
         break;
-        case "pyq" :  
-          console.log(type);
+      case 'pyq' :  
+        console.log(type);
         break;
-        case "qq" :  
-          console.log(type);
+      case 'qq' :  
+        console.log(type);
         break;
-        case "xinlang" :  
-          console.log(type);
+      case 'xinlang' :  
+        console.log(type);
         break;
-        case "copy" :  
-          console.log(type, Router.currentPath);
+      case 'copy' :  
+        console.log(type, Router.currentPath);
         break;
-        case "poster" :  
-          console.log(type);
-          this.createPoster()
+      case 'poster' :  
+        console.log(type);
+        this.createPoster()
         break;
-        case "save" :  
-          console.log(type);
-          this.afterSavePoster()
+      case 'save' :  
+        console.log(type);
+        this.afterSavePoster()
         break;
       }
      
@@ -164,7 +164,7 @@ Component({
         texts: [{
           x: 200,
           y: 40,
-          text: "hello",
+          text: 'hello',
           fontSize: 40,
           color: '#333'
         }],
@@ -172,7 +172,7 @@ Component({
           {
             x: 200,
             y: 50,
-            url: "/images/no-coupon.png",
+            url: '/images/no-coupon.png',
             width: 400,
             height: 400,
           }
@@ -205,8 +205,8 @@ Component({
       wx.saveImageToPhotosAlbum({
         filePath: this.posterUrl,
         success: (result) => {
-            console.log(result)
-            this.init()
+          console.log(result)
+          this.init()
         }
       })
     }

@@ -1,6 +1,6 @@
 // 全局app实例
 import PagePathes from '../../router/index'
-import {Router} from "../../utils/sysApis"
+import {Router} from '../../utils/sysApis'
 import { debounce, isScrollUp } from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();

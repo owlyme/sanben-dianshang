@@ -8,7 +8,7 @@ const fomartUrlStringParamToJsonAndStartWithSlash = (arg) => {
   let config = fomartUrlStringParamToJson(arg) 
   if (!config.url) {
     console.error('请检查app.json文件以及router/index.js文件')
-    return Toast.show("当前路劲不存在")
+    return Toast.show('当前路劲不存在')
   } else if (config.url.indexOf('/') !== 0) {
     config.url = '/' + config.url
   } 
@@ -45,7 +45,7 @@ export const Modal = (props ={}) => {
   wx.showModal({
     title: '提示',
     confirmText:'确定',
-    confirmColor: "#FF3232",
+    confirmColor: '#FF3232',
     success (res) {
       if (res.confirm) {
         console.log('用户点击确定')
@@ -66,7 +66,7 @@ export const Router = {
     let {query, params, ...other} = fomartUrlStringParamToJsonAndStartWithSlash(param);
     if (query && typeof query === 'object') {
       other.url = Object.keys(query).reduce((acc, key) => `${acc}${key}=${query[key]}&`, `${other.url}?`)
-    };
+    }
     this.query = query || {};
     this.params = params || {};
     this.currentPath = other.url;
@@ -94,14 +94,13 @@ export const Router = {
   // 不能跳到 tabbar 页面。使用 wx.navigateBack 可以返回到原页面。小程序中页面栈最多十层
   push(param) {
     let config = this.getQueryorParam(param)
-    wx.navigateTo({
+
+    wx.switchTab({
       ...config,
-      fail: (e) => {
-        if (e.errMsg === 'navigateTo:fail can not navigateTo a tabbar page') {
-          wx.switchTab({
-            ...config
-          })
-        }
+      fail: () => {
+        wx.navigateTo({
+          ...config,
+        })
       }
     })
   },

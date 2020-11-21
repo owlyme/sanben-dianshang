@@ -86,14 +86,14 @@ Component({
       let type = getType(e)
       console.log(e, type)
       switch(type){
-        case "signIn": 
-          Router.push(PagePathes.signIn)
-          break;
-        case "coupon": 
-          Router.push(PagePathes.coupon)
-          break;
-        default: 
-          return   
+      case 'signIn': 
+        Router.push(PagePathes.signIn)
+        break;
+      case 'coupon': 
+        Router.push(PagePathes.coupon)
+        break;
+      default: 
+        return   
       }
     }
   }

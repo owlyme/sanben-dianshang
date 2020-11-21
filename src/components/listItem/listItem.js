@@ -7,6 +7,10 @@ Component({
   behaviors: [],
 
   properties: {
+    extClassName: {
+      type: String,
+      value: ''
+    },
     label: { // 属性名
       type: String,
       value: ''

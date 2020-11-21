@@ -31,8 +31,8 @@ function selectAll(orderList, checked) {
 // 将列表扁平化
 function getAllGood(orderList) {
   return orderList
-  .reduce((acc, {shopList}) => [...acc, ...shopList], [])
-  .reduce((acc, {orderList}) => [...acc, ...orderList], []);
+    .reduce((acc, {shopList}) => [...acc, ...shopList], [])
+    .reduce((acc, {orderList}) => [...acc, ...orderList], []);
 }
 
 const OrderList = [
@@ -246,7 +246,7 @@ Page({
       shoppingList = shoppingList.filter(order => 
         !orderList.find((item) => item.id === order.id)
       )
-    };
+    }
 
     let shoppingListTotal = calcShoppingListTotal(shoppingList)
     // 当删除一项时，总商品类型数量要减 1
@@ -293,17 +293,17 @@ Page({
     // 删除
     // 遍历 orderList
     orderList = orderList.filter(order => {
-        // 遍历 orderList 每一项的 shopList
-        order.shopList = order.shopList.filter(shop => {
-          // 遍历 shopList 每一项的 orderList 属性
-          shop.orderList = shop.orderList.filter(good =>
-            // 判断 当前项是否删除
-            !shoppingList.find((item) => item.id === good.id)
-          )
-          return shop.orderList.length;
-        })
-        return order.shopList.length;
-      }
+      // 遍历 orderList 每一项的 shopList
+      order.shopList = order.shopList.filter(shop => {
+        // 遍历 shopList 每一项的 orderList 属性
+        shop.orderList = shop.orderList.filter(good =>
+        // 判断 当前项是否删除
+          !shoppingList.find((item) => item.id === good.id)
+        )
+        return shop.orderList.length;
+      })
+      return order.shopList.length;
+    }
     )
     let shoppingListTotal = calcShoppingListTotal([]);
 

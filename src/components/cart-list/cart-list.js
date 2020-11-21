@@ -188,14 +188,14 @@ Component({
     init() {
       
     },
-     // 预览商店首页
+    // 预览商店首页
     viewShop() {
       Router.push({
         url: PagePathes.shopIndex
       })
     },
-     // 预览商店列表
-     viewShopAll(e) {
+    // 预览商店列表
+    viewShopAll(e) {
       let dataset = getDataset(e)
       console.log('viewShop', dataset)
       Router.push({

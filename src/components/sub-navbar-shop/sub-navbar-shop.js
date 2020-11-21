@@ -2,24 +2,24 @@ import PagePathes from '../../router/index'
 import { Router } from '../../utils/sysApis'
 const NavList = [
   {
-    "name": "首页",
+    'name': '首页',
     path: PagePathes.shopIndex, 
-    "icon": 'iconxiangqing-dianpu1',
+    'icon': 'iconxiangqing-dianpu1',
   },
   {
-    "name": "商品",
+    'name': '商品',
     path: PagePathes.shopAllGood, 
-    "icon": 'icondianpuBarsTabBars2off',
+    'icon': 'icondianpuBarsTabBars2off',
   },
   {
-    "name": "分类",
+    'name': '分类',
     path: PagePathes.shopGoodCatetory, 
-    "icon": 'icondianpuBarsTabBars3off'
+    'icon': 'icondianpuBarsTabBars3off'
   },
   {
-    "name": "门店",
+    'name': '门店',
     path: PagePathes.shopAll, 
-    "icon": 'icondianpuBarsTabBars4off',
+    'icon': 'icondianpuBarsTabBars4off',
   }
 ]
 
