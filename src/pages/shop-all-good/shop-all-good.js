@@ -9,7 +9,7 @@ Page({
     showNav: true,
     shopInfo: {
       pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-      name: "阿迪达斯三叶草旗舰店",
+      name: '阿迪达斯三叶草旗舰店',
       followNumber: 148,
       rate: 7
     },
@@ -113,11 +113,11 @@ Page({
     keyword: ''
   },
   onLoad(e) {
-     // Do something when page ready
-     console.log(Router.query)
-     this.setData({
-       keyword: Router.query.goodName
-     })
+    // Do something when page ready
+    console.log(Router.query)
+    this.setData({
+      keyword: Router.query.goodName
+    })
   },
   onReady() {
    

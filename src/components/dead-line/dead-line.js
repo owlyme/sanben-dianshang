@@ -17,7 +17,7 @@ Component({
     },
     activeStatus: {
       type: String,
-      value: "unstart", // started, end,
+      value: 'unstart', // started, end,
     },
     startTime: {
       type: String,
@@ -27,20 +27,20 @@ Component({
   data: {
     times: [
       {
-        value: "00",
-        text: "天",
+        value: '00',
+        text: '天',
       },
       {
-        value: "00",
-        text: ":",
+        value: '00',
+        text: ':',
       },
       {
-        value: "00",
-        text: ":",
+        value: '00',
+        text: ':',
       },
       {
-        value: "00",
-        text: "",
+        value: '00',
+        text: '',
       },
     ],
   },
@@ -69,7 +69,7 @@ Component({
       let date = new Date();
       let now = date.getTime();
       
-      if (typeof deadLine === "string" && !/[\/:]/.test(deadLine)) {
+      if (typeof deadLine === 'string' && !/[\/:]/.test(deadLine)) {
         deadLine = Number(deadLine);
       }
       let endDate = new Date(deadLine);
@@ -77,22 +77,22 @@ Component({
       //时间差
       let leftTime = end - now;
       //定义变量 d,h,m,s保存倒计时的时间
-      let dhms = ["00", "00", "00", "00"];
+      let dhms = ['00', '00', '00', '00'];
       if (leftTime >= 0) {
         let d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
         let h = Math.floor((leftTime / 1000 / 60 / 60) % 24);
         let m = Math.floor((leftTime / 1000 / 60) % 60);
         let s = Math.floor((leftTime / 1000) % 60);
         dhms = [
-          d < 10 ? "0" + d : d,
-          h < 10 ? "0" + h : h,
-          m < 10 ? "0" + m : m,
-          s < 10 ? "0" + s : s,
+          d < 10 ? '0' + d : d,
+          h < 10 ? '0' + h : h,
+          m < 10 ? '0' + m : m,
+          s < 10 ? '0' + s : s,
         ];
       }
 
-      if (dhms.join("") === "00000000" && deadLine) {
-        this.triggerEvent("active-end");
+      if (dhms.join('') === '00000000' && deadLine) {
+        this.triggerEvent('active-end');
         return;
       }
 

@@ -27,7 +27,7 @@ Component({
     },
     type: {
       type: String,
-      value: "all" // all , easy
+      value: 'all' // all , easy
     }
   },
   data: {},

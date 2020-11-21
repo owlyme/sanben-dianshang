@@ -95,7 +95,7 @@ Component({
       });
     },
     //回退
-    _navBack: function () {;
+    _navBack: function () {
       let backType = this.data.backType;
       if (backType === 'pageBack') {
         Router.back(1);

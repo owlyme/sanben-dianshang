@@ -8,37 +8,37 @@ Page({
     tabsList: [
       {
         id: 0,
-        name: "阿迪1",
+        name: '阿迪1',
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       },
       {
         id: 1,
-        name: "阿迪2",
+        name: '阿迪2',
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       },
       {
         id: 2,
-        name: "阿迪3",
+        name: '阿迪3',
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       },
       {
         id: 3,
-        name: "阿迪4",
+        name: '阿迪4',
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       },
       {
         id: 4,
-        name: "阿迪5",
+        name: '阿迪5',
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       },
       {
         id: 65,
-        name: "阿迪6",
+        name: '阿迪6',
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       },
       {
         id: 6,
-        name: "阿迪7",
+        name: '阿迪7',
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       },
     ],

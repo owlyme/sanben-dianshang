@@ -52,7 +52,7 @@ Component({
       },
     ],
     productsNews:{
-      title: "使用设计工具的好处在于，当这些项目材料同时呈现，能够帮助我们进行模式识别。",
+      title: '使用设计工具的好处在于，当这些项目材料同时呈现，能够帮助我们进行模式识别。',
       pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
     }
   },

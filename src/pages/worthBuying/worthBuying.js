@@ -100,12 +100,12 @@ Page({
         id: 12,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: 'adidas'
-       },
-       {
+      },
+      {
         id: 13,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: 'adidas'
-       }
+      }
     ],
     activeList: [
       {

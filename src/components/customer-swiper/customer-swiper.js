@@ -41,7 +41,7 @@ Component({
     },
     dotsType: {
       type: [String],
-      value: "default" // right bottom
+      value: 'default' // right bottom
     },
    
   },

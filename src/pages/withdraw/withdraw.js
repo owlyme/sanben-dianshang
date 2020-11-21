@@ -2,26 +2,26 @@
 // import PagePathes from '../../router/index'
 import Base from '../../utils/base';
 import { Toast, Router } from '../../utils/sysApis';
-import {getDataset} from "../../utils/commom";
+import {getDataset} from '../../utils/commom';
 
 const  bankList = [
   {
     bankLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    bankName: "中国农业银行 ",
+    bankName: '中国农业银行 ',
     name: '纪良庆',
     tailNumber: '0247',
     bankNumber: '4644405247'
   },
   {
     bankLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    bankName: "中国农业银行 ",
+    bankName: '中国农业银行 ',
     name: '纪良庆',
     tailNumber: '0247',
     bankNumber: '46444024dff7'
   },
   {
     bankLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    bankName: "中国农业银行 ",
+    bankName: '中国农业银行 ',
     name: '纪良庆',
     tailNumber: '0247',
     bankNumber: '46444023347'
@@ -90,7 +90,7 @@ Page({
     if (this.validatoForm(name, cardNum, bank, phone, money)) {
       console.log(this.data)
       this.setData({
-        withdrawStatus: "success"
+        withdrawStatus: 'success'
       })
       this.open()
     }

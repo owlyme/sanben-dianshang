@@ -1,6 +1,6 @@
 // 全局app实例
 import { Router } from '../../utils/sysApis'
-import PagePathes from "../../router/index"
+import PagePathes from '../../router/index'
 import { getDataset } from '../../utils/commom'
 
 Page({

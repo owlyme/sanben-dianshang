@@ -8,8 +8,8 @@ Component({
     multipleSlots: false // 在组件定义时的选项中启用多slot支持
   },
   behaviors: [],
-// iconyishixiao
-// iconyishiyongicon-hongbao
+  // iconyishixiao
+  // iconyishiyongicon-hongbao
   properties: {
     info: {
       type: Object,

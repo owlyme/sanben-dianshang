@@ -30,7 +30,7 @@ Page({
     fromPage: 'shop'
   },
   onLoad(e) {
-    console.log("search onLoad", e, Router)
+    console.log('search onLoad', e, Router)
     // Do some initialize when page load.
   },
   onReady() {
@@ -119,8 +119,8 @@ Page({
   switchPage(goodName) {
     let url = ''
     let query= {
-          goodName
-        }
+      goodName
+    }
     if (Router.query.fromPage === 'shop') {
       // 店铺-商品列表
       url = PagePathes.shopAllGood

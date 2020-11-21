@@ -30,7 +30,7 @@ Component({
     },
     cardType: {
       type: String,
-      value: "all" // all , easy
+      value: 'all' // all , easy
     }
   },
 
@@ -58,7 +58,7 @@ Component({
     },
   },
   ready() {
-   this.init()
+    this.init()
   },
 
   methods: {

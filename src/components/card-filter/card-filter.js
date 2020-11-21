@@ -26,42 +26,42 @@ Component({
           title: '分类标题',
           list: [
             {
-            id: 12,
-            name: 'adidas'
-           },
-           {
-            id: 1,
-            name: 'adidas'
-           },
-           {
-            id: 2,
-            name: 'adidas'
-           },
-           {
-            id: 13,
-            name: 'adidas'
-           },
-           {
-            id: 14,
-            name: 'adidas'
-           }
+              id: 12,
+              name: 'adidas'
+            },
+            {
+              id: 1,
+              name: 'adidas'
+            },
+            {
+              id: 2,
+              name: 'adidas'
+            },
+            {
+              id: 13,
+              name: 'adidas'
+            },
+            {
+              id: 14,
+              name: 'adidas'
+            }
           ] 
         },
         {
           title: '分类标题2',
           list: [
             {
-            id: 12,
-            name: 'adi da da da das'
-           },
-           {
-            id: 13,
-            name: 'adidas'
-           },
-           {
-            id: 14,
-            name: 'adidas'
-           }
+              id: 12,
+              name: 'adi da da da das'
+            },
+            {
+              id: 13,
+              name: 'adidas'
+            },
+            {
+              id: 14,
+              name: 'adidas'
+            }
           ] 
         }
       ]

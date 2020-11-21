@@ -7,7 +7,7 @@ const Order = {
   shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
   address: '杭州大悦城店',
   shopName: '杭州大悦城店',
-  remark: "11",
+  remark: '11',
   couponName: '111',
   couponMoney: 300,
   shipping: 10,
@@ -114,7 +114,7 @@ Page({
   
   // 去往地址页面
   setAddress() {
-    console.log("setAddress")
+    console.log('setAddress')
     //
   },
   toLogisticsDetails() {

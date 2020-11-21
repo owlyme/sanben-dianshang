@@ -46,7 +46,7 @@ Component({
   },
   ready() {
     this.init()
-   },
+  },
  
   methods: {
     init() {
@@ -75,7 +75,7 @@ Component({
         grays.push(i)
       }
       // 对传进来的评分做判断,如果为0,显示为评分,如果评分但是是整数要保留一位小数
-      rate = rate && rate > 0 ? rate.toFixed(1)+`分` : "未评分";
+      rate = rate && rate > 0 ? rate.toFixed(1)+'分' : '未评分';
 
       this.setData({
         lights,

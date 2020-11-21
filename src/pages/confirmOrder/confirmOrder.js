@@ -18,7 +18,7 @@ const OrderList = [
     shopList: [
       {
         shopName: '杭州大悦城店',
-        remark: "11",
+        remark: '11',
         couponName: '111',
         couponMoney: 300,
         shipping: 10,
@@ -48,7 +48,7 @@ const OrderList = [
       },
       {
         shopName: '杭州大悦城店1',
-        remark: "11",
+        remark: '11',
         couponName: '111',
         couponMoney: 300,
         shipping: 10,
@@ -145,18 +145,18 @@ Page({
     couponList: [
       {
         value: 200,
-        text: "满2000减100"
+        text: '满2000减100'
       },
       {
         value: 200,
-        text: "满2000减100"
+        text: '满2000减100'
       },
       {
         value: 200,
-        text: "满2000减100"
+        text: '满2000减100'
       },{
         value: 0,
-        text: "不使用优惠"
+        text: '不使用优惠'
       }
     ]
   },
