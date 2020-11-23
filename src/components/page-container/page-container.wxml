@@ -14,9 +14,7 @@
     > <slot name="top"></slot> </navbar>
   </view>
   <view class="page-contanier"
-  style="margin-top: {{navHeight}}px">
+      style="margin-top: {{navHeight}}px">
      <slot></slot>
   </view>
-
-  <!-- content -->
 </view>

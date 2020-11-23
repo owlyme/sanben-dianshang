@@ -28,7 +28,7 @@
   </view>
 
   <view class="order-info">
-    <block wx:for="{{data.shopList}}">
+    <block wx:for="{{data.shopList}}" wx:key="index">
 
       <view class="shop-name ellipsisOne" wx:if="{{item.orderList.length}}" data-shop="{{item}}"
           bind:tap="viewShopAll">

@@ -42,7 +42,7 @@
             <view class="no-good-remark">可以去看看有哪些想买的</view>
           </view>
            <!-- 有需要购买的商品 -->
-          <block wx:for="{{orderList}}">
+          <block wx:for="{{orderList}}" wx:key="index">
               <view class="cart-item">
                 <cart-list data="{{item}}" bind:onChange="onOrderChange"/>
               </view>
