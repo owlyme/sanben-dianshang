@@ -26,7 +26,7 @@
     <view class="search-input-index" >
       <view class="user-action-part flex-middle flex-b" >
         <view class="scan-btn" bind:tap="onScanClick">
-          O
+          <icon-font name="iconsaoyisao" size="{{20}}" color="#FF5E20"/>
         </view>
         <view
           class="search-keywords ellipsisOne"
@@ -36,14 +36,14 @@
 
         <view class="search-btn"
           bind:tap="onSearchBtnClick">
-          S
+          <icon-font name="iconsousuo" size="{{20}}" color="#FF5E20"/>
         </view>
       </view>
     </view>
 
     <view class="system-message"
     bind:tap="onMessageClick">
-      M
+      <icon-font name="iconxiaoxi1" size="{{20}}" color="#ffffff"/>
       <view wx:if="{{message}}" class="new-msg-remind"></view>
     </view>
   </view>
