@@ -7,7 +7,6 @@ const path = require('path');
 const eslint = require('gulp-eslint');
 const postcss = require('gulp-postcss');
 const pxtoviewport = require('postcss-px-to-viewport');
-const jsmin = require('gulp-jsmin');
 
 
 const srcPath = './src/**';
@@ -45,16 +44,6 @@ const js = () => {
     .pipe(gulp.dest(distPath));
 };
 gulp.task(js);
-/* 编译JS文件 */
-const js_build = () => {
-  return gulp
-    .src(jsFiles, { since: gulp.lastRun(js) })
-    .pipe(jsmin())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(gulp.dest(distPath));
-};
-gulp.task(js_build);
 
 
 /* 配置请求地址相关 */
@@ -124,7 +113,7 @@ gulp.task('watch', () => {
 /* build */
 gulp.task(
   'build',
-  gulp.series('clean', gulp.parallel( 'wxml', 'js_build', 'json', 'wxss', 'img', 'prodEnv'))
+  gulp.series('clean', gulp.parallel( 'wxml', 'js', 'json', 'wxss', 'img', 'prodEnv'))
 );
 
 /* dev */
