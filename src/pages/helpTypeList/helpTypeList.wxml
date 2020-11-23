@@ -15,9 +15,6 @@
             label="{{item}}"
             data-index="{{index}}"
             bind:onClick="onHelp">
-              <view slot="icon">
-                <image class="item-icon" src="/images/right.png" />
-              </view>
           </list-item>
         </list>
 

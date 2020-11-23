@@ -14,14 +14,12 @@
       </block>
       <block wx:else>{{title}}</block>
       <icon-font gutter="{{4}}" wx:if="{{showNameIcon}}" name="icondingdan-dianpu-gengduo" size="{{14}}" />
-      <!-- <image wx:if="{{showNameIcon}}" src="/images/right.png" /> -->
     </view>
 
     <view
       class="shop-address flex-middle"
       >
       <icon-font wx:if="{{showAddressIcon}}" name="icondingdan-dianpudizhi-hong1" size="{{12}}" />
-      <!-- <image class="image" wx:if="{{showAddressIcon}}" src="/images/address.png" /> -->
       <block wx:if="{{!text}}">
         <slot name="text"></slot>
       </block>
