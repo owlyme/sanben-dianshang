@@ -1,5 +1,4 @@
 import { getDataset } from '../../utils/commom';
-import { Router } from '../../utils/sysApis'
 import Poster from '../miniprogram_dist/poster/poster.js';
 
 Component({

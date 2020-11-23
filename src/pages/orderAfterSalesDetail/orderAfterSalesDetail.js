@@ -1,8 +1,6 @@
 // 全局app实例
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis';
-const app = getApp();
- 
+import {Path, Router} from '../../router/index';
+
 
 Page({
   data: {
@@ -64,7 +62,7 @@ Page({
   },
   toNegotiationRecord() {
     Router.push({
-      url: PagePathes.negotiationRecord,
+      url: Path.negotiationRecord,
       query: {
         id: this.data.id
       }

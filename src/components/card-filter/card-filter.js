@@ -1,4 +1,4 @@
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 import { getDatasetValue, getNodeValue } from '../../utils/commom';
 const getConditions = getDatasetValue('condition')
 const getMiniPrice= getNodeValue('miniPrice')

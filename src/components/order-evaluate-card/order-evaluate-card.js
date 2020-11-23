@@ -1,5 +1,4 @@
-import { Router } from '../../utils/sysApis'
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -50,7 +49,7 @@ Component({
     },
     toOrderEvaluateCenter() {
       Router.push({
-        url: PagePathes.orderEvaluateCenter,
+        url: Path.orderEvaluateCenter,
         query: {
           id: this.data.info.id
         }

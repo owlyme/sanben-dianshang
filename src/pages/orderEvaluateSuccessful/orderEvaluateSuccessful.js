@@ -1,8 +1,7 @@
 // 全局app实例
 import { isScrollUp } from '../../utils/commom';
 import { boundingClientRect } from '../../utils/sysApis';
-import { Router } from '../../utils/sysApis'
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 const App = getApp();
 
 Page({
@@ -153,12 +152,12 @@ Page({
   }, 
   backToIndex() {
     Router.push({
-      url: PagePathes.index
+      url: Path.index
     })
   },
   back() {
     Router.replace({
-      url: PagePathes.orderEvaluate
+      url: Path.orderEvaluate
     })
   },
 

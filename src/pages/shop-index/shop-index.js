@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 // 全局app实例
 const App = getApp();
 
@@ -161,7 +160,7 @@ Page({
   // 点击搜索框 
   onSearchGoodInCurrentShop(e) {
     Router.push({
-      url: PagePathes.search,
+      url: Path.search,
       query: {
         fromPage: 'shop'
       }
@@ -187,12 +186,12 @@ Page({
   },
   shopItemClick(e) {
     console.log('shopItemClick', e)
-    Router.push(PagePathes.shopDetail) 
+    Router.push(Path.shopDetail) 
   },
 
   viewMoreShop(e) {
     console.log('viewMoreShop', e)
-    Router.replace(PagePathes.shopAll) 
+    Router.replace(Path.shopAll) 
   },
 
 

@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import {Router} from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 
 Component({
   options: {
@@ -47,7 +46,7 @@ Component({
     viewGoodDetail(e) {
       if (!this.data.prevent) {
         Router.push({
-          url: PagePathes.goodDetail
+          url: Path.goodDetail
         })
       } else {
         this.triggerEvent('onClick', {...this.data.goodInfo})

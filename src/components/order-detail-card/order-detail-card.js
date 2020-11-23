@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import {Router} from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 import { getDataset } from '../../utils/commom';
 
 
@@ -58,7 +57,7 @@ Component({
     // 预览商店首页
     viewShop() {
       Router.push({
-        url: PagePathes.shopIndex
+        url: Path.shopIndex
       })
     },
     addToGoodCart(e) {

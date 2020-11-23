@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis';
+import {Path, Router} from '../../router/index';
 import { getDataset } from '../../utils/commom'
 Page({
   data: {
@@ -93,7 +92,7 @@ Page({
   viewDetail(e) {
     let { item } = getDataset(e)
     Router.push({
-      url: PagePathes.orderAfterSalesDetail,
+      url: Path.orderAfterSalesDetail,
       query: {
         id: item.id
       }

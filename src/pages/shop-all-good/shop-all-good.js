@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 // 全局app实例
 const App = getApp();
 
@@ -146,7 +145,7 @@ Page({
   },
   onSearchGoodInCurrentShop(e) {
     Router.push({
-      url: PagePathes.search,
+      url: Path.search,
       query: {
         fromPage: 'shop'
       }

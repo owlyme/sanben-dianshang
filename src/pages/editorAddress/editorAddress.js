@@ -1,6 +1,6 @@
 // 全局app实例
-import PagePathes from '../../router/index'
-import {Modal, Toast, Router }from '../../utils/sysApis'
+import {Router} from '../../router/index';
+import {Modal, Toast }from '../../utils/sysApis'
 import Base from '../../utils/base';
 
 const app = getApp();

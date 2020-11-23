@@ -1,4 +1,4 @@
-import { Router } from '../../utils/sysApis';
+import { Router } from '../../router/index';
 
 Component({
   options: {

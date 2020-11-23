@@ -1,7 +1,6 @@
 // 全局app实例
 import { storageKeyMap, getLocalStorage, setLocalStorage, addKeywordsHistory } from '../../utils/localStorage';
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 import { getDatasetValue } from '../../utils/commom'
 const App = getApp();
 const listType = getDatasetValue('type')
@@ -123,10 +122,10 @@ Page({
     }
     if (Router.query.fromPage === 'shop') {
       // 店铺-商品列表
-      url = PagePathes.shopAllGood
+      url = Path.shopAllGood
     } else {
       // 商城-商品列表
-      url = PagePathes.categoryGoodList
+      url = Path.categoryGoodList
     }
 
     Router.replace({

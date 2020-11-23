@@ -1,5 +1,4 @@
-import PagePathes from '../../../router/index'
-import { Router } from '../../../utils/sysApis';
+import {Path, Router} from '../../../router/index';
 
 const App = getApp();
 Page({
@@ -15,7 +14,7 @@ Page({
   },
   applyTeamStore(){
     Router.push({
-      url: PagePathes.merchantApply,
+      url: Path.merchantApply,
       query: {
         type: 'enterprise'
       }
@@ -23,7 +22,7 @@ Page({
   },
   applyPersionStore(){
     Router.push({
-      url: PagePathes.merchantApply,
+      url: Path.merchantApply,
       query: {
         type: 'personal'
       }

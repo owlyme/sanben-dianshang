@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import {Router} from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -44,7 +43,7 @@ Component({
     viewGoodDetail(e) {
 
       Router.push({
-        url: PagePathes.goodDetail
+        url: Path.goodDetail
       })
 
     },

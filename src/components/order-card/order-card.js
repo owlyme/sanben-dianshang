@@ -1,6 +1,5 @@
 import {statusTextMap} from '../../app.const'
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis';
+import {Path, Router} from '../../router/index';
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -61,7 +60,7 @@ Component({
   methods: {
     toLogisticsDetails() {
       Router.push({
-        url: PagePathes.logisticsDetails,
+        url: Path.logisticsDetails,
         query: {
           id: 1
         }

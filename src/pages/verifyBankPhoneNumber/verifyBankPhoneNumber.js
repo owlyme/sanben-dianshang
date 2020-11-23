@@ -1,5 +1,7 @@
 // 全局app实例
-import { Toast, Router } from '../../utils/sysApis';
+import { Toast } from '../../utils/sysApis';
+import { Router} from '../../router/index';
+
 import Base from '../../utils/base';
 import { getValidateCode} from '../../api/login';
 

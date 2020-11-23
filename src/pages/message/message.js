@@ -1,5 +1,5 @@
-import PagePathes from '../../router/index'
-import { Toast, boundingClientRect, Router } from '../../utils/sysApis';
+import {Path, Router} from '../../router/index';
+import { Toast, boundingClientRect } from '../../utils/sysApis';
 
 const App = getApp();
 Page({

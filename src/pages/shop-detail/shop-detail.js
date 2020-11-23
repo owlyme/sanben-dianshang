@@ -1,5 +1,5 @@
 // 全局app实例
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 const App = getApp();
 
 

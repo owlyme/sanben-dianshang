@@ -1,7 +1,5 @@
 // 全局app实例
-import PagePathes from '../../router/index'
-import {Router, showActionSheet} from '../../utils/sysApis'
-// 全局app实例
+import {Path, Router} from '../../router/index';
 import { debounce, isScrollUp, throttle, getDatasetValue} from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
@@ -282,12 +280,12 @@ Page({
   },
   toSearchPage() {
     Router.push({
-      url: PagePathes.search
+      url: Path.search
     })
   },
   toGoodCartPage() {
     Router.push({
-      url: PagePathes.goodCart
+      url: Path.goodCart
     })
   },
   async handleScrolTo(e){
@@ -363,21 +361,21 @@ Page({
   viewShopIndex(e) {
     console.log('viewShopIndex', e);
     Router.push({
-      url: PagePathes.shopIndex
+      url: Path.shopIndex
     })
   },
   // 客服
   toService(e) {
     console.log('viewShopIndex', e);
     Router.push({
-      url: PagePathes.shopIndex
+      url: Path.shopIndex
     })
   },
   // 收藏 
   save(e) {
     console.log('viewShopIndex', e);
     Router.push({
-      url: PagePathes.shopIndex
+      url: Path.shopIndex
     })
   },
   // 

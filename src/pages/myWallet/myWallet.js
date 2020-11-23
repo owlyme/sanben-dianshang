@@ -1,8 +1,7 @@
 // 全局app实例
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 import {getDataset} from '../../utils/commom'
-import { Router } from '../../utils/sysApis'
-const App = getApp();
+
 
 Page({
   data: {},
@@ -39,7 +38,7 @@ Page({
   handleWithdraw() {
     console.log('handleWithdraw, 需要做逻辑判断')
     Router.push({
-      url: PagePathes.withdraw,
+      url: Path.withdraw,
     }) 
   },
   // ">兑换商品
@@ -71,7 +70,7 @@ Page({
   },
   handleBalance(){
     Router.push({
-      url: PagePathes.balanceDetail,
+      url: Path.balanceDetail,
       query: {
         type: 'balance'
       }
@@ -80,7 +79,7 @@ Page({
   handlejifen() {
     console.log('handlejifen')
     Router.push({
-      url: PagePathes.balanceDetail,
+      url: Path.balanceDetail,
       query: {
         type: 'points'
       }

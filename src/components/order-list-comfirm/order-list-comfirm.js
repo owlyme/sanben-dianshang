@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import {Router} from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 import { getDataset } from '../../utils/commom';
 
 
@@ -180,7 +179,7 @@ Component({
     // 预览商店首页
     viewShop() {
       Router.push({
-        url: PagePathes.shopIndex
+        url: Path.shopIndex
       })
     },
     // 预览商店列表
@@ -188,7 +187,7 @@ Component({
       let dataset = getDataset(e)
       console.log('viewShop', dataset)
       Router.push({
-        url: PagePathes.shopAll
+        url: Path.shopAll
       })
     },
     onRemarkInput(e) {

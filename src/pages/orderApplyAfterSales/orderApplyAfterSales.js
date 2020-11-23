@@ -1,6 +1,7 @@
 // 全局app实例
-import {chooseImage, Router} from '../../utils/sysApis';
+import {chooseImage} from '../../utils/sysApis';
 import { getDataset } from '../../utils/commom';
+import { Router } from '../../router/index';
 
 const app = getApp();
  

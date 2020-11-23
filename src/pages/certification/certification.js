@@ -1,5 +1,5 @@
-import PagePathes from '../../router/index'
-import {chooseImage, Router, Toast} from '../../utils/sysApis';
+import {Path, Router} from '../../router/index';
+import {chooseImage, Toast} from '../../utils/sysApis';
 import { getDataset } from '../../utils/commom';
 import Base from '../../utils/base';
 
@@ -80,7 +80,7 @@ Page({
       console.log(this.data)
     } 
     Router.push({
-      url: PagePathes.verifyBankPhoneNumber,
+      url: Path.verifyBankPhoneNumber,
       query: {
         type: 'verfyId',
         phone: phone

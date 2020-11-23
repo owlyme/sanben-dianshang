@@ -1,7 +1,6 @@
 // 全局app实例
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 import { getDataset } from '../../utils/commom';
-import { Router } from '../../utils/sysApis';
 const App = getApp();
 
 Page({
@@ -116,7 +115,7 @@ Page({
     let goodList = this.data.goodList
     console.log(goodList)
     Router.push({
-      url: PagePathes.orderEvaluateSuccessful
+      url: Path.orderEvaluateSuccessful
     })
   },
   customData: {}

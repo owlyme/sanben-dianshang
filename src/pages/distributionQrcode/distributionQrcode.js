@@ -1,6 +1,5 @@
 // 全局app实例
-import PagePathes from '../../router/index'
-import {Router} from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 
 const app = getApp();
  
@@ -16,7 +15,7 @@ Page({
     // Do some initialize when page load.
   },
   handleTeam() {
-    Router.push(PagePathes.distributionTeam)
+    Router.push(Path.distributionTeam)
   },
   // 返回
   handleBack() {

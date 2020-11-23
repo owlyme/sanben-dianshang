@@ -1,8 +1,5 @@
-// 全局app实例
-import { Router } from '../../utils/sysApis'
-import PagePathes from '../../router/index'
+import { Path, Router } from '../../router/index';
 import { getDataset, throttle } from '../../utils/commom'
-
 const App = getApp();
 
 Page({
@@ -14,40 +11,40 @@ Page({
     message: 22,
     moreList: [
       {
-        path: PagePathes.myAddress,
+        path: Path.myAddress,
         pic: '/images/mine/services/1.png',
         text: '收货地址'
+      },
+      {
+        path: Path.help,
+        pic: '/images/mine/services/3.png',
+        text: '帮助中心'
+      },
+      {
+        path: Path.feedBack,
+        pic: '/images/mine/services/4.png',
+        text: '意见反馈'
+      },
+      {
+        path: Path.aboutUs,
+        pic: '/images/mine/services/5.png',
+        text: '关于我们'
+      }
+      ,{
+        path: Path.certification,
+        pic: '/images/mine/services/6.png',
+        text: '实名认证'
+      }
+      ,{
+        path: Path.merchantIndex,
+        pic: '/images/mine/services/7.png',
+        text: '成为商家'
       },
       {
         path: 'onlineService',
         pic: '/images/mine/services/2.png',
         text: '在线客服'
       },
-      {
-        path: PagePathes.help,
-        pic: '/images/mine/services/3.png',
-        text: '帮助中心'
-      },
-      {
-        path: PagePathes.feedBack,
-        pic: '/images/mine/services/4.png',
-        text: '意见反馈'
-      },
-      {
-        path: PagePathes.aboutUs,
-        pic: '/images/mine/services/5.png',
-        text: '关于我们'
-      }
-      ,{
-        path: PagePathes.certification,
-        pic: '/images/mine/services/6.png',
-        text: '实名认证'
-      }
-      ,{
-        path: PagePathes.merchantIndex,
-        pic: '/images/mine/services/7.png',
-        text: '成为商家'
-      }
     ],
   },
   onLoad() {
@@ -61,16 +58,16 @@ Page({
   },
   toMyFollowePage() {
     console.log('viewMyQrcode')
-    Router.push(PagePathes.myFocus)
+    Router.push(Path.myFocus)
   },
   toMyStorepage() {
-    Router.push(PagePathes.myCollection)
+    Router.push(Path.myCollection)
   },
   toMyCouponPage() {
-    Router.push(PagePathes.myCoupon)
+    Router.push(Path.myCoupon)
   },
   toRedPackagePage() {
-    Router.push(PagePathes.myRedPackage)
+    Router.push(Path.myRedPackage)
   },
   onPageScroll(e) {
     // Do something when page scroll
@@ -94,41 +91,41 @@ Page({
     // 当前是 tab 页时，点击 tab 时触发
   },
   toSignPage() {
-    Router.push(PagePathes.signIn)
+    Router.push(Path.signIn)
   },
   toMessagePage() {
-    Router.push(PagePathes.message)
+    Router.push(Path.message)
   },
   toMyWalletPage() {
     // Router.push
     console.log('toMyWalletPage')
     Router.push({
-      url: PagePathes.myWallet
+      url: Path.myWallet
     })
   },
   toDistributionPage() {
     console.log('toDistributionPage')
     Router.push({
-      url: PagePathes.distributionTeam
+      url: Path.distributionTeam
     })
   },
   toIncomeDetailPage() {
     console.log('toIncomeDetailPage')
     Router.push({
-      url: PagePathes.distributionIncome
+      url: Path.distributionIncome
     })
   },
   viewMyQrcode() {
     console.log('viewMyQrcode')
   },
   toPersonalInfoPage() {
-    Router.push(PagePathes.personalInfo)
+    Router.push(Path.personalInfo)
   },
   // 前往订单页面
   viewOrder(e) {
     console.log(getDataset(e).type)
     Router.push({
-      url: PagePathes.order,
+      url: Path.order,
       query: {
         orderPageType: getDataset(e).type
       }
@@ -136,7 +133,7 @@ Page({
   },
   viewOrderWaitingEvaluate(e) {
     Router.push({
-      url: PagePathes.orderWaitingEvaluate,
+      url: Path.orderWaitingEvaluate,
       query: {
         orderPageType: getDataset(e).type
       }
@@ -144,7 +141,7 @@ Page({
   },
   viewOrderDetail() {
     Router.push({
-      url: PagePathes.orderD
+      url: Path.orderD
     })
   },
   // 售后

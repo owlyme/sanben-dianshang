@@ -1,6 +1,5 @@
 // 全局app实例
 import {boundingClientRect} from '../../utils/sysApis';
-import PagePathes from '../../router/index';
 const App = getApp();
 // 计算购物清单的统计值
 function calcShoppingListTotal(shoppingList) {

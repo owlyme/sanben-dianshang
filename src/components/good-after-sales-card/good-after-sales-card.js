@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis';
+import {Path, Router} from '../../router/index';
 
 Component({
   options: {
@@ -50,7 +49,7 @@ Component({
     },
     viewShopDetail() {
       Router.push({
-        url: PagePathes.shopDetail,
+        url: Path.shopDetail,
         query: {
           id: this.data.info.id
         }

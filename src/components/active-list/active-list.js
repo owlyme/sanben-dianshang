@@ -1,6 +1,6 @@
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 import { getDatasetValue,  } from '../../utils/commom';
-import { Router  } from '../../utils/sysApis';
+
 
 const getType = getDatasetValue('type')
 Component({
@@ -87,10 +87,10 @@ Component({
       console.log(e, type)
       switch(type){
       case 'signIn': 
-        Router.push(PagePathes.signIn)
+        Router.push(Path.signIn)
         break;
       case 'coupon': 
-        Router.push(PagePathes.coupon)
+        Router.push(Path.coupon)
         break;
       default: 
         return   

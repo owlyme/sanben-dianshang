@@ -1,6 +1,4 @@
-// 全局app实例
-import { Router } from '../../utils/sysApis'
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 import { getDataset } from '../../utils/commom'
 
 Page({
@@ -56,7 +54,7 @@ Page({
     console.log('编辑收货地址')
     //编辑收货地址
     Router.push({
-      url: PagePathes.editorAddress,
+      url: Path.editorAddress,
       query: getDataset(e).info
     })
   
@@ -67,7 +65,7 @@ Page({
 
     //添加收货地址
     Router.push({
-      url: PagePathes.editorAddress
+      url: Path.editorAddress
     })
   },
 

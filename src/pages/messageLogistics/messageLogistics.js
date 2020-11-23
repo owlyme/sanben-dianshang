@@ -1,5 +1,3 @@
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis';
 
 const App = getApp();
 Page({

@@ -1,7 +1,7 @@
 // 全局app实例
 import { getNodeValue } from '../../utils/commom';
-import PagePathes from '../../router/index'
-import { Toast, Router } from '../../utils/sysApis';
+import {Path, Router} from '../../router/index';
+import { Toast } from '../../utils/sysApis';
 import Base from '../../utils/base';
 import {userLogin, getValidateCode} from '../../api/login';
 let getPhoneNumber = getNodeValue('phone');
@@ -71,7 +71,7 @@ Page({
         loginBtnDisabled: true
       });
       userLogin(formData);
-      Router.refresh(PagePathes.index);
+      Router.refresh(Path.index);
 
       this.setData({
         loginBtnDisabled: false

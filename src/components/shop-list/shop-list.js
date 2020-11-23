@@ -1,6 +1,5 @@
 import { getDatasetValue } from '../../utils/commom';
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 
 const getGoodData = getDatasetValue('good');
 Component({
@@ -83,7 +82,7 @@ Component({
       let {shop} = e.currentTarget.dataset
 
       Router.push({
-        url: PagePathes.shopIndex
+        url: Path.shopIndex
       })
     },
     onClick(e) {
@@ -95,14 +94,14 @@ Component({
       console.log('onProductClick', e);
       let {shop, product} = e.currentTarget.dataset
       Router.push({
-        url: PagePathes.goodDetail
+        url: Path.goodDetail
       })
     },
     toShopList(e) {
       console.log('toShopList', e);
       let {shop} = e.currentTarget.dataset
       Router.push({
-        url: PagePathes.shopAll
+        url: Path.shopAll
       })
     }
   }

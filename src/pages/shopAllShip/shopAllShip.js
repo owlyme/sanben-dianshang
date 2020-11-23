@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import { Router } from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 // 全局app实例
 const App = getApp();
 let allShop = [
@@ -132,7 +131,7 @@ Page({
 
   shopItemClick(e) {
     console.log('shopItemClick', e)
-    Router.push(PagePathes.shopDetail) 
+    Router.push(Path.shopDetail) 
   },
   customData: {}
 });

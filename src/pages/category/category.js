@@ -1,5 +1,5 @@
-import  PagePathes  from '../../router/index'
-import { Toast, boundingClientRect, Router } from '../../utils/sysApis';
+import  Path  from '../../router/index'
+import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
 Page({
   data: {
@@ -185,7 +185,7 @@ Page({
   },
   topSearchPage(e) {
     Router.push({
-      url: PagePathes.search,
+      url: Path.search,
       query: {
        
       }
@@ -221,8 +221,8 @@ Page({
   onGoodClick(e) {
     console.log('onGoodClick',e)
     let detail = e.detail
-    console.log(PagePathes, PagePathes.categoryGoodList)
-    Router.push(PagePathes.categoryGoodList)
+    console.log(Path, Path.categoryGoodList)
+    Router.push(Path.categoryGoodList)
   }
 
 });

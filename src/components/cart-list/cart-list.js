@@ -1,5 +1,4 @@
-import PagePathes from '../../router/index'
-import {Router} from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 import { getDataset } from '../../utils/commom';
 
 function checkedAll(data, checked) {
@@ -191,7 +190,7 @@ Component({
     // 预览商店首页
     viewShop() {
       Router.push({
-        url: PagePathes.shopIndex
+        url: Path.shopIndex
       })
     },
     // 预览商店列表
@@ -199,7 +198,7 @@ Component({
       let dataset = getDataset(e)
       console.log('viewShop', dataset)
       Router.push({
-        url: PagePathes.shopAll
+        url: Path.shopAll
       })
     },
     // 选择优惠券
@@ -273,7 +272,7 @@ Component({
       if(createCurrentCoverIndex(shopIndex,orderIndex) === this.data.activeCoverIndex) return;
       console.log('reselect', e)
       Router.push({
-        url: PagePathes.goodDetail
+        url: Path.goodDetail
       })
 
       this.setData({

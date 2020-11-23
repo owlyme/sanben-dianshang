@@ -1,6 +1,5 @@
 // 全局app实例
-import PagePathes from '../../router/index'
-import {Router} from '../../utils/sysApis'
+import {Path, Router} from '../../router/index';
 import { debounce, isScrollUp } from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
@@ -46,7 +45,7 @@ Page({
     // Do something when page scroll
   },
   handleTeam() {
-    Router.push(PagePathes.distributionTeam)
+    Router.push(Path.distributionTeam)
   },
   // 滚动操作
   scrollToUpper() {

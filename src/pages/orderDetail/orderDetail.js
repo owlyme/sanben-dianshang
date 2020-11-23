@@ -1,7 +1,6 @@
 // 全局app实例
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 import { getDataset } from '../../utils/commom';
-import { Router } from '../../utils/sysApis';
 import { statusTextMap, statusIconMap } from '../../app.const'
 const Order = {
   shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
@@ -119,7 +118,7 @@ Page({
   },
   toLogisticsDetails() {
     Router.push({
-      url: PagePathes.logisticsDetails,
+      url: Path.logisticsDetails,
       query: {
         id: 1
       }

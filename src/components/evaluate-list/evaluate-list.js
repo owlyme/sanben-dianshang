@@ -1,4 +1,4 @@
-import PagePathes from '../../router/index'
+import {Path, Router} from '../../router/index';
 import { getDatasetValue } from '../../utils/commom';
 const getId = getDatasetValue('id')
 const getItem = getDatasetValue('item')
