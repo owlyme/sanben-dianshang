@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/messageNotifications/messageNotifications",
     "pages/messageActive/messageActive",
     "pages/messageLogistics/messageLogistics",
@@ -9,7 +10,6 @@
     "pages/merchant/index/index",
     "pages/certification/certification",
     "pages/verifyBankPhoneNumber/verifyBankPhoneNumber",
-    "pages/index/index",
     "pages/login/login",
     "pages/orderWaitingEvaluate/orderWaitingEvaluate",
     "pages/order/order",

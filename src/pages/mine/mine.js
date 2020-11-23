@@ -40,12 +40,12 @@ Page({
         text: '关于我们'
       }
       ,{
-        path: 'authentication',
+        path: PagePathes.certification,
         pic: '/images/mine/services/6.png',
         text: '实名认证'
       }
       ,{
-        path: 'merchant',
+        path: PagePathes.merchantIndex,
         pic: '/images/mine/services/7.png',
         text: '成为商家'
       }
