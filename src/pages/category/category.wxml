@@ -51,7 +51,7 @@
             <view class="good-list-b">
               <view 
                 wx:for="{{goodList}}"
-                wx:index="index">
+                wx:key="index">
                 <view class="title-contianer-b">
                   <title-contianer>
                     <view class="">{{item.title}}</view>

@@ -20,6 +20,7 @@
   <view class="search-bar flex" wx:elif="{{type === 'indexPage'}}">
     <view class="current-position"
      bind:tap="onAddressClick">
+      <icon-font size="{{12}}" gutter="{{1}}" color="#fff" name="icondingwei-hongse2" />
       {{address}}
     </view>
 
@@ -74,12 +75,6 @@
 
   <view class="search-placeholder" wx:elif="{{type === 'placeholder'}}">
     <view class="user-action-part flex-middle flex-b" >
-    <!-- <input
-      value="{{keyword}}"
-      data-keyword="keyword"
-      placeholder="{{placeholder}}"
-      bindinput="onInputValueChange"
-      /> -->
       <view class="placeholder" wx:if="{{!value.length}}">{{placeholder}}</view>
       <view class="searched-value" wx:elif="{{value.length}}">{{value}}</view>
 

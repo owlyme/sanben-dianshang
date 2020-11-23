@@ -1,5 +1,5 @@
 <view class="recommend-item flex-wrap flex">
-  <block wx:for="{{goodList}}">
+  <block wx:for="{{goodList}}" wx:key="index">
     <view class="item" bind:tap="viewGoodDetail">
       <view class="item-image">
         <image class="image" src="{{item.pic}}"></image>

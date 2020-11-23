@@ -137,5 +137,25 @@ Page({
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
-  customData: {}
+  scrollToLower() {
+
+  },
+  scrollToUpper() {
+
+  },
+  onScroll() {
+
+  },
+  toMessageLogistics() {
+    Router.push(Path.messageLogistics)
+  },
+  toMyWallet() {
+    Router.push(Path.myWallet)
+  },
+  toCoupon() {
+    Router.push(Path.coupon)
+  },
+  toMessageNotifications() {
+    Router.push(Path.messageNotifications)
+  }
 });

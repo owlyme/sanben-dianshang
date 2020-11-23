@@ -14,7 +14,7 @@
       <view 
         class="list-b-item gutter-container {{activeIndex === index ? 'active' : ''}}"
         wx:for="{{goodList}}"
-        wx:key="{{index}}" 
+        wx:key="index"
         data-item="{{item}}"
         data-index="{{index}}" 
         bind:longtap="showCover"

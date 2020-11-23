@@ -12,7 +12,7 @@
       提交
       </view>
     </view>
-    <view wx:for="{{goodList}}" class="gutter-container">
+    <view wx:for="{{goodList}}" wx:key="index" class="gutter-container">
       <card>
         <view >
           <good-card-info

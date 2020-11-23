@@ -1,7 +1,8 @@
 <view class="flex">
   <view class="good-feature"
     wx:for="{{list}}"
-    wx:index="{{index}}">
+     wx:key="index"
+   >
       {{item}}
     </view>
 </view>

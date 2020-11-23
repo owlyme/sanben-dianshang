@@ -1,6 +1,6 @@
 import { getInputValue, debounce } from '../../utils/commom';
 import { addKeywordsHistory } from '../../utils/localStorage';
-
+import {Path, Router} from '../../router/index';
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -88,7 +88,7 @@ Component({
     },
     // 点击查看信息
     onMessageClick(e) {
-      console.log('点击查看信息', e)
+      Router.push(Path.message)
     },
     // 获取
     toGetResult() {
