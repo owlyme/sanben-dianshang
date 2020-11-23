@@ -5,7 +5,6 @@ import { getDataset, throttle } from '../../utils/commom'
 
 const App = getApp();
 
-
 Page({
   data: {
     offsetTop: App.globalData.navHeight,
