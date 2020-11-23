@@ -172,13 +172,9 @@ Page({
       
       this.customData.allGoodInCartTypes = getAllGood(OrderList).length;
     }, 1);
+    
   },
-  getAddress() {
-    let = address;
-    Router.getParam
-
-    this.setData({address})
-  },
+  
   onReady() {
     // Do something when page ready.
     this.getDom();
@@ -192,7 +188,20 @@ Page({
     });
   },
   onShow() {
+    this.getAddress()
     // Do something when page show.
+  },
+  getAddress() {
+    // consignee: '李四',
+    // phone: '12345678915',
+    // area:'北京市海淀区',
+    // address: '苏家坨乡前沙涧村15号',
+    // isDefault: 0,
+    // id: 2
+    const {area, address} = Router.getParams()
+    if (area) {
+      this.setData({address: area+ address})
+    }
   },
   onHide() {
     // Do something when page hide.
