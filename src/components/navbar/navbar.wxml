@@ -1,30 +1,15 @@
 <!--components/navbar/index.wxml-->
 <view class="navbar custom-class"
  style='height:{{navHeight}}px;background:{{bgColor}}'>
-  <!-- <view wx:if="{{showNav}}"
-  class="navbar-action-wrap navbar-action-group row item-center"
-  style='top:{{navTop}}px;background-color:rgba(255,255,255,.6)'>
-      <view name="back"
-        color="{{iconColor}}"
-        size="15px" block="{{true}}"
-        class="navbar-action_item"
-        bind:click="_navBack">1</view>
-      <view
-        name="index"
-        color="{{iconColor}}"
-        size="15px" block="{{true}}"
-        class="navbar-action_item last"
-        bind:click="_toIndex">2
-        </view>
-  </view> -->
   <view class="navbar-action-wrap nav-bar-back"
-  style='top:{{navTop}}px;'
-  wx:if="{{showNav}}"
-  > 
-    <view class="back-box" bind:tap="_navBack" >
-      <!-- <image  class="nav-bar-back-img" src="{{computedTheme.backIcon}}" /> -->
+    style='top:{{navTop}}px;'
+   > 
+    <view class="back-box"
+     bind:tap="_navBack"
+      wx:if="{{showNav}}"  >
       <icon-font name="{{computedTheme.backIcon}}" color="{{computedTheme.backIconColor}}" size="{{20}}" />
     </view>
+    <slot wx:else></slot>
     
     <block wx:if="{{showComponentList}}">
       <view bind:tap="toComponentList">coms</view>

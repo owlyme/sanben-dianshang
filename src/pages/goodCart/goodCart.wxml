@@ -1,7 +1,7 @@
 <view class="xxx-page">
   <page-container
     pageName="购物车"
-    showNav="{{false}}"
+    showNav="{{showNav}}"
     bgColor="none"
     iconColor="none"
     theme="dark"
@@ -20,7 +20,7 @@
          
         </view>
         <view class="edit" bind:tap="toEdit">
-          {{isEdit ? '完成' : "编辑"}}
+          <button-text type="warn" height="{{20}}" fontSize="{{14}}">{{isEdit ? '完成' : "编辑"}}</button-text>
         </view>
       </view>
       <!-- 列表 -->
@@ -80,7 +80,7 @@
         </view>
 
         <view class="flex">
-          <view  hidden="{{isEdit}}" class="btn submit" bind:tap="submit">结算下单({{shoppingListTotal.number}})</view>
+          <view  hidden="{{isEdit}}" class="btn submit" bind:tap="submit">结算下单<text hidden="{{!shoppingListTotal.number}}">({{shoppingListTotal.number}})</text></view>
           <view  hidden="{{!isEdit}}" class="btn save" bind:tap="saveGood">移入收藏</view>
           <view  hidden="{{!isEdit}}" class="btn delete" bind:tap="removeGood">删除</view>
         </view>

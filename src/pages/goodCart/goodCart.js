@@ -1,5 +1,5 @@
-// 全局app实例
-import {boundingClientRect} from '../../utils/sysApis';
+import { Router, Path } from '../../router/index';
+import {Toast, boundingClientRect} from '../../utils/sysApis';
 const App = getApp();
 // 计算购物清单的统计值
 function calcShoppingListTotal(shoppingList) {
@@ -7,13 +7,16 @@ function calcShoppingListTotal(shoppingList) {
     price: acc.price + price * number,
     number: acc.number + number,
     goodCategoryNumber: acc.goodCategoryNumber + 1,
-    discountedPrices: 1
+    discountedPrices: acc.discountedPrices
   }), {
     price: 0,
     number: 0,
     goodCategoryNumber: 0,
-    discountedPrices: 1
+    discountedPrices: 0
   });
+}
+function isWaitingReselected(data) {
+  return !data.status 
 }
 // 统一选择状态
 function selectAll(orderList, checked) {
@@ -21,7 +24,7 @@ function selectAll(orderList, checked) {
     item.checked = checked;
     item.shopList.forEach(({orderList})=> {
       orderList.forEach(item=> {
-        item.checked = checked || false;
+        item.checked = !isWaitingReselected(item) && (checked || false);
       });
     });
   });
@@ -31,7 +34,7 @@ function selectAll(orderList, checked) {
 function getAllGood(orderList) {
   return orderList
     .reduce((acc, {shopList}) => [...acc, ...shopList], [])
-    .reduce((acc, {orderList}) => [...acc, ...orderList], []);
+    .reduce((acc, {orderList}) => [...acc, ...orderList.filter(i => !isWaitingReselected(i))], []);
 }
 
 const OrderList = [
@@ -151,6 +154,7 @@ Page({
     isEdit: false,
     address:'213213',
     shoppingList: [],
+    showNav: false,
     shoppingListTotal: {
       price: 0,
       number: 0,
@@ -165,7 +169,8 @@ Page({
       this.setData({
         orderList: OrderList
       })
-      this.customData.allGoodInCartTypes = getAllGood(this.data.orderList).length;
+      
+      this.customData.allGoodInCartTypes = getAllGood(OrderList).length;
     }, 1);
   },
   onReady() {
@@ -214,7 +219,7 @@ Page({
     // 当前是 tab 页时，点击 tab 时触发
   },
   setAddress() {
-
+    Router.push(Path.myAddress)
   },
   toEdit() {
     this.setData({
@@ -283,7 +288,7 @@ Page({
   },
   // 移入收藏
   saveGood(e) {
-   
+   Toast.success('收藏成功')
   },
   // 删除
   removeGood(e) {
@@ -310,8 +315,9 @@ Page({
       orderList,
       shoppingList: [],
       shoppingListTotal,
-      
     })
+
+    Toast.success('删除成功')
   },
   // 优惠明细
   viewDiscountedPrices() {

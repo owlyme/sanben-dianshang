@@ -1,4 +1,5 @@
 import { getInputValue, debounce } from '../../utils/commom';
+import { Toast } from '../../utils/sysApis'
 import { addKeywordsHistory } from '../../utils/localStorage';
 import {Path, Router} from '../../router/index';
 Component({
@@ -80,6 +81,7 @@ Component({
     // 调用扫一扫
     onScanClick(e) {
       console.log('调用扫一扫', e)
+      this.triggerEvent("onScan")
     },
     // 点击搜索
     onSearchBtnClick(e) {

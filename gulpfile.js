@@ -8,7 +8,6 @@ const eslint = require('gulp-eslint');
 const postcss = require('gulp-postcss');
 const pxtoviewport = require('postcss-px-to-viewport');
 
-
 const srcPath = './src/**';
 const distPath = './dist/';
 const wxmlFiles = [`${srcPath}/*.wxml`, `!${srcPath}/_template/*.wxml`];
@@ -20,6 +19,15 @@ const imgFiles = [
   `${srcPath}/images/**/*.{png,jpg,gif,ico}`
 ];
 
+console.log(process.env.NODE_ENV)
+const nodeEnv = process.env.NODE_ENV
+
+if (nodeEnv ==='production' ) {
+  wxmlFiles.push(`!${srcPath}/pageList/*.wxml`, `!${srcPath}/componentList/*.wxml`);
+  lessFiles.push(`!${srcPath}/pageList/*.less`, `!${srcPath}/componentList/*.less`);
+  jsonFiles.push(`!${srcPath}/pageList/*.json`, `!${srcPath}/componentList/*.json`);
+  jsFiles.push(`!${srcPath}/pageList/*.js`, `!${srcPath}/componentList/*.js`); 
+}
 
 /* 清除dist目录 */
 gulp.task('clean', done => {

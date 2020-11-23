@@ -367,16 +367,18 @@ Page({
   // 客服
   toService(e) {
     console.log('viewShopIndex', e);
-    Router.push({
-      url: Path.shopIndex
-    })
+    Toast.show("客服下班了")
+    // Router.push({
+    //   url: Path.shopIndex
+    // })
   },
   // 收藏 
   save(e) {
     console.log('viewShopIndex', e);
-    Router.push({
-      url: Path.shopIndex
-    })
+    Toast.success("收藏成功")
+    // Router.push({
+    //   url: Path.myCollection
+    // })
   },
   // 
   onCloseDialog(e) {

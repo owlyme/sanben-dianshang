@@ -3,12 +3,21 @@
   useThemeBg="{{true}}"
   pageName="首页"
   backgroundFixed='{{false}}'
->
+  showNav="{{false}}"
+> 
+  <view  slot="top" class="current-position"
+    bind:tap="onAddressClick">
+    <icon-font size="{{12}}" gutter="{{1}}" color="#fff" name="icondingwei-hongse2" />
+    {{customPosition}}
+  </view>
+
     <view class="index-page">
       <view id="search-b" class="search-b sticky"
       style="top: {{stickySearchInputOffsetTop}}px;">
         <search-input
           placeholder="搜索我的订单"
+          bind:onScan="onScan"
+          bind:onSearchBtn="onSearchBtn"
           type="indexPage"
           bind:onChange="onKeyWordChange" />
       </view>

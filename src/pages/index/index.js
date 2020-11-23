@@ -1,4 +1,5 @@
 // 全局app实例
+import { Router, Path } from '../../router/index';
 import { debounce, isScrollUp, throttle} from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
@@ -20,6 +21,7 @@ Page({
     interval: 3000,
     duration: 500,
     scrollViewHeight: 400,
+    customPosition: '杭州', // 用户当前位置
     bannerList: [
       'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
@@ -130,7 +132,7 @@ Page({
         sub: '琳琅满目',
       }
     ],
-    goodListType: '',
+    goodListType: goodListTypes[0],
     categoryList: [
       { type: '1', name: '2222'},
       { type: '1', name: '23'},
@@ -206,6 +208,9 @@ Page({
   onPullDownRefresh() {
     // Do something when pull down.
   },
+  onAddressClick() {
+    console.log('onAddressClick')
+  }, 
   onReachBottom() {
     // Do something when page reach bottom.
     console.log('Do something when page reach bottom.')
@@ -216,6 +221,34 @@ Page({
   onPageScroll (e) { 
     this.onPageScrollthrottle(e.scrollTop)
   },
+
+  // 调用扫一扫
+  onScan(e) {
+    console.log('调用扫一扫', e)
+    wx.scanCode({
+      success: (res) => {
+        let {result, scanType} = res
+        switch(scanType) {
+          case 'ENV_13': 
+            console.log('scanType', scanType, result)
+            break;
+          case 'QR_CODE': 
+            console.log('scanType', scanType, result)
+            break;
+        }
+        Toast.success('扫一扫成功')
+      },
+      fail: () => {
+        Toast.show("扫码失败")
+      }
+    })
+  },
+  // 点击搜索
+  onSearchBtn(e) {
+    console.log('点击搜索', e)
+    Router.push(Path.search)
+  },
+
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },

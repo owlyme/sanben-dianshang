@@ -11,8 +11,8 @@
     <view>
 		<view class="myaddress">
 			<view wx:for="{{addressList}}" wx:key="index" class="order_address">
-				<view class="address_box" bind:tap="onsetAddress">
-					<view >
+				<view class="address_box">
+					<view data-info="{{item}}" catch:tap="selectedAddress">
 						<view class="center">
 							<view class="name">
 								<view class="moren" wx:if="{{item.isDefault == 1}}">
@@ -24,10 +24,10 @@
 							<view class="address_name">{{item.area}} {{item.address}}</view>
 						</view>
 					</view>
+
 					<view class="caozuo" data-info="{{item}}" catch:tap="editAddress">
             		<icon-font name="iconbianjidizhi1" color="#FF3232"/>
 					</view>
-				
 			</view>
 		</view>
 	</view>

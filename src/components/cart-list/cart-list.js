@@ -5,15 +5,17 @@ function checkedAll(data, checked) {
   data.checked = checked;
   data.shopList.forEach(shop => {
     shop.orderList.forEach(order => {
-      order.checked = checked
+      order.checked = !isWaitingReselected(order) && checked
     })
   }
   );
   return data
 }
-
+function isWaitingReselected(data) {
+  return !data.status 
+}
 function getAllGood(arr) {
-  return arr.reduce((acc, shop) => [...acc, ...shop.orderList], [])
+  return arr.reduce((acc, shop) => [...acc, ...shop.orderList.filter(i => !isWaitingReselected(i))], [])
 }
 const  createCurrentCoverIndex = (shopIndex, orderIndex) => shopIndex + '-' + orderIndex
 
@@ -82,12 +84,6 @@ Component({
         ]
       }
     }
-  },
-  observers: {
-    // goodList: function() {
-    //   this.init()
-    // }
-    
   },
   data: {
     show: false,
@@ -234,11 +230,14 @@ Component({
     // 单选
     selectedSingle(e) {
       let dataset = getDataset(e)
-      console.log('selectedSingle', dataset)
-      let data = this.data.data
       let {shop, order, shopIndex, orderIndex} = getDataset(e)
+      console.log('selectedSingle', dataset)
+      if (isWaitingReselected(order)) return
+      let data = this.data.data
       let checked = data.shopList[shopIndex].orderList[orderIndex].checked || false
       data.shopList[shopIndex].orderList[orderIndex].checked = !checked
+
+
 
       data.checked = getAllGood(data.shopList).every((i) => i.checked)
       
@@ -286,6 +285,7 @@ Component({
       this.setData({
         activeCoverIndex: ''
       })
+      this.triggerEvent('onSave', {...saveGood})
     },
     // 删除
     removeGood(e) {
@@ -309,13 +309,13 @@ Component({
     },
    
     onGoodNumberChange(e) {
-      let dataset = getDataset(e)
-      console.log('onGoodNumberChange', dataset)
-      let data = this.data.data
-      let {shop, order, shopIndex, orderIndex } = getDataset(e)
-      order.number = e.detail
-      shop.orderList[orderIndex] = order
-      data.shopList[shopIndex] = shop
+      let dataset = getDataset(e);
+      console.log('onGoodNumberChange', dataset);
+      let data = this.data.data;
+      let {shop, order, shopIndex, orderIndex } = getDataset(e);
+      order.number = e.detail;
+      shop.orderList[orderIndex] = order;
+      data.shopList[shopIndex] = shop;
       this.setData({
         data
       })
@@ -327,9 +327,11 @@ Component({
       let dataset = getDataset(e)
       console.log('reselect', dataset)
       let data = this.data.data
-     
-     
+      Router.push({
+        url: Path.goodDetail
+      })
     },
+
     // 商品的任一属性变化时
     onChange(order, checked, actionType) {
       let orderList = Array.isArray(order) ? order : [order]

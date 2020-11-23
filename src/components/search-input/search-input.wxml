@@ -18,15 +18,15 @@
   </view>
 
   <view class="search-bar flex" wx:elif="{{type === 'indexPage'}}">
-    <view class="current-position"
+    <!-- <view class="current-position"
      bind:tap="onAddressClick">
       <icon-font size="{{12}}" gutter="{{1}}" color="#fff" name="icondingwei-hongse2" />
       {{address}}
-    </view>
+    </view> -->
 
     <view class="search-input-index" >
       <view class="user-action-part flex-middle flex-b" >
-        <view class="scan-btn" bind:tap="onScanClick">
+        <view class="scan-btn" catch:tap="onScanClick">
           <icon-font name="iconsaoyisao" size="{{20}}" color="#FF5E20"/>
         </view>
         <view
@@ -57,6 +57,7 @@
           data-keyword="keyword"
           placeholder="{{placeholder}}"
           bindinput="onInputValueChange"
+          auto-focus
           />
         
         <view class="clear-keyword"

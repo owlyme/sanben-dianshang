@@ -11,7 +11,7 @@
       backIcon="{{backIcon}}"
       backType="{{backType}}"
       bind:back="back"
-    ></navbar>
+    > <slot name="top"></slot> </navbar>
   </view>
   <view class="page-contanier"
   style="margin-top: {{navHeight}}px">

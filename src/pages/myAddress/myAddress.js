@@ -50,6 +50,12 @@ Page({
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
   },
+  // 选择当前地址
+  selectedAddress(e) {
+    Router.back(1, {
+      ...getDataset(e).info
+    })
+  },
   editAddress(e) {
     console.log('编辑收货地址')
     //编辑收货地址
@@ -57,7 +63,6 @@ Page({
       url: Path.editorAddress,
       query: getDataset(e).info
     })
-  
   },
 
   addAddress() {
