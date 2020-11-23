@@ -173,6 +173,12 @@ Page({
       this.customData.allGoodInCartTypes = getAllGood(OrderList).length;
     }, 1);
   },
+  getAddress() {
+    let = address;
+    Router.getParam
+
+    this.setData({address})
+  },
   onReady() {
     // Do something when page ready.
     this.getDom();
