@@ -2,7 +2,6 @@
   <!-- content -->
   <page-container
   theme="dark"
-  useThemeBg="{{true}}"
   pageName="个人资料"
   useThemeBg="{{false}}"
   bgColor="none">

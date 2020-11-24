@@ -1,14 +1,12 @@
 <page-container
-    pageName="评价成功"
+    pageName="{{pageName}}"
     showNav="{{true}}"
-    bgColor="none"
     iconColor="none"
     theme="light"
-    useThemeBg="{{true}}"
+    useThemeBg="{{false}}"
     >
     <view class="payment-page">
-    
-      <view class="top-b">
+      <view class="top-b theme-bg">
         <view class="icon-b">
           <icon-font name="iconpingjiachenggong1" size="48" color="#fff"/>
         </view>
@@ -21,13 +19,20 @@
           fontSize="{{12}}"
           bind:tap="backToIndex" >返回首页</button-text>
           <button-text type="ghost"
+          wx:if="{{pageType==='evaluate'}}"
           bind:tap="back" 
           fontSize="{{12}}"
           >查看评价</button-text>
-        </view>
 
+          <button-text type="ghost"
+          wx:elif="{{pageType==='pay'}}"
+          bind:tap="viewOrder" 
+          fontSize="{{12}}"
+          >查看订单</button-text>
+        </view>
       </view>
-    
+      <image src="/images/wave.png" class="theme-wave"/>
+
       <view class="payment-card-b">
         <part-title title="热买推荐"></part-title>
         <view class="payment-list "  >

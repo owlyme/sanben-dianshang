@@ -180,8 +180,8 @@ const handle = {
     this.ctx.save();
     this.ctx.beginPath();
     this.ctx.font = fontStyle + ' ' + fontWeight + ' ' + this.toPx(fontSize, true) + 'px ' + fontFamily
+    // this.ctx.font = `${this.toPx(fontSize, true)}px ${fontFamily}`
     this.ctx.setGlobalAlpha(opacity);
-    // this.ctx.setFontSize(this.toPx(fontSize));
     this.ctx.setFillStyle(color);
     this.ctx.setTextBaseline(baseLine);
     this.ctx.setTextAlign(textAlign);

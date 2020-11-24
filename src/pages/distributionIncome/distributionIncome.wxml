@@ -1,56 +1,52 @@
-    <view class="xxx-page"><page-container
+<page-container
     pageName="我的收益"
     showNav="{{true}}"
-    bgColor="none"
     iconColor="none"
     theme="light"
-    useThemeBg="{{true}}"
+    useThemeBg="{{false}}"
     >
-
-     	<view class="wallet">
+  <view class="wallet">
 		<!-- 余额头 -->
-		<view class="wallet-head">
-	
+		<view class="wallet-head theme-bg">
 			<!-- 我的收益 -->
 			<view class="earnings ">
 				<view class="title flex-cm">我的收益</view>
 				<view class="money flex-cm">
           <money-text 
-          number="{{3620}}" 
-          color="#fff" 
-          moneySize="{{24}}" 
-          numberSize="{{32}}" 
-          decimalPartSize="{{24}}"/>
+            number="{{3620}}" 
+            color="#fff" 
+            moneySize="{{24}}" 
+            numberSize="{{32}}" 
+            decimalPartSize="{{24}}" />
 				</view>
-			</view>
-			
-		</view>
+      </view>
+    </view>
+    <image src="/images/wave.png" class="theme-wave"/>
+    
 		<view class="earnings-details">
 			<view class="title">
         <title-contianer >收入明细</title-contianer>
       </view>
+
       <view class="scorll-part">
-       <scroll-view
+        <scroll-view
           id="scroll-view"
           scroll-y="true"
           style="height: {{scrollViewHeight}}px;"
           bindscrolltolower="scrollToLower"
           bindscrolltoupper="scrollToUpper"
-          bindscroll="onScroll"
-          >
-        <block wx:for="{{16}}">
-          <view class="balance-box">
-            <view class="left">
-              <view class="reason">二级分销提成</view>
-              <view class="date">2022-10-19 15：27：10</view>
+          bindscroll="onScroll">
+          <block wx:for="{{16}}">
+            <view class="balance-box">
+              <view class="left">
+                <view class="reason">二级分销提成</view>
+                <view class="date">2022-10-19 15：27：10</view>
+              </view>
+              <view class="right" style="color:red">+200</view>
             </view>
-            <view class="right" style="color:red">+200</view>
-          </view>
-        </block>
-      </scroll-view>
+          </block>
+        </scroll-view>
       </view>
 		</view>
 	</view>
-  </page-container>
-
-</view>
+</page-container>

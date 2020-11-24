@@ -15,7 +15,8 @@ Page({
         name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
         price: '200.00',
         saledNumber: 200,
-        tags: ['hao', 'bucuo']
+        tags: ['hao', 'bucuo'],
+        shopAddress: '杭州杭州杭州杭州'
       },
       {
         id: 0,
@@ -24,7 +25,8 @@ Page({
         price: '200.00',
         saledNumber: 200,
         active: '双十一',
-        tags: ['hao', 'bucuo']
+        tags: ['hao', 'bucuo'],
+        shopAddress: '杭州杭州杭州杭州'
       },
       {
         id: 0,
@@ -99,7 +101,7 @@ Page({
         tags: ['hao', 'bucuo']
       }
     ],
-    pageStyleType: 'standard', // 竖 vertical，  水平 standard
+    pageStyleType: 'vertical', // 竖 vertical，  水平 standard
     tabType: 'first',
     shopList: [
       {
@@ -234,8 +236,11 @@ Page({
 
     tabType = type
     if (type=== 'filter') {
-      showDrawer = true
-      showNav =  false
+      this.setData({
+        showDrawer: true,
+        showNav:  false
+      })
+      return 
     } else if (type=== 'shop') {
       tabType = type
       // Router.push(Path.mallShop)
@@ -266,6 +271,9 @@ Page({
 
   toCartPage(e) {
     console.log('toCartPage', e)
+    Router.push({
+      url: Path.goodCart
+    })
   },
 
   customData: {}

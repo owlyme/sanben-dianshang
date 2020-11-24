@@ -1,0 +1,96 @@
+page{
+  background: #F4F5F6;
+}
+
+.goods-detail {
+  padding-bottom: 23px;
+  // 搜索
+  .goods-head {
+    width: 100%;
+    padding-bottom: 6px;
+    position: fixed;
+    // top: 0;
+    left: 0;
+    z-index: 10;
+    // 
+    text {
+      margin-left: 24px;
+    }
+    .search {
+      padding: 0 16px;
+      padding-bottom: 6px;
+      background-color: #F4F5F6 ;
+    }
+  }
+
+  .operation {
+    width: 750rpx;
+    height: 96rpx;
+    background: #FFFFFF;
+    box-shadow: 0rpx 0rpx 4rpx 0rpx rgba(153, 153, 153, 0.2);
+    border-radius: 16rpx 16rpx 0rpx 0rpx;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0px 32rpx 0 40rpx;
+    box-sizing: border-box;
+    z-index: 5;
+    .store,.serve,.collect{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .iconfont{
+        font-size: 40rpx;
+      }
+      view{
+        font-size: 20rpx;
+        color: #333333;
+      }
+    }
+    .btns{
+      width: 400rpx;
+      height: 72rpx;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 28rpx;
+      font-weight: 600;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      .addcart{
+        width: 50%;
+        line-height: 72rpx;
+        background: #FF5E20;
+        text-align: center;
+        border-radius: 36rpx 0px 0px 36rpx;
+        
+        
+      }
+      .dingjin{
+        width: 50%;
+        line-height: 72rpx;
+        text-align: center;
+        background: #FF3232;
+        border-radius: 0rpx 36rpx 36rpx 0rpx;
+        position: relative;
+        image{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20rpx;
+          height: 72rpx;
+          z-index: 99;
+        }
+      }
+    }
+  }
+
+  .scroll-view-inner {
+    padding: 16px 0;
+  }
+}

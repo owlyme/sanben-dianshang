@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.13.2",
-	"appid": "",
+	"appid": "wx7451aff9e0a49f10",
 	"projectname": "wx-miniprogram-boilerplate",
 	"isGameTourist": false,
 	"scripts": {

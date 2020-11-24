@@ -1,28 +1,26 @@
 <page-container
     pageName="我的订单"
     showNav="{{true}}"
-    bgColor="none"
     iconColor="none"
     theme="dark"
-    useThemeBg="{{true}}"
+    useThemeBg="{{false}}"
     >
     <view class="order-page">
-      <view class="search-b">
-        <search-input
-          placeholder="搜索我的订单"
-          bind:onChange="onKeyWordChange" />
+      <view class="theme-bg">
+        <view class="search-b">
+          <search-input
+            placeholder="搜索我的订单"
+            bind:onChange="onKeyWordChange" />
+        </view>
+        <view class="tabs-b">
+          <tab-bar 
+          activeIndex="{{activeIndex}}"
+          tabs="{{orderType}}"
+          bind:onChange="onSeleteType" />
+        </view>
       </view>
-      <view class="tabs-b">
-        <tab-bar 
-        activeIndex="{{activeIndex}}"
-        tabs="{{orderType}}"
-        bind:onChange="onSeleteType" />
-      </view>
-    
       <view class="order-card-b" style="height: {{scrollViewHeight}}px;">
-        <view class="image-bg-2"
-          wx:if="{{pageBg2Visible}}"
-          >
+        <view class="image-bg-2" wx:if="{{pageBg2Visible}}">
           <image src="/images/page-bg-2.png" />
         </view>
 

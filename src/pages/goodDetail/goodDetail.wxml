@@ -1,4 +1,4 @@
-<view class="xxx-page" style="overflow:{{pageOverHidden ? 'hidden' : 'auto'}}; height: {{pageOverHidden ? '100vh' : 'unset'}};">
+<view class="xxx-page" >
 <page-container
     pageName="商品详情"
     showNav="{{true}}"
@@ -6,8 +6,6 @@
     iconColor="none"
     theme="dark"
     useThemeBg="{{false}}"
-    backType="{{backType}}"
-    bind:back="evaluatesBack"
     >
 
     <view class="goods-detail" >
@@ -18,7 +16,9 @@
             <search-input bind:tap="toSearchPage" type="placeholder" placeholder="搜索商品" />
           </view>
           <view >
-          <icon-font name="iconfenxiang1" size="{{20}}" color="#333333" />
+          <share-com>
+            <icon-font name="iconfenxiang1" size="{{20}}" color="#333333" />
+          </share-com>
           </view>
           <view  bind:tap="toGoodCartPage">
           <icon-font name="icongouwuche" size="{{20}}" color="#333333"/>
@@ -143,19 +143,6 @@
             />
         </view>
       </view>
-      <!-- 全部评论 -->
-      <view class="evaluate-list transition" 
-      style="left: {{evaluateListLeft}}px">
-        <scroll-view scroll-y="true" 
-         bindscrolltolower="scrollToLower"
-          bindscrolltoupper="scrollToUpper"
-          style="height: {{evaluateListHeight}}px">
-          <view class="scroll-view-inner">
-            <evaluate-list list="{{evaluates.list}}" type="more"/>
-          </view>
-        </scroll-view>
-      </view>
-
       
       <!-- 底部操作栏 -->
       <view class="operation"  id="operation">
@@ -197,11 +184,11 @@
 
 
   <half-screen-dialog 
-  header="" 
-  show="{{showModelSelectDialog}}" 
-  bind:onClose="onCloseDialog" 
-  hiddenBtn="{{true}}"
-  >
+    header="" 
+    show="{{showModelSelectDialog}}" 
+    bind:onClose="onCloseDialog" 
+    hiddenBtn="{{true}}"
+    >
       <view style="margin-top: -96rpx">
         <model-select-card 
         types="{{modelCardType}}"

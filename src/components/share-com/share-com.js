@@ -1,3 +1,4 @@
+import { Router } from "../../router/index"
 import { getDataset } from '../../utils/commom';
 import Poster from '../miniprogram_dist/poster/poster.js';
 
@@ -23,6 +24,7 @@ Component({
   data: {
     show: false,
     list: [],
+    postImg: '',
     posterConfig: {
       debug: false,
     }
@@ -147,33 +149,101 @@ Component({
       }
      
     },
+    createMulitLine(args) {
+      // 小写 0.53
+      // 大写 0.7029
+      // 汉字 1
+      // 数字 0.585
+      let {width, ...others} = args
+      let p = {
+        ...others
+      }
+      width = width / 2
 
+      let fontSize = others.fontSize / 2
+      let res = ['']
+      let resIndex = 0
+      let textWidth = 0
+      
+      for (let i = 0, len = p.text.length; i < len; i++) {
+        let s = p.text[i]
+        if (textWidth >= width) {
+          resIndex++
+          textWidth = 0
+          res[resIndex] = ''
+        }
 
-    createPoster() {      
+        if(/[A-Z]/.test(s)) {
+          textWidth += fontSize * 0.7029
+        } else if (/[a-z]/.test(s)) {
+          textWidth += fontSize * 0.54
+        } else if (/\d/.test(s)) {
+          textWidth += fontSize * 0.585
+        } else {
+          textWidth += fontSize
+        }
+        res[resIndex] += s
+      }
+      let arr = res.map((i, index) =>({
+        ...p,
+        y: p.y + fontSize * 2.2 * ( index + 1),
+        text: i
+      }))
+
+      return arr
+    },
+
+    createPoster() {
       this.setData({ posterConfig: {
-        width: 700,
-        height: 500,
+        width: 224 * 2,
+        height: 400 * 2,
         debug: false,
-        // backgroundColor	String	否	画布颜色
-        // debug	Boolean	否	false隐藏canvas，true显示canvas，默认false
-        // pixelRatio	Number	否	1为一般，值越大越清晰
+        backgroundColor: "#ffffff",
+        pixelRatio: 6,
         // preload	Boolean	否	true：图片资源预下载 默认false
         // hide-loading	Boolean	否	true：隐藏loading 默认false
         // blocks	Object Array（对象数组）	否	看下文
-        texts: [{
-          x: 200,
-          y: 40,
-          text: 'hello',
-          fontSize: 40,
-          color: '#333'
-        }],
+
+        texts: [
+          ...this.createMulitLine({
+            x: 12 * 2,
+            y: 220 * 2,
+            width: 200 * 2,
+            text: 'Adidas阿迪达斯旗舰店官网外套男装新年秋季防风衣加绒运动夹克',
+            fontSize: 12  * 2,
+            color: '#333',
+          }),
+          {
+            x: 12  * 2,
+            y: 268 * 2,
+            text: '￥199.99',
+            fontSize: 16 * 2,
+            color: '#FF402B'
+          },
+          ...this.createMulitLine({
+            x: 92 * 2,
+            y: 324 * 2,
+            text: '长按图片，识别二维码查看商品详情',
+            fontSize: 10 * 2,
+            color: '#999999',
+            width: 100 * 2,
+          }),
+        ],
         images: [
           {
-            x: 200,
-            y: 50,
+            x: 12 * 2,
+            y: 12 * 2,
             url: '/images/no-coupon.png',
-            width: 400,
-            height: 400,
+            width: 200 * 2,
+            height: 200 * 2,
+            borderRadius: 4 * 2
+          },
+          {
+            x: 12 * 2,
+            y: 280 * 2,
+            url: '/images/no-coupon.png',
+            width: 72 * 2,
+            height: 72 * 2,
           }
         ]
       }}, () => {
@@ -184,10 +254,13 @@ Component({
       const { detail } = e;
       console.log(e)
       this.posterUrl = detail
-      wx.previewImage({
-        current: detail,
-        urls: [detail]
+      this.setData({
+        postImg: detail
       })
+      // wx.previewImage({
+      //   current: detail,
+      //   urls: [detail]
+      // })
 
       this.setData({list:  [
         this.actions.wechat,
@@ -208,6 +281,9 @@ Component({
           this.init()
         }
       })
+    },
+    cancel() {
+      this.onCloseDialog()
     }
   }
 

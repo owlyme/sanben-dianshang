@@ -115,7 +115,10 @@ Page({
     let goodList = this.data.goodList
     console.log(goodList)
     Router.push({
-      url: Path.orderEvaluateSuccessful
+      url: Path.payOrEvaluateSuccessful,
+      query: {
+        pageType: "evaluate"
+      }
     })
   },
   customData: {}

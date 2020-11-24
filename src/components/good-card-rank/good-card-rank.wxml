@@ -26,7 +26,7 @@
          <good-feature list="{{goodInfo.tags}}"/>
       </view>
 
-      <view class="shop-address">
+      <view class="shop-address" catch:tap="toShopIndexPage">
         {{goodInfo.shopAddress || ''}} <icon-font name="icondingdan-dianpu-gengduo" size="{{10}}" />
       </view>
     </view>

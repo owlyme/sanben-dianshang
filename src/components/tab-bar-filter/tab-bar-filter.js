@@ -54,12 +54,13 @@ Component({
     onClick(e) {
       let type = getTabType(e);
       let index = getTabIndex(e);
-      
+      let active = this.data.active
       console.log(type, index);
 
       let filterPriceStatus = this.switchFilterPriceStatus(type)
+
       this.setData({
-        active: type,
+        active: type === 'filter' ? active : type,
         filterPriceStatus
       });
       this.triggerEvent('onChange', {type, index, filterPriceStatus});
@@ -67,15 +68,12 @@ Component({
     // 切换价格排序方式
     switchFilterPriceStatus(type) {
       let filterPriceStatus = this.data.filterPriceStatus
-
       if (type === 'price') {
         if (!filterPriceStatus || filterPriceStatus === 'upper') {
           filterPriceStatus = 'lower' // 从小到大排
         } else {
           filterPriceStatus = 'upper' // 从大到小排
         }
-
-        
         console.log(filterPriceStatus)
       }
       return filterPriceStatus

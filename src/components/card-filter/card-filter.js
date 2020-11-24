@@ -1,4 +1,3 @@
-import {Path, Router} from '../../router/index';
 import { getDatasetValue, getNodeValue } from '../../utils/commom';
 const getConditions = getDatasetValue('condition')
 const getMiniPrice= getNodeValue('miniPrice')
@@ -13,7 +12,6 @@ Component({
     multipleSlots: false // 在组件定义时的选项中启用多slot支持
   },
   behaviors: [],
-
   properties: {
     stickyOffsetTop: {
       type: [Number, String],
@@ -73,7 +71,7 @@ Component({
     }
   },
   data: {
-    scrollViewHeight: App.globalData.windowHeight,
+    scrollViewHeight: App.globalData.screenHeight,
     btnHeight: 60,
     conditionList: [],
     selectedMap: {},

@@ -10,7 +10,7 @@ Component({
     // 星星评分的属性设置
     rate: {
       type: Number,
-      value: 0
+      value: 0 
     },
     // 由用户来定义星星的大小和文字的大小
     starSize:{

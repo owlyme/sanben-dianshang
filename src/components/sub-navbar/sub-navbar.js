@@ -52,11 +52,8 @@ Component({
           active: name
         });
       }, 500) 
-      
-      console.log(name, index);
+
       this.triggerEvent('onChange', {name, index});
     }
-
   }
-
 });

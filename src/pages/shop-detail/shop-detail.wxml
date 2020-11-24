@@ -2,13 +2,13 @@
   <page-container
     pageName="{{shopName}}"
     showNav="{{true}}"
-    bgColor="none"
+    bgColor="#ffffff"
     iconColor="none"
-    theme="light"
+    theme="dark"
     useThemeBg="{{false}}"
     >
 
-    <view class="sticky banner-image" style="margin-top: -{{offestTop}}px; top: 0">
+    <view class="banner-image" style="margin-top: 0px; top: 0">
       <image src="{{shopPic}}" />
       <view class="bottom"></view>
     </view>
@@ -35,11 +35,7 @@
             </view>
           </view>
           
-          <view class="right">
-            <icon-font size="14" name="icondingdan-dianpu-gengduo2" color="#999999" />
-          </view>
-
-          <view class="phone" bind:tap="makePhoneCall">
+           <view class="phone" bind:tap="makePhoneCall">
             <icon-font size="24" name="icondianpudianhua" color="#FF3232" />
           </view>
         </view>

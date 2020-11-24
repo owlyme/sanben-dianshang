@@ -14,7 +14,7 @@ Component({
     },
     position: {
       type: String,
-      value: 'right', // left  center
+      value: 'right', // right center bottom 
     },
     style: {
       type: String,

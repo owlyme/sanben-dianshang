@@ -8,29 +8,25 @@
       bind:tap="onClick"
       class=" flex-cm tab-item {{ active === item.type ? 'active' : ''}} {{item.type}}"
       >
-      <view class="tab-name flex flex-middle">
+      <view class="tab-name flex-cm">
         <view wx:if="{{item.type === 'shop'}}" class="shop">
          <icon-font name="icondianpu-weixuanze1" size="14" />
         </view>
 
         <view>{{item.name}}</view>
 
-        <view wx:if="{{item.type === 'price'}}" class="price flex-col flex-b">
-          <!--  -->
-          <!-- iconjiagepaixu-gao-xuanze1 -->
-          <view class="lower" hidden="{{filterPriceStatus === 'lower'}}">
-            <icon-font name="iconjiagepaixu-di-xuanze1" size="4" />
-          </view>
+        <view wx:if="{{item.type === 'price'}}" class="price flex-col flex-cm">
           <view class="upper" hidden="{{filterPriceStatus === 'upper'}}">
             <icon-font name="iconjiagepaixu-gao-xuanze1" size="4" />
           </view>
+          <view class="lower" hidden="{{filterPriceStatus === 'lower'}}">
+            <icon-font name="iconjiagepaixu-di-xuanze1" size="4" />
+          </view>
         </view>
-
          <view wx:if="{{item.type === 'filter'}}" class="shop">
            <icon-font name="iconshaixuan1" size="14" />
         </view>
       </view>
     </view>
   </view>
-
 </view>

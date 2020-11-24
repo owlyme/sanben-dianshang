@@ -14,8 +14,7 @@
             bind:tap="onConditionClick"
             wx:for="{{item.list}}"
             wx:for-item="subItem"
-            wx:index="subIndex"
-            wx:key="{{subItem.id}}"
+            wx:key="subItem"
             data-condition="{{subItem}}"
             data-id="{{subItem.id}}"
             :key="item">{{subItem.name}}</view>

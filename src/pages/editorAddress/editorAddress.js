@@ -3,16 +3,14 @@ import {Router} from '../../router/index';
 import {Modal, Toast }from '../../utils/sysApis'
 import Base from '../../utils/base';
 
-const app = getApp();
- 
-
 Page({
   data: {
     consignee:'',			//收货人
     phone:'',					//手机号
     area:'',					//地区
     address:'',			//详细地址
-    isDefault: 0
+    isDefault: 0,
+    pageType: 'add' // add
   },
   onLoad(options) {
     console.log(options)
@@ -29,15 +27,15 @@ Page({
     })
   },
   back() {
-    // Modal({
-    //   title:'提示',
-    //   content:'你确认放弃修改',
-    //   success: (res) => {
-    //     if(res.confirm){
-    //      console.log("res")
-    //     }
-    //   }
-    // })
+    Modal({
+      title:'提示',
+      content:'你确认放弃修改',
+      success: (res) => {
+        if(res.confirm){
+         console.log("res")
+        }
+      }
+    })
   },
   validatoForm ()  {
     let {consignee,			//收货人
@@ -83,6 +81,14 @@ Page({
       success: (res) => {
         if(res.confirm){
           console.log('res')
+          Toast.success({
+            title: '删除成功',
+            success:() => {
+              setTimeout(() => {
+                Router.back()
+              }, 1000) 
+            }
+          })
         }
       }
     })

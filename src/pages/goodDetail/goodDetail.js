@@ -5,15 +5,10 @@ import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
 const getModelCardType = getDatasetValue('type');
 let onPageScrollthrottle = null;
-const PageBack= 'pageBack'; 
-const ActionBack = 'actionBack'
 Page({
   data: {
-    backType: PageBack,
-    pageOverHidden: false, // 当弹层打开或 评论列表展示时设为 true
     tarbarOffsetTop: App.globalData.navHeight,
     modelCardType: 'add', // add 加入购物车, pay 立 即 购 买
-    evaluateListLeft: 600,
     topPartStyle: {
       bg:'rgba(244, 245, 246, 0)',
       tabbarOpactiy: 0,
@@ -217,21 +212,6 @@ Page({
 
   },
 
-  async getEvaluateListHeight() {
-    let tabbar = await boundingClientRect('#tabbar');
-    let operation = await boundingClientRect('#operation');
-    this.customData = {
-      ...this.customData,
-      tabbarHeight: tabbar.target_height
-    }
-    
-    this.setData(
-      {
-        evaluateListHeight: operation.target_top - tabbar.target_top ,
-        evaluateListLeft: 0
-      }
-    )
-  },
   onShow() {
     // Do something when page show.
   },
@@ -249,6 +229,9 @@ Page({
   },
   onShareAppMessage() {
     // return custom share data when user share.
+  },
+  onShareTimeline() {
+    
   },
   onPageScroll(e) {
     // Do something when page scroll
@@ -344,16 +327,15 @@ Page({
   // 商品评价 查看全部 
   viewMoreEvaluate(e) {
     console.log('viewMoreEvaluate', e);
-    this.getEvaluateListHeight()
-    this.setData({
-      backType: ActionBack,
-      pageOverHidden: true
+
+
+    Router.push({
+      url: Path.goodEvaluate
     })
   },
   evaluatesBack() {
     this.setData({
-      backType: PageBack,
-      evaluateListLeft: 700,
+
       pageOverHidden: false
     })
   },
@@ -402,17 +384,7 @@ Page({
   onPay(e) {
     console.log('onPay',e)
   },
-  // shou
 
-  // 滚动操作
-  scrollToUpper() {
-    // debounce
-    console.log('order list scrollToUpper');
-  },
-  scrollToLower() {
-    // debounce
-    console.log('order list scrollToLower');
-  },
   customData: {
 
   }

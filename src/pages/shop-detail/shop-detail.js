@@ -10,7 +10,7 @@ Page({
     shopName: '杭州西溪银泰店',
     openTime: '09:00~22:00',
     phoneNumber: '13156521718',
-    address: '杭州市西湖区双龙街与崇仁路交叉口',
+    address: '杭州市西湖区双龙街与崇仁路交叉口杭州市西湖区双龙街与崇仁路交叉口杭州市西湖区双龙街与崇仁路交叉口',
     picList: [
       'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',

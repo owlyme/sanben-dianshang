@@ -155,6 +155,7 @@ Page({
     address:'213213',
     shoppingList: [],
     showNav: false,
+    backType: 'action',
     shoppingListTotal: {
       price: 0,
       number: 0,
@@ -162,7 +163,8 @@ Page({
       discountedPrices: 1
     },
     goodTypeInCart: 0, // 购物车里所有的商品种类
-    orderList: []
+    orderList: [],
+   
   },
   onLoad() {
     setTimeout(() => {
@@ -202,6 +204,13 @@ Page({
     if (area) {
       this.setData({address: area+ address})
     }
+  },
+  navBack() {
+    let len = Router.history.length
+    if (len > 1) {
+      Router.push(Router.history[len-2])
+    } 
+    console.log('navBack')
   },
   onHide() {
     // Do something when page hide.

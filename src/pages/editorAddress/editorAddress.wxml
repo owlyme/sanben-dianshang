@@ -1,16 +1,13 @@
-    <view class="xxx-page"><page-container
+<view class="xxx-page"><page-container
     pageName="编辑收货地址"
     showNav="{{true}}"
     bgColor="none"
     iconColor="none"
     theme="dark"
     useThemeBg="{{false}}"
-    backType='actionBack'
-    bind:back="back"
-    >
-
+	>
    <view class="edior-address">
-     <view class="delete">
+     <view class="delete" wx:if="{{pageType === 'editor'}}">
        <text bind:tap="removeAddress">删除</text>
      </view>
 		<view class="contents">
@@ -19,15 +16,15 @@
 					收货人
 				</view>
 				<view class="right">
-          <input type="text" 
-            model:value="{{consignee}}" 
-            placeholder="收货人"
-            placeholder-class="placeholder-style"/>
+					<input type="text" 
+						model:value="{{consignee}}" 
+						placeholder="收货人"
+						placeholder-class="placeholder-style"/>
         
-          <icon-font 
-          wx:if="{{consignee.length}}"
-          bind:tap="clearConsignee" 
-          name="iconshenheshibai" color="#CCCCCC"/>
+					<icon-font 
+					wx:if="{{consignee.length}}"
+					bind:tap="clearConsignee" 
+					name="iconshenheshibai" color="#CCCCCC"/>
 				</view>
 			</view>
 			<view class="content-item">

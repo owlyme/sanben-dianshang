@@ -1,4 +1,6 @@
 export default {
+  goodEvaluate: "pages/goodEvaluate/goodEvaluate",
+
   messageNotifications: "pages/messageNotifications/messageNotifications",
   messageActive: "pages/messageActive/messageActive",
   messageLogistics: "pages/messageLogistics/messageLogistics",
@@ -15,7 +17,7 @@ export default {
   orderApplyAfterSales: 'pages/orderApplyAfterSales/orderApplyAfterSales',
   orderAfterSalesDetail: 'pages/orderAfterSalesDetail/orderAfterSalesDetail',
   orderAfterSales: 'pages/orderAfterSales/orderAfterSales',
-  orderEvaluateSuccessful: 'pages/orderEvaluateSuccessful/orderEvaluateSuccessful',
+  payOrEvaluateSuccessful: "pages/payOrEvaluateSuccessful/payOrEvaluateSuccessful",
   orderEvaluateCenter: 'pages/orderEvaluateCenter/orderEvaluateCenter',
   orderEvaluate: 'pages/orderEvaluate/orderEvaluate',
   myRedPackage: 'pages/myRedPackage/myRedPackage',
@@ -32,7 +34,6 @@ export default {
   myAddress: 'pages/myAddress/myAddress',
   feedBack: 'pages/feedBack/feedBack',
   confirmOrder: 'pages/confirmOrder/confirmOrder',
-  paymentSuccessful: 'pages/paymentSuccessful/paymentSuccessful',
   shopAllShip: 'pages/shopAllShip/shopAllShip',
   goodDetail: 'pages/goodDetail/goodDetail',  
   goodCart: 'pages/goodCart/goodCart',  
@@ -60,7 +61,6 @@ export default {
   aboutUs: 'pages/aboutUs/aboutUs',
   service: 'pages/service/service',
   mine: 'pages/mine/mine',
-  privacyPolicy: 'pages/privacyPolicy/privacyPolicy',
   serviceAgreement: 'pages/serviceAgreement/serviceAgreement',
   componentList: 'pages/componentList/componentList',
   pageList: 'pages/pageList/pageList'

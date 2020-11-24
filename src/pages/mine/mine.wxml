@@ -7,6 +7,7 @@
     useThemeBg="{{false}}"
     >
     <view class="personal-page">
+    
       <!-- 头部 -->
       <view class="sticky sticky-top {{stickied ? 'stickied' : ''}}" style="top: {{offsetTop}}px">
         <view class="user flex flex-middle gutter-container">

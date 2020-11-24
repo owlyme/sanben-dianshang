@@ -1,7 +1,7 @@
 <view class="xxx-page"><page-container
     pageName="意见反馈"
     showNav="{{showNav}}"
-    bgColor="none"
+    bgColor="#F4F5F6"
     iconColor="none"
     theme="dark"
     useThemeBg="{{false}}"

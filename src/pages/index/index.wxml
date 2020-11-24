@@ -1,6 +1,6 @@
 <page-container
   theme="light"
-  useThemeBg="{{true}}"
+  useThemeBg="{{false}}"
   pageName="首页"
   backgroundFixed='{{false}}'
   showNav="{{false}}"
@@ -11,92 +11,85 @@
     {{customPosition}}
   </view>
 
-    <view class="index-page">
-      <view id="search-b" class="search-b sticky"
-      style="top: {{stickySearchInputOffsetTop}}px;">
-        <search-input
-          placeholder="搜索我的订单"
-          bind:onScan="onScan"
-          bind:onSearchBtn="onSearchBtn"
-          type="indexPage"
-          bind:onChange="onKeyWordChange" />
-      </view>
-
-      <!-- 广告板 -->
-      <view class="swiper-b">
-        <swiper 
-          indicator-dots="{{true}}"
-          autoplay="{{true}}"
-          interval="{{3000}}"
-          duration="{{500}}">
-          <block wx:for="{{bannerList}}" 
-          wx:key="index">
-            <swiper-item>
-              <image class="banner-image" src="{{item}}" />
-            </swiper-item>
-          </block>
-        </swiper>
-      </view>
-      
-      <!-- 特色项目 -->
-      <view class="feature-b flex-a">
-        <view>正品保障</view>
-        <view>急速发货</view>
-        <view>送货到家</view>
-        <view>厂家直销</view>
-      </view>
-
-      <!-- 活动种类 -->
-      <view class="active-b ">
-        <active-list />
-      </view>
-
-      <!-- 推荐商品 -->
-      <view class="tuijian-good-b">
-        <card>
-        <recommended-products />
-        </card>
-      </view>
-      <!-- 推荐活动 -->
-      <view class="tuijian-active-b">
-        <card>
-          <recommended-active />
-        </card>
-      </view>
-      <!-- 宣传板块 -->
-      <view class="promotional-section-b">
-        <promotional-section />
-      </view>
-      <!-- 吸顶 分类 -->
-      <view id="sticky-b" class="sticky sticky-b " style="top: {{stickyTabbarOffsetTop}}px; background:{{stickyTabbarBackground}}">
-        <tab-bar type="2" tabs="{{goodListTypeListTab}}" bind:onChange="onGoodListTypeChange" />
-        <view class="category-list" wx:if="{{goodListType === 'category'}}">
-          <scroll-tab tabs="{{categoryList}}" bind:onChange="onCategoryChange" />
-        </view>
-      </view>
-    
-      <view class="good-card-b">
-        <view class="good-list" >
-          <view hidden="{{goodListType === 'rank'}}">
-            <good-list
-              goodList="{{goodList}}"
-              bind:onGoodClick="viewGood"
-            />
-          </view>
-          <view hidden="{{ goodListType === 'category' || goodListType === 'special'}}">
-            <good-rank-list
-              goodList="{{goodList}}"
-              bind:onGoodClick="viewGood"
-              />
-          </view>
-        </view>
-      </view>
-
-       <image 
-        class="backTop" 
-        bindtap='backTop' 
-        wx:if="{{backTopValue ==true}}"
-        src="/images/backtop.png" />
+  <view class="index-page">
+    <view id="search-b" class="search-b sticky theme-bg"
+    style="top: {{stickySearchInputOffsetTop}}px;">
+      <search-input
+        placeholder="搜索我的订单"
+        bind:onScan="onScan"
+        bind:onSearchBtn="onSearchBtn"
+        type="indexPage"
+        bind:onChange="onKeyWordChange" />
     </view>
+    <!-- 广告板 -->
+    <view class="swiper-b theme-bg">
+    <customer-swiper
+          bannerList="{{bannerList}}"
+          bind:onItemClick="onSwiperClick"
+          />
+    </view>
+    <!-- 特色项目 -->
+    <view class="feature-b flex-a theme-bg">
+      <view>正品保障</view>
+      <view>急速发货</view>
+      <view>送货到家</view>
+      <view>厂家直销</view>
+    </view>
+
+    <image src="/images/wave.png" class="theme-wave"/>
+
+
+    <!-- 活动种类 -->
+    <view class="active-b ">
+      <active-list />
+    </view>
+
+    <!-- 推荐商品 -->
+    <view class="tuijian-good-b">
+      <card>
+      <recommended-products />
+      </card>
+    </view>
+    <!-- 推荐活动 -->
+    <view class="tuijian-active-b">
+      <card>
+        <recommended-active />
+      </card>
+    </view>
+    <!-- 宣传板块 -->
+    <view class="promotional-section-b">
+      <promotional-section />
+    </view>
+    <!-- 吸顶 分类 -->
+    <view id="sticky-b" class="sticky sticky-b " style="top: {{stickyTabbarOffsetTop}}px; background:{{stickyTabbarBackground}}">
+      <tab-bar type="2" tabs="{{goodListTypeListTab}}" bind:onChange="onGoodListTypeChange" />
+      <view class="category-list" wx:if="{{goodListType === 'category'}}">
+        <scroll-tab tabs="{{categoryList}}" bind:onChange="onCategoryChange" />
+      </view>
+    </view>
+  
+    <view class="good-card-b">
+      <view class="good-list" >
+        <view hidden="{{goodListType === 'rank'}}">
+          <good-list
+            goodList="{{goodList}}"
+            bind:onGoodClick="viewGood"
+          />
+        </view>
+        <view hidden="{{ goodListType === 'category' || goodListType === 'special'}}">
+          <good-rank-list
+            goodList="{{goodList}}"
+            bind:onGoodClick="viewGood"
+            />
+        </view>
+      </view>
+    </view>
+
+      <image 
+      class="backTop" 
+      bindtap='backTop' 
+      wx:if="{{backTopValue ==true}}"
+      src="/images/backtop.png" />
+  </view>
 
 </page-container>

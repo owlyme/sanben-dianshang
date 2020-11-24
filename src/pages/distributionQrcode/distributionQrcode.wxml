@@ -6,11 +6,8 @@
     theme="light"
     useThemeBg="{{true}}"
     >
-
       <view class="wallet">
-
 		<view class="wallet-head">
-
 			<!-- 二维码 -->
 			<view class="qr-code-box">
 				<view class="qr-code">

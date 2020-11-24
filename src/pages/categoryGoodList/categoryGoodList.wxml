@@ -8,7 +8,7 @@
     >
       <view class="sticky scroll-b"
         style="top: {{stickyOffsetTop}}px;">
-        <view class="flex">
+        <view class="flex flex-middle">
           <view style="flex: 1" bind:tap="topSearchPage">
             <search-input type="placeholder"  value="{{keyword}}" bind:onChange="onClear"/>
           </view>

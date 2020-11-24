@@ -1,0 +1,63 @@
+<view class="xxx-page" style="overflow:{{pageOverHidden ? 'hidden' : 'auto'}}; height: {{pageOverHidden ? '100vh' : 'unset'}};">
+<page-container
+    pageName="全部评论"
+    showNav="{{true}}"
+    bgColor="#F4F5F6;"
+    iconColor="none"
+    theme="dark"
+    useThemeBg="{{false}}"
+    >
+
+    <view class="goods-detail" >
+      <!-- 1.占位符 -->
+      <view class="goods-head" style="top: {{tarbarOffsetTop}}px;">
+        <view class="search flex flex-middle">
+          <view style="flex: 1">
+            <search-input bind:tap="toSearchPage" type="placeholder" placeholder="搜索商品" />
+          </view>
+          <view >
+            <!-- <icon-font name="iconfenxiang1" size="{{20}}" color="#333333" /> -->
+            
+          </view>
+          <!-- <view  bind:tap="toGoodCartPage">
+          <icon-font name="icongouwuche" size="{{20}}" color="#333333"/>
+          </view> -->
+       </view>
+      </view>
+
+
+      <view class="scroll-view-inner gutter-container">
+        <evaluate-list list="{{evaluates.list}}" type="more"/>
+      </view>
+      
+      <!-- 底部操作栏 -->
+      <view class="operation" id="operation">
+        <view class="store"
+        bind:tap="viewShopIndex">
+          <text class="iconfont icondianpu-weixuanze2"></text>
+          <view>店铺</view>
+        </view>
+        <view class="serve"
+        bind:tap="toService">
+          <text class="iconfont iconkefu"></text>
+          <view>客服</view>
+        </view>
+        <view class="collect"
+        bind:tap="save">
+          <text class="iconfont iconshoucang-weishoucang"></text>
+          <view>收藏</view>
+        </view>
+        <view class="btns">
+          <view class="addcart" data-type="add" bind:tap="openModelSelectDialog">
+            加入购物车
+          </view>
+          <view class="dingjin" data-type="pay" bind:tap="openModelSelectDialog">
+            <!-- <image src="/static/goods/triangle.png"></image> -->
+            立 即 购 买
+          </view>
+        </view>
+      </view>
+      <!-- 规格弹出层 -->
+    </view>
+  </page-container>
+</view>

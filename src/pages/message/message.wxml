@@ -2,48 +2,48 @@
   <page-container
     pageName="消息"
     showNav="{{true}}"
-    bgColor="none"
     iconColor="none"
     theme="light"
-    useThemeBg="{{true}}"
+    useThemeBg="{{false}}"
     >
 
-      <view class="gutter-container head">
-        <view class="flex-b">
-            <view class="item"
-              bind:tap="toMessageLogistics">
-              <view class="icon flex-cm">
-                <view class="num flex-cm">{{34}}</view>
-                <icon-font color="#FF3232" name="iconjiaoyiwuliu1" size="{{24}}" />
-              </view>
-              <view class="text">交易物流</view>
+      <view class="theme-bg">
+        <view class="flex-b head" >
+          <view class="item"
+            bind:tap="toMessageLogistics">
+            <view class="icon flex-cm">
+              <view class="num flex-cm">{{34}}</view>
+              <icon-font color="#FF3232" name="iconjiaoyiwuliu1" size="{{24}}" />
             </view>
-            <view class="item" 
-              bind:tap="toMyWallet">
-              <view class="icon flex-cm">
-                <view class="num flex-cm">{{34}}</view>
-                <icon-font color="#FF3232" name="iconzhanghutongzhi1" size="{{24}}" />
-              </view>
-              <view class="text">账户通知</view>
-            </view>
-            <view class="item"
-              bind:tap="toCoupon">
-              <view class="icon flex-cm">
-                <view class="num flex-cm">{{34}}</view>
-                <icon-font color="#FF3232" name="iconyouhuihuodong1" size="{{24}}" />
-              </view>
-              <view class="text">优惠活动</view>
-            </view>
-            <view class="item" 
-               bind:tap="toMessageNotifications">
-              <view class="icon flex-cm">
-                <view class="num flex-cm">{{34}}</view>
-                <icon-font color="#FF3232" name="iconfuwutongzhi1" size="{{24}}" />
-              </view>
-              <view class="text">服务通知</view>
-            </view>
+            <view class="text">交易物流</view>
           </view>
+          <view class="item" 
+            bind:tap="toMyWallet">
+            <view class="icon flex-cm">
+              <view class="num flex-cm">{{34}}</view>
+              <icon-font color="#FF3232" name="iconzhanghutongzhi1" size="{{24}}" />
+            </view>
+            <view class="text">账户通知</view>
+          </view>
+          <view class="item"
+            bind:tap="toCoupon">
+            <view class="icon flex-cm">
+              <view class="num flex-cm">{{34}}</view>
+              <icon-font color="#FF3232" name="iconyouhuihuodong1" size="{{24}}" />
+            </view>
+            <view class="text">优惠活动</view>
+          </view>
+          <view class="item" 
+              bind:tap="toMessageNotifications">
+            <view class="icon flex-cm">
+              <view class="num flex-cm">{{34}}</view>
+              <icon-font color="#FF3232" name="iconfuwutongzhi1" size="{{24}}" />
+            </view>
+            <view class="text">服务通知</view>
+          </view>
+        </view>
       </view>
+      <image src="/images/wave.png" class="theme-wave"/>
 
       <view class="">
         <scroll-view

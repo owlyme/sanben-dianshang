@@ -48,8 +48,7 @@ Page({
     ],
   },
   onLoad() {
-    // Do some initialize when page load.
-
+    // Do some initialize when page load
     this.throttleSwitchTopStyle = throttle(this.switchTopStyle)
   },
  

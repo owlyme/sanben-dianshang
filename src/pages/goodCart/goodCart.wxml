@@ -6,6 +6,8 @@
     iconColor="none"
     theme="dark"
     useThemeBg="{{false}}"
+    backType="{{backType}}"
+    bind:back="navBack"
     >
     <!-- 地址 -->
       <view class="flex-b top ">
@@ -17,7 +19,6 @@
           <block wx:else>
             添加收货地址
           </block>
-         
         </view>
         <view class="edit" bind:tap="toEdit">
           <button-text type="warn" height="{{20}}" fontSize="{{14}}">{{isEdit ? '完成' : "编辑"}}</button-text>

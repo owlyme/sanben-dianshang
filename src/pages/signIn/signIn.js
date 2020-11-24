@@ -47,13 +47,13 @@ const weekDayListTemp = [
   {
     dayText: '周一',
     day: 1,
-    status: 0, // 0: 未签到， 1: 已签到
+    status: 1, // 0: 未签到， 1: 已签到
     score: 10
   },
   {
     dayText: '周二',
     day: 2,
-    status: 1, // 0: 未签到， 1: 已签到
+    status: 0, // 0: 未签到， 1: 已签到
     score: 10
   },
   {
@@ -65,7 +65,7 @@ const weekDayListTemp = [
   {
     dayText: '周四',
     day: 4,
-    status: 1, // 0: 未签到， 1: 已签到
+    status: 0, // 0: 未签到， 1: 已签到
     score: 10
   },
   {

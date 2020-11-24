@@ -1,7 +1,6 @@
 <view class="help-page">
-   <page-container
+  <page-container
   theme="dark"
-  useThemeBg="{{true}}"
   pageName="帮助中心"
   useThemeBg="{{false}}"
   bgColor="none">

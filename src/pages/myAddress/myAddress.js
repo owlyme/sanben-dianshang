@@ -61,7 +61,10 @@ Page({
     //编辑收货地址
     Router.push({
       url: Path.editorAddress,
-      query: getDataset(e).info
+      query: {
+        ...getDataset(e).info,
+        pageType: 'editor'
+      }
     })
   },
 
@@ -70,7 +73,10 @@ Page({
 
     //添加收货地址
     Router.push({
-      url: Path.editorAddress
+      url: Path.editorAddress,
+      query: {
+        pageType: 'add'
+      }
     })
   },
 

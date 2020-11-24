@@ -1,7 +1,3 @@
-import {Path, Router} from '../../router/index';
-import { getDatasetValue } from '../../utils/commom';
-const getId = getDatasetValue('id')
-const getItem = getDatasetValue('item')
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -24,6 +20,10 @@ Component({
       value: '确认'
     },
     hiddenBtn: {
+      type: Boolean,
+      value: false
+    },
+    hiddenClose: {
       type: Boolean,
       value: false
     }

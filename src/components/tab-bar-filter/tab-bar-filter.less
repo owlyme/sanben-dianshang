@@ -1,36 +1,37 @@
 .tab-bar-filter-components{
-
-      .tab-item {
-          flex: 1;
-        .tab-name {
-          height: 22px;
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          text-align: center;
-            color: #333333;
-          line-height: 22px;
-          .price {
-            width: 8px;
-            font-size: 8px;
-            .lower{
-                line-height:  4px;
-            }
-            .upper {
-                line-height: 4px;
-                // margin-top: 4px;
-            }
-          }
+  .tab-item {
+      flex: 1;
+    .tab-name {
+      height: 22px;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      text-align: center;
+      color: #333333;
+      line-height: 22px;
+      .price {
+        height: 22px;
+        padding: 4px 0;
+        width: 8px;
+        .upper {
+          line-height: 4px;
+          height: 11px;
+          // margin-top: 4px;
         }
-        &.active{
-          .tab-name {
-            color: #FF3232;
-          }
-        }
-        &.filter{
-            border-left:1px solid#CCCCCC;
+        .lower{
+            line-height: 4px;
+            height: 11px;
         }
       }
-   
+    }
+    &.active{
+      .tab-name {
+        color: #FF3232;
+      }
+    }
+    &.filter{
+        border-left:1px solid#CCCCCC;
+    }
   }
+}
   

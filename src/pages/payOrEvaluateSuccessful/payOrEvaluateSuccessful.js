@@ -9,6 +9,8 @@ Page({
     waveBarVisible: false,
     pageBg2Visible: true,
     scrollViewHeight: 400,
+    pageName: "支付成功", // 评价成功 支付成功
+    pageType: "pay", // pay evaluate
     points: 25,
     goodList: [
       {
@@ -100,15 +102,28 @@ Page({
 
         tags: ['hao', 'bucuo']
       }
-    ],
-    
+    ]
   },
-  onLoad() {
+  onLoad(query) {
     // Do some initialize when page load.
-    this.getDom();
+    this.setPageInfo(query)
+  },
+  setPageInfo(query) {
+    let pageType = query.pageType || 'pay'
+    let map = {
+      evaluate: '评价成功',
+      pay: '支付成功',
+      none: '支付成功'
+    }
+
+    this.setData({
+      pageType, 
+      pageName: map[pageType]
+    })
   },
   onReady() {
     // Do something when page ready.
+    this.getDom();
   },
   onShow() {
     // Do something when page show.
@@ -158,6 +173,11 @@ Page({
   back() {
     Router.replace({
       url: Path.orderEvaluate
+    })
+  },
+  viewOrder() {
+    Router.push({
+      url: Path.order
     })
   },
 
