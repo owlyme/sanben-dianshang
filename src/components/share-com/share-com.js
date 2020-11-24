@@ -222,7 +222,7 @@ Component({
           },
           ...this.createMulitLine({
             x: 92 * 2,
-            y: 324 * 2,
+            y: 360 * 2,
             text: '长按图片，识别二维码查看商品详情',
             fontSize: 10 * 2,
             color: '#999999',
@@ -240,7 +240,7 @@ Component({
           },
           {
             x: 12 * 2,
-            y: 280 * 2,
+            y: 316 * 2,
             url: '/images/no-coupon.png',
             width: 72 * 2,
             height: 72 * 2,
@@ -273,12 +273,14 @@ Component({
       console.error(e)
     },
     afterSavePoster() {
-      console.log(this.posterUrl)
       wx.saveImageToPhotosAlbum({
         filePath: this.posterUrl,
         success: (result) => {
           console.log(result)
           this.init()
+          this.setData({
+            postImg: ''
+          })
         }
       })
     },
