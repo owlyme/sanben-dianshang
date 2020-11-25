@@ -129,7 +129,7 @@ Page({
       },
     ],
   },
-  onLoad(e) {
+  onLoad() {
    
   },
   onReady() {
@@ -158,7 +158,7 @@ Page({
     // 当前是 tab 页时，点击 tab 时触发
   },
   // 点击搜索框 
-  onSearchGoodInCurrentShop(e) {
+  onSearchGoodInCurrentShop() {
     Router.push({
       url: Path.search,
       query: {
@@ -168,7 +168,7 @@ Page({
   },
   onTypeChange(e) {
     console.log(e)
-    let {filterPriceStatus, index, type} = e.detail
+    // let {filterPriceStatus, index, type} = e.detail
     
   },
   onGoodClick(e) {

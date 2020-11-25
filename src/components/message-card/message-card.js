@@ -15,8 +15,8 @@ Component({
     info: {
       type: Object,
       value: {
-        pic: "https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg",
-        title: "分销小助手",
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        title: '分销小助手',
         type: 'article', // article image text
         source: 0, // 1 官方 2 店铺 
         content: '您好，小糖已为您发货了，请小主关注…',

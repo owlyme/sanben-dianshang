@@ -1,6 +1,5 @@
 import {Path, Router} from '../../router/index';
-// 全局app实例
-const App = getApp();
+
 let allShop = [
   {
     type: 1,

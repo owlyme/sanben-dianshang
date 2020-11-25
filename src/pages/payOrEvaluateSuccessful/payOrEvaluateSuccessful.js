@@ -9,8 +9,8 @@ Page({
     waveBarVisible: false,
     pageBg2Visible: true,
     scrollViewHeight: 400,
-    pageName: "支付成功", // 评价成功 支付成功
-    pageType: "pay", // pay evaluate
+    pageName: '支付成功', // 评价成功 支付成功
+    pageType: 'pay', // pay evaluate
     points: 25,
     goodList: [
       {

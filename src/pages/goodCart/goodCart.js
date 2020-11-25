@@ -312,7 +312,7 @@ Page({
   },
   // 移入收藏
   saveGood(e) {
-   Toast.success('收藏成功')
+    Toast.success('收藏成功')
   },
   // 删除
   removeGood(e) {

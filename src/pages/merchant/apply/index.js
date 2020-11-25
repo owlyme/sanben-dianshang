@@ -43,8 +43,8 @@ Page({
     }
   },
  
-   // 上传
-   handleUpload(e){
+  // 上传
+  handleUpload(e){
     chooseImage().then(res => {
       console.log(res)
       let type = getDataset(e).type 

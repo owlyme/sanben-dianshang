@@ -349,7 +349,7 @@ Page({
   // 客服
   toService(e) {
     console.log('viewShopIndex', e);
-    Toast.show("客服下班了")
+    Toast.show('客服下班了')
     // Router.push({
     //   url: Path.shopIndex
     // })
@@ -357,7 +357,7 @@ Page({
   // 收藏 
   save(e) {
     console.log('viewShopIndex', e);
-    Toast.success("收藏成功")
+    Toast.success('收藏成功')
     // Router.push({
     //   url: Path.myCollection
     // })

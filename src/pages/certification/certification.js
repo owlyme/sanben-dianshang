@@ -28,7 +28,7 @@ Page({
       this.open()
     }
   },
-   // 上传
+  // 上传
   handleUpload(e){
     chooseImage().then(res => {
       console.log(res)

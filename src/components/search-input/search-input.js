@@ -81,7 +81,7 @@ Component({
     // 调用扫一扫
     onScanClick(e) {
       console.log('调用扫一扫', e)
-      this.triggerEvent("onScan")
+      this.triggerEvent('onScan')
     },
     // 点击搜索
     onSearchBtnClick(e) {

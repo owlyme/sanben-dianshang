@@ -107,7 +107,7 @@ Page({
   },
   onLoad(query) {
     // Do some initialize when page load.
-//     all, payment, deliver, receive, evaluate
+    //     all, payment, deliver, receive, evaluate
     this.setData({
       activeIndex: orderTypes[query.orderPageType] || 0
     })

@@ -28,7 +28,7 @@ Component({
   },
   data: {},
 
-   methods: {
+  methods: {
     viewGoodDetail(e) {
       if (!this.data.prevent) {
         Router.push({

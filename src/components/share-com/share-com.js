@@ -1,4 +1,4 @@
-import { Router } from "../../router/index"
+import { Router } from '../../router/index'
 import { getDataset } from '../../utils/commom';
 import Poster from '../miniprogram_dist/poster/poster.js';
 
@@ -198,7 +198,7 @@ Component({
         width: 224 * 2,
         height: 400 * 2,
         debug: false,
-        backgroundColor: "#ffffff",
+        backgroundColor: '#ffffff',
         pixelRatio: 6,
         // preload	Boolean	否	true：图片资源预下载 默认false
         // hide-loading	Boolean	否	true：隐藏loading 默认false

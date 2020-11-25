@@ -71,7 +71,7 @@ Page({
     // 当前是 tab 页时，点击 tab 时触发
   },
   onRateChange(e) {
-    debugger
+    
     let index = getDataset(e).index
     console.log(e)
     let goodList = this.data.goodList
@@ -117,7 +117,7 @@ Page({
     Router.push({
       url: Path.payOrEvaluateSuccessful,
       query: {
-        pageType: "evaluate"
+        pageType: 'evaluate'
       }
     })
   },

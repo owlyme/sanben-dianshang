@@ -236,17 +236,17 @@ Page({
       success: (res) => {
         let {result, scanType} = res
         switch(scanType) {
-          case 'ENV_13': 
-            console.log('scanType', scanType, result)
-            break;
-          case 'QR_CODE': 
-            console.log('scanType', scanType, result)
-            break;
+        case 'ENV_13': 
+          console.log('scanType', scanType, result)
+          break;
+        case 'QR_CODE': 
+          console.log('scanType', scanType, result)
+          break;
         }
         Toast.success('扫一扫成功')
       },
       fail: () => {
-        Toast.show("扫码失败")
+        Toast.show('扫码失败')
       }
     })
   },

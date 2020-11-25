@@ -32,7 +32,7 @@ Page({
       content:'你确认放弃修改',
       success: (res) => {
         if(res.confirm){
-         console.log("res")
+          console.log('res')
         }
       }
     })

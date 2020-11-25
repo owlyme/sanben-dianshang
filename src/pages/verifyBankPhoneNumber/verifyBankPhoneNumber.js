@@ -30,7 +30,7 @@ Page({
     })
   },
 
-  onPhoneChange: function (e) {
+  onPhoneChange: function () {
     let sendCodeBtnDisabled = true;
     let phone = this.data.phone
     if (!phone || !Base.isPhone(phone)) {
@@ -55,21 +55,21 @@ Page({
     let params = null;
 
     switch(this.pageType) {
-      case 'verfyId':
-        params = {
-          ok: 'ok'
-        }
-        break;
-      case 'bank':
-        params = {
-          ok: 'ok'
-        }
-        break;
-      case 'merchant':
-        params = {
-          ok: 'ok'
-        }
-        break;
+    case 'verfyId':
+      params = {
+        ok: 'ok'
+      }
+      break;
+    case 'bank':
+      params = {
+        ok: 'ok'
+      }
+      break;
+    case 'merchant':
+      params = {
+        ok: 'ok'
+      }
+      break;
     }
 
     Router.back(1, params)
@@ -101,7 +101,7 @@ Page({
     getValidateCode({
       phone
     });
-    this.messageCode = "aaaa"
+    this.messageCode = 'aaaa'
   },
   onGetCodeDisable() {
     Toast.show({

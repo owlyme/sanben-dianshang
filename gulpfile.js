@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const less = require('gulp-less');
 const rename = require('gulp-rename');
 const del = require('del');
-const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-image');
 const path = require('path');
 const eslint = require('gulp-eslint');
 const postcss = require('gulp-postcss');
@@ -22,7 +22,7 @@ const imgFiles = [
 console.log(process.env.NODE_ENV)
 const nodeEnv = process.env.NODE_ENV
 
-if (nodeEnv ==='production' ) {
+if (nodeEnv ==='production') {
   wxmlFiles.push(`!${srcPath}/pageList/*.wxml`, `!${srcPath}/componentList/*.wxml`);
   lessFiles.push(`!${srcPath}/pageList/*.less`, `!${srcPath}/componentList/*.less`);
   jsonFiles.push(`!${srcPath}/pageList/*.json`, `!${srcPath}/componentList/*.json`);
@@ -99,10 +99,16 @@ gulp.task(wxss);
 
 /* 编译压缩图片 */
 const img = () => {
-  return gulp
-    .src(imgFiles, { since: gulp.lastRun(img)})
-    // .pipe(imagemin())
-    .pipe(gulp.dest(distPath));
+  if (nodeEnv ==='production') {
+    return gulp
+      .src(imgFiles, { since: gulp.lastRun(img)})
+      .pipe( imagemin()) 
+      .pipe(gulp.dest(distPath))
+  } else {
+    return gulp
+      .src(imgFiles, { since: gulp.lastRun(img)})
+      .pipe(gulp.dest(distPath))
+  }
 };
 gulp.task(img);
 

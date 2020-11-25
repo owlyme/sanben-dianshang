@@ -9,14 +9,14 @@ export const statusTextMap = {
 }
 
 export const statusIconMap = {
-    1: "icondaifukuan-fanbai2",
-    2: "icondaifahuo-fanbai1",
-    3: "icondaishouhuo-fanbai5",
-    4: 'icondaipingjia-fanbai', // "daipingjia-fanbai2",
-    5: "iconfankuichenggong1",
-    6: "iconyiquxiao1",
-    7: "iconyiquxiao1",
-    0: "iconxingzhuangtuikuanzhong2",
+  1: 'icondaifukuan-fanbai2',
+  2: 'icondaifahuo-fanbai1',
+  3: 'icondaishouhuo-fanbai5',
+  4: 'icondaipingjia-fanbai', // "daipingjia-fanbai2",
+  5: 'iconfankuichenggong1',
+  6: 'iconyiquxiao1',
+  7: 'iconyiquxiao1',
+  0: 'iconxingzhuangtuikuanzhong2',
 }
 
 
