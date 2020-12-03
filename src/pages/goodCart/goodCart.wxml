@@ -1,101 +1,67 @@
 <view class="xxx-page">
-  <page-container
-    pageName="购物车"
-    showNav="{{showNav}}"
-    bgColor="none"
-    iconColor="none"
-    theme="dark"
-    useThemeBg="{{false}}"
-    backType="{{backType}}"
-    bind:back="navBack"
-    >
+  <page-container pageName="购物车" showNav="{{showNav}}" bgColor="none" iconColor="none" theme="dark" useThemeBg="{{false}}" backType="{{backType}}" bind:back="navBack">
     <!-- 地址 -->
-      <view class="flex-b top ">
-        <view class="address ellipsisOne" bind:tap="setAddress">
-          <icon-font name="iconshouhuodizhi1" size="14" color="#FF3232"  /> 
-          <block wx:if="{{address}}">
-            收货地址：{{address}}
-            </block>
-          <block wx:else>
-            添加收货地址
-          </block>
-        </view>
-        <view class="edit" bind:tap="toEdit">
-          <button-text type="warn" height="{{20}}" fontSize="{{14}}">{{isEdit ? '完成' : "编辑"}}</button-text>
-        </view>
+    <view class="flex-b top ">
+      <view class="address ellipsisOne" bind:tap="setAddress">
+        <icon-font name="iconshouhuodizhi1" size="14" color="#FF3232" />
+        <block wx:if="{{address}}">收货地址：{{address}}</block>
+        <block wx:else>添加收货地址</block>
       </view>
-      <!-- 列表 -->
-      <view class="scroll-b">
-        <scroll-view 
-          id="scroll-view"
-          scroll-y="true"
-          style="height: {{scrollViewHeight}}px;"
-          bindscrolltolower="scrollToLower"
-          bindscrolltoupper="scrollToUpper"
-          bindscroll="onScroll"
-          >
-          <!-- 没有需要购买的商品 -->
-          <view class="no-good" 
-            hidden="{{orderList.length > 0}}"
-          >
-            <image src="/images/empty-cart.png" />
-            <view class="no-good-title">您还没有相关订单</view>
-            <view class="no-good-remark">可以去看看有哪些想买的</view>
-          </view>
-           <!-- 有需要购买的商品 -->
-          <block wx:for="{{orderList}}" wx:key="index">
-              <view class="cart-item">
-                <cart-list data="{{item}}" bind:onChange="onOrderChange"/>
-              </view>
-          </block>
-        </scroll-view>
+      <view class="edit" bind:tap="toEdit">
+        <button-text type="warn" height="{{20}}" fontSize="{{14}}">
+          {{isEdit ? '完成' : "编辑"}}
+        </button-text>
       </view>
-
-      <view id="submit" class="total-sum flex-b flex-middle"
-      style="z-index: {{showDiscountedPrices ? 20 : 0}}">
-        <view class="flex flex-middle">
-          <view class="selected-all"  bind:tap="selectedAll">
-            <icon-font 
-              wx:if="{{isAllSelected}}"
-              name="icongouwuche-duoxuanqi-xuanze3" 
-              size="16" 
-              color="#FF3232" />
-
-              <icon-font
-              wx:else 
-              name="iconcircle" 
-              size="16" 
-              color="#CCCCCC" 
-              />
-            全选
+    </view>
+    <!-- 列表 -->
+    <view class="scroll-b">
+      <scroll-view id="scroll-view" scroll-y="true" style="height: {{scrollViewHeight}}px;" bindscrolltolower="scrollToLower">
+        <!-- 没有需要购买的商品 -->
+        <view class="no-good" hidden="{{orderList.length > 0}}">
+          <image src="/images/empty-cart.png" />
+          <view class="no-good-title">您还没有相关订单</view>
+          <view class="no-good-remark">可以去看看有哪些想买的</view>
+        </view>
+        <!-- 有需要购买的商品 -->
+        <block wx:for="{{orderList}}" wx:key="index">
+          <view class="cart-item">
+            <cart-list data="{{item}}" bind:onChange="onOrderChange" />
           </view>
-
-          <view class="flex-col total" hidden="{{isEdit}}">
-            <view class="flex-middle">合计: <money-text number="{{shoppingListTotal.price}}" /></view>
-            <view class="youhui flex" hidden="{{!shoppingListTotal.discountedPrices}}">
-              优惠减: 
-              <money-text plane="{{true}}" number="{{shoppingListTotal.discountedPrices}}" />
-              <view class="youhui-detail" bind:tap="viewDiscountedPrices">优惠明细</view>
-            </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view id="submit" class="total-sum flex-b flex-middle" style="z-index: {{showDiscountedPrices ? 20 : 0}}">
+      <view class="flex flex-middle">
+        <view class="selected-all" bind:tap="selectedAll">
+          <icon-font wx:if="{{isAllSelected}}" name="icongouwuche-duoxuanqi-xuanze3" size="16" color="#FF3232" />
+          <icon-font wx:else name="iconcircle" size="16" color="#CCCCCC" />
+          全选
+        </view>
+        <view class="flex-col total" hidden="{{isEdit}}">
+          <view class="flex-middle">
+            合计:
+            <money-text number="{{shoppingListTotal.price}}" />
+          </view>
+          <view class="youhui flex" hidden="{{!shoppingListTotal.discountedPrices}}">
+            优惠减:
+            <money-text plane="{{true}}" number="{{shoppingListTotal.discountedPrices}}" />
+            <view class="youhui-detail" bind:tap="viewDiscountedPrices">优惠明细</view>
           </view>
         </view>
-
-        <view class="flex">
-          <view  hidden="{{isEdit}}" class="btn submit" bind:tap="submit">结算下单<text hidden="{{!shoppingListTotal.number}}">({{shoppingListTotal.number}})</text></view>
-          <view  hidden="{{!isEdit}}" class="btn save" bind:tap="saveGood">移入收藏</view>
-          <view  hidden="{{!isEdit}}" class="btn delete" bind:tap="removeGood">删除</view>
-        </view>
-        
       </view>
-
+      <view class="flex">
+        <view hidden="{{isEdit}}" class="btn submit" bind:tap="submit">
+          结算下单
+          <text hidden="{{!shoppingListTotal.number}}">({{shoppingListTotal.number}})</text>
+        </view>
+        <view hidden="{{!isEdit}}" class="btn save" bind:tap="saveGood">移入收藏</view>
+        <view hidden="{{!isEdit}}" class="btn delete" bind:tap="removeGood">删除</view>
+      </view>
+    </view>
   </page-container>
-
   <half-screen-dialog header="优惠券" show="{{showDiscountedPrices}}" bind:onClose="onCloseDialog" hiddenBtn="{{true}}">
-      <view scroll-y="true" style="height: {{380 * 2}}rpx">
-        <discount-prices
-          shoppList="{{shoppingList}}"
-          total="{{shoppingListTotal}}"
-          ></discount-prices>
-      </view>
+    <view scroll-y="true" style="height: {{380 * 2}}rpx">
+      <discount-prices shoppList="{{shoppingList}}" total="{{shoppingListTotal}}"></discount-prices>
+    </view>
   </half-screen-dialog>
 </view>

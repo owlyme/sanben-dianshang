@@ -1,7 +1,7 @@
 import ENV from '../env';
 
 const {host}=  ENV;
-let baseUrl = '/api-mock/dianshang'
+let baseUrl = ''
 const composeUrl = (url) => host + baseUrl + url
 
 export const get = (url,data) => {
@@ -13,7 +13,11 @@ export const get = (url,data) => {
       header: {'content-type': 'application/json'},
       success: (res) =>{
         // 调用接口成功
-        resolve(res);
+        if (res.statusCode === 200) {
+          resolve(res.data);
+        } else {
+          reject('接口错误');
+        }
       },
       fail: (err) => {
         // 调用接口失败
@@ -34,7 +38,11 @@ export const post = (url,data) => {
       },
       success: (res) =>{
         // 调用接口成功
-        resolve(res);
+        if (res.statusCode === 200) {
+          resolve(res.data);
+        } else {
+          reject('接口错误');
+        }
       },
       fail: (err) => {
         // 调用接口失败

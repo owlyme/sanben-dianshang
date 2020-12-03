@@ -1,5 +1,8 @@
 import { Router, Path } from '../../router/index';
 import {Toast, boundingClientRect} from '../../utils/sysApis';
+import { getGoodCratList, deleteGoodInCart, saveGood } from "../../api/goodCrat"
+import { storageKeyMap, getLocalStorage } from '../../utils/localStorage';
+
 const App = getApp();
 // 计算购物清单的统计值
 function calcShoppingListTotal(shoppingList) {
@@ -37,114 +40,7 @@ function getAllGood(orderList) {
     .reduce((acc, {orderList}) => [...acc, ...orderList.filter(i => !isWaitingReselected(i))], []);
 }
 
-const OrderList = [
-  {
-    brandName: '阿迪达斯',
-    logo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    shopList: [
-      {
-        shopName: '杭州大悦城店',
-        orderList: [
-          {
-            id: 1,
-            number: 10,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 20,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…',
-            status: 1
-          },
-          {
-            id: 2,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…',
-            status: 0
-          }
-        ]
-      },
-      {
-        shopName: '杭州大悦城店1',
-        orderList: [
-          {
-            id: 3,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…'
-          },
-          {
-            id: 4,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…'
-          }
-        ]
-      },
-    ]
-  },
-  {
-    brandName: '阿迪达斯',
-    logo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    shopList: [
-      {
-        shopName: '杭州大悦城店',
-        orderList: [
-          {
-            id: 5,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…'
-          },
-          {
-            id: 6,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…'
-          }
-        ]
-      },
-      {
-        shopName: '杭州大悦城店1',
-        orderList: [
-          {
-            id: 8,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…'
-          },
-          {
-            id: 9,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…'
-          }
-        ]
-      },
-    ]
-  }
-];
+
 
 Page({
   data: {
@@ -160,23 +56,33 @@ Page({
       price: 0,
       number: 0,
       goodCategoryNumber: 0,
-      discountedPrices: 1
+      discountedPrices: 0
     },
     goodTypeInCart: 0, // 购物车里所有的商品种类
     orderList: [],
    
   },
   onLoad() {
-    setTimeout(() => {
-      this.setData({
-        orderList: OrderList
-      })
-      
-      this.customData.allGoodInCartTypes = getAllGood(OrderList).length;
-    }, 1);
-    
-  },
   
+    this.setData({
+      address: getLocalStorage(storageKeyMap.userInfo).shippingAddress
+    })
+    this.getGoodCratList()
+  },
+  getGoodCratList(type = 'add') {
+    getGoodCratList().then(res => {
+      if (res.code === 200) {
+        let orderList = this.data.orderList.concat(res.data || [])
+        this.setData({
+          orderList
+        })
+        this.customData.allGoodInCartTypes = getAllGood(orderList).length;
+        if (type === 'refresh') {
+          wx.stopPullDownRefresh()
+        }
+      }
+    })
+  },
   onReady() {
     // Do something when page ready.
     this.getDom();
@@ -212,35 +118,13 @@ Page({
     } 
     console.log('navBack')
   },
-  onHide() {
-    // Do something when page hide.
-  },
-  onUnload() {
-    // Do something when page close.
-  },
+
   onPullDownRefresh() {
     // Do something when pull down.
-  },
-  onReachBottom() {
-    // Do something when page reach bottom.
-  },
-  onShareAppMessage() {
-    // return custom share data when user share.
-  },
-  onPageScroll() {
-    // Do something when page scroll
-  },
-  onTabItemTap() {
-    // 当前是 tab 页时，点击 tab 时触发
+    this.getGoodCratList('refresh')
   },
   scrollToLower() {
-    // 当前是 tab 页时，点击 tab 时触发
-  },
-  scrollToUpper() {
-    // 当前是 tab 页时，点击 tab 时触发
-  },
-  onScroll() {
-    // 当前是 tab 页时，点击 tab 时触发
+    this.getGoodCratList('add')
   },
   setAddress() {
     Router.push(Path.myAddress)
@@ -287,6 +171,7 @@ Page({
       shoppingList,
       shoppingListTotal,
     })
+
   },
   // 全选
   selectedAll() {
@@ -312,36 +197,54 @@ Page({
   },
   // 移入收藏
   saveGood(e) {
-    Toast.success('收藏成功')
+    let shoppingList = this.data.shoppingList
+    if (!shoppingList.length) {
+      Toast.show('请选择要收藏的商品')
+      return 
+    } 
+    saveGood({
+      ids: shoppingList.map( i => i.id)
+    }).then(res => {
+      if (res.code === 200) {
+        Toast.success('收藏成功')
+      }
+    })
   },
   // 删除
-  removeGood(e) {
+  removeGood() {
     let {shoppingList, orderList} = this.data;
+    if (!shoppingList.length) {
+      Toast.show('请选择要删除的商品')
+      return 
+    } 
+    deleteGoodInCart({
+      ids: shoppingList.map( i => i.id)
+    }).then(res => {
+      if (res.code === 200) {
+        // 删除
+        // 遍历 orderList
+        orderList = orderList.filter(order => {
+          // 遍历 orderList 每一项的 shopList
+          order.shopList = order.shopList.filter(shop => {
+            // 遍历 shopList 每一项的 orderList 属性
+            shop.orderList = shop.orderList.filter(good =>
+            // 判断 当前项是否删除
+              !shoppingList.find((item) => item.id === good.id)
+            )
+            return shop.orderList.length;
+          })
+          return order.shopList.length;
+        })
+        let shoppingListTotal = calcShoppingListTotal([]);
 
-    // 删除
-    // 遍历 orderList
-    orderList = orderList.filter(order => {
-      // 遍历 orderList 每一项的 shopList
-      order.shopList = order.shopList.filter(shop => {
-        // 遍历 shopList 每一项的 orderList 属性
-        shop.orderList = shop.orderList.filter(good =>
-        // 判断 当前项是否删除
-          !shoppingList.find((item) => item.id === good.id)
-        )
-        return shop.orderList.length;
-      })
-      return order.shopList.length;
-    }
-    )
-    let shoppingListTotal = calcShoppingListTotal([]);
-
-    this.setData({
-      orderList,
-      shoppingList: [],
-      shoppingListTotal,
+        this.setData({
+          orderList,
+          shoppingList: [],
+          shoppingListTotal,
+        })
+        Toast.success('删除成功')
+      }
     })
-
-    Toast.success('删除成功')
   },
   // 优惠明细
   viewDiscountedPrices() {

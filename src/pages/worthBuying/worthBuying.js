@@ -1,112 +1,13 @@
 // 全局app实例
+import { getIndexGoodList } from "../../api/index"
+import { getBannerList } from "../../api/category"
 const App = getApp();
 
 Page({
   data: {
     stickyOffsetTop: App.globalData.navHeight,
-    goodList: [
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-        active: '双十一',
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      }
-    ],
-    bannerList: [
-      {
-        id: 12,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: 'adidas'
-      },
-      {
-        id: 13,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: 'adidas'
-      }
-    ],
+    goodList: [],
+    bannerList: [],
     activeList: [
       {
         pic: '/images/worthBuying/evaluation.png',
@@ -132,34 +33,43 @@ Page({
   },
   onLoad() {
     // Do some initialize when page load.
+    this.getBannerList()
+    this.getIndexGoodList()
   },
-  onReady() {
-    // Do something when page ready.
+  getIndexGoodList(type = "add") {
+    getIndexGoodList().then(res => {
+      if (res.code === 200) {
+        this.setData({
+          goodList: type === 'add' ?
+             this.data.goodList.concat(res.data || []) : 
+             (res.data || [])
+        })
+
+        if (type === 'refresh') {
+          wx.stopPullDownRefresh()
+        }
+      }
+    }) 
   },
-  onShow() {
-    // Do something when page show.
-  },
-  onHide() {
-    // Do something when page hide.
-  },
-  onUnload() {
-    // Do something when page close.
+  getBannerList() {
+    getBannerList().then(res => {
+      if (res.code === 200) {
+        this.setData({
+          bannerList: res.data
+        })
+      }
+    }) 
   },
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
+    this.getIndexGoodList('refresh')
   },
   onReachBottom() {
     console.log('onReachBottom')
+    this.getIndexGoodList()
   },
-  onShareAppMessage() {
-    // return custom share data when user share.
-  },
-  onPageScroll (e) { 
-    console.log(e)
-  },
-  onTabItemTap() {
-    // 当前是 tab 页时，点击 tab 时触发
-  },
+
+
   onSwiperClick(e) {
     console.log('onSwiperClick',e)
   },

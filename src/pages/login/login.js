@@ -1,43 +1,32 @@
-// 全局app实例
 import { getNodeValue } from '../../utils/commom';
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 import { Toast } from '../../utils/sysApis';
 import Base from '../../utils/base';
-import {userLogin, getValidateCode} from '../../api/login';
+import { storageKeyMap, setLocalStorage } from '../../utils/localStorage';
+import { userLogin, getValidateCode } from '../../api/login';
 let getPhoneNumber = getNodeValue('phone');
-let getCode = getNodeValue('code');
-
+const App = getApp();
 
 Page({
   data: {
     sendCodeBtnDisabled: true,
     loginBtnDisabled: false,
     phone: '',
-    code: null,
+    code: '',
     checked: true,
     showDrawer: false,
   },
   onLoad() {
     // Do some initialize when page load.
+    App.globalData.isLogined = false
   },
-  onReady() {
-    // Do something when page ready.
-  },
-  onShow() {
-    // Do something when page show.
-  },
-  onHide() {
-    // Do something when page hide.
-  },
+
   onUnload() {
     // Do something when page close.
     getPhoneNumber = null
-    getCode = null
   },
-  onShareAppMessage() {
-    // return custom share data when user share.
-  },
-  onPhoneChange: function (e) {
+
+  onPhoneChange: function(e) {
     console.log(this.data, getPhoneNumber(e));
 
     let phone = getPhoneNumber(e);
@@ -50,42 +39,43 @@ Page({
       sendCodeBtnDisabled
     });
   },
-  onCodeChange: function (e) {
-    // console.log(this.data, getCode(e));
-    this.setData({
-      ...getCode(e)
-    });
-  },
+
   toAgree() {
     this.setData({
       checked: !this.data.checked
     });
   },
   async login() {
-    let {phone, code, checked} = this.data;
-    
+    let { phone, code, checked } = this.data;
+
     if (this.validatoForm(phone, code, checked)) {
-      let formData = {phone, code};
+      let formData = { phone, code };
       console.log(formData);
       this.setData({
         loginBtnDisabled: true
       });
-      userLogin(formData);
-      Router.refresh(Path.index);
+      userLogin(formData).then(res => {
+        if (res.code === 200) {
+          // App.globalData.isLogined = true
+          setLocalStorage(storageKeyMap.isLogined, true)
+          setLocalStorage(storageKeyMap.userInfo, res.data || {})
+          Router.refresh(Path.index);
+        }
+      });
 
       this.setData({
         loginBtnDisabled: false
       });
     }
   },
-  validatoForm (phone, code, checked)  {
+  validatoForm(phone, code, checked) {
     let bool = true;
-    if(!Base.isPhone(phone)){
+    if (!Base.isPhone(phone)) {
       bool = false;
       Toast.show({
         title: '输入正确的手机号'
       });
-    } else if (!code) {
+    } else if (!code || this.codeFormApi != code) {
       bool = false;
       Toast.show({
         title: '输入验证码'
@@ -100,10 +90,14 @@ Page({
   },
   onGetCode() {
     console.log('send request');
-    let {phone} = this.data;
+    let { phone } = this.data;
 
     getValidateCode({
       phone
+    }).then(res => {
+      if (res.code === 200) {
+        this.codeFormApi = res.data.code
+      }
     });
 
   },

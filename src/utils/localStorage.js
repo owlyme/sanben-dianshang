@@ -1,6 +1,8 @@
 // storage 的 key值不可以随便定义，必须提前做好限制，防止后期混乱
 export const storageKeyMap = {
-  keywords: 'keywords'
+  keywords: 'keywords',
+  isLogined: 'isLogined',
+  userInfo: 'userInfo'
 }
 // 每次添加或者修改是都需要验证 key
 const validateKey = key =>storageKeyMap[key]
@@ -8,6 +10,16 @@ const validateKey = key =>storageKeyMap[key]
 function initStorage() {
   if (!wx.getStorageSync(storageKeyMap.keywords)) {
     setLocalStorage(storageKeyMap.keywords, [])
+    
+  }
+  if (!wx.getStorageSync(storageKeyMap.isLogined)) {
+    setLocalStorage(storageKeyMap.isLogined, false)
+    setLocalStorage(storageKeyMap.userInfo, {
+      nickName: '',
+      userId: 0,
+      avatar: '',
+      shippingAddress: '' // 收获地址
+    })
   }
 }
 initStorage();

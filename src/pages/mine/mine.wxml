@@ -1,212 +1,182 @@
-<page-container
-    pageName="个人中心"
-    showNav="{{false}}"
-    bgColor="#F4F5F6"
-    iconColor="none"
-    theme="dark"
-    useThemeBg="{{false}}"
-    >
-    <view class="personal-page">
-    
-      <!-- 头部 -->
-      <view class="sticky sticky-top {{stickied ? 'stickied' : ''}}" style="top: {{offsetTop}}px">
-        <view class="user flex flex-middle gutter-container">
+<page-container pageName="个人中心" showNav="{{false}}" bgColor="#F4F5F6" iconColor="none" theme="dark" useThemeBg="{{false}}">
+  <view class="personal-page">
+    <!-- 头部 -->
+    <view class="sticky sticky-top {{stickied ? 'stickied' : ''}}" style="top: {{offsetTop}}px">
+      <view class="user flex flex-middle gutter-container">
         <image class="avatar transition" bind:tap="toPersonalInfoPage" src="{{avatar}}" />
-        <text class="name ellipsisOne" bind:tap="toPersonalInfoPage" > {{nickName}}</text>
-        
+        <text class="name ellipsisOne" bind:tap="toPersonalInfoPage">{{nickName}}</text>
         <view class="sign flex-cm" bind:tap="toSignPage">
           <icon-font name="iconqiandao22" />
-          签到</view>
+          签到
+        </view>
         <view class="msg flex-cm" bind:tap="toMessagePage">
-          <view class="msg-number" hidden="{{!message}}">
-            {{message}}
-          </view>
+          <view class="msg-number" hidden="{{!message}}">{{message}}</view>
           <icon-font name="iconxiaoxi1" />
         </view>
-        </view>
-      </view>
-      <!-- 列表 -->
-      <view class="list gutter-container flex-a">
-        <view bind:tap="toMyFollowePage">
-          <view class="num">12</view>
-          <view class="text">我的关注</view>
-        </view>
-        <view bind:tap="toMyStorepage">
-          <view class="num">12</view>
-          <view class="text">我的收藏</view>
-        </view>
-        <view bind:tap="toMyCouponPage">
-          <view class="num">12</view>
-          <view class="text">优惠券</view>
-        </view>
-        <view bind:tap="toRedPackagePage">
-          <view class="num">12</view>
-          <view class="text">红包</view>
-        </view>
-      </view>
-      <!-- 订单 -->
-      <view class="order gutter-container">
-        <view class="vip-level">
-          <vips level="{{1}}" />
-        </view>
-        <view class="oder-info" >
-          <card>
-            <view class="flex-b">
-              <view class="title">我的订单</view>
-              <view class="more" 
-                data-type="all" 
-                bind:tap="viewOrder">全部订单 <icon-font name="icondingdan-dianpu-gengduo1" /></view>
-            </view>
-            <view class="flex-b">
-              <view class="item"  
-                data-type="payment"
-                bind:tap="viewOrder">
-                <view class="icon">
-                  <view class="num flex-cm">{{34}}</view>
-                  <icon-font color="#FF3232" name="icondaifukuan1" size="{{24}}" />
-                </view>
-                <view class="text">待付款</view>
-              </view>
-              <view class="item" 
-                data-type="deliver" 
-                bind:tap="viewOrder">
-                <view class="icon">
-                  <view class="num flex-cm">{{34}}</view>
-                  <icon-font color="#FF3232" name="icondaifahuo1" size="{{24}}" />
-                </view>
-                <view class="text">待发货</view>
-              </view>
-              <view class="item" 
-                data-type="receive" 
-                bind:tap="viewOrder">
-                <view class="icon">
-                  <view class="num flex-cm">{{34}}</view>
-                  <icon-font color="#FF3232" name="icondaishouhuo1" size="{{24}}" />
-                </view>
-                <view class="text">待收货</view>
-              </view>
-              <view class="item" 
-                data-type="evaluate" 
-                bind:tap="viewOrderWaitingEvaluate">
-                <view class="icon">
-                  <view class="num flex-cm">{{34}}</view>
-                  <icon-font color="#FF3232" name="icondaipingjia1" size="{{24}}" />
-                </view>
-                <view class="text">待评价</view>
-              </view>
-              <view class="item" bind:tap="afterSale">
-                <view class="icon">
-                  <icon-font color="#FF3232" name="iconshouhou" size="{{24}}" />
-                </view>
-                <view class="text">售后</view>
-              </view>
-            </view>
-
-            <view class="await flex-b" bind:tap="viewOrderDetail">
-              <shop-card 
-                src="https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg"
-                title="1313"
-                text="1313113"/>
-
-              <view class="text">待收货</view>
-            </view>
-          </card> 
-        </view>
-      </view>
-      <!-- 钱包 -->
-      <view class="money gutter-container">
-        <card>
-          <view class="flex-b">
-            <view class="title">我的钱包 </view>
-            <view class="more" bind:tap="toMyWalletPage">查看详情 <icon-font name="icondingdan-dianpu-gengduo1" /></view>
-          </view>
-          <view class="margin16 flex-a">
-            <view class="balance">
-              <view class="num">
-                <money-text number="{{2000}}" 
-                moneySize="{{14}}"
-                decimalPartSize="{{14}}"
-                numberSize="{{20}}" />
-              </view>
-              
-              <view class="label">我的余额</view>
-              <view class="text">余额可提现</view>
-            </view>
-            <view class="">
-              <view class="num points">
-                68800
-              </view>
-              <view class="label">我的积分</view>
-              <view class="text">可兑换商品</view>
-            </view>
-          </view>
-        </card> 
-      </view>
-      <!-- 分销 -->
-      <view class="distribution gutter-container">
-        <card>
-          <view class="flex-b flex-middle">
-            <view class="title">分销中心 </view>
-            <view class="more" bind:tap="toDistributionPage">申请成为分销合伙人 <icon-font name="icondingdan-dianpu-gengduo1" /></view>
-          </view>
-           <view class="margin16 ">
-            <view class="income flex-col flex-c">
-              <view class="label">我的收益</view>
-              <view class="num">
-                <money-text number="{{3620}}" 
-                moneySize="{{14}}"
-                decimalPartSize="{{14}}"
-                numberSize="{{20}}" />
-              </view>
-              <view class="text flex-cm" bind:tap="toIncomeDetailPage">查看明细<icon-font name="icondingdan-dianpu-gengduo1" size="{{10}}" /></view>
-            </view>
-
-            <view class="flex-b margin16">
-              <view class="flex-b flex-middle qrcode">
-                <view bind:tap="viewMyQrcode">
-                  <view class="label">我的二维码</view>
-                  <view class="text">推广、建团扫码搞定</view>
-                </view>
-                <view >
-                 <icon-font name="iconerweima" size="{{20}}" color="#FF3232" />
-                </view>
-              </view>
-              <view class="flex-b flex-middle team">
-               <view >
-                  <view class="label">我的团队</view>
-                  <view class="text">建立团队 共同发展</view>
-                </view>
-                <view >
-                  <image src="/images/mine/my-team.png" />
-                 <!-- <icon-font name="iconerweima" size="{{20}}" color="#FF3232" /> -->
-                </view>
-              </view>
-            </view>
-           </view>
-        </card> 
-      </view>
-
-      <!-- 更多服务 -->
-      <view class="services gutter-container">
-        <card>
-          <view class="flex">
-            <view class="title">更多服务 </view>
-          </view>
-          
-          <view class="flex flex-wrap margin16">
-            <view class="item "
-              wx:for="{{moreList}}"
-              data-path="{{item.path}}"
-              wx:key="index"
-              bind:tap="onServiceClick"
-              >
-              <view class="icon">
-                <image src="{{item.pic}}" color="#FF3232" name="icondaifahuo1" size="{{24}}" />
-              </view>
-              <view class="text">{{item.text}}</view>
-            </view>
-          </view>
-        </card> 
       </view>
     </view>
-  </page-container>
+    <!-- 列表 -->
+    <view class="list gutter-container flex-a">
+      <view bind:tap="toMyFollowePage">
+        <view class="num">{{focus}}</view>
+        <view class="text">我的关注</view>
+      </view>
+      <view bind:tap="toMyStorepage">
+        <view class="num">{{collection}}</view>
+        <view class="text">我的收藏</view>
+      </view>
+      <view bind:tap="toMyCouponPage">
+        <view class="num">{{coupon}}</view>
+        <view class="text">优惠券</view>
+      </view>
+      <view bind:tap="toRedPackagePage">
+        <view class="num">{{redPackage}}</view>
+        <view class="text">红包</view>
+      </view>
+    </view>
+    <!-- 订单 -->
+    <view class="order gutter-container">
+      <view class="vip-level">
+        <vips level="{{1}}" />
+      </view>
+      <view class="oder-info">
+        <card>
+          <view class="flex-b">
+            <view class="title">我的订单</view>
+            <view class="more" data-type="all" bind:tap="viewOrder">
+              全部订单
+              <icon-font name="icondingdan-dianpu-gengduo1" />
+            </view>
+          </view>
+          <view class="flex-b">
+            <view class="item" data-type="payment" bind:tap="viewOrder">
+              <view class="icon">
+                <view class="num flex-cm">{{payment}}</view>
+                <icon-font color="#FF3232" name="icondaifukuan1" size="{{24}}" />
+              </view>
+              <view class="text">待付款</view>
+            </view>
+            <view class="item" data-type="deliver" bind:tap="viewOrder">
+              <view class="icon">
+                <view class="num flex-cm">{{deliver}}</view>
+                <icon-font color="#FF3232" name="icondaifahuo1" size="{{24}}" />
+              </view>
+              <view class="text">待发货</view>
+            </view>
+            <view class="item" data-type="receive" bind:tap="viewOrder">
+              <view class="icon">
+                <view class="num flex-cm">{{receive}}</view>
+                <icon-font color="#FF3232" name="icondaishouhuo1" size="{{24}}" />
+              </view>
+              <view class="text">待收货</view>
+            </view>
+            <view class="item" data-type="evaluate" bind:tap="viewOrderWaitingEvaluate">
+              <view class="icon">
+                <view class="num flex-cm">{{evaluate}}</view>
+                <icon-font color="#FF3232" name="icondaipingjia1" size="{{24}}" />
+              </view>
+              <view class="text">待评价</view>
+            </view>
+            <view class="item" bind:tap="afterSale">
+              <view class="icon">
+                <icon-font color="#FF3232" name="iconshouhou" size="{{24}}" />
+              </view>
+              <view class="text">售后</view>
+            </view>
+          </view>
+          <view class="await flex-b" bind:tap="viewOrderDetail">
+            <shop-card src="{{orderInfo.pic}}" title="{{orderInfo.name}}" text="{{orderInfo.address}}" />
+            <view class="text">待收货</view>
+          </view>
+        </card>
+      </view>
+    </view>
+    <!-- 钱包 -->
+    <view class="money gutter-container">
+      <card>
+        <view class="flex-b">
+          <view class="title">我的钱包</view>
+          <view class="more" bind:tap="toMyWalletPage">
+            查看详情
+            <icon-font name="icondingdan-dianpu-gengduo1" />
+          </view>
+        </view>
+        <view class="margin16 flex-a">
+          <view class="balance">
+            <view class="num">
+              <money-text number="{{balance}}" moneySize="{{14}}" decimalPartSize="{{14}}" numberSize="{{20}}" />
+            </view>
+            <view class="label">我的余额</view>
+            <view class="text">余额可提现</view>
+          </view>
+          <view class="">
+            <view class="num points">{{points}}</view>
+            <view class="label">我的积分</view>
+            <view class="text">可兑换商品</view>
+          </view>
+        </view>
+      </card>
+    </view>
+    <!-- 分销 -->
+    <view class="distribution gutter-container">
+      <card>
+        <view class="flex-b flex-middle">
+          <view class="title">分销中心</view>
+          <view class="more" bind:tap="toDistributionPage">
+            申请成为分销合伙人
+            <icon-font name="icondingdan-dianpu-gengduo1" />
+          </view>
+        </view>
+        <view class="margin16 ">
+          <view class="income flex-col flex-c">
+            <view class="label">我的收益</view>
+            <view class="num">
+              <money-text number="{{income}}" moneySize="{{14}}" decimalPartSize="{{14}}" numberSize="{{20}}" />
+            </view>
+            <view class="text flex-cm" bind:tap="toIncomeDetailPage">
+              查看明细
+              <icon-font name="icondingdan-dianpu-gengduo1" size="{{10}}" />
+            </view>
+          </view>
+          <view class="flex-b margin16">
+            <view class="flex-b flex-middle qrcode">
+              <view bind:tap="viewMyQrcode">
+                <view class="label">我的二维码</view>
+                <view class="text">推广、建团扫码搞定</view>
+              </view>
+              <view>
+                <icon-font name="iconerweima" size="{{20}}" color="#FF3232" />
+              </view>
+            </view>
+            <view class="flex-b flex-middle team">
+              <view>
+                <view class="label">我的团队</view>
+                <view class="text">建立团队 共同发展</view>
+              </view>
+              <view>
+                <image src="/images/mine/my-team.png" />
+                <!-- <icon-font name="iconerweima" size="{{20}}" color="#FF3232" /> -->
+              </view>
+            </view>
+          </view>
+        </view>
+      </card>
+    </view>
+    <!-- 更多服务 -->
+    <view class="services gutter-container">
+      <card>
+        <view class="flex">
+          <view class="title">更多服务</view>
+        </view>
+        <view class="flex flex-wrap margin16">
+          <view class="item " wx:for="{{moreList}}" data-path="{{item.path}}" wx:key="index" bind:tap="onServiceClick">
+            <view class="icon">
+              <image src="{{item.pic}}" color="#FF3232" name="icondaifahuo1" size="{{24}}" />
+            </view>
+            <view class="text">{{item.text}}</view>
+          </view>
+        </view>
+      </card>
+    </view>
+  </view>
+</page-container>

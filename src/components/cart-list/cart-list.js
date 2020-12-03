@@ -1,5 +1,8 @@
 import {Path, Router} from '../../router/index';
 import { getDataset } from '../../utils/commom';
+import {Toast} from '../../utils/sysApis';
+
+import { deleteGoodInCart, saveGood, getShopCouponList } from "../../api/goodCrat"
 
 function checkedAll(data, checked) {
   data.checked = checked;
@@ -33,6 +36,7 @@ Component({
       type: Object,
       value: {
         brandName: '阿迪达斯',
+        id: 1,
         logo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopList: [
           {
@@ -90,78 +94,18 @@ Component({
     isAllSelected: false,
     activeCoverIndex: '',
     couponList: [
-      {
-        id: 1,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: ' 部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 2,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: '部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 1,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: ' 部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 2,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: '部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 1,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: ' 部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 2,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: '部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
+      // {
+      //   id: 1,
+      //   goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      //   type: 0, // 0平台， 1店铺
+      //   typeText: '平台礼品券',
+      //   remindText: ' 部分个人护理商品',
+      //   expired: '2020-12-30 23:59:59',
+      //   status: 1, // 1 待领取 2 待使用
+      //   couponMoney: 50,
+      //   availableMoney: 200,
+      //   remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+      // }
     ]
   },
 
@@ -198,10 +142,17 @@ Component({
       })
     },
     // 选择优惠券
-    selectCoupon() {
+    selectCoupon(e) {
       console.log('selectCoupon', )
-      this.setData({
-        show: true
+      getShopCouponList({
+        shopId: this.data.id
+      }).then(res => {
+        if (res.code === 200) {
+          this.setData({
+            couponList: res.data,
+            show: true
+          })
+        }
       })
     },
     onCloseDialog() {
@@ -285,7 +236,15 @@ Component({
       this.setData({
         activeCoverIndex: ''
       })
-      this.triggerEvent('onSave', {...saveGood})
+      this.triggerEvent('onSave', {...dataset})
+
+      saveGood({
+        ids: [dataset.order.id]
+      }).then(res => {
+        if (res.code === 200) {
+          Toast.success('收藏成功')
+        }
+      })
     },
     // 删除
     removeGood(e) {
@@ -293,14 +252,22 @@ Component({
       console.log('removeGood', dataset)
       let data = this.data.data
       let {shop, order, shopIndex, orderIndex} = getDataset(e)
-      shop.orderList.splice(orderIndex, 1)
-      data.shopList[shopIndex] = shop
-      this.setData({
-        data,
-        activeCoverIndex: ''
+     
+      deleteGoodInCart({
+        ids: [order.id]
+      }).then(res => {
+        if (res.code === 200) {
+          shop.orderList.splice(orderIndex, 1)
+          data.shopList[shopIndex] = shop
+          this.setData({
+            data,
+            activeCoverIndex: ''
+          })
+          this.onChange(order, false, 'delete')
+          Toast.success('删除成功')
+        }
       })
 
-      this.onChange(order, false, 'delete')
     },
     // 修改订单规格
     swicthOrderModel(e) {
@@ -337,9 +304,6 @@ Component({
       let orderList = Array.isArray(order) ? order : [order]
       this.triggerEvent('onChange', {orderList, checked, actionType })
     },
-
-    
-    
 
   }
 

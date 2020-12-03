@@ -5,14 +5,9 @@
   "main": "",
   "scripts": {
     "dev": "set NODE_ENV=development && gulp dev ",
-    "build": "set NODE_ENV=production &&gulp build",
+    "build": "set NODE_ENV=production && gulp build",
     "test": "gulp test",
     "lint": "eslint --fix --ext .js src/"
-  },
-  "author": "yangqi",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/YangQiGitHub/wx-miniprogram-boilerplate.git"
   },
   "license": "ISC",
   "devDependencies": {

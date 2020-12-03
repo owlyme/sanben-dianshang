@@ -29,21 +29,18 @@ Component({
     },
     bannerList: {
       type: Array,
-      value: [
-        {
-          pic: '',
-        }
-      ]
+      value: [{
+        pic: '',
+      }]
     },
     ratio: {
-      type: [Number,String],
+      type: [Number, String],
       value: '33.33%'
     },
     dotsType: {
       type: [String],
-      value: 'default' // right bottom
-    },
-   
+      value: 'default' // text
+    }
   },
   data: {
     // bannerList: [
@@ -71,7 +68,7 @@ Component({
     },
   },
   ready() {
-    
+
   },
 
 
@@ -81,9 +78,9 @@ Component({
       this.setData({
         swiperCurrent,
       })
-      this.triggerEvent('swiperChange', {swiperCurrent})
+      this.triggerEvent('swiperChange', { swiperCurrent })
     },
-    onDotTap(e){
+    onDotTap(e) {
       // this.setData({autoplay:false});
       // const {index} = e.mark;
       // //设置滚动
@@ -92,7 +89,7 @@ Component({
     onItemClick(e) {
       const index = getIndex(e);
       const item = getItem(e);
-      this.triggerEvent('onItemClick', {index, item})
+      this.triggerEvent('onItemClick', { index, item })
     }
   }
 

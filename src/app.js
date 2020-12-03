@@ -1,4 +1,7 @@
 import {setNavBarSize} from './utils/sysApis';
+import {Router, Path} from "./router/index"
+import { storageKeyMap, getLocalStorage } from './utils/localStorage';
+
 App({
   onLaunch() {
     // 设置导航栏尺寸
@@ -10,6 +13,10 @@ App({
       this.globalData.navBarHeight = navBarHeight
       this.globalData.screenHeight = screenHeight
     });
+    
+    if (!getLocalStorage(storageKeyMap.isLogined)) {
+      Router.push(Path.login)
+    }
   },
   onShow() {
     // Do something when show.
@@ -32,6 +39,6 @@ App({
     windowHeight: 667,
     pageContainerHeight: 643, // page-contaier组件使用 windowHeight - navHeight
     screenHeight: 667,
-    navBarHeight: 48,
+    navBarHeight: 48
   })
 });

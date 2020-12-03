@@ -2,6 +2,7 @@
 import { Router, Path } from '../../router/index';
 import { debounce, isScrollUp, throttle} from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
+import { getIndexInfo, getIndexGoodList, getCategories } from '../../api/index';
 const App = getApp();
 
 const goodListTypes = {
@@ -21,110 +22,14 @@ Page({
     interval: 3000,
     duration: 500,
     scrollViewHeight: 400,
+
     customPosition: '杭州', // 用户当前位置
-    bannerList: [
-      {
-        id: 12,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: 'adidas'
-      },
-      {
-        id: 13,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: 'adidas'
-      }
-    ],
-    goodList: [
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-        active: '双十一',
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-
-        tags: ['hao', 'bucuo']
-      }
-    ],
+    bannerList: [],
+    goodProducts: [],
+    priceReduction: [],
+    newProducts: [],
+    productsNews: {},
+    goodList: [],
     goodListTypeListTab: [
       {
         name: '精选',
@@ -141,32 +46,19 @@ Page({
     ],
     goodListType: goodListTypes[0],
     categoryList: [
-      { type: '1', name: '2222'},
-      { type: '1', name: '23'},
-      { type: '1', name: '24442'},
-      { type: '1', name: '2266622'},
-      { type: '1', name: '2444222'},
+      // { type: '1', name: '2222'},
+      // { type: '1', name: '23'},
+      // { type: '1', name: '24442'},
+      // { type: '1', name: '2266622'},
+      // { type: '1', name: '2444222'},
     ],
     specalAcitve: {
       id: 12,
       pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    },
-    list: [{
-      'text': '对话',
-      'iconPath': '../../images/tabbar_icon_chat_default.png',
-      'selectedIconPath': '../../images/tabbar_icon_chat_active.png',
-      dot: true
-    },
-    {
-      'text': '设置',
-      'iconPath': '../../images/tabbar_icon_setting_default.png',
-      'selectedIconPath': '../../images/tabbar_icon_setting_active.png',
-      badge: 'New'
-    }]
+    }
   },
   onLoad() {
     // Do some initialize when page load.
-    
     this.onPageScrollthrottle = throttle((scrollTop) => {
       this.switchStickyStyle(scrollTop);
       this.switchBackTop(scrollTop);
@@ -174,11 +66,58 @@ Page({
     setTimeout(() => {
       this.getDom()
     }, 10)
+    this.getIndexInfo()
+    this.getGoodList(goodListTypes[0])
+    this.getGoodList(goodListTypes[1])
+    this.getGoodList(goodListTypes[2])
   },
-  onReady() {
-    // Do something when page ready.
+  getIndexInfo() {
+    getIndexInfo().then(res => {
+      if (res.code === 200) {
+        let {bannerList, customPosition, goodProducts, priceReduction, 
+          newProducts, productsNews}  = res.data
+        this.setData({
+          customPosition,
+          bannerList,
+          goodProducts,
+          priceReduction,
+          newProducts,
+          productsNews,
+        })
+      }
+    })
+  },
+  getGoodList(type, category) {
+    let goodListType = type || this.data.goodListType
+    getIndexGoodList({
+      type: goodListType,
+      category,
+    }).then(res => {
+      if (res.code === 200) {
+        let goodList = []
+        let {
+          spcealGoodList = [],
+          rankGoodList = [],
+          categoryGoddList = []
+        }  = this.customData
 
-    
+        switch(goodListType) {
+          case goodListTypes[0]: 
+            goodList = this.customData.spcealGoodList = spcealGoodList.concat(res.data)
+            break;
+          case goodListTypes[1]: 
+            goodList = this.customData.rankGoodList = rankGoodList.concat(res.data)
+            break;
+          case goodListTypes[2]: 
+            goodList = this.customData.categoryGoddList = categoryGoddList.concat(res.data)
+            break;
+        }
+
+        this.setData({
+          goodList: goodList
+        })
+      }
+    }) 
   },
   async getDom(a) {
     let navHeight = App.globalData.navHeight
@@ -206,29 +145,16 @@ Page({
   onShow() {
     // Do something when page show.
   },
-  onHide() {
-    // Do something when page hide.
-  },
-  onUnload() {
-    // Do something when page close.
-  },
-  onPullDownRefresh() {
-    // Do something when pull down.
-  },
   onAddressClick() {
     console.log('onAddressClick')
   }, 
   onReachBottom() {
-    // Do something when page reach bottom.
-    console.log('Do something when page reach bottom.')
+    this.getGoodList()
   },
-  onShareAppMessage() {
-    // return custom share data when user share.
-  },
+  onShareAppMessage() {},
   onPageScroll (e) { 
     this.onPageScrollthrottle(e.scrollTop)
   },
-
   // 调用扫一扫
   onScan(e) {
     console.log('调用扫一扫', e)
@@ -261,13 +187,57 @@ Page({
   },
   onGoodListTypeChange(e) {
     let index = e.detail.index
+    let goodListType = goodListTypes[index]
+    let goodList = []
+    let {
+      spcealGoodList = [],
+      rankGoodList = [],
+      categoryGoddList = []
+    }  = this.customData
+
+    switch(goodListType) {
+      case goodListTypes[0]: 
+        goodList = spcealGoodList
+        break;
+      case goodListTypes[1]: 
+        goodList = rankGoodList
+        break;
+      case goodListTypes[2]: 
+        goodList = categoryGoddList
+        this.getCategories()
+        break;
+    }
+
     this.setData({
-      goodListType: goodListTypes[index]
+      goodListType,
+      goodList: goodList
     })
-    console.log(e)
+  },
+  getCategories() {
+    if(this.data.categoryList.length > 0) return; 
+    getCategories().then(res  => {
+      if (res.code === 200) {
+        this.setData({
+          categoryList: res.data
+        })
+      }
+    })
   },
   onCategoryChange(e) {
     console.log(e)
+    let {category} = e.detail
+
+    getIndexGoodList({
+      type: goodListTypes[1],
+      category,
+    }).then(res => {
+      if (res.code === 200) {
+        this.customData.categoryGoddList = res.data
+        this.setData({
+          goodList: this.customData.categoryGoddList
+        })
+      }
+    }) 
   },
 
   viewGood(e){
@@ -288,5 +258,9 @@ Page({
     })
   },
 
-  customData: {}
+  customData: {
+    spcealGoodList: [],
+    rankGoodList: [],
+    categoryGoddList: [],
+  }
 });

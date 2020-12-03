@@ -1,14 +1,32 @@
 import { Path, Router } from '../../router/index';
 import { getDataset, throttle } from '../../utils/commom'
+import { storageKeyMap, getLocalStorage } from '../../utils/localStorage';
+import { getMyInfo, getOrderSummary } from '../../api/mine';
+
+
 const App = getApp();
 
 Page({
   data: {
     offsetTop: App.globalData.navHeight,
     stickied: false,
-    avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    nickName: '用户199514sdffefe',
-    message: 22,
+    avatar: '',
+    nickName: '',
+    payment: 0,
+    deliver: 0,
+    receive: 0,
+    evaluate: 0,
+    income: 0,
+    message: 0,
+    payment: 0,
+    deliver: 0,
+    receive: 0,
+    evaluate: 0,
+    orderInfo: {
+      pic: '',
+      name: '',
+      address: ''
+    },
     moreList: [
       {
         path: Path.myAddress,
@@ -49,11 +67,71 @@ Page({
   },
   onLoad() {
     // Do some initialize when page load
+    let {avatar, nickName } = this.userInfo = getLocalStorage(storageKeyMap.userInfo)
+    this.setData({
+      avatar,
+      nickName,
+    })
     this.throttleSwitchTopStyle = throttle(this.switchTopStyle)
+    this.getInfo()
+    this.getOrderSummary()
   },
- 
-  onShow() {
-    // Do something when page show.
+  getInfo() {
+    getMyInfo({
+      userId: this.userInfo.userId
+    }).then(res => {
+      if (res.code === 200) {
+        let {
+          focus,
+          collection,
+          coupon,
+          redPackage,
+          points,
+          balance,
+          income,
+          message
+        } = res.data
+        this.setData({
+          focus,
+          collection,
+          coupon,
+          redPackage,
+          message,
+          points,
+          balance,
+          income,
+        })
+      }
+    })
+  },
+  getOrderSummary() {
+    getOrderSummary({
+      userId: this.userInfo.userId
+    }).then(res => {
+      if (res.code === 200) {
+        let {
+          payment,
+          deliver,
+          receive,
+          evaluate,
+          orderInfo,
+        } = res.data
+        this.setData({
+          payment,
+          deliver,
+          receive,
+          evaluate,
+          orderInfo
+        })
+      }
+    })
+  },
+  onPullDownRefresh() {
+    this.getInfo()
+    this.getOrderSummary()
+    setTimeout(() => {
+      wx.stopPullDownRefresh()
+    }, 300)
   },
   toMyFollowePage() {
     console.log('viewMyQrcode')
@@ -69,9 +147,6 @@ Page({
     Router.push(Path.myRedPackage)
   },
   onPageScroll(e) {
-    // Do something when page scroll
-    console.log(e.scrollTop)
-    
     this.throttleSwitchTopStyle(e.scrollTop)
   },
   switchTopStyle(scrollTop) {
@@ -85,9 +160,6 @@ Page({
         stickied: false
       })
     }
-  },
-  onTabItemTap() {
-    // 当前是 tab 页时，点击 tab 时触发
   },
   toSignPage() {
     Router.push(Path.signIn)

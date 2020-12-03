@@ -16,20 +16,20 @@
 
   <view class="code-container">
     <code-number
+    disabled="{{sendCodeBtnDisabled}}"
+    timerCount="{{5}}"
     bind:onDisableClick="onGetCodeDisable"
-    bind:onGetCode="onGetCode" disabled="{{sendCodeBtnDisabled}}">
+    bind:onGetCode="onGetCode">
       <view class="code-numer">
        <input
         maxlength="4"
-        data-code="code"
-        bindinput="onCodeChange"
+        model:value="{{code}}"
         placeholder="验证码" />
       </view>
     </code-number>
   </view>
 
   <view class="remind flex-cm">
-      <!-- <image bindtouchend="toAgree" class="check-image" src="./images/checked.png" /> -->
       <icon-font bindtouchend="toAgree" name="iconzhuce-xuanzhong3" size="{{15}}" color="{{checked? '#FF3232' : '#999999'}}" />
       <view class="view-text">已阅读并同意<text-link
         url="/pages/serviceAgreement/serviceAgreement"

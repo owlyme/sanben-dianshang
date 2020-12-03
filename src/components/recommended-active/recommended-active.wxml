@@ -2,7 +2,7 @@
   <view class="flex flex-middle">
     <view class="recommended-active-title">活动推荐</view>
     <view class="recommended-active-deadline">
-      <dead-line />
+      <dead-line value="{{time}}" />
     </view>
   </view>
 

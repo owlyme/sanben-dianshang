@@ -38,7 +38,6 @@
 
     <image src="/images/wave.png" class="theme-wave"/>
 
-
     <!-- 活动种类 -->
     <view class="active-b ">
       <active-list />
@@ -47,7 +46,11 @@
     <!-- 推荐商品 -->
     <view class="tuijian-good-b">
       <card>
-      <recommended-products />
+        <recommended-products
+          goodProducts="{{goodProducts}}"
+          priceReduction="{{priceReduction}}"
+          newProducts="{{newProducts}}"
+          productsNews="{{productsNews}}" />
       </card>
     </view>
     <!-- 推荐活动 -->

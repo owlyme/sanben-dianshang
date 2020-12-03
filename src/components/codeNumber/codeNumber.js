@@ -1,5 +1,4 @@
 const CodeBtnText = '发送验证码';
-let timerCount = 60;
 let timer = null;
 
 Component({
@@ -14,6 +13,10 @@ Component({
     disabled: {
       type: Boolean,
       value: false
+    },
+    timerCount: {
+      type: [Number],
+      value: 60
     }
   },
   data: {
@@ -21,6 +24,12 @@ Component({
     sendCodeBtnText: CodeBtnText,
   },
 
+  // 生命周期函数
+  lifetimes: {
+    attached: function() {
+      this.cacheTimerCount = this.data.timerCount
+    }
+  },
   // 生命周期函数
   methods: {
     getCode() {
@@ -30,23 +39,26 @@ Component({
       }
       if (!timer) {
         // 60s 倒计时
-        let sendCodeBtnText = `${--timerCount}s后重新获取`;
+        let sendCodeBtnText = `${--this.data.timerCount}s后重新获取`;
         this.setData({
           sendCodeBtnText,
           sendCodeBtnDisabled: true
         });
         timer = setInterval(() => {
           // 同时切换文字
-          sendCodeBtnText = `${--timerCount}s后重新获取`;
+          sendCodeBtnText = `${--this.data.timerCount}s后重新获取`;
           this.setData({
             sendCodeBtnText,
           });
-          if (timerCount < 0) {
+          if (this.data.timerCount <= 0) {
             this.setData({
               sendCodeBtnText: CodeBtnText,
-              sendCodeBtnDisabled: false
+              sendCodeBtnDisabled: false,
+              disabled: false,
+              timerCount: this.cacheTimerCount
             });
             clearInterval(timer);
+            timer = null
           }
         }, 1000);
 
