@@ -12,14 +12,22 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     tabs: {
       type: Array,
       value: [
-        'tab 1',
-        'tab 2',
-        'tab 3',
-        'tab 4',
-      ] // [{ name: '',sub: ''}]
+          'tab 1',
+          'tab 2',
+          'tab 3',
+          'tab 4',
+        ] // [{ name: '',sub: ''}]
     },
     activeIndex: {
       type: [String, Number],
@@ -66,7 +74,7 @@ Component({
         activeIndex: index
       });
       console.log(name, index);
-      this.triggerEvent('onChange', {name, index});
+      this.triggerEvent('onChange', { name, index });
     }
 
   }

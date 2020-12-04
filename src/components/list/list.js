@@ -6,15 +6,20 @@ Component({
   },
   behaviors: [],
 
-  properties: {},
+  properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
+  },
   data: {},
 
   // 生命周期函数
-  created() {},
-  attached() {},
-  ready() {},
-  moved() {},
-  detached() {},
+
 
   methods: {}
 

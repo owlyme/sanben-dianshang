@@ -1,32 +1,18 @@
-<view class="recommended-active-components">
+<view class="recommended-active-components {{customClass}}" style="{{customStyle}}">
   <view class="flex flex-middle">
     <view class="recommended-active-title">活动推荐</view>
     <view class="recommended-active-deadline">
       <dead-line value="{{time}}" />
     </view>
   </view>
-
   <view class="recommended-active-pics flex">
-
-  <scroll-view
-    scroll-x="true"
-    style="width: 100%"
-    >
-    <view class="flex" >
-      <view class="active-items"
-        wx:for="{{activeList}}"
-        data-id="{{item.id}}" 
-        data-item="{{item}}"
-        wx:key="index"
-        bind:tap="onProductClick">
-        <image class="image" src="{{item.pic}}"/>
-        <view class="price" >
-          ¥{{item.price || 0}}
+    <scroll-view scroll-x="true" style="width: 100%">
+      <view class="flex">
+        <view class="active-items" wx:for="{{activeList}}" data-id="{{item.id}}" data-item="{{item}}" wx:key="index" bind:tap="onProductClick">
+          <image class="image" src="{{item.pic}}" />
+          <view class="price">¥{{item.price || 0}}</view>
         </view>
       </view>
-    </view>
-   
-  </scroll-view>
-
+    </scroll-view>
   </view>
 </view>

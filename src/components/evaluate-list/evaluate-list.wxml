@@ -1,70 +1,52 @@
-<view class="pingjia">
-
-<!-- 只显示前两项 -->
-<block wx:if="{{type === 'less'}}">
-  <view class="pingjia_box" wx:for="{{list}}" :key="item" wx:if="{{index <2 }}">
-    <view class="box_top">
-      <image src="{{item.avatar}}" mode="" class="head image" ></image>
-      <view class="right">
-        <view class="name">{{item.name}}</view>
-        <view class="p2 ">
-          <text class="text1">{{item.releaseTime}}</text>
+<view class="pingjia {{customClass}}" style="{{customStyle}}">
+  <!-- 只显示前两项 -->
+  <block wx:if="{{type === 'less'}}">
+    <view class="pingjia_box" wx:for="{{list}}" :key="item" wx:if="{{index <2 }}">
+      <view class="box_top">
+        <image src="{{item.avatar}}" mode="" class="head image"></image>
+        <view class="right">
+          <view class="name">{{item.name}}</view>
+          <view class="p2 ">
+            <text class="text1">{{item.releaseTime}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="recommend-content">
+        <view class="text ellipsisTwo">{{item.content}}</view>
+        <view class="image-box">
+          <block wx:for="{{item.pics}}" wx:for-item="pic" wx:for-index="picIndex" wx:key="picIndex">
+            <view class="image">
+              <image class="image" src="{{pic}}"></image>
+            </view>
+          </block>
         </view>
       </view>
     </view>
-    <view class="recommend-content">
-      <view class="text ellipsisTwo">
-        {{item.content}}
-      </view>
-      <view class="image-box">
-        <block wx:for="{{item.pics}}" 
-        wx:for-item="pic"
-        wx:for-index="picIndex"
-        wx:key="picIndex"
-        >
-          <view class="image">
-            <image class="image" src="{{pic}}"></image>
+  </block>
+  <block wx:if="{{type === 'more'}}">
+    <view class="pingjia_box more" wx:for="{{list}}" :key="item">
+      <card>
+        <view class="box_top">
+          <image src="{{item.avatar}}" mode="" class="head"></image>
+          <view class="right">
+            <view class="name">{{item.name}}</view>
+            <view class="p2 ">
+              <text class="text1">{{item.releaseTime}}</text>
+            </view>
           </view>
-        </block>
-      </view>
-    </view>
-  </view>
-</block>
-
-<block wx:if="{{type === 'more'}}">
-  <view class="pingjia_box more" wx:for="{{list}}" :key="item">
-    <card>
-    <view class="box_top">
-      <image src="{{item.avatar}}" mode="" class="head"></image>
-      <view class="right">
-        <view class="name">{{item.name}}</view>
-        <view class="p2 ">
-          <text class="text1">{{item.releaseTime}}</text>
         </view>
-      </view>
-    </view>
-    <view class="recommend-content">
-      <view class="text ellipsisTwo">
-        {{item.content}}
-      </view>
-      <view class="image-box">
-        <block wx:for="{{item.pics}}" 
-        wx:for-item="pic"
-        wx:for-index="picIndex"
-        wx:key="picIndex"
-        >
-          <view class="image">
-            <image class="image" src="{{pic}}"></image>
+        <view class="recommend-content">
+          <view class="text ellipsisTwo">{{item.content}}</view>
+          <view class="image-box">
+            <block wx:for="{{item.pics}}" wx:for-item="pic" wx:for-index="picIndex" wx:key="picIndex">
+              <view class="image">
+                <image class="image" src="{{pic}}"></image>
+              </view>
+            </block>
           </view>
-        </block>
-      </view>
+        </view>
+        <view class="model">{{item.model}}</view>
+      </card>
     </view>
-
-    <view class="model">
-      {{item.model}}
-    </view>
-    </card>
-  </view>
-</block>
-
+  </block>
 </view>

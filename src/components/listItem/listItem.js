@@ -7,6 +7,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     extClassName: {
       type: String,
       value: ''

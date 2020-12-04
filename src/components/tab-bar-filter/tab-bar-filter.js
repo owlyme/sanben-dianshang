@@ -13,15 +13,23 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     tabs: {
       type: Array,
       value: [
-        { name: '综合推荐', type: 'first'},
-        { name: '销量', type: 'sales'},
-        { name: '价格', type: 'price'},
-        { name: '店铺', type: 'shop'},
-        { name: '筛选', type: 'filter'},
-      ] // []
+          { name: '综合推荐', type: 'first' },
+          { name: '销量', type: 'sales' },
+          { name: '价格', type: 'price' },
+          { name: '店铺', type: 'shop' },
+          { name: '筛选', type: 'filter' },
+        ] // []
     },
     active: {
       type: [String, Number],
@@ -63,7 +71,7 @@ Component({
         active: type === 'filter' ? active : type,
         filterPriceStatus
       });
-      this.triggerEvent('onChange', {type, index, filterPriceStatus});
+      this.triggerEvent('onChange', { type, index, filterPriceStatus });
     },
     // 切换价格排序方式
     switchFilterPriceStatus(type) {

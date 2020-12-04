@@ -1,22 +1,12 @@
-<view class="tab-components">
+<view class="tab-components {{customClass}}" style="{{customStyle}}">
   <view class="flex-a tab-type-2">
-    <view
-      wx:for="{{list}}"
-      wx:key="index"
-      data-name="{{item.name}}"
-      data-index="{{index}}"
-      bind:tap="onClick"
-      class="flex-col flex-cm tab-item {{ active == item.name ? 'active' : ''}}"
-      >
-
+    <view wx:for="{{list}}" wx:key="index" data-name="{{item.name}}" data-index="{{index}}" bind:tap="onClick" class="flex-col flex-cm tab-item {{ active == item.name ? 'active' : ''}}">
       <image class="image" wx:if="{{active == item.name && item.selectedPic}}" src="{{item.selectedPic}}" />
       <block wx:else>
         <view class="tab-icon">
-          <icon-font name="{{item.icon}}" size="22"/>
+          <icon-font name="{{item.icon}}" size="22" />
         </view>
-        <view class="sub-name" >
-          {{item.name}}
-        </view>
+        <view class="sub-name">{{item.name}}</view>
       </block>
     </view>
   </view>

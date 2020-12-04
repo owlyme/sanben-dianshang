@@ -1,39 +1,21 @@
 <!-- 积分  兑换 -->
-<view class="xxx-components">
-  <!-- points: 200,
-        price: 80,
-        discountPrice: 180,
-        name: 'Adidas阿迪达斯旗舰店官网外套男装新年秋季防风衣加绒运动夹克',
-        feature: [
-          '首发',
-          '包邮'
-        ] -->
+<view class="xxx-components {{customClass}}" style="{{customStyle}}">
   <view class="header flex-b flex-middle">
-    <view >积分兑换</view>
-    <view >{{info.points}}积分+{{info.discountPrice}}元</view>
+    <view>积分兑换</view>
+    <view>{{info.points}}积分+{{info.discountPrice}}元</view>
   </view>
-
   <view class="price flex ">
-    <view >
-      <money-text 
-      moneySize="{{16}}" 
-      numberSize="{{24}}"
-      decimalPartSize="{{24}}"
-       number="{{info.discountPrice}}" />
+    <view>
+      <money-text moneySize="{{16}}" numberSize="{{24}}" decimalPartSize="{{24}}" number="{{info.discountPrice}}" />
     </view>
     <view class="price-text ">
-      <text class="yuanjia">原价:</text><money-text color="#999999" number="{{info.price}}" />
+      <text class="yuanjia">原价:</text>
+      <money-text color="#999999" number="{{info.price}}" />
     </view>
   </view>
-
-  <view class="name ">
-    {{info.name}}
-  </view>
-
-
+  <view class="name ">{{info.name}}</view>
   <view class="sales flex-b">
-    <good-feature list="{{info.feature}}"/>
+    <good-feature list="{{info.feature}}" />
     <view class="text">月销{{info.saleNumber}}件</view>
   </view>
-  
 </view>

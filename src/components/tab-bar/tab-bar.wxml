@@ -1,58 +1,24 @@
-<view class="tab-components">
+<view class="tab-components {{customClass}}" style="{{customStyle}}">
   <view class="flex-a  tab-type-1" wx:if="{{type == 1}}">
-    <view
-      wx:for="{{tabs}}"
-      wx:key="index"
-      data-name="{{item}}"
-      data-index="{{index}}"
-      bind:tap="onClick"
-      class="flex-col flex-middle tab-item {{ activeIndex === index ? 'active' : ''}}"
-      >
+    <view wx:for="{{tabs}}" wx:key="index" data-name="{{item}}" data-index="{{index}}" bind:tap="onClick" class="flex-col flex-middle tab-item {{ activeIndex === index ? 'active' : ''}}">
       <view class="tab-name" style="width: {{100 / tabs.length}}%); color: {{activeIndex === index ? activeColor : color}}">
         {{item}}
       </view>
-      <view class="sub-border" >
-        <view class="sub-border-inner"
-        style="transform: translateX({{(index / (tabs.length-1)) * 100}}%)"
-          ></view>
+      <view class="sub-border">
+        <view class="sub-border-inner" style="transform: translateX({{(index / (tabs.length-1)) * 100}}%)"></view>
       </view>
     </view>
   </view>
-
   <!-- item 是胶囊形状 -->
   <view class="flex flex-wrap tab-type-pill" wx:elif="{{type == 'pill'}}">
-    <view
-      wx:for="{{tabs}}"
-      wx:key="index"
-      data-name="{{item}}"
-      data-index="{{index}}"
-      bind:tap="onClick"
-
-      class="flex-col flex-middle tab-item {{ activeIndex === index ? 'active' : ''}}"
-      >
-      <view class="tab-name flex-cm ellipsisOne">
-        {{item}}
-      </view>
+    <view wx:for="{{tabs}}" wx:key="index" data-name="{{item}}" data-index="{{index}}" bind:tap="onClick" class="flex-col flex-middle tab-item {{ activeIndex === index ? 'active' : ''}}">
+      <view class="tab-name flex-cm ellipsisOne">{{item}}</view>
     </view>
   </view>
-
   <view class="flex-a tab-type-2" wx:else>
-    <view
-      wx:for="{{tabs}}"
-      wx:key="index"
-      data-name="{{item.name}}"
-      data-index="{{index}}"
-      bind:tap="onClick"
-      class="flex-col flex-middle tab-item {{ activeIndex == index ? 'active' : ''}}"
-      >
-      <view class="tab-name " style="width: {{100 / tabs.length}}%)">
-        {{item.name}}
-      </view>
-      <view class="sub-name" >
-        {{item.sub}}
-      </view>
+    <view wx:for="{{tabs}}" wx:key="index" data-name="{{item.name}}" data-index="{{index}}" bind:tap="onClick" class="flex-col flex-middle tab-item {{ activeIndex == index ? 'active' : ''}}">
+      <view class="tab-name " style="width: {{100 / tabs.length}}%)">{{item.name}}</view>
+      <view class="sub-name">{{item.sub}}</view>
     </view>
   </view>
-
-
 </view>

@@ -1,10 +1,5 @@
-<view class="active-components flex-a flex-wrap">
-  <view 
-    class="active-item"
-    wx:for="{{active}}" 
-    wx:key="index"
-    data-type="{{item.type}}"
-    bind:tap="onActiveClick">
+<view class="active-components flex-a flex-wrap {{customClass}}" style="{{customStyle}}">
+  <view class="active-item" wx:for="{{active}}" wx:key="index" data-type="{{item.type}}" bind:tap="onActiveClick">
     <image class="active-icon" src="{{item.icon}}" />
     <view class="active-name">{{item.text}}</view>
   </view>

@@ -10,10 +10,17 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     goodProducts: {
       type: Array,
-      value: [
-        {
+      value: [{
           id: 1,
           pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         },
@@ -25,8 +32,7 @@ Component({
     },
     priceReduction: {
       type: Array,
-      value: [
-        {
+      value: [{
           id: 1,
           pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         },
@@ -38,8 +44,7 @@ Component({
     },
     newProducts: {
       type: Array,
-      value: [
-        {
+      value: [{
           id: 1,
           pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         },
@@ -65,12 +70,12 @@ Component({
       }
     }
   },
-  data: {  },
+  data: {},
 
   methods: {
     onProductClick(e) {
-      let id =  getId(e);
-      let item =  getItem(e);
+      let id = getId(e);
+      let item = getItem(e);
       console.log(id, item)
     }
   }

@@ -1,138 +1,62 @@
-<view class="xxx-components">
+<view class="xxx-components {{customClass}}" style="{{customStyle}}">
   <view class="barnd-info  flex-b flex-middle">
     <view class="flex flex-middle">
-      <view class="selected" 
-      bind:tap="selectedAll">
-        <icon-font 
-        wx:if="{{data.checked}}"
-        name="icongouwuche-duoxuanqi-xuanze3" 
-        size="16" 
-        color="#FF3232" />
-
-        <icon-font
-        wx:else 
-        name="iconcircle" 
-        size="16" 
-        color="#CCCCCC" 
-        />
+      <view class="selected" bind:tap="selectedAll">
+        <icon-font wx:if="{{data.checked}}" name="icongouwuche-duoxuanqi-xuanze3" size="16" color="#FF3232" />
+        <icon-font wx:else name="iconcircle" size="16" color="#CCCCCC" />
       </view>
-  
-      <image class="logo" src="{{data.logo}}" bind:tap="viewShop"  />
+      <image class="logo" src="{{data.logo}}" bind:tap="viewShop" />
       <text class="title ellipsisOne" bind:tap="viewShop">{{data.brandName}}</text>
-
     </view>
     <!-- 优惠券 -->
-    <view class="coupon" bind:tap="selectCoupon">
-      优惠券
-    </view>
+    <view class="coupon" bind:tap="selectCoupon">优惠券</view>
   </view>
-
   <view class="order-info">
     <block wx:for="{{data.shopList}}" wx:key="index">
-
-      <view class="shop-name ellipsisOne" wx:if="{{item.orderList.length}}" data-shop="{{item}}"
-          bind:tap="viewShopAll">
+      <view class="shop-name ellipsisOne" wx:if="{{item.orderList.length}}" data-shop="{{item}}" bind:tap="viewShopAll">
         <icon-font name="iconmendian2" size="14" color="#CCCCCC" />
         {{item.shopName}}
-        <icon-font name="icondingdan-dianpu-gengduo" size="14" color="#CCCCCC" 
-          
-        />
+        <icon-font name="icondingdan-dianpu-gengduo" size="14" color="#CCCCCC" />
       </view>
-     
       <view wx:if="{{item.orderList.length}}">
-        <view
-        class="order-container"
-        wx:for="{{item.orderList}}"
-        wx:for-item="order"
-        wx:for-index="orderIndex"
-        wx:key="orderIndex"
-        data-shop="{{item}}"
-        data-order="{{order}}"
-        >
-        <!-- 显示遮罩层 -->
-          <view class="order-item-cover flex"
-            wx:if="{{activeCoverIndex === index + '-' + orderIndex}}" 
-            bind:tap="hiddenCover"
-            >
-            <view 
-            data-shop="{{item}}"
-            data-order="{{order}}"
-            data-shop-index='{{index}}'
-            data-order-index='{{orderIndex}}'
-            catch:tap="saveGood" 
-            class="btn save">移入收藏</view>
-            <view 
-            data-shop="{{item}}"
-            data-order="{{order}}"
-            data-shop-index='{{index}}'
-            data-order-index='{{orderIndex}}'
-            catch:tap="removeGood" class="btn delete">删除</view>
+        <view class="order-container" wx:for="{{item.orderList}}" wx:for-item="order" wx:for-index="orderIndex" wx:key="orderIndex" data-shop="{{item}}" data-order="{{order}}">
+          <!-- 显示遮罩层 -->
+          <view class="order-item-cover flex" wx:if="{{activeCoverIndex === index + '-' + orderIndex}}" bind:tap="hiddenCover">
+            <view data-shop="{{item}}" data-order="{{order}}" data-shop-index='{{index}}' data-order-index='{{orderIndex}}' catch:tap="saveGood" class="btn save">
+              移入收藏
+            </view>
+            <view data-shop="{{item}}" data-order="{{order}}" data-shop-index='{{index}}' data-order-index='{{orderIndex}}' catch:tap="removeGood" class="btn delete">
+              删除
+            </view>
           </view>
-          <view class="flex flex-middle order-item" >
-            
+          <view class="flex flex-middle order-item">
             <!-- 单选 -->
-            <view class="selected" 
-              data-shop="{{item}}"
-              data-order="{{order}}"
-              data-shop-index='{{index}}'
-              data-order-index='{{orderIndex}}'
-              bind:tap="selectedSingle" >
-              
+            <view class="selected" data-shop="{{item}}" data-order="{{order}}" data-shop-index='{{index}}' data-order-index='{{orderIndex}}' bind:tap="selectedSingle">
               <icon-font wx:if="{{order.checked}}" name="icongouwuche-duoxuanqi-xuanze3" size="16" color="#FF3232" />
               <icon-font wx:else name="iconcircle" size="16" color="#CCCCCC" />
             </view>
             <!-- 图片 -->
-            <image class='good-img' src="{{order.pic}}"
-            data-shop="{{item}}"
-            data-order="{{order}}"
-            data-shop-index='{{index}}'
-            data-order-index='{{orderIndex}}'
-            bind:longtap="showCover"
-            bind:tap="viewGoodDetail"
-            />
+            <image class='good-img' src="{{order.pic}}" data-shop="{{item}}" data-order="{{order}}" data-shop-index='{{index}}' data-order-index='{{orderIndex}}' bind:longtap="showCover" bind:tap="viewGoodDetail" />
             <!-- 详情 -->
-            <view class="detail" 
-            data-shop="{{item}}"
-            data-order="{{order}}"
-            data-shop-index='{{index}}'
-            data-order-index='{{orderIndex}}'
-            bind:tap="viewGoodDetail">
-              <view class="name ellipsisOne" >
-                {{order.name}}
-              </view>
+            <view class="detail" data-shop="{{item}}" data-order="{{order}}" data-shop-index='{{index}}' data-order-index='{{orderIndex}}' bind:tap="viewGoodDetail">
+              <view class="name ellipsisOne">{{order.name}}</view>
               <view class="flex">
-              <!-- 修改订单规格 -->
-                  <view class="model ellipsisOne" 
-                    data-shop="{{item}}"
-                    data-order="{{order}}"
-                    data-shop-index='{{index}}'
-                    data-order-index='{{orderIndex}}'
-                    catch:tap="swicthOrderModel"
-                  >
+                <!-- 修改订单规格 -->
+                <view class="model ellipsisOne" data-shop="{{item}}" data-order="{{order}}" data-shop-index='{{index}}' data-order-index='{{orderIndex}}' catch:tap="swicthOrderModel">
                   {{order.model}}
                 </view>
               </view>
-              
-              <view class="flex-b " >
+              <view class="flex-b ">
                 <block wx:if="{{order.status}}">
                   <money-text number="{{order.price * order.number}}" />
-                  <number-stepper 
-                  num="{{order.number}}" 
-                  data-shop="{{item}}"
-                  data-order="{{order}}"
-                  data-shop-index='{{index}}'
-                  data-order-index='{{orderIndex}}'
-                  bind:onChange="onGoodNumberChange" />
+                  <number-stepper num="{{order.number}}" data-shop="{{item}}" data-order="{{order}}" data-shop-index='{{index}}' data-order-index='{{orderIndex}}' bind:onChange="onGoodNumberChange" />
                 </block>
                 <!-- 重选 -->
                 <block wx:else>
                   <text class="footer-text">请重新选择商品规格</text>
-                  <view class="reselect"
-                  data-shop="{{item}}"
-                  data-order="{{order}}"
-                  data-shop-index='{{index}}'
-                  data-order-index='{{orderIndex}}'
-                  catch:tap="reselect">重选</view>
+                  <view class="reselect" data-shop="{{item}}" data-order="{{order}}" data-shop-index='{{index}}' data-order-index='{{orderIndex}}' catch:tap="reselect">
+                    重选
+                  </view>
                 </block>
               </view>
             </view>
@@ -141,19 +65,11 @@
       </view>
     </block>
   </view>
-
   <half-screen-dialog header="优惠券" show="{{show}}" bind:onClose="onCloseDialog">
-      <scroll-view scroll-y="true" style="height: {{380 * 2}}rpx">
-        <view 
-        class="list-b-item"
-        wx:for="{{couponList}}"
-        wx:key="index" 
-        data-item="{{item}}"
-        data-id="{{item.id}}"
-        >
-          <coupon-card-cart info="{{item}}"
-          bind:onGetCoupon="onGetCoupon"/>
-        </view>
-      </scroll-view>
+    <scroll-view scroll-y="true" style="height: {{380 * 2}}rpx">
+      <view class="list-b-item" wx:for="{{couponList}}" wx:key="index" data-item="{{item}}" data-id="{{item.id}}">
+        <coupon-card-cart info="{{item}}" bind:onGetCoupon="onGetCoupon" />
+      </view>
+    </scroll-view>
   </half-screen-dialog>
 </view>

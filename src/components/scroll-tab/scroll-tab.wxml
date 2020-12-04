@@ -1,59 +1,28 @@
-<view class="scroll-tab-components">
+<view class="scroll-tab-components {{customClass}}" style="{{customStyle}}">
   <block wx:if="{{type == 1}}">
-    <scroll-view
-      scroll-x="true"
-      style="width: 100%"
-      >
-      <view class="flex" >
-        <view
-          wx:for="{{tabs}}"
-          wx:key="index"
-          data-name="{{item.name}}"
-          data-category="{{item.type}}"
-          bind:tap="onClick"
-          class="flex-col flex-middle tab-item {{ active == item.name ? 'active' : ''}}"
-          >
-            {{item.name}}
+    <scroll-view scroll-x="true" style="width: 100%">
+      <view class="flex">
+        <view wx:for="{{tabs}}" wx:key="index" data-name="{{item.name}}" data-category="{{item.type}}" bind:tap="onClick" class="flex-col flex-middle tab-item {{ active == item.name ? 'active' : ''}}">
+          {{item.name}}
         </view>
       </view>
     </scroll-view>
   </block>
-   <block wx:if="{{type == 2}}">
-    <scroll-view
-      scroll-x="true"
-      style="width: 100%"
-      >
-      <view class="flex" >
-        <view
-          wx:for="{{tabs}}"
-          wx:key="index"
-          data-name="{{item.name}}"
-          data-category="{{item.id}}"
-          bind:tap="onClick"
-          class="flex-col flex-middle tab-item-type-2 {{ active == item.name ? 'active' : ''}}"
-          >
-            <image class="image" src="{{item.pic}}" />
-            <view class="ellipsisOne name">{{item.name}}</view>
+  <block wx:if="{{type == 2}}">
+    <scroll-view scroll-x="true" style="width: 100%">
+      <view class="flex">
+        <view wx:for="{{tabs}}" wx:key="index" data-name="{{item.name}}" data-category="{{item.id}}" bind:tap="onClick" class="flex-col flex-middle tab-item-type-2 {{ active == item.name ? 'active' : ''}}">
+          <image class="image" src="{{item.pic}}" />
+          <view class="ellipsisOne name">{{item.name}}</view>
         </view>
       </view>
     </scroll-view>
   </block>
-
   <block wx:if="{{type == 3}}">
-    <scroll-view
-      scroll-x="true"
-      style="width: 100%"
-      >
-      <view class="flex" >
-        <view
-          wx:for="{{tabs}}"
-          wx:key="index"
-          data-name="{{item.name}}"
-          data-category="{{item.type}}"
-          bind:tap="onClick"
-          class="flex-col flex-middle tab-item-type-3 {{ active == item.name ? 'active' : ''}}"
-          >
-            {{item.name}}
+    <scroll-view scroll-x="true" style="width: 100%">
+      <view class="flex">
+        <view wx:for="{{tabs}}" wx:key="index" data-name="{{item.name}}" data-category="{{item.type}}" bind:tap="onClick" class="flex-col flex-middle tab-item-type-3 {{ active == item.name ? 'active' : ''}}">
+          {{item.name}}
         </view>
       </view>
     </scroll-view>

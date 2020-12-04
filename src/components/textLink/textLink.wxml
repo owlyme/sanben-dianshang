@@ -1,1 +1,3 @@
-<view class="text-link-components" bindtap="onClick">{{text}}</view>
+<view class="text-link-components {{customClass}}" style="{{customStyle}}" bindtap="onClick">
+  {{text}}
+</view>

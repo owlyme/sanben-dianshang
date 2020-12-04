@@ -1,24 +1,16 @@
-<view wx:if="{{type == 'default'}}" class="shop-card-components flex">
-   <view class="info-image">
-     <image
-      class="shop-logo image"
-      slot="image"
-      style="border-radius: {{ circle ? '50%' : '8rpx' }}"
-      src="{{src}}" />
+<view wx:if="{{type == 'default'}}" class="shop-card-components flex {{customClass}}" style="{{customStyle}}">
+  <view class="info-image">
+    <image class="shop-logo image" slot="image" style="border-radius: {{ circle ? '50%' : '8rpx' }}" src="{{src}}" />
   </view>
   <view style="flex: 1" class="flex-col flex-center">
-    <view class="shop-name ellipsisOne flex-middle"
-      >
+    <view class="shop-name ellipsisOne flex-middle">
       <block wx:if="{{!title}}">
         <slot name="title"></slot>
       </block>
       <block wx:else>{{title}}</block>
       <icon-font gutter="{{4}}" wx:if="{{showNameIcon}}" name="icondingdan-dianpu-gengduo" size="{{14}}" />
     </view>
-
-    <view
-      class="shop-address flex-middle"
-      >
+    <view class="shop-address flex-middle">
       <icon-font wx:if="{{showAddressIcon}}" name="icondingdan-dianpudizhi-hong1" size="{{12}}" />
       <block wx:if="{{!text}}">
         <slot name="text"></slot>
@@ -27,8 +19,7 @@
     </view>
   </view>
 </view>
-
-<view wx:elif="{{type == 'simple'}}" class="shop-address flex flex-middle">
+<view wx:elif="{{type == 'simple'}}" class="shop-address flex flex-middle {{customClass}}" style="{{customStyle}}">
   <image class="image" src="{{src}}" />
   <text class="text">{{title}}</text>
   <view class="btn flex-cm" catch:tap="viewShopDetail">

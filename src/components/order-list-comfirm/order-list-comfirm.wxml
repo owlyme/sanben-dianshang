@@ -1,113 +1,76 @@
-<view class="xxx-components">
+<view class="xxx-components {{customClass}}" style="{{customStyle}}">
   <view class="barnd-info  flex-b flex-middle">
     <view class="flex flex-middle">
-      <image class="logo" src="{{data.logo}}" bind:tap="viewShop"  />
+      <image class="logo" src="{{data.logo}}" bind:tap="viewShop" />
       <text class="title ellipsisOne" bind:tap="viewShop">{{data.brandName}}</text>
     </view>
   </view>
-
   <view class="order-info">
     <block wx:for="{{data.shopList}}">
       <view class="shop-name ellipsisOne" wx:if="{{item.orderList.length}}">
         <icon-font name="iconmendian2" size="14" color="#333333" />
         {{item.shopName}}
       </view>
-     
       <view wx:if="{{item.orderList.length}}">
-        <view
-        class="order-container"
-        wx:for="{{item.orderList}}"
-        wx:for-item="order"
-        wx:for-index="orderIndex"
-        wx:key="orderIndex"
-        >
-          <view class="flex flex-middle order-item" >
+        <view class="order-container" wx:for="{{item.orderList}}" wx:for-item="order" wx:for-index="orderIndex" wx:key="orderIndex">
+          <view class="flex flex-middle order-item">
             <!-- 图片 -->
-            <image class='good-img' src="{{order.pic}}"/>
+            <image class='good-img' src="{{order.pic}}" />
             <!-- 详情 -->
-            <view class="detail" >
-              <view class="name ellipsisTwo" >
-                {{order.name}}
-              </view>
+            <view class="detail">
+              <view class="name ellipsisTwo">{{order.name}}</view>
               <view class="flex">
-                <view class="model ellipsisOne" >
-                  {{order.model}}
-                </view> 
+                <view class="model ellipsisOne">{{order.model}}</view>
               </view>
             </view>
           </view>
-
-          <view class="flex-b flex-middle total" >
-              <view class="flex-middle number" >x{{order.number}}</view>
-              <money-text number="{{order.price * order.number}}" />
+          <view class="flex-b flex-middle total">
+            <view class="flex-middle number">x{{order.number}}</view>
+            <money-text number="{{order.price * order.number}}" />
           </view>
-
           <view class="line"></view>
         </view>
       </view>
-
       <!-- 配送 优惠 等选择 -->
-    <view class="send-coupon-type">
-      <list class="">
-         <list-item
-          data-shop="{{item}}"
-          data-index="{{index}}"
-          label="配送方式"
-          showlabelBorder="{{true}}"
-          bind:onClick="selectedExpressType"
-          >
-          <view slot="content" >
-            <view class="color-black"> 快递<money-text plane="{{true}}" number="{{item.shipping}}" /></view>
-          </view>
-        </list-item>
-        <list-item
-          label="运费总额" iconfont="" border="{{false}}" >
-          <view slot="content">
-            <view class="color-black"> <money-text plane="{{true}}" number="{{item.shipping}}" /></view>
-          </view>
-        </list-item>
-        <list-item
-          label="店铺优惠"
-          showlabelBorder="{{true}}"
-          data-shop="{{item}}"
-          data-index="{{index}}"
-          bind:onClick="selectCoupon"
-          border="{{false}}"
-          >
-          <view slot="content"  class="coupon flex-b">
-            <view>{{item.couponName}}</view>
-            <view class="color-red"> -<money-text plane="{{true}}" number="{{item.couponMoney}}" /></view>
-          </view>
-        </list-item>
-        <list-item
-          label="订单备注"
-          border="{{false}}"
-          textAlign="left"
-          iconfont=""
-          >
-          <view slot="content" class="flex-b">
-           <textarea 
-           class="textarea"
-           data-shop="{{item}}"
-           data-index="{{index}}"
-           value="{{item.remark}}"
-           auto-height
-           bindinput="onRemarkInput"
-           placeholder="选填"/>
-          </view>
-        </list-item>
-        <list-item label="" iconfont="" border="{{false}}">
-          <view slot="content" class="flex">
-            <view class="color-black"> 实付款：</view>
-           
-           <money-text number="{{item.totalMoney}}" />
-          </view>
-        </list-item>
-      </list>
-    </view>
+      <view class="send-coupon-type">
+        <list class="">
+          <list-item data-shop="{{item}}" data-index="{{index}}" label="配送方式" showlabelBorder="{{true}}" bind:onClick="selectedExpressType">
+            <view slot="content">
+              <view class="color-black">
+                快递
+                <money-text plane="{{true}}" number="{{item.shipping}}" />
+              </view>
+            </view>
+          </list-item>
+          <list-item label="运费总额" iconfont="" border="{{false}}">
+            <view slot="content">
+              <view class="color-black">
+                <money-text plane="{{true}}" number="{{item.shipping}}" />
+              </view>
+            </view>
+          </list-item>
+          <list-item label="店铺优惠" showlabelBorder="{{true}}" data-shop="{{item}}" data-index="{{index}}" bind:onClick="selectCoupon" border="{{false}}">
+            <view slot="content" class="coupon flex-b">
+              <view>{{item.couponName}}</view>
+              <view class="color-red">
+                -
+                <money-text plane="{{true}}" number="{{item.couponMoney}}" />
+              </view>
+            </view>
+          </list-item>
+          <list-item label="订单备注" border="{{false}}" textAlign="left" iconfont="">
+            <view slot="content" class="flex-b">
+              <textarea class="textarea" data-shop="{{item}}" data-index="{{index}}" value="{{item.remark}}" auto-height bindinput="onRemarkInput" placeholder="选填" />
+            </view>
+          </list-item>
+          <list-item label="" iconfont="" border="{{false}}">
+            <view slot="content" class="flex">
+              <view class="color-black">实付款：</view>
+              <money-text number="{{item.totalMoney}}" />
+            </view>
+          </list-item>
+        </list>
+      </view>
     </block>
-    
   </view>
-
-  
 </view>

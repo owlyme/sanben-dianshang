@@ -1,22 +1,14 @@
-<view class="list-item-components flex-middle {{showlabelBorder && border ? 'border-bottom' : ''}} {{ extClassName }}"
->
-  <view class="item-label flex-middle"
-    bind:tap="onClick"
-    wx:if="{{label}}"
-    ><view >{{label}}</view></view>
-
-  <view
-    class="flex-b flex-middle item-container {{!showlabelBorder && border ? 'border-bottom' : ''}}"
-    bind:tap="onClick"
-    >
-    <view
-    class="item-content flex-middle {{textAlign === 'right'? 'flex-end text-right' : 'flex-start'}}"
-    style="">
+<view class="list-item-components flex-middle {{showlabelBorder && border ? 'border-bottom' : ''}} {{ extClassName }} {{customClass}}" style="{{customStyle}}">
+  <view class="item-label flex-middle" bind:tap="onClick" wx:if="{{label}}">
+    <view>{{label}}</view>
+  </view>
+  <view class="flex-b flex-middle item-container {{!showlabelBorder && border ? 'border-bottom' : ''}}" bind:tap="onClick">
+    <view class="item-content flex-middle {{textAlign === 'right'? 'flex-end text-right' : 'flex-start'}}" style="">
       <slot name="content"></slot>
     </view>
-    <view class=" icon-box" >
-    <icon-font name="{{iconfont}}" size="12" wx:if="{{iconfont}}"/>
-    <slot wx:else name="icon"></slot>
+    <view class=" icon-box">
+      <icon-font name="{{iconfont}}" size="12" wx:if="{{iconfont}}" />
+      <slot wx:else name="icon"></slot>
     </view>
   </view>
 </view>

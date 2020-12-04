@@ -10,6 +10,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     goodInfo: {
       type: Object,
       value: {

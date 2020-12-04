@@ -12,20 +12,28 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     tabs: {
       type: Array,
       value: [
-        'tab 1',
-        'tab 2',
-        'tab 3',
-        'tab 4',
-      ] // [{ name: '',sub: ''}]
+          'tab 1',
+          'tab 2',
+          'tab 3',
+          'tab 4',
+        ] // [{ name: '',sub: ''}]
     },
     active: {
       type: [String, Number],
       value: ''
     },
-    
+
   },
   data: {
     tarnslateY: 0
@@ -59,7 +67,7 @@ Component({
         tarnslateY: index
       });
       console.log(name, type);
-      this.triggerEvent('onChange', {name, type});
+      this.triggerEvent('onChange', { name, type });
     }
     // bind:change="onChange"
   }

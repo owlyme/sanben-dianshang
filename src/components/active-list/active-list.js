@@ -1,5 +1,5 @@
-import {Path, Router} from '../../router/index';
-import { getDatasetValue,  } from '../../utils/commom';
+import { Path, Router } from '../../router/index';
+import { getDatasetValue, } from '../../utils/commom';
 
 
 const getType = getDatasetValue('type')
@@ -11,10 +11,18 @@ Component({
   },
   behaviors: [],
 
-  properties: {},
+  properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
+  },
   data: {
-    active: [
-      {
+    active: [{
         type: 'signIn',
         text: '签到有奖',
         icon: './images/qiandao.png'
@@ -85,15 +93,15 @@ Component({
     onActiveClick(e) {
       let type = getType(e)
       console.log(e, type)
-      switch(type){
-      case 'signIn': 
-        Router.push(Path.signIn)
-        break;
-      case 'coupon': 
-        Router.push(Path.coupon)
-        break;
-      default: 
-        return   
+      switch (type) {
+        case 'signIn':
+          Router.push(Path.signIn)
+          break;
+        case 'coupon':
+          Router.push(Path.coupon)
+          break;
+        default:
+          return
       }
     }
   }

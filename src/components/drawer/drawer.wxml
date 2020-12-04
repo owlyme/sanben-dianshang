@@ -1,9 +1,7 @@
-<view class="drawer-components">
-  <view class="{{position}}Box {{show ? position+'-0' : ''}}"
-  bind:tap="onMaskClick"
-   ></view>
+<view class="drawer-components {{customClass}}" style="{{customStyle}}">
+  <view class="{{position}}Box {{show ? position+'-0' : ''}}" bind:tap="onMaskClick"></view>
   <view style='{{style}}' class="{{position}} {{show ? position+'-0' : ''}}">
-      <slot></slot>
+    <slot></slot>
   </view>
   <!-- content -->
 </view>

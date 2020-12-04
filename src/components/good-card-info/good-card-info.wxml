@@ -1,19 +1,11 @@
-<view class="good-card-components flex">
+<view class="good-card-components flex {{customClass}}" style="{{customStyle}}">
   <view class="info-image">
-       <image
-      class="good-logo"
-      src="{{src}}" />
-    </view>
-  <view style="flex: 1"  class="flex-middle">
-     <view>
-      <view class="good-name ellipsisTwo">
-        {{title}}
-      </view>
-      <view
-        class="good-address ellipsisOne"
-      >
-        {{text}}
-      </view>
+    <image class="good-logo" src="{{src}}" />
+  </view>
+  <view style="flex: 1" class="flex-middle">
+    <view>
+      <view class="good-name ellipsisTwo">{{title}}</view>
+      <view class="good-address ellipsisOne">{{text}}</view>
     </view>
   </view>
 </view>

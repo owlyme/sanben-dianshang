@@ -1,1 +1,4 @@
-<view>{{text}} <icon-font name="iconfuzhi2" color="#FF3232" catch:tap="copy" /></view>
+<view class="{{customClass}}" style="{{customStyle}}">
+  {{text}}
+  <icon-font name="iconfuzhi2" color="#FF3232" catch:tap="copy" />
+</view>

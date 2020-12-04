@@ -10,11 +10,17 @@ Component({
   behaviors: [],
 
   properties: {
-    
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
   },
   data: {
-    activeList: [
-      {
+    activeList: [{
         id: 1,
         price: 20,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
@@ -24,7 +30,7 @@ Component({
       //   price: 20,
       //   pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       // },
-   
+
     ],
   },
 
@@ -46,7 +52,7 @@ Component({
     onProductClick(e) {
       const id = getId(e)
       const item = getItem(e)
-      console.log(id, item )
+      console.log(id, item)
     }
   }
 });

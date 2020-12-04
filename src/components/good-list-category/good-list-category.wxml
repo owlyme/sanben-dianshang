@@ -1,12 +1,8 @@
-<view class="good-list-category-components flex flex-wrap">
+<view class="good-list-category-components flex flex-wrap {{customClass}}" style="{{customStyle}}">
   <!-- content -->
   <block wx:for="{{goodList}}" wx:keey="index">
     <view class="good-list-category-item">
-      <good-card-category
-        goodInfo="{{item}}"
-        data-good="{{item}}"
-        bind:tap="onClick"
-        />
+      <good-card-category goodInfo="{{item}}" data-good="{{item}}" bind:tap="onClick" />
     </view>
   </block>
 </view>

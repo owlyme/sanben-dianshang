@@ -12,6 +12,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     list: {
       type: Array,
       value: [],
@@ -51,9 +59,9 @@ Component({
         this.setData({
           active: name
         });
-      }, 500) 
+      }, 500)
 
-      this.triggerEvent('onChange', {name, index});
+      this.triggerEvent('onChange', { name, index });
     }
   }
 });

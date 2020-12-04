@@ -1,11 +1,7 @@
-
-  <!-- content -->
-  <view class="flex-b">
-
-     <slot></slot>
-
-     <button
-     class="send-code"
-     bindtouchend="getCode"
-     disabled="{{sendCodeBtnDisabled}}">{{sendCodeBtnText}}</button>
-  </view>
+<!-- content -->
+<view class="flex-b {{customClass}}" style="{{customStyle}}">
+   <slot></slot>
+   <button class="send-code" bindtouchend="getCode" disabled="{{sendCodeBtnDisabled}}">
+      {{sendCodeBtnText}}
+   </button>
+</view>

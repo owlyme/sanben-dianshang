@@ -1,6 +1,5 @@
-import {Path, Router} from '../../../router/index';
+import { Path, Router } from '../../../router/index';
 
-const App = getApp();
 Page({
   data: {},
   onLoad() {
@@ -12,7 +11,7 @@ Page({
   onShow() {
     // Do something when page show.
   },
-  applyTeamStore(){
+  applyTeamStore() {
     Router.push({
       url: Path.merchantApply,
       query: {
@@ -20,13 +19,13 @@ Page({
       }
     })
   },
-  applyPersionStore(){
+  applyPersionStore() {
     Router.push({
       url: Path.merchantApply,
       query: {
         type: 'personal'
       }
     })
-   
+
   },
 });

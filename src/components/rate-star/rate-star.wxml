@@ -1,28 +1,7 @@
-<view class='movie-grade'>
-  <image 
-    class="image"
-    data-index="{{index}}"
-    bind:tap="getLightPoints"
-    style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;" 
-    src='/images/rate/{{iconType}}_light.png' wx:for="{{lights}}" 
-    wx:key="item"></image>
-
-  <image 
-    class="image"
-  data-index="{{index}}"
-  bind:tap="getHalfPoints"
-  style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;"  
-  src='/images/rate/{{iconType}}_half.png' wx:for="{{halfs}}" 
-  wx:key="item"></image>
-
-  <image 
-    class="image"
-  data-index="{{index}}"
-  bind:tap="getGrayGray"
-  style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;" 
-  src='/images/rate/{{iconType}}_gray.png'
-  wx:for='{{grays}}' wx:key="item"></image>
-
+<view class="movie-grade {{customClass}}" style="{{customStyle}}">
+  <image class="image" data-index="{{index}}" bind:tap="getLightPoints" style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;" src='/images/rate/{{iconType}}_light.png' wx:for="{{lights}}" wx:key="item"></image>
+  <image class="image" data-index="{{index}}" bind:tap="getHalfPoints" style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;" src='/images/rate/{{iconType}}_half.png' wx:for="{{halfs}}" wx:key="item"></image>
+  <image class="image" data-index="{{index}}" bind:tap="getGrayGray" style="margin-right: {{gutter}}rpx; width:{{starSize}}rpx;height:{{starSize}}rpx;" src='/images/rate/{{iconType}}_gray.png' wx:for='{{grays}}' wx:key="item"></image>
   <!-- <text  
   style="font-size:{{fontSize}}rpx;color:{{fontColor}};" >{{rates}}</text> -->
 </view>

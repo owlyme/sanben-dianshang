@@ -1,4 +1,4 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 import { getDataset } from '../../utils/commom';
 
 
@@ -11,21 +11,27 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     data: {
       type: Object,
       value: {
         brandName: '阿迪达斯',
         logo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        shopList: [
-          {
+        shopList: [{
             shopName: '杭州大悦城店',
             remark: '11',
             couponName: '111',
             couponMoney: 300,
             shipping: 10,
             totalMoney: 0,
-            orderList: [
-              {
+            orderList: [{
                 id: 12,
                 number: 12,
                 pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
@@ -47,8 +53,7 @@ Component({
           },
           {
             shopName: '杭州大悦城店1',
-            orderList: [
-              {
+            orderList: [{
                 id: 12,
                 number: 12,
                 pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
@@ -76,14 +81,13 @@ Component({
     // goodList: function() {
     //   this.init()
     // }
-    
+
   },
   data: {
     show: false,
     isAllSelected: false,
     activeCoverIndex: '',
-    couponList: [
-      {
+    couponList: [{
         id: 1,
         goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         type: 0, // 0平台， 1店铺
@@ -174,7 +178,7 @@ Component({
 
   methods: {
     init() {
-      
+
     },
     // 预览商店首页
     viewShop() {
@@ -191,25 +195,28 @@ Component({
       })
     },
     onRemarkInput(e) {
-      let {index, shop} = getDataset(e)
+      let { index, shop } = getDataset(e)
       let value = e.detail.value
       console.log('onRemarkInput', e, value)
       this.triggerEvent('onRemarkChange', {
-        index, shop
+        index,
+        shop
       })
     },
     selectedExpressType(e) {
-      let {index, shop} = getDataset(e)
+      let { index, shop } = getDataset(e)
       console.log('onRemarkInput', e)
       this.triggerEvent('onExpressChange', {
-        index, shop
+        index,
+        shop
       })
     },
     selectCoupon(e) {
-      let {index, shop} = getDataset(e)
+      let { index, shop } = getDataset(e)
       console.log('selectCoupon', e)
       this.triggerEvent('onCouponChange', {
-        index, shop
+        index,
+        shop
       })
     }
   }

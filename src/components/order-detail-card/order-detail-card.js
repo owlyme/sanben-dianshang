@@ -1,4 +1,4 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 import { getDataset } from '../../utils/commom';
 
 
@@ -11,6 +11,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     data: {
       type: Object,
       value: {
@@ -23,8 +31,7 @@ Component({
         shipping: 10,
         totalMoney: 0,
         totalPayMoney: 0,
-        orderList: [
-          {
+        orderList: [{
             id: 12,
             number: 12,
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
@@ -47,12 +54,11 @@ Component({
     }
   },
   observers: {},
-  data: {
-  },
+  data: {},
 
   methods: {
     init() {
-      
+
     },
     // 预览商店首页
     viewShop() {

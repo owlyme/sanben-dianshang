@@ -8,13 +8,21 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     offsetTop: {
       type: [Number, String],
       value: App.globalData.navHeight
     }
   },
   data: {
-    
+
   },
   // 生命周期函数
   lifetimes: {

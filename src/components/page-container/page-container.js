@@ -9,11 +9,19 @@ Component({
   behaviors: [],
   // externalClasses:['customerClass'],
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     useThemeBg: {
       type: Boolean,
       value: true
     },
-    pageName:String,
+    pageName: String,
     showNav: {
       type: Boolean,
       value: true

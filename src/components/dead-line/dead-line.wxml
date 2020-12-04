@@ -1,18 +1,14 @@
-<view class="time-components">
+<view class="time-components {{customClass}}" style="{{customStyle}}">
   <view class="time">
     <view wx:if="{{activeStatus !== 'end'}}">
       <view else class="flex-middle">
-        <view class="cell"
-            wx:for="{{times}}"
-            wx:key="index"
-            wx:if="{{index > 0}}">
+        <view class="cell" wx:for="{{times}}" wx:key="index" wx:if="{{index > 0}}">
           <text class="number">{{ item.value }}</text>
           <text class="text">{{item.text}}</text>
         </view>
       </view>
     </view>
-    <view wx:else
-        class="end-text">
+    <view wx:else class="end-text">
       <!-- {{ statusText }} -->
     </view>
   </view>

@@ -1,12 +1,10 @@
-<view class="good-card-points-components">
+<view class="good-card-points-components {{customClass}}" style="{{customStyle}}">
   <!-- content -->
   <view class="good-pic">
     <image class="image" src="{{goodInfo.pic}}" />
   </view>
   <view class="good-detail">
     <view class="good-name ellipsisTwo">{{goodInfo.name}}</view>
-    <view class="good-points">
-      {{ goodInfo.points || 0}}积分+{{goodInfo.price || 0}}元
-    </view>
+    <view class="good-points">{{ goodInfo.points || 0}}积分+{{goodInfo.price || 0}}元</view>
   </view>
 </view>

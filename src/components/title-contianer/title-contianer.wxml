@@ -1,7 +1,7 @@
-<view class="title-container-components flex flex-middle">
+<view class="title-container-components flex flex-middle {{customClass}}" style="{{customStyle}}">
   <!-- content -->
   <view class="title-border"></view>
-  <view >
-    <slot ></slot>
+  <view>
+    <slot></slot>
   </view>
 </view>

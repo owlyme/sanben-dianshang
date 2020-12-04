@@ -7,6 +7,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     value: { // 活动截止时间
       type: [Number, String],
       value: '2020-11-06 00:00:00',
@@ -25,8 +33,7 @@ Component({
     },
   },
   data: {
-    times: [
-      {
+    times: [{
         value: '00',
         text: '天',
       },
@@ -68,7 +75,7 @@ Component({
       //获取当前时间
       let date = new Date();
       let now = date.getTime();
-      
+
       if (typeof deadLine === 'string' && !/[\/:]/.test(deadLine)) {
         deadLine = Number(deadLine);
       }
@@ -102,7 +109,7 @@ Component({
           value: dhms[index]
         }))
       })
- 
+
       //递归每秒调用countTime方法，显示动态时间效果
       this.timer = setTimeout(() => {
         this.countTime()

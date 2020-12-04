@@ -1,33 +1,28 @@
-<view class="good-card-rank-components flex" 
-  bind:tap="viewGoodDetail">
- <!-- content -->
+<view class="good-card-rank-components flex {{customClass}}" style="{{customStyle}}" bind:tap="viewGoodDetail">
+  <!-- content -->
   <view class="good-pic">
     <image class="image" src="{{goodInfo.pic}}" />
   </view>
   <view class="good-detail flex-col flex-b">
-    
     <view class="good-name ellipsisTwo ">
-      <view class="good-active-container"
-        wx:if="{{goodInfo.active}}">
+      <view class="good-active-container" wx:if="{{goodInfo.active}}">
         <view class="good-active">{{goodInfo.active}}</view>
       </view>
       {{goodInfo.name}}
     </view>
-    <view >
+    <view>
       <view class="flex-b flex-middle">
         <view class="good-price">
-          <money-text number="{{goodInfo.price}}"/>
+          <money-text number="{{goodInfo.price}}" />
         </view>
         <view class="good-sale-num">月销{{goodInfo.saledNumber}}件</view>
       </view>
-
-      <view class="good-feature-container"
-        wx:if="{{goodInfo.tags.length}}">
-         <good-feature list="{{goodInfo.tags}}"/>
+      <view class="good-feature-container" wx:if="{{goodInfo.tags.length}}">
+        <good-feature list="{{goodInfo.tags}}" />
       </view>
-
       <view class="shop-address" catch:tap="toShopIndexPage">
-        {{goodInfo.shopAddress || ''}} <icon-font name="icondingdan-dianpu-gengduo" size="{{10}}" />
+        {{goodInfo.shopAddress || ''}}
+        <icon-font name="icondingdan-dianpu-gengduo" size="{{10}}" />
       </view>
     </view>
   </view>

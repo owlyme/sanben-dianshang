@@ -10,15 +10,17 @@ Component({
   behaviors: [],
 
   properties: {
-    // goodList: {
-    //   type: Array,
-    //   value: []
-    // }
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
   },
   observers: {
-    // goodList: function() {
-    //   this.init()
-    // }
+
   },
   data: {},
 
@@ -38,7 +40,7 @@ Component({
 
   methods: {
     init() {
-      
+
     },
   }
 

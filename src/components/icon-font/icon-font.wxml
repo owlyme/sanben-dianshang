@@ -1,1 +1,1 @@
-<text class="iconfont {{name}}" style="font-size: {{size}}px; color: {{color}}; line-height: 1; margin: 0 {{gutter}}px"></text>
+<text class="iconfont {{name}} {{customClass}}" style="font-size: {{size}}px; color: {{color}}; line-height: 1; margin: 0 {{gutter}}px; {{customStyle}}"></text>

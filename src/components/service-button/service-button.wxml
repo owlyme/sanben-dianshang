@@ -1,5 +1,4 @@
-<view class="service-components {{horizontal ? 'flex flex-cm' : 'flex-col flex-middle'}}"
-  bind:tap="toServicePage">
+<view class="service-components {{horizontal ? 'flex flex-cm' : 'flex-col flex-middle'}} {{customClass}}" style="{{customStyle}}" bind:tap="toServicePage">
   <!-- content -->
   <!-- <image src="./images/service.png" /> -->
   <icon-font name="iconkefu" size="{{18}}" color="#FF3232" />

@@ -7,6 +7,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     type: {
       type: String,
       value: 'default' // default , warn ,ghost

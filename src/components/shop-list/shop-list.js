@@ -1,5 +1,5 @@
 import { getDatasetValue } from '../../utils/commom';
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 
 const getGoodData = getDatasetValue('good');
 Component({
@@ -12,35 +12,40 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     list: {
       type: Array,
-      value: [
-        {
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: '阿迪达斯三叶草旗舰店',
-          followNumber: 148,
-          rate: 7,
-          phoneNumber: '13156521718',
-          address: 111111,
-          isFocus: 0, // 0 未关注，11 已关注 
-          products: [
-            {
-              id: 1,
-              pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            },
-            {
-              id: 1,
-              pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            },
-            {
-              id: 1,
-              pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            },
-          ],
-          totalShopNumber: 207,
-          sameCityShopNumber: 20
-        },
-      ]
+      value: [{
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: '阿迪达斯三叶草旗舰店',
+        followNumber: 148,
+        rate: 7,
+        phoneNumber: '13156521718',
+        address: 111111,
+        isFocus: 0, // 0 未关注，11 已关注 
+        products: [{
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+          {
+            id: 1,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          },
+        ],
+        totalShopNumber: 207,
+        sameCityShopNumber: 20
+      }, ]
     },
     type: {
       type: String,
@@ -49,10 +54,10 @@ Component({
   },
 
   observers: {
-   
+
   },
   data: {
-    oddIndexOfgoodList:[],
+    oddIndexOfgoodList: [],
     evenIndexOfgoodList: []
   },
 
@@ -70,16 +75,16 @@ Component({
     },
   },
   ready() {
-   
+
   },
 
   methods: {
     init() {
-      
+
     },
     entryShop(e) {
       console.log('entryShop', e);
-      let {shop} = e.currentTarget.dataset
+      let { shop } = e.currentTarget.dataset
 
       Router.push({
         url: Path.shopIndex
@@ -92,14 +97,14 @@ Component({
     },
     onProductClick(e) {
       console.log('onProductClick', e);
-      let {shop, product} = e.currentTarget.dataset
+      let { shop, product } = e.currentTarget.dataset
       Router.push({
         url: Path.goodDetail
       })
     },
     toShopList(e) {
       console.log('toShopList', e);
-      let {shop} = e.currentTarget.dataset
+      let { shop } = e.currentTarget.dataset
       Router.push({
         url: Path.shopAll
       })

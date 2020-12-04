@@ -10,6 +10,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     num: {
       type: Number,
       value: 1
@@ -22,7 +30,7 @@ Component({
   },
   data: {
     // num:1,
-    minusStatus:'disable'
+    minusStatus: 'disable'
   },
 
   // 生命周期函数
@@ -37,18 +45,18 @@ Component({
 
   methods: {
     init() {
-      
+
     },
     /*点击减号*/
     bindMinus: function() {
       var num = this.data.num;
-      if (num>1) {
+      if (num > 1) {
         num--;
       }
-      var minusStatus = num>1 ? 'normal':'disable';
+      var minusStatus = num > 1 ? 'normal' : 'disable';
       this.setData({
-        num:num,
-        minusStatus:minusStatus
+        num: num,
+        minusStatus: minusStatus
       })
       this.onChange(num)
     },
@@ -58,7 +66,7 @@ Component({
       num++;
       var minusStatus = num > 1 ? 'normal' : 'disable';
       this.setData({
-        num:num,
+        num: num,
         minusStatus: minusStatus
       })
       this.onChange(num)
@@ -68,7 +76,7 @@ Component({
       var num = e.detail.value;
       var minusStatus = num > 1 ? 'normal' : 'disable';
       this.setData({
-        num:num,
+        num: num,
         minusStatus: minusStatus
       })
       this.onChange(num)

@@ -1,4 +1,4 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 import { getDatasetValue } from '../../utils/commom';
 const getKeyword = getDatasetValue('keyword')
 
@@ -6,12 +6,19 @@ const getKeyword = getDatasetValue('keyword')
 Component({
   options: {
     styleIsolation: 'apply-shared',
-    //  https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html
     multipleSlots: false // 在组件定义时的选项中启用多slot支持
   },
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     list: {
       type: Array,
       value: []
@@ -45,7 +52,7 @@ Component({
   methods: {
     onItemClick(e) {
       let keyword = getKeyword(e)
-      this.triggerEvent('onChange', {keyword})
+      this.triggerEvent('onChange', { keyword })
     },
     onMoreClick() {
       this.setData({

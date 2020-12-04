@@ -1,23 +1,22 @@
-import {Path, Router} from '../../router/index';
-const NavList = [
-  {
+import { Path, Router } from '../../router/index';
+const NavList = [{
     'name': '首页',
-    path: Path.shopIndex, 
+    path: Path.shopIndex,
     'icon': 'iconxiangqing-dianpu1',
   },
   {
     'name': '商品',
-    path: Path.shopAllGood, 
+    path: Path.shopAllGood,
     'icon': 'icondianpuBarsTabBars2off',
   },
   {
     'name': '分类',
-    path: Path.shopGoodCatetory, 
+    path: Path.shopGoodCatetory,
     'icon': 'icondianpuBarsTabBars3off'
   },
   {
     'name': '门店',
-    path: Path.shopAll, 
+    path: Path.shopAll,
     'icon': 'icondianpuBarsTabBars4off',
   }
 ]
@@ -31,6 +30,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     indexImage: {
       type: String,
       value: ''
@@ -64,14 +71,14 @@ Component({
   methods: {
     init() {
       let navList = NavList.slice()
-      navList[0].selectedPic= this.data.indexImage
+      navList[0].selectedPic = this.data.indexImage
       this.setData({
         navList
       })
     },
     navChange(e) {
       console.log('navChange', e)
-      let {name, index} = e.detail
+      let { name, index } = e.detail
       Router.replace(this.data.navList[index].path)
     }
   }

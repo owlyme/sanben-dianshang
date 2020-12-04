@@ -1,56 +1,41 @@
-<view class="xxx-components">
-   <!-- content -->
+<view class="xxx-components {{customClass}}" style="{{customStyle}}">
+  <!-- content -->
   <block wx:for="{{list}}" wx:key="index">
-    <view  class="list-item">
+    <view class="list-item">
       <card>
         <view class="flex-b ">
-          <shop-card src="{{item.pic}}"
-            title="{{item.name}}"
-            >
+          <shop-card src="{{item.pic}}" title="{{item.name}}">
             <view slot="text" class="flex">
               <rate-star rate="{{item.rate}}"></rate-star>
               <text class="followNumber">{{item.followNumber}}人关注</text>
             </view>
           </shop-card>
-
-          <button-text 
-            wx:if="{{item.isFocus == 0}}"
-            data-shop="{{item}}"
-            bind:tap="entryShop"
-            type="warn" 
-            width="{{48}}"
-            height="{{22}}"
-            fontSize="{{12}}">进店</button-text>
-          <follow-shop-btn  wx:esif="{{item.isFocus == 1}}" shopInfo="{{info}}"  followed="{{true}}" />
+          <button-text wx:if="{{item.isFocus == 0}}" data-shop="{{item}}" bind:tap="entryShop" type="warn" width="{{48}}" height="{{22}}" fontSize="{{12}}">
+            进店
+          </button-text>
+          <follow-shop-btn wx:esif="{{item.isFocus == 1}}" shopInfo="{{info}}" followed="{{true}}" />
         </view>
-        <view class="flex products" >
-          <view 
-            wx:for="{{item.products}}"
-            wx:for-item="subItem"
-            wx:for-index="subIndex"
-            wx:key="index"
-            data-shop='{{item}}'
-            data-product='{{subItem}}'
-            data-index="{{subIndex}}"
-            bind:tap="onProductClick"
-           >
-              <image class="item-image" src="{{subItem.pic}}" />
+        <view class="flex products">
+          <view wx:for="{{item.products}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="index" data-shop='{{item}}' data-product='{{subItem}}' data-index="{{subIndex}}" bind:tap="onProductClick">
+            <image class="item-image" src="{{subItem.pic}}" />
           </view>
         </view>
-
         <view class="line"></view>
-
         <view class="shop-number flex-b flex-middle">
           <view class="">
-             <icon-font name="iconmendian2" size="14" />
-              共有
-              <text class="text">{{item.totalShopNumber}}</text>家门店
-              <block  wx:if="{{item.sameCityShopNumber}}">有<text class="text">{{item.sameCityShopNumber}}</text>家</block><block wx:else>暂无门店</block>位于当前城市
+            <icon-font name="iconmendian2" size="14" />
+            共有
+            <text class="text">{{item.totalShopNumber}}</text>
+            家门店
+            <block wx:if="{{item.sameCityShopNumber}}">
+              有
+              <text class="text">{{item.sameCityShopNumber}}</text>
+              家
+            </block>
+            <block wx:else>暂无门店</block>
+            位于当前城市
           </view>
-          <icon-font 
-          data-shop="{{item}}"
-          bind:tap="toShopList"
-          name="icondingdan-dianpu-gengduo" />
+          <icon-font data-shop="{{item}}" bind:tap="toShopList" name="icondingdan-dianpu-gengduo" />
         </view>
       </card>
     </view>

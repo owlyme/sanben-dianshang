@@ -1,25 +1,16 @@
-<drawer show="{{show}}"
-        style="background: none; "
-        position="bottom"
-        bind:onClose="onDrawerClose">
-
-  <view class="dialog">
+<drawer show="{{show}}" style="background: none; " position="bottom" bind:onClose="onDrawerClose">
+  <view class="dialog {{customClass}}" style="{{customStyle}}">
     <view class="header">
       {{header}}
       <view class="close" bind:tap="onDrawerClose" wx:if="{{!hiddenClose}}">
         <icon-font name="icondanchuang-guanbi2" size="16" />
       </view>
     </view>
-
     <view class="container">
       <slot></slot>
     </view>
-
     <view class="btn-container" hidden="{{hiddenBtn}}">
-      <view class="button">
-        {{btnText}}
-      </view>
+      <view class="button">{{btnText}}</view>
     </view>
   </view>
-
 </drawer>

@@ -1,16 +1,20 @@
 <block>
-  <text class="plane-money-text" wx:if="{{plane}}"
-    >¥{{intPart}}.{{decimalPart}}</text>
-  <view class="moeney-text-components flex" wx:else>
+  <text class="plane-money-text {{customClass}}" style="{{customStyle}}" wx:if="{{plane}}">
+    ¥{{intPart}}.{{decimalPart}}
+  </text>
+  <view class="moeney-text-components flex {{customClass}}" style="{{customStyle}}" wx:else>
     <!-- content -->
-    <text class="money-icon"
-      style="font-size: {{moneySize * 2}}rpx; color: {{color}}">¥</text>
-    <text class="money-num-int"
-    style="font-size: {{numberSize * 2}}rpx; color: {{color}}">{{intPart}}</text>
-    <block wx:if="{{showDecimal}}" 
-    style="font-size: {{moneySize * 2}}rpx; color: {{color}}">
-      <text class="money-icon " style="font-size: {{decimalPartSize * 2}}rpx;color: {{color}}">.</text>
-      <text class="money-num-point" style="font-size: {{decimalPartSize * 2}}rpx; color: {{color}}">{{decimalPart}}</text>
+    <text class="money-icon" style="font-size: {{moneySize * 2}}rpx; color: {{color}}">¥</text>
+    <text class="money-num-int" style="font-size: {{numberSize * 2}}rpx; color: {{color}}">
+      {{intPart}}
+    </text>
+    <block wx:if="{{showDecimal}}" style="font-size: {{moneySize * 2}}rpx; color: {{color}}">
+      <text class="money-icon " style="font-size: {{decimalPartSize * 2}}rpx;color: {{color}}">
+        .
+      </text>
+      <text class="money-num-point" style="font-size: {{decimalPartSize * 2}}rpx; color: {{color}}">
+        {{decimalPart}}
+      </text>
     </block>
   </view>
 </block>

@@ -1,4 +1,4 @@
-import {chooseImage} from '../../utils/sysApis';
+import { chooseImage } from '../../utils/sysApis';
 import { getDataset } from '../../utils/commom';
 
 
@@ -11,6 +11,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     images: {
       type: Array,
       value: []
@@ -43,7 +51,7 @@ Component({
 
   methods: {
     init() {
-      
+
     },
     removePic(e) {
       let index = getDataset(e).index
@@ -51,7 +59,7 @@ Component({
       this.triggerEvent('onChange', this.data.images)
     },
     // 上传
-    handleUpload(){
+    handleUpload() {
       chooseImage().then(res => {
         let images = this.data.images
         images = images.concat(res)
@@ -62,13 +70,13 @@ Component({
       });
     },
     // 预览图片
-    handlePreviewImage(e){
+    handlePreviewImage(e) {
       var current = e.target.dataset.src
-      // 预览图片
-      //  uni.previewImage({
-      //      current: current,
-      //      urls: this.imageSrc
-      //  });
+        // 预览图片
+        //  uni.previewImage({
+        //      current: current,
+        //      urls: this.imageSrc
+        //  });
     },
   }
 

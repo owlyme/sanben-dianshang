@@ -11,6 +11,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     type: {
       type: String,
       value: 'good' // good simple
@@ -41,7 +49,7 @@ Component({
     },
   },
   created() {
-   
+
   },
   ready() {},
   moved() {},
@@ -86,7 +94,7 @@ Component({
           label: '保存图片'
         }
       }
-  
+
       let list = []
       if (this.data.type === 'good') {
         list = [
@@ -105,8 +113,8 @@ Component({
           actions.xinlang,
         ]
       }
-  
-      this.setData({list})
+
+      this.setData({ list })
     },
     show() {
       this.setData({
@@ -119,42 +127,42 @@ Component({
       })
     },
     action(e) {
-      console.log( getDataset(e))
-      let {type} = getDataset(e)
+      console.log(getDataset(e))
+      let { type } = getDataset(e)
 
       switch (type) {
-      case 'wechat':
-        console.log(type);
-        break;
-      case 'pyq' :  
-        console.log(type);
-        break;
-      case 'qq' :  
-        console.log(type);
-        break;
-      case 'xinlang' :  
-        console.log(type);
-        break;
-      case 'copy' :  
-        console.log(type, Router.currentPath);
-        break;
-      case 'poster' :  
-        console.log(type);
-        this.createPoster()
-        break;
-      case 'save' :  
-        console.log(type);
-        this.afterSavePoster()
-        break;
+        case 'wechat':
+          console.log(type);
+          break;
+        case 'pyq':
+          console.log(type);
+          break;
+        case 'qq':
+          console.log(type);
+          break;
+        case 'xinlang':
+          console.log(type);
+          break;
+        case 'copy':
+          console.log(type, Router.currentPath);
+          break;
+        case 'poster':
+          console.log(type);
+          this.createPoster()
+          break;
+        case 'save':
+          console.log(type);
+          this.afterSavePoster()
+          break;
       }
-     
+
     },
     createMulitLine(args) {
       // 小写 0.53
       // 大写 0.7029
       // 汉字 1
       // 数字 0.585
-      let {width, ...others} = args
+      let { width, ...others } = args
       let p = {
         ...others
       }
@@ -164,7 +172,7 @@ Component({
       let res = ['']
       let resIndex = 0
       let textWidth = 0
-      
+
       for (let i = 0, len = p.text.length; i < len; i++) {
         let s = p.text[i]
         if (textWidth >= width) {
@@ -173,7 +181,7 @@ Component({
           res[resIndex] = ''
         }
 
-        if(/[A-Z]/.test(s)) {
+        if (/[A-Z]/.test(s)) {
           textWidth += fontSize * 0.7029
         } else if (/[a-z]/.test(s)) {
           textWidth += fontSize * 0.54
@@ -184,9 +192,9 @@ Component({
         }
         res[resIndex] += s
       }
-      let arr = res.map((i, index) =>({
+      let arr = res.map((i, index) => ({
         ...p,
-        y: p.y + fontSize * 2.2 * ( index + 1),
+        y: p.y + fontSize * 2.2 * (index + 1),
         text: i
       }))
 
@@ -194,60 +202,61 @@ Component({
     },
 
     createPoster() {
-      this.setData({ posterConfig: {
-        width: 224 * 2,
-        height: 400 * 2,
-        debug: false,
-        backgroundColor: '#ffffff',
-        pixelRatio: 6,
-        // preload	Boolean	否	true：图片资源预下载 默认false
-        // hide-loading	Boolean	否	true：隐藏loading 默认false
-        // blocks	Object Array（对象数组）	否	看下文
+      this.setData({
+        posterConfig: {
+          width: 224 * 2,
+          height: 400 * 2,
+          debug: false,
+          backgroundColor: '#ffffff',
+          pixelRatio: 6,
+          // preload	Boolean	否	true：图片资源预下载 默认false
+          // hide-loading	Boolean	否	true：隐藏loading 默认false
+          // blocks	Object Array（对象数组）	否	看下文
 
-        texts: [
-          ...this.createMulitLine({
-            x: 12 * 2,
-            y: 220 * 2,
-            width: 200 * 2,
-            text: 'Adidas阿迪达斯旗舰店官网外套男装新年秋季防风衣加绒运动夹克',
-            fontSize: 12  * 2,
-            color: '#333',
-          }),
-          {
-            x: 12  * 2,
-            y: 268 * 2,
-            text: '￥199.99',
-            fontSize: 16 * 2,
-            color: '#FF402B'
-          },
-          ...this.createMulitLine({
-            x: 92 * 2,
-            y: 360 * 2,
-            text: '长按图片，识别二维码查看商品详情',
-            fontSize: 10 * 2,
-            color: '#999999',
-            width: 100 * 2,
-          }),
-        ],
-        images: [
-          {
-            x: 12 * 2,
-            y: 12 * 2,
-            url: '/images/no-coupon.png',
-            width: 200 * 2,
-            height: 200 * 2,
-            borderRadius: 4 * 2
-          },
-          {
-            x: 12 * 2,
-            y: 316 * 2,
-            url: '/images/no-coupon.png',
-            width: 72 * 2,
-            height: 72 * 2,
-          }
-        ]
-      }}, () => {
-        Poster.create(false,this); 
+          texts: [
+            ...this.createMulitLine({
+              x: 12 * 2,
+              y: 220 * 2,
+              width: 200 * 2,
+              text: 'Adidas阿迪达斯旗舰店官网外套男装新年秋季防风衣加绒运动夹克',
+              fontSize: 12 * 2,
+              color: '#333',
+            }),
+            {
+              x: 12 * 2,
+              y: 268 * 2,
+              text: '￥199.99',
+              fontSize: 16 * 2,
+              color: '#FF402B'
+            },
+            ...this.createMulitLine({
+              x: 92 * 2,
+              y: 360 * 2,
+              text: '长按图片，识别二维码查看商品详情',
+              fontSize: 10 * 2,
+              color: '#999999',
+              width: 100 * 2,
+            }),
+          ],
+          images: [{
+              x: 12 * 2,
+              y: 12 * 2,
+              url: '/images/no-coupon.png',
+              width: 200 * 2,
+              height: 200 * 2,
+              borderRadius: 4 * 2
+            },
+            {
+              x: 12 * 2,
+              y: 316 * 2,
+              url: '/images/no-coupon.png',
+              width: 72 * 2,
+              height: 72 * 2,
+            }
+          ]
+        }
+      }, () => {
+        Poster.create(false, this);
       });
     },
     onPosterSuccess(e) {
@@ -255,19 +264,21 @@ Component({
       console.log(e)
       this.posterUrl = detail
       this.setData({
-        postImg: detail
-      })
-      // wx.previewImage({
-      //   current: detail,
-      //   urls: [detail]
-      // })
+          postImg: detail
+        })
+        // wx.previewImage({
+        //   current: detail,
+        //   urls: [detail]
+        // })
 
-      this.setData({list:  [
-        this.actions.wechat,
-        this.actions.pyq,
-        this.actions.qq,
-        this.actions.save,
-      ]})
+      this.setData({
+        list: [
+          this.actions.wechat,
+          this.actions.pyq,
+          this.actions.qq,
+          this.actions.save,
+        ]
+      })
     },
     onPosterFail(e) {
       console.error(e)

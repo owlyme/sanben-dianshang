@@ -1,4 +1,4 @@
-<view class="order-status-text-components">
+<view class="order-status-text-components {{customClass}}" style="{{customStyle}}">
   <!-- content -->
   <slot></slot>
 </view>

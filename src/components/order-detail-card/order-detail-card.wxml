@@ -1,76 +1,56 @@
-<view class="xxx-components">
+<view class="xxx-components {{customClass}}" style="{{customStyle}}">
   <view class="shop-info ">
-    <shop-card 
-      catch:tap="viewShop"
-      showNameIcon
-      showAddressIcon
-      src="{{data.shopLogo}}"
-      title="{{data.shopName}}"
-      text="{{data.address}}"
-       />
+    <shop-card catch:tap="viewShop" showNameIcon showAddressIcon src="{{data.shopLogo}}" title="{{data.shopName}}" text="{{data.address}}" />
   </view>
-
   <view class="order-info">
-    <view
-      class="order-container"
-      wx:for="{{data.orderList}}"
-      wx:for-item="order"
-      wx:for-index="orderIndex"
-      wx:key="orderIndex"
-      >
-      <view class="flex flex-middle order-item" >
+    <view class="order-container" wx:for="{{data.orderList}}" wx:for-item="order" wx:for-index="orderIndex" wx:key="orderIndex">
+      <view class="flex flex-middle order-item">
         <!-- 图片 -->
-        <image class='good-img' src="{{order.pic}}"/>
+        <image class='good-img' src="{{order.pic}}" />
         <!-- 详情 -->
-        <view class="detail" >
-          <view class="name ellipsisTwo" >
-            {{order.name}}
-          </view>
+        <view class="detail">
+          <view class="name ellipsisTwo">{{order.name}}</view>
           <view class="flex">
-            <view class="model ellipsisOne" >
-              {{order.model}}
-            </view> 
+            <view class="model ellipsisOne">{{order.model}}</view>
           </view>
         </view>
       </view>
-
-      <view class="flex-b flex-middle total" >
-          <view class="flex-middle number" >x{{order.number}}</view>
-          <money-text number="{{order.price * order.number}}" />
+      <view class="flex-b flex-middle total">
+        <view class="flex-middle number">x{{order.number}}</view>
+        <money-text number="{{order.price * order.number}}" />
       </view>
-
       <view class="flex-end">
-        <view class="btn flex-cm"
-         data-item="{{order}}"
-        catch:tap='addToGoodCart'>加入购物车</view>
-        <view class="btn flex-cm" 
-        data-item="{{order}}"
-        catch:tap="viewLogistics">申请售后</view>
+        <view class="btn flex-cm" data-item="{{order}}" catch:tap='addToGoodCart'>加入购物车</view>
+        <view class="btn flex-cm" data-item="{{order}}" catch:tap="viewLogistics">申请售后</view>
       </view>
-       
-       <view class="line"></view>
+      <view class="line"></view>
     </view>
-
     <view class="calc">
       <view class="row flex-b">
         <view class="label">商品总价</view>
-        <view class="text"><money-text plane number="{{data.totalMoney}}" /></view>
+        <view class="text">
+          <money-text plane number="{{data.totalMoney}}" />
+        </view>
       </view>
       <view class="row flex-b">
         <view class="label">运费</view>
-        <view class="text"><money-text plane number="{{data.shipping}}" /></view>
+        <view class="text">
+          <money-text plane number="{{data.shipping}}" />
+        </view>
       </view>
       <view class="row flex-b">
         <view class="label">优惠</view>
-        <view class="text">-<money-text plane number="{{data.couponMoney}}" /></view>
+        <view class="text">
+          -
+          <money-text plane number="{{data.couponMoney}}" />
+        </view>
       </view>
     </view>
-
     <view class="flex-end">
-      <view class="title-total" >
-					实付款：<money-text number="{{data.totalPayMoney}}" />
-				</view>
+      <view class="title-total">
+        实付款：
+        <money-text number="{{data.totalPayMoney}}" />
+      </view>
     </view>
-   
   </view>
 </view>

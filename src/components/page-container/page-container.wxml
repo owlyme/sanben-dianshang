@@ -1,20 +1,10 @@
-<view class="page-container-component flex-col {{useThemeBg ? ' page-bg-image ' : ''}}"
-  style="background-attachment: {{backgroundFixed ? 'fixed' : 'inherit'}}">
+<view class="page-container-component flex-col {{useThemeBg ? ' page-bg-image ' : ''}} {{customClass}}" style="background-attachment: {{backgroundFixed ? 'fixed' : 'inherit'}}; {{customStyle}}">
   <view style="position: fixed;width: 100%;z-index: {{navZindex}};">
-    <navbar
-      page-name="{{pageName}}"
-      showNav="{{showNav}}"
-      bgColor="{{bgColor}}"
-      iconColor="{{iconColor}}"
-      titleColor="{{titleColor}}"
-      theme="{{theme}}"
-      backIcon="{{backIcon}}"
-      backType="{{backType}}"
-      bind:back="back"
-    > <slot name="top"></slot> </navbar>
+    <navbar page-name="{{pageName}}" showNav="{{showNav}}" bgColor="{{bgColor}}" iconColor="{{iconColor}}" titleColor="{{titleColor}}" theme="{{theme}}" backIcon="{{backIcon}}" backType="{{backType}}" bind:back="back">
+      <slot name="top"></slot>
+    </navbar>
   </view>
-  <view class="page-contanier"
-      style="margin-top: {{navHeight}}px">
-     <slot></slot>
+  <view class="page-contanier" style="margin-top: {{navHeight}}px">
+    <slot></slot>
   </view>
 </view>

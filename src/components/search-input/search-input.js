@@ -1,7 +1,7 @@
 import { getInputValue, debounce } from '../../utils/commom';
 import { Toast } from '../../utils/sysApis'
 import { addKeywordsHistory } from '../../utils/localStorage';
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -11,6 +11,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     value: {
       type: String,
       value: ''
@@ -18,7 +26,7 @@ Component({
     type: {
       type: String,
       value: 'default' // 根据页面名区分 例： indexPage, orderPage, searchPage···
-    }, 
+    },
     placeholder: {
       type: String,
       value: '搜索关键词'
@@ -71,8 +79,8 @@ Component({
     },
     valueChange(data) {
       console.log('keyword', data);
-      this.triggerEvent('onChange',{keyword: data});
-    }, 
+      this.triggerEvent('onChange', { keyword: data });
+    },
     // index page actions
     // 点击地址
     onAddressClick(e) {
@@ -94,9 +102,9 @@ Component({
     },
     // 获取
     toGetResult() {
-      let {keyword} =  this.data
+      let { keyword } = this.data
       if (keyword.trim()) {
-        this.triggerEvent('onSearch', {keyword})
+        this.triggerEvent('onSearch', { keyword })
         addKeywordsHistory(keyword)
       }
     }

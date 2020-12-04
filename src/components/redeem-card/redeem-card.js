@@ -1,8 +1,8 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 import { getDatasetValue } from '../../utils/commom';
 const getId = getDatasetValue('id')
 const getItem = getDatasetValue('item')
-// <!-- 积分  兑换 -->
+  // <!-- 积分  兑换 -->
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -12,6 +12,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     info: {
       type: Object,
       value: {
@@ -33,7 +41,7 @@ Component({
     // }
   },
   data: {
-    
+
   },
 
   // 生命周期函数
@@ -52,7 +60,7 @@ Component({
 
   methods: {
     init() {
-      
+
     },
   }
 

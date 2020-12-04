@@ -1,4 +1,4 @@
-<view class="card-components">
+<view class="card-components {{customClass}}" style="{{customStyle}}">
   <!-- content -->
-  <slot> </slot>
+  <slot></slot>
 </view>

@@ -1,13 +1,12 @@
 import { getDatasetValue } from '../../utils/commom';
 const getGoodData = getDatasetValue('good');
 
-const splitArray = (arr= []) => {
+const splitArray = (arr = []) => {
   let evenArr = [];
   let oddArr = [];
   arr.forEach((item, index) => {
     index % 2 ?
-      evenArr.push(item)
-      :
+      evenArr.push(item) :
       oddArr.push(item);
 
   });
@@ -17,13 +16,20 @@ const splitArray = (arr= []) => {
 Component({
   options: {
     styleIsolation: 'apply-shared',
-    //  https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html
     multipleSlots: false // 在组件定义时的选项中启用多slot支持
 
   },
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     goodList: {
       type: Array,
       value: []
@@ -34,12 +40,13 @@ Component({
       let [oddIndexOfgoodList, evenIndexOfgoodList] = splitArray(this.data.goodList);
 
       this.setData({
-        oddIndexOfgoodList, evenIndexOfgoodList
+        oddIndexOfgoodList,
+        evenIndexOfgoodList
       });
     }
   },
   data: {
-    oddIndexOfgoodList:[],
+    oddIndexOfgoodList: [],
     evenIndexOfgoodList: []
   },
 
@@ -60,7 +67,8 @@ Component({
     let [oddIndexOfgoodList, evenIndexOfgoodList] = splitArray(this.data.goodList);
 
     this.setData({
-      oddIndexOfgoodList, evenIndexOfgoodList
+      oddIndexOfgoodList,
+      evenIndexOfgoodList
     });
   },
   moved() {},

@@ -1,20 +1,11 @@
-<view class="tab-bar-filter-components">
-  <view class="flex-a" >
-    <view
-      wx:for="{{tabs}}"
-      wx:key="index"
-      data-type="{{item.type}}"
-      data-index="{{index}}"
-      bind:tap="onClick"
-      class=" flex-cm tab-item {{ active === item.type ? 'active' : ''}} {{item.type}}"
-      >
+<view class="tab-bar-filter-components {{customClass}}" style="{{customStyle}}">
+  <view class="flex-a">
+    <view wx:for="{{tabs}}" wx:key="index" data-type="{{item.type}}" data-index="{{index}}" bind:tap="onClick" class=" flex-cm tab-item {{ active === item.type ? 'active' : ''}} {{item.type}}">
       <view class="tab-name flex-cm">
         <view wx:if="{{item.type === 'shop'}}" class="shop">
-         <icon-font name="icondianpu-weixuanze1" size="14" />
+          <icon-font name="icondianpu-weixuanze1" size="14" />
         </view>
-
         <view>{{item.name}}</view>
-
         <view wx:if="{{item.type === 'price'}}" class="price flex-col flex-cm">
           <view class="upper" hidden="{{filterPriceStatus === 'upper'}}">
             <icon-font name="iconjiagepaixu-gao-xuanze1" size="4" />
@@ -23,8 +14,8 @@
             <icon-font name="iconjiagepaixu-di-xuanze1" size="4" />
           </view>
         </view>
-         <view wx:if="{{item.type === 'filter'}}" class="shop">
-           <icon-font name="iconshaixuan1" size="14" />
+        <view wx:if="{{item.type === 'filter'}}" class="shop">
+          <icon-font name="iconshaixuan1" size="14" />
         </view>
       </view>
     </view>

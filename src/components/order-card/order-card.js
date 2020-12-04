@@ -1,5 +1,5 @@
-import {statusTextMap} from '../../app.const'
-import {Path, Router} from '../../router/index';
+import { statusTextMap } from '../../app.const'
+import { Path, Router } from '../../router/index';
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -9,6 +9,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     goodInfo: {
       type: Object,
       value: {
@@ -68,7 +76,7 @@ Component({
     },
     viewMore() {
       this.triggerEvent('viewMore')
-    }, 
+    },
     putInCart() {
       this.triggerEvent('putInCart')
     },

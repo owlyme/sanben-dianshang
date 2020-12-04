@@ -9,6 +9,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     couponList: {
       type: Array,
       value: []
@@ -24,8 +32,7 @@ Component({
     // }
   },
   data: {
-    typeList:[
-      {
+    typeList: [{
         icon: 'iconicon_weixingzf1',
         color: '#41B035',
         text: '微信支付',
@@ -37,7 +44,7 @@ Component({
         text: '支付宝支付',
         value: 'ali'
       },
-      
+
     ]
   },
 
@@ -57,19 +64,19 @@ Component({
 
   methods: {
     init() {
-      
+
     },
     onClick(e) {
-      let {type, index} = getDataset(e)
+      let { type, index } = getDataset(e)
       this.setData({
         value: type.value
       })
       this.customData = {
-        value: type.value, 
-        type, 
-        index
-      }
-      // this.triggerEvent('onChange', {value: coupon.value, coupon, index})
+          value: type.value,
+          type,
+          index
+        }
+        // this.triggerEvent('onChange', {value: coupon.value, coupon, index})
     },
     confirm() {
       this.triggerEvent('onChange', this.customData)

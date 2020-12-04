@@ -1,8 +1,5 @@
-<view class="logistics-step-components">
-  <view wx:for="{{list}}"
-    wx:key="index"
-    class="item flex {{'status-'+ item.status}}"
-  >
+<view class="logistics-step-components {{customClass}}" style="{{customStyle}}">
+  <view wx:for="{{list}}" wx:key="index" class="item flex {{'status-'+ item.status}}">
     <view class="tag flex-cm">
       <!-- icongouwuche-duoxuanqi-xuanze3 -->
       <!-- iconyiqujian-wancheng2 -->

@@ -1,60 +1,42 @@
-<view class="coupon-card-components {{info.status === 3 || info.status === 4 ? 'unuseable' : ''}}">
+<view class="coupon-card-components {{info.status === 3 || info.status === 4 ? 'unuseable' : ''}} {{customClass}}" style="{{customStyle}}">
   <view class="coupon-bg">
     <!-- <image src= /> -->
     <image class="image" src="{{info.status === 3 || info.status === 4 ? './images/bg-2.png' : './images/bg-1.png'}}" />
   </view>
-
   <view class="coupon-info">
     <view class="coupon-detail flex-b">
       <view class="coupon-detail-left">
         <view class="flex">
           <view class="image flex-cm">
             <icon-font wx:if="{{info.status === 4}}" name="iconyishixiao" size="{{40}}" color="#999999" />
-            <icon-font wx:elif="{{info.status === 3}}"  name="iconyishiyongicon-hongbao" size="{{40}}" color="#999999" />
+            <icon-font wx:elif="{{info.status === 3}}" name="iconyishiyongicon-hongbao" size="{{40}}" color="#999999" />
             <image class="image" wx:else src="{{info.goodPic}}" />
           </view>
-          
-          <view >
+          <view>
             <view class="flex-b">
               <view class="type-text">{{info.typeText}}</view>
               <view wx:if="{{info.type === 0}}" class="type platform">平台</view>
               <view wx:if="{{info.type === 1}}" class="type shop">店铺</view>
             </view>
             <view class="remind-text">
-              <view >
-                 仅可用于
-              </view>
-              <view >
-                  {{info.remindText}}
-                </view>
+              <view>仅可用于</view>
+              <view>{{info.remindText}}</view>
             </view>
           </view>
         </view>
         <view class="time flex-b">
-          <view>有效期至：{{info.expired}} </view>
+          <view>有效期至：{{info.expired}}</view>
           <icon-font bind:tap="showRemark" name="{{hiddenRemark ? 'iconxiangxia' : 'iconxiangshang'}}" />
-         
         </view>
       </view>
-      <view class="coupon-money flex-col flex-middle" >
+      <view class="coupon-money flex-col flex-middle">
         <view>
-           <money-text 
-            moneySize="{{16}}"
-            numberSize="{{25}}"
-            color="#ffffff"
-           number="{{info.couponMoney}}" />
+          <money-text moneySize="{{16}}" numberSize="{{25}}" color="#ffffff" number="{{info.couponMoney}}" />
         </view>
-         <view class="available-money">
-           满{{info.availableMoney}}可用
-        </view>
-        <view 
-        class="btn-status" 
-        >立即领取</view>
+        <view class="available-money">满{{info.availableMoney}}可用</view>
+        <view class="btn-status">立即领取</view>
       </view>
     </view>
-
-    <view class="coupon-remark" hidden="{{hiddenRemark}}">
-      {{info.remark}}
-    </view>
+    <view class="coupon-remark" hidden="{{hiddenRemark}}">{{info.remark}}</view>
   </view>
 </view>

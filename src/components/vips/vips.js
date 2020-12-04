@@ -1,4 +1,4 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 import { getDatasetValue } from '../../utils/commom';
 const getId = getDatasetValue('id')
 const getItem = getDatasetValue('item')
@@ -11,6 +11,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     level: {
       type: [Number, String],
       value: 1

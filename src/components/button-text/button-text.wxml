@@ -1,4 +1,3 @@
-<view class="button-text-components flex-cm {{type}}"
-style="height: {{height * 2}}rpx; min-width: {{width *2}}rpx;border-radius： {{height}}rpx; font-size: {{fontSize *2}}rpx">
+<view class="button-text-components flex-cm {{type}} {{customClass}}" style="{{customStyle}}" style="height: {{height * 2}}rpx; min-width: {{width *2}}rpx;border-radius： {{height}}rpx; font-size: {{fontSize *2}}rpx">
   <slot></slot>
 </view>

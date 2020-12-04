@@ -1,4 +1,3 @@
-
 import { Toast } from '../../utils/sysApis';
 
 Component({
@@ -10,7 +9,15 @@ Component({
   behaviors: [],
 
   properties: {
-    types:{
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
+    types: {
       type: String,
       value: 'pay'
     },
@@ -21,8 +28,8 @@ Component({
     // }
   },
   data: {
-    clolorList: ['黑色黑色黑色黑色黑色', '黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色','白色'],
-    sizeList: ['小','中','大','小','中','大','小','中','大','小','中','大','小','中','大'],
+    clolorList: ['黑色黑色黑色黑色黑色', '黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色', '白色'],
+    sizeList: ['小', '中', '大', '小', '中', '大', '小', '中', '大', '小', '中', '大', '小', '中', '大'],
     num: 10
   },
 
@@ -42,7 +49,7 @@ Component({
 
   methods: {
     init() {
-      
+
     },
     // 加入购物车
     addGoodToCart() {
@@ -51,20 +58,20 @@ Component({
       this.triggerEvent('onAdd')
     },
     // 立即付款
-    pay(){
+    pay() {
       console.log('pay')
       this.triggerEvent('onPay')
-      // console.log(111)
-      // uni.navigateTo({ //提交订单
-      //   url: '/pages/view/order/confirmOrder'
-      // })
+        // console.log(111)
+        // uni.navigateTo({ //提交订单
+        //   url: '/pages/view/order/confirmOrder'
+        // })
     },
     onColorChange(e) {
-      let {index, name} = e.detail
+      let { index, name } = e.detail
       console.log('onColorChange', index, name)
     },
     onSizeChange(e) {
-      let {index, name} = e.detail
+      let { index, name } = e.detail
       console.log('onSizeChange', index, name)
     },
     onNumberChange(e) {

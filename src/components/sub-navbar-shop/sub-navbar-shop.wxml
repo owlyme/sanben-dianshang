@@ -1,6 +1,3 @@
-<view class="xxx-components"  style="position:fixed;bottom:0;width:100%;left:0;right:0;">
-   <sub-navbar 
-    active="{{navList[index].name}}"
-    list="{{navList}}" 
-    bindonChange="navChange"/>
+<view class="xxx-components {{customClass}}" style="position:fixed;bottom:0;width:100%;left:0;right:0;{{customStyle}};">
+    <sub-navbar active="{{navList[index].name}}" list="{{navList}}" bindonChange="navChange" />
 </view>

@@ -7,31 +7,39 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     // 星星评分的属性设置
     rate: {
       type: Number,
-      value: 0 
+      value: 0
     },
     // 由用户来定义星星的大小和文字的大小
-    starSize:{
-      type:Number,
-      value: 24,//rpx
+    starSize: {
+      type: Number,
+      value: 24, //rpx
     },
-    fontSize:{
-      type:Number,
-      value:20
+    fontSize: {
+      type: Number,
+      value: 20
     },
-    fontColor:{
-      type:String,
-      value:'#ccc'
+    fontColor: {
+      type: String,
+      value: '#ccc'
     },
     iconType: {
-      type:String,
-      value:'star' // zan
+      type: String,
+      value: 'star' // zan
     },
     gutter: {
-      type:Number,
-      value: 8,//rpx
+      type: Number,
+      value: 8, //rpx
     }
   },
   observers: {
@@ -47,7 +55,7 @@ Component({
   ready() {
     this.init()
   },
- 
+
   methods: {
     init() {
       var that = this;
@@ -58,7 +66,7 @@ Component({
       // 除出来有可能是浮点,所以需要求整数,1分等于0.5个星星,需要除以2,得到星星个数
       let light = parseInt(intRate / 2); //3个星星
       let half = intRate % 2; //求半灰星,对传入过来的评分模于2,得出半星
-    
+
       let gray = 5 - light - half; //一共5个星星,总星减去高亮的星星再减去一半亮亮的星星得出灰星
 
       // 对传过来的数据进行遍历,页面显示 
@@ -75,7 +83,7 @@ Component({
         grays.push(i)
       }
       // 对传进来的评分做判断,如果为0,显示为评分,如果评分但是是整数要保留一位小数
-      rate = rate && rate > 0 ? rate.toFixed(1)+'分' : '未评分';
+      rate = rate && rate > 0 ? rate.toFixed(1) + '分' : '未评分';
 
       this.setData({
         lights,
@@ -89,15 +97,15 @@ Component({
       this.setStar(index)
     },
     getHalfPoints(e) {
-      let {lights} = this.data
+      let { lights } = this.data
       let index = e.currentTarget.dataset.index + 1
-      
-      this.setStar(lights.length + index/2)
+
+      this.setStar(lights.length + index / 2)
     },
     getGrayGray(e) {
-      let {lights, halfs} = this.data
+      let { lights, halfs } = this.data
       let index = e.currentTarget.dataset.index + 1
-      this.setStar(lights.length + halfs.length/2 + index )
+      this.setStar(lights.length + halfs.length / 2 + index)
     },
     setStar(rate) {
       console.log(rate)

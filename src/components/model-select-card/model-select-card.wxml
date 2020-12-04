@@ -1,5 +1,4 @@
-<view catch:touchmove="moveHandle" class="sku" 
-  >
+<view catch:touchmove="moveHandle" class="sku {{customClass}}" style="{{customStyle}}">
   <view class="sku_top">
     <image src="https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg" class="top_img"></image>
     <view class="sku-right">
@@ -12,50 +11,36 @@
         库存: 15
       </view>
       <!-- 请选择颜色 -->
-      <view class="sku_selColor">
-        请选择 颜色
-      </view>
+      <view class="sku_selColor">请选择 颜色</view>
     </view>
   </view>
   <!-- 滑动区域 -->
-  <scroll-view 
-  scroll-y="true" 
-  style="height: {{670}}rpx"
-  class="sku-box">
+  <scroll-view scroll-y="true" style="height: {{670}}rpx" class="sku-box">
     <!-- 收货地址 -->
     <view class="address">
       <view class="address-title">
         <view class="left">收货地址</view>
         <view class="iconfont icongengduo-hong"></view>
       </view>
-      <view class="address-content">
-        浙江省 杭州市 西湖区 浙江省人民医院 附属家属区十一号楼28层 2808室
-      </view>
+      <view class="address-content">浙江省 杭州市 西湖区 浙江省人民医院 附属家属区十一号楼28层 2808室</view>
     </view>
     <!-- 选择颜色 -->
     <view class="select-color">
-      <view class="select-title">
-        颜色
-      </view>
+      <view class="select-title">颜色</view>
       <view class="select-content">
         <tab-bar type="pill" tabs="{{clolorList}}" bind:onChange="onColorChange" />
-      
       </view>
     </view>
     <!-- 尺寸 -->
     <view class="select-size">
-      <view class="select-title">
-        尺寸
-      </view>
+      <view class="select-title">尺寸</view>
       <view class="select-content">
-        <tab-bar type="pill" tabs="{{sizeList}}" bind:onChange="onSizeChange"/>
+        <tab-bar type="pill" tabs="{{sizeList}}" bind:onChange="onSizeChange" />
       </view>
     </view>
     <!-- 发货门店 -->
     <view class="deliver-stores">
-      <view class="select-title">
-        发货门店
-      </view>
+      <view class="select-title">发货门店</view>
       <view class="select-content">
         <view class="left">
           <text class="iconfont iconmendian"></text>
@@ -72,13 +57,13 @@
     <view class="purchase-quantity">
       <view class="title">购买数量</view>
       <view class="p-right">
-        <number-stepper num="{{num}}" bind:onChange="onNumberChange"/>
+        <number-stepper num="{{num}}" bind:onChange="onNumberChange" />
       </view>
     </view>
   </scroll-view>
   <!-- 添加 -->
   <view class="add-cart">
-    <view class="btn-add" wx:if="{{ types === 'add'}}"  bind:tap="addGoodToCart">加入购物车</view>
+    <view class="btn-add" wx:if="{{ types === 'add'}}" bind:tap="addGoodToCart">加入购物车</view>
     <view class="btn-pay" wx:elif="{{ types === 'pay'}}" bind:tap="pay">立即购买</view>
   </view>
 </view>

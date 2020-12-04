@@ -1,13 +1,19 @@
-
 Component({
   options: {
     styleIsolation: 'apply-shared',
-    //  https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html
     multipleSlots: false // 在组件定义时的选项中启用多slot支持
   },
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     options: {
       type: Array,
       value: []
@@ -43,7 +49,7 @@ Component({
     }
   },
   data: {
-    list : []
+    list: []
   },
 
   // 生命周期函数
@@ -58,7 +64,7 @@ Component({
   },
   created() {},
   ready() {
-    
+
   },
   moved() {},
   detached() {},
@@ -66,12 +72,10 @@ Component({
   methods: {
     init() {
       this.setData({
-        list: this.data.options.map(i =>(
-          {
-            ...i,
-            formatDesc: i.desc.replace(/(\d{11})/g, '<span style="color: #FF3232">$1</span>')
-          }
-        ))
+        list: this.data.options.map(i => ({
+          ...i,
+          formatDesc: i.desc.replace(/(\d{11})/g, '<span style="color: #FF3232">$1</span>')
+        }))
       })
     },
   }

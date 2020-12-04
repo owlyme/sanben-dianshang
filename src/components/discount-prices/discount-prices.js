@@ -1,20 +1,23 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 import { getDatasetValue } from '../../utils/commom';
 const getId = getDatasetValue('id')
 const getItem = getDatasetValue('item')
 Component({
   options: {
     styleIsolation: 'apply-shared',
-    //  https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html
     multipleSlots: false // 在组件定义时的选项中启用多slot支持
   },
   behaviors: [],
 
   properties: {
-    // goodList: {
-    //   type: Array,
-    //   value: []
-    // }
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
   },
   observers: {
     // goodList: function() {
@@ -39,7 +42,7 @@ Component({
 
   methods: {
     init() {
-      
+
     },
   }
 

@@ -6,6 +6,14 @@ Component({
   behaviors: [],
 
   properties: {
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
     text: {
       type: String,
       value: 'success'
@@ -18,7 +26,7 @@ Component({
     copy() {
       wx.setClipboardData({
         data: this.data.text,
-        success (res) {
+        success(res) {
           // wx.getClipboardData({
           //   success (res) {
           //     console.log(res.data) // data

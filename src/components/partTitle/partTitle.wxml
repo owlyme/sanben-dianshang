@@ -1,4 +1,4 @@
-<view class="part-components flex-middle flex-b">
+<view class="part-components flex-middle flex-b {{customClass}}" style="{{customStyle}}">
   <!-- content -->
   <view class="left"></view>
   <view class="center-title">{{title}}</view>

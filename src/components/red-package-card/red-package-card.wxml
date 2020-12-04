@@ -1,10 +1,9 @@
-<view class="red-packet {{info.status == 2 ? 'unuseable' : ''}}">
+<view class="red-packet {{info.status == 2 ? 'unuseable' : ''}} {{customClass}}" style="{{customStyle}}">
   <view class="top">
     <view class="type">
       <image class="image" src="./images/used.png" wx:if="{{info.status == 1}}"></image>
       <image class="image" src="./images/unused.png" wx:elif="{{info.status == 0}}"></image>
       <image class="image" src="./images/lose-use.png" wx:elif="{{info.status == 2}}"></image>
-
       <view class="type-right">
         <view class="title">{{info.activeName}}</view>
         <view class="sub-title">{{info.limit}}</view>
@@ -14,8 +13,10 @@
       <icon-font wx:if="{{info.status == 1}}" name="iconyishiyongicon-hongbao" size="{{40}}" color="#FF3232" />
       <icon-font wx:if="{{info.status == 2}}" name="iconyishixiao" size="{{40}}" color="#999999" />
     </view>
-    <view class="money" 
-    style="color:+ {{info.status == 2 ? '#999': '#ff3232'}}">{{info.money}}<text class="text">元</text></view>
+    <view class="money" style="color:+ {{info.status == 2 ? '#999': '#ff3232'}}">
+      {{info.money}}
+      <text class="text">元</text>
+    </view>
   </view>
   <view class="date flex-b">
     <text>有效期至：{{info.expired}}</text>

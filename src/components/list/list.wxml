@@ -1,4 +1,4 @@
-<view class="list-components">
+<view class="list-components {{customClass}}" style="{{customStyle}}">
   <!-- content -->
   <slot></slot>
 </view>

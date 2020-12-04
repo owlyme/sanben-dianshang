@@ -8,7 +8,14 @@ Component({
   behaviors: [],
 
   properties: {
-
+    customClass: {
+      type: String,
+      value: ''
+    },
+    customStyle: {
+      type: String,
+      value: ''
+    },
   },
   data: {
     time: "2020-12-06 00:00:00",
@@ -50,7 +57,7 @@ Component({
   lifetimes: {
     attached: function() {
       // 在组件实例进入页面节点树时执行
-      getRecommendedActive().then(res  => {
+      getRecommendedActive().then(res => {
         if (res.code === 200) {
           this.setData({
             time: res.data.time,
