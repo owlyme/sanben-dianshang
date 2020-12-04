@@ -5,8 +5,7 @@ Component({
   },
   behaviors: [],
 
-  properties: {},
-  data: {
+  properties: {
     customClass: {
       type: String,
       value: ''
@@ -16,14 +15,5 @@ Component({
       value: ''
     },
   },
-
-  // 生命周期函数
-  created() {},
-  attached() {},
-  ready() {},
-  moved() {},
-  detached() {},
-
-  methods: {}
 
 });
