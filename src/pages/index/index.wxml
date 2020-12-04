@@ -47,13 +47,11 @@
       </view>
     </view>
     <view class="good-card-b">
-      <view class="good-list">
-        <view hidden="{{goodListType === 'rank'}}">
-          <good-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />
-        </view>
-        <view hidden="{{ goodListType === 'category' || goodListType === 'special'}}">
-          <good-rank-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />
-        </view>
+      <view hidden="{{goodListType === 'rank'}}">
+        <good-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />
+      </view>
+      <view hidden="{{ goodListType === 'category' || goodListType === 'special'}}">
+        <good-rank-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />
       </view>
     </view>
     <image class="backTop" bindtap='backTop' wx:if="{{backTopValue ==true}}" src="/images/backtop.png" />
