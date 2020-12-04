@@ -4,17 +4,17 @@
   </text>
   <view class="moeney-text-components flex " style="" wx:else>
     <!-- content -->
-    <text class="money-icon" style="font-size: {{moneySize * 2}}rpx; color: {{color}}">¥</text>
-    <text class="money-num-int" style="font-size: {{numberSize * 2}}rpx; color: {{color}}">
+    <view class="money-icon" style="font-size: {{moneySize * 2}}rpx; color: {{color}}">¥</view>
+    <view class="money-num-int" style="font-size: {{numberSize * 2}}rpx; color: {{color}}">
       {{intPart}}
-    </text>
+    </view>
     <block wx:if="{{showDecimal}}" style="font-size: {{moneySize * 2}}rpx; color: {{color}}">
-      <text class="money-icon " style="font-size: {{decimalPartSize * 2}}rpx;color: {{color}}">
+      <view class="money-icon " style="font-size: {{decimalPartSize * 2}}rpx;color: {{color}}">
         .
-      </text>
-      <text class="money-num-point" style="font-size: {{decimalPartSize * 2}}rpx; color: {{color}}">
+      </view>
+      <view class="money-num-point" style="font-size: {{decimalPartSize * 2}}rpx; color: {{color}}">
         {{decimalPart}}
-      </text>
+      </view>
     </block>
   </view>
 </block>

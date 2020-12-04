@@ -1,44 +1,29 @@
-<view class="xxx-page" >
-<page-container
-    pageName="商品详情"
-    showNav="{{true}}"
-    bgColor="#F4F5F6;"
-    iconColor="none"
-    theme="dark"
-    useThemeBg="{{false}}"
-    >
-
-    <view class="goods-detail" >
+<view class="xxx-page">
+  <page-container pageName="商品详情" showNav="{{true}}" bgColor="#F4F5F6;" iconColor="none" theme="dark" useThemeBg="{{false}}">
+    <view class="goods-detail">
       <!-- 1.占位符 -->
       <view class="goods-head" style="top: {{tarbarOffsetTop}}px;">
         <view class="search flex flex-middle">
           <view style="flex: 1">
             <search-input bind:tap="toSearchPage" type="placeholder" placeholder="搜索商品" />
           </view>
-          <view >
-          <share-com>
-            <icon-font name="iconfenxiang1" size="{{20}}" color="#333333" />
-          </share-com>
+          <view>
+            <share-com>
+              <icon-font name="iconfenxiang1" size="{{20}}" color="#333333" />
+            </share-com>
           </view>
-          <view  bind:tap="toGoodCartPage">
-          <icon-font name="icongouwuche" size="{{20}}" color="#333333"/>
+          <view bind:tap="toGoodCartPage">
+            <icon-font name="icongouwuche" size="{{20}}" color="#333333" />
           </view>
-       </view>
-        <view id="tabbar" class="tabbar" 
-        style="background:{{topPartStyle.bg}};opacity: {{topPartStyle.tabbarOpactiy}}; display: {{topPartStyle.tabbarBlock}}" >
-          <tab-bar 
-            color="#333333"
-            activeColor="#FF3631"
-            tabs="{{orderType}}"
-            bind:onChange="handleScrolTo" />
+        </view>
+        <view id="tabbar" class="tabbar" style="background:{{topPartStyle.bg}};opacity: {{topPartStyle.tabbarOpactiy}}; display: {{topPartStyle.tabbarBlock}}">
+          <tab-bar color="#333333" activeColor="#FF3631" tabs="{{orderType}}" bind:onChange="handleScrolTo" />
         </view>
       </view>
- 
       <!-- 2.轮播图 -->
       <view class="customer-swiper-b">
-        <customer-swiper bannerList="{{goodDetail.displayPicList}}" ratio="100%" dotsType="text"/>
+        <customer-swiper bannerList="{{goodDetail.displayPicList}}" ratio="100%" dotsType="text" />
       </view>
-
       <!-- 积分  兑换 -->
       <view class="gutter-container">
         <redeem-card />
@@ -47,45 +32,39 @@
       <view class="goods-info gutter-container">
         <view class="goods_price flex-b flex-middle">
           <view class="left">
-            <money-text number="{{currentPrice}}"/><text>起</text>
+            <money-text number="{{currentPrice}}" />
+            <text>起</text>
           </view>
           <view class="right flex-cm" bind:tap="getCoupon">
             <text>领券</text>
             <icon-font name="iconxuanze-gengduo" color="#fff" />
           </view>
         </view>
-        <view class="goods_name ellipsisTwo">
-          {{goodDetail.name}}
-        </view>
+        <view class="goods_name ellipsisTwo">{{goodDetail.name}}</view>
         <view class="bottom-icon flex-b flex-middle">
           <view class="left">
-            <good-feature list="{{goodDetail.tags}}"/>
+            <good-feature list="{{goodDetail.tags}}" />
           </view>
-          <view class="right">
-            月售{{goodDetail.sales}}件
-          </view>
+          <view class="right">月售{{goodDetail.sales}}件</view>
         </view>
       </view>
       <!-- 4.商品参数 -->
-      
       <view class="gutter-container">
-        <!--  modelData="{{}}" -->
-        <good-params-card/>
-      
+        <!-- modelData="{{}}" -->
+        <good-params-card />
       </view>
       <!-- 5.评价 -->
       <view class="evaluate gutter-container" id="evaluate">
         <card>
           <view class="eva_title flex flex-b">
-            <view >商品评价{{evaluates.totalNumber}}</view>
-            
+            <view>商品评价{{evaluates.totalNumber}}</view>
             <view class="seeAll" bind:tap="viewMoreEvaluate">
-              查看全部<icon-font name="iconxuanze-gengduo" />
+              查看全部
+              <icon-font name="iconxuanze-gengduo" />
             </view>
           </view>
-
           <view class="evaluate_box">
-            <evaluate-list list="{{evaluates.list}}"/>
+            <evaluate-list list="{{evaluates.list}}" />
           </view>
         </card>
       </view>
@@ -93,21 +72,17 @@
       <view class="store-box  gutter-container">
         <view class="store-head flex-b flex-middle">
           <view class="left">
-            <shop-card 
-            src="{{goodDetail.shopLogo}}"
-            title="{{goodDetail.shopName}}"
-            >
+            <shop-card src="{{goodDetail.shopLogo}}" title="{{goodDetail.shopName}}">
               <view slot="text" class="flex ">
                 <rate-star rate="{{goodDetail.rate}}"></rate-star>
                 <text class="followNumber">{{goodDetail.followNumber}}人关注</text>
               </view>
             </shop-card>
           </view>
-          <view >
+          <view>
             <follow-shop-btn shopInfo="{{goodDetail}}" />
           </view>
         </view>
-      
         <view class="store-recomend">
           <view class="recommend-head">
             <view class="title">店铺推荐</view>
@@ -116,55 +91,41 @@
               <icon-font name="iconxuanze-gengduo" />
             </view>
           </view>
-          <view >
+          <view>
             <good-list-recomend goodList="{{goodList}}" />
           </view>
-        
         </view>
       </view>
       <!-- 7.商品详情 -->
       <view class="product-details" id="product-details">
         <view class="title">商品详情</view>
         <view class="contents">
-          <rich-text-box nodes="{{goodDetail.profile}}"/>
+          <rich-text-box nodes="{{goodDetail.profile}}" />
         </view>
       </view>
-
       <!-- 8.好物推荐 -->
-      <view class="goods-recommend gutter-container" id="recommend">
+      <view class="" id="recommend">
         <view class="title">
           <part-title title="好物推荐" />
         </view>
-        <view class="recommend-item">
-           <good-list
-              goodList="{{goodList}}"
-              cardType="easy"
-              bind:onGoodClick="viewGood"
-            />
-        </view>
+        <good-list goodList="{{goodList}}" cardType="easy" bind:onGoodClick="viewGood" />
       </view>
-      
       <!-- 底部操作栏 -->
-      <view class="operation"  id="operation">
-        <view class="store"
-        bind:tap="viewShopIndex">
+      <view class="operation" id="operation">
+        <view class="store" bind:tap="viewShopIndex">
           <text class="iconfont icondianpu-weixuanze2"></text>
           <view>店铺</view>
         </view>
-        <view class="serve"
-        bind:tap="toService">
+        <view class="serve" bind:tap="toService">
           <text class="iconfont iconkefu"></text>
           <view>客服</view>
         </view>
-        <view class="collect"
-        bind:tap="save">
+        <view class="collect" bind:tap="save">
           <text class="iconfont iconshoucang-weishoucang"></text>
           <view>收藏</view>
         </view>
         <view class="btns">
-          <view class="addcart" data-type="add" bind:tap="openModelSelectDialog">
-            加入购物车
-          </view>
+          <view class="addcart" data-type="add" bind:tap="openModelSelectDialog">加入购物车</view>
           <view class="dingjin" data-type="pay" bind:tap="openModelSelectDialog">
             <!-- <image src="/static/goods/triangle.png"></image> -->
             立 即 购 买
@@ -172,30 +133,15 @@
         </view>
       </view>
       <!-- 规格弹出层 -->
-      
       <!-- 用来承载H5预览视频的 -->
       <view style="position: absolute;top: -999rpx;left: -999rpx;">
-        <video ref="newVideo" id="newVideo" :src="goodsData.videos" :autoplay="showVideo" :show-center-play-btn="false"
-        :show-mute-btn="true" :show-fullscreen-btn="false" bind:fullscreenchange="hideShow"></video>
+        <video ref="newVideo" id="newVideo" :src="goodsData.videos" :autoplay="showVideo" :show-center-play-btn="false" :show-mute-btn="true" :show-fullscreen-btn="false" bind:fullscreenchange="hideShow"></video>
       </view>
     </view>
-
   </page-container>
-
-
-  <half-screen-dialog 
-    header="" 
-    show="{{showModelSelectDialog}}" 
-    bind:onClose="onCloseDialog" 
-    hiddenBtn="{{true}}"
-    >
-      <view style="margin-top: -96rpx">
-        <model-select-card 
-        types="{{modelCardType}}"
-        bind:onAdd="onAddGoodToCart"
-        bind:onPay="onPay"
-        />
-      </view>
+  <half-screen-dialog header="" show="{{showModelSelectDialog}}" bind:onClose="onCloseDialog" hiddenBtn="{{true}}">
+    <view style="margin-top: -96rpx">
+      <model-select-card types="{{modelCardType}}" bind:onAdd="onAddGoodToCart" bind:onPay="onPay" />
+    </view>
   </half-screen-dialog>
-
 </view>

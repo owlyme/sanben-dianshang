@@ -1,4 +1,4 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 // 全局app实例
 const App = getApp();
 
@@ -8,8 +8,7 @@ Page({
     showDrawer: false, // 右侧抽屉
     showNav: true,
     keyword: '',
-    goodList: [
-      {
+    goodList: [{
         id: 0,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
@@ -101,18 +100,16 @@ Page({
         tags: ['hao', 'bucuo']
       }
     ],
-    pageStyleType: 'vertical', // 竖 vertical，  水平 standard
+    pageStyleType: 'standard', // 竖 vertical，  水平 standard
     tabType: 'first',
-    shopList: [
-      {
+    shopList: [{
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: '阿迪达斯三叶草旗舰店',
         followNumber: 148,
         rate: 7,
         phoneNumber: '13156521718',
         address: 111111,
-        products: [
-          {
+        products: [{
             id: 1,
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
           },
@@ -135,8 +132,7 @@ Page({
         rate: 7,
         phoneNumber: '13156521718',
         address: 111111,
-        products: [
-          {
+        products: [{
             id: 1,
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
           },
@@ -159,8 +155,7 @@ Page({
         rate: 7,
         phoneNumber: '13156521718',
         address: 111111,
-        products: [
-          {
+        products: [{
             id: 1,
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
           },
@@ -180,10 +175,10 @@ Page({
   },
   onLoad(e) {
     console.log(e)
-    // this.setData({
-    //   pageStyleType: e.options.styleType || 'vertical'
-    // })
-    // Do some initialize when page load.
+      // this.setData({
+      //   pageStyleType: e.options.styleType || 'vertical'
+      // })
+      // Do some initialize when page load.
     console.log(Router.query)
     this.setData({
       keyword: Router.query.goodName
@@ -198,7 +193,7 @@ Page({
   onHide() {
     // Do something when page hide.
   },
- 
+
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
   },
@@ -208,7 +203,7 @@ Page({
   onShareAppMessage() {
     // return custom share data when user share.
   },
-  onPageScroll (e) { 
+  onPageScroll(e) {
     console.log(e)
   },
   onTabItemTap() {
@@ -218,7 +213,7 @@ Page({
     Router.push({
       url: Path.search,
       query: {
-       
+
       }
     })
   },
@@ -231,20 +226,20 @@ Page({
 
   onTypeChange(e) {
     console.log(e)
-    let {filterPriceStatus, index, type} = e.detail
-    let {showDrawer, showNav, tabType} = this.data
+    let { filterPriceStatus, index, type } = e.detail
+    let { showDrawer, showNav, tabType } = this.data
 
     tabType = type
-    if (type=== 'filter') {
+    if (type === 'filter') {
       this.setData({
         showDrawer: true,
-        showNav:  false
+        showNav: false
       })
-      return 
-    } else if (type=== 'shop') {
+      return
+    } else if (type === 'shop') {
       tabType = type
-      // Router.push(Path.mallShop)
-    } 
+        // Router.push(Path.mallShop)
+    }
 
     this.setData({
       showDrawer,

@@ -2,66 +2,16 @@
   <!-- content -->
   <page-container pageName="签到">
     <view class="sign-container">
-      <view class="banner-title flex-b">
-        <view class="text-1">签到拿积分</view>
-        <view class="flex">
-          <view class="text-2">本月已签到</view>
-          <view class="days">
-            <view class="text-3">{{signedDays}}</view>
-          </view>
-          <view class="text-2">天</view>
-        </view>
-      </view>
-
-      <card>
-        <view class="flex-b flex-wrap">
-          <view
-            class="{{ item.day <= 4 ? 'prev-4-item' : ''}} sign-item flex-col flex-middle {{item.status || (!item.status && item.day < currentDay) ? 'sign-bg' : 'unsign-bg'}}"
-            wx:for="{{weekDayList}}"
-            wx:for-index="{{idx}}"
-            data-sign="{{item}}"
-            bind:tap="toSign">
-            <view class="week-day">{{item.dayText}}</view>
-            <view
-              class="{{item.status || (!item.status&& item.day < currentDay) ? 'day-sign-status' : 'day-unsign-status'}}">
-              <!-- 过去 未签到 -->
-              <image wx:if="{{!item.status && item.day < currentDay }}" src="./images/unsigned.png" />
-              <!-- 过去/今天 已签到 -->
-              <image wx:elif="{{item.status && item.day <= currentDay}}" src="./images/signed.png" />
-              <!-- 今天 未签到 -->
-              <image wx:elif="{{!item.status && item.day == currentDay}}" src="./images/sign.png" />
-              <!-- 未来 未签到 -->
-              <image wx:elif="{{item.day > currentDay}}" src="./images/unsign.png" />
-            </view>
-            <view class="signed-score"
-              wx:if="{{item.status || (!item.status&& item.day < currentDay) }}">{{
-              !!item.status ? item.score+'积分' : '未签到'
-              }}</view>
-          </view>
-        </view>
-      </card>
-
-      <view class="part-title">
-        <part-title title="热门商品推荐" />
-      </view>
-
+      <sign-in-card />
+      <part-title customClass="gutter-container" title="热门商品推荐" />
       <!-- bindscrolltoupper="upper"
       bindscrolltolower="lower"
       bindscroll="scroll"
       scroll-into-view="{{toView}}"
-      scroll-top="{{scrollTop}}"-->
-      <scroll-view
-      id="scroll-view"
-      scroll-y="true"
-      style="height: {{scrollViewHeight}}px;"
-      bindscrolltolower="scrollToLower"
-      bindscrolltoupper="scrollToUpper"
-      >
+      scroll-top="{{scrollTop}}" -->
+      <scroll-view id="scroll-view" scroll-y="true" style="height: {{scrollViewHeight}}px;" bindscrolltolower="scrollToLower" bindscrolltoupper="scrollToUpper">
         <view class="sign-good-list">
-          <good-list
-          goodList="{{goodList}}"
-          bind:onGoodClick="viewGood"
-           />
+          <good-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />
         </view>
       </scroll-view>
     </view>

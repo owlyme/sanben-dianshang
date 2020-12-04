@@ -1,100 +1,59 @@
-    <view class="shop-all-good-page"><page-container
-    pageName="店铺首页"
-    showNav="{{showNav}}"
-    bgColor="#F4F5F6;"
-    iconColor="none"
-    theme="dark"
-    useThemeBg="{{false}}"
-    >
-      <view class="sticky scroll-b"
-        style="top: {{stickyOffsetTop}}px;">
-        <card >
-          <view bind:tap="onSearchGoodInCurrentShop">
-            <search-input 
-            placeholder="搜索店铺内商品" 
-            type='placeholder' />
-          </view>
-          
-          <view class="shop-info flex-b flex-middle">
-            <shop-card src="{{shopInfo.pic}}"
-            title="{{shopInfo.name}}"
-            >
-              <view slot="text" class="flex">
-                <rate-star rate="{{shopInfo.rate}}"></rate-star>
-                <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
-              </view>
-            </shop-card>
-            <follow-shop-btn shopInfo="{{goodDetail}}" />
-            <!-- <view class="tag"><icon-font name="iconguanzhudianpu-weiguanzhu" size="12" /> 关注</view> -->
-          </view>
-
-          <view class="address flex">
-            <icon-font size="15" name="icondizhi2" color="#999999" /> 
-            <view class="flex flex-middle" style="margin-left: 6rpx">
-              <view class="address-info">
-                <view class="title">
-                  门店地址
-                </view>
-                <view class="title-add">
-                    {{shopInfo.address}}
-                </view>
-              </view>
-              
-              <view class="right">
-                <icon-font size="14" name="icondingdan-dianpu-gengduo2" color="#999999" />
-              </view>
-
-              <view class="phone" bind:tap="makePhoneCall">
-                <icon-font size="24" name="icondianpudianhua" color="#FF3232" />
-              </view>
+<view class="shop-all-good-page">
+  <page-container pageName="店铺首页" showNav="{{showNav}}" bgColor="#F4F5F6;" iconColor="none" theme="dark" useThemeBg="{{false}}">
+    <view class="sticky scroll-b" style="top: {{stickyOffsetTop}}px;">
+      <card>
+        <view bind:tap="onSearchGoodInCurrentShop">
+          <search-input placeholder="搜索店铺内商品" type='placeholder' />
+        </view>
+        <view class="shop-info flex-b flex-middle">
+          <shop-card src="{{shopInfo.pic}}" title="{{shopInfo.name}}">
+            <view slot="text" class="flex">
+              <rate-star rate="{{shopInfo.rate}}"></rate-star>
+              <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
+            </view>
+          </shop-card>
+          <follow-shop-btn shopInfo="{{goodDetail}}" />
+          <!-- <view class="tag"><icon-font name="iconguanzhudianpu-weiguanzhu" size="12" /> 关注</view> -->
+        </view>
+        <view class="address flex">
+          <icon-font size="15" name="icondizhi2" color="#999999" />
+          <view class="flex flex-middle" style="margin-left: 6rpx">
+            <view class="address-info">
+              <view class="title">门店地址</view>
+              <view class="title-add">{{shopInfo.address}}</view>
+            </view>
+            <view class="right">
+              <icon-font size="14" name="icondingdan-dianpu-gengduo2" color="#999999" />
+            </view>
+            <view class="phone" bind:tap="makePhoneCall">
+              <icon-font size="24" name="icondianpudianhua" color="#FF3232" />
             </view>
           </view>
-        </card>
-      </view>
-
-      <view class="shop-list-b">
-        <list >
-          <view class="title">
-            <title-contianer>
-              <view class="">同城门店·<text >{{shopList.length}}</text>家</view>
-            </title-contianer>
-          </view>
-          <list-item 
-             textAlign="left"
-            wx:for="{{shopList}}"
-            wx:key="index"
-             wx:if="{{index < 2}}"
-             data-item='{{item}}'
-             bind:onClick="shopItemClick"
-            >
-               <shop-card slot="content" src="{{item.pic}}"
-                showAddressIcon="{{true}}"
-                title="{{item.name}}"
-                text="{{item.address}}"
-                />
-            </list-item>
-
-          <view class="view-more" bind:tap="viewMoreShop">
-             查看更多 <icon-font name="icongengduo-hong" size="12" />
-          </view>
-            
-        </list>
-      </view>
-
-      <view class="gutter-container">
-        <part-title title="热门商品推荐" />
-      </view>
-
-      <view class="list-b">
-        <good-list 
-          goodList="{{goodList}}"
-          bind:onGoodClick="onGoodClick"
-        />
-      </view>
-
+        </view>
+      </card>
+    </view>
+    <view class="shop-list-b">
+      <list>
+        <view class="title">
+          <title-contianer>
+            <view class="">
+              同城门店·
+              <text>{{shopList.length}}</text>
+              家
+            </view>
+          </title-contianer>
+        </view>
+        <list-item textAlign="left" wx:for="{{shopList}}" wx:key="index" wx:if="{{index < 2}}" data-item='{{item}}' bind:onClick="shopItemClick">
+          <shop-card slot="content" src="{{item.pic}}" showAddressIcon="{{true}}" title="{{item.name}}" text="{{item.address}}" />
+        </list-item>
+        <view class="view-more" bind:tap="viewMoreShop">
+          查看更多
+          <icon-font name="icongengduo-hong" size="12" />
+        </view>
+      </list>
+    </view>
+    <part-title title="热门商品推荐" />
+    <good-list goodList="{{goodList}}" bind:onGoodClick="onGoodClick" />
   </page-container>
-
-  <sub-navbar-shop 
-    indexImage="{{shopInfo.pic}}"
-   index="{{0}}"/>
+  <sub-navbar-shop indexImage="{{shopInfo.pic}}" index="{{0}}" />
 </view>

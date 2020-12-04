@@ -1,56 +1,28 @@
-<page-container
-    pageName="{{pageName}}"
-    showNav="{{true}}"
-    iconColor="none"
-    theme="light"
-    useThemeBg="{{false}}"
-    >
-    <view class="payment-page">
-      <view class="top-b theme-bg">
-        <view class="icon-b">
-          <icon-font name="iconpingjiachenggong1" size="48" color="#fff"/>
-        </view>
-        <view class="remind">
-          评价成功，恭喜您获得{{points}}积分！
-        </view>
-
-        <view class="btns flex-b">
-          <button-text type="ghost"
-          fontSize="{{12}}"
-          bind:tap="backToIndex" >返回首页</button-text>
-          <button-text type="ghost"
-          wx:if="{{pageType==='evaluate'}}"
-          bind:tap="back" 
-          fontSize="{{12}}"
-          >查看评价</button-text>
-
-          <button-text type="ghost"
-          wx:elif="{{pageType==='pay'}}"
-          bind:tap="viewOrder" 
-          fontSize="{{12}}"
-          >查看订单</button-text>
-        </view>
+<page-container pageName="{{pageName}}" showNav="{{true}}" iconColor="none" theme="light" useThemeBg="{{false}}">
+  <view class="payment-page">
+    <view class="top-b theme-bg">
+      <view class="icon-b">
+        <icon-font name="iconpingjiachenggong1" size="48" color="#fff" />
       </view>
-      <image src="/images/wave.png" class="theme-wave"/>
-
-      <view class="payment-card-b">
-        <part-title title="热买推荐"></part-title>
-        <view class="payment-list "  >
-          <scroll-view
-          id="scroll-view"
-          scroll-y="true"
-          style="height: {{scrollViewHeight}}px;"
-          bindscrolltolower="scrollToLower"
-          bindscrolltoupper="scrollToUpper"
-          bindscroll="onScroll"
-          >
-            <view class="gutter-container">
-            <good-list
-              goodList="{{goodList}}"
-            />
-            </view>
-          </scroll-view>
-        </view>
+      <view class="remind">评价成功，恭喜您获得{{points}}积分！</view>
+      <view class="btns flex-b">
+        <button-text type="ghost" fontSize="{{12}}" bind:tap="backToIndex">返回首页</button-text>
+        <button-text type="ghost" wx:if="{{pageType==='evaluate'}}" bind:tap="back" fontSize="{{12}}">
+          查看评价
+        </button-text>
+        <button-text type="ghost" wx:elif="{{pageType==='pay'}}" bind:tap="viewOrder" fontSize="{{12}}">
+          查看订单
+        </button-text>
       </view>
     </view>
-  </page-container>
+    <image src="/images/wave.png" class="theme-wave" />
+    <view class="payment-card-b">
+      <part-title title="热买推荐"></part-title>
+      <view class="payment-list ">
+        <scroll-view id="scroll-view" scroll-y="true" style="height: {{scrollViewHeight}}px;" bindscrolltolower="scrollToLower" bindscrolltoupper="scrollToUpper" bindscroll="onScroll">
+          <good-list goodList="{{goodList}}" />
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</page-container>

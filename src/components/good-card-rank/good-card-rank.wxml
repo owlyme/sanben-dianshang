@@ -1,4 +1,4 @@
-<view class="good-card-rank-components flex {{customClass}}" style="{{customStyle}}" bind:tap="viewGoodDetail">
+<view class="good-card-rank-components gutter-container flex {{customClass}}" style="{{customStyle}}" bind:tap="viewGoodDetail">
   <!-- content -->
   <view class="good-pic">
     <image class="image" src="{{goodInfo.pic}}" />

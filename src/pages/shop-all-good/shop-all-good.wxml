@@ -1,47 +1,23 @@
-    <view class="shop-all-good-page"><page-container
-    pageName="全部商品"
-    showNav="{{showNav}}"
-    bgColor="#F4F5F6;"
-    iconColor="none"
-    theme="dark"
-    useThemeBg="{{false}}"
-    >
-      <view class="sticky scroll-b"
-        style="top: {{stickyOffsetTop}}px;">
-        <view bind:tap="onSearchGoodInCurrentShop">
-            <search-input 
-            placeholder="搜索店铺内商品" 
-            value="{{keyword}}"
-            type='placeholder'
-            bind:onChange="onClear" />
+<view class="shop-all-good-page">
+  <page-container pageName="全部商品" showNav="{{showNav}}" bgColor="#F4F5F6;" iconColor="none" theme="dark" useThemeBg="{{false}}">
+    <view class="sticky scroll-b" style="top: {{stickyOffsetTop}}px;">
+      <view bind:tap="onSearchGoodInCurrentShop">
+        <search-input placeholder="搜索店铺内商品" value="{{keyword}}" type='placeholder' bind:onChange="onClear" />
+      </view>
+      <view class="shop-info flex-b flex-middle">
+        <shop-card src="{{shopInfo.pic}}" title="{{shopInfo.name}}">
+          <view slot="text" class="flex">
+            <rate-star rate="{{shopInfo.rate}}"></rate-star>
+            <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
           </view>
-        <view class="shop-info flex-b flex-middle">
-          <shop-card src="{{shopInfo.pic}}"
-          title="{{shopInfo.name}}"
-          >
-            <view slot="text" class="flex">
-              <rate-star rate="{{shopInfo.rate}}"></rate-star>
-              <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
-            </view>
-          </shop-card>
-          <follow-shop-btn shopInfo="{{goodDetail}}" />
-        </view>
-
-        <view class="tab-bar-filter-b">
-           <tab-bar-filter 
-            tabs="{{tabs}}"
-            bind:onChange="onTypeChange"/>
-        </view>
+        </shop-card>
+        <follow-shop-btn shopInfo="{{goodDetail}}" />
       </view>
-
-      <view class="list-b">
-        <good-list 
-          goodList="{{goodList}}"
-          bind:onGoodClick="onGoodClick"
-        />
+      <view class="tab-bar-filter-b">
+        <tab-bar-filter tabs="{{tabs}}" bind:onChange="onTypeChange" />
       </view>
-
+    </view>
+    <good-list goodList="{{goodList}}" bind:onGoodClick="onGoodClick" />
   </page-container>
-
-  <sub-navbar-shop index="{{1}}"/>
+  <sub-navbar-shop index="{{1}}" />
 </view>
