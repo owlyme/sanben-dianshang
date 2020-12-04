@@ -20,25 +20,13 @@
     </view>
     <image src="/images/wave.png" class="theme-wave" />
     <!-- 活动种类 -->
-    <view class="active-b ">
-      <active-list />
-    </view>
+    <active-list />
     <!-- 推荐商品 -->
-    <view class="tuijian-good-b">
-      <card>
-        <recommended-products goodProducts="{{goodProducts}}" priceReduction="{{priceReduction}}" newProducts="{{newProducts}}" productsNews="{{productsNews}}" />
-      </card>
-    </view>
+    <recommended-products goodProducts="{{goodProducts}}" priceReduction="{{priceReduction}}" newProducts="{{newProducts}}" productsNews="{{productsNews}}" />
     <!-- 推荐活动 -->
-    <view class="tuijian-active-b">
-      <card>
-        <recommended-active />
-      </card>
-    </view>
+    <recommended-active />
     <!-- 宣传板块 -->
-    <view class="promotional-section-b">
-      <promotional-section />
-    </view>
+    <promotional-section />
     <!-- 吸顶 分类 -->
     <view id="sticky-b" class="sticky sticky-b " style="top: {{stickyTabbarOffsetTop}}px; background:{{stickyTabbarBackground}}">
       <tab-bar type="2" tabs="{{goodListTypeListTab}}" bind:onChange="onGoodListTypeChange" />
