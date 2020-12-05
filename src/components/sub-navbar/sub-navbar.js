@@ -22,12 +22,12 @@ Component({
     },
     list: {
       type: Array,
-      value: [],
-      // [{
-      //   "name": "首页",
-      //   "icon": 'iconxiangqing-dianpu1',
-      //  'selectedPic': 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_30
-      // },
+      value: [{
+        "name": "首页",
+        "icon": 'iconxiangqing-dianpu1',
+        'selectedPic': 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_30'
+      }],
+
     },
     active: {
       type: [String, Number],
