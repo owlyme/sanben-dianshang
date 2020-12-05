@@ -1,13 +1,7 @@
 <view class="xxx-page">
   <!-- content -->
-  <page-container pageName="pageList">
-
-      <view
-        wx:for="{{pageList}}"
-        data-url="{{item}}"
-        bind:tap="toPage"
-        style="margin: 20px"
-      >{{item}}</view>
-  
-  </page-container>
+  <navbar />
+  <view wx:for="{{pageList}}" data-url="{{item}}" bind:tap="toPage" style="margin: 20px">
+    {{item}}
+  </view>
 </view>

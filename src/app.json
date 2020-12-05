@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/pageList/pageList",
     "pages/index/index",
     "pages/login/login",
     "pages/goodDetail/goodDetail",
@@ -62,7 +63,6 @@
     "pages/service/service",
     "pages/serviceAgreement/serviceAgreement",
     "pages/componentList/componentList",
-    "pages/pageList/pageList",
     "pages/error/error"
   ],
   "window": {

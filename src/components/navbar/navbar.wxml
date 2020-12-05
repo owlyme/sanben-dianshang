@@ -1,5 +1,5 @@
 <!-- components/navbar/index.wxml -->
-<view class="navbar custom-class {{customClass}}" style='height:{{navHeight}}px;background:{{bgColor}}; {{customStyle}};'>
+<view class="navbar custom-class {{customClass}}" style='height:{{navHeight}}px;background:{{bgColor}}; {{customStyle}}; top: {{0}}px;'>
   <view class="navbar-action-wrap nav-bar-back" style='top:{{navTop}}px;'>
     <view class="back-box" bind:tap="_navBack" wx:if="{{showNav}}">
       <icon-font name="{{computedTheme.backIcon}}" color="{{computedTheme.backIconColor}}" size="{{20}}" />
