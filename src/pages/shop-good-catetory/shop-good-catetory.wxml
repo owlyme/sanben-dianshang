@@ -1,36 +1,22 @@
-    <view class="shop-all-good-page"><page-container
-    pageName="分类"
-    showNav="{{showNav}}"
-    bgColor="#F4F5F6;"
-    iconColor="none"
-    theme="dark"
-    useThemeBg="{{false}}"
-    >
-      <view class="sticky scroll-b"
-        style="top: {{stickyOffsetTop}}px;">
-         <view bind:tap="onSearchGoodInCurrentShop">
-            <search-input placeholder="搜索店铺内商品" />
-          </view>
-          
-          <view class="shop-info flex-b flex-middle">
-            <shop-card src="{{shopInfo.pic}}"
-            title="{{shopInfo.name}}"
-            >
-              <view slot="text" class="flex">
-                <rate-star rate="{{shopInfo.rate}}"></rate-star>
-                <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
-              </view>
-            </shop-card>
-            <follow-shop-btn shopInfo="{{goodDetail}}" />
-          </view>
+<view class="shop-all-good-page">
+  <page-container pageName="分类" showNav="{{showNav}}" bgColor="#F4F5F6;" iconColor="none" theme="dark" useThemeBg="{{false}}">
+    <view class="sticky scroll-b" style="top: {{stickyOffsetTop}}px;">
+      <view bind:tap="onSearchGoodInCurrentShop">
+        <search-input placeholder="搜索店铺内商品" />
       </view>
-
-      <view class="list-b gutter-container">
-        <block class=""
-          wx:for="{{list}}"
-          wx:key="index"
-          >
-          <view class="card-b">
+      <view class="shop-info flex-b flex-middle">
+        <shop-card src="{{shopInfo.pic}}" title="{{shopInfo.name}}">
+          <view slot="text" class="flex">
+            <rate-star rate="{{shopInfo.rate}}"></rate-star>
+            <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
+          </view>
+        </shop-card>
+        <follow-shop-btn shopInfo="{{goodDetail}}" />
+      </view>
+    </view>
+    <view class="list-b gutter-container">
+      <block class="" wx:for="{{list}}" wx:key="index">
+        <view class="card-b">
           <card>
             <view class="title flex-b flex-middle">
               <title-contianer>
@@ -39,23 +25,14 @@
               <icon-font size="12" data-index="{{index}}" bind:tap="onMoreClick" name="icondingdan-dianpu-gengduo" />
             </view>
             <view class="item-list flex flex-wrap">
-                <view 
-                class="flex-cm flex-wrap item-box"
-                bind:tap="onCategoryClick"
-                wx:for="{{item.list}}"
-                wx:for-item="subItem"
-                wx:index="subIndex"
-                wx:key="{{subItem.id}}"
-                data-condition="{{subItem}}"
-                data-id="{{subItem.id}}"
-                :key="item">{{subItem.name}}</view>
+              <view class="flex-cm flex-wrap item-box" bind:tap="onCategoryClick" wx:for="{{item.list}}" wx:for-item="subItem" wx:index="subIndex" wx:key="{{subItem.id}}" data-condition="{{subItem}}" data-id="{{subItem.id}}" :key="item">
+                {{subItem.name}}
+              </view>
             </view>
           </card>
-          </view>
-        </block>
-      </view>
-
+        </view>
+      </block>
+    </view>
   </page-container>
-
-  <sub-navbar-shop index="{{2}}"/>
+  <sub-navbar-shop index="{{2}}" />
 </view>
