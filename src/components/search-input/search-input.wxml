@@ -1,24 +1,19 @@
 <view class="search-input-components {{customClass}}" style="{{customStyle}}">
-  <view class="search-input-default" wx:if="{{type === 'default'}}">
+  <view class="search-input-default" wx:if="{{type === 'default'}}" style="{{borderRadius}}">
     <view class="user-action-part flex-middle flex-b">
-      <input class="input" value="{{keyword}}" data-keyword="keyword" placeholder="{{placeholder}}" bindinput="debounceOnInputValueChange" />
+      <input class="input" value="{{keyword}}" data-keyword="keyword" style="text-align: {{textAlign}}" placeholder="{{placeholder}}" bindinput="debounceOnInputValueChange" />
       <view class="clear-keyword" wx:if="{{keyword.length}}" bind:tap="clear">
         <icon-font name="iconwenan-tianru-qingkong1" size="12" color="#CCCCCC" />
       </view>
     </view>
   </view>
   <view class="search-bar flex" wx:elif="{{type === 'indexPage'}}">
-    <!-- <view class="current-position"
-     bind:tap="onAddressClick">
-      <icon-font size="{{12}}" gutter="{{1}}" color="#fff" name="icondingwei-hongse2" />
-      {{address}}
-    </view> -->
-    <view class="search-input-index">
+    <view class="search-input-index" style="{{borderRadius}}">
       <view class="user-action-part flex-middle flex-b">
         <view class="scan-btn" catch:tap="onScanClick">
           <icon-font name="iconsaoyisao" size="{{20}}" color="#FF5E20" />
         </view>
-        <view class="search-keywords ellipsisOne" data-keyword="keyword" bind:tap="onSearchBtnClick">
+        <view class="search-keywords ellipsisOne" style="text-align: {{textAlign}}" data-keyword="keyword" bind:tap="onSearchBtnClick">
           {{placeholder}}
         </view>
         <view class="search-btn" bind:tap="onSearchBtnClick">
@@ -32,9 +27,9 @@
     </view>
   </view>
   <view class="search-bar-search-page flex-b" wx:elif="{{type === 'searchPage'}}">
-    <view class="search-input-search">
+    <view class="search-input-search" style="{{borderRadius}}">
       <view class="user-action-part flex-middle flex-b">
-        <input value="{{keyword}}" data-keyword="keyword" placeholder="{{placeholder}}" bindinput="onInputValueChange" auto-focus />
+        <input value="{{keyword}}" style="text-align: {{textAlign}}" data-keyword="keyword" placeholder="{{placeholder}}" bindinput="onInputValueChange" auto-focus />
         <view class="clear-keyword" wx:if="{{keyword.length}}" bind:tap="clear">
           <icon-font name="iconwenan-tianru-qingkong1" size="12" color="#CCCCCC" />
         </view>
@@ -44,10 +39,14 @@
       <icon-font size="14" color="#fff" name="iconsousuo" />
     </view>
   </view>
-  <view class="search-placeholder" wx:elif="{{type === 'placeholder'}}">
+  <view class="search-placeholder" style="{{borderRadius}}" wx:elif="{{type === 'placeholder'}}">
     <view class="user-action-part flex-middle flex-b">
-      <view class="placeholder" wx:if="{{!value.length}}">{{placeholder}}</view>
-      <view class="searched-value" wx:elif="{{value.length}}">{{value}}</view>
+      <view class="placeholder" style="text-align: {{textAlign}}" wx:if="{{!value.length}}">
+        {{placeholder}}
+      </view>
+      <view class="searched-value" style="text-align: {{textAlign}}" wx:elif="{{value.length}}">
+        {{value}}
+      </view>
       <view class="clear-keyword" wx:if="{{value.length}}" catch:tap="clear">
         <icon-font name="iconwenan-tianru-qingkong1" size="12" color="#CCCCCC" />
       </view>

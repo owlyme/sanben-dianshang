@@ -1,3 +1,5 @@
+import { Path, Router } from '../../router/index';
+
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -15,30 +17,18 @@ Component({
       type: String,
       value: ''
     },
-    activeList: {
-      type: Array,
-      value: [{
-          pic: '/images/worthBuying/evaluation.png',
-          title: '超值评测',
-          text: '大V实物评测'
-        },
-        {
-          pic: '/images/worthBuying/activitives.png',
-          title: '专享活动',
-          text: '超值活动来啦'
-        },
-        {
-          pic: '/images/worthBuying/articles.png',
-          title: '优享文章',
-          text: '看看这篇文章'
-        },
-        {
-          pic: '/images/worthBuying/videos.png',
-          title: '好物视频',
-          text: '全方位鉴赏'
-        }
-      ]
-    }
+    title: {
+      type: String,
+      value: "这是标题", // 'srcoll'
+    },
+    more: {
+      type: String,
+      value: "查看详情", // 'srcoll'
+    },
+    link: {
+      type: String,
+      value: "", // 'srcoll'
+    },
   },
   observers: {
     // goodList: function() {
@@ -62,9 +52,9 @@ Component({
   detached() {},
 
   methods: {
-    init() {
-
-    },
+    toPage() {
+      Router.push(this.data.link)
+    }
   }
 
 });

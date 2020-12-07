@@ -94,13 +94,14 @@
     <!-- 钱包 -->
     <view class="money gutter-container">
       <card>
-        <view class="flex-b">
+        <!-- <view class="flex-b flex-middle">
           <view class="title">我的钱包</view>
-          <view class="more" bind:tap="toMyWalletPage">
+          <view class="more flex-middle" bind:tap="toMyWalletPage">
             查看详情
             <icon-font name="icondingdan-dianpu-gengduo1" />
           </view>
-        </view>
+        </view> -->
+        <destoon-keylink title="我的钱包" more="查看详情" />
         <view class="margin16 flex-a">
           <view class="balance">
             <view class="num">

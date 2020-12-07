@@ -1,10 +1,9 @@
 {
   "pages": [
-    "pages/pageList/pageList",
     "pages/index/index",
+    "pages/pageList/pageList",
     "pages/login/login",
     "pages/goodDetail/goodDetail",
-
     "pages/goodEvaluate/goodEvaluate",
     "pages/messageNotifications/messageNotifications",
     "pages/messageActive/messageActive",
@@ -154,8 +153,8 @@
     "poster": "components/miniprogram_dist/poster/index",
     "logistics-step": "components/logistics-step/logistics-step",
     "sign-in-card": "components/sign-in-card/sign-in-card",
-    "active-list-worth": "components/active-list-worth/active-list-worth",
-
+    "announcement": "components/announcement/announcement",
+    "destoon-keylink": "components/destoon-keylink/destoon-keylink",
     "message-card": "components/message-card/message-card"
   },
   "tabBar": {

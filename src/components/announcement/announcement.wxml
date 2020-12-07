@@ -1,0 +1,4 @@
+<view class="announcement flex-middle" style="background:{{bgColor}}; color:{{color}}">
+  <icon-font :color="color" name="iconai15" />
+  <view style="margin-left: 5px">{{ content }}</view>
+</view>

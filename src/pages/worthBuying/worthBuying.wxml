@@ -4,7 +4,7 @@
       <view class="customer-swiper-b">
         <customer-swiper bannerList="{{bannerList}}" bind:onItemClick="onSwiperClick" />
       </view>
-      <active-list-worth />
+      <active-list activeList="{{activeList}}" />
     </card>
     <good-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />
   </view>

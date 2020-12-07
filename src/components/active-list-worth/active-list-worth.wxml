@@ -1,7 +1,0 @@
-<view class="active-list flex-b">
-  <view class="item" wx:for="{{activeList}}" wx:key="index" data-item="{{item}}" bind:tap="onActiveClick">
-    <image class="image" src="{{item.pic}}" />
-    <view class="title">{{item.title}}</view>
-    <view class="text">{{item.text}}</view>
-  </view>
-</view>

@@ -1,6 +1,6 @@
 // 全局app实例
-import {Path, Router} from '../../router/index';
-import { debounce, isScrollUp, throttle, getDatasetValue} from '../../utils/commom';
+import { Path, Router } from '../../router/index';
+import { debounce, isScrollUp, throttle, getDatasetValue } from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
 const getModelCardType = getDatasetValue('type');
@@ -10,11 +10,11 @@ Page({
     tarbarOffsetTop: App.globalData.navHeight,
     modelCardType: 'add', // add 加入购物车, pay 立 即 购 买
     topPartStyle: {
-      bg:'rgba(244, 245, 246, 0)',
+      bg: 'rgba(244, 245, 246, 0)',
       tabbarOpactiy: 0,
       tabbarBlock: 'none'
     },
-    
+
     showModelSelectDialog: false,
     orderType: [
       '商品',
@@ -23,9 +23,8 @@ Page({
       '推荐'
     ],
     goodDetail: {
-      displayPicList: [
-        {
-          videoPoster: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      displayPicList: [{
+          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
           video: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
         },
         {
@@ -56,15 +55,14 @@ Page({
     },
     evaluates: {
       totalNumber: 10,
-      list: [
-        {
+      list: [{
           avatar: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
           name: '环保小能手',
           releaseTime: '2020-09-12 15:00:54',
           model: '黑/白色',
           content: '使用设计工具的好处在于，当这些项目材料同时呈现，能够帮助我们进行模式识别，并促进更多创…使用设计工具的好处在于，当这些项目材料同时呈现，能够帮助我们进行模式识别，并促进更多创…使用设计工具的好处在于，当这些项目材料同时呈现，能够帮助我们进行模式识别，并促进更多创…',
           pics: [
-           
+
           ]
         },
         {
@@ -96,8 +94,7 @@ Page({
       ]
     },
     currentPrice: 199,
-    goodList: [
-      {
+    goodList: [{
         id: 0,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
@@ -186,10 +183,10 @@ Page({
         tags: ['hao', 'bucuo']
       }
     ],
-    type:'',									//类型
-    current:0,
-    scrollTop:0,							//滚动高度
-    showModal:false,						//弹出显示隐藏
+    type: '', //类型
+    current: 0,
+    scrollTop: 0, //滚动高度
+    showModal: false, //弹出显示隐藏
 
     showVideo: false,
     goodsData: {
@@ -231,7 +228,7 @@ Page({
     // return custom share data when user share.
   },
   onShareTimeline() {
-    
+
   },
   onPageScroll(e) {
     // Do something when page scroll
@@ -249,14 +246,14 @@ Page({
     let top = pageScrollTop > 300 ? 300 : pageScrollTop;
     let precent = (top / 300).toFixed(2);
     let topPartStyle = {
-      bg:`rgba(244, 245, 246, ${precent})`,
+      bg: `rgba(244, 245, 246, ${precent})`,
       tabbarOpactiy: precent,
       tabbarBlock: top > 10 ? 'block' : 'none'
     }
     this.setData({
       topPartStyle
     })
-    
+
   },
   onTabItemTap() {
     // 当前是 tab 页时，点击 tab 时触发
@@ -271,15 +268,15 @@ Page({
       url: Path.goodCart
     })
   },
-  async handleScrolTo(e){
+  async handleScrolTo(e) {
     console.log('handleScrolTo', e)
 
     let index = e.detail.index
     let offsetTop = App.globalData.navHeight
     let scrollTop = 0
-    let tabbarHeight= 36 // 通过css 样式得到
+    let tabbarHeight = 36 // 通过css 样式得到
     const {
-      currentScrollTop, 
+      currentScrollTop,
       // evaluateScrollTop,
       // productDetailsScrollTop,
       // recommendScrollTop
@@ -305,7 +302,7 @@ Page({
   setShowVideo(showVideo, isH5) { //操作视频
     this.showVideo = true
     if (isH5 == true) {
-    
+
     }
   },
   // 视频显示
@@ -313,11 +310,11 @@ Page({
     this.showVideo = false
   },
   // 弹出曾隐藏
-  onhide(){
+  onhide() {
     this.showModal = false
   },
- 
-  viewGood(e){
+
+  viewGood(e) {
     console.log('sign good', e);
   },
   // 领券
@@ -350,17 +347,17 @@ Page({
   toService(e) {
     console.log('viewShopIndex', e);
     Toast.show('客服下班了')
-    // Router.push({
-    //   url: Path.shopIndex
-    // })
+      // Router.push({
+      //   url: Path.shopIndex
+      // })
   },
   // 收藏 
   save(e) {
     console.log('viewShopIndex', e);
     Toast.success('收藏成功')
-    // Router.push({
-    //   url: Path.myCollection
-    // })
+      // Router.push({
+      //   url: Path.myCollection
+      // })
   },
   // 
   onCloseDialog(e) {
@@ -379,10 +376,10 @@ Page({
   },
 
   onAddGoodToCart(e) {
-    console.log('onAddGoodToCart',e)
-  }, 
+    console.log('onAddGoodToCart', e)
+  },
   onPay(e) {
-    console.log('onPay',e)
+    console.log('onPay', e)
   },
 
   customData: {

@@ -38,16 +38,29 @@ Component({
     message: {
       type: [Number, Boolean],
       value: false
-    }
+    },
+    textAlign: {
+      type: String,
+      default: "left",
+    },
+    radius: {
+      type: [Number, String],
+      default: "18",
+    },
   },
+
   data: {
     keyword: '',
+    borderRadius: ''
   },
 
   // 生命周期函数
   lifetimes: {
     attached: function() {
       // 在组件实例进入页面节点树时执行
+      this.setData({
+        borderRadius: `border-radius: ${this.data.radius}rpx`
+      })
     },
     detached: function() {
       // 在组件实例被从页面节点树移除时执行

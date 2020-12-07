@@ -1,0 +1,7 @@
+<view class="destoon-keylink flex-b flex-middle" style="background: {{bgColor}}; color: {{color}}" bind:tap="toPage">
+  <view class="title">{{ title }}</view>
+  <view class="more flex-middle">
+    {{ more }}
+    <icon-font name="icondingdan-dianpu-gengduo1" />
+  </view>
+</view>

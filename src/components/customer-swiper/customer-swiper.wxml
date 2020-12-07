@@ -2,10 +2,9 @@
   <fixed-ratio-card ratio="{{ratio}}">
     <swiper class="swiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" indicator-dots="{{false}}" current="{{swiperCurrent}}" vertical="{{false}}" bindchange="swiperChange">
       <swiper-item class="swiper-item" wx:for="{{bannerList}}" wx:key="index" data-item='{{item}}' data-index="{{index}}" bind:tap="onItemClick">
-        <!-- <fixed-ratio-card ratio="{{ratio}}"> -->
-        <video wx:if="{{item.video}}" src="{{item.video}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn show-center-play-btn='{{true}}' show-play-btn="{{true}}" show-fullscreen-btn="{{false}}" controls picture-in-picture-mode="{{['push', 'pop']}}" object-fit="cover" poster="{{item.videoPoster}}" style="    width: 100%;height: 100%;"></video>
+        <video wx:if="{{item.video}}" src="{{item.video}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn show-center-play-btn='{{true}}' show-play-btn="{{true}}" show-fullscreen-btn="{{false}}" controls picture-in-picture-mode="{{['push', 'pop']}}" object-fit="cover" poster="{{item.pic}}" style="    width: 100%;height: 100%;"></video>
         <image wx:else class="banner-image image" src="{{item.pic}}" lazy-load="{{true}}" />
-        <!-- </fixed-ratio-card> -->
+        <view class="item-name" v-show="item.name">{{ item.name }}</view>
       </swiper-item>
     </swiper>
     <block wx:if="{{dotsType==='default'}}">

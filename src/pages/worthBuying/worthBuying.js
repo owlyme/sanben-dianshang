@@ -8,8 +8,7 @@ Page({
     stickyOffsetTop: App.globalData.navHeight,
     goodList: [],
     bannerList: [],
-    activeList: [
-      {
+    activeList: [{
         pic: '/images/worthBuying/evaluation.png',
         title: '超值评测',
         text: '大V实物评测'
@@ -41,15 +40,15 @@ Page({
       if (res.code === 200) {
         this.setData({
           goodList: type === 'add' ?
-             this.data.goodList.concat(res.data || []) : 
-             (res.data || [])
+            this.data.goodList.concat(res.data || []) :
+            (res.data || [])
         })
 
         if (type === 'refresh') {
           wx.stopPullDownRefresh()
         }
       }
-    }) 
+    })
   },
   getBannerList() {
     getBannerList().then(res => {
@@ -58,7 +57,7 @@ Page({
           bannerList: res.data
         })
       }
-    }) 
+    })
   },
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
@@ -71,12 +70,12 @@ Page({
 
 
   onSwiperClick(e) {
-    console.log('onSwiperClick',e)
+    console.log('onSwiperClick', e)
   },
   onActiveClick(e) {
-    console.log('onActiveClick',e)
+    console.log('onActiveClick', e)
   },
-  viewGood(e){
+  viewGood(e) {
     console.log('viewGood', e);
   },
   customData: {}

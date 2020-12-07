@@ -1,6 +1,27 @@
-<view class="active-components flex-a flex-wrap {{customClass}}" style="{{customStyle}}">
-  <view class="active-item" wx:for="{{active}}" wx:key="index" data-type="{{item.type}}" bind:tap="onActiveClick">
-    <image class="active-icon" src="{{item.icon}}" />
-    <view class="active-name">{{item.text}}</view>
+<!-- <view class="active-list flex-b">
+  <view class="item" wx:for="{{activeList}}" wx:key="index" data-item="{{item}}" bind:tap="onActiveClick">
+    <image class="image" src="{{item.pic}}" />
+    <view class="title">{{item.title}}</view>
+    <view class="text">{{item.text}}</view>
   </view>
+</view> -->
+<view class="active-list {{customClass}}" style="{{customStyle}}">
+  <view class="flex flex-wrap" wx:if="{{type === 'default'}}">
+    <view class="item" wx:for="{{activeList}}" style="width: {{100 / col }}%" wx:key="index" data-item="{{item}}" bind:tap="onActiveClick">
+      <image class="image" src="{{item.pic}}" />
+      <view class="title">{{item.title}}</view>
+      <view class="text">{{item.text}}</view>
+    </view>
+  </view>
+  <block wx:elif="{{type === 'scroll'}}">
+    <scroll-view scroll-x="true" style="width: 100%; height: 90px;">
+      <view class="flex">
+        <view wx:for="{{activeList}}" wx:key="index" class="item scroll-item" style="width: {{100 / col }}%" data-item="{{item}}" bind:tap="onActiveClick">
+          <image class="image" src="{{item.pic}}" />
+          <view class="title" wx:show="{{item.title}}">{{item.title}}</view>
+          <view class="text" wx:show="{{item.text}}">{{item.text}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </block>
 </view>

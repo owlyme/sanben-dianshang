@@ -1,12 +1,8 @@
-<view class="good-rank-list-components">
+<view class="good-rank-list-components {{customClass}}" style="{{customStyle}}">
   <!-- content -->
   <block wx:for="{{goodList}}" wx:key="index">
     <view class="good-rank-list-item">
-      <good-card-rank
-        goodInfo="{{item}}"
-        data-good="{{item}}"
-        bind:tap="onClick"
-        />
+      <good-card-rank goodInfo="{{item}}" data-good="{{item}}" bind:tap="onClick" />
     </view>
   </block>
 </view>

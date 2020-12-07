@@ -1,7 +1,4 @@
-<view class="xxx-page">
-  <!-- content -->
-  <navbar />
-  <view wx:for="{{pageList}}" data-url="{{item}}" bind:tap="toPage" style="margin: 20px">
-    {{item}}
-  </view>
+<view customClass="sanben-9">
+  <navbar customClass="sanben-10" pageName="{{navbarPageName}}" showNav="{{navbarShowNav}}" bgColor="{{navbarBgColor}}" titleColor="{{navbarTitleColor}}" theme="{{navbarTheme}}" backIcon="{{navbarBackIcon}}" backType="{{navbarBackType}}"></navbar>
+  <good-rank-list customClass="sanben-11" goodList="{{goodRankListGoodList}}"></good-rank-list>
 </view>

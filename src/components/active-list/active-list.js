@@ -1,8 +1,3 @@
-import { Path, Router } from '../../router/index';
-import { getDatasetValue, } from '../../utils/commom';
-
-
-const getType = getDatasetValue('type')
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -20,60 +15,61 @@ Component({
       type: String,
       value: ''
     },
+
+    activeList: {
+      type: Array,
+      value: [{
+          pic: "/images/active-list/evaluation.png",
+          title: "超值评测",
+          text: "大V实物评测",
+        },
+        {
+          pic: "/images/active-list/activitives.png",
+          title: "专享活动",
+          text: "超值活动来啦",
+        },
+        {
+          pic: "/images/active-list/articles.png",
+          title: "优享文章",
+          text: "看看这篇文章",
+        },
+        {
+          pic: "/images/active-list/videos.png",
+          title: "好物视频",
+          text: "全方位鉴赏",
+        },
+        {
+          pic: "/images/active-list/activitives.png",
+          title: "专享活动",
+          text: "超值活动来啦",
+        },
+        {
+          pic: "/images/active-list/articles.png",
+          title: "优享文章",
+          text: "看看这篇文章",
+        },
+        {
+          pic: "/images/active-list/videos.png",
+          title: "好物视频",
+          text: "全方位鉴赏",
+        },
+      ],
+    },
+    col: {
+      type: Number,
+      value: 4,
+    },
+    type: {
+      type: String,
+      value: "default", // 'scroll'
+    },
   },
-  data: {
-    active: [{
-        type: 'signIn',
-        text: '签到有奖',
-        icon: './images/qiandao.png'
-      },
-      {
-        type: 'coupon',
-        text: '优惠领券',
-        icon: './images/youhuiquan.png'
-      },
-      {
-        type: '3',
-        text: '幸运抽奖',
-        icon: './images/choujiang.png'
-      },
-      {
-        type: '',
-        text: '品牌特卖',
-        icon: './images/temai.png'
-      },
-      {
-        type: '',
-        text: '积分兑换',
-        icon: './images/duihuanjifen.png'
-      },
-      {
-        type: '',
-        text: '发现好货',
-        icon: './images/haohuo.png'
-      },
-      {
-        type: '',
-        text: '新品首发',
-        icon: './images/xinpin.png'
-      },
-      {
-        type: '',
-        text: '众筹活动',
-        icon: './images/zhongchouhuodong.png'
-      },
-      {
-        type: '',
-        text: '超值拼团',
-        icon: './images/pingtuan.png'
-      },
-      {
-        type: '',
-        text: '超值中心',
-        icon: './images/chongzhi.png'
-      },
-    ]
+  observers: {
+    // goodList: function() {
+    //   this.init()
+    // }
   },
+  data: {},
 
   // 生命周期函数
   lifetimes: {
@@ -90,19 +86,11 @@ Component({
   detached() {},
 
   methods: {
+    init() {
+
+    },
     onActiveClick(e) {
-      let type = getType(e)
-      console.log(e, type)
-      switch (type) {
-        case 'signIn':
-          Router.push(Path.signIn)
-          break;
-        case 'coupon':
-          Router.push(Path.coupon)
-          break;
-        default:
-          return
-      }
+      this.triggerEvent('onReset')
     }
   }
 

@@ -1,6 +1,6 @@
 // 全局app实例
 import { Router, Path } from '../../router/index';
-import { debounce, isScrollUp, throttle} from '../../utils/commom';
+import { debounce, isScrollUp, throttle } from '../../utils/commom';
 import { Toast, boundingClientRect } from '../../utils/sysApis';
 import { getIndexInfo, getIndexGoodList, getCategories } from '../../api/index';
 const App = getApp();
@@ -30,8 +30,7 @@ Page({
     newProducts: [],
     productsNews: {},
     goodList: [],
-    goodListTypeListTab: [
-      {
+    goodListTypeListTab: [{
         name: '精选',
         sub: '为您推荐',
       },
@@ -43,6 +42,57 @@ Page({
         name: '分类',
         sub: '琳琅满目',
       }
+    ],
+    activeList: [{
+        type: 'signIn',
+        title: '签到有奖',
+        pic: '/images/active-list/qiandao.png'
+      },
+      {
+        type: 'coupon',
+        title: '优惠领券',
+        pic: '/images/active-list/youhuiquan.png'
+      },
+      {
+        type: '3',
+        title: '幸运抽奖',
+        pic: '/images/active-list/choujiang.png'
+      },
+      {
+        type: '',
+        title: '品牌特卖',
+        pic: '/images/active-list/temai.png'
+      },
+      {
+        type: '',
+        title: '积分兑换',
+        pic: '/images/active-list/duihuanjifen.png'
+      },
+      {
+        type: '',
+        title: '发现好货',
+        pic: '/images/active-list/haohuo.png'
+      },
+      {
+        type: '',
+        title: '新品首发',
+        pic: '/images/active-list/xinpin.png'
+      },
+      {
+        type: '',
+        title: '众筹活动',
+        pic: '/images/active-list/zhongchouhuodong.png'
+      },
+      {
+        type: '',
+        title: '超值拼团',
+        pic: '/images/active-list/pingtuan.png'
+      },
+      {
+        type: '',
+        title: '超值中心',
+        pic: '/images/active-list/chongzhi.png'
+      },
     ],
     goodListType: goodListTypes[0],
     categoryList: [
@@ -74,8 +124,14 @@ Page({
   getIndexInfo() {
     getIndexInfo().then(res => {
       if (res.code === 200) {
-        let {bannerList, customPosition, goodProducts, priceReduction, 
-          newProducts, productsNews}  = res.data
+        let {
+          bannerList,
+          customPosition,
+          goodProducts,
+          priceReduction,
+          newProducts,
+          productsNews
+        } = res.data
         this.setData({
           customPosition,
           bannerList,
@@ -97,18 +153,18 @@ Page({
         let goodList = []
         let {
           spcealGoodList = [],
-          rankGoodList = [],
-          categoryGoddList = []
-        }  = this.customData
+            rankGoodList = [],
+            categoryGoddList = []
+        } = this.customData
 
-        switch(goodListType) {
-          case goodListTypes[0]: 
+        switch (goodListType) {
+          case goodListTypes[0]:
             goodList = this.customData.spcealGoodList = spcealGoodList.concat(res.data)
             break;
-          case goodListTypes[1]: 
+          case goodListTypes[1]:
             goodList = this.customData.rankGoodList = rankGoodList.concat(res.data)
             break;
-          case goodListTypes[2]: 
+          case goodListTypes[2]:
             goodList = this.customData.categoryGoddList = categoryGoddList.concat(res.data)
             break;
         }
@@ -117,13 +173,13 @@ Page({
           goodList: goodList
         })
       }
-    }) 
+    })
   },
   async getDom(a) {
     let navHeight = App.globalData.navHeight
     let sticky = await boundingClientRect('#sticky-b');
     let search = await boundingClientRect('#search-b');
-    
+
     let stickyBaseOffsetTop = navHeight
     let stickySearchInputOffsetTop = stickyBaseOffsetTop
     let stickyTabbarOffsetTop = stickySearchInputOffsetTop + search.target_height
@@ -137,9 +193,9 @@ Page({
     });
   },
   switchStickyStyle(pageScrollTop) {
-    let { stickyBaseOffsetTop, stickyTabbarInitTop, stickySearchInputOffsetTop} = this.data
+    let { stickyBaseOffsetTop, stickyTabbarInitTop, stickySearchInputOffsetTop } = this.data
     this.setData({
-      stickyTabbarBackground: pageScrollTop > stickyTabbarInitTop - stickySearchInputOffsetTop - stickyBaseOffsetTop? '#ffffff' : 'none'
+      stickyTabbarBackground: pageScrollTop > stickyTabbarInitTop - stickySearchInputOffsetTop - stickyBaseOffsetTop ? '#ffffff' : 'none'
     });
   },
   onShow() {
@@ -147,12 +203,12 @@ Page({
   },
   onAddressClick() {
     console.log('onAddressClick')
-  }, 
+  },
   onReachBottom() {
     this.getGoodList()
   },
   onShareAppMessage() {},
-  onPageScroll (e) { 
+  onPageScroll(e) {
     this.onPageScrollthrottle(e.scrollTop)
   },
   // 调用扫一扫
@@ -160,14 +216,14 @@ Page({
     console.log('调用扫一扫', e)
     wx.scanCode({
       success: (res) => {
-        let {result, scanType} = res
-        switch(scanType) {
-        case 'ENV_13': 
-          console.log('scanType', scanType, result)
-          break;
-        case 'QR_CODE': 
-          console.log('scanType', scanType, result)
-          break;
+        let { result, scanType } = res
+        switch (scanType) {
+          case 'ENV_13':
+            console.log('scanType', scanType, result)
+            break;
+          case 'QR_CODE':
+            console.log('scanType', scanType, result)
+            break;
         }
         Toast.success('扫一扫成功')
       },
@@ -191,18 +247,18 @@ Page({
     let goodList = []
     let {
       spcealGoodList = [],
-      rankGoodList = [],
-      categoryGoddList = []
-    }  = this.customData
+        rankGoodList = [],
+        categoryGoddList = []
+    } = this.customData
 
-    switch(goodListType) {
-      case goodListTypes[0]: 
+    switch (goodListType) {
+      case goodListTypes[0]:
         goodList = spcealGoodList
         break;
-      case goodListTypes[1]: 
+      case goodListTypes[1]:
         goodList = rankGoodList
         break;
-      case goodListTypes[2]: 
+      case goodListTypes[2]:
         goodList = categoryGoddList
         this.getCategories()
         break;
@@ -214,8 +270,8 @@ Page({
     })
   },
   getCategories() {
-    if(this.data.categoryList.length > 0) return; 
-    getCategories().then(res  => {
+    if (this.data.categoryList.length > 0) return;
+    getCategories().then(res => {
       if (res.code === 200) {
         this.setData({
           categoryList: res.data
@@ -225,7 +281,7 @@ Page({
   },
   onCategoryChange(e) {
     console.log(e)
-    let {category} = e.detail
+    let { category } = e.detail
 
     getIndexGoodList({
       type: goodListTypes[1],
@@ -237,10 +293,10 @@ Page({
           goodList: this.customData.categoryGoddList
         })
       }
-    }) 
+    })
   },
 
-  viewGood(e){
+  viewGood(e) {
     console.log('sign good', e);
   },
 
