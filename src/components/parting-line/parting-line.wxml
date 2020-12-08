@@ -1,0 +1,10 @@
+<view class="part-components flex-middle flex-b gutter-container {{customClass}}" style="{{customStyle}}">
+  <block wx:if="{{line}}">
+    <view class="line" style="{{style}}"></view>
+  </block>
+  <block wx:else>
+    <view class="left"></view>
+    <view class="center-title" style="color: {{color}}">{{ title }}</view>
+    <view class="right"></view>
+  </block>
+</view>

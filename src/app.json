@@ -82,7 +82,6 @@
     "page-container": "/components/page-container/page-container",
     "good-card-sale": "/components/good-card-sale/good-card-sale",
     "good-list": "/components/good-list/good-list",
-    "part-title": "/components/partTitle/partTitle",
     "text-link": "/components/textLink/textLink",
     "money-text": "/components/money-text/money-text",
     "card": "/components/card/card",
@@ -156,6 +155,7 @@
     "announcement": "components/announcement/announcement",
     "destoon-keylink": "components/destoon-keylink/destoon-keylink",
     "shop": "components/shop/shop",
+    "parting-line": "components/parting-line/parting-line",
 
     "message-card": "components/message-card/message-card"
   },

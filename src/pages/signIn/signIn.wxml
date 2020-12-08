@@ -3,12 +3,7 @@
   <page-container pageName="签到">
     <view class="sign-container">
       <sign-in-card />
-      <part-title customClass="gutter-container" title="热门商品推荐" />
-      <!-- bindscrolltoupper="upper"
-      bindscrolltolower="lower"
-      bindscroll="scroll"
-      scroll-into-view="{{toView}}"
-      scroll-top="{{scrollTop}}" -->
+      <parting-line line="{{false}}" title="热门商品推荐"></parting-line>
       <scroll-view id="scroll-view" scroll-y="true" style="height: {{scrollViewHeight}}px;" bindscrolltolower="scrollToLower" bindscrolltoupper="scrollToUpper">
         <view class="sign-good-list">
           <good-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />

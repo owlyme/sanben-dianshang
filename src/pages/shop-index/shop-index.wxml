@@ -28,7 +28,7 @@
         </view>
       </list>
     </view>
-    <part-title title="热门商品推荐" />
+    <parting-line line="{{false}}" title="热门商品推荐"></parting-line>
     <good-list goodList="{{goodList}}" bind:onGoodClick="onGoodClick" />
   </page-container>
   <sub-navbar-shop indexImage="{{shopInfo.pic}}" index="{{0}}" />

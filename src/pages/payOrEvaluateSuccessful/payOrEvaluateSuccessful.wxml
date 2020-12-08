@@ -17,7 +17,7 @@
     </view>
     <image src="/images/wave.png" class="theme-wave" />
     <view class="payment-card-b">
-      <part-title title="热买推荐"></part-title>
+      <parting-line line="{{false}}" title="热买推荐"></parting-line>
       <view class="payment-list ">
         <scroll-view id="scroll-view" scroll-y="true" style="height: {{scrollViewHeight}}px;" bindscrolltolower="scrollToLower" bindscrolltoupper="scrollToUpper" bindscroll="onScroll">
           <good-list goodList="{{goodList}}" />

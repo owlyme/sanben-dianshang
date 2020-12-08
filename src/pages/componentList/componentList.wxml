@@ -1,101 +1,78 @@
 <view class="component-list-page">
   <!-- content -->
   <page-container pageName="component-list-page">
-
-  <card>
-    <view class="card-name">组件名： navbar</view>
-    <navbar pageName="navbar"></navbar>
-  </card>
-
-  <card>
-    <view class="card-name">组件名： good-card-sale</view>
-    <good-card-sale goodInfo="{{goodList[0]}}" />
-  </card>
-
-  <card>
-    <view class="card-name">组件名：good-list</view>
-    <good-list goodList="{{goodList}}" />
-  </card>
-
-  <card>
-    <view class="card-name">组件名：part-title</view>
-    <part-title title="热门商品推荐" />
-  </card>
-
-  <card>
-    <view class="card-name">组件名：text-link</view>
-    <text-link
-        url="/pages/privacyPolicy/privacyPolicy"
-        text="隐私政策" />
-  </card>
-
-  <card>
-    <view class="card-name">组件名：money-text</view>
-    <view class="flex"><money-text number="{{0}}"/> <money-text number="{{100}}"/></view>
-    <view class="flex">plane <money-text plane number="{{0}}"/></view>
-  </card>
-
-  <card>
-    <view class="card-name">组件名：list > list-item</view>
-    <list>
-      <list-item label="ListItem">
-        <view slot="content" >
-        检查更新
-        </view>
-        <view slot="icon">
-          icon 图标
-        </view>
-      </list-item>
-    </list>
-  </card>
-
-  <card>
-    <view class="card-name">组件名：shop-card</view>
-    <view >
-      无图标
-    <shop-card 
-        src='https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg'
-        title='阿迪达斯品牌店'
-        text='2020-09-13 15:00:54'
-    />
-    </view>
-    <view>
-      有图标
-    <shop-card 
-        showAddressIcon
-        showNameIcon
-        src='https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg'
-        title='阿迪达斯品牌店'
-        text='2020-09-13 15:00:54'
-    />
-    </view>
-  </card>
-
-
-  <card>
-    <view class="card-name">组件名：ode-number</view>
-    <code-number >
-      label
-    </code-number>
-  </card>
-
-  <card>
+    <card>
+      <view class="card-name">组件名： navbar</view>
+      <navbar pageName="navbar"></navbar>
+    </card>
+    <card>
+      <view class="card-name">组件名： good-card-sale</view>
+      <good-card-sale goodInfo="{{goodList[0]}}" />
+    </card>
+    <card>
+      <view class="card-name">组件名：good-list</view>
+      <good-list goodList="{{goodList}}" />
+    </card>
+    <card>
+      <view class="card-name">组件名：part-title</view>
+      <!-- <part-title title="热门商品推荐" /> -->
+      <parting-line line="{{false}}" title="热门商品推荐"></parting-line>
+    </card>
+    <card>
+      <view class="card-name">组件名：text-link</view>
+      <text-link url="/pages/privacyPolicy/privacyPolicy" text="隐私政策" />
+    </card>
+    <card>
+      <view class="card-name">组件名：money-text</view>
+      <view class="flex">
+        <money-text number="{{0}}" />
+        <money-text number="{{100}}" />
+      </view>
+      <view class="flex">
+        plane
+        <money-text plane number="{{0}}" />
+      </view>
+    </card>
+    <card>
+      <view class="card-name">组件名：list > list-item</view>
+      <list>
+        <list-item label="ListItem">
+          <view slot="content">检查更新</view>
+          <view slot="icon">icon 图标</view>
+        </list-item>
+      </list>
+    </card>
+    <card>
+      <view class="card-name">组件名：shop-card</view>
+      <view>
+        无图标
+        <shop-card src='https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg' title='阿迪达斯品牌店' text='2020-09-13 15:00:54' />
+      </view>
+      <view>
+        有图标
+        <shop-card showAddressIcon showNameIcon src='https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg' title='阿迪达斯品牌店' text='2020-09-13 15:00:54' />
+      </view>
+    </card>
+    <card>
+      <view class="card-name">组件名：ode-number</view>
+      <code-number>label</code-number>
+    </card>
+    <card>
       <view class="card-name">组件名：search-input</view>
       <search-input />
-  </card>
-
-  <card>
+    </card>
+    <card>
       <view class="card-name">组件名：button-text</view>
-      <button-text> default </button-text> 
-      <button-text type="warn"> warn </button-text>
-  </card>
-
-  <card>
+      <button-text>default</button-text>
+      <button-text type="warn">warn</button-text>
+    </card>
+    <card>
       <view class="card-name">组件名：tab-bar</view>
-      <view style="background: red"><tab-bar st tabs='{{tabsList}}' /></view>
-  </card>
-
-   <card>
+      <view style="background: red">
+        <tab-bar st tabs='{{tabsList}}' />
+      </view>
+    </card>
+    <card>
       <view class="card-name">组件名：icon-font</view>
       <view style="background: #ffffff">
         <icon-font size="14" color="#999999" name="iconshanchu1" />
@@ -104,24 +81,7 @@
         <icon-font size="14" color="#999999" name="iconshoucang-weishoucang1" />
         <icon-font size="14" color="#999999" name="iconshoucang-yishoucang1" />
         ······
-        </view>
-  </card>
-
-
-
-  
-</page-container>
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </view>
+    </card>
+  </page-container>
 </view>

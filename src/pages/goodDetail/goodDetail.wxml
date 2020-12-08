@@ -106,7 +106,7 @@
       <!-- 8.好物推荐 -->
       <view class="" id="recommend">
         <view class="title">
-          <part-title title="好物推荐" />
+          <parting-line line="{{false}}" title="好物推荐"></parting-line>
         </view>
         <good-list goodList="{{goodList}}" cardType="easy" bind:onGoodClick="viewGood" />
       </view>
