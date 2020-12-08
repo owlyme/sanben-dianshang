@@ -1,4 +1,4 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 // 全局app实例
 const App = getApp();
 
@@ -12,10 +12,10 @@ Page({
       followNumber: 148,
       rate: 7,
       phoneNumber: '13156521718',
-      address: 111111
+      address: 111111,
+      focused: true,
     },
-    goodList: [
-      {
+    goodList: [{
         id: 0,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
@@ -106,13 +106,12 @@ Page({
       }
     ],
     tabs: [
-      { name: '综合', type: 'first'},
-      { name: '销量', type: 'sales'},
-      { name: '新品', type: 'new'},
-      { name: '价格', type: 'price'},
+      { name: '综合', type: 'first' },
+      { name: '销量', type: 'sales' },
+      { name: '新品', type: 'new' },
+      { name: '价格', type: 'price' },
     ],
-    shopList: [
-      {
+    shopList: [{
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: '阿迪达斯三叶草旗舰店',
         address: 111111
@@ -130,7 +129,7 @@ Page({
     ],
   },
   onLoad() {
-   
+
   },
   onReady() {
     // Do something when page ready.
@@ -141,7 +140,7 @@ Page({
   onHide() {
     // Do something when page hide.
   },
- 
+
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
   },
@@ -151,7 +150,7 @@ Page({
   onShareAppMessage() {
     // return custom share data when user share.
   },
-  onPageScroll (e) { 
+  onPageScroll(e) {
     console.log(e)
   },
   onTabItemTap() {
@@ -168,8 +167,8 @@ Page({
   },
   onTypeChange(e) {
     console.log(e)
-    // let {filterPriceStatus, index, type} = e.detail
-    
+      // let {filterPriceStatus, index, type} = e.detail
+
   },
   onGoodClick(e) {
     console.log('onGoodClick', e)
@@ -186,12 +185,12 @@ Page({
   },
   shopItemClick(e) {
     console.log('shopItemClick', e)
-    Router.push(Path.shopDetail) 
+    Router.push(Path.shopDetail)
   },
 
   viewMoreShop(e) {
     console.log('viewMoreShop', e)
-    Router.replace(Path.shopAll) 
+    Router.replace(Path.shopAll)
   },
 
 

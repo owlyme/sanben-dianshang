@@ -1,6 +1,59 @@
-<view class="promotional-section-components {{customClass}}" style="{{customStyle}}">
-  <!-- 宣传板块 -->
+<!-- <view class="promotional-section-components {{customClass}}" style="{{customStyle}}">
   <view class="promotional-section-item" wx:for="{{activeList}}" data-id="{{item.id}}" data-item="{{item}}" wx:key="index" bind:tap="onProductClick">
     <image class="image" src="{{item.pic}}" />
   </view>
+</view> -->
+<view class="promotional-section-container gutter-container {{customClass}}" style="{{customStyle}}">
+  <block wx:if="{{type == 'default'}}">
+    <view class="promotional-section flex-wrap">
+      <view class="promotional-section-item" style="width: {{100 / col}}%; padding: {{gutter / 2}}px" wx:for="{{activeList}}" wx:key="index">
+        <image class="image" src="{{item.pic}}" />
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type == 2}}">
+    <view class="flex">
+      <view class="custom-item height" style="width: 40%; padding-right: {{gutter / 2}}px">
+        <image class="image" src="{{activeList[0].pic}}" />
+      </view>
+      <view class="custom-item height" style="width: 60%; padding-left: {{gutter / 2}}px">
+        <image class="image" src="{{activeList[1].pic}}" />
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type == 3}}">
+    <view class="flex">
+      <view class="custom-item height" style="width: 40%; padding-right: {{gutter / 2}}px">
+        <image class="image" src="{{activeList[0].pic}}" />
+      </view>
+      <view class="height" style="width: 60%; padding-left: {{gutter / 2}}px">
+        <view class="custom-item h50" style="padding-bottom: {{gutter / 2}}px">
+          <image class="image" src="{{activeList[1].pic}}" />
+        </view>
+        <view class="custom-item h50" style="padding-top: {{gutter / 2}}px">
+          <image class="image" src="{{activeList[2].pic}}" />
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type == 4}}">
+    <view class="flex height">
+      <view class="custom-item" style="width: 40%; padding-right:{{gutter / 2}}px">
+        <image class="image" src="{{activeList[0].pic}}" />
+      </view>
+      <view class="height" style="width: 60%; padding-left: {{gutter / 2}}px">
+        <view class="custom-item h50" style="padding-bottom: {{gutter / 2}}px">
+          <image class="image" src="{{activeList[1].pic}}" />
+        </view>
+        <view class="flex h50" style="paddingTop: {{gutter / 2}}px">
+          <view class="custom-item w50" style="padding-right: {{gutter / 2}}px">
+            <image class="image" src="{{activeList[1].pic}}" />
+          </view>
+          <view class="custom-item w50" style="padding-left: {{gutter / 2}}px">
+            <image class="image" src="{{activeList[1].pic}}" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
 </view>

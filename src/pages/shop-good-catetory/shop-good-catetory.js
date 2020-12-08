@@ -1,4 +1,4 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 // 全局app实例
 const App = getApp();
 
@@ -12,15 +12,14 @@ Page({
       followNumber: 148,
       rate: 7,
       phoneNumber: '13156521718',
-      address: 111111
+      address: 111111,
+      focused: true,
     },
 
-  
-    list:[
-      {
+
+    list: [{
         title: '分类标题',
-        list: [
-          {
+        list: [{
             id: 12,
             name: 'adidas'
           },
@@ -40,12 +39,11 @@ Page({
             id: 14,
             name: 'adidas'
           }
-        ] 
+        ]
       },
       {
         title: '分类标题2',
-        list: [
-          {
+        list: [{
             id: 12,
             name: 'adi da da da das'
           },
@@ -57,12 +55,11 @@ Page({
             id: 14,
             name: 'adidas'
           }
-        ] 
+        ]
       },
       {
         title: '分类标题',
-        list: [
-          {
+        list: [{
             id: 12,
             name: 'adidas'
           },
@@ -82,12 +79,11 @@ Page({
             id: 14,
             name: 'adidas'
           }
-        ] 
+        ]
       },
       {
         title: '分类标题2',
-        list: [
-          {
+        list: [{
             id: 12,
             name: 'adi da da da das'
           },
@@ -99,13 +95,13 @@ Page({
             id: 14,
             name: 'adidas'
           }
-        ] 
+        ]
       }
     ]
-    
+
   },
   onLoad(e) {
-   
+
   },
   onReady() {
     // Do something when page ready.
@@ -116,7 +112,7 @@ Page({
   onHide() {
     // Do something when page hide.
   },
- 
+
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
   },
@@ -126,7 +122,7 @@ Page({
   onShareAppMessage() {
     // return custom share data when user share.
   },
-  onPageScroll (e) { 
+  onPageScroll(e) {
     console.log(e)
   },
   onTabItemTap() {
@@ -135,8 +131,8 @@ Page({
 
   onTypeChange(e) {
     console.log(e)
-    let {filterPriceStatus, index, type} = e.detail
-    
+    let { filterPriceStatus, index, type } = e.detail
+
   },
   onSearchGoodInCurrentShop(e) {
     Router.push({

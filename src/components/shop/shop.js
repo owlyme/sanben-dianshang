@@ -1,5 +1,3 @@
-import { Path, Router } from '../../router/index';
-
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -17,35 +15,28 @@ Component({
       type: String,
       value: ''
     },
-    color: {
-      type: String,
-      value: "#333"
+    shopInfo: {
+      type: Object,
+      value: {
+        name: "商店名称",
+        focused: true,
+        rate: 4,
+        followNumber: 111,
+        phone: "11111111111",
+        address: "浙江杭州",
+      }
     },
-    bgColor: {
-      type: String,
-      value: "none",
+    showFocused: {
+      type: Boolean,
+      value: true,
     },
-    title: {
-      type: String,
-      value: "这是标题", // 'srcoll'
-    },
-    more: {
-      type: String,
-      value: "查看详情", // 'srcoll'
-    },
-    link: {
-      type: String,
-      value: "", // 'srcoll'
-    },
-    src: {
-      type: String,
-      value: "", // 'srcoll'
+    showContact: {
+      type: Boolean,
+      value: true,
     },
   },
   observers: {
-    // goodList: function() {
-    //   this.init()
-    // }
+
   },
   data: {},
 
@@ -64,9 +55,14 @@ Component({
   detached() {},
 
   methods: {
-    toPage() {
-      Router.push(this.data.link)
-    }
+    init() {
+
+    },
+    makePhoneCall() {
+      wx.makePhoneCall({
+        phoneNumber: this.data.shopInfo.phone //仅为示例，并非真实的电话号码
+      })
+    },
   }
 
 });

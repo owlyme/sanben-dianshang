@@ -5,31 +5,7 @@
         <view bind:tap="onSearchGoodInCurrentShop">
           <search-input placeholder="搜索店铺内商品" type='placeholder' />
         </view>
-        <view class="shop-info flex-b flex-middle">
-          <shop-card src="{{shopInfo.pic}}" title="{{shopInfo.name}}">
-            <view slot="text" class="flex">
-              <rate-star rate="{{shopInfo.rate}}"></rate-star>
-              <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
-            </view>
-          </shop-card>
-          <follow-shop-btn shopInfo="{{goodDetail}}" />
-          <!-- <view class="tag"><icon-font name="iconguanzhudianpu-weiguanzhu" size="12" /> 关注</view> -->
-        </view>
-        <view class="address flex">
-          <icon-font size="15" name="icondizhi2" color="#999999" />
-          <view class="flex flex-middle" style="margin-left: 6rpx">
-            <view class="address-info">
-              <view class="title">门店地址</view>
-              <view class="title-add">{{shopInfo.address}}</view>
-            </view>
-            <view class="right">
-              <icon-font size="14" name="icondingdan-dianpu-gengduo2" color="#999999" />
-            </view>
-            <view class="phone" bind:tap="makePhoneCall">
-              <icon-font size="24" name="icondianpudianhua" color="#FF3232" />
-            </view>
-          </view>
-        </view>
+        <shop shopInfo="{{shopInfo}}" />
       </card>
     </view>
     <view class="shop-list-b">

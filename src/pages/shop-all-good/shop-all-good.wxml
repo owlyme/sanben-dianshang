@@ -4,15 +4,7 @@
       <view bind:tap="onSearchGoodInCurrentShop">
         <search-input placeholder="搜索店铺内商品" value="{{keyword}}" type='placeholder' bind:onChange="onClear" />
       </view>
-      <view class="shop-info flex-b flex-middle">
-        <shop-card src="{{shopInfo.pic}}" title="{{shopInfo.name}}">
-          <view slot="text" class="flex">
-            <rate-star rate="{{shopInfo.rate}}"></rate-star>
-            <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
-          </view>
-        </shop-card>
-        <follow-shop-btn shopInfo="{{goodDetail}}" />
-      </view>
+      <shop shopInfo="{{shopInfo}}" showContact="{{false}}" />
       <view class="tab-bar-filter-b">
         <tab-bar-filter tabs="{{tabs}}" bind:onChange="onTypeChange" />
       </view>

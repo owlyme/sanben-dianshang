@@ -18,6 +18,18 @@ Component({
       type: String,
       value: ''
     },
+    title: {
+      type: String,
+      value: "这是标题",
+    },
+    color: {
+      type: String,
+      value: "#000",
+    },
+    borderColor: {
+      type: String,
+      value: "linear-gradient(225deg, #ff9846 0%, #ff3232 100%)",
+    },
   },
   observers: {
 

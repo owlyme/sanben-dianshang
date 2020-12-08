@@ -1,7 +1,7 @@
 <view class="title-container-components flex flex-middle {{customClass}}" style="{{customStyle}}">
   <!-- content -->
-  <view class="title-border"></view>
-  <view>
+  <view class="title-border" style="background: {{borderColor}}"></view>
+  <view style="color: {{color}}">
     <slot></slot>
   </view>
 </view>

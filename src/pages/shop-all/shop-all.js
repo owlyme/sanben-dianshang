@@ -1,8 +1,7 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 // 全局app实例
 const App = getApp();
-let allShop = [
-  {
+let allShop = [{
     type: 1,
     pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
     name: '阿迪达斯三叶草旗舰店11',
@@ -62,18 +61,19 @@ Page({
       followNumber: 148,
       rate: 7,
       phoneNumber: '13156521718',
-      address: 111111
+      address: 111111,
+      focused: true,
     },
     // shopoKeyword: '',
     shopInSameCityList: [],
 
     shopInAllPlaceList: [],
-    
+
     navActiveIndex: 0
   },
   onLoad(e) {
     this.filterShopList()
-  },  
+  },
   onReady() {
     // Do something when page ready.
   },
@@ -83,7 +83,7 @@ Page({
   onHide() {
     // Do something when page hide.
   },
- 
+
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
   },
@@ -93,7 +93,7 @@ Page({
   onShareAppMessage() {
     // return custom share data when user share.
   },
-  onPageScroll (e) { 
+  onPageScroll(e) {
     console.log(e)
   },
   onTabItemTap() {
@@ -102,10 +102,10 @@ Page({
 
   onShopNameChange(e) {
     console.log('onShopNameChange', e.detail.keyword)
-    let keyword =  e.detail.keyword
-    // this.setData({
-    //   shopoKeyword: keyword
-    // })
+    let keyword = e.detail.keyword
+      // this.setData({
+      //   shopoKeyword: keyword
+      // })
     this.filterShopList(keyword)
   },
   filterShopList(keyword) {
@@ -114,13 +114,13 @@ Page({
 
     allShop.forEach(shop => {
       if (!keyword || ~shop.name.indexOf(keyword)) {
-        if(shop.type === 1) {
+        if (shop.type === 1) {
           // 同城
           shopInSameCityList.push(shop)
-        } 
+        }
         shopInAllPlaceList.push(shop)
       }
-      
+
     });
 
     this.setData({
@@ -136,7 +136,7 @@ Page({
 
   shopItemClick(e) {
     console.log('shopItemClick', e)
-    Router.push(Path.shopDetail) 
+    Router.push(Path.shopDetail)
   },
   customData: {}
 });

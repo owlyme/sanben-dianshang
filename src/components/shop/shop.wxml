@@ -1,0 +1,26 @@
+<view class="xxx-components {{customClass}}" style="{{customStyle}}">
+  <view class="shop-info flex-b flex-middle">
+    <shop-card src="{{shopInfo.pic}}" title="{{shopInfo.name}}">
+      <view slot="text" class="flex">
+        <rate-star rate="{{shopInfo.rate}}"></rate-star>
+        <span class="followNumber">{{ shopInfo.followNumber }}人关注</span>
+      </view>
+    </shop-card>
+    <follow-shop-btn wx:if="{{showFocused}}" followed="{{shopInfo.focused}}" />
+  </view>
+  <view class="address flex" wx:if="{{showContact}}">
+    <icon-font size="15" name="icondizhi2" color="#999999" />
+    <view class="flex flex-middle" style="margin-left: 6px">
+      <view class="address-info">
+        <view class="title">门店地址</view>
+        <view class="title-add">{{ shopInfo.address }}</view>
+      </view>
+      <view class="right">
+        <icon-font size="14" name="icondingdan-dianpu-gengduo2" color="#999999" />
+      </view>
+      <view class="phone" bind:tap="makePhoneCall">
+        <icon-font size="24" name="icondianpudianhua" color="#FF3232" />
+      </view>
+    </view>
+  </view>
+</view>

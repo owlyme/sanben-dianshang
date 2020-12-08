@@ -155,6 +155,8 @@
     "sign-in-card": "components/sign-in-card/sign-in-card",
     "announcement": "components/announcement/announcement",
     "destoon-keylink": "components/destoon-keylink/destoon-keylink",
+    "shop": "components/shop/shop",
+
     "message-card": "components/message-card/message-card"
   },
   "tabBar": {

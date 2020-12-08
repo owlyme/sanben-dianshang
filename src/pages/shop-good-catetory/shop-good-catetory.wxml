@@ -4,15 +4,7 @@
       <view bind:tap="onSearchGoodInCurrentShop">
         <search-input placeholder="搜索店铺内商品" />
       </view>
-      <view class="shop-info flex-b flex-middle">
-        <shop-card src="{{shopInfo.pic}}" title="{{shopInfo.name}}">
-          <view slot="text" class="flex">
-            <rate-star rate="{{shopInfo.rate}}"></rate-star>
-            <text class="followNumber">{{shopInfo.followNumber}}人关注</text>
-          </view>
-        </shop-card>
-        <follow-shop-btn shopInfo="{{goodDetail}}" />
-      </view>
+      <shop shopInfo="{{shopInfo}}" showContact="{{false}}" />
     </view>
     <view class="list-b gutter-container">
       <block class="" wx:for="{{list}}" wx:key="index">

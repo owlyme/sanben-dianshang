@@ -1,4 +1,4 @@
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 // 全局app实例
 const App = getApp();
 
@@ -10,10 +10,10 @@ Page({
       pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       name: '阿迪达斯三叶草旗舰店',
       followNumber: 148,
-      rate: 7
+      rate: 7,
+      focused: true,
     },
-    goodList: [
-      {
+    goodList: [{
         id: 0,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
@@ -104,10 +104,10 @@ Page({
       }
     ],
     tabs: [
-      { name: '综合', type: 'first'},
-      { name: '销量', type: 'sales'},
-      { name: '新品', type: 'new'},
-      { name: '价格', type: 'price'},
+      { name: '综合', type: 'first' },
+      { name: '销量', type: 'sales' },
+      { name: '新品', type: 'new' },
+      { name: '价格', type: 'price' },
     ],
     keyword: ''
   },
@@ -119,7 +119,7 @@ Page({
     })
   },
   onReady() {
-   
+
   },
   onShow() {
     // Do something when page show.
@@ -127,7 +127,7 @@ Page({
   onHide() {
     // Do something when page hide.
   },
- 
+
   onPullDownRefresh() {
     console.log('onPullDownRefresh')
   },
@@ -137,7 +137,7 @@ Page({
   onShareAppMessage() {
     // return custom share data when user share.
   },
-  onPageScroll (e) { 
+  onPageScroll(e) {
     console.log(e)
   },
   onTabItemTap() {
@@ -158,7 +158,7 @@ Page({
   },
   onTypeChange(e) {
     console.log(e)
-    let {filterPriceStatus, index, type} = e.detail
+    let { filterPriceStatus, index, type } = e.detail
   },
   onGoodClick(e) {
     console.log('onGoodClick', e)
