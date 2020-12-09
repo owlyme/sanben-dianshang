@@ -1,0 +1,8 @@
+<view class="products-news flex {{customClass}}" style="{{customStyle}}">
+  <fixed-ratio-card customClass="image" customStyle="width: {{imgSize*2}}rpx" ratio="100%">
+    <image style="width: 100%; height: 100%" src="{{pic}}" />
+  </fixed-ratio-card>
+  <view class="ellipsisTwo" style="font-size: {{fontSize*2}}rpx; color: {{color}}">
+    {{ title }}
+  </view>
+</view>

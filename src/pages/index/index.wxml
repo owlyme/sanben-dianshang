@@ -28,7 +28,7 @@
     <promotional-section />
     <!-- 吸顶 分类 -->
     <view id="sticky-b" class="sticky sticky-b " style="top: {{stickyTabbarOffsetTop}}px; background:{{stickyTabbarBackground}}">
-      <tab-bar type="2" tabs="{{goodListTypeListTab}}" bind:onChange="onGoodListTypeChange" />
+      <tab-bar type="2" tabs="{{goodListTypeListTab}}" color="#333333" activeColor="#FF3232" bind:onChange="onGoodListTypeChange" />
       <view class="category-list" wx:if="{{goodListType === 'category'}}">
         <scroll-tab tabs="{{categoryList}}" bind:onChange="onCategoryChange" />
       </view>

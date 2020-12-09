@@ -1,6 +1,7 @@
 {
-  "pages": ["pages/shop-all/shop-all",
+  "pages": [
     "pages/index/index",
+    "pages/shop-all/shop-all",
     "pages/pageList/pageList",
     "pages/login/login",
     "pages/goodDetail/goodDetail",
@@ -41,7 +42,6 @@
     "pages/confirmOrder/confirmOrder",
     "pages/shopAllShip/shopAllShip",
     "pages/categoryGoodList/categoryGoodList",
-
     "pages/shop-index/shop-index",
     "pages/shop-good-catetory/shop-good-catetory",
     "pages/worthBuying/worthBuying",
@@ -154,6 +154,7 @@
     "destoon-keylink": "components/destoon-keylink/destoon-keylink",
     "shop": "components/shop/shop",
     "parting-line": "components/parting-line/parting-line",
+    "products-news": "components/products-news/products-news",
 
     "message-card": "components/message-card/message-card"
   },

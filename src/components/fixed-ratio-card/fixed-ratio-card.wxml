@@ -1,4 +1,4 @@
-<view class="fixed-ratio-card-components {{customClass}}" style="{{customStyle}}" style="padding-bottom: {{ ratio}}">
+<view class="fixed-ratio-card-components {{customClass}}" style="padding-bottom: {{ratio}}; {{customStyle}}">
   <!-- content -->
   <view class="inner">
     <slot></slot>

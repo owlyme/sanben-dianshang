@@ -21,9 +21,6 @@
         <image class="image" wx:for="{{newProducts}}" data-id="{{item.id}}" data-item="{{item}}" src="{{item.pic}}" wx:key="id" bind:tap="onProductClick" />
       </view>
     </view>
-    <view class="products-news flex">
-      <image class="image" src="{{productsNews.pic}}" />
-      <view class="ellipsisTwo">{{productsNews.title}}</view>
-    </view>
+    <products-news customStyle="margin-top: 24rpx" pic="{{productsNews.pic}}" title="{{productsNews.title}}" />
   </view>
 </card>

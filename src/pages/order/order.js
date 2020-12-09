@@ -8,7 +8,7 @@ const orderTypes = {
   deliver: 2,
   receive: 3,
   evaluate: 4,
-  
+
 }
 
 Page({
@@ -22,15 +22,13 @@ Page({
       '待付款',
       '待发货',
       '待收货',
-      '待评价'
+      '待评价',
     ],
-    orderList: [
-      {
+    orderList: [{
         shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopName: 'name',
         shopAddress: 'address',
-        goodList: [
-          {
+        goodList: [{
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
             name: 'name me name',
             remark: 'remark'
@@ -70,8 +68,7 @@ Page({
         shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopName: 'name',
         shopAddress: 'address',
-        goodList: [
-          {
+        goodList: [{
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
             name: 'name me name',
             remark: 'remark'
@@ -91,13 +88,11 @@ Page({
         shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopName: 'name',
         shopAddress: 'address',
-        goodList: [
-          {
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name me name',
-            remark: 'remark'
-          }
-        ],
+        goodList: [{
+          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          name: 'name me name',
+          remark: 'remark'
+        }],
         totalNumber: 6,
         price: 600,
         status: 1,
@@ -111,9 +106,9 @@ Page({
     this.setData({
       activeIndex: orderTypes[query.orderPageType] || 0
     })
-    
+
   },
-  
+
   onReady() {
     // Do something when page ready.
     this.getDom();
@@ -145,7 +140,7 @@ Page({
   },
   onScroll(e) {
     let scrollTop = e.detail.scrollTop
-    if (isScrollUp(e)){
+    if (isScrollUp(e)) {
       console.log('up')
     } else {
       console.log('down')
@@ -162,31 +157,31 @@ Page({
         pageBg2Visible: true,
       })
     }
-  }, 
+  },
   // 订单操作
   async viewMore(e) {
     console.log(e)
     let res = await showActionSheet({
-      itemList: ['1','3','4','5']
+      itemList: ['1', '3', '4', '5']
     })
-  }, 
+  },
   putInCart(e) {
     console.log(e)
-  }, 
+  },
   modifyAddress(e) {
     console.log(e)
-  }, 
+  },
   toPay(e) {
     console.log(e)
-  }, 
+  },
   makeSure(e) {
     console.log(e)
-  }, 
+  },
   deleteOrder(e) {
     console.log(e)
-  }, 
+  },
 
-  
-  
+
+
   customData: {}
 });
