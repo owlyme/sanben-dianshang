@@ -16,6 +16,18 @@ Component({
       type: String,
       value: ''
     },
+    feature: {
+      type: Boolean,
+      value: true,
+    },
+    showPrice: {
+      type: Boolean,
+      value: true,
+    },
+    showName: {
+      type: Boolean,
+      value: true,
+    },
     goodInfo: {
       type: Object,
       value: {

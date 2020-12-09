@@ -1,24 +1,58 @@
-<view wx:if="{{type == 1}}" class="good-rank-list-components {{customClass}}" style="{{customStyle}}">
+<view wx:if="{{type == 0}}" class="good-scroll-list gutter-container">
+  <scroll-view scroll-x="true" style="width: 100%">
+    <view class="flex">
+      <block wx:for="{{goodList}}" wx:key="index">
+        <view class="item" data-good="{{item}}" bind:tap="onClick">
+          <view class="item-image">
+            <image class="image" src="{{item.pic}}" />
+          </view>
+          <view class="title ellipsisOne" wx:if="{{showName}}">{{ item.name }}</view>
+          <view class="price" wx:if="{{showPrice}}">
+            <money-text :number="item.price" />
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+<!-- 一行一列 -->
+<view wx:elif="{{type == 1}}" class="good-rank-list-components {{customClass}}" style="{{customStyle}}">
   <!-- content -->
   <block wx:for="{{goodList}}" wx:key="index">
     <view class="good-rank-list-item">
-      <good-card-rank goodInfo="{{item}}" data-good="{{item}}" bind:tap="onClick" />
+      <good-card-rank goodInfo="{{item}}" data-good="{{item}}" prevent="{{true}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" />
     </view>
   </block>
 </view>
+<!-- 一行两列 -->
 <view wx:elif="{{type == 2}}" class="good-list-components flex-b gutter-container {{customClass}}" style="{{customStyle}}">
   <view>
     <block wx:for="{{oddIndexOfgoodList}}" wx:key="index">
       <view class="good-list-card-item">
-        <good-card-sale goodInfo="{{item}}" wx:index="{{index}}" goodNameellipsisOne="{{false}}" data-good="{{item}}" bind:tap="onClick" type="{{cardType}}" />
+        <good-card-sale goodInfo="{{item}}" wx:index="{{index}}" prevent="{{true}}" goodNameellipsisOne="{{false}}" data-good="{{item}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" />
       </view>
     </block>
   </view>
   <view>
     <block wx:for="{{evenIndexOfgoodList}}" wx:key="index">
       <view class="good-list-card-item">
-        <good-card-sale goodNameellipsisOne="{{false}}" goodInfo="{{item}}" wx:index="{{index}}" data-good="{{item}}" bind:tap="onClick" type="{{cardType}}" />
+        <good-card-sale goodNameellipsisOne="{{false}}" prevent="{{true}}" goodInfo="{{item}}" wx:index="{{index}}" data-good="{{item}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" />
       </view>
     </block>
   </view>
+</view>
+<!-- 一行3列 -->
+<view wx:elif="{{type == 3}}" class="recommend-item flex-wrap flex {{customClass}}" style="{{customStyle}}">
+  <block wx:for="{{goodList}}" wx:key="index">
+    <view class="item" data-good="{{item}}" bind:tap="onClick">
+      <view class="item-image">
+        <image class="image" src="{{item.pic}}"></image>
+      </view>
+      <view class="title" wx:if="{{showName}}">{{item.name}}</view>
+      <view class="price" wx:if="{{showPrice}}">
+        <money-text number="{{item.price}}" />
+        <text></text>
+      </view>
+    </view>
+  </block>
 </view>

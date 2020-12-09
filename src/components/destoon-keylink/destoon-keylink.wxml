@@ -1,10 +1,10 @@
 <view class="destoon-keylink flex-b flex-middle {{customClass}}" style="background: {{bgColor}}; color: {{color}}; {{customStyle}}" bind:tap="toPage">
   <view class="title flex-middle">
-    <image wx:if="src" class="image" src="{{src}}" />
+    <image wx:if="{{src}}" class="image" src="{{src}}" />
     {{ title }}
   </view>
-  <view class="more flex-middle">
-    {{ more }}
+  <view class="more flex-middle" style="color: {{linkColor}}">
+    <text>{{ more }}</text>
     <icon-font name="icondingdan-dianpu-gengduo1" />
   </view>
 </view>

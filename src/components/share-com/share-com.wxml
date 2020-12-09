@@ -3,7 +3,7 @@
     <slot></slot>
   </view>
   <half-screen-dialog hiddenClose="{{true}}" header="分享到" show="{{show}}" bind:onClose="onCloseDialog" hiddenBtn="{{true}}">
-    <image class="posterImage" src="{{postImg}}" />
+    <image class="posterImage" src="{{postImg}}" wx:if="{{show}}" />
     <view class="btns flex flex-wrap">
       <view class="btns-item" wx:for="{{list}}" wx:key="index" data-type="{{item.type}}" bind:tap="action">
         <block wx:if="{{item.type === 'wechat'}}">

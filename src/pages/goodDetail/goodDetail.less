@@ -1,23 +1,27 @@
-page{
+page {
   background: #F4F5F6;
   overflow-x: hidden;
 }
+
 .tab-components .tab-type-1 {
   .tab-name {
     height: 22px;
     font-size: 16px !important;
   }
+
   .sub-border {
-    background:#FF3631 !important;
-    .sub-border-inner{
-      background:#FF3631 !important;
+    background: #FF3631 !important;
+
+    .sub-border-inner {
+      background: #FF3631 !important;
     }
   }
 }
+
 .dialog .container {
   padding: 24rpx 32rpx;
   padding-bottom: 0px;
-  overflow: visible !important; 
+  overflow: visible !important;
 }
 
 .goods-detail {
@@ -27,6 +31,7 @@ page{
   padding-bottom: 23px;
   box-sizing: border-box;
   z-index: 10;
+
   // 搜索
   .goods-head {
     width: 100%;
@@ -35,19 +40,23 @@ page{
     // top: 0;
     left: 0;
     z-index: 10;
+
     // 
     text {
       margin-left: 24px;
     }
+
     .search {
       padding: 0 16px;
-      background-color: #F4F5F6 ;
+      background-color: #F4F5F6;
     }
-    .tabbar{
+
+    .tabbar {
       padding: 6px 16px 2px;
       display: none;
       opacity: 0;
-      transition: all 0.5s; /*动画  */
+      transition: all 0.5s;
+      /*动画  */
     }
   }
 
@@ -203,7 +212,7 @@ page{
         color: #FF3232;
       }
     }
-   
+
   }
 
   // 店铺信息
@@ -216,39 +225,21 @@ page{
     box-sizing: border-box;
 
     .store-head {
-      height: 144rpx;
-      border-bottom: 2rpx solid #F4F5F6;
+      height: 72px;
+      border-bottom: 1px solid #F4F5F6;
     }
 
-    .store-recomend {
-      .recommend-head {
-        width: 100%;
-        height: 96rpx;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .store-recomend {}
+  }
 
-        .title {
-          font-size: 28rpx;
-          font-weight: 600;
-          color: #333333;
-        }
-
-        .check {
-          font-size: 24rpx;
-          color: #FF3232;
-
-          .icongengduo-hong {
-            font-size: 22rpx;
-          }
-        }
-      }
-    }
+  .sanben-2 {
+    padding: 12px 0;
   }
 
   .product-details {
     width: 100%;
     margin: 16px 0;
+
     .title {
       text-align: center;
       width: 100%;
@@ -273,6 +264,7 @@ page{
       margin-bottom: 16px;
     }
   }
+
   .operation {
     width: 750rpx;
     height: 96rpx;
@@ -289,22 +281,28 @@ page{
     padding: 0px 32rpx 0 40rpx;
     box-sizing: border-box;
     z-index: 5;
-    .store,.serve,.collect{
+
+    .store,
+    .serve,
+    .collect {
       display: flex;
       align-items: center;
       flex-direction: column;
-      .iconfont{
+
+      .iconfont {
         font-size: 40rpx;
       }
-      view{
+
+      view {
         font-size: 20rpx;
         color: #333333;
       }
     }
-    .btns{
+
+    .btns {
       width: 400rpx;
       height: 72rpx;
-      
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -312,23 +310,26 @@ page{
       font-weight: 600;
       box-sizing: border-box;
       color: #FFFFFF;
-      .addcart{
+
+      .addcart {
         width: 50%;
         line-height: 72rpx;
         background: #FF5E20;
         text-align: center;
         border-radius: 36rpx 0px 0px 36rpx;
-        
-        
+
+
       }
-      .dingjin{
+
+      .dingjin {
         width: 50%;
         line-height: 72rpx;
         text-align: center;
         background: #FF3232;
         border-radius: 0rpx 36rpx 36rpx 0rpx;
         position: relative;
-        image{
+
+        image {
           position: absolute;
           left: 0;
           top: 0;

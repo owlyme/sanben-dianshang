@@ -1,5 +1,5 @@
 {
-  "pages": [
+  "pages": ["pages/shop-all/shop-all",
     "pages/index/index",
     "pages/pageList/pageList",
     "pages/login/login",
@@ -41,7 +41,7 @@
     "pages/confirmOrder/confirmOrder",
     "pages/shopAllShip/shopAllShip",
     "pages/categoryGoodList/categoryGoodList",
-    "pages/shop-all/shop-all",
+
     "pages/shop-index/shop-index",
     "pages/shop-good-catetory/shop-good-catetory",
     "pages/worthBuying/worthBuying",
@@ -61,7 +61,6 @@
     "pages/aboutUs/aboutUs",
     "pages/service/service",
     "pages/serviceAgreement/serviceAgreement",
-    "pages/componentList/componentList",
     "pages/error/error"
   ],
   "window": {
@@ -129,7 +128,6 @@
     "coupon-card-cart": "components/coupon-card-cart/coupon-card-cart",
     "discount-prices": "components/discount-prices/discount-prices",
     "good-feature": "components/good-feature/good-feature",
-    "good-list-recomend": "components/good-list-recomend/good-list-recomend",
     "rich-text-box": "components/rich-text-box/rich-text-box",
     "evaluate-list": "components/evaluate-list/evaluate-list",
     "follow-shop-btn": "components/follow-shop-btn/follow-shop-btn",

@@ -84,16 +84,8 @@
           </view>
         </view>
         <view class="store-recomend">
-          <view class="recommend-head">
-            <view class="title">店铺推荐</view>
-            <view class="check" bind:tap="viewShopIndex">
-              查看详情
-              <icon-font name="iconxuanze-gengduo" />
-            </view>
-          </view>
-          <view>
-            <good-list-recomend goodList="{{goodList}}" />
-          </view>
+          <destoon-keylink customClass="sanben-2" color="#111" linkColor="#FF3232" title="店铺推荐" more="查看详情" bind:tap="viewShopIndex"></destoon-keylink>
+          <good-list goodList="{{goodList}}" type="3" bind:onGoodClick="viewGood" />
         </view>
       </view>
       <!-- 7.商品详情 -->

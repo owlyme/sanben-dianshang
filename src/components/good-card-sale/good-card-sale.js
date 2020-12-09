@@ -31,9 +31,21 @@ Component({
       type: Boolean,
       value: true
     },
-    type: {
-      type: String,
-      value: 'all' // all , easy
+    feature: {
+      type: Boolean,
+      value: true
+    },
+    showPrice: {
+      type: Boolean,
+      value: true,
+    },
+    showName: {
+      type: Boolean,
+      value: true,
+    },
+    prevent: {
+      type: Boolean,
+      value: false
     }
   },
   data: {},
@@ -48,12 +60,14 @@ Component({
   methods: {
     // 跳转商品详情页面
     viewGoodDetail(e) {
-
-      Router.push({
-        url: Path.goodDetail
-      })
-
-    },
+      if (!this.data.prevent) {
+        Router.push({
+          url: Path.goodDetail
+        })
+      } else {
+        this.triggerEvent('onClick', {...this.data.goodInfo })
+      }
+    }
   }
 
 });

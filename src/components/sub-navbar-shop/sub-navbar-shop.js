@@ -42,10 +42,6 @@ Component({
       type: String,
       value: ''
     },
-    list: {
-      type: Array,
-      value: []
-    },
     index: {
       type: Number,
       value: 0
@@ -71,7 +67,7 @@ Component({
   methods: {
     init() {
       let navList = NavList.slice()
-      navList[0].selectedPic = this.data.indexImage
+      navList[0].activePic = this.data.indexImage
       this.setData({
         navList
       })

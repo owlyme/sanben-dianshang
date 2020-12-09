@@ -1,4 +1,5 @@
 import { getDatasetValue } from '../../utils/commom';
+import { Path, Router } from '../../router/index';
 const getGoodData = getDatasetValue('good');
 
 const splitArray = (arr = []) => {
@@ -32,16 +33,26 @@ Component({
     },
     type: {
       type: String,
-      value: '2' // 0: 水平滑动,  1：一行一列 2：一行两列,
+      value: '2' // 0: 水平滑动,  1：一行一列 2：一行两列 3,
     },
     goodList: {
       type: Array,
       value: []
     },
-    cardType: {
-      type: String,
-      value: 'all' // all , easy
-    }
+
+    feature: {
+      type: Boolean,
+      value: true,
+    },
+    showPrice: {
+      type: Boolean,
+      value: true,
+    },
+    showName: {
+      type: Boolean,
+      value: true,
+    },
+
   },
 
   observers: {
@@ -73,6 +84,7 @@ Component({
 
   methods: {
     init() {
+      if (this.data.type !== '2') return;
       let [oddIndexOfgoodList, evenIndexOfgoodList] = splitArray(this.data.goodList);
 
       this.setData({
@@ -81,9 +93,14 @@ Component({
       });
     },
     onClick(e) {
+
       let good = getGoodData(e);
       console.log('good list', good);
       this.triggerEvent('onGoodClick', good);
+
+      Router.push({
+        url: Path.goodDetail
+      })
     },
   }
 });

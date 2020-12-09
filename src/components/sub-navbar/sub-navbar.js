@@ -1,5 +1,5 @@
 import { getDatasetValue } from '../../utils/commom';
-
+import { Path, Router } from '../../router/index';
 const getTabName = getDatasetValue('name');
 const getTabIndex = getDatasetValue('index');
 
@@ -23,13 +23,28 @@ Component({
     list: {
       type: Array,
       value: [{
-        "name": "首页",
-        "icon": 'iconxiangqing-dianpu1',
-        'selectedPic': 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_30'
-      }],
+          name: "首页",
+          icon: "iconxiangqing-dianpu1",
+          activePic: "https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg",
+          path: ""
+        },
+        {
+          name: "商品",
+          icon: "icondianpuBarsTabBars2off",
+          activePic: "",
+          path: ""
 
+        },
+        {
+          name: "分类",
+          icon: "icondianpuBarsTabBars3off",
+          activePic: "",
+          path: ""
+
+        }
+      ]
     },
-    active: {
+    activeIndex: {
       type: [String, Number],
       value: ''
     },
@@ -37,6 +52,10 @@ Component({
       type: [String, Number],
       value: 1 // 1 , 2
     },
+    prevent: {
+      type: Boolean,
+      value: false
+    }
   },
   data: {},
 
@@ -55,13 +74,17 @@ Component({
     onClick(e) {
       let name = getTabName(e);
       let index = getTabIndex(e);
+
       setTimeout(() => {
         this.setData({
-          active: name
+          activeIndex: index
         });
       }, 500)
-
       this.triggerEvent('onChange', { name, index });
+
+      if (!this.data.prevent && this.data.list[index].path) {
+        Router.push(this.data.list[index].path)
+      }
     }
   }
 });

@@ -21,6 +21,10 @@ Component({
       type: String,
       value: "#333"
     },
+    linkColor: {
+      type: String,
+      value: "#999"
+    },
     bgColor: {
       type: String,
       value: "none",
@@ -65,6 +69,7 @@ Component({
 
   methods: {
     toPage() {
+      if (!this.data.link) return
       Router.push(this.data.link)
     }
   }

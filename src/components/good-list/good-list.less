@@ -1,11 +1,98 @@
+// good-scroll-list
+.good-scroll-list {
+    .item {
+        &+.item {
+            margin-left: 16px;
+        }
+    }
+
+    .item-image {
+        width: 101px;
+        height: 101px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .image {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .title {
+        margin-top: 4px;
+        margin-bottom: 2px;
+        width: 100px;
+        font-size: 12px;
+        color: #333333;
+        overflow: hidden;
+    }
+
+    .price {
+        line-height: 24px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #ff4328;
+    }
+}
+
+// <!-- 一行一列 -->
+.good-rank-list-components {
+    .good-rank-list-item {
+        margin-bottom: 16px;
+    }
+}
+
+// <!-- 一行两列 -->
 .good-list-components {
     .good-list-card-item {
         margin-bottom: 16px;
     }
 }
 
-.good-rank-list-components {
-    .good-rank-list-item {
-        margin-bottom: 16px;
+// <!-- 一行3列 -->
+
+.recommend-item {
+    .item {
+        width: 202rpx;
+        margin-right: 16rpx;
+        margin-bottom: 24rpx;
+
+        .item-image {
+            width: 101px;
+            height: 101px;
+            border-radius: 4px;
+            overflow: hidden;
+
+            .image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .title {
+            margin-top: 8rpx;
+            margin-bottom: 4rpx;
+            width: 200rpx;
+            height: 72rpx;
+            font-size: 24rpx;
+            color: #333333;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            word-break: break-all;
+        }
+
+        .price {
+            line-height: 48rpx;
+            font-size: 24rpx;
+            font-weight: 600;
+            color: #FF4328;
+        }
+    }
+
+    .item:nth-child(3n) {
+        margin-right: 0;
     }
 }
