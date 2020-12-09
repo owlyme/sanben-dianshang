@@ -1,58 +1,30 @@
-    <view class="categoryGoodList-page"><page-container
-    pageName="商品"
-    showNav="{{showNav}}"
-    bgColor="#F4F5F6;"
-    iconColor="none"
-    theme="dark"
-    useThemeBg="{{false}}"
-    >
-      <view class="sticky scroll-b"
-        style="top: {{stickyOffsetTop}}px;">
-        <view class="flex flex-middle">
-          <view style="flex: 1" bind:tap="topSearchPage">
-            <search-input type="placeholder"  value="{{keyword}}" bind:onChange="onClear"/>
-          </view>
-          <view class="cart-btn" hidden="{{tabType !== 'shop'}}">
-            <icon-font bind:tap="toCartPage" name="icongouwuche12" size="20" />
-          </view>
+<view class="categoryGoodList-page">
+  <page-container pageName="商品" showNav="{{showNav}}" bgColor="#F4F5F6;" iconColor="none" theme="dark" useThemeBg="{{false}}">
+    <view class="sticky scroll-b" style="top: {{stickyOffsetTop}}px;">
+      <view class="flex flex-middle">
+        <view style="flex: 1" bind:tap="topSearchPage">
+          <search-input type="placeholder" value="{{keyword}}" bind:onChange="onClear" />
         </view>
-        
-        
-        <view class="tab-bar-filter-b">
-           <tab-bar-filter 
-            bind:onChange="onTypeChange"/>
+        <view class="cart-btn" hidden="{{tabType !== 'shop'}}">
+          <icon-font bind:tap="toCartPage" name="icongouwuche12" size="20" />
         </view>
       </view>
-
-      <!-- 商品列表 -->
-      <view class="list-b" hidden="{{tabType === 'shop'}}">
-        <block wx:if="{{pageStyleType === 'vertical'}}">
-          <good-list 
-            goodList="{{goodList}}"
-            bind:onGoodClick="onGoodClick"
-          />
-        </block>
-        <block wx:elif="{{pageStyleType === 'standard'}}">
-         <good-rank-list
-              goodList="{{goodList}}"
-              bind:onGoodClick="onGoodClick"
-              />
-        </block>
+      <view class="tab-bar-filter-b">
+        <tab-bar-filter bind:onChange="onTypeChange" />
       </view>
-
-      <!-- 店铺列表 -->
-      <view class="list-b" hidden="{{tabType !== 'shop'}}">
-        <shop-list list="{{shopList}}" />
-      </view>
+    </view>
+    <!-- 商品列表 -->
+    <view class="list-b" hidden="{{tabType === 'shop'}}">
+      <good-list goodList="{{goodList}}" type="{{pageStyleType === 'standard' ? '1' : '2'}}" bind:onGoodClick="onGoodClick" />
+    </view>
+    <!-- 店铺列表 -->
+    <view class="list-b" hidden="{{tabType !== 'shop'}}">
+      <shop-list list="{{shopList}}" />
+    </view>
   </page-container>
-
-  <drawer 
-  show="{{showDrawer}}"
-  bind:onClose="onDrawerClose">
+  <drawer show="{{showDrawer}}" bind:onClose="onDrawerClose">
     <view style="padding-top: {{stickyOffsetTop}}px">
-      <card-filter 
-        bind:onReset="onConditionFilterReset"
-        bind:onSure="onConditionFilterMakeSure"/>
+      <card-filter bind:onReset="onConditionFilterReset" bind:onSure="onConditionFilterMakeSure" />
     </view>
   </drawer>
 </view>

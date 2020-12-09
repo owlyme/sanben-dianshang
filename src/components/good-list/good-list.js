@@ -30,6 +30,10 @@ Component({
       type: String,
       value: ''
     },
+    type: {
+      type: String,
+      value: '2' // 0: 水平滑动,  1：一行一列 2：一行两列,
+    },
     goodList: {
       type: Array,
       value: []

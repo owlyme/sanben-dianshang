@@ -1,4 +1,12 @@
-<view class="good-list-components flex-b gutter-container {{customClass}}" style="{{customStyle}}">
+<view wx:if="{{type == 1}}" class="good-rank-list-components {{customClass}}" style="{{customStyle}}">
+  <!-- content -->
+  <block wx:for="{{goodList}}" wx:key="index">
+    <view class="good-rank-list-item">
+      <good-card-rank goodInfo="{{item}}" data-good="{{item}}" bind:tap="onClick" />
+    </view>
+  </block>
+</view>
+<view wx:elif="{{type == 2}}" class="good-list-components flex-b gutter-container {{customClass}}" style="{{customStyle}}">
   <view>
     <block wx:for="{{oddIndexOfgoodList}}" wx:key="index">
       <view class="good-list-card-item">

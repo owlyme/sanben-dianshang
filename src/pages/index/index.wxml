@@ -35,10 +35,10 @@
     </view>
     <view class="good-card-b">
       <view hidden="{{goodListType === 'rank'}}">
-        <good-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />
+        <good-list goodList="{{goodList}}" type="2" bind:onGoodClick="viewGood" />
       </view>
       <view hidden="{{ goodListType === 'category' || goodListType === 'special'}}">
-        <good-rank-list goodList="{{goodList}}" bind:onGoodClick="viewGood" />
+        <good-list goodList="{{goodList}}" type="1" bind:onGoodClick="viewGood" />
       </view>
     </view>
     <image class="backTop" bindtap='backTop' wx:if="{{backTopValue ==true}}" src="/images/backtop.png" />
