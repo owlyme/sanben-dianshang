@@ -56,11 +56,11 @@ Component({
         value: coupon.value
       })
       this.customData = {
-          value: coupon.value,
-          coupon,
-          index
-        }
-        // this.triggerEvent('onChange', {value: coupon.value, coupon, index})
+        value: coupon.value,
+        coupon,
+        index
+      }
+      // this.triggerEvent('onChange', {value: coupon.value, coupon, index})
     },
     confirm() {
       this.triggerEvent('onChange', this.customData)

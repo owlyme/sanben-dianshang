@@ -19,31 +19,31 @@ Component({
     },
     color: {
       type: String,
-      value: "#333"
+      value: '#333'
     },
     linkColor: {
       type: String,
-      value: "#999"
+      value: '#999'
     },
     bgColor: {
       type: String,
-      value: "none",
+      value: 'none',
     },
     title: {
       type: String,
-      value: "这是标题", // 'srcoll'
+      value: '这是标题', // 'srcoll'
     },
     more: {
       type: String,
-      value: "查看详情", // 'srcoll'
+      value: '查看详情', // 'srcoll'
     },
     link: {
       type: String,
-      value: "", // 'srcoll'
+      value: '', // 'srcoll'
     },
     src: {
       type: String,
-      value: "", // 'srcoll'
+      value: '', // 'srcoll'
     },
   },
   observers: {

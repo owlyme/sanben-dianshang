@@ -9,176 +9,176 @@ Page({
     showNav: true,
     keyword: '',
     goodList: [{
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-        tags: ['hao', 'bucuo'],
-        shopAddress: '杭州杭州杭州杭州'
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
-        active: '双十一',
-        tags: ['hao', 'bucuo'],
-        shopAddress: '杭州杭州杭州杭州'
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
+      tags: ['hao', 'bucuo'],
+      shopAddress: '杭州杭州杭州杭州'
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
+      active: '双十一',
+      tags: ['hao', 'bucuo'],
+      shopAddress: '杭州杭州杭州杭州'
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
 
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
+      tags: ['hao', 'bucuo']
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
 
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
+      tags: ['hao', 'bucuo']
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
 
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
+      tags: ['hao', 'bucuo']
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
 
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
+      tags: ['hao', 'bucuo']
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
 
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
+      tags: ['hao', 'bucuo']
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
 
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
+      tags: ['hao', 'bucuo']
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
 
-        tags: ['hao', 'bucuo']
-      },
-      {
-        id: 0,
-        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
-        price: '200.00',
-        saledNumber: 200,
+      tags: ['hao', 'bucuo']
+    },
+    {
+      id: 0,
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴肖优秀真皮细高跟过膝瘦腿弹力靴',
+      price: '200.00',
+      saledNumber: 200,
 
-        tags: ['hao', 'bucuo']
-      }
+      tags: ['hao', 'bucuo']
+    }
     ],
     pageStyleType: 'standard', // 竖 vertical，  水平 standard
     tabType: 'first',
     shopList: [{
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '阿迪达斯三叶草旗舰店',
+      followNumber: 148,
+      rate: 7,
+      phoneNumber: '13156521718',
+      address: 111111,
+      products: [{
+        id: 1,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '阿迪达斯三叶草旗舰店',
-        followNumber: 148,
-        rate: 7,
-        phoneNumber: '13156521718',
-        address: 111111,
-        products: [{
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-          {
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-          {
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-        ],
-        totalShopNumber: 207,
-        sameCityShopNumber: 20
       },
       {
+        id: 1,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '阿迪达斯三叶草旗舰店',
-        followNumber: 148,
-        rate: 7,
-        phoneNumber: '13156521718',
-        address: 111111,
-        products: [{
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-          {
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-          {
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-        ],
-        totalShopNumber: 207,
-        sameCityShopNumber: 0
       },
       {
+        id: 1,
         pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        name: '阿迪达斯三叶草旗舰店',
-        followNumber: 148,
-        rate: 7,
-        phoneNumber: '13156521718',
-        address: 111111,
-        products: [{
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-          {
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-          {
-            id: 1,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          },
-        ],
-        totalShopNumber: 207,
-        sameCityShopNumber: 20
       },
+      ],
+      totalShopNumber: 207,
+      sameCityShopNumber: 20
+    },
+    {
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '阿迪达斯三叶草旗舰店',
+      followNumber: 148,
+      rate: 7,
+      phoneNumber: '13156521718',
+      address: 111111,
+      products: [{
+        id: 1,
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      },
+      {
+        id: 1,
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      },
+      {
+        id: 1,
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      },
+      ],
+      totalShopNumber: 207,
+      sameCityShopNumber: 0
+    },
+    {
+      pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      name: '阿迪达斯三叶草旗舰店',
+      followNumber: 148,
+      rate: 7,
+      phoneNumber: '13156521718',
+      address: 111111,
+      products: [{
+        id: 1,
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      },
+      {
+        id: 1,
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      },
+      {
+        id: 1,
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      },
+      ],
+      totalShopNumber: 207,
+      sameCityShopNumber: 20
+    },
     ]
   },
   onLoad(e) {
     console.log(e)
-      // this.setData({
-      //   pageStyleType: e.options.styleType || 'vertical'
-      // })
-      // Do some initialize when page load.
+    // this.setData({
+    //   pageStyleType: e.options.styleType || 'vertical'
+    // })
+    // Do some initialize when page load.
     console.log(Router.query)
     this.setData({
       keyword: Router.query.goodName
@@ -238,7 +238,7 @@ Page({
       return
     } else if (type === 'shop') {
       tabType = type
-        // Router.push(Path.mallShop)
+      // Router.push(Path.mallShop)
     }
 
     this.setData({

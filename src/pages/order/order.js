@@ -25,79 +25,79 @@ Page({
       '待评价',
     ],
     orderList: [{
-        shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        shopName: 'name',
-        shopAddress: 'address',
-        goodList: [{
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name me name',
-            remark: 'remark'
-          },
-          {
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name',
-            remark: 'remark'
-          },
-          {
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name me name',
-            remark: 'remark'
-          },
-          {
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name',
-            remark: 'remark'
-          },
-          {
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name me name',
-            remark: 'remark'
-          },
-          {
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name',
-            remark: 'remark'
-          }
-        ],
-        totalNumber: 6,
-        price: 600,
-        status: 0,
-        id: 0
+      shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      shopName: 'name',
+      shopAddress: 'address',
+      goodList: [{
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name me name',
+        remark: 'remark'
       },
       {
-        shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        shopName: 'name',
-        shopAddress: 'address',
-        goodList: [{
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name me name',
-            remark: 'remark'
-          },
-          {
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name',
-            remark: 'remark'
-          }
-        ],
-        totalNumber: 6,
-        price: 600,
-        status: 1,
-        id: 1
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name',
+        remark: 'remark'
       },
       {
-        shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        shopName: 'name',
-        shopAddress: 'address',
-        goodList: [{
-          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-          name: 'name me name',
-          remark: 'remark'
-        }],
-        totalNumber: 6,
-        price: 600,
-        status: 1,
-        id: 2
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name me name',
+        remark: 'remark'
+      },
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name',
+        remark: 'remark'
+      },
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name me name',
+        remark: 'remark'
+      },
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name',
+        remark: 'remark'
       }
+      ],
+      totalNumber: 6,
+      price: 600,
+      status: 0,
+      id: 0
+    },
+    {
+      shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      shopName: 'name',
+      shopAddress: 'address',
+      goodList: [{
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name me name',
+        remark: 'remark'
+      },
+      {
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name',
+        remark: 'remark'
+      }
+      ],
+      totalNumber: 6,
+      price: 600,
+      status: 1,
+      id: 1
+    },
+    {
+      shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      shopName: 'name',
+      shopAddress: 'address',
+      goodList: [{
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+        name: 'name me name',
+        remark: 'remark'
+      }],
+      totalNumber: 6,
+      price: 600,
+      status: 1,
+      id: 2
+    }
     ],
   },
   onLoad(query) {

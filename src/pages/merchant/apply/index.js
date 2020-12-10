@@ -1,16 +1,16 @@
-import {Path, Router} from '../../../router/index';
-import { chooseImage, Toast} from '../../../utils/sysApis';
+import { Path, Router } from '../../../router/index';
+import { chooseImage, Toast } from '../../../utils/sysApis';
 import { getDataset } from '../../../utils/commom';
 import Base from '../../../utils/base';
-const App = getApp();
+
 Page({
   data: {
     showSuccessDrawer: false,
     showNav: true,
     pageType: 'enterprise', // enterprise, personal'
-    
+
     applyStatus: 'success', // appling fail success
-    companyType: '', 
+    companyType: '',
     name: '',
     idNumber: '',
     phone: '',
@@ -25,7 +25,7 @@ Page({
       pageType: option.type
     })
   },
-  
+
   onReady() {
     // Do something when page ready.
   },
@@ -42,12 +42,12 @@ Page({
       this.openDrawer()
     }
   },
- 
+
   // 上传
-  handleUpload(e){
+  handleUpload(e) {
     chooseImage().then(res => {
       console.log(res)
-      let type = getDataset(e).type 
+      let type = getDataset(e).type
       if (type === 'front') {
         this.setData({
           frontofIDCard: res
@@ -56,7 +56,7 @@ Page({
         this.setData({
           endofIDCard: res
         });
-      } else if (type==='license') {
+      } else if (type === 'license') {
         this.setData({
           licenseCard: res
         });
@@ -64,29 +64,29 @@ Page({
     });
   },
 
-  validatoForm (name, idNumber, phone, email, frontofIDCard, endofIDCard, licenseCard)  {
+  validatoForm(name, idNumber, phone, email, frontofIDCard, endofIDCard, licenseCard) {
     let bool = true;
-    if(!name){
+    if (!name) {
       bool = false;
       Toast.show({
         title: '请输入身份证真实姓名'
       });
-    } else if(!idNumber  || !Base.isIdNumber(idNumber)){
+    } else if (!idNumber || !Base.isIdNumber(idNumber)) {
       bool = false;
       Toast.show({
         title: '请输入身份证号码'
       });
-    } else if(!phone || !Base.isPhone(phone)){
+    } else if (!phone || !Base.isPhone(phone)) {
       bool = false;
       Toast.show({
         title: '输入正确的手机号'
       });
-    } else if(!email || !Base.isEmail(email)){
+    } else if (!email || !Base.isEmail(email)) {
       bool = false;
       Toast.show({
         title: '请输入邮箱地址'
       });
-    } else if(!frontofIDCard){
+    } else if (!frontofIDCard) {
       bool = false;
       Toast.show({
         title: '请上传身份证正面'
@@ -96,7 +96,7 @@ Page({
       Toast.show({
         title: '请上传身份证背面'
       });
-    }  else if (this.data.pageType === 'enterprise' && !licenseCard) {
+    } else if (this.data.pageType === 'enterprise' && !licenseCard) {
       bool = false;
       Toast.show({
         title: '请上传营业执照'
@@ -115,8 +115,8 @@ Page({
           phone: phone
         }
       })
-    } 
-   
+    }
+
   },
 
   openDrawer() {

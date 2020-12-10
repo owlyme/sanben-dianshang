@@ -41,11 +41,11 @@ Component({
     },
     textAlign: {
       type: String,
-      default: "left",
+      default: 'left',
     },
     radius: {
       type: [Number, String],
-      default: "18",
+      default: '18',
     },
   },
 

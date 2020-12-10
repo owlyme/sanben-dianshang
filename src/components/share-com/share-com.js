@@ -130,29 +130,29 @@ Component({
       let { type } = getDataset(e)
 
       switch (type) {
-        case 'wechat':
-          console.log(type);
-          break;
-        case 'pyq':
-          console.log(type);
-          break;
-        case 'qq':
-          console.log(type);
-          break;
-        case 'xinlang':
-          console.log(type);
-          break;
-        case 'copy':
-          console.log(type, Router.currentPath);
-          break;
-        case 'poster':
-          console.log(type);
-          this.createPoster()
-          break;
-        case 'save':
-          console.log(type);
-          this.afterSavePoster()
-          break;
+      case 'wechat':
+        console.log(type);
+        break;
+      case 'pyq':
+        console.log(type);
+        break;
+      case 'qq':
+        console.log(type);
+        break;
+      case 'xinlang':
+        console.log(type);
+        break;
+      case 'copy':
+        console.log(type, Router.currentPath);
+        break;
+      case 'poster':
+        console.log(type);
+        this.createPoster()
+        break;
+      case 'save':
+        console.log(type);
+        this.afterSavePoster()
+        break;
       }
 
     },
@@ -238,20 +238,20 @@ Component({
             }),
           ],
           images: [{
-              x: 12 * 2,
-              y: 12 * 2,
-              url: '/images/no-coupon.png',
-              width: 200 * 2,
-              height: 200 * 2,
-              borderRadius: 4 * 2
-            },
-            {
-              x: 12 * 2,
-              y: 316 * 2,
-              url: '/images/no-coupon.png',
-              width: 72 * 2,
-              height: 72 * 2,
-            }
+            x: 12 * 2,
+            y: 12 * 2,
+            url: '/images/no-coupon.png',
+            width: 200 * 2,
+            height: 200 * 2,
+            borderRadius: 4 * 2
+          },
+          {
+            x: 12 * 2,
+            y: 316 * 2,
+            url: '/images/no-coupon.png',
+            width: 72 * 2,
+            height: 72 * 2,
+          }
           ]
         }
       }, () => {
@@ -263,12 +263,12 @@ Component({
       console.log(e)
       this.posterUrl = detail
       this.setData({
-          postImg: detail
-        })
-        // wx.previewImage({
-        //   current: detail,
-        //   urls: [detail]
-        // })
+        postImg: detail
+      })
+      // wx.previewImage({
+      //   current: detail,
+      //   urls: [detail]
+      // })
 
       this.setData({
         list: [

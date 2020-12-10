@@ -21,7 +21,7 @@ Component({
     },
     title: {
       type: String,
-      value: "标题",
+      value: '标题',
     },
     size: {
       type: [Number],
@@ -29,11 +29,11 @@ Component({
     },
     model: {
       type: String,
-      value: "solid",
+      value: 'solid',
     },
     color: {
       type: String,
-      value: "#111",
+      value: '#111',
     },
   },
   data: {

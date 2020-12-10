@@ -31,68 +31,68 @@ Page({
     productsNews: {},
     goodList: [],
     goodListTypeListTab: [{
-        name: '精选',
-        sub: '为您推荐',
-      },
-      {
-        name: '排行',
-        sub: '人气商品',
-      },
-      {
-        name: '分类',
-        sub: '琳琅满目',
-      }
+      name: '精选',
+      sub: '为您推荐',
+    },
+    {
+      name: '排行',
+      sub: '人气商品',
+    },
+    {
+      name: '分类',
+      sub: '琳琅满目',
+    }
     ],
     activeList: [{
-        type: 'signIn',
-        title: '签到有奖',
-        pic: '/images/active-list/qiandao.png'
-      },
-      {
-        type: 'coupon',
-        title: '优惠领券',
-        pic: '/images/active-list/youhuiquan.png'
-      },
-      {
-        type: '3',
-        title: '幸运抽奖',
-        pic: '/images/active-list/choujiang.png'
-      },
-      {
-        type: '',
-        title: '品牌特卖',
-        pic: '/images/active-list/temai.png'
-      },
-      {
-        type: '',
-        title: '积分兑换',
-        pic: '/images/active-list/duihuanjifen.png'
-      },
-      {
-        type: '',
-        title: '发现好货',
-        pic: '/images/active-list/haohuo.png'
-      },
-      {
-        type: '',
-        title: '新品首发',
-        pic: '/images/active-list/xinpin.png'
-      },
-      {
-        type: '',
-        title: '众筹活动',
-        pic: '/images/active-list/zhongchouhuodong.png'
-      },
-      {
-        type: '',
-        title: '超值拼团',
-        pic: '/images/active-list/pingtuan.png'
-      },
-      {
-        type: '',
-        title: '超值中心',
-        pic: '/images/active-list/chongzhi.png'
-      },
+      type: 'signIn',
+      title: '签到有奖',
+      pic: '/images/active-list/qiandao.png'
+    },
+    {
+      type: 'coupon',
+      title: '优惠领券',
+      pic: '/images/active-list/youhuiquan.png'
+    },
+    {
+      type: '3',
+      title: '幸运抽奖',
+      pic: '/images/active-list/choujiang.png'
+    },
+    {
+      type: '',
+      title: '品牌特卖',
+      pic: '/images/active-list/temai.png'
+    },
+    {
+      type: '',
+      title: '积分兑换',
+      pic: '/images/active-list/duihuanjifen.png'
+    },
+    {
+      type: '',
+      title: '发现好货',
+      pic: '/images/active-list/haohuo.png'
+    },
+    {
+      type: '',
+      title: '新品首发',
+      pic: '/images/active-list/xinpin.png'
+    },
+    {
+      type: '',
+      title: '众筹活动',
+      pic: '/images/active-list/zhongchouhuodong.png'
+    },
+    {
+      type: '',
+      title: '超值拼团',
+      pic: '/images/active-list/pingtuan.png'
+    },
+    {
+      type: '',
+      title: '超值中心',
+      pic: '/images/active-list/chongzhi.png'
+    },
     ],
     goodListType: goodListTypes[0],
     categoryList: [
@@ -153,20 +153,20 @@ Page({
         let goodList = []
         let {
           spcealGoodList = [],
-            rankGoodList = [],
-            categoryGoddList = []
+          rankGoodList = [],
+          categoryGoddList = []
         } = this.customData
 
         switch (goodListType) {
-          case goodListTypes[0]:
-            goodList = this.customData.spcealGoodList = spcealGoodList.concat(res.data)
-            break;
-          case goodListTypes[1]:
-            goodList = this.customData.rankGoodList = rankGoodList.concat(res.data)
-            break;
-          case goodListTypes[2]:
-            goodList = this.customData.categoryGoddList = categoryGoddList.concat(res.data)
-            break;
+        case goodListTypes[0]:
+          goodList = this.customData.spcealGoodList = spcealGoodList.concat(res.data)
+          break;
+        case goodListTypes[1]:
+          goodList = this.customData.rankGoodList = rankGoodList.concat(res.data)
+          break;
+        case goodListTypes[2]:
+          goodList = this.customData.categoryGoddList = categoryGoddList.concat(res.data)
+          break;
         }
 
         this.setData({
@@ -218,12 +218,12 @@ Page({
       success: (res) => {
         let { result, scanType } = res
         switch (scanType) {
-          case 'ENV_13':
-            console.log('scanType', scanType, result)
-            break;
-          case 'QR_CODE':
-            console.log('scanType', scanType, result)
-            break;
+        case 'ENV_13':
+          console.log('scanType', scanType, result)
+          break;
+        case 'QR_CODE':
+          console.log('scanType', scanType, result)
+          break;
         }
         Toast.success('扫一扫成功')
       },
@@ -247,21 +247,21 @@ Page({
     let goodList = []
     let {
       spcealGoodList = [],
-        rankGoodList = [],
-        categoryGoddList = []
+      rankGoodList = [],
+      categoryGoddList = []
     } = this.customData
 
     switch (goodListType) {
-      case goodListTypes[0]:
-        goodList = spcealGoodList
-        break;
-      case goodListTypes[1]:
-        goodList = rankGoodList
-        break;
-      case goodListTypes[2]:
-        goodList = categoryGoddList
-        this.getCategories()
-        break;
+    case goodListTypes[0]:
+      goodList = spcealGoodList
+      break;
+    case goodListTypes[1]:
+      goodList = rankGoodList
+      break;
+    case goodListTypes[2]:
+      goodList = categoryGoddList
+      this.getCategories()
+      break;
     }
 
     this.setData({

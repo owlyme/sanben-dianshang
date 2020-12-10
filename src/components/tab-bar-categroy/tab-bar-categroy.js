@@ -23,11 +23,11 @@ Component({
     tabs: {
       type: Array,
       value: [
-          'tab 1',
-          'tab 2',
-          'tab 3',
-          'tab 4',
-        ] // [{ name: '',sub: ''}]
+        'tab 1',
+        'tab 2',
+        'tab 3',
+        'tab 4',
+      ] // [{ name: '',sub: ''}]
     },
     active: {
       type: [String, Number],

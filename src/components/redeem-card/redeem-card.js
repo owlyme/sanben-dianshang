@@ -2,7 +2,7 @@ import { Path, Router } from '../../router/index';
 import { getDatasetValue } from '../../utils/commom';
 const getId = getDatasetValue('id')
 const getItem = getDatasetValue('item')
-  // <!-- 积分  兑换 -->
+// <!-- 积分  兑换 -->
 Component({
   options: {
     styleIsolation: 'apply-shared',

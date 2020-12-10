@@ -19,40 +19,40 @@ Component({
     activeList: {
       type: Array,
       value: [{
-          pic: "/images/active-list/evaluation.png",
-          title: "超值评测",
-          text: "大V实物评测",
-        },
-        {
-          pic: "/images/active-list/activitives.png",
-          title: "专享活动",
-          text: "超值活动来啦",
-        },
-        {
-          pic: "/images/active-list/articles.png",
-          title: "优享文章",
-          text: "看看这篇文章",
-        },
-        {
-          pic: "/images/active-list/videos.png",
-          title: "好物视频",
-          text: "全方位鉴赏",
-        },
-        {
-          pic: "/images/active-list/activitives.png",
-          title: "专享活动",
-          text: "超值活动来啦",
-        },
-        {
-          pic: "/images/active-list/articles.png",
-          title: "优享文章",
-          text: "看看这篇文章",
-        },
-        {
-          pic: "/images/active-list/videos.png",
-          title: "好物视频",
-          text: "全方位鉴赏",
-        },
+        pic: '/images/active-list/evaluation.png',
+        title: '超值评测',
+        text: '大V实物评测',
+      },
+      {
+        pic: '/images/active-list/activitives.png',
+        title: '专享活动',
+        text: '超值活动来啦',
+      },
+      {
+        pic: '/images/active-list/articles.png',
+        title: '优享文章',
+        text: '看看这篇文章',
+      },
+      {
+        pic: '/images/active-list/videos.png',
+        title: '好物视频',
+        text: '全方位鉴赏',
+      },
+      {
+        pic: '/images/active-list/activitives.png',
+        title: '专享活动',
+        text: '超值活动来啦',
+      },
+      {
+        pic: '/images/active-list/articles.png',
+        title: '优享文章',
+        text: '看看这篇文章',
+      },
+      {
+        pic: '/images/active-list/videos.png',
+        title: '好物视频',
+        text: '全方位鉴赏',
+      },
       ],
     },
     col: {
@@ -61,7 +61,7 @@ Component({
     },
     type: {
       type: String,
-      value: "default", // 'scroll'
+      value: 'default', // 'scroll'
     },
   },
   observers: {

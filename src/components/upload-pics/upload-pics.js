@@ -71,12 +71,12 @@ Component({
     },
     // 预览图片
     handlePreviewImage(e) {
-      var current = e.target.dataset.src
-        // 预览图片
-        //  uni.previewImage({
-        //      current: current,
-        //      urls: this.imageSrc
-        //  });
+      // var current = e.target.dataset.src
+      // 预览图片
+      //  uni.previewImage({
+      //      current: current,
+      //      urls: this.imageSrc
+      //  });
     },
   }
 

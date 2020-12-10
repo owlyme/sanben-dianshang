@@ -75,6 +75,7 @@ Component({
     navChange(e) {
       console.log('navChange', e)
       let { name, index } = e.detail
+      console.log(name)
       Router.replace(this.data.navList[index].path)
     }
   }

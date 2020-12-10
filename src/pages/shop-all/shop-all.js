@@ -2,53 +2,53 @@ import { Path, Router } from '../../router/index';
 // 全局app实例
 const App = getApp();
 let allShop = [{
-    type: 1,
-    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: '阿迪达斯三叶草旗舰店11',
-    address: 111111
-  },
-  {
-    type: 1,
-    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: '阿迪达斯三叶草旗舰店122',
-    address: 111111
-  },
-  {
-    type: 2,
-    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: '阿迪达斯三叶草旗舰店2233',
-    address: 111111
-  },
-  {
-    type: 2,
-    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: '阿迪达斯三叶草旗舰店44',
-    address: 111111
-  },
-  {
-    type: 2,
-    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: '阿迪达斯三叶草旗舰店11',
-    address: 111111
-  },
-  {
-    type: 2,
-    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: '阿迪达斯三叶草旗舰店122',
-    address: 111111
-  },
-  {
-    type: 2,
-    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: '阿迪达斯三叶草旗舰店2233',
-    address: 111111
-  },
-  {
-    type: 2,
-    pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-    name: '阿迪达斯三叶草旗舰店44',
-    address: 111111
-  },
+  type: 1,
+  pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+  name: '阿迪达斯三叶草旗舰店11',
+  address: 111111
+},
+{
+  type: 1,
+  pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+  name: '阿迪达斯三叶草旗舰店122',
+  address: 111111
+},
+{
+  type: 2,
+  pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+  name: '阿迪达斯三叶草旗舰店2233',
+  address: 111111
+},
+{
+  type: 2,
+  pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+  name: '阿迪达斯三叶草旗舰店44',
+  address: 111111
+},
+{
+  type: 2,
+  pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+  name: '阿迪达斯三叶草旗舰店11',
+  address: 111111
+},
+{
+  type: 2,
+  pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+  name: '阿迪达斯三叶草旗舰店122',
+  address: 111111
+},
+{
+  type: 2,
+  pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+  name: '阿迪达斯三叶草旗舰店2233',
+  address: 111111
+},
+{
+  type: 2,
+  pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+  name: '阿迪达斯三叶草旗舰店44',
+  address: 111111
+},
 ]
 
 Page({
@@ -103,9 +103,9 @@ Page({
   onShopNameChange(e) {
     console.log('onShopNameChange', e.detail.keyword)
     let keyword = e.detail.keyword
-      // this.setData({
-      //   shopoKeyword: keyword
-      // })
+    // this.setData({
+    //   shopoKeyword: keyword
+    // })
     this.filterShopList(keyword)
   },
   filterShopList(keyword) {

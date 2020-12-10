@@ -17,15 +17,15 @@ Component({
     },
     bgColor: {
       type: String,
-      value: "#f67f79",
+      value: '#f67f79',
     },
     color: {
       type: String,
-      value: "#fff",
+      value: '#fff',
     },
     content: {
       type: String,
-      value: "", // 'srcoll'
+      value: '', // 'srcoll'
     },
   },
   observers: {

@@ -2,7 +2,7 @@ import { Path, Router } from '../../router/index';
 import { getDataset } from '../../utils/commom';
 import { Toast } from '../../utils/sysApis';
 
-import { deleteGoodInCart, saveGood, getShopCouponList } from "../../api/goodCrat"
+import { deleteGoodInCart, saveGood, getShopCouponList } from '../../api/goodCrat'
 
 function checkedAll(data, checked) {
   data.checked = checked;
@@ -48,49 +48,49 @@ Component({
         id: 1,
         logo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopList: [{
-            shopName: '杭州大悦城店',
-            orderList: [{
-                id: 12,
-                number: 12,
-                pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-                model: '红白字母',
-                price: 10,
-                totalPrice: 120,
-                name: '阿迪达斯官网 adidas 5T Nec…'
-              },
-              {
-                id: 12,
-                number: 12,
-                pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-                model: '红白字母',
-                price: 10,
-                totalPrice: 120,
-                name: '阿迪达斯官网 adidas 5T Nec…'
-              }
-            ]
+          shopName: '杭州大悦城店',
+          orderList: [{
+            id: 12,
+            number: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            model: '红白字母',
+            price: 10,
+            totalPrice: 120,
+            name: '阿迪达斯官网 adidas 5T Nec…'
           },
           {
-            shopName: '杭州大悦城店1',
-            orderList: [{
-                id: 12,
-                number: 12,
-                pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-                model: '红白字母',
-                price: 10,
-                totalPrice: 120,
-                name: '阿迪达斯官网 adidas 5T Nec…'
-              },
-              {
-                id: 12,
-                number: 12,
-                pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-                model: '红白字母',
-                price: 10,
-                totalPrice: 120,
-                name: '阿迪达斯官网 adidas 5T Nec…'
-              }
-            ]
+            id: 12,
+            number: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            model: '红白字母',
+            price: 10,
+            totalPrice: 120,
+            name: '阿迪达斯官网 adidas 5T Nec…'
+          }
+          ]
+        },
+        {
+          shopName: '杭州大悦城店1',
+          orderList: [{
+            id: 12,
+            number: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            model: '红白字母',
+            price: 10,
+            totalPrice: 120,
+            name: '阿迪达斯官网 adidas 5T Nec…'
           },
+          {
+            id: 12,
+            number: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            model: '红白字母',
+            price: 10,
+            totalPrice: 120,
+            name: '阿迪达斯官网 adidas 5T Nec…'
+          }
+          ]
+        },
         ]
       }
     }

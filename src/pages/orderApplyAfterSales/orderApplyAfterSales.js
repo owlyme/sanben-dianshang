@@ -1,21 +1,19 @@
 // 全局app实例
-import {chooseImage} from '../../utils/sysApis';
+import { chooseImage } from '../../utils/sysApis';
 import { getDataset } from '../../utils/commom';
 import { Router } from '../../router/index';
 
-const app = getApp();
- 
 
 Page({
   data: {
     showDrawer: false,
     showNav: true,
-    imageSrc:[],
+    imageSrc: [],
     detail: '',
 
     money: 40,
     step: 2,
-    shopLogo:  'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+    shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
     shopName: '阿迪达斯',
     good: {
       pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
@@ -29,7 +27,7 @@ Page({
   selectReason() {
     console.log('selectReason')
   },
-  submit(){
+  submit() {
     console.log(this.data)
     this.open()
   },
@@ -37,14 +35,14 @@ Page({
     console.log('confirmSelect')
   },
   removePic(e) {
-    let  imageSrc = this.data.imageSrc
+    let imageSrc = this.data.imageSrc
     imageSrc.splice(getDataset(e).index, 1)
     this.setData({
       imageSrc
     });
   },
   // 上传
-  handleUpload(){
+  handleUpload() {
     chooseImage().then(res => {
       console.log(res)
       this.data.imageSrc.push(res)
@@ -54,8 +52,8 @@ Page({
     });
   },
   // 预览图片
-  handlePreviewImage(e){
-    var current = e.target.dataset.src
+  handlePreviewImage(e) {
+    // var current = e.target.dataset.src
     // 预览图片
     //  uni.previewImage({
     //      current: current,

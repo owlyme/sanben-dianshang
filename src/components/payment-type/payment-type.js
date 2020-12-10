@@ -33,17 +33,17 @@ Component({
   },
   data: {
     typeList: [{
-        icon: 'iconicon_weixingzf1',
-        color: '#41B035',
-        text: '微信支付',
-        value: 'wechat'
-      },
-      {
-        icon: 'iconicon_zfb2',
-        color: '#00ADEE',
-        text: '支付宝支付',
-        value: 'ali'
-      },
+      icon: 'iconicon_weixingzf1',
+      color: '#41B035',
+      text: '微信支付',
+      value: 'wechat'
+    },
+    {
+      icon: 'iconicon_zfb2',
+      color: '#00ADEE',
+      text: '支付宝支付',
+      value: 'ali'
+    },
 
     ]
   },
@@ -72,11 +72,11 @@ Component({
         value: type.value
       })
       this.customData = {
-          value: type.value,
-          type,
-          index
-        }
-        // this.triggerEvent('onChange', {value: coupon.value, coupon, index})
+        value: type.value,
+        type,
+        index
+      }
+      // this.triggerEvent('onChange', {value: coupon.value, coupon, index})
     },
     confirm() {
       this.triggerEvent('onChange', this.customData)

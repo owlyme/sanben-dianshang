@@ -24,12 +24,12 @@ Component({
     tabs: {
       type: Array,
       value: [
-          { name: '综合推荐', type: 'first' },
-          { name: '销量', type: 'sales' },
-          { name: '价格', type: 'price' },
-          { name: '店铺', type: 'shop' },
-          { name: '筛选', type: 'filter' },
-        ] // []
+        { name: '综合推荐', type: 'first' },
+        { name: '销量', type: 'sales' },
+        { name: '价格', type: 'price' },
+        { name: '店铺', type: 'shop' },
+        { name: '筛选', type: 'filter' },
+      ] // []
     },
     active: {
       type: [String, Number],

@@ -34,21 +34,21 @@ Component({
   },
   data: {
     times: [{
-        value: '00',
-        text: '天',
-      },
-      {
-        value: '00',
-        text: ':',
-      },
-      {
-        value: '00',
-        text: ':',
-      },
-      {
-        value: '00',
-        text: '',
-      },
+      value: '00',
+      text: '天',
+    },
+    {
+      value: '00',
+      text: ':',
+    },
+    {
+      value: '00',
+      text: ':',
+    },
+    {
+      value: '00',
+      text: '',
+    },
     ],
   },
 

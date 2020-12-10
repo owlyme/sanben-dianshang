@@ -1,6 +1,6 @@
 import { Router, Path } from '../../router/index';
 import {Toast, boundingClientRect} from '../../utils/sysApis';
-import { getGoodCratList, deleteGoodInCart, saveGood } from "../../api/goodCrat"
+import { getGoodCratList, deleteGoodInCart, saveGood } from '../../api/goodCrat'
 import { storageKeyMap, getLocalStorage } from '../../utils/localStorage';
 
 const App = getApp();

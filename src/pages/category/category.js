@@ -1,6 +1,6 @@
 import  {Path, Router } from '../../router/index'
 import { Toast, boundingClientRect } from '../../utils/sysApis';
-import { getAllCategories, getCategoryGoodList, getBannerList } from "../../api/category"
+import { getAllCategories, getCategoryGoodList, getBannerList } from '../../api/category'
 const App = getApp();
 Page({
   data: {

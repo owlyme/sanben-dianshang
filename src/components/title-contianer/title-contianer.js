@@ -1,6 +1,3 @@
-import { getDatasetValue } from '../../utils/commom';
-const getId = getDatasetValue('id')
-const getItem = getDatasetValue('item')
 Component({
   options: {
     styleIsolation: 'apply-shared',
@@ -20,15 +17,15 @@ Component({
     },
     title: {
       type: String,
-      value: "这是标题",
+      value: '这是标题',
     },
     color: {
       type: String,
-      value: "#000",
+      value: '#000',
     },
     borderColor: {
       type: String,
-      value: "linear-gradient(225deg, #ff9846 0%, #ff3232 100%)",
+      value: 'linear-gradient(225deg, #ff9846 0%, #ff3232 100%)',
     },
   },
   observers: {

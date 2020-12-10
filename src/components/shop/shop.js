@@ -18,12 +18,12 @@ Component({
     shopInfo: {
       type: Object,
       value: {
-        name: "商店名称",
+        name: '商店名称',
         focused: true,
         rate: 4,
         followNumber: 111,
-        phone: "11111111111",
-        address: "浙江杭州",
+        phone: '11111111111',
+        address: '浙江杭州',
       }
     },
     showFocused: {

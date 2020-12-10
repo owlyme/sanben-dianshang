@@ -1,5 +1,5 @@
 // 全局app实例
-import {Path, Router} from '../../router/index';
+import { Path, Router } from '../../router/index';
 import { getDataset } from '../../utils/commom';
 import { statusTextMap, statusIconMap } from '../../app.const'
 const Order = {
@@ -13,8 +13,7 @@ const Order = {
   totalMoney: 0,
   totalPayMoney: 0,
   status: 6,
-  orderList: [
-    {
+  orderList: [{
       id: 12,
       number: 12,
       pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
@@ -38,10 +37,10 @@ const Order = {
 Page({
   data: {
     order: {},
-    address:{
-		  name:'反转',
-		  phone: 12345678915,
-		  address_name:'北京市海淀区苏家坨乡前沙涧村15号'
+    address: {
+      name: '反转',
+      phone: 12345678915,
+      address_name: '北京市海淀区苏家坨乡前沙涧村15号'
     },
     others: {
       remark: '请发韵达快递，快递请多包装几层，不要用袋子包装，容易破，不安全。',
@@ -51,15 +50,12 @@ Page({
       paymentType: '微信支付',
       deliveryMethod: '韵达快递'
     },
-    options:[
-      {
-        title:'派送中',
-        desc:'杭州转运中心火车东站站点  韵达派件员：徐迪 电话：13705102211  正在为您派件',
-        time:'2018-11-11 15:00:04',
-        status:5
-      },
-      
-    ]
+    options: [{
+      title: '派送中',
+      desc: '杭州转运中心火车东站站点  韵达派件员：徐迪 电话：13705102211  正在为您派件',
+      time: '2018-11-11 15:00:04',
+      status: 5
+    }]
   },
   onLoad() {
     this.getOrder()
@@ -98,8 +94,8 @@ Page({
       orderList,
       status
     } = Order
-    
-    let totalMoney = orderList.reduce((acc, item) => acc + item.price * item.number,  0);
+
+    let totalMoney = orderList.reduce((acc, item) => acc + item.price * item.number, 0);
     Order.totalMoney = totalMoney;
     Order.totalPayMoney = totalMoney + shipping - couponMoney;
 
@@ -110,11 +106,11 @@ Page({
     })
   },
   // 分享
-  
+
   // 去往地址页面
   setAddress() {
     console.log('setAddress')
-    //
+      //
   },
   toLogisticsDetails() {
     Router.push({

@@ -61,10 +61,10 @@ Component({
     pay() {
       console.log('pay')
       this.triggerEvent('onPay')
-        // console.log(111)
-        // uni.navigateTo({ //提交订单
-        //   url: '/pages/view/order/confirmOrder'
-        // })
+      // console.log(111)
+      // uni.navigateTo({ //提交订单
+      //   url: '/pages/view/order/confirmOrder'
+      // })
     },
     onColorChange(e) {
       let { index, name } = e.detail

@@ -32,23 +32,23 @@ Component({
         totalMoney: 0,
         totalPayMoney: 0,
         orderList: [{
-            id: 12,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…'
-          },
-          {
-            id: 12,
-            number: 12,
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            model: '红白字母',
-            price: 10,
-            totalPrice: 120,
-            name: '阿迪达斯官网 adidas 5T Nec…'
-          }
+          id: 12,
+          number: 12,
+          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          model: '红白字母',
+          price: 10,
+          totalPrice: 120,
+          name: '阿迪达斯官网 adidas 5T Nec…'
+        },
+        {
+          id: 12,
+          number: 12,
+          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          model: '红白字母',
+          price: 10,
+          totalPrice: 120,
+          name: '阿迪达斯官网 adidas 5T Nec…'
+        }
         ]
       }
     }

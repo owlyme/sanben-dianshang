@@ -20,7 +20,7 @@ Component({
     },
     type: {
       type: [Number, String],
-      value: "default",
+      value: 'default',
     },
     gutter: {
       type: Number,
@@ -33,7 +33,7 @@ Component({
     activeList: {
       type: Array,
       value: [{
-        pic: "https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg",
+        pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
       }],
     },
   },

@@ -25,54 +25,54 @@ Component({
         brandName: '阿迪达斯',
         logo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopList: [{
-            shopName: '杭州大悦城店',
-            remark: '11',
-            couponName: '111',
-            couponMoney: 300,
-            shipping: 10,
-            totalMoney: 0,
-            orderList: [{
-                id: 12,
-                number: 12,
-                pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-                model: '红白字母',
-                price: 10,
-                totalPrice: 120,
-                name: '阿迪达斯官网 adidas 5T Nec…'
-              },
-              {
-                id: 12,
-                number: 12,
-                pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-                model: '红白字母',
-                price: 10,
-                totalPrice: 120,
-                name: '阿迪达斯官网 adidas 5T Nec…'
-              }
-            ]
+          shopName: '杭州大悦城店',
+          remark: '11',
+          couponName: '111',
+          couponMoney: 300,
+          shipping: 10,
+          totalMoney: 0,
+          orderList: [{
+            id: 12,
+            number: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            model: '红白字母',
+            price: 10,
+            totalPrice: 120,
+            name: '阿迪达斯官网 adidas 5T Nec…'
           },
           {
-            shopName: '杭州大悦城店1',
-            orderList: [{
-                id: 12,
-                number: 12,
-                pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-                model: '红白字母',
-                price: 10,
-                totalPrice: 120,
-                name: '阿迪达斯官网 adidas 5T Nec…'
-              },
-              {
-                id: 12,
-                number: 12,
-                pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-                model: '红白字母',
-                price: 10,
-                totalPrice: 120,
-                name: '阿迪达斯官网 adidas 5T Nec…'
-              }
-            ]
+            id: 12,
+            number: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            model: '红白字母',
+            price: 10,
+            totalPrice: 120,
+            name: '阿迪达斯官网 adidas 5T Nec…'
+          }
+          ]
+        },
+        {
+          shopName: '杭州大悦城店1',
+          orderList: [{
+            id: 12,
+            number: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            model: '红白字母',
+            price: 10,
+            totalPrice: 120,
+            name: '阿迪达斯官网 adidas 5T Nec…'
           },
+          {
+            id: 12,
+            number: 12,
+            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+            model: '红白字母',
+            price: 10,
+            totalPrice: 120,
+            name: '阿迪达斯官网 adidas 5T Nec…'
+          }
+          ]
+        },
         ]
       }
     }
@@ -88,77 +88,77 @@ Component({
     isAllSelected: false,
     activeCoverIndex: '',
     couponList: [{
-        id: 1,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: ' 部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 2,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: '部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 1,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: ' 部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 2,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: '部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 1,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: ' 部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
-      {
-        id: 2,
-        goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-        type: 0, // 0平台， 1店铺
-        typeText: '平台礼品券',
-        remindText: '部分个人护理商品',
-        expired: '2020-12-30 23:59:59',
-        status: 1, // 1 待领取 2 待使用
-        couponMoney: 50,
-        availableMoney: 200,
-        remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
-      },
+      id: 1,
+      goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      type: 0, // 0平台， 1店铺
+      typeText: '平台礼品券',
+      remindText: ' 部分个人护理商品',
+      expired: '2020-12-30 23:59:59',
+      status: 1, // 1 待领取 2 待使用
+      couponMoney: 50,
+      availableMoney: 200,
+      remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+    },
+    {
+      id: 2,
+      goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      type: 0, // 0平台， 1店铺
+      typeText: '平台礼品券',
+      remindText: '部分个人护理商品',
+      expired: '2020-12-30 23:59:59',
+      status: 1, // 1 待领取 2 待使用
+      couponMoney: 50,
+      availableMoney: 200,
+      remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+    },
+    {
+      id: 1,
+      goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      type: 0, // 0平台， 1店铺
+      typeText: '平台礼品券',
+      remindText: ' 部分个人护理商品',
+      expired: '2020-12-30 23:59:59',
+      status: 1, // 1 待领取 2 待使用
+      couponMoney: 50,
+      availableMoney: 200,
+      remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+    },
+    {
+      id: 2,
+      goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      type: 0, // 0平台， 1店铺
+      typeText: '平台礼品券',
+      remindText: '部分个人护理商品',
+      expired: '2020-12-30 23:59:59',
+      status: 1, // 1 待领取 2 待使用
+      couponMoney: 50,
+      availableMoney: 200,
+      remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+    },
+    {
+      id: 1,
+      goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      type: 0, // 0平台， 1店铺
+      typeText: '平台礼品券',
+      remindText: ' 部分个人护理商品',
+      expired: '2020-12-30 23:59:59',
+      status: 1, // 1 待领取 2 待使用
+      couponMoney: 50,
+      availableMoney: 200,
+      remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+    },
+    {
+      id: 2,
+      goodPic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+      type: 0, // 0平台， 1店铺
+      typeText: '平台礼品券',
+      remindText: '部分个人护理商品',
+      expired: '2020-12-30 23:59:59',
+      status: 1, // 1 待领取 2 待使用
+      couponMoney: 50,
+      availableMoney: 200,
+      remark: '仅适用于本店铺；限时购、特价等特惠商品，新品及详情页标注不可用券的商品除外。'
+    },
     ]
   },
 

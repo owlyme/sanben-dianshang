@@ -1,5 +1,5 @@
 import {setNavBarSize} from './utils/sysApis';
-import {Router, Path} from "./router/index"
+import {Router, Path} from './router/index'
 import { storageKeyMap, getLocalStorage } from './utils/localStorage';
 
 App({
