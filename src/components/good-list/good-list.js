@@ -39,7 +39,14 @@ Component({
       type: Array,
       value: []
     },
-
+    model: {
+      type: String,
+      value: "info", // group, seckill, appointment, bargain, lottery,
+    },
+    activeBtnText: {
+      type: String,
+      value: "",
+    },
     feature: {
       type: Boolean,
       value: true,
@@ -52,7 +59,14 @@ Component({
       type: Boolean,
       value: true,
     },
-
+    deadLine: {
+      type: Boolean,
+      value: true,
+    },
+    flagUrl: {
+      type: String,
+      value: "",
+    }
   },
 
   observers: {

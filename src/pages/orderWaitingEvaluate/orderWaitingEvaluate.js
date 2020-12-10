@@ -1,6 +1,4 @@
-// 全局app实例
-import { debounce, isScrollUp } from '../../utils/commom';
-import { Toast, boundingClientRect, showActionSheet } from '../../utils/sysApis';
+import { boundingClientRect } from '../../utils/sysApis';
 const App = getApp();
 
 Page({
@@ -8,13 +6,11 @@ Page({
     waveBarVisible: false,
     pageBg2Visible: true,
     scrollViewHeight: 400,
-    orderList: [
-      {
+    orderList: [{
         shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopName: 'name',
         shopAddress: 'address',
-        goodList: [
-          {
+        goodList: [{
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
             name: 'name me name',
             remark: 'remark'
@@ -54,8 +50,7 @@ Page({
         shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopName: 'name',
         shopAddress: 'address',
-        goodList: [
-          {
+        goodList: [{
             pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
             name: 'name me name',
             remark: 'remark'
@@ -75,24 +70,22 @@ Page({
         shopLogo: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
         shopName: 'name',
         shopAddress: 'address',
-        goodList: [
-          {
-            pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
-            name: 'name me name',
-            remark: 'remark'
-          }
-        ],
+        goodList: [{
+          pic: 'https://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_300x300.jpg',
+          name: 'name me name',
+          remark: 'remark'
+        }],
         totalNumber: 6,
         price: 600,
         status: 1,
         id: 2
       }
     ],
-    
+
   },
   onLoad() {
     // Do some initialize when page load.
-    
+
   },
   onReady() {
     // Do something when page ready.
@@ -124,29 +117,29 @@ Page({
     console.log('order list scrollToLower');
   },
   onScroll(e) {
-    
-  }, 
+
+  },
   // 订单操作
   async viewMore(e) {
-   
-  }, 
+
+  },
   putInCart(e) {
     console.log(e)
-  }, 
+  },
   modifyAddress(e) {
     console.log(e)
-  }, 
+  },
   toPay(e) {
     console.log(e)
-  }, 
+  },
   makeSure(e) {
     console.log(e)
-  }, 
+  },
   deleteOrder(e) {
     console.log(e)
-  }, 
+  },
 
-  
-  
+
+
   customData: {}
 });

@@ -4,7 +4,7 @@
       <view else class="flex-middle">
         <view class="cell" wx:for="{{times}}" wx:key="index" wx:if="{{index > 0}}">
           <text class="number">{{ item.value }}</text>
-          <text class="text">{{item.text}}</text>
+          <text class="text" style="color: {{splitColor}}">{{item.text}}</text>
         </view>
       </view>
     </view>

@@ -1,7 +1,7 @@
 <block>
-  <text class="plane-money-text {{customClass}}" style="{{customStyle}}" wx:if="{{plane}}">
-    ¥{{intPart}}.{{decimalPart}}
-  </text>
+  <text
+  class="plane-money-text {{customClass}}" 
+  style="{{customStyle}}" wx:if="{{plane}}">¥{{intPart}}.{{decimalPart}}</text>
   <view class="moeney-text-components flex " style="" wx:else>
     <!-- content -->
     <view class="money-icon" style="font-size: {{moneySize * 2}}rpx; color: {{color}}">¥</view>

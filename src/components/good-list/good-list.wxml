@@ -20,7 +20,7 @@
   <!-- content -->
   <block wx:for="{{goodList}}" wx:key="index">
     <view class="good-rank-list-item">
-      <good-card-rank goodInfo="{{item}}" data-good="{{item}}" prevent="{{true}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" />
+      <good-card-rank goodInfo="{{item}}" data-good="{{item}}" prevent="{{true}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" model="{{model}}" activeBtnText="{{activeBtnText}}" deadLine="{{deadLine}}" flagUrl="{{flagUrl}}" />
     </view>
   </block>
 </view>
@@ -29,14 +29,14 @@
   <view>
     <block wx:for="{{oddIndexOfgoodList}}" wx:key="index">
       <view class="good-list-card-item">
-        <good-card-sale goodInfo="{{item}}" wx:index="{{index}}" prevent="{{true}}" goodNameellipsisOne="{{false}}" data-good="{{item}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" />
+        <good-card-sale goodInfo="{{item}}" wx:index="{{index}}" prevent="{{true}}" goodNameellipsisOne="{{false}}" data-good="{{item}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" model="{{model}}" activeBtnText="{{activeBtnText}}" deadLine="{{deadLine}}" flagUrl="{{flagUrl}}" />
       </view>
     </block>
   </view>
   <view>
     <block wx:for="{{evenIndexOfgoodList}}" wx:key="index">
       <view class="good-list-card-item">
-        <good-card-sale goodNameellipsisOne="{{false}}" prevent="{{true}}" goodInfo="{{item}}" wx:index="{{index}}" data-good="{{item}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" />
+        <good-card-sale goodNameellipsisOne="{{false}}" prevent="{{true}}" goodInfo="{{item}}" wx:index="{{index}}" data-good="{{item}}" bind:tap="onClick" feature="{{feature}}" showName="{{showName}}" showPrice="{{showPrice}}" model="{{model}}" activeBtnText="{{activeBtnText}}" deadLine="{{deadLine}}" flagUrl="{{flagUrl}}" />
       </view>
     </block>
   </view>

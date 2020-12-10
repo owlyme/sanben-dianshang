@@ -1,4 +1,5 @@
 import { Path, Router } from '../../router/index';
+import { Toast } from "../../utils/sysApis"
 
 Component({
   options: {
@@ -16,6 +17,14 @@ Component({
       type: String,
       value: ''
     },
+    model: {
+      type: String,
+      value: "info", // group, seckill, appointment, bargain, lottery,
+    },
+    activeBtnText: {
+      type: String,
+      value: "",
+    },
     feature: {
       type: Boolean,
       value: true,
@@ -27,6 +36,14 @@ Component({
     showName: {
       type: Boolean,
       value: true,
+    },
+    deadLine: {
+      type: Boolean,
+      value: true,
+    },
+    flagUrl: {
+      type: String,
+      value: "",
     },
     goodInfo: {
       type: Object,
@@ -45,7 +62,17 @@ Component({
       value: false
     }
   },
-  data: {},
+  data: {
+    modelText: {
+      info: "",
+      group: "去拼团",
+      seckill: "马上秒",
+      appointment: "预 约",
+      bargain: "去参与",
+      lottery: "去参与",
+    },
+    activeEndStyle: ''
+  },
 
   methods: {
     viewGoodDetail(e) {
@@ -61,6 +88,24 @@ Component({
       Router.push({
         url: Path.shopIndex
       })
+    },
+    onActiveEnd() {
+      let { deadLine, model } = this.data
+      if (!deadLine || model === 'info' || model === 'group' || model === 'appointment') return;
+      this.setData({
+        activeEndStyle: "filter: grayscale(100%)"
+      })
+    },
+    toActive() {
+      if (this.data.activeEndStyle) {
+        Toast.show('活动已结束！')
+        console.log('活动到期')
+      } else {
+        this.triggerEvent('onActive', {
+          type: this.data.model,
+          data: this.data.goodInfo
+        })
+      }
     }
   }
 

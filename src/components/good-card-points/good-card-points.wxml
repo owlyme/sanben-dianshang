@@ -1,10 +1,32 @@
-<view class="good-card-points-components {{customClass}}" style="{{customStyle}}">
+<view wx:if="{{type === 'horizontal'}}" class="good-card-points-components horizontal flex">
+  <view class="good-pic">
+    <image class="image" src="{{goodInfo.pic}}" />
+    <image class="flag" src="{{flagUrl}}" wx:if="{{flagUrl}}" />
+  </view>
+  <view class="good-detail flex-col flex-b">
+    <view class="good-name ellipsisTwo" wx:if="{{showName}}">{{ goodInfo.name }}</view>
+    <view class="good-points">{{ goodInfo.points || 0 }}积分</view>
+    <view class="flex-b flex-middle">
+      <view class="single"><money-text plane number="{{goodInfo.price}}" /></view>
+      <view class="group-btn">
+        <button-text type="warn" height="{{24}}">
+          <text style="font-size: 12px"> {{ activeBtnText || "去领取" }}</text>
+        </button-text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:else class="good-card-points-components vertical">
   <!-- content -->
   <view class="good-pic">
     <image class="image" src="{{goodInfo.pic}}" />
+    <image class="flag" src="{{flagUrl}}" wx:if="{{flagUrl}}" />
   </view>
   <view class="good-detail">
-    <view class="good-name ellipsisTwo">{{goodInfo.name}}</view>
-    <view class="good-points">{{ goodInfo.points || 0}}积分+{{goodInfo.price || 0}}元</view>
+    <view class="good-name ellipsisTwo" wx:if="{{showName}}">{{ goodInfo.name }}</view>
+    <view class="good-points">
+      {{ goodInfo.points || 0 }}积分+{{ goodInfo.price || 0 }}元
+    </view>
   </view>
 </view>

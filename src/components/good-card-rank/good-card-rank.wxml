@@ -1,7 +1,8 @@
-<view class="good-card-rank-components gutter-container flex {{customClass}}" style="{{customStyle}}" bind:tap="viewGoodDetail">
-  <!-- content -->
+<view class="good-card-rank-components gutter-container flex {{customClass}}" style="{{customStyle}}; {{activeEndStyle}}" bind:tap="viewGoodDetail">
+
   <view class="good-pic">
     <image class="image" src="{{goodInfo.pic}}" />
+    <image class="flag" src="{{flagUrl}}" wx:if="{{flagUrl}}" />
   </view>
   <view class="good-detail flex-col flex-b">
     <view class="good-name ellipsisTwo ">
@@ -10,7 +11,7 @@
       </view>
       {{goodInfo.name}}
     </view>
-    <view>
+    <view wx:if="{{model === 'info'}}">
       <view class="flex-b flex-middle">
         <view class="good-price">
           <money-text number="{{goodInfo.price}}" />
@@ -25,5 +26,47 @@
         <icon-font name="icondingdan-dianpu-gengduo" size="{{10}}" />
       </view>
     </view>
+    <block wx:else>
+        <view
+          class="flex left-time"
+          wx:if="{{deadLine && (model === 'seckill' || model === 'bargain' || model === 'lottery')}}"
+        >
+          <icon-font name="iconyingyeshijian2" />
+          <text class="text-s">距结束仅剩</text>
+          <dead-line value="{{goodInfo.endTime}}" bind:active-end="onActiveEnd" />
+        </view>
+        <!-- 拼团 -->
+        <view class="good-price" wx:if="{{model === 'group'}}">
+          <text>{{ goodInfo.members || 1 }}人团：</text
+          ><money-text number="{{goodInfo.activePrice || 0}}" />
+        </view>
+        <!-- 秒杀 -->
+        <view class="good-price" wx:elif="{{model === 'seckill'}}">
+          <text>秒杀价：</text><money-text number="{{goodInfo.activePrice || 0}}" />
+        </view>
+
+        <!-- 砍价 -->
+        <view class="good-price" wx:elif="{{model === 'bargain'}}">
+          <text>最低价：</text><money-text number="{{goodInfo.activePrice || 0}}" />
+        </view>
+        <!-- 抽奖 -->
+        <view class="free" wx:elif="{{model === 'lottery'}}">
+          <text>免费</text>
+        </view>
+        <!-- 预约 和 公共的部分-->
+        <view class="flex-b flex-middle">
+          <view class="good-price" wx:if="{{model === 'appointment'}}">
+            <money-text number="{{goodInfo.activePrice || 0}}" />
+          </view>
+          <view wx:else class="single flex flex-middle">
+            <text>原价</text><money-text plane number="{{goodInfo.price}}" />
+          </view>
+          <view class="group-btn" catch:tap="toActive">
+            <button-text type="warn" height="{{24}}">
+              {{ activeBtnText || modelText[model] }}
+            </button-text>
+          </view>
+        </view>
+    </block>
   </view>
 </view>

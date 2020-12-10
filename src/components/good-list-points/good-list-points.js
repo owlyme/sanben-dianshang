@@ -30,6 +30,22 @@ Component({
       type: String,
       value: ''
     },
+    type: {
+      type: String,
+      value: "horizontal", // vertical horizontal
+    },
+    activeBtnText: {
+      type: String,
+      value: "",
+    },
+    showName: {
+      type: Boolean,
+      value: true,
+    },
+    flagUrl: {
+      type: String,
+      value: "",
+    },
     goodList: {
       type: Array,
       value: []

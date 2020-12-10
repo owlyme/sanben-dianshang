@@ -1,13 +1,17 @@
-<view class="good-card-sale-components {{customClass}}" style="{{customStyle}}" bind:tap="viewGoodDetail">
+<view 
+  class="good-card-sale-components {{customClass}}" style="{{customStyle}}"      bind:tap="viewGoodDetail"
+  style="{{activeEndStyle}}">
   <!-- content -->
   <view class="good-pic">
     <image class="image" src="{{goodInfo.pic}}" />
+    <image class="flag" src="{{flagUrl}}" wx:if="{{flagUrl}}" />
   </view>
-  <view class="good-detail">
+  <view class="good-detail" wx:if="{{model==='info'}}">
     <view class="good-active-container" wx:if="{{goodInfo.active && feature}}">
       <view class="good-active">{{goodInfo.active}}</view>
     </view>
-    <view class="good-name {{ goodNameellipsisOne ? 'ellipsisOne' : 'ellipsisTwo' }}" wx:if="{{showName}}">
+    <view 
+      class="good-name {{ goodNameellipsisOne ? 'ellipsisOne' : 'ellipsisTwo' }}" wx:if="{{showName}}">
       {{goodInfo.name}}
     </view>
     <view class="good-price flex-b flex-middle" wx:if="{{showPrice}}">
@@ -21,4 +25,47 @@
       <good-feature list="{{goodInfo.tags}}" />
     </view>
   </view>
+
+  <view class="good-detail" wx:else>
+      <view
+        class="flex left-time flex-cm"
+        wx:if="{{deadLine && (model === 'seckill' || model === 'bargain' || model === 'lottery')}}">
+        <text>距结束仅剩</text>
+        <dead-line value="{{goodInfo.endTime}}" splitColor="#fff" bind:active-end="onActiveEnd"/>
+      </view>
+      <view
+        class="good-name {{goodNameellipsisOne ? 'ellipsisOne' : 'ellipsisTwo'}}"
+        wx:show="showName">
+        {{ goodInfo.name }}
+      </view>
+      <!-- 拼团 -->
+      <view class="good-price" wx:if="{{model === 'group'}}">
+        <text>{{ goodInfo.members || 1 }}人团：</text><money-text number="{{goodInfo.activePrice || 0}}" />
+      </view>
+      <!-- 秒杀 -->
+      <view class="good-price" wx:elif="{{model === 'seckill'}}">
+        <text>秒杀价：</text><money-text number="{{goodInfo.activePrice || 0}}" />
+      </view>
+
+      <!-- 砍价 -->
+      <view class="good-price" wx:elif="{{model === 'bargain'}}">
+        <text>最低价：</text><money-text number="{{goodInfo.activePrice || 0}}" />
+      </view>
+      <!-- 抽奖 -->
+      <view class="free" wx:elif="{{model === 'lottery'}}">
+        <text style="font-size: 30rpx">免费</text>
+      </view>
+      <!-- 预约 和 公共的部分-->
+      <view class="flex-b flex-middle">
+        <view class="good-price" wx:if="{{model === 'appointment'}}" style="margin-top: 0">
+          <money-text number="{{goodInfo.activePrice || 0}}" />
+        </view>
+        <view wx:else class="single">原价<money-text plane number="{{goodInfo.price}}" /></view>
+        <view class="group-btn" catch:tap="toActive">
+          <button-text type="warn" height="{{24}}">
+            <text style="font-size: 24rpx"> {{ activeBtnText || modelText[model] }}</text>
+          </button-text>
+        </view>
+      </view>
+    </view>
 </view>

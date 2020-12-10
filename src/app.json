@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/redeem/redeem",
     "pages/index/index",
     "pages/shop-all/shop-all",
     "pages/pageList/pageList",
@@ -49,7 +50,6 @@
     "pages/shop-detail/shop-detail",
     "pages/search/search",
     "pages/category/category",
-    "pages/redeem/redeem",
     "pages/on-sale/on-sale",
     "pages/coupon/coupon",
     "pages/negotiationRecord/negotiationRecord",

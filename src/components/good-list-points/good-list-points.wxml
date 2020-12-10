@@ -1,16 +1,15 @@
-<view class="good-list-components flex-b {{customClass}}" style="{{customStyle}}">
-  <view>
-    <block wx:for="{{oddIndexOfgoodList}}">
-      <view class="good-list-card-item">
-        <good-card-points goodInfo="{{item}}" wx:index="{{index}}" goodNameellipsisOne="{{!!index}}" data-good="{{item}}" bind:tap="onClick" />
-      </view>
-    </block>
-  </view>
-  <view>
-    <block wx:for="{{evenIndexOfgoodList}}">
-      <view class="good-list-card-item">
-        <good-card-points goodInfo="{{item}}" wx:index="{{index}}" data-good="{{item}}" bind:tap="onClick" />
-      </view>
-    </block>
+<view class="good-list-components flex-b flex-wrap gutter-container {{customClass}}" style="{{customStyle}}">
+  <view wx:for="{{goodList}}" wx:key="index">
+    <view class="good-list-card-item">
+      <good-card-points
+        goodInfo="{{item}}"
+        index="{{index}}"
+        type="{{type}}"
+        activeBtnText="{{activeBtnText}}"
+        showName="{{showName}}"
+        flagUrl="{{flagUrl}}"
+        data-good="{{item}}" bind:tap="onClick" 
+      />
+    </view>
   </view>
 </view>
